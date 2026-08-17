@@ -1,0 +1,262 @@
+/* Observatorio Turístico y Socioeconómico de Benahavís
+   Hoja de estilo institucional. Paleta limitada, sin efectos decorativos. */
+
+:root {
+  --azul-900: #0f2c52;
+  --azul-800: #14396b;
+  --azul-700: #1d4e89;
+  --azul-600: #2f6ba8;
+  --azul-400: #6fa3ce;
+  --azul-100: #e4edf6;
+  --azul-050: #f2f7fb;
+
+  --tinta: #1b2733;
+  --tinta-media: #4a5866;
+  --tinta-suave: #6b7883;
+  --linea: #d8dee5;
+  --linea-suave: #e8ecf1;
+  --fondo: #f6f8fa;
+  --papel: #ffffff;
+
+  --ambar-600: #a8680f;
+  --ambar-100: #fdf3e2;
+  --ambar-400: #d99b3f;
+  --rojo-600: #a32a2a;
+  --rojo-100: #fbeaea;
+  --verde-600: #1f6b4d;
+  --verde-100: #e6f2ec;
+
+  --serie-1: #1d4e89;
+  --serie-2: #2f9e8f;
+  --serie-3: #c1743a;
+  --serie-4: #7a5ea8;
+  --serie-5: #4a7d34;
+  --serie-6: #a8456a;
+
+  --radio: 4px;
+  --sombra: 0 1px 2px rgba(15, 44, 82, .06), 0 4px 12px rgba(15, 44, 82, .05);
+  --ancho: 1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+
+body {
+  margin: 0;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-weight: 600; line-height: 1.25; margin: 0; letter-spacing: -.01em; }
+
+a { color: var(--azul-700); }
+a:focus-visible, button:focus-visible, select:focus-visible {
+  outline: 2px solid var(--azul-600);
+  outline-offset: 2px;
+}
+
+.contenedor { max-width: var(--ancho); margin: 0 auto; padding: 0 24px; }
+
+/* ---------------------------------------------------------------- Cabecera */
+.cabecera {
+  background: var(--azul-900);
+  color: #fff;
+  padding: 30px 0 26px;
+  border-bottom: 3px solid var(--azul-600);
+}
+.cabecera__marca { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.cabecera__marca svg { flex: none; }
+.cabecera__entidad {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .16em;
+  color: var(--azul-400); font-weight: 600;
+}
+.cabecera h1 { font-size: 27px; color: #fff; }
+.cabecera__bajada {
+  margin: 10px 0 0; max-width: 720px; color: #c3d5e8; font-size: 14.5px;
+}
+.cabecera__datos {
+  display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 20px;
+  font-size: 12.5px; color: #a9c2da;
+}
+.cabecera__datos strong { color: #fff; font-weight: 600; }
+
+/* ---------------------------------------------------------------- Navegación */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--papel); border-bottom: 1px solid var(--linea);
+  box-shadow: 0 1px 3px rgba(15, 44, 82, .05);
+}
+.nav__lista {
+  display: flex; gap: 2px; margin: 0; padding: 0; list-style: none;
+  overflow-x: auto; scrollbar-width: thin;
+}
+.nav__lista a {
+  display: block; padding: 13px 14px; font-size: 13px; font-weight: 500;
+  color: var(--tinta-media); text-decoration: none; white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.nav__lista a:hover { color: var(--azul-700); background: var(--azul-050); }
+.nav__lista a[aria-current="true"] { color: var(--azul-800); border-bottom-color: var(--azul-600); }
+
+/* ---------------------------------------------------------------- Secciones */
+main { padding: 34px 0 60px; }
+
+.bloque { margin-bottom: 46px; scroll-margin-top: 84px; }
+.bloque__cabecera { margin-bottom: 18px; }
+.bloque__numero {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--azul-600); margin-bottom: 6px;
+}
+.bloque h2 { font-size: 21px; color: var(--azul-900); }
+.bloque__intro {
+  margin: 12px 0 0; max-width: 78ch; color: var(--tinta-media); font-size: 14.5px;
+}
+
+/* ---------------------------------------------------------------- Avisos */
+.aviso {
+  border-left: 3px solid var(--ambar-400);
+  background: var(--ambar-100);
+  padding: 14px 18px; margin: 16px 0; border-radius: 0 var(--radio) var(--radio) 0;
+  font-size: 13.5px; color: #6b4408;
+}
+.aviso--critico { border-left-color: var(--rojo-600); background: var(--rojo-100); color: #7a1f1f; }
+.aviso--neutro { border-left-color: var(--azul-600); background: var(--azul-050); color: var(--azul-900); }
+.aviso__titulo {
+  display: block; font-weight: 700; font-size: 12px; text-transform: uppercase;
+  letter-spacing: .08em; margin-bottom: 5px;
+}
+.aviso p { margin: 0; }
+.aviso p + p { margin-top: 8px; }
+
+/* ---------------------------------------------------------------- Cifras */
+.cifras {
+  display: grid; gap: 14px; margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+}
+.cifra {
+  background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio);
+  padding: 16px 18px; box-shadow: var(--sombra);
+}
+.cifra__etiqueta {
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--tinta-suave); font-weight: 600; margin-bottom: 7px;
+}
+.cifra__valor {
+  font-size: 26px; font-weight: 700; color: var(--azul-800);
+  line-height: 1.1; font-variant-numeric: tabular-nums;
+}
+.cifra__unidad { font-size: 13px; font-weight: 500; color: var(--tinta-media); margin-left: 3px; }
+.cifra__pie { font-size: 11.5px; color: var(--tinta-suave); margin-top: 7px; }
+
+/* ---------------------------------------------------------------- Gráficos */
+.rejilla { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+.rejilla--completa { grid-template-columns: 1fr; }
+
+.ficha {
+  background: var(--papel); border: 1px solid var(--linea);
+  border-radius: var(--radio); box-shadow: var(--sombra); overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.ficha__cabecera { padding: 16px 18px 12px; border-bottom: 1px solid var(--linea-suave); }
+.ficha__titulo { font-size: 15px; font-weight: 600; color: var(--azul-900); }
+.ficha__meta {
+  display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px;
+  font-size: 11.5px; color: var(--tinta-suave);
+}
+.ficha__meta span { display: inline-flex; align-items: center; gap: 5px; }
+
+.etiqueta {
+  display: inline-block; padding: 2px 8px; border-radius: 10px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+}
+.etiqueta--municipal { background: var(--verde-100); color: var(--verde-600); }
+.etiqueta--proxy { background: var(--ambar-100); color: var(--ambar-600); }
+.etiqueta--experimental { background: var(--azul-100); color: var(--azul-800); }
+.etiqueta--nodisponible { background: #eceff2; color: var(--tinta-suave); }
+
+.ficha__lienzo { width: 100%; height: 320px; padding: 6px 6px 0; }
+.ficha__lienzo--alto { height: 420px; }
+.ficha__pie {
+  padding: 10px 18px 13px; border-top: 1px solid var(--linea-suave);
+  font-size: 11.5px; color: var(--tinta-suave); margin-top: auto;
+}
+.ficha__pie strong { color: var(--tinta-media); font-weight: 600; }
+
+.hueco {
+  padding: 34px 22px; text-align: center; color: var(--tinta-suave);
+  background: repeating-linear-gradient(45deg, #fafbfc, #fafbfc 10px, #f4f6f8 10px, #f4f6f8 20px);
+  border-radius: var(--radio); font-size: 13.5px;
+}
+.hueco strong { display: block; color: var(--tinta-media); margin-bottom: 6px; font-size: 14px; }
+
+/* ---------------------------------------------------------------- Lectura técnica */
+.lectura {
+  background: var(--papel); border: 1px solid var(--linea); border-left: 3px solid var(--azul-600);
+  border-radius: 0 var(--radio) var(--radio) 0; padding: 16px 20px; margin-top: 18px;
+}
+.lectura__titulo {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--azul-600); font-weight: 700; margin-bottom: 8px;
+}
+.lectura p { margin: 0; font-size: 14px; color: var(--tinta-media); max-width: 82ch; }
+
+/* ---------------------------------------------------------------- Tablas */
+.tabla-marco { overflow-x: auto; background: var(--papel);
+  border: 1px solid var(--linea); border-radius: var(--radio); box-shadow: var(--sombra); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+thead th {
+  background: var(--azul-050); text-align: left; padding: 11px 14px; font-weight: 600;
+  color: var(--azul-900); border-bottom: 1px solid var(--linea); white-space: nowrap;
+  font-size: 12.5px;
+}
+tbody td { padding: 10px 14px; border-bottom: 1px solid var(--linea-suave); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.censurado { color: var(--tinta-suave); font-style: italic; }
+
+/* ---------------------------------------------------------------- Mapa */
+#mapa-oferta { width: 100%; height: 470px; border-radius: var(--radio); }
+.leaflet-container { font-family: inherit; font-size: 13px; }
+
+/* ---------------------------------------------------------------- Documento */
+.documento { background: var(--papel); border: 1px solid var(--linea);
+  border-radius: var(--radio); padding: 34px 40px; box-shadow: var(--sombra); }
+.documento h2 { font-size: 19px; color: var(--azul-900); margin: 32px 0 12px; }
+.documento h2:first-child { margin-top: 0; }
+.documento h3 { font-size: 15.5px; color: var(--azul-800); margin: 22px 0 8px; }
+.documento p, .documento li { font-size: 14.5px; color: var(--tinta-media); max-width: 84ch; }
+.documento p { margin: 0 0 12px; }
+.documento ul, .documento ol { margin: 0 0 14px; padding-left: 22px; }
+.documento li { margin-bottom: 6px; }
+.documento code {
+  background: var(--azul-050); padding: 1px 5px; border-radius: 3px;
+  font-family: "SFMono-Regular", Consolas, monospace; font-size: 12.5px; color: var(--azul-800);
+}
+
+/* ---------------------------------------------------------------- Pie */
+.pie {
+  background: var(--azul-900); color: #a9c2da; padding: 30px 0;
+  font-size: 12.5px; border-top: 3px solid var(--azul-600);
+}
+.pie__filas { display: flex; flex-wrap: wrap; gap: 22px 44px; justify-content: space-between; }
+.pie strong { color: #fff; font-weight: 600; }
+.pie a { color: var(--azul-400); }
+
+/* ---------------------------------------------------------------- Responsive */
+@media (max-width: 720px) {
+  .contenedor { padding: 0 16px; }
+  .cabecera h1 { font-size: 21px; }
+  .rejilla { grid-template-columns: 1fr; }
+  .ficha__lienzo { height: 280px; }
+  .documento { padding: 22px 18px; }
+}
+
+@media print {
+  .nav, .pie { display: none; }
+  .ficha, .cifra { break-inside: avoid; box-shadow: none; }
+}

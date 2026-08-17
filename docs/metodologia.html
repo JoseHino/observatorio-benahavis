@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodología · Observatorio de Benahavís</title>
+<meta name="description" content="Metodología, inventario de fuentes, limitaciones conocidas, tratamiento del secreto estadístico y licencias de reutilización del Observatorio de Benahavís.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <div class="cabecera__marca">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" rx="3" stroke="#6fa3ce" stroke-width="1.5"/>
+        <path d="M10 9h14M10 14h14M10 19h9M10 24h11" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="cabecera__entidad">Ayuntamiento de Benahavís</div>
+        <h1>Metodología del observatorio</h1>
+      </div>
+    </div>
+    <p class="cabecera__bajada">
+      Fuentes, definiciones, limitaciones conocidas, tratamiento del secreto estadístico,
+      rupturas de serie y condiciones de reutilización. Este documento forma parte del
+      entregable: sin él, las cifras del panel no son defendibles.
+    </p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Secciones">
+  <div class="contenedor">
+    <ul class="nav__lista">
+      <li><a href="index.html">Panel de indicadores</a></li>
+      <li><a href="#principios">Principios</a></li>
+      <li><a href="#huecos">Indicadores no disponibles</a></li>
+      <li><a href="#secreto">Secreto estadístico</a></li>
+      <li><a href="#rupturas">Rupturas de serie</a></li>
+      <li><a href="#divergencias">Divergencias entre fuentes</a></li>
+      <li><a href="#fuentes">Fuentes y licencias</a></li>
+      <li><a href="#validacion">Validación</a></li>
+      <li><a href="municipio-turistico.html">Municipio Turístico</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="contenedor">
+  <div class="documento">
+
+    <h2 id="principios">Principios de elaboración</h2>
+    <p>
+      El observatorio se rige por cinco reglas que condicionan todo lo que se publica y, sobre
+      todo, todo lo que se decide <em>no</em> publicar.
+    </p>
+    <ol>
+      <li>
+        <strong>No se inventa, interpola ni estima ningún dato que la fuente no publique.</strong>
+        Cuando un indicador no existe a escala municipal, la ficha lo declara como
+        <em>no disponible a nivel municipal</em>, indica la causa y nombra el indicador sustitutivo.
+      </li>
+      <li>
+        <strong>Todo indicador sustitutivo lleva su ámbito territorial real en el título del
+        gráfico.</strong> Ningún gráfico de ámbito provincial o comarcal aparece sin etiquetar
+        como tal. La etiqueta es parte del dato, no un adorno.
+      </li>
+      <li>
+        <strong>No se fusionan en un mismo gráfico series que miden cosas distintas.</strong>
+        El caso crítico es la oferta de vivienda turística, tratado más abajo.
+      </li>
+      <li>
+        <strong>Trazabilidad completa.</strong> Cada descarga cruda se archiva con marca temporal
+        antes de transformarse, de modo que cualquier cifra publicada puede rastrearse hasta el
+        fichero de origen y la fecha en que se obtuvo.
+      </li>
+      <li>
+        <strong>Los fallos se registran, no se ocultan.</strong> Si una fuente no responde, el
+        bloque conserva el dato anterior y queda marcado como desactualizado. El pipeline nunca
+        escribe datos de relleno ni falla en silencio.
+      </li>
+    </ol>
+
+    <h2 id="huecos">Indicadores no disponibles a nivel municipal</h2>
+    <p>
+      Benahavís tiene alrededor de 9.500 habitantes y queda por debajo de varios umbrales de
+      difusión estadística. Esto no es un defecto del observatorio: es una característica del
+      municipio que hay que documentar con precisión.
+    </p>
+    <div class="tabla-marco">
+      <table>
+        <thead><tr>
+          <th>Indicador</th><th>Causa</th><th>Sustituto</th><th>Ámbito del sustituto</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td>Pernoctaciones, grado de ocupación y estancia media en hoteles</td>
+            <td>La Encuesta de Ocupación Hotelera se difunde por zonas y puntos turísticos, y
+                Benahavís no constituye punto turístico. La ficha del IECA aplica además secreto
+                estadístico por disponer el municipio de menos de cinco establecimientos.</td>
+            <td>Turistas medidos por posicionamiento de telefonía móvil (municipal) y ocupación
+                hotelera provincial y de zona turística</td>
+            <td>Municipal el primero; provincia de Málaga y zona turística Costa del Sol los otros</td>
+          </tr>
+          <tr>
+            <td>Número de hoteles y plazas hoteleras según estadística agregada</td>
+            <td>El IECA devuelve «*» con la nota «Dato no significativo, al disponer el municipio
+                de menos de 5 establecimientos turísticos».</td>
+            <td>Registro de Turismo de Andalucía, que es registro nominal y no está sujeto a
+                secreto estadístico</td>
+            <td>Municipal</td>
+          </tr>
+          <tr>
+            <td>Criminalidad y tasa de delitos</td>
+            <td>El Portal Estadístico de Criminalidad del Ministerio del Interior publica dato
+                municipal solo para municipios de más de 20.000 habitantes (más de 30.000 entre
+                2017 y 2020).</td>
+            <td>Tasa de delitos provincial</td>
+            <td>Provincia de Málaga</td>
+          </tr>
+          <tr>
+            <td>Afiliación en agencias de viajes (CNAE 79)</td>
+            <td>Enmascaramiento por valores inferiores a cinco.</td>
+            <td>Ninguno: se publica como valor censurado</td>
+            <td>Municipal</td>
+          </tr>
+          <tr>
+            <td>Precio de vivienda y transacciones inmobiliarias</td>
+            <td>Varias series del Ministerio de Vivienda tienen umbral poblacional que Benahavís
+                no alcanza, y el portal rechaza peticiones automatizadas.</td>
+            <td>Pendiente de resolver</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="aviso aviso--neutro">
+      <span class="aviso__titulo">Dos hipótesis de partida que la verificación desmintió</span>
+      <p>
+        <strong>Sí existe medición municipal de demanda turística.</strong> La estadística
+        experimental del INE de posicionamiento de telefonía móvil resuelve a escala de municipio
+        de destino, y Benahavís figura en ella con serie mensual desde julio de 2019 y desglose
+        por país de origen. El bloque de demanda no es, por tanto, exclusivamente de indicadores
+        sustitutivos.
+      </p>
+      <p>
+        <strong>Sí existe estación meteorológica en el término municipal.</strong> La estación
+        <code>6069X BENAHAVÍS</code> de AEMET, a 392 metros de altitud, aporta serie mensual desde
+        2004. El bloque de clima es dato municipal observado y no un indicador de ámbito comarcal.
+      </p>
+    </div>
+
+    <h2 id="secreto">Tratamiento del secreto estadístico</h2>
+    <p>
+      El SEPE y la Seguridad Social sustituyen por <code>&lt;5</code> cualquier valor comprendido
+      entre uno y cuatro. Se trata de una <strong>censura por intervalo</strong>, no de un dato
+      ausente y menos aún de un cero.
+    </p>
+    <p>El observatorio aplica tres reglas:</p>
+    <ul>
+      <li>
+        Un <code>&lt;5</code> <strong>nunca</strong> se convierte en cero —subestimaría— ni en 2,5
+        —inventaría un dato que la fuente no publica—.
+      </li>
+      <li>
+        El valor se propaga como censurado hasta el JSON publicado, y la interfaz lo muestra como tal.
+      </li>
+      <li>
+        Al agregar, se acumulan por separado la parte observada y el número de celdas censuradas,
+        de modo que todo total afectado se publica como <strong>intervalo</strong>
+        <code>[suma observada, suma observada + 4 × celdas censuradas]</code>.
+      </li>
+    </ul>
+    <p>
+      El alcance del problema está cuantificado: de las aproximadamente 165 filas que el fichero
+      mensual de la Seguridad Social dedica a Benahavís, alrededor de <strong>75 —cerca de la
+      mitad— están enmascaradas</strong>. Cualquier desagregación sectorial fina del empleo
+      municipal arrastra, por tanto, un intervalo de incertidumbre que se muestra explícitamente
+      en lugar de disimularse con una cifra puntual.
+    </p>
+
+    <h2 id="rupturas">Rupturas de serie</h2>
+    <div class="tabla-marco">
+      <table>
+        <thead><tr><th>Serie</th><th>Fecha</th><th>Motivo</th><th>Tratamiento</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Afiliación a la Seguridad Social por rama de actividad</td>
+            <td>Enero de 2026</td>
+            <td>Cambio de clasificación de CNAE-2009 a CNAE-2025. Verificado en el propio catálogo
+                de ficheros: hasta diciembre de 2025 el título es «CNAE 2D», desde enero de 2026
+                «CNAE25 2D».</td>
+            <td>Las series <strong>no se empalman</strong>. El corte se señala en el gráfico con una
+                línea vertical y se indica la clasificación vigente en cada tramo.</td>
+          </tr>
+          <tr>
+            <td>Contratos registrados por tipo</td>
+            <td>2022</td>
+            <td>Reforma laboral: alteración sustancial de la composición entre contratos indefinidos
+                y temporales.</td>
+            <td>Se advierte en el pie del gráfico. La serie es continua, pero la comparación de
+                composición a través de esa fecha no es homogénea.</td>
+          </tr>
+          <tr>
+            <td>Demanda turística</td>
+            <td>Marzo de 2020 – junio de 2021</td>
+            <td>Restricciones de movilidad por la pandemia.</td>
+            <td>El periodo se sombrea en el gráfico. Los datos se conservan sin corregir.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="divergencias">Divergencias entre fuentes que no deben resolverse</h2>
+
+    <h3>Registro de Turismo de Andalucía frente a estadística experimental del INE</h3>
+    <p>
+      Es la divergencia más importante del observatorio y la que con más frecuencia se malinterpreta.
+    </p>
+    <ul>
+      <li>
+        El <strong>Registro de Turismo de Andalucía</strong> cuenta <strong>inscripciones
+        administrativas</strong>: viviendas que han cumplimentado el trámite de inscripción,
+        estén o no anunciadas y estén o no en explotación efectiva.
+      </li>
+      <li>
+        La <strong>estadística experimental del INE</strong> cuenta <strong>viviendas anunciadas
+        en plataformas de intermediación</strong>: las que en el momento del rastreo aparecen
+        ofertadas, estén o no inscritas.
+      </li>
+    </ul>
+    <p>
+      Las dos cifras difieren en un factor superior a dos y ninguna de las dos es «la correcta»:
+      responden a preguntas distintas. Por eso van en <strong>gráficos separados</strong> y se
+      presentan juntas únicamente en una tabla comparativa cuyo pie advierte expresamente que no
+      son alternativas de un mismo dato.
+    </p>
+
+    <h3>Atlas de Renta del INE frente a Estadística de declarantes del IRPF de la AEAT</h3>
+    <p>
+      El Atlas de Renta reparte la renta entre <strong>toda la población residente</strong>. La
+      estadística de la AEAT la calcula sobre <strong>declarantes</strong>. En un municipio con
+      elevada proporción de residentes extranjeros que no declaran en España, la brecha entre
+      ambas es estructural y no un error de ninguna de las dos fuentes. No se comparan
+      directamente ni se representan en un mismo eje.
+    </p>
+
+    <h2 id="fuentes">Fuentes y condiciones de reutilización</h2>
+    <div class="tabla-marco">
+      <table>
+        <thead><tr>
+          <th>Organismo</th><th>Operación</th><th>Periodicidad</th><th>Licencia de reutilización</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>INE</td><td>Cifras oficiales de población (Padrón), tabla 2882</td><td>Anual</td>
+              <td>Reutilización libre citando al INE como fuente</td></tr>
+          <tr><td>INE</td><td>Atlas de Distribución de Renta de los Hogares, tabla 30824</td><td>Anual</td>
+              <td>Reutilización libre citando al INE</td></tr>
+          <tr><td>INE</td><td>Viviendas turísticas (experimental), tablas 39363 y 39366</td><td>Semestral</td>
+              <td>Reutilización libre citando al INE</td></tr>
+          <tr><td>INE / SEGITTUR</td><td>Turismo receptor e interno por posicionamiento móvil, vía Dataestur</td><td>Mensual</td>
+              <td>Reutilización libre</td></tr>
+          <tr><td>Junta de Andalucía</td><td>Registro de Turismo de Andalucía (OpenRTA)</td><td>Diaria</td>
+              <td>Datos abiertos de la Junta de Andalucía</td></tr>
+          <tr><td>IECA</td><td>SIMA y BADEA (paro registrado municipal)</td><td>Anual</td>
+              <td>CC BY</td></tr>
+          <tr><td>SEPE</td><td>Paro y contratos registrados por municipios</td><td>Mensual</td>
+              <td>Reutilización libre</td></tr>
+          <tr><td>Seguridad Social</td><td>Afiliados por municipios CNAE 2D, regímenes y sexo</td><td>Mensual</td>
+              <td>Reutilización libre</td></tr>
+          <tr><td>AEMET</td><td>Valores climatológicos de la estación 6069X Benahavís</td><td>Mensual</td>
+              <td>Reutilización con reconocimiento de AEMET (Real Decreto 1495/2011)</td></tr>
+          <tr><td>Ministerio de Hacienda</td><td>Deuda viva de las entidades locales</td><td>Anual</td>
+              <td>Reutilización libre</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px">
+      El inventario completo, con el endpoint verificado de cada fuente, la prueba de resolución
+      municipal, las limitaciones conocidas y las trampas técnicas documentadas, está en
+      <a href="inventario-fuentes.md">inventario-fuentes.md</a>.
+    </p>
+
+    <h3>Fuentes que requieren solicitud formal</h3>
+    <p>
+      No se integran en el pipeline automático. Se relacionan con su organismo destinatario para
+      que el Ayuntamiento pueda cursar la petición.
+    </p>
+    <div class="tabla-marco">
+      <table>
+        <thead><tr><th>Fuente</th><th>Indicador</th><th>Organismo</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td>Acosol S. A.</td><td>Consumo de agua mensual por municipio</td>
+              <td>Mancomunidad de Municipios de la Costa del Sol Occidental</td><td>Alta</td></tr>
+          <tr><td>Ayuntamiento de Benahavís</td><td>Conteo de visitantes en recursos turísticos</td>
+              <td>Ayuntamiento de Benahavís</td><td>Alta</td></tr>
+          <tr><td>Consorcio Provincial de Residuos</td><td>Toneladas recogidas por municipio</td>
+              <td>Diputación de Málaga</td><td>Media</td></tr>
+          <tr><td>Turismo y Planificación Costa del Sol</td><td>Segmentación de mercados y perfil del visitante</td>
+              <td>Diputación de Málaga</td><td>Media</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="validacion">Validación automática</h2>
+    <p>
+      Antes de publicarse, cada serie pasa por comprobaciones de rango plausible, continuidad
+      temporal, periodos duplicados y saltos anómalos entre puntos consecutivos. Las incidencias
+      no detienen el pipeline: se registran y se publican, de modo que el estado real de los datos
+      sea visible en lugar de quedar oculto.
+    </p>
+    <div id="informe-validacion"></div>
+
+    <h2>Reproducibilidad</h2>
+    <p>
+      El pipeline es Python 3.11 o superior, sin dependencias pesadas, y se ejecuta con
+      <code>python run_pipeline.py</code>. Las credenciales se leen de un fichero <code>.env</code>
+      local que nunca se sube al repositorio, y en la ejecución automática de GitHub Actions
+      proceden de los secretos del repositorio. El sitio es HTML, CSS y JavaScript sin paso de
+      compilación, servido directamente por GitHub Pages.
+    </p>
+
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__filas">
+    <div>
+      <strong>Observatorio Turístico y Socioeconómico de Benahavís</strong><br>
+      Elaborado por <strong>Consultoría AMMA</strong> para el Ayuntamiento de Benahavís.
+    </div>
+    <div>
+      Versión <strong id="pie-version">—</strong> · Generado el <strong id="pie-generado">—</strong><br>
+      <a href="index.html">Panel de indicadores</a> ·
+      <a href="municipio-turistico.html">Municipio Turístico</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/metodologia.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Municipio Turístico de Andalucía · Observatorio de Benahavís</title>
+<meta name="description" content="Alineación de los indicadores del Observatorio de Benahavís con los requisitos del Decreto 72/2017 de Municipio Turístico de Andalucía.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <div class="cabecera__marca">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" rx="3" stroke="#6fa3ce" stroke-width="1.5"/>
+        <path d="M11 25V12l6-4 6 4v13" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M8 25h18" stroke="#6fa3ce" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="cabecera__entidad">Ayuntamiento de Benahavís</div>
+        <h1>Municipio Turístico de Andalucía</h1>
+      </div>
+    </div>
+    <p class="cabecera__bajada">
+      Organización de los indicadores del observatorio según los requisitos del
+      Decreto 72/2017, de 13 de junio, por el que se regula la declaración de Municipio
+      Turístico de Andalucía, y de la Ley 13/2011 del Turismo de Andalucía.
+    </p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Secciones">
+  <div class="contenedor">
+    <ul class="nav__lista">
+      <li><a href="index.html">Panel de indicadores</a></li>
+      <li><a href="#poblacion">Población turística asistida</a></li>
+      <li><a href="#oferta">Oferta turística</a></li>
+      <li><a href="#conteo">Módulo de conteo</a></li>
+      <li><a href="#cobertura">Estado de cobertura</a></li>
+      <li><a href="metodologia.html">Metodología</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="contenedor">
+  <div class="documento">
+
+    <h2 id="marco">Marco normativo y punto de partida</h2>
+    <p>
+      La declaración de Municipio Turístico de Andalucía exige acreditar, entre otros requisitos,
+      la existencia de una <strong>población turística asistida</strong> significativa en relación
+      con la población residente. La Ley 13/2011 del Turismo de Andalucía define esa población
+      como el conjunto de personas que, <em>sin ser vecinas del municipio, permanecen temporalmente
+      en él por visita turística o por pernoctación en alojamiento turístico</em>.
+    </p>
+    <p>
+      El Decreto 72/2017 admite acreditarla por dos vías alternativas: la de <strong>pernoctaciones</strong>
+      y la de <strong>visitas</strong>. La elección entre ambas no es indiferente en el caso de
+      Benahavís, y conviene razonarla con precisión antes de instruir el expediente.
+    </p>
+
+    <div class="aviso aviso--critico">
+      <span class="aviso__titulo">Determinación operativa</span>
+      <p>
+        <strong>La vía de pernoctaciones no es transitable con estadística pública.</strong> La
+        Encuesta de Ocupación Hotelera del INE se difunde por zonas y puntos turísticos, y
+        Benahavís no constituye punto turístico propio. La ficha municipal del IECA devuelve el
+        valor «*» con la nota literal <em>«Dato no significativo, al disponer el municipio de menos
+        de 5 establecimientos turísticos»</em>. No existe, por tanto, certificación estadística
+        oficial de pernoctaciones referida al municipio.
+      </p>
+      <p>
+        <strong>La vía de visitas sí es transitable</strong>, y es la que este observatorio prepara:
+        se acredita mediante certificado del titular o gestor del recurso turístico más visitado,
+        con un sistema de conteo que deje constancia fehaciente.
+      </p>
+    </div>
+
+    <h2 id="poblacion">Población turística asistida</h2>
+
+    <h3>Vía de pernoctaciones</h3>
+    <div class="hueco">
+      <strong>Pernoctaciones en alojamiento turístico · NO ACREDITABLE CON DATO PÚBLICO</strong>
+      Causa: umbral de cinco establecimientos y difusión de la EOH por zonas y puntos turísticos.
+      Requeriría certificación directa de los establecimientos inscritos en el Registro de Turismo
+      de Andalucía, es decir, dato de terceros y no estadística oficial.
+    </div>
+
+    <h3>Vía de visitas</h3>
+    <p>
+      Es la vía viable. Requiere que el Ayuntamiento acredite el número de visitantes de los
+      recursos turísticos del municipio mediante un sistema de conteo verificable. El observatorio
+      incorpora un <a href="#conteo">módulo de ingesta</a> preparado para recibir esos datos en
+      cuanto el Ayuntamiento los genere.
+    </p>
+
+    <h3>Indicadores de apoyo ya disponibles</h3>
+    <p>
+      Sin sustituir a la acreditación formal, el observatorio aporta tres indicadores municipales
+      que documentan la magnitud del fenómeno turístico y que pueden acompañar al expediente como
+      evidencia de contexto:
+    </p>
+    <ul>
+      <li>
+        <strong>Turistas extranjeros por mes y país de origen</strong>, procedentes de la
+        estadística experimental del INE de posicionamiento de telefonía móvil. Es dato municipal,
+        con serie desde julio de 2019. Debe presentarse etiquetado como experimental.
+      </li>
+      <li>
+        <strong>Turistas nacionales por municipio de origen</strong>, de la misma operación.
+      </li>
+      <li>
+        <strong>Plazas de alojamiento turístico inscritas</strong> en el Registro de Turismo de
+        Andalucía, que es registro administrativo nominal y por tanto no sujeto a secreto
+        estadístico.
+      </li>
+    </ul>
+    <div id="apoyo-cifras" class="cifras"></div>
+
+    <h2 id="oferta">Oferta turística</h2>
+    <p>
+      El requisito de oferta turística se acredita con el Registro de Turismo de Andalucía, que
+      es la fuente oficial de la propia Consejería competente. El observatorio la incorpora en su
+      integridad, con desglose por tipología, categoría y plazas, y georreferenciada.
+    </p>
+    <div id="oferta-tabla"></div>
+
+    <h2 id="conteo">Módulo de conteo de visitantes</h2>
+    <p>
+      El módulo está implementado y a la espera de datos. El Ayuntamiento deposita ficheros CSV en
+      el directorio <code>data/visitantes/</code> del repositorio y el pipeline los incorpora en su
+      siguiente ejecución, sin intervención técnica adicional. La validación rechaza y registra
+      las filas con fecha mal formada o con recuento no numérico, en lugar de aceptarlas en
+      silencio.
+    </p>
+
+    <h3>Esquema del fichero de conteo</h3>
+    <div class="tabla-marco">
+      <table>
+        <thead><tr><th>Campo</th><th>Formato</th><th>Obligatorio</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td><code>fecha</code></td><td>AAAA-MM-DD</td><td>Sí</td>
+              <td>Día al que se refiere el recuento.</td></tr>
+          <tr><td><code>recurso</code></td><td>Texto</td><td>Sí</td>
+              <td>Denominación del recurso turístico contabilizado.</td></tr>
+          <tr><td><code>metodo_conteo</code></td><td>Valor de lista</td><td>Sí</td>
+              <td><code>torno</code>, <code>contador_automatico</code>, <code>registro_manual</code>,
+                  <code>venta_entradas</code>, <code>reserva_previa</code> o <code>aforo_estimado</code>.</td></tr>
+          <tr><td><code>visitantes</code></td><td>Número entero</td><td>Sí</td>
+              <td>Personas contabilizadas ese día en ese recurso.</td></tr>
+          <tr><td><code>responsable</code></td><td>Texto</td><td>Sí</td>
+              <td>Titular o gestor que certifica el dato. Es el sujeto del certificado que exige el Decreto.</td></tr>
+          <tr><td><code>observaciones</code></td><td>Texto</td><td>No</td>
+              <td>Incidencias, cierres, cambios en el sistema de conteo.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px">
+      Plantilla descargable con un ejemplo relleno:
+      <a href="plantilla-conteo-visitantes.csv">plantilla-conteo-visitantes.csv</a>.
+    </p>
+
+    <div class="aviso">
+      <span class="aviso__titulo">Advertencia sobre el método de conteo</span>
+      <p>
+        El Decreto exige un sistema que deje <strong>constancia fehaciente</strong>. Los métodos
+        <code>torno</code>, <code>contador_automatico</code>, <code>venta_entradas</code> y
+        <code>reserva_previa</code> generan registro verificable. El método
+        <code>aforo_estimado</code> <strong>no lo genera</strong>: se admite en el fichero para no
+        perder la información, pero no debe presentarse como acreditación ante la Consejería.
+      </p>
+    </div>
+
+    <h3>Recursos candidatos en Benahavís</h3>
+    <p>
+      A determinar por el Ayuntamiento. Los que reúnen mejores condiciones para instalar conteo
+      verificable son el <strong>Cañón de las Angosturas</strong>, la <strong>red municipal de
+      senderos</strong>, la <strong>oficina de turismo</strong> y los <strong>equipamientos
+      municipales</strong> con control de acceso. El recurso que finalmente se elija debe ser
+      <em>el más visitado</em>, según exige la norma.
+    </p>
+
+    <div id="estado-conteo"></div>
+
+    <h2 id="cobertura">Estado de cobertura de los requisitos</h2>
+    <p>
+      La tabla distingue tres situaciones: lo que el observatorio ya cubre con dato abierto
+      verificable, lo que exige dato propio del Ayuntamiento y lo que requiere certificación de
+      terceros o instrucción documental.
+    </p>
+    <div class="tabla-marco">
+      <table>
+        <thead><tr>
+          <th>Requisito</th><th>Naturaleza</th><th>Cobertura actual</th><th>Qué falta</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Población turística asistida · vía pernoctaciones</strong></td>
+            <td>Estadístico</td>
+            <td>No acreditable con dato público (secreto estadístico)</td>
+            <td>Certificación directa de los establecimientos inscritos, si se optase por esta vía</td>
+          </tr>
+          <tr>
+            <td><strong>Población turística asistida · vía visitas</strong></td>
+            <td>Dato propio municipal + certificación de terceros</td>
+            <td>Módulo de ingesta implementado y validado, sin datos</td>
+            <td>Instalación del sistema de conteo y certificado del titular o gestor del recurso</td>
+          </tr>
+          <tr>
+            <td><strong>Oferta turística</strong></td>
+            <td>Estadístico / registral</td>
+            <td>Cubierto con el Registro de Turismo de Andalucía</td>
+            <td>Nada</td>
+          </tr>
+          <tr>
+            <td><strong>Servicios y equipamientos municipales</strong></td>
+            <td>Documental</td>
+            <td>No cubierto por el observatorio</td>
+            <td>Inventario municipal de servicios prestados a la población turística</td>
+          </tr>
+          <tr>
+            <td><strong>Plan Municipal de Calidad Turística</strong></td>
+            <td>Documental</td>
+            <td>Requisito documental, no estadístico</td>
+            <td>Redacción y aprobación del plan por el Ayuntamiento</td>
+          </tr>
+          <tr>
+            <td><strong>Memoria justificativa y acuerdo plenario</strong></td>
+            <td>Documental</td>
+            <td>No cubierto por el observatorio</td>
+            <td>Instrucción del expediente administrativo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="aviso aviso--neutro">
+      <span class="aviso__titulo">Recomendación técnica</span>
+      <p>
+        Se sugiere solicitar formalmente a <strong>Acosol S. A.</strong> la serie mensual de
+        consumo de agua del municipio. Es el mejor proxy disponible de población efectivamente
+        presente —recoge a residentes, turistas y propietarios de segunda residencia por igual— y
+        su estacionalidad constituye una evidencia sólida del volumen de población turística
+        asistida, complementaria al conteo de visitas. No existe portal de datos abiertos con esa
+        serie, por lo que requiere petición al organismo.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__filas">
+    <div>
+      <strong>Observatorio Turístico y Socioeconómico de Benahavís</strong><br>
+      Elaborado por <strong>Consultoría AMMA</strong> para el Ayuntamiento de Benahavís.
+    </div>
+    <div>
+      Versión <strong id="pie-version">—</strong> · Generado el <strong id="pie-generado">—</strong><br>
+      <a href="index.html">Panel de indicadores</a> · <a href="metodologia.html">Metodología</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/municipio-turistico.js"></script>
+</body>
+</html>
