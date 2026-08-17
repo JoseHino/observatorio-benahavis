@@ -1,7 +1,32 @@
 {
- "generado": "2026-08-17T15:21:26Z",
- "series_revisadas": 2,
+ "generado": "2026-08-17T15:43:24Z",
+ "series_revisadas": 17,
+ "series": [
+  "clima.precipitacion_anual",
+  "clima.temperatura_anual",
+  "clima.temperatura_mensual",
+  "demanda.turistas_extranjeros",
+  "demanda.turistas_nacionales",
+  "hacienda.deuda_viva",
+  "ine.viviendas_turisticas",
+  "padron.total",
+  "renta.renta_bruta_hogar",
+  "renta.renta_bruta_persona",
+  "renta.renta_neta_hogar",
+  "renta.renta_neta_persona",
+  "renta.renta_uc_media",
+  "renta.renta_uc_mediana",
+  "rta.acumulado_altas",
+  "sepe.contratos",
+  "sepe.paro"
+ ],
  "incidencias": [
+  {
+   "serie": "rta.acumulado_altas",
+   "tipo": "salto_anomalo",
+   "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
+   "gravedad": "aviso"
+  },
   {
    "serie": "demanda.turistas_extranjeros",
    "tipo": "salto_anomalo",
@@ -13,8 +38,14 @@
    "tipo": "salto_anomalo",
    "detalle": "2020-06 = 742 → 2020-07 = 3658 (×4.9)",
    "gravedad": "aviso"
+  },
+  {
+   "serie": "clima.temperatura_mensual",
+   "tipo": "meses_ausentes",
+   "detalle": "2 meses sin dato: 2020-11, 2020-12",
+   "gravedad": "aviso"
   }
  ],
  "errores": 0,
- "avisos": 2
+ "avisos": 4
 }

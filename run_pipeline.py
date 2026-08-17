@@ -251,8 +251,19 @@ BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
 }
 
 
-def escribir_meta() -> None:
-    """Publica el estado del pipeline y el informe de validación."""
+def escribir_meta(parcial: bool) -> None:
+    """Publica el estado del pipeline y el informe de validación.
+
+    En una ejecución parcial (``--bloques``) se conserva el estado de los bloques
+    que no se han tocado: de lo contrario la interfaz mostraría como inexistentes
+    unos datos que sí están publicados, y el informe de validación reflejaría solo
+    las series de la última ejecución.
+    """
+    if parcial:
+        for clave, previo in (leer_previo("meta") or {}).get("bloques", {}).items():
+            ESTADO.setdefault(clave, previo)
+        INFORME.heredar(leer_previo("validacion") or {})
+
     escribir("meta", {
         "municipio": MUNICIPIO,
         "codigo_ine": COD_INE,
@@ -295,7 +306,7 @@ def main(argv: list[str] | None = None) -> int:
         nombre, clave, funcion = BLOQUES[num]
         _bloque(nombre, clave, funcion)
 
-    escribir_meta()
+    escribir_meta(parcial=bool(args.bloques))
 
     fallidos = [k for k, v in ESTADO.items() if not v["actualizado"]]
     log.info("")

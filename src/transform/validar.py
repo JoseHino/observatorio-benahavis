@@ -35,16 +35,38 @@ class Informe:
     """Resultado acumulado de la validación."""
 
     incidencias: list[Incidencia] = field(default_factory=list)
-    series_revisadas: int = 0
+    series: set[str] = field(default_factory=set)
+
+    @property
+    def series_revisadas(self) -> int:
+        return len(self.series)
 
     def añadir(self, inc: Incidencia) -> None:
         self.incidencias.append(inc)
         registrar = log.error if inc.gravedad == "error" else log.warning
         registrar("validación · %s · %s: %s", inc.serie, inc.tipo, inc.detalle)
 
+    def heredar(self, anterior: dict[str, Any]) -> None:
+        """Incorpora el resultado de una ejecución previa para las series no revisadas ahora.
+
+        Permite que una ejecución parcial (``--bloques``) publique el estado completo del
+        observatorio, en lugar de dejar como no validadas las series que no ha tocado. Las
+        series revisadas en esta ejecución mandan siempre: su resultado anterior se descarta.
+        """
+        revisadas_ahora = set(self.series)
+        for nombre in anterior.get("series", []):
+            self.series.add(nombre)
+        for i in anterior.get("incidencias", []):
+            if i.get("serie") in revisadas_ahora:
+                continue
+            self.incidencias.append(Incidencia(
+                serie=i.get("serie", ""), tipo=i.get("tipo", ""),
+                detalle=i.get("detalle", ""), gravedad=i.get("gravedad", "aviso")))
+
     def a_dict(self) -> dict[str, Any]:
         return {
             "series_revisadas": self.series_revisadas,
+            "series": sorted(self.series),
             "incidencias": [i.a_dict() for i in self.incidencias],
             "errores": sum(1 for i in self.incidencias if i.gravedad == "error"),
             "avisos": sum(1 for i in self.incidencias if i.gravedad == "aviso"),
@@ -81,7 +103,7 @@ def serie_temporal(
             consecutivos se considera anómalo (3.0 = triplicarse o caer a un tercio).
         mensual: si es ``True``, comprueba que no falten meses intermedios.
     """
-    informe.series_revisadas += 1
+    informe.series.add(nombre)
 
     if not puntos:
         informe.añadir(Incidencia(nombre, "serie_vacia",
