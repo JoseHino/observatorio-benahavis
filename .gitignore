@@ -1,0 +1,22 @@
+# Credenciales — nunca al repositorio
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Descargas crudas: se regeneran con el pipeline y pesan decenas de MB
+data/raw/*
+!data/raw/.gitkeep
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporales
+*.log
+*.tmp
