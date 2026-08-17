@@ -74,11 +74,17 @@ async function iniciar() {
           </tr>
         </tbody>
       </table>`;
+    const sinPlazas = tipos.filter(([, v]) => !v.plazas).map(([k]) => k);
     const pie = document.createElement('p');
     pie.style.cssText = 'font-size:12px;color:#6b7883;margin:9px 0 0';
     pie.innerHTML = '<strong>Fuente:</strong> Junta de Andalucía, Registro de Turismo de Andalucía '
-      + '(OpenRTA). Las tipologías sin plazas corresponden a servicios turísticos que no son '
-      + 'alojamiento: agencias de viajes, guías, restauración, turismo activo y oficinas de información.';
+      + '(OpenRTA). '
+      + (sinPlazas.length
+        ? `Las tipologías sin plazas (${sinPlazas.join(', ')}) corresponden a servicios turísticos `
+          + 'que no son alojamiento.'
+        : 'Todas las inscripciones del municipio corresponden a tipologías de alojamiento: el RTA no '
+          + 'registra en Benahavís agencias de viajes, guías, restauración turística, turismo activo '
+          + 'ni oficinas de información.');
     document.getElementById('oferta-tabla').append(marco, pie);
   }
 
