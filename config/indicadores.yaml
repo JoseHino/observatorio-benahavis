@@ -1,0 +1,548 @@
+# Catálogo de indicadores del Observatorio Turístico y Socioeconómico de Benahavís
+#
+# Campos obligatorios en cada entrada:
+#   id, nombre, bloque, fuente, url_fuente, ambito_territorial, es_proxy,
+#   granularidad_temporal, unidad, definicion, limitaciones, estado
+#
+# ambito_territorial : municipal | comarcal | provincial | zona_turistica | estacion
+# estado             : disponible | no_disponible_municipal | pendiente
+#
+# Norma de uso: ningún gráfico del observatorio puede publicar un indicador que no
+# figure aquí, y ningún indicador con ambito_territorial distinto de "municipal"
+# puede aparecer sin su ámbito real escrito en el título del gráfico.
+
+# ─────────────────────────────────────────────── Bloque 1 · Demografía y territorio
+- id: IND-POB-001
+  nombre: Población empadronada
+  bloque: Demografía y territorio
+  fuente: INE — Cifras oficiales de población de los municipios españoles (Padrón)
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/2882
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: personas
+  definicion: >
+    Número de personas inscritas en el Padrón Municipal de Habitantes a 1 de enero,
+    según la revisión anual declarada oficial por el Gobierno.
+  limitaciones: >
+    No recoge población estacional, residentes no empadronados ni propietarios de
+    segunda residencia. En un municipio con alta presencia de residentes extranjeros
+    no empadronados, la población real presente supera a la empadronada.
+  estado: disponible
+
+- id: IND-POB-002
+  nombre: Población empadronada por sexo
+  bloque: Demografía y territorio
+  fuente: INE — Padrón municipal
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/2882
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: personas
+  definicion: Desglose por sexo de la población empadronada a 1 de enero.
+  limitaciones: Las mismas que IND-POB-001.
+  estado: disponible
+
+- id: IND-REN-001
+  nombre: Renta neta media por persona
+  bloque: Demografía y territorio
+  fuente: INE — Atlas de Distribución de Renta de los Hogares
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: euros
+  definicion: >
+    Renta neta media anual por habitante, calculada sobre el conjunto de la población
+    residente a partir de fuentes tributarias y del Padrón.
+  limitaciones: >
+    No es comparable con la Estadística de declarantes del IRPF de la AEAT, que se
+    calcula sobre declarantes y no sobre población. En Benahavís la divergencia entre
+    ambas es estructural por el peso de residentes no declarantes en España.
+    Se publica con dos años de retraso.
+  estado: disponible
+
+- id: IND-REN-002
+  nombre: Renta neta media por hogar
+  bloque: Demografía y territorio
+  fuente: INE — Atlas de Distribución de Renta de los Hogares
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: euros
+  definicion: Renta neta media anual del conjunto de los hogares del municipio.
+  limitaciones: Las mismas que IND-REN-001.
+  estado: disponible
+
+- id: IND-REN-003
+  nombre: Renta bruta media por persona y por hogar
+  bloque: Demografía y territorio
+  fuente: INE — Atlas de Distribución de Renta de los Hogares
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: euros
+  definicion: Renta antes de deducciones, por habitante y por hogar.
+  limitaciones: Las mismas que IND-REN-001.
+  estado: disponible
+
+- id: IND-REN-004
+  nombre: Media y mediana de la renta por unidad de consumo
+  bloque: Demografía y territorio
+  fuente: INE — Atlas de Distribución de Renta de los Hogares
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: euros
+  definicion: >
+    Renta equivalente, que corrige el tamaño y la composición del hogar mediante la
+    escala de la OCDE modificada. La mediana es menos sensible que la media a los
+    valores extremos, relevante en un municipio con rentas muy dispares.
+  limitaciones: Las mismas que IND-REN-001.
+  estado: disponible
+
+- id: IND-REN-005
+  nombre: Índice de Gini y distribución P80/P20
+  bloque: Demografía y territorio
+  fuente: INE — Atlas de Distribución de Renta de los Hogares
+  url_fuente: https://www.ine.es/dynt3/inebase/index.htm?padre=7132
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: índice
+  definicion: Medidas de desigualdad en la distribución de la renta del municipio.
+  limitaciones: >
+    Publicado en una tabla distinta del Atlas, aún no integrada en el pipeline.
+  estado: pendiente
+
+# ─────────────────────────────────────────────── Bloque 2 · Oferta turística
+- id: IND-OFE-001
+  nombre: Inscripciones en el Registro de Turismo de Andalucía
+  bloque: Oferta turística
+  fuente: Junta de Andalucía — OpenRTA, Registro de Turismo de Andalucía
+  url_fuente: https://datos.juntadeandalucia.es/api/v0/openrta/search
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: continua
+  unidad: establecimientos y servicios
+  definicion: >
+    Número de establecimientos y servicios turísticos inscritos en el RTA con
+    domicilio en Benahavís, por tipología: establecimientos hoteleros, viviendas de
+    uso turístico, viviendas turísticas de alojamiento rural, restauración, turismo
+    activo, agencias de viajes y guías.
+  limitaciones: >
+    Es un registro administrativo, no un censo de actividad: recoge las inscripciones
+    vivas, que pueden no coincidir con los establecimientos efectivamente en
+    funcionamiento. No es comparable con la estadística experimental de viviendas
+    turísticas del INE, que mide oferta anunciada en plataformas.
+  estado: disponible
+
+- id: IND-OFE-002
+  nombre: Plazas de alojamiento turístico registradas
+  bloque: Oferta turística
+  fuente: Junta de Andalucía — OpenRTA
+  url_fuente: https://datos.juntadeandalucia.es/api/v0/openrta/search
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: continua
+  unidad: plazas
+  definicion: >
+    Suma de las plazas declaradas por los alojamientos inscritos en el RTA
+    (campo tot_gen_places), por tipología.
+  limitaciones: Las mismas que IND-OFE-001.
+  estado: disponible
+
+- id: IND-OFE-003
+  nombre: Establecimientos hoteleros y plazas hoteleras (estadística agregada)
+  bloque: Oferta turística
+  fuente: IECA — Sistema de Información Multiterritorial de Andalucía (SIMA)
+  url_fuente: https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: establecimientos y plazas
+  definicion: Número de hoteles y de plazas hoteleras según la ficha municipal del IECA.
+  limitaciones: >
+    NO PUBLICADO. La ficha devuelve el valor «*» con la nota «Dato no significativo,
+    al disponer el municipio de menos de 5 establecimientos turísticos». El dato sí es
+    conocible por la vía registral (IND-OFE-001 e IND-OFE-002), que es de naturaleza
+    nominal y no está sujeta a secreto estadístico.
+  estado: no_disponible_municipal
+
+- id: IND-OFE-004
+  nombre: Viviendas turísticas anunciadas en plataformas
+  bloque: Oferta turística
+  fuente: INE — Viviendas turísticas en España (estadística experimental)
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/39363
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: semestral
+  unidad: viviendas y plazas
+  definicion: >
+    Número de viviendas de uso turístico anunciadas en plataformas de intermediación
+    y sus plazas, estimado por el INE a partir del rastreo de esas plataformas.
+  limitaciones: >
+    Estadística experimental. Mide oferta ANUNCIADA, no oferta inscrita: no es
+    comparable ni sumable con el Registro de Turismo de Andalucía. Una misma vivienda
+    anunciada en varias plataformas se depura, pero una vivienda inscrita y no
+    anunciada no aparece.
+  estado: disponible
+
+- id: IND-OFE-005
+  nombre: Peso de las viviendas turísticas sobre el parque residencial
+  bloque: Oferta turística
+  fuente: INE — Viviendas turísticas en España (estadística experimental)
+  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/39366
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: semestral
+  unidad: porcentaje
+  definicion: >
+    Porcentaje que representan las viviendas turísticas anunciadas sobre el total de
+    viviendas censadas del municipio.
+  limitaciones: Las mismas que IND-OFE-004.
+  estado: disponible
+
+# ─────────────────────────────────────────────── Bloque 3 · Demanda turística
+- id: IND-DEM-001
+  nombre: Turistas extranjeros con destino Benahavís
+  bloque: Demanda y presión turística
+  fuente: INE — Medición del turismo receptor a partir de la posición de los teléfonos móviles (vía Dataestur, SEGITTUR)
+  url_fuente: https://www.dataestur.es/API-SEGITTUR-v2/TURISMO_RECEPTOR_MUN_PAIS_DL
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: turistas
+  definicion: >
+    Número mensual estimado de turistas residentes en el extranjero cuyo destino
+    principal es el municipio, obtenido del posicionamiento de terminales de
+    telefonía móvil. Disponible con desglose por país de origen.
+  limitaciones: >
+    ESTADÍSTICA EXPERIMENTAL. No mide pernoctaciones en alojamiento reglado ni procede
+    de la Encuesta de Ocupación Hotelera; no es comparable con ninguna de las dos.
+    Su definición de turista y sus márgenes de error son propios de la metodología de
+    posicionamiento móvil. Serie disponible desde julio de 2019.
+  estado: disponible
+
+- id: IND-DEM-002
+  nombre: Turistas nacionales con destino Benahavís, por municipio de origen
+  bloque: Demanda y presión turística
+  fuente: INE — Medición del turismo interno a partir de la posición de los teléfonos móviles (vía Dataestur)
+  url_fuente: https://www.dataestur.es/API-SEGITTUR-v2/TURISMO_INTERNO_MUN_MUN_DL
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: turistas
+  definicion: >
+    Número mensual estimado de turistas residentes en España con destino Benahavís,
+    con identificación del municipio de origen.
+  limitaciones: Las mismas que IND-DEM-001.
+  estado: disponible
+
+- id: IND-DEM-003
+  nombre: Estacionalidad de la demanda turística
+  bloque: Demanda y presión turística
+  fuente: INE — Posicionamiento de telefonía móvil (vía Dataestur)
+  url_fuente: https://www.dataestur.es/API-SEGITTUR-v2/TURISMO_RECEPTOR_MUN_PAIS_DL
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: razón
+  definicion: >
+    Cociente entre el mes de máxima y el de mínima afluencia dentro de un mismo año.
+    Cuantifica la concentración estacional de la demanda.
+  limitaciones: Las mismas que IND-DEM-001.
+  estado: disponible
+
+- id: IND-DEM-004
+  nombre: Pernoctaciones, grado de ocupación y estancia media en hoteles
+  bloque: Demanda y presión turística
+  fuente: INE — Encuesta de Ocupación Hotelera
+  url_fuente: https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177015
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: pernoctaciones, porcentaje, días
+  definicion: Indicadores clásicos de demanda hotelera.
+  limitaciones: >
+    NO PUBLICADO A NIVEL MUNICIPAL. La EOH se difunde por zonas y puntos turísticos, y
+    Benahavís no constituye punto turístico propio. Además, la ficha del IECA aplica
+    secreto estadístico por disponer el municipio de menos de 5 establecimientos.
+    Se sustituye por los indicadores IND-DEM-005 e IND-DEM-006, de ámbito supramunicipal.
+  estado: no_disponible_municipal
+
+- id: IND-DEM-005
+  nombre: Ocupación hotelera en la provincia de Málaga
+  bloque: Demanda y presión turística
+  fuente: Diputación de Málaga — Encuesta de Ocupación Hotelera
+  url_fuente: https://opendata.malaga.es/dataset/ocupacionhotelera
+  ambito_territorial: provincial
+  es_proxy: true
+  granularidad_temporal: mensual
+  unidad: viajeros, pernoctaciones, porcentaje
+  definicion: >
+    Viajeros, pernoctaciones, estancia media y grado de ocupación de los
+    establecimientos hoteleros de la provincia de Málaga.
+  limitaciones: >
+    INDICADOR PROXY DE ÁMBITO PROVINCIAL. No describe a Benahavís: sirve únicamente
+    para situar la evolución del municipio en su contexto. Todo gráfico que lo use
+    debe indicar «Provincia de Málaga» en el título.
+  estado: disponible
+
+- id: IND-DEM-006
+  nombre: Ocupación hotelera en la zona turística Costa del Sol
+  bloque: Demanda y presión turística
+  fuente: INE / SEGITTUR — Dataestur, EOH por zona turística
+  url_fuente: https://www.dataestur.es/API-SEGITTUR-v2/EOH_ZONA_TUR_DL
+  ambito_territorial: zona_turistica
+  es_proxy: true
+  granularidad_temporal: mensual
+  unidad: viajeros, pernoctaciones, porcentaje
+  definicion: Ocupación hotelera agregada de la zona turística Costa del Sol.
+  limitaciones: >
+    INDICADOR PROXY DE ÁMBITO COMARCAL. Todo gráfico que lo use debe indicar
+    «Zona turística Costa del Sol — referencia comarcal, no municipal» en el título.
+  estado: pendiente
+
+- id: IND-DEM-007
+  nombre: Consumo de agua por municipio
+  bloque: Demanda y presión turística
+  fuente: Acosol S. A. — Mancomunidad de Municipios de la Costa del Sol Occidental
+  url_fuente: https://www.acosol.es/
+  ambito_territorial: municipal
+  es_proxy: true
+  granularidad_temporal: mensual
+  unidad: metros cúbicos
+  definicion: >
+    Volumen mensual de agua suministrada al municipio. Es el mejor proxy disponible de
+    presión turística real y de estacionalidad efectiva, al recoger la población
+    presente y no solo la empadronada.
+  limitaciones: >
+    REQUIERE SOLICITUD FORMAL. Acosol no dispone de portal de datos abiertos con esta
+    serie. Prioridad alta para el expediente de Municipio Turístico.
+  estado: pendiente
+
+# ─────────────────────────────────────────────── Bloque 4 · Mercado de trabajo
+- id: IND-TRA-001
+  nombre: Paro registrado
+  bloque: Mercado de trabajo
+  fuente: SEPE — Paro registrado por municipios
+  url_fuente: https://sede.sepe.gob.es/es/portaltrabaja/resources/sede/datos_abiertos/datos/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: personas
+  definicion: >
+    Demandantes de empleo inscritos en las oficinas del Servicio Público de Empleo el
+    último día del mes que cumplen los requisitos de paro registrado, con desglose por
+    sexo, tramo de edad y sector de actividad.
+  limitaciones: >
+    El paro registrado no equivale al desempleo estimado por la Encuesta de Población
+    Activa. El CSV anual se refunde con aproximadamente un mes de retraso.
+  estado: disponible
+
+- id: IND-TRA-002
+  nombre: Contratos registrados
+  bloque: Mercado de trabajo
+  fuente: SEPE — Contratos registrados por municipios
+  url_fuente: https://sede.sepe.gob.es/es/portaltrabaja/resources/sede/datos_abiertos/datos/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: contratos
+  definicion: >
+    Contratos comunicados en el mes en el municipio, distinguiendo indefinidos y
+    temporales y desglosados por sector de actividad.
+  limitaciones: >
+    Cuenta contratos, no personas: una misma persona puede firmar varios en un mes.
+    La reforma laboral de 2022 alteró la composición entre indefinidos y temporales,
+    lo que condiciona la comparación con años anteriores.
+  estado: disponible
+
+- id: IND-TRA-003
+  nombre: Afiliación a la Seguridad Social por rama de actividad
+  bloque: Mercado de trabajo
+  fuente: Seguridad Social — Afiliados por municipios CNAE 2D, regímenes y sexo
+  url_fuente: https://www.seg-social.es/descargas/STAT/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: afiliados
+  definicion: >
+    Trabajadores afiliados en alta laboral con domicilio de la cuenta de cotización en
+    el municipio, desglosados por rama de actividad a dos dígitos de la CNAE, régimen
+    y sexo.
+  limitaciones: >
+    Los valores entre 1 y 4 se publican como «<5». En Benahavís esto afecta a cerca de
+    la mitad de las celdas, por lo que los totales se publican como intervalo y nunca
+    como cifra puntual. Ruptura de serie en enero de 2026 por el paso de CNAE-2009 a
+    CNAE-2025: las series no se empalman.
+  estado: disponible
+
+- id: IND-TRA-004
+  nombre: Afiliación en ramas turísticas (CNAE 55, 56, 79 y 93)
+  bloque: Mercado de trabajo
+  fuente: Seguridad Social — Afiliados por municipios CNAE 2D
+  url_fuente: https://www.seg-social.es/descargas/STAT/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: afiliados
+  definicion: >
+    Afiliación en alojamiento (CNAE 55), servicios de comidas y bebidas (56), agencias
+    de viajes y operadores turísticos (79) y actividades deportivas, recreativas y de
+    entretenimiento (93).
+  limitaciones: >
+    La rama 79 aparece habitualmente enmascarada como «<5» en Benahavís. Las mismas
+    limitaciones de censura y ruptura de serie que IND-TRA-003.
+  estado: disponible
+
+- id: IND-TRA-005
+  nombre: Paro registrado medio anual por edad y sexo
+  bloque: Mercado de trabajo
+  fuente: IECA — Sistema de Información Multiterritorial de Andalucía (BADEA, consulta 37016)
+  url_fuente: https://www.juntadeandalucia.es/institutodeestadisticaycartografia/intranet/admin/rest/v1.0/consulta/37016
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: personas
+  definicion: Media anual del paro registrado, por sexo y grupo de edad.
+  limitaciones: Al ser una media de doce meses, suaviza la estacionalidad del municipio.
+  estado: disponible
+
+# ─────────────────────────────────────────────── Bloque 5 y 8 · Economía y finanzas
+- id: IND-ECO-001
+  nombre: Deuda viva del Ayuntamiento
+  bloque: Finanzas municipales
+  fuente: Ministerio de Hacienda — Deuda viva de las entidades locales
+  url_fuente: https://www.hacienda.gob.es/es-ES/CDI/Paginas/SistemasFinanciacionDeuda/InformacionEELLs/DeudaViva.aspx
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: miles de euros
+  definicion: Deuda viva del Ayuntamiento a 31 de diciembre de cada ejercicio.
+  limitaciones: >
+    Recoge la deuda financiera de la entidad principal; no incorpora la de los entes
+    dependientes salvo en los ficheros específicos.
+  estado: disponible
+
+- id: IND-ECO-002
+  nombre: Renta bruta media de los declarantes del IRPF
+  bloque: Renta y actividad económica
+  fuente: AEAT — Estadística de los declarantes del IRPF por municipios
+  url_fuente: https://sede.agenciatributaria.gob.es/Sede/datosabiertos/catalogo/hacienda/Estadistica_de_los_declarantes_del_IRPF_por_municipios.shtml
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: euros
+  definicion: >
+    Renta bruta media declarada por los contribuyentes del IRPF con domicilio fiscal en
+    el municipio, para municipios de más de 1.000 habitantes.
+  limitaciones: >
+    Calculada sobre DECLARANTES, no sobre población: no comparable con el Atlas de
+    Renta del INE. Publicada en páginas HTML con identificador no predecible, lo que
+    obliga a resolver el índice antes de la extracción.
+  estado: pendiente
+
+- id: IND-ECO-003
+  nombre: Periodo medio de pago a proveedores
+  bloque: Finanzas municipales
+  fuente: Ministerio de Hacienda — Central de Información Económico-Financiera
+  url_fuente: https://serviciostelematicosext.hacienda.gob.es/SGCIEF/PMP_NET/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: días
+  definicion: Plazo medio de pago a proveedores del Ayuntamiento.
+  limitaciones: >
+    Publicado en una aplicación web con formulario, sin descarga directa: no
+    automatizable con garantías.
+  estado: pendiente
+
+- id: IND-ECO-004
+  nombre: Presupuesto y liquidación municipal
+  bloque: Finanzas municipales
+  fuente: Ministerio de Hacienda — Central de Información Económico-Financiera
+  url_fuente: https://serviciostelematicosext.hacienda.gob.es/SGCIEF/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: euros
+  definicion: Presupuesto aprobado y liquidación de ingresos y gastos del Ayuntamiento.
+  limitaciones: Las mismas que IND-ECO-003.
+  estado: pendiente
+
+# ─────────────────────────────────────────────── Bloque 6 · Clima
+- id: IND-CLI-001
+  nombre: Temperatura media
+  bloque: Clima
+  fuente: AEMET OpenData — estación 6069X Benahavís
+  url_fuente: https://opendata.aemet.es/opendata/api/valores/climatologicos/diarios/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: diaria
+  unidad: grados Celsius
+  definicion: >
+    Temperatura media diaria registrada en la estación 6069X, situada dentro del
+    término municipal de Benahavís a 392 metros de altitud, agregada a escala mensual
+    y anual.
+  limitaciones: >
+    Una única estación no describe la variabilidad térmica de un término municipal que
+    va del nivel del mar a la Sierra de las Nieves. Las medias anuales solo se publican
+    para años con al menos 300 días observados.
+  estado: disponible
+
+- id: IND-CLI-002
+  nombre: Precipitación acumulada
+  bloque: Clima
+  fuente: AEMET OpenData — estación 6069X Benahavís
+  url_fuente: https://opendata.aemet.es/opendata/api/valores/climatologicos/diarios/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: diaria
+  unidad: milímetros
+  definicion: Precipitación diaria acumulada a escala mensual y anual.
+  limitaciones: >
+    Las mismas que IND-CLI-001. Los registros marcados como «Ip» (inapreciable) se
+    contabilizan como cero.
+  estado: disponible
+
+- id: IND-CLI-003
+  nombre: Normales climatológicas mensuales
+  bloque: Clima
+  fuente: AEMET OpenData — estación 6069X Benahavís
+  url_fuente: https://opendata.aemet.es/opendata/api/valores/climatologicos/diarios/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: grados Celsius y milímetros
+  definicion: >
+    Valores medios de cada mes calendario calculados sobre todo el periodo disponible
+    de la estación.
+  limitaciones: >
+    El periodo de cálculo no coincide con el trentenio estándar de la Organización
+    Meteorológica Mundial, por lo que no son «normales» en sentido estricto.
+  estado: disponible
+
+# ─────────────────────────────────── Decreto 72/2017 · Población turística asistida
+- id: IND-MTU-001
+  nombre: Visitantes contabilizados en recursos turísticos municipales
+  bloque: Municipio Turístico (Decreto 72/2017)
+  fuente: Ayuntamiento de Benahavís — dato propio municipal
+  url_fuente: docs/plantilla-conteo-visitantes.csv
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: diaria
+  unidad: visitantes
+  definicion: >
+    Número de visitantes contabilizados en los recursos turísticos del municipio
+    mediante sistema de conteo que deje constancia fehaciente, a efectos de acreditar
+    la población turística asistida por la vía de visitas prevista en el Decreto
+    72/2017.
+  limitaciones: >
+    Requiere certificado del titular o gestor del recurso. Módulo preparado para la
+    ingesta; a la fecha de generación no se han depositado datos.
+  estado: pendiente

@@ -1,0 +1,149 @@
+# Catálogo de fuentes del Observatorio de Benahavís
+#
+# Identidad del municipio en cada plataforma y endpoints verificados.
+# El detalle metodológico completo, con la prueba de resolución municipal de cada
+# fuente y sus trampas técnicas, está en docs/inventario-fuentes.md.
+
+municipio:
+  nombre: Benahavís
+  codigo_ine: "29023"
+  provincia: {codigo: "29", nombre: Málaga}
+  ccaa: {codigo: "1", nombre: Andalucía}
+  comarca: Costa del Sol Occidental
+  identificadores:
+    ine_tempus_valor_territorial: 2923      # variable 19
+    ine_tempus_filtro: "19:2923"
+    ine_distrito: "2902301"
+    ine_secciones: ["2902301001", "2902301002"]
+    badea_nodo: "2934"                      # padre 3023 = Málaga
+    openrta_municipio: BENAHAVIS            # mayúsculas y SIN tilde
+    openrta_provincia: MÁLAGA               # mayúsculas y CON tilde
+    aemet_estacion: 6069X
+    catastro: {provincia: MALAGA, municipio: BENAHAVIS}
+
+fuentes:
+
+  ine_tempus:
+    organismo: Instituto Nacional de Estadística
+    base: https://servicios.ine.es/wstempus/js/ES
+    licencia: Reutilización libre citando al INE como fuente
+    tablas:
+      padron:              {id: "2882",  periodicidad: anual,      filtro: nombre_serie}
+      atlas_renta:         {id: "30824", periodicidad: anual,      filtro: tv}
+      viviendas_turisticas:{id: "39363", periodicidad: semestral,  filtro: tv}
+      vut_porcentaje:      {id: "39366", periodicidad: semestral,  filtro: tv}
+    notas: >
+      El campo Fecha viene en hora de Madrid; convertido a UTC desplaza la serie un mes.
+      El periodo se construye siempre con Anyo y FK_Periodo.
+      Sin el filtro tv, las tablas 39363 y 39366 devuelven las 24.621 series de España.
+
+  openrta:
+    organismo: Consejería de Turismo de la Junta de Andalucía
+    base: https://datos.juntadeandalucia.es/api/v0/openrta
+    licencia: Datos abiertos de la Junta de Andalucía
+    periodicidad: diaria
+    notas: >
+      /search exige los nueve parámetros id, object_type, category, group, modality,
+      province, municipality, order_by y mode; el valor neutro es "-".
+      /count IGNORA los filtros: el recuento municipal es total_hits de /search.
+      Las coordenadas van en EPSG:25830 y mezclan separador decimal de punto (hoteles)
+      y de coma (viviendas de uso turístico) en el mismo campo.
+
+  dataestur:
+    organismo: SEGITTUR — Secretaría de Estado de Turismo
+    base: https://www.dataestur.es/API-SEGITTUR-v2
+    licencia: Reutilización libre
+    codificacion: latin-1
+    separador: ";"
+    endpoints:
+      turismo_receptor_municipal: {ruta: TURISMO_RECEPTOR_MUN_PAIS_DL, desde: "2019-07"}
+      turismo_interno_municipal:  {ruta: TURISMO_INTERNO_MUN_MUN_DL,   desde: "2019"}
+      vivienda_turistica_municipal: {ruta: VIVIENDA_TURISTICA_INE_MUN_DL, desde: "2020-08"}
+      eoh_zona_turistica:         {ruta: EOH_ZONA_TUR_DL, ambito: zona_turistica}
+    notas: >
+      Redistribuye la estadística experimental del INE de posicionamiento de telefonía
+      móvil, única fuente de demanda con desagregación municipal para Benahavís.
+      Los endpoints de gasto con TPV solo llegan a nivel provincial.
+
+  sepe:
+    organismo: Servicio Público de Empleo Estatal
+    base: https://sede.sepe.gob.es/es/portaltrabaja/resources/sede/datos_abiertos/datos
+    licencia: Reutilización libre
+    codificacion: latin-1
+    separador: ";"
+    ficheros:
+      paro:      "Paro_por_municipios_{anyo}_csv.csv"
+      contratos: "Contratos_por_municipios_{anyo}_csv.csv"
+    notas: >
+      El CSV anual se refunde con aproximadamente un mes de retraso. El avance mensual
+      por provincia sale antes, en MUNI_MALAGA_{MMAA}.xls.
+
+  seguridad_social:
+    organismo: Ministerio de Inclusión, Seguridad Social y Migraciones
+    base: https://www.seg-social.es/descargas/STAT
+    licencia: Reutilización libre
+    patron: "MUNCNAE{MM}{AA}.xlsx"
+    periodicidad: mensual
+    notas: >
+      Unos 25 MB y medio millón de filas por fichero: la descarga es incremental.
+      Los meses revisados llevan sufijo R (MUNCNAE0925R.xlsx) y se intentan primero.
+      Los valores entre 1 y 4 se publican como "<5".
+      Ruptura de serie: CNAE-2009 hasta 2025-12, CNAE-2025 desde 2026-01.
+
+  badea:
+    organismo: Instituto de Estadística y Cartografía de Andalucía
+    base: https://www.juntadeandalucia.es/institutodeestadisticaycartografia/intranet/admin/rest/v1.0
+    licencia: CC BY
+    consultas:
+      paro_anual: {id: "37016", alias_territorio: D_TERRITORIO_0}
+      afiliacion: {id: "876",   alias_temporal: D_TEMPORAL_0}
+    notas: No existe endpoint de catálogo; los identificadores de consulta se fijan a mano.
+
+  aemet:
+    organismo: Agencia Estatal de Meteorología
+    base: https://opendata.aemet.es/opendata/api
+    licencia: Reutilización con reconocimiento de AEMET (Real Decreto 1495/2011)
+    requiere_clave: true
+    variable_entorno: AEMET_API_KEY
+    estacion_municipal: {indicativo: 6069X, nombre: Benahavís, altitud_m: 392}
+    estaciones_contraste:
+      6155A: Málaga Aeropuerto
+      6058I: Estepona
+      6083X: Marbella
+    notas: >
+      Sin api_key responde HTTP 200 con cuerpo vacío, no un error.
+      Patrón de doble llamada: el sobre inicial contiene la URL del dato real.
+      Los valores diarios admiten un rango máximo de 6 meses por petición.
+      Los números llegan como texto con coma decimal.
+
+  hacienda:
+    organismo: Ministerio de Hacienda
+    base: https://www.hacienda.gob.es/cdi
+    licencia: Reutilización libre
+    ficheros:
+      deuda_viva: "sist financiacion y deuda/informacioneells/{anyo}/deuda-viva-ayuntamientos-{anyo}12.xlsx"
+    notas: >
+      El periodo medio de pago, los presupuestos y las liquidaciones residen en
+      aplicaciones web con formulario, sin descarga directa: no se automatizan.
+
+  visitantes:
+    organismo: Ayuntamiento de Benahavís
+    tipo: dato_propio_municipal
+    ruta: data/visitantes/*.csv
+    esquema: docs/plantilla-conteo-visitantes.csv
+    notas: >
+      Vía de acreditación de población turística asistida por visitas conforme al
+      Decreto 72/2017. Módulo preparado para la ingesta.
+
+# Fuentes inventariadas que NO se integran en el pipeline automático.
+requieren_solicitud_formal:
+  - {fuente: Acosol S. A., indicador: consumo de agua mensual por municipio,
+     organismo: Mancomunidad de Municipios de la Costa del Sol Occidental, prioridad: alta}
+  - {fuente: Consorcio Provincial de Residuos Sólidos Urbanos,
+     indicador: toneladas recogidas por municipio, organismo: Diputación de Málaga, prioridad: media}
+  - {fuente: Turismo y Planificación Costa del Sol,
+     indicador: segmentación de mercados y perfil del visitante,
+     organismo: Diputación de Málaga, prioridad: media}
+  - {fuente: Ayuntamiento de Benahavís,
+     indicador: conteo de visitantes en recursos turísticos,
+     organismo: Ayuntamiento de Benahavís, prioridad: alta}
