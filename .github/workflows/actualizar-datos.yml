@@ -1,0 +1,75 @@
+name: Actualizar datos del observatorio
+
+# Día 5 de cada mes a las 05:30 UTC: para entonces el SEPE y la Seguridad Social
+# ya han publicado el mes anterior. También se puede lanzar a mano.
+on:
+  schedule:
+    - cron: '30 5 5 * *'
+  workflow_dispatch:
+    inputs:
+      bloques:
+        description: 'Bloques a ejecutar, separados por espacios (vacío = todos)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualizar-datos
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar el pipeline
+        # Las claves se leen de los secretos del repositorio, nunca del código.
+        # Si AEMET_API_KEY no está definido, el bloque de clima conserva el dato
+        # anterior y queda marcado como desactualizado; el resto sigue adelante.
+        env:
+          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+          CDS_API_KEY: ${{ secrets.CDS_API_KEY }}
+        run: python run_pipeline.py ${{ github.event.inputs.bloques }}
+
+      - name: Informar del estado de los bloques
+        if: always()
+        run: |
+          if [ -f docs/data/meta.json ]; then
+            python - <<'PY'
+          import json, pathlib
+          meta = json.loads(pathlib.Path('docs/data/meta.json').read_text(encoding='utf-8'))
+          fallidos = [k for k, v in meta.get('bloques', {}).items() if not v.get('actualizado')]
+          for clave, estado in meta.get('bloques', {}).items():
+              marca = 'OK ' if estado.get('actualizado') else 'AVISO'
+              print(f"{marca}  {clave:14} {estado.get('detalle') or ''}")
+          if fallidos:
+              print(f"\n::warning::Bloques no actualizados en esta ejecución: {', '.join(fallidos)}")
+          PY
+          fi
+
+      - name: Publicar los cambios
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs/data data/processed
+          if git diff --cached --quiet; then
+            echo 'Sin cambios en los datos: no se genera commit.'
+          else
+            git commit -m "datos: actualización automática $(date -u +'%Y-%m-%d')"
+            git push
+          fi
