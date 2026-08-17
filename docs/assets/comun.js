@@ -9,10 +9,22 @@ export const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
 const fmtEntero = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 0 });
 const fmtDecimal = new Intl.NumberFormat('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
+// En un eje conviven cifras de cuatro y de cinco dígitos. La norma española omite el
+// separador de millar en las de cuatro, lo que en una escala produce «3000» junto a
+// «12.000». Dentro del eje se fuerza el agrupamiento para que la escala sea uniforme;
+// en el texto corrido se mantiene la norma.
+const fmtEje = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1, useGrouping: 'always' });
+
 /** Formatea un número al uso español. Devuelve un guion si no hay dato. */
 export function num(v, decimales = 0) {
   if (v === null || v === undefined || Number.isNaN(v)) return '—';
   return decimales > 0 ? fmtDecimal.format(v) : fmtEntero.format(v);
+}
+
+/** Formatea un valor para un rótulo de eje, con separador de millar uniforme. */
+export function numEje(v) {
+  if (v === null || v === undefined || Number.isNaN(v)) return '';
+  return fmtEje.format(v);
 }
 
 /** Convierte «2025-07» en «julio de 2025»; deja pasar los años sueltos. */
@@ -122,7 +134,7 @@ export function baseOpciones() {
   return {
     color: PALETA,
     textStyle: { fontFamily: 'Montserrat, Arial, sans-serif', color: '#4a5866' },
-    grid: { left: 14, right: 18, top: 34, bottom: 8, containLabel: true },
+    grid: { left: 16, right: 22, top: 36, bottom: 10, containLabel: true },
     tooltip: {
       trigger: 'axis',
       backgroundColor: '#ffffff',
@@ -144,7 +156,7 @@ export function baseOpciones() {
       splitLine: { lineStyle: { color: '#eef1f4' } },
       // ECharts rotula por defecto en formato inglés («10,000»), que conviviría en la
       // misma página con las cifras en español («14.248»). Se fuerza el formato local.
-      axisLabel: { fontSize: 11.5, color: '#6b7883', formatter: (v) => num(v, v % 1 ? 1 : 0) }
+      axisLabel: { fontSize: 11.5, color: '#6b7883', formatter: (v) => numEje(v) }
     }
   };
 }
@@ -154,15 +166,39 @@ export function ejeValorHorizontal() {
   return {
     type: 'value',
     splitLine: { lineStyle: { color: '#eef1f4' } },
-    axisLabel: { fontSize: 11.5, color: '#6b7883', formatter: (v) => num(v) }
+    axisLabel: { fontSize: 11.5, color: '#6b7883', formatter: (v) => numEje(v) }
   };
 }
 
-/** Instancia un gráfico ECharts que se redimensiona con la ventana. */
+/**
+ * Instancia un gráfico ECharts que se adapta al tamaño de SU CONTENEDOR.
+ *
+ * No basta con escuchar `resize` de la ventana. Los gráficos se pintan a medida que
+ * llegan los datos, y el primero de cada bloque se inicializa cuando su rejilla
+ * todavía tiene un único hijo: CSS le da entonces el ancho completo. Al añadirse el
+ * segundo gráfico la rejilla pasa a dos columnas, pero la ventana no ha cambiado de
+ * tamaño, así que ECharts conservaba el ancho antiguo y el lienzo quedaba cortado a
+ * la mitad. Un ResizeObserver sobre el propio nodo cubre ese caso y también el de
+ * rotar el dispositivo o cambiar el zoom.
+ */
 export function pintar(nodo, opciones) {
   const g = echarts.init(nodo, null, { renderer: 'canvas' });
   g.setOption(opciones);
-  window.addEventListener('resize', () => g.resize());
+
+  if (typeof ResizeObserver === 'function') {
+    let pendiente = null;
+    const obs = new ResizeObserver(() => {
+      // Se agrupa en un frame para no redimensionar una vez por cada mutación.
+      if (pendiente) cancelAnimationFrame(pendiente);
+      pendiente = requestAnimationFrame(() => {
+        pendiente = null;
+        if (nodo.clientWidth > 0) g.resize();
+      });
+    });
+    obs.observe(nodo);
+  } else {
+    window.addEventListener('resize', () => g.resize());
+  }
   return g;
 }
 

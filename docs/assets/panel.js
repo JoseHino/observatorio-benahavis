@@ -205,12 +205,15 @@ async function oferta() {
   pintar(f1.lienzo, {
     ...bo,
     legend: { show: false },
-    grid: { left: 14, right: 62, top: 16, bottom: 8, containLabel: true },
+    grid: { left: 16, right: 66, top: 18, bottom: 10, containLabel: true },
     tooltip: { ...bo.tooltip, trigger: 'item' },
     xAxis: ejeValorHorizontal(),
     yAxis: { type: 'category', data: conPlazas.map(([k]) => k),
              axisLine: { lineStyle: { color: '#d8dee5' } }, axisTick: { show: false },
-             axisLabel: { fontSize: 11.5, color: '#4a5866', width: 150, overflow: 'break' } },
+             // `width` fuerza el ajuste de línea; sin margen suficiente ECharts recorta
+             // la etiqueta en lugar de partirla («Establecimiento Hotelero»).
+             axisLabel: { fontSize: 11.5, color: '#4a5866', width: 132,
+                          overflow: 'break', lineHeight: 14 } },
     series: [{
       type: 'bar', barMaxWidth: 22, data: conPlazas.map(([, v]) => v.plazas),
       itemStyle: { color: PALETA[0] },
@@ -769,7 +772,43 @@ async function economia() {
       num(ult.v), 'miles €', `A 31 de diciembre de ${ult.t}`));
   }
 
-  if (serie.length) {
+  const todoCero = serie.length > 0 && serie.every((p) => p.v === 0);
+
+  if (todoCero) {
+    // Un gráfico de barras con todos los valores a cero es un lienzo en blanco: no
+    // comunica nada. El hecho —que el Ayuntamiento no tiene deuda financiera— se
+    // enuncia y se acompaña de la serie completa en forma de tabla.
+    const cont = document.getElementById('graficos-economia');
+    const art = document.createElement('article');
+    art.className = 'ficha';
+    art.innerHTML = `
+      <div class="ficha__cabecera">
+        <h3 class="ficha__titulo">Deuda viva del Ayuntamiento de Benahavís</h3>
+        <div class="ficha__meta">
+          <span class="etiqueta etiqueta--municipal">Ámbito municipal</span>
+          <span>Unidad: miles de euros</span>
+          <span>Referencia: ${serie[0].t}–${ult.t}, a 31 de diciembre</span>
+        </div>
+      </div>
+      <div style="padding:22px 20px 6px">
+        <p style="margin:0 0 14px;font-size:15px;color:#1b2733">
+          El Ayuntamiento <strong>no registra deuda financiera viva</strong> en ninguno de los
+          ejercicios publicados por el Ministerio de Hacienda.
+        </p>
+        <table style="width:auto;min-width:260px">
+          <thead><tr><th>Ejercicio</th><th class="num">Deuda viva</th></tr></thead>
+          <tbody>${serie.map((p) => `
+            <tr><td>${p.t}</td><td class="num">0 miles €</td></tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+      <div class="ficha__pie">
+        <strong>Fuente:</strong> Ministerio de Hacienda, deuda viva de las entidades locales.
+        Recoge la deuda de la entidad principal; no incorpora la de los entes dependientes.
+        Actualizado el ${fechaActualizacion()}.
+      </div>`;
+    cont.appendChild(art);
+  } else if (serie.length) {
     const f1 = ficha({
       titulo: 'Deuda viva del Ayuntamiento de Benahavís',
       unidad: 'miles de euros', ambito: 'municipal',
@@ -782,7 +821,7 @@ async function economia() {
       ...bo,
       legend: { show: false },
       xAxis: { ...bo.xAxis, data: serie.map((p) => p.t) },
-      yAxis: { ...bo.yAxis, min: 0, max: (v) => Math.max(100, v.max) },
+      yAxis: { ...bo.yAxis, min: 0 },
       series: [{
         type: 'bar', barMaxWidth: 48, itemStyle: { color: PALETA[0] },
         data: serie.map((p) => p.v),
