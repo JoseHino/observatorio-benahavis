@@ -1,0 +1,20 @@
+{
+ "generado": "2026-08-17T15:21:26Z",
+ "series_revisadas": 2,
+ "incidencias": [
+  {
+   "serie": "demanda.turistas_extranjeros",
+   "tipo": "salto_anomalo",
+   "detalle": "2020-03 = 2848 → 2020-04 = 721 (×0.3)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "demanda.turistas_extranjeros",
+   "tipo": "salto_anomalo",
+   "detalle": "2020-06 = 742 → 2020-07 = 3658 (×4.9)",
+   "gravedad": "aviso"
+  }
+ ],
+ "errores": 0,
+ "avisos": 2
+}

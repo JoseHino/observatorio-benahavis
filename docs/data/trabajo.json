@@ -1,0 +1,2521 @@
+{
+ "paro": {
+  "serie": [
+   {
+    "t": "2023-01",
+    "total": 203,
+    "hombres": 66,
+    "mujeres": 131,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 72,
+     "mayor45": 125
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 25,
+     "servicios": 156,
+     "sin_empleo_anterior": 16
+    }
+   },
+   {
+    "t": "2023-02",
+    "total": 198,
+    "hombres": 65,
+    "mujeres": 126,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 68,
+     "mayor45": 123
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 20,
+     "servicios": 158,
+     "sin_empleo_anterior": 15
+    }
+   },
+   {
+    "t": "2023-03",
+    "total": 200,
+    "hombres": 73,
+    "mujeres": 125,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 67,
+     "mayor45": 125
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 19,
+     "servicios": 159,
+     "sin_empleo_anterior": 15
+    }
+   },
+   {
+    "t": "2023-04",
+    "total": 192,
+    "hombres": 70,
+    "mujeres": 119,
+    "edad": {
+     "menor25": 7,
+     "de25a44": 67,
+     "mayor45": 115
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 19,
+     "servicios": 153,
+     "sin_empleo_anterior": 14
+    }
+   },
+   {
+    "t": "2023-05",
+    "total": 189,
+    "hombres": 71,
+    "mujeres": 116,
+    "edad": {
+     "menor25": 7,
+     "de25a44": 66,
+     "mayor45": 114
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 6,
+     "construccion": 20,
+     "servicios": 147,
+     "sin_empleo_anterior": 14
+    }
+   },
+   {
+    "t": "2023-06",
+    "total": 180,
+    "hombres": 64,
+    "mujeres": 114,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 62,
+     "mayor45": 110
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 6,
+     "construccion": 21,
+     "servicios": 141,
+     "sin_empleo_anterior": 11
+    }
+   },
+   {
+    "t": "2023-07",
+    "total": 187,
+    "hombres": 63,
+    "mujeres": 121,
+    "edad": {
+     "menor25": 5,
+     "de25a44": 72,
+     "mayor45": 107
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 6,
+     "construccion": 24,
+     "servicios": 144,
+     "sin_empleo_anterior": 12
+    }
+   },
+   {
+    "t": "2023-08",
+    "total": 178,
+    "hombres": 65,
+    "mujeres": 109,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 61,
+     "mayor45": 107
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 23,
+     "servicios": 137,
+     "sin_empleo_anterior": 12
+    }
+   },
+   {
+    "t": "2023-09",
+    "total": 178,
+    "hombres": 64,
+    "mujeres": 114,
+    "edad": {
+     "menor25": 13,
+     "de25a44": 61,
+     "mayor45": 104
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 24,
+     "servicios": 132,
+     "sin_empleo_anterior": 15
+    }
+   },
+   {
+    "t": "2023-10",
+    "total": 190,
+    "hombres": 66,
+    "mujeres": 121,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 68,
+     "mayor45": 113
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 25,
+     "servicios": 145,
+     "sin_empleo_anterior": 13
+    }
+   },
+   {
+    "t": "2023-11",
+    "total": 197,
+    "hombres": 67,
+    "mujeres": 127,
+    "edad": {
+     "menor25": 7,
+     "de25a44": 77,
+     "mayor45": 110
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 24,
+     "servicios": 154,
+     "sin_empleo_anterior": 12
+    }
+   },
+   {
+    "t": "2023-12",
+    "total": 183,
+    "hombres": 61,
+    "mujeres": 118,
+    "edad": {
+     "menor25": 7,
+     "de25a44": 67,
+     "mayor45": 105
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 23,
+     "servicios": 145,
+     "sin_empleo_anterior": 11
+    }
+   },
+   {
+    "t": "2024-01",
+    "total": 189,
+    "hombres": 63,
+    "mujeres": 126,
+    "edad": {
+     "menor25": 12,
+     "de25a44": 68,
+     "mayor45": 109
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 26,
+     "servicios": 146,
+     "sin_empleo_anterior": 10
+    }
+   },
+   {
+    "t": "2024-02",
+    "total": 198,
+    "hombres": 68,
+    "mujeres": 126,
+    "edad": {
+     "menor25": 10,
+     "de25a44": 75,
+     "mayor45": 109
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 25,
+     "servicios": 155,
+     "sin_empleo_anterior": 11
+    }
+   },
+   {
+    "t": "2024-03",
+    "total": 198,
+    "hombres": 72,
+    "mujeres": 126,
+    "edad": {
+     "menor25": 13,
+     "de25a44": 71,
+     "mayor45": 114
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 6,
+     "construccion": 25,
+     "servicios": 153,
+     "sin_empleo_anterior": 12
+    }
+   },
+   {
+    "t": "2024-04",
+    "total": 190,
+    "hombres": 69,
+    "mujeres": 118,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 65,
+     "mayor45": 116
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 20,
+     "servicios": 148,
+     "sin_empleo_anterior": 15
+    }
+   },
+   {
+    "t": "2024-05",
+    "total": 173,
+    "hombres": 62,
+    "mujeres": 106,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 62,
+     "mayor45": 106
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 22,
+     "servicios": 131,
+     "sin_empleo_anterior": 14
+    }
+   },
+   {
+    "t": "2024-06",
+    "total": 163,
+    "hombres": 56,
+    "mujeres": 102,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 59,
+     "mayor45": 99
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 6,
+     "construccion": 19,
+     "servicios": 125,
+     "sin_empleo_anterior": 11
+    }
+   },
+   {
+    "t": "2024-07",
+    "total": 157,
+    "hombres": 51,
+    "mujeres": 98,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 53,
+     "mayor45": 96
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 18,
+     "servicios": 123,
+     "sin_empleo_anterior": 9
+    }
+   },
+   {
+    "t": "2024-08",
+    "total": 157,
+    "hombres": 50,
+    "mujeres": 101,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 55,
+     "mayor45": 96
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 18,
+     "servicios": 127,
+     "sin_empleo_anterior": 6
+    }
+   },
+   {
+    "t": "2024-09",
+    "total": 153,
+    "hombres": 52,
+    "mujeres": 95,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 53,
+     "mayor45": 94
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 20,
+     "servicios": 124,
+     "sin_empleo_anterior": 5
+    }
+   },
+   {
+    "t": "2024-10",
+    "total": 176,
+    "hombres": 65,
+    "mujeres": 109,
+    "edad": {
+     "menor25": 8,
+     "de25a44": 60,
+     "mayor45": 106
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 19,
+     "servicios": 137,
+     "sin_empleo_anterior": 13
+    }
+   },
+   {
+    "t": "2024-11",
+    "total": 191,
+    "hombres": 71,
+    "mujeres": 117,
+    "edad": {
+     "menor25": 11,
+     "de25a44": 72,
+     "mayor45": 105
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 21,
+     "servicios": 148,
+     "sin_empleo_anterior": 15
+    }
+   },
+   {
+    "t": "2024-12",
+    "total": 182,
+    "hombres": 64,
+    "mujeres": 118,
+    "edad": {
+     "menor25": 13,
+     "de25a44": 72,
+     "mayor45": 97
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 23,
+     "servicios": 138,
+     "sin_empleo_anterior": 14
+    }
+   },
+   {
+    "t": "2025-01",
+    "total": 194,
+    "hombres": 67,
+    "mujeres": 127,
+    "edad": {
+     "menor25": 12,
+     "de25a44": 80,
+     "mayor45": 102
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 26,
+     "servicios": 151,
+     "sin_empleo_anterior": 10
+    }
+   },
+   {
+    "t": "2025-02",
+    "total": 198,
+    "hombres": 75,
+    "mujeres": 120,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 84,
+     "mayor45": 105
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 26,
+     "servicios": 152,
+     "sin_empleo_anterior": 12
+    }
+   },
+   {
+    "t": "2025-03",
+    "total": 198,
+    "hombres": 74,
+    "mujeres": 120,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 78,
+     "mayor45": 110
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 26,
+     "servicios": 151,
+     "sin_empleo_anterior": 14
+    }
+   },
+   {
+    "t": "2025-04",
+    "total": 187,
+    "hombres": 71,
+    "mujeres": 113,
+    "edad": {
+     "menor25": 7,
+     "de25a44": 77,
+     "mayor45": 100
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 27,
+     "servicios": 134,
+     "sin_empleo_anterior": 19
+    }
+   },
+   {
+    "t": "2025-05",
+    "total": 180,
+    "hombres": 66,
+    "mujeres": 112,
+    "edad": {
+     "menor25": 5,
+     "de25a44": 75,
+     "mayor45": 98
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 25,
+     "servicios": 129,
+     "sin_empleo_anterior": 19
+    }
+   },
+   {
+    "t": "2025-06",
+    "total": 171,
+    "hombres": 65,
+    "mujeres": 104,
+    "edad": {
+     "menor25": 5,
+     "de25a44": 68,
+     "mayor45": 96
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 25,
+     "servicios": 125,
+     "sin_empleo_anterior": 13
+    }
+   },
+   {
+    "t": "2025-07",
+    "total": 165,
+    "hombres": 60,
+    "mujeres": 100,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 60,
+     "mayor45": 100
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 7,
+     "construccion": 26,
+     "servicios": 120,
+     "sin_empleo_anterior": 10
+    }
+   },
+   {
+    "t": "2025-08",
+    "total": 159,
+    "hombres": 61,
+    "mujeres": 98,
+    "edad": {
+     "menor25": 6,
+     "de25a44": 56,
+     "mayor45": 97
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 24,
+     "servicios": 118,
+     "sin_empleo_anterior": 10
+    }
+   },
+   {
+    "t": "2025-09",
+    "total": 170,
+    "hombres": 69,
+    "mujeres": 99,
+    "edad": {
+     "menor25": 10,
+     "de25a44": 63,
+     "mayor45": 95
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 23,
+     "servicios": 125,
+     "sin_empleo_anterior": 16
+    }
+   },
+   {
+    "t": "2025-10",
+    "total": 186,
+    "hombres": 77,
+    "mujeres": 107,
+    "edad": {
+     "menor25": 12,
+     "de25a44": 69,
+     "mayor45": 103
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 23,
+     "servicios": 142,
+     "sin_empleo_anterior": 14
+    }
+   },
+   {
+    "t": "2025-11",
+    "total": 197,
+    "hombres": 78,
+    "mujeres": 119,
+    "edad": {
+     "menor25": 16,
+     "de25a44": 78,
+     "mayor45": 103
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 18,
+     "servicios": 156,
+     "sin_empleo_anterior": 17
+    }
+   },
+   {
+    "t": "2025-12",
+    "total": 190,
+    "hombres": 73,
+    "mujeres": 113,
+    "edad": {
+     "menor25": 10,
+     "de25a44": 73,
+     "mayor45": 103
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 20,
+     "servicios": 151,
+     "sin_empleo_anterior": 12
+    }
+   },
+   {
+    "t": "2026-01",
+    "total": 192,
+    "hombres": 70,
+    "mujeres": 118,
+    "edad": {
+     "menor25": 7,
+     "de25a44": 73,
+     "mayor45": 108
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 20,
+     "servicios": 157,
+     "sin_empleo_anterior": 10
+    }
+   },
+   {
+    "t": "2026-02",
+    "total": 185,
+    "hombres": 64,
+    "mujeres": 117,
+    "edad": {
+     "menor25": 5,
+     "de25a44": 67,
+     "mayor45": 109
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 20,
+     "servicios": 151,
+     "sin_empleo_anterior": 7
+    }
+   },
+   {
+    "t": "2026-03",
+    "total": 177,
+    "hombres": 60,
+    "mujeres": 111,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 68,
+     "mayor45": 103
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 19,
+     "servicios": 146,
+     "sin_empleo_anterior": 5
+    }
+   },
+   {
+    "t": "2026-04",
+    "total": 170,
+    "hombres": 59,
+    "mujeres": 106,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 65,
+     "mayor45": 100
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 16,
+     "servicios": 140,
+     "sin_empleo_anterior": 7
+    }
+   },
+   {
+    "t": "2026-05",
+    "total": 171,
+    "hombres": 58,
+    "mujeres": 107,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 63,
+     "mayor45": 102
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 6,
+     "construccion": 15,
+     "servicios": 139,
+     "sin_empleo_anterior": 10
+    }
+   },
+   {
+    "t": "2026-06",
+    "total": 156,
+    "hombres": 50,
+    "mujeres": 102,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 56,
+     "mayor45": 96
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 15,
+     "servicios": 126,
+     "sin_empleo_anterior": 10
+    }
+   }
+  ],
+  "comparativa": [
+   {
+    "t": "2023-01",
+    "espana": 2904950,
+    "andalucia": 748137,
+    "malaga": 140922
+   },
+   {
+    "t": "2023-02",
+    "espana": 2907644,
+    "andalucia": 749671,
+    "malaga": 141345
+   },
+   {
+    "t": "2023-03",
+    "espana": 2858718,
+    "andalucia": 734387,
+    "malaga": 137660
+   },
+   {
+    "t": "2023-04",
+    "espana": 2784814,
+    "andalucia": 713837,
+    "malaga": 133410
+   },
+   {
+    "t": "2023-05",
+    "espana": 2735671,
+    "andalucia": 707312,
+    "malaga": 130088
+   },
+   {
+    "t": "2023-06",
+    "espana": 2685411,
+    "andalucia": 698531,
+    "malaga": 126601
+   },
+   {
+    "t": "2023-07",
+    "espana": 2674418,
+    "andalucia": 693363,
+    "malaga": 125047
+   },
+   {
+    "t": "2023-08",
+    "espana": 2699160,
+    "andalucia": 696245,
+    "malaga": 125560
+   },
+   {
+    "t": "2023-09",
+    "espana": 2718958,
+    "andalucia": 712202,
+    "malaga": 128872
+   },
+   {
+    "t": "2023-10",
+    "espana": 2755817,
+    "andalucia": 719595,
+    "malaga": 132027
+   },
+   {
+    "t": "2023-11",
+    "espana": 2731273,
+    "andalucia": 710748,
+    "malaga": 132610
+   },
+   {
+    "t": "2023-12",
+    "espana": 2703900,
+    "andalucia": 694928,
+    "malaga": 131078
+   },
+   {
+    "t": "2024-01",
+    "espana": 2764294,
+    "andalucia": 715005,
+    "malaga": 135166
+   },
+   {
+    "t": "2024-02",
+    "espana": 2756905,
+    "andalucia": 710899,
+    "malaga": 134243
+   },
+   {
+    "t": "2024-03",
+    "espana": 2723510,
+    "andalucia": 699527,
+    "malaga": 131148
+   },
+   {
+    "t": "2024-04",
+    "espana": 2662972,
+    "andalucia": 678573,
+    "malaga": 126982
+   },
+   {
+    "t": "2024-05",
+    "espana": 2604399,
+    "andalucia": 662989,
+    "malaga": 122784
+   },
+   {
+    "t": "2024-06",
+    "espana": 2557432,
+    "andalucia": 654238,
+    "malaga": 119875
+   },
+   {
+    "t": "2024-07",
+    "espana": 2546640,
+    "andalucia": 638277,
+    "malaga": 116841
+   },
+   {
+    "t": "2024-08",
+    "espana": 2568533,
+    "andalucia": 639323,
+    "malaga": 116342
+   },
+   {
+    "t": "2024-09",
+    "espana": 2571659,
+    "andalucia": 647047,
+    "malaga": 117632
+   },
+   {
+    "t": "2024-10",
+    "espana": 2598388,
+    "andalucia": 654774,
+    "malaga": 119906
+   },
+   {
+    "t": "2024-11",
+    "espana": 2582395,
+    "andalucia": 646300,
+    "malaga": 120070
+   },
+   {
+    "t": "2024-12",
+    "espana": 2557164,
+    "andalucia": 634823,
+    "malaga": 119074
+   },
+   {
+    "t": "2025-01",
+    "espana": 2595898,
+    "andalucia": 646735,
+    "malaga": 121486
+   },
+   {
+    "t": "2025-02",
+    "espana": 2589955,
+    "andalucia": 644468,
+    "malaga": 121095
+   },
+   {
+    "t": "2025-03",
+    "espana": 2576530,
+    "andalucia": 643207,
+    "malaga": 120331
+   },
+   {
+    "t": "2025-04",
+    "espana": 2509068,
+    "andalucia": 619089,
+    "malaga": 115517
+   },
+   {
+    "t": "2025-05",
+    "espana": 2451234,
+    "andalucia": 605843,
+    "malaga": 112565
+   },
+   {
+    "t": "2025-06",
+    "espana": 2402288,
+    "andalucia": 598870,
+    "malaga": 110002
+   },
+   {
+    "t": "2025-07",
+    "espana": 2400870,
+    "andalucia": 590837,
+    "malaga": 108862
+   },
+   {
+    "t": "2025-08",
+    "espana": 2422833,
+    "andalucia": 592592,
+    "malaga": 108725
+   },
+   {
+    "t": "2025-09",
+    "espana": 2417977,
+    "andalucia": 599708,
+    "malaga": 109362
+   },
+   {
+    "t": "2025-10",
+    "espana": 2440151,
+    "andalucia": 602248,
+    "malaga": 110347
+   },
+   {
+    "t": "2025-11",
+    "espana": 2421238,
+    "andalucia": 595316,
+    "malaga": 110837
+   },
+   {
+    "t": "2025-12",
+    "espana": 2404907,
+    "andalucia": 583046,
+    "malaga": 109875
+   },
+   {
+    "t": "2026-01",
+    "espana": 2435437,
+    "andalucia": 591088,
+    "malaga": 110925
+   },
+   {
+    "t": "2026-02",
+    "espana": 2438945,
+    "andalucia": 588460,
+    "malaga": 110430
+   },
+   {
+    "t": "2026-03",
+    "espana": 2415973,
+    "andalucia": 579625,
+    "malaga": 108567
+   },
+   {
+    "t": "2026-04",
+    "espana": 2353334,
+    "andalucia": 557227,
+    "malaga": 104415
+   },
+   {
+    "t": "2026-05",
+    "espana": 2317013,
+    "andalucia": 548107,
+    "malaga": 102207
+   },
+   {
+    "t": "2026-06",
+    "espana": 2288212,
+    "andalucia": 536510,
+    "malaga": 99084
+   }
+  ]
+ },
+ "contratos": {
+  "serie": [
+   {
+    "t": "2023-01",
+    "total": 82,
+    "indefinidos": 61,
+    "temporales": 20,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 39,
+     "servicios": 41
+    }
+   },
+   {
+    "t": "2023-02",
+    "total": 85,
+    "indefinidos": 69,
+    "temporales": 9,
+    "sectores": {
+     "agricultura": 9,
+     "industria": 0,
+     "construccion": 31,
+     "servicios": 44
+    }
+   },
+   {
+    "t": "2023-03",
+    "total": 143,
+    "indefinidos": 106,
+    "temporales": 36,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 36,
+     "servicios": 100
+    }
+   },
+   {
+    "t": "2023-04",
+    "total": 143,
+    "indefinidos": 60,
+    "temporales": 77,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 5,
+     "construccion": 17,
+     "servicios": 121
+    }
+   },
+   {
+    "t": "2023-05",
+    "total": 226,
+    "indefinidos": 137,
+    "temporales": 88,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 36,
+     "servicios": 186
+    }
+   },
+   {
+    "t": "2023-06",
+    "total": 179,
+    "indefinidos": 93,
+    "temporales": 83,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 41,
+     "servicios": 135
+    }
+   },
+   {
+    "t": "2023-07",
+    "total": 186,
+    "indefinidos": 96,
+    "temporales": 87,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 33,
+     "servicios": 149
+    }
+   },
+   {
+    "t": "2023-08",
+    "total": 107,
+    "indefinidos": 55,
+    "temporales": 51,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 34,
+     "servicios": 72
+    }
+   },
+   {
+    "t": "2023-09",
+    "total": 170,
+    "indefinidos": 79,
+    "temporales": 89,
+    "sectores": {
+     "agricultura": 6,
+     "industria": 0,
+     "construccion": 41,
+     "servicios": 123
+    }
+   },
+   {
+    "t": "2023-10",
+    "total": 119,
+    "indefinidos": 84,
+    "temporales": 32,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 37,
+     "servicios": 81
+    }
+   },
+   {
+    "t": "2023-11",
+    "total": 118,
+    "indefinidos": 85,
+    "temporales": 29,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 46,
+     "servicios": 69
+    }
+   },
+   {
+    "t": "2023-12",
+    "total": 77,
+    "indefinidos": 50,
+    "temporales": 25,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 32,
+     "servicios": 44
+    }
+   },
+   {
+    "t": "2024-01",
+    "total": 125,
+    "indefinidos": 84,
+    "temporales": 40,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 70,
+     "servicios": 53
+    }
+   },
+   {
+    "t": "2024-02",
+    "total": 129,
+    "indefinidos": 78,
+    "temporales": 46,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 28,
+     "servicios": 98
+    }
+   },
+   {
+    "t": "2024-03",
+    "total": 125,
+    "indefinidos": 91,
+    "temporales": 30,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 32,
+     "servicios": 91
+    }
+   },
+   {
+    "t": "2024-04",
+    "total": 192,
+    "indefinidos": 118,
+    "temporales": 73,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 51,
+     "servicios": 137
+    }
+   },
+   {
+    "t": "2024-05",
+    "total": 240,
+    "indefinidos": 134,
+    "temporales": 99,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 47,
+     "servicios": 192
+    }
+   },
+   {
+    "t": "2024-06",
+    "total": 252,
+    "indefinidos": 120,
+    "temporales": 131,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 35,
+     "servicios": 215
+    }
+   },
+   {
+    "t": "2024-07",
+    "total": 267,
+    "indefinidos": 149,
+    "temporales": 114,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 45,
+     "servicios": 220
+    }
+   },
+   {
+    "t": "2024-08",
+    "total": 126,
+    "indefinidos": 62,
+    "temporales": 60,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 26,
+     "servicios": 95
+    }
+   },
+   {
+    "t": "2024-09",
+    "total": 177,
+    "indefinidos": 99,
+    "temporales": 73,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 58,
+     "servicios": 116
+    }
+   },
+   {
+    "t": "2024-10",
+    "total": 193,
+    "indefinidos": 100,
+    "temporales": 92,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 61,
+     "servicios": 127
+    }
+   },
+   {
+    "t": "2024-11",
+    "total": 83,
+    "indefinidos": 35,
+    "temporales": 45,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 20,
+     "servicios": 62
+    }
+   },
+   {
+    "t": "2024-12",
+    "total": 143,
+    "indefinidos": 72,
+    "temporales": 69,
+    "sectores": {
+     "agricultura": 7,
+     "industria": 0,
+     "construccion": 28,
+     "servicios": 107
+    }
+   },
+   {
+    "t": "2025-01",
+    "total": 140,
+    "indefinidos": 93,
+    "temporales": 44,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 73,
+     "servicios": 65
+    }
+   },
+   {
+    "t": "2025-02",
+    "total": 169,
+    "indefinidos": 98,
+    "temporales": 71,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 55,
+     "servicios": 114
+    }
+   },
+   {
+    "t": "2025-03",
+    "total": 155,
+    "indefinidos": 112,
+    "temporales": 40,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 55,
+     "servicios": 100
+    }
+   },
+   {
+    "t": "2025-04",
+    "total": 133,
+    "indefinidos": 86,
+    "temporales": 42,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 58,
+     "servicios": 74
+    }
+   },
+   {
+    "t": "2025-05",
+    "total": 219,
+    "indefinidos": 118,
+    "temporales": 100,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 60,
+     "servicios": 159
+    }
+   },
+   {
+    "t": "2025-06",
+    "total": 186,
+    "indefinidos": 104,
+    "temporales": 80,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 46,
+     "servicios": 138
+    }
+   },
+   {
+    "t": "2025-07",
+    "total": 229,
+    "indefinidos": 127,
+    "temporales": 98,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 53,
+     "servicios": 173
+    }
+   },
+   {
+    "t": "2025-08",
+    "total": 124,
+    "indefinidos": 87,
+    "temporales": 35,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 34,
+     "servicios": 90
+    }
+   },
+   {
+    "t": "2025-09",
+    "total": 174,
+    "indefinidos": 107,
+    "temporales": 64,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 75,
+     "servicios": 98
+    }
+   },
+   {
+    "t": "2025-10",
+    "total": 199,
+    "indefinidos": 123,
+    "temporales": 75,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 92,
+     "servicios": 105
+    }
+   },
+   {
+    "t": "2025-11",
+    "total": 155,
+    "indefinidos": 106,
+    "temporales": 47,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 79,
+     "servicios": 75
+    }
+   },
+   {
+    "t": "2025-12",
+    "total": 111,
+    "indefinidos": 63,
+    "temporales": 43,
+    "sectores": {
+     "agricultura": 6,
+     "industria": 0,
+     "construccion": 37,
+     "servicios": 67
+    }
+   },
+   {
+    "t": "2026-01",
+    "total": 182,
+    "indefinidos": 139,
+    "temporales": 40,
+    "sectores": {
+     "agricultura": 5,
+     "industria": 0,
+     "construccion": 96,
+     "servicios": 80
+    }
+   },
+   {
+    "t": "2026-02",
+    "total": 107,
+    "indefinidos": 85,
+    "temporales": 20,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 59,
+     "servicios": 46
+    }
+   },
+   {
+    "t": "2026-03",
+    "total": 186,
+    "indefinidos": 148,
+    "temporales": 37,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 73,
+     "servicios": 111
+    }
+   },
+   {
+    "t": "2026-04",
+    "total": 110,
+    "indefinidos": 88,
+    "temporales": 18,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 54,
+     "servicios": 54
+    }
+   },
+   {
+    "t": "2026-05",
+    "total": 156,
+    "indefinidos": 124,
+    "temporales": 31,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 24,
+     "servicios": 130
+    }
+   },
+   {
+    "t": "2026-06",
+    "total": 206,
+    "indefinidos": 140,
+    "temporales": 63,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 51,
+     "servicios": 155
+    }
+   }
+  ]
+ },
+ "afiliacion": {
+  "serie_total": [
+   {
+    "t": "2024-08",
+    "min": 2722,
+    "max": 3014,
+    "exacto": false,
+    "celdas_censuradas": 73,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-09",
+    "min": 2681,
+    "max": 2981,
+    "exacto": false,
+    "celdas_censuradas": 75,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-10",
+    "min": 2674,
+    "max": 2966,
+    "exacto": false,
+    "celdas_censuradas": 73,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-11",
+    "min": 2663,
+    "max": 2963,
+    "exacto": false,
+    "celdas_censuradas": 75,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-12",
+    "min": 2661,
+    "max": 2989,
+    "exacto": false,
+    "celdas_censuradas": 82,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-01",
+    "min": 2726,
+    "max": 3038,
+    "exacto": false,
+    "celdas_censuradas": 78,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-02",
+    "min": 2780,
+    "max": 3096,
+    "exacto": false,
+    "celdas_censuradas": 79,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-03",
+    "min": 2838,
+    "max": 3162,
+    "exacto": false,
+    "celdas_censuradas": 81,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-04",
+    "min": 2902,
+    "max": 3230,
+    "exacto": false,
+    "celdas_censuradas": 82,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-06",
+    "min": 3014,
+    "max": 3326,
+    "exacto": false,
+    "celdas_censuradas": 78,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-07",
+    "min": 3013,
+    "max": 3325,
+    "exacto": false,
+    "celdas_censuradas": 78,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-08",
+    "min": 3042,
+    "max": 3346,
+    "exacto": false,
+    "celdas_censuradas": 76,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-09",
+    "min": 3006,
+    "max": 3306,
+    "exacto": false,
+    "celdas_censuradas": 75,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-10",
+    "min": 2984,
+    "max": 3288,
+    "exacto": false,
+    "celdas_censuradas": 76,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-11",
+    "min": 2927,
+    "max": 3223,
+    "exacto": false,
+    "celdas_censuradas": 74,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-12",
+    "min": 2870,
+    "max": 3162,
+    "exacto": false,
+    "celdas_censuradas": 73,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-01",
+    "min": 2843,
+    "max": 3139,
+    "exacto": false,
+    "celdas_censuradas": 74,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-02",
+    "min": 2897,
+    "max": 3193,
+    "exacto": false,
+    "celdas_censuradas": 74,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-03",
+    "min": 2989,
+    "max": 3297,
+    "exacto": false,
+    "celdas_censuradas": 77,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-04",
+    "min": 3049,
+    "max": 3345,
+    "exacto": false,
+    "celdas_censuradas": 74,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-05",
+    "min": 3130,
+    "max": 3422,
+    "exacto": false,
+    "celdas_censuradas": 73,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-06",
+    "min": 3164,
+    "max": 3464,
+    "exacto": false,
+    "celdas_censuradas": 75,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-07",
+    "min": 3169,
+    "max": 3469,
+    "exacto": false,
+    "celdas_censuradas": 75,
+    "celdas_vacias": 0
+   }
+  ],
+  "serie_turistico": [
+   {
+    "t": "2024-08",
+    "min": 602,
+    "max": 618,
+    "exacto": false,
+    "celdas_censuradas": 4,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-09",
+    "min": 577,
+    "max": 597,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-10",
+    "min": 546,
+    "max": 566,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-11",
+    "min": 529,
+    "max": 549,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2024-12",
+    "min": 509,
+    "max": 529,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-01",
+    "min": 523,
+    "max": 543,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-02",
+    "min": 559,
+    "max": 579,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-03",
+    "min": 570,
+    "max": 590,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-04",
+    "min": 618,
+    "max": 638,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-06",
+    "min": 695,
+    "max": 715,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-07",
+    "min": 691,
+    "max": 711,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-08",
+    "min": 691,
+    "max": 711,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-09",
+    "min": 657,
+    "max": 677,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-10",
+    "min": 611,
+    "max": 631,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-11",
+    "min": 527,
+    "max": 547,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2025-12",
+    "min": 518,
+    "max": 538,
+    "exacto": false,
+    "celdas_censuradas": 5,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-01",
+    "min": 498,
+    "max": 506,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-02",
+    "min": 520,
+    "max": 528,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-03",
+    "min": 588,
+    "max": 596,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-04",
+    "min": 619,
+    "max": 627,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-05",
+    "min": 647,
+    "max": 655,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-06",
+    "min": 676,
+    "max": 684,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
+   },
+   {
+    "t": "2026-07",
+    "min": 697,
+    "max": 705,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
+   }
+  ],
+  "ultimo": {
+   "mes": "2026-07",
+   "clasificacion": "CNAE-2025",
+   "ramas": [
+    {
+     "cnae": "68",
+     "descripcion": "Actividades inmobiliarias",
+     "min": 415,
+     "max": 415,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "41",
+     "descripcion": "Construcción de edificios",
+     "min": 372,
+     "max": 372,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "81",
+     "descripcion": "Servicios a edificios y actividades de j",
+     "min": 339,
+     "max": 339,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "56",
+     "descripcion": "Servicios de comidas y bebidas",
+     "min": 287,
+     "max": 287,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "93",
+     "descripcion": "Actividades deportivas, recreativas y de",
+     "min": 240,
+     "max": 240,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "43",
+     "descripcion": "Actividades de construcción especializad",
+     "min": 187,
+     "max": 187,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "97",
+     "descripcion": "Actividades de los hogares como empleado",
+     "min": 182,
+     "max": 186,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "55",
+     "descripcion": "Servicios de alojamiento",
+     "min": 170,
+     "max": 170,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "96",
+     "descripcion": "Servicios personales",
+     "min": 125,
+     "max": 125,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "84",
+     "descripcion": "Administración pública y defensa; seguri",
+     "min": 118,
+     "max": 126,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "47",
+     "descripcion": "Comercio al por menor",
+     "min": 117,
+     "max": 117,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "73",
+     "descripcion": "Actividades de publicidad, estudios de m",
+     "min": 67,
+     "max": 67,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "46",
+     "descripcion": "Comercio al por mayor",
+     "min": 65,
+     "max": 69,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "85",
+     "descripcion": "Educación",
+     "min": 58,
+     "max": 62,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "62",
+     "descripcion": "Programación, consultoría y otras activi",
+     "min": 52,
+     "max": 60,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "70",
+     "descripcion": "Actividades de las sedes centrales y con",
+     "min": 49,
+     "max": 49,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "74",
+     "descripcion": "Otras actividades profesionales, científ",
+     "min": 41,
+     "max": 41,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "49",
+     "descripcion": "Transporte terrestre y por tubería",
+     "min": 38,
+     "max": 42,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "86",
+     "descripcion": "Actividades sanitarias",
+     "min": 37,
+     "max": 41,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "77",
+     "descripcion": "Actividades de alquiler",
+     "min": 31,
+     "max": 35,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "82",
+     "descripcion": "Actividades administrativas de oficina y",
+     "min": 29,
+     "max": 33,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "69",
+     "descripcion": "Actividades jurídicas y de contabilidad",
+     "min": 27,
+     "max": 31,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "36",
+     "descripcion": "Captación, depuración y distribución de",
+     "min": 25,
+     "max": 25,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "71",
+     "descripcion": "Servicios técnicos de arquitectura e ing",
+     "min": 21,
+     "max": 29,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "1",
+     "descripcion": "Agricultura, ganadería, caza y servicios",
+     "min": 18,
+     "max": 30,
+     "exacto": false,
+     "celdas_censuradas": 3,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "94",
+     "descripcion": "Actividades asociativas",
+     "min": 13,
+     "max": 21,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "90",
+     "descripcion": "Actividades de creación artística y arte",
+     "min": 12,
+     "max": 12,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "78",
+     "descripcion": "Actividades relacionadas con el empleo",
+     "min": 8,
+     "max": 20,
+     "exacto": false,
+     "celdas_censuradas": 3,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "95",
+     "descripcion": "Reparación y mantenimiento de ordenadore",
+     "min": 7,
+     "max": 15,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "66",
+     "descripcion": "Actividades auxiliares a los servicios f",
+     "min": 6,
+     "max": 18,
+     "exacto": false,
+     "celdas_censuradas": 3,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "52",
+     "descripcion": "Depósito, almacenamiento y actividades a",
+     "min": 5,
+     "max": 13,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "26",
+     "descripcion": "Fabricación de productos informáticos, e",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "32",
+     "descripcion": "Otras industrias manufactureras",
+     "min": 0,
+     "max": 12,
+     "exacto": false,
+     "celdas_censuradas": 3,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "33",
+     "descripcion": "Reparación, mantenimiento e instalación",
+     "min": 0,
+     "max": 12,
+     "exacto": false,
+     "celdas_censuradas": 3,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "58",
+     "descripcion": "Edición",
+     "min": 0,
+     "max": 12,
+     "exacto": false,
+     "celdas_censuradas": 3,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "64",
+     "descripcion": "Servicios financieros, excepto seguros y",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "80",
+     "descripcion": "Servicios de investigación y seguridad",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "91",
+     "descripcion": "Actividades de bibliotecas, archivos, mu",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "8",
+     "descripcion": "Otras industrias extractivas",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "10",
+     "descripcion": "Industria alimentaria",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "13",
+     "descripcion": "Industria textil",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "14",
+     "descripcion": "Confección de prendas de vestir",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "16",
+     "descripcion": "Industria de la madera y del corcho, exc",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "18",
+     "descripcion": "Artes gráficas y reproducción de soporte",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "20",
+     "descripcion": "Industria química",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "24",
+     "descripcion": "Metalurgia",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "25",
+     "descripcion": "Fabricación de productos metálicos, exce",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "31",
+     "descripcion": "Fabricación de muebles",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "35",
+     "descripcion": "Suministro de energía eléctrica, gas, va",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "42",
+     "descripcion": "Ingeniería civil",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "51",
+     "descripcion": "Transporte aéreo",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "53",
+     "descripcion": "Actividades postales y de mensajería",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "59",
+     "descripcion": "Producción cinematográfica, de vídeo y d",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "60",
+     "descripcion": "Actividades de programación, radiodifusi",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "61",
+     "descripcion": "Telecomunicaciones",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "63",
+     "descripcion": "Infraestructura informática, tratamiento",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "72",
+     "descripcion": "Investigación y desarrollo",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "75",
+     "descripcion": "Actividades veterinarias",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "79",
+     "descripcion": "Actividades de agencias de viajes, opera",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "87",
+     "descripcion": "Asistencia en establecimientos residenci",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "88",
+     "descripcion": "Actividades de servicios sociales sin al",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "2",
+     "descripcion": "Silvicultura y explotación forestal",
+     "min": 0,
+     "max": 4,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    }
+   ],
+   "turisticas": [
+    {
+     "cnae": "55",
+     "descripcion": "Servicios de alojamiento",
+     "min": 170,
+     "max": 170,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "56",
+     "descripcion": "Servicios de comidas y bebidas",
+     "min": 287,
+     "max": 287,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "79",
+     "descripcion": "Agencias de viajes y operadores turísticos",
+     "min": 0,
+     "max": 8,
+     "exacto": false,
+     "celdas_censuradas": 2,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "93",
+     "descripcion": "Actividades deportivas, recreativas y de entretenimiento",
+     "min": 240,
+     "max": 240,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    }
+   ]
+  },
+  "ultimo_mes": "2026-07",
+  "ruptura_cnae": "2026-01",
+  "nota_censura": "Los valores entre 1 y 4 se publican como «<5». Los totales se expresan como intervalo [mínimo observado, mínimo + 4 × número de celdas censuradas].",
+  "celdas_censuradas_acumuladas": 1750
+ },
+ "paro_anual_ieca": {
+  "por_edad": {
+   "De 16 a 29 años": 17.5,
+   "De 30 a 44 años": 64.4,
+   "De 45 a 64 años": 101.0
+  },
+  "por_sexo": {
+   "Hombres": 69.9,
+   "Mujeres": 113.0,
+   "Ambos sexos": 182.9
+  },
+  "anyo": "2025",
+  "total": 182.9
+ },
+ "fuente": "SEPE · datos abiertos de paro y contratos por municipios · Seguridad Social · Afiliados por municipios CNAE 2D · IECA/BADEA",
+ "ambito": "municipal",
+ "actualizado": "2026-08-17T14:59:02Z"
+}

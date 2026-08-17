@@ -1,0 +1,44 @@
+{
+ "deuda_viva": {
+  "serie": [
+   {
+    "t": "2022",
+    "v": 0.0
+   },
+   {
+    "t": "2023",
+    "v": 0.0
+   },
+   {
+    "t": "2024",
+    "v": 0.0
+   },
+   {
+    "t": "2025",
+    "v": 0.0
+   }
+  ],
+  "unidad": "miles de euros",
+  "referencia": "a 31 de diciembre de cada ejercicio"
+ },
+ "pendientes": [
+  {
+   "indicador": "Periodo medio de pago a proveedores",
+   "motivo": "aplicación web con formulario, sin descarga directa",
+   "organismo": "Ministerio de Hacienda · SGCIEF"
+  },
+  {
+   "indicador": "Presupuestos y liquidaciones",
+   "motivo": "aplicación web con formulario, sin descarga directa",
+   "organismo": "Ministerio de Hacienda · SGCIEF"
+  },
+  {
+   "indicador": "Precio de vivienda y transacciones inmobiliarias",
+   "motivo": "el portal rechaza peticiones automatizadas y varias series tienen umbral poblacional que Benahavís no alcanza",
+   "organismo": "Ministerio de Vivienda y Agenda Urbana"
+  }
+ ],
+ "fuente": "Ministerio de Hacienda · Deuda viva de las entidades locales",
+ "ambito": "municipal",
+ "actualizado": "2026-08-17T14:59:02Z"
+}
