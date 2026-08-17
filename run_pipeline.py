@@ -1,0 +1,312 @@
+# -*- coding: utf-8 -*-
+"""Orquestador del Observatorio de Benahavís.
+
+Ejecuta los ocho bloques temáticos. Cada bloque está aislado: si una fuente falla,
+se registra el fallo, se conserva el dato publicado anteriormente y el indicador
+queda marcado como desactualizado en ``docs/data/meta.json``. El pipeline nunca se
+detiene por una fuente caída y nunca escribe datos de relleno.
+
+Uso::
+
+    python run_pipeline.py                # todos los bloques
+    python run_pipeline.py --bloques 1 4  # solo demografía y mercado de trabajo
+    python run_pipeline.py --listar       # muestra los bloques disponibles
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import sys
+from typing import Any, Callable
+
+from dotenv import load_dotenv
+
+from src.contexto import (
+    AEMET_ESTACION, COD_INE, COMARCA, DATA_PROC, DATA_RAW, DOCS_DATA, LOG,
+    MUNICIPIO, NOMBRE_PROVINCIA, VERSION,
+)
+from src.extract import aemet, badea, dataestur, hacienda, ine_tempus, openrta, sepe
+from src.extract import seguridad_social as ss
+from src.extract import visitantes as vis
+from src.load import escribir, leer_previo
+from src.transform.validar import Informe, serie_temporal
+from src.utils.log import configurar, get_logger
+
+log = get_logger("pipeline")
+
+AHORA = dt.datetime.now(dt.timezone.utc)
+SELLO = AHORA.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+#: Estado de cada bloque tras la ejecución, volcado a ``meta.json``.
+ESTADO: dict[str, dict[str, Any]] = {}
+INFORME = Informe()
+
+
+def _registrar(bloque: str, ok: bool, detalle: str = "") -> None:
+    ESTADO[bloque] = {
+        "actualizado": ok,
+        "sello": SELLO if ok else ESTADO.get(bloque, {}).get("sello"),
+        "detalle": detalle,
+    }
+
+
+def _bloque(nombre: str, clave: str, funcion: Callable[[], Any]) -> None:
+    """Ejecuta un bloque aislando su fallo del resto del pipeline."""
+    log.info("")
+    log.info("── %s ─────────────────────────────────────────", nombre)
+    try:
+        datos = funcion()
+    except Exception as exc:  # noqa: BLE001 — un bloque caído no puede tumbar el pipeline
+        log.error("bloque «%s» falló: %s: %s", nombre, type(exc).__name__, exc)
+        previo = leer_previo(clave)
+        if previo is not None:
+            log.warning("   se conserva la versión publicada anteriormente")
+            _registrar(clave, False, f"{type(exc).__name__}: {exc}")
+        else:
+            escribir(clave, {"estado": "sin_datos", "motivo": str(exc)})
+            _registrar(clave, False, f"sin dato previo · {exc}")
+        return
+    escribir(clave, datos)
+    _registrar(clave, True)
+
+
+# ---------------------------------------------------------------- Bloque 1
+def bloque_demografia() -> dict[str, Any]:
+    """Población empadronada y renta de los hogares."""
+    padron = ine_tempus.padron()
+    renta = ine_tempus.atlas_renta()
+
+    serie_temporal(INFORME, "padron.total", padron["total"], minimo=1000, maximo=50000)
+    for clave, puntos in renta.items():
+        serie_temporal(INFORME, f"renta.{clave}", puntos, minimo=0, maximo=500000)
+
+    ultimo = padron["total"][-1] if padron["total"] else None
+    return {
+        "padron": padron,
+        "renta": renta,
+        "poblacion_actual": ultimo,
+        "fuente": "INE · Cifras oficiales de población (tabla 2882) y Atlas de Distribución "
+                  "de Renta de los Hogares (tabla 30824)",
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
+# ---------------------------------------------------------------- Bloque 2
+def bloque_oferta() -> dict[str, Any]:
+    """Oferta turística: registro administrativo (RTA) y oferta anunciada (INE)."""
+    rta = openrta.resumir(openrta.registros())
+    vut = ine_tempus.viviendas_turisticas()
+
+    serie_temporal(INFORME, "rta.acumulado_altas", rta["acumulado_altas"], minimo=0)
+    if vut.get("viviendas"):
+        serie_temporal(INFORME, "ine.viviendas_turisticas", vut["viviendas"], minimo=0)
+
+    return {
+        "rta": rta,
+        "ine_experimental": vut,
+        "advertencia": (
+            "El Registro de Turismo de Andalucía mide oferta inscrita administrativamente; "
+            "la estadística experimental del INE mide oferta anunciada en plataformas de "
+            "intermediación. Miden universos distintos y no deben compararse ni sumarse."
+        ),
+        "fuente": "Junta de Andalucía · OpenRTA · e INE · Viviendas turísticas (tablas 39363 y 39366)",
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
+# ---------------------------------------------------------------- Bloque 3
+def bloque_demanda() -> dict[str, Any]:
+    """Demanda turística municipal a partir de posicionamiento de telefonía móvil."""
+    hoy = dt.date.today()
+    receptor = dataestur.turismo_receptor((2019, 7), (hoy.year, hoy.month))
+    interno = dataestur.turismo_interno([hoy.year - 1, hoy.year])
+
+    serie_temporal(INFORME, "demanda.turistas_extranjeros", receptor["serie"],
+                   minimo=0, maximo=200000, mensual=True)
+    serie_temporal(INFORME, "demanda.turistas_nacionales", interno["serie"],
+                   minimo=0, maximo=200000, mensual=True)
+
+    return {
+        "receptor": receptor,
+        "interno": interno,
+        "advertencia": (
+            "Estadística EXPERIMENTAL del INE basada en el posicionamiento de teléfonos "
+            "móviles, redistribuida por Dataestur (SEGITTUR). No mide pernoctaciones en "
+            "alojamiento reglado ni procede de la Encuesta de Ocupación Hotelera. No es "
+            "comparable con las cifras de oferta del Registro de Turismo de Andalucía."
+        ),
+        "fuente": "INE · Medición del turismo a partir de la posición de los teléfonos móviles "
+                  "(vía Dataestur, SEGITTUR)",
+        "ambito": "municipal",
+        "es_proxy": False,
+        "actualizado": SELLO,
+    }
+
+
+# ---------------------------------------------------------------- Bloque 4
+def bloque_trabajo() -> dict[str, Any]:
+    """Mercado de trabajo: paro, contratos y afiliación por rama de actividad."""
+    anyos = sepe.anyos_recientes(4)
+    paro = sepe.paro(anyos)
+    contratos = sepe.contratos(anyos)
+    # Descarga incremental: se reutilizan los meses ya publicados.
+    previo = (leer_previo("trabajo") or {}).get("afiliacion")
+    afiliacion = ss.afiliacion(ss.meses_recientes(24), previo)
+
+    try:
+        anual = badea.paro_anual()
+    except Exception as exc:  # noqa: BLE001 — indicador secundario
+        log.warning("BADEA no disponible: %s", exc)
+        anual = {}
+
+    serie_temporal(INFORME, "sepe.paro",
+                   [{"t": p["t"], "v": p["total"]} for p in paro["serie"]],
+                   minimo=0, maximo=5000, mensual=True)
+    serie_temporal(INFORME, "sepe.contratos",
+                   [{"t": c["t"], "v": c["total"]} for c in contratos["serie"]],
+                   minimo=0, maximo=20000, mensual=True, salto_relativo=5.0)
+
+    return {
+        "paro": paro,
+        "contratos": contratos,
+        "afiliacion": afiliacion,
+        "paro_anual_ieca": anual,
+        "fuente": "SEPE · datos abiertos de paro y contratos por municipios · "
+                  "Seguridad Social · Afiliados por municipios CNAE 2D · IECA/BADEA",
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
+# ---------------------------------------------------------------- Bloque 5 y 8
+def bloque_economia() -> dict[str, Any]:
+    """Renta, actividad económica y finanzas municipales."""
+    deuda = hacienda.deuda_viva()
+    serie_temporal(INFORME, "hacienda.deuda_viva", deuda["serie"], minimo=0)
+    return {
+        "deuda_viva": deuda,
+        "pendientes": [
+            {"indicador": "Periodo medio de pago a proveedores",
+             "motivo": "aplicación web con formulario, sin descarga directa",
+             "organismo": "Ministerio de Hacienda · SGCIEF"},
+            {"indicador": "Presupuestos y liquidaciones",
+             "motivo": "aplicación web con formulario, sin descarga directa",
+             "organismo": "Ministerio de Hacienda · SGCIEF"},
+            {"indicador": "Precio de vivienda y transacciones inmobiliarias",
+             "motivo": "el portal rechaza peticiones automatizadas y varias series "
+                       "tienen umbral poblacional que Benahavís no alcanza",
+             "organismo": "Ministerio de Vivienda y Agenda Urbana"},
+        ],
+        "fuente": "Ministerio de Hacienda · Deuda viva de las entidades locales",
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
+# ---------------------------------------------------------------- Bloque 6
+def bloque_clima() -> dict[str, Any]:
+    """Clima observado en la estación de AEMET situada dentro del término municipal."""
+    resumen = aemet.resumir(aemet.serie_mensual(AEMET_ESTACION))
+    serie_temporal(INFORME, "clima.temperatura_anual", resumen["temperatura_anual"],
+                   minimo=5, maximo=30, salto_relativo=1.5)
+    serie_temporal(INFORME, "clima.precipitacion_anual", resumen["precipitacion_anual"],
+                   minimo=0, maximo=3000, salto_relativo=6.0)
+    serie_temporal(INFORME, "clima.temperatura_mensual", resumen["temperatura_mensual"],
+                   minimo=-5, maximo=40, salto_relativo=3.0, mensual=True)
+    return {
+        **resumen,
+        "estacion": {"indicativo": AEMET_ESTACION, "nombre": "Benahavís",
+                     "altitud_m": 392, "dentro_del_termino": True},
+        "fuente": "AEMET OpenData · estación 6069X Benahavís",
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
+# ---------------------------------------------------------------- Decreto 72/2017
+def bloque_visitantes() -> dict[str, Any]:
+    """Conteo municipal de visitantes para acreditar población turística asistida."""
+    datos = vis.cargar()
+    return {
+        **datos,
+        "marco_normativo": "Decreto 72/2017, de 13 de junio, de Municipio Turístico de "
+                           "Andalucía · Ley 13/2011 del Turismo de Andalucía",
+        "via_acreditacion": "visitas",
+        "fuente": "Ayuntamiento de Benahavís (dato propio municipal)",
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
+BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
+    1: ("Demografía y renta", "demografia", bloque_demografia),
+    2: ("Oferta turística", "oferta", bloque_oferta),
+    3: ("Demanda turística", "demanda", bloque_demanda),
+    4: ("Mercado de trabajo", "trabajo", bloque_trabajo),
+    5: ("Economía y finanzas municipales", "economia", bloque_economia),
+    6: ("Clima", "clima", bloque_clima),
+    7: ("Conteo de visitantes (Decreto 72/2017)", "visitantes", bloque_visitantes),
+}
+
+
+def escribir_meta() -> None:
+    """Publica el estado del pipeline y el informe de validación."""
+    escribir("meta", {
+        "municipio": MUNICIPIO,
+        "codigo_ine": COD_INE,
+        "provincia": NOMBRE_PROVINCIA,
+        "comarca": COMARCA,
+        "version": VERSION,
+        "generado": SELLO,
+        "autoria_tecnica": "Consultoría AMMA",
+        "destinatario": "Ayuntamiento de Benahavís",
+        "bloques": ESTADO,
+    })
+    escribir("validacion", {"generado": SELLO, **INFORME.a_dict()})
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Pipeline del Observatorio de Benahavís")
+    parser.add_argument("--bloques", nargs="*", type=int,
+                        help="números de bloque a ejecutar (por defecto, todos)")
+    parser.add_argument("--listar", action="store_true", help="lista los bloques y sale")
+    args = parser.parse_args(argv)
+
+    if args.listar:
+        for num, (nombre, clave, _) in BLOQUES.items():
+            print(f"  {num}  {nombre:44} → docs/data/{clave}.json")
+        return 0
+
+    load_dotenv()
+    for ruta in (DATA_RAW, DATA_PROC, DOCS_DATA):
+        ruta.mkdir(parents=True, exist_ok=True)
+    configurar(LOG)
+
+    log.info("Observatorio de %s (%s) · versión %s", MUNICIPIO, COD_INE, VERSION)
+    log.info("Inicio: %s", SELLO)
+
+    seleccion = args.bloques or list(BLOQUES)
+    for num in seleccion:
+        if num not in BLOQUES:
+            log.error("bloque %s desconocido; use --listar", num)
+            continue
+        nombre, clave, funcion = BLOQUES[num]
+        _bloque(nombre, clave, funcion)
+
+    escribir_meta()
+
+    fallidos = [k for k, v in ESTADO.items() if not v["actualizado"]]
+    log.info("")
+    log.info("Fin. %d bloque(s) actualizados, %d con incidencia.",
+             len(ESTADO) - len(fallidos), len(fallidos))
+    if fallidos:
+        log.warning("Bloques con incidencia: %s", ", ".join(fallidos))
+    log.info("Validación: %d avisos, %d errores sobre %d series.",
+             INFORME.a_dict()["avisos"], INFORME.a_dict()["errores"], INFORME.series_revisadas)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
