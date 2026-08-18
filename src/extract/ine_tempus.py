@@ -5,6 +5,7 @@ Cubre tres operaciones, todas verificadas contra el endpoint real para Benahaví
 
 * ``DPOP`` tabla **2882** — Padrón municipal por sexo (Málaga).
 * ``ADRH`` tabla **30824** — Atlas de Distribución de Renta de los Hogares.
+* ``ADRH`` tabla **37677** — Índice de Gini y distribución de la renta P80/P20.
 * ``VTE`` tablas **39363** y **39366** — Viviendas turísticas y su peso sobre el
   parque residencial.
 
@@ -28,6 +29,10 @@ BASE = "https://servicios.ine.es/wstempus/js/ES"
 
 TABLA_PADRON = "2882"
 TABLA_RENTA = "30824"
+#: El Atlas publica 54 tablas homónimas de Gini, una por demarcación. Solo la 37677
+#: contiene los municipios de Málaga: las contiguas devuelven una respuesta vacía
+#: para ``tv=19:2923``, de modo que el identificador no es intercambiable.
+TABLA_GINI = "37677"
 TABLA_VUT = "39363"
 TABLA_VUT_PORCENTAJE = "39366"
 
@@ -130,6 +135,34 @@ def atlas_renta(nult: int = 12) -> dict[str, list]:
             if etiqueta in nombre:
                 salida[clave] = _serie(s)
     log.info("   %d indicadores de renta", len(salida))
+    return salida
+
+
+def desigualdad(nult: int = 12) -> dict[str, list]:
+    """Índice de Gini y distribución P80/P20 de Benahavís, serie anual.
+
+    Ambos indicadores describen el **reparto** de la renta, que las medias del
+    Atlas no revelan: un municipio con renta media alta puede tener una
+    distribución muy desigual. El Gini se publica en escala 0–100 —no 0–1— y el
+    P80/P20 es la razón entre la renta del quintil superior y la del inferior.
+
+    Los años sin dato publicado se descartan en :func:`_serie`, de modo que la
+    serie devuelta no contiene huecos rellenados.
+    """
+    log.info("INE · Gini y P80/P20 (tabla %s, tv=%s)", TABLA_GINI, INE_TV_MUNICIPIO)
+    crudo = _datos_tabla(TABLA_GINI, nult=nult, tv=INE_TV_MUNICIPIO)
+    salida: dict[str, list] = {}
+    for s in crudo:
+        nombre = s.get("Nombre", "")
+        if "Gini" in nombre:
+            salida["gini"] = _serie(s)
+        elif "P80/P20" in nombre:
+            salida["p80_p20"] = _serie(s)
+    if salida.get("gini"):
+        ult = salida["gini"][-1]
+        log.info("   %d años (último: %s = %s)", len(salida["gini"]), ult["t"], ult["v"])
+    else:
+        log.warning("   la tabla %s no devolvió el índice de Gini del municipio", TABLA_GINI)
     return salida
 
 

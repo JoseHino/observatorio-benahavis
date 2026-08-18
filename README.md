@@ -32,7 +32,8 @@ estadística. Las consecuencias están documentadas en
   turísticos».
 - **Sí hay medición municipal de demanda** por otra vía: la estadística experimental del INE
   basada en posicionamiento de telefonía móvil, con serie mensual desde julio de 2019 y desglose
-  por país de origen.
+  por país de origen. Como contexto del alojamiento reglado —y solo como contexto— se publica la
+  ocupación de la **zona turística Costa del Sol (Málaga)**, con su ámbito escrito en la ficha.
 - **Sí hay estación meteorológica en el término municipal** (AEMET `6069X`, 392 m), con serie
   desde 2004.
 - **Cerca de la mitad de las celdas** del fichero municipal de afiliación de la Seguridad Social
@@ -106,9 +107,9 @@ El pipeline no se detiene ni escribe datos de relleno.
 
 | Nº | Bloque | Salida | Notas |
 |----|--------|--------|-------|
-| 1 | Demografía y renta | `demografia.json` | Padrón e Atlas de Renta del INE |
+| 1 | Demografía y renta | `demografia.json` | Padrón, Atlas de Renta e índice de Gini del INE |
 | 2 | Oferta turística | `oferta.json` | RTA georreferenciado e INE experimental, en gráficos separados |
-| 3 | Demanda turística | `demanda.json` | Posicionamiento móvil vía Dataestur; descarga de ~30 MB por año |
+| 3 | Demanda turística | `demanda.json` | Posicionamiento móvil vía Dataestur (~30 MB por año) y EOH de la zona turística Costa del Sol, etiquetada como supramunicipal |
 | 4 | Mercado de trabajo | `trabajo.json` | SEPE y Seguridad Social; descarga **incremental** |
 | 5 | Economía y finanzas | `economia.json` | Deuda viva del Ministerio de Hacienda |
 | 6 | Clima | `clima.json` | AEMET, estación municipal `6069X`; requiere clave |

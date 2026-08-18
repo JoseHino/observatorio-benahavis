@@ -1,7 +1,8 @@
 # Inventario de fuentes — Observatorio Turístico y Socioeconómico de Benahavís
 
 **Municipio:** Benahavís (Málaga) · **Código INE:** 29023 · **Provincia:** 29 · **Comarca:** Costa del Sol Occidental
-**Fecha de verificación de endpoints:** 17 de agosto de 2026
+**Fecha de verificación de endpoints:** 17 de agosto de 2026 (fuentes 1.5, 3.3, 3.4 y 3.4b
+reverificadas el 18 de agosto de 2026)
 **Autoría técnica:** Consultoría AMMA · **Destinatario:** Ayuntamiento de Benahavís
 
 ---
@@ -104,6 +105,7 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 | 1.2 | INE — Atlas de Distribución de Renta de los Hogares, tabla **30824** | `.../DATOS_TABLA/30824?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
 | 1.3 | INE — unidades territoriales (distritos y secciones de Benahavís) | `.../VALORES_GRUPOSTABLA/30824/90487` | Sección censal | — | JSON | Ídem | **Disponible** |
 | 1.4 | IECA — ficha municipal SIMA 29023 | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023` | Municipal | Anual | HTML | CC BY | **Disponible** (extracción HTML) |
+| 1.5 | INE — Atlas de Renta, **índice de Gini y distribución de la renta P80/P20**, tabla **37677** | `.../DATOS_TABLA/37677?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
 
 **Prueba de resolución municipal (1.1):** Padrón a 1 de enero de 2025 → **9.472 habitantes**
 (4.732 hombres / 4.740 mujeres). Series `DPOP13531`, `DPOP13532`, `DPOP13533`.
@@ -112,6 +114,17 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 **14.248 €**; renta neta media por hogar **37.268 €**; renta bruta media por persona
 **20.419 €**; renta bruta media por hogar **53.410 €**; mediana de renta por unidad de consumo
 **17.850 €**. Serie disponible desde 2015.
+
+**Prueba de resolución municipal (1.5):** ejercicio 2023 → **índice de Gini 43,6** y
+**distribución P80/P20 = 4,0**, frente a 46,7 y 5,9 en 2016. Serie 2016–2023; el año 2015
+figura en la tabla sin valor publicado y se descarta.
+
+> **Trampa de la tabla 37677.** El Atlas publica **54 tablas homónimas** de Gini, una por
+> demarcación. Solo la **37677** contiene los municipios de Málaga: sus vecinas de
+> identificador (37607, 37608, 37678…) responden **sin contenido** al mismo filtro
+> `tv=19:2923`, de modo que el identificador no es intercambiable ni deducible del de la
+> tabla de rentas medias (30824). Además, **el Gini se publica en escala 0–100**, no 0–1:
+> tratarlo como proporción da una desigualdad cien veces menor.
 
 > **Nota metodológica obligatoria.** El Atlas de Renta del INE y la Estadística de declarantes
 > del IRPF de la AEAT (fuente 5.1) **no son comparables** y darán cifras muy distintas para
@@ -171,8 +184,9 @@ turísticas**, **5.453 plazas**, 6,33 plazas por vivienda. Periodo anterior: 917
 |---|---|---|---|---|---|---|
 | 3.1 | INE / SEGITTUR-Dataestur — **turismo receptor por municipio y país** (`TURISMO_RECEPTOR_MUN_PAIS_DL`) | `https://www.dataestur.es/API-SEGITTUR-v2/TURISMO_RECEPTOR_MUN_PAIS_DL?desde (año)=&desde (mes)=&hasta (año)=&hasta (mes)=&Provincia=Málaga` | **Municipal**, por país de origen | Mensual desde 2019-07 | CSV `;` latin-1 | **Disponible** |
 | 3.2 | INE / Dataestur — **turismo interno municipio-municipio** (`TURISMO_INTERNO_MUN_MUN_DL`) | `.../TURISMO_INTERNO_MUN_MUN_DL?año=YYYY` | **Municipal** origen y destino | Mensual, fichero anual (~31 MB) | CSV | **Disponible** |
-| 3.3 | Diputación de Málaga — Encuesta de Ocupación Hotelera provincial | `https://opendata.malaga.es/api/3/action/package_show?id=ocupacionhotelera` | **Provincial** | Mensual | CSV/JSON/XLSX | **Disponible como proxy provincial etiquetado** |
-| 3.4 | Dataestur — ocupación hotelera por **zona turística** y **punto turístico** (`EOH_ZONA_TUR_DL`, `EOH_PUNT_TUR_DL`) | `.../EOH_ZONA_TUR_DL` | Zona / punto turístico | Mensual | CSV | **Disponible como proxy comarcal etiquetado** |
+| 3.3 | Diputación de Málaga — Encuesta de Ocupación Hotelera provincial | `https://opendata.malaga.es/api/3/action/package_show?id=ocupacionhotelera` | **Provincial** | Mensual | CSV/JSON/XLSX | **Verificada, no incorporada** (ver nota) |
+| 3.4 | INE / Dataestur — **Encuesta de Ocupación Hotelera por zona turística** (`EOH_ZONA_TUR_DL`) | `.../EOH_ZONA_TUR_DL` | Zona turística (48 zonas) | Mensual desde 2012-01 | **XLSX**, no CSV | **Disponible como proxy comarcal etiquetado** |
+| 3.4b | INE / Dataestur — EOH por **punto turístico** (`EOH_PUNT_TUR_DL`) | `.../EOH_PUNT_TUR_DL` | Punto turístico | Mensual | — | **No disponible**: el endpoint devuelve `504` de forma sistemática. Benahavís no es punto turístico, de modo que no aportaría dato municipal |
 | 3.5 | INE Tempus3 — operaciones TMOV (436 receptor, 437 emisor, 438 interno) | `.../TABLAS_OPERACION/436` | Por resolver en Fase 2 | Mensual | JSON | **Pendiente** (vía alternativa a 3.1, sin dependencia de Dataestur) |
 
 **Prueba de resolución municipal (3.1):** julio de 2025 → **11.421 turistas extranjeros** en
@@ -182,11 +196,38 @@ municipio tiene 9.472 habitantes empadronados.
 **Prueba de resolución municipal (3.2):** 222 registros de origen-destino que implican a
 Benahavís en 2025 (p. ej. enero 2025: 36 turistas con origen Algeciras y destino Benahavís).
 
+**Prueba de resolución de la zona turística (3.4):** junio de 2026 → zona **Costa del Sol
+(Málaga), Andalucía**: 565.438 viajeros, 2.193.961 pernoctaciones, estancia media 3,88 noches,
+**grado de ocupación por plazas 73,60 %**, 513 establecimientos y 96.652 plazas estimadas.
+Serie completa de 174 meses, de enero de 2012 a junio de 2026.
+
+> **Tres trampas verificadas de `EOH_ZONA_TUR_DL`.**
+> 1. Devuelve un **fichero XLSX** —cabecera `PK`, `Content-Type: application/vnd.ms-excel`—
+>    pese a que el resto de operaciones `*_DL` del mismo API sirven CSV en `latin-1`.
+>    Parsearlo como texto delimitado produce una única columna de bytes ilegibles.
+> 2. Responde **`504 Gateway Time-out` con frecuencia**, también entre dos peticiones
+>    correctas. Necesita más reintentos y esperas más largas que el resto del pipeline.
+> 3. La variable `LUGAR_RESIDENCIA` trae tres filas por mes: «Total» y sus dos componentes.
+>    **Solo la fila de total lleva grado de ocupación, plazas y personal**; en las otras dos
+>    esas celdas van en blanco. Un blanco ahí no es un cero, y sumar las tres filas duplica
+>    viajeros y pernoctaciones.
+>
+> Abril de 2020 vale **0** de ocupación y **mayo y junio de 2020 no se publicaron**, por el
+> cierre de los establecimientos durante el confinamiento. La validación del pipeline los
+> marca como aviso; son correctos y no se corrigen.
+
+**Sobre 3.3 (EOH provincial), verificada pero no incorporada.** Mide el mismo fenómeno que 3.4
+con menos proximidad al municipio: la provincia incluye la capital y el interior, cuyo
+comportamiento hotelero difiere del litoral occidental. Publicar dos indicadores sustitutivos
+del mismo hueco invita a compararlos entre sí, que es precisamente lo que el observatorio evita.
+Queda documentada por si el expediente exige el marco provincial.
+
 **Advertencia de cabecera obligatoria para todo el bloque 3.** Los indicadores 3.1 y 3.2
 proceden de una **estadística experimental del INE basada en el posicionamiento de teléfonos
 móviles**. No son equivalentes a pernoctaciones en alojamiento reglado, ni proceden de la
 Encuesta de Ocupación Hotelera. Los indicadores 3.3 y 3.4 **no son municipales**: su ámbito es
 provincial y de zona turística respectivamente, y así figurará en el título de cada gráfico.
+Las cifras de 3.4 no se suman ni se comparan con ninguna serie municipal.
 
 ---
 
@@ -352,7 +393,7 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 
 | Indicador | Causa | Proxy que se usará en su lugar | Ámbito real del proxy |
 |---|---|---|---|
-| Pernoctaciones hoteleras | Umbral de 5 establecimientos — secreto estadístico (EOH/SIMA) | Ocupación hotelera provincial (3.3) y por zona turística (3.4); turistas por posicionamiento móvil (3.1) | Provincia de Málaga · Zona turística Costa del Sol · *(3.1 sí es municipal)* |
+| Pernoctaciones hoteleras | Umbral de 5 establecimientos — secreto estadístico (EOH/SIMA) | **Ocupación hotelera de la zona turística Costa del Sol (3.4), publicada en el panel**; turistas por posicionamiento móvil (3.1) | Zona turística Costa del Sol · *(3.1 sí es municipal)* |
 | Grado de ocupación y estancia media | Ídem | Ídem | Ídem |
 | Número de hoteles y plazas (estadística agregada IECA) | Ídem | **Registro nominal RTA (2.1)** — dato municipal real, de naturaleza registral | Municipal |
 | Criminalidad y tasa de delitos | El Portal Estadístico de Criminalidad publica dato municipal solo para municipios de más de 20.000 habitantes (más de 30.000 entre 2017 y 2020). Benahavís queda fuera | Tasa de delitos provincial (`SEGURIDAD_PROVINCIA_DL` de Dataestur) | Provincia de Málaga |
@@ -378,18 +419,20 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 
 | Bloque | Fuentes verificadas y automatizables | Con dato municipal real |
 |---|---|---|
-| 1 · Demografía y territorio | 4 | Sí |
+| 1 · Demografía y territorio | 5 | Sí |
 | 2 · Oferta turística | 4 | Sí |
-| 3 · Demanda y presión turística | 4 verificadas + 1 pendiente | Sí (3.1 y 3.2); 3.3 y 3.4 son proxies etiquetados |
+| 3 · Demanda y presión turística | 4 verificadas + 1 pendiente + 1 no disponible (3.4b) | Sí (3.1 y 3.2); 3.3 y 3.4 son proxies etiquetados |
 | 4 · Mercado de trabajo | 6 | Sí |
 | 5 · Renta y actividad económica | 4 verificadas + 3 pendientes | Sí |
 | 6 · Clima | 3 (requieren clave de AEMET, ya disponible) | Sí — estación `6069X` dentro del término |
 | 7 · Medio ambiente y territorio | 3 | Sí (geometría) |
 | 8 · Finanzas municipales | 1 verificada + 2 pendientes | Sí |
 
-**Total: 29 fuentes verificadas contra su endpoint real**, de las cuales 25 resuelven a nivel
+**Total: 30 fuentes verificadas contra su endpoint real**, de las cuales 26 resuelven a nivel
 municipal para Benahavís.
 
 ---
 
-*Documento generado el 17 de agosto de 2026. Consultoría AMMA para el Ayuntamiento de Benahavís.*
+*Documento generado el 17 de agosto de 2026 y ampliado el 18 de agosto de 2026 con las fuentes
+1.5 (Gini y P80/P20) y 3.4 (EOH por zona turística). Consultoría AMMA para el Ayuntamiento de
+Benahavís.*

@@ -148,6 +148,47 @@ async function demografia() {
     }
   }
 
+  // — Desigualdad en el reparto de la renta
+  const gini = d.desigualdad?.gini || [];
+  const p80 = d.desigualdad?.p80_p20 || [];
+  const uGini = gini[gini.length - 1];
+  const uP80 = p80[p80.length - 1];
+  if (gini.length) {
+    anexar('cifras-demografia', cifra('Índice de Gini', num(uGini.v, 1), '',
+      `Escala 0–100 · ejercicio ${uGini.t}`));
+
+    const f5 = ficha({
+      titulo: 'Desigualdad en el reparto de la renta',
+      unidad: 'índice de Gini (0–100) y razón P80/P20', ambito: 'municipal',
+      fuente: 'INE, Atlas de Distribución de Renta de los Hogares (tabla 37677)',
+      referencia: `${gini[0].t}–${uGini.t}`, actualizado: fechaActualizacion(),
+      nota: 'El índice de Gini vale 0 en el reparto perfectamente igualitario y 100 en el de máxima concentración. El P80/P20 es la razón entre la renta del quintil superior y la del inferior. Ambos miden el reparto, no el nivel: son independientes de la renta media.'
+    });
+    anexar('graficos-demografia', f5.art);
+    const bg = baseOpciones();
+    pintar(f5.lienzo, {
+      ...bg,
+      xAxis: { ...bg.xAxis, data: gini.map((p) => p.t) },
+      yAxis: [
+        { ...bg.yAxis, name: 'Gini', nameTextStyle: { fontSize: 11, color: '#6b7883' },
+          min: 0, max: 100 },
+        // El eje del P80/P20 se fija a 0–10 —y no al máximo de la serie— para que la
+        // línea quede a la altura de las barras del Gini. Con la escala automática se
+        // dibujaba muy por encima de ellas y sugería una desigualdad mayor que la real.
+        { ...bg.yAxis, name: 'P80/P20', nameTextStyle: { fontSize: 11, color: '#6b7883' },
+          min: 0, max: Math.max(10, Math.ceil(Math.max(...p80.map((p) => p.v)))),
+          splitLine: { show: false },
+          axisLabel: { ...bg.yAxis.axisLabel, formatter: (v) => num(v, 1) } }
+      ],
+      series: [
+        { name: 'Índice de Gini', type: 'bar', barMaxWidth: 26, yAxisIndex: 0,
+          data: gini.map((p) => p.v) },
+        { name: 'Razón P80/P20', type: 'line', yAxisIndex: 1, symbol: 'circle',
+          symbolSize: 6, lineStyle: { width: 2.2 }, data: p80.map((p) => p.v) }
+      ]
+    });
+  }
+
   anexar('lectura-demografia', lectura(
     `El municipio registra ${num(ult.v)} habitantes empadronados a 1 de enero de ${ult.t}, ` +
     `frente a ${num(hace10.v)} en ${hace10.t}, lo que supone un crecimiento del ` +
@@ -155,6 +196,11 @@ async function demografia() {
     (uRentaP ? `La renta neta media por persona alcanza ${num(uRentaP.v)} euros en ${uRentaP.t} y la ` +
       `renta neta media por hogar ${num(uRentaH.v)} euros (INE, Atlas de Distribución de Renta de los ` +
       `Hogares). ` : '') +
+    (uGini ? `El índice de Gini se sitúa en ${num(uGini.v, 1)} sobre 100 en ${uGini.t}` +
+      (uP80 ? `, con una razón P80/P20 de ${num(uP80.v, 1)}` : '') +
+      (gini.length > 1 ? `, frente a ${num(gini[0].v, 1)} en ${gini[0].t}` : '') +
+      `: el reparto de la renta es notablemente más desigual que el nivel medio del municipio ` +
+      `permite suponer, aunque la brecha se ha estrechado a lo largo de la serie. ` : '') +
     `Se advierte que la cifra padronal no recoge la población estacional ni a los residentes no ` +
     `empadronados, por lo que la población efectivamente presente en el municipio es superior a la ` +
     `registrada. Esta diferencia resulta relevante para el dimensionamiento de los servicios públicos.`
@@ -398,7 +444,8 @@ async function demanda() {
     + 'estadístico con la nota literal «Dato no significativo, al disponer el municipio de menos '
     + 'de 5 establecimientos turísticos».',
     'los turistas medidos por posicionamiento móvil que se presentan en este mismo bloque, y la '
-    + 'ocupación hotelera provincial y de zona turística, siempre etiquetadas como tales.'
+    + 'ocupación hotelera de la zona turística Costa del Sol (Málaga), que se publica al final del '
+    + 'bloque etiquetada como dato supramunicipal.'
   ));
 
   if (!d?.receptor?.serie?.length) return sinDatos('graficos-demanda', 'Demanda turística');
@@ -550,6 +597,83 @@ async function demanda() {
     });
   }
 
+  // — Indicador sustitutivo del hueco de pernoctaciones: EOH de la zona turística.
+  //   Va después de los indicadores municipales y con ámbito declarado en la ficha,
+  //   para que no pueda leerse como una cifra de Benahavís.
+  const eoh = d.eoh_zona_turistica;
+  const mesesEoh = eoh?.serie_mensual || [];
+  if (mesesEoh.length) {
+    const ultEoh = eoh.ultimo;
+    anexar('cifras-demanda', cifra('Ocupación hotelera Costa del Sol',
+      num(ultEoh.ocupacion_plazas, 1), '%',
+      `${periodoLargo(ultEoh.t)} · zona turística, dato NO municipal`));
+
+    const f5 = ficha({
+      titulo: 'Grado de ocupación hotelera por plazas en la zona turística Costa del Sol',
+      unidad: 'porcentaje de plazas ocupadas', ambito: 'zona_turistica',
+      fuente: 'INE, Encuesta de Ocupación Hotelera por zonas turísticas (vía Dataestur, SEGITTUR)',
+      referencia: `${periodoLargo(mesesEoh[0].t)} – ${periodoLargo(ultEoh.t)}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: 'Indicador sustitutivo del hueco de pernoctaciones. Describe el alojamiento reglado de toda la zona turística Costa del Sol (Málaga), no el de Benahavís. La banda sombreada señala el periodo de restricciones de movilidad.'
+    });
+    anexar('graficos-demanda', f5.art);
+    pintar(f5.lienzo, {
+      ...bo,
+      legend: { show: false },
+      xAxis: { ...bo.xAxis, data: mesesEoh.map((m) => periodoCorto(m.t)) },
+      yAxis: { ...bo.yAxis, max: 100,
+        axisLabel: { ...bo.yAxis.axisLabel, formatter: (v) => `${num(v)} %` } },
+      tooltip: { ...bo.tooltip,
+        formatter: (ps) => {
+          const m = mesesEoh[ps[0].dataIndex];
+          return `${periodoLargo(m.t)}<br><strong>${num(m.ocupacion_plazas, 1)} %</strong> de ocupación`
+            + `<br>${num(m.pernoctaciones)} pernoctaciones<br>Estancia media ${num(m.estancia_media, 1)} noches`;
+        } },
+      series: [{
+        name: 'Ocupación por plazas', type: 'line', symbol: 'none',
+        lineStyle: { width: 1.8, color: PALETA[2] },
+        areaStyle: { color: 'rgba(193,116,58,.10)' },
+        data: mesesEoh.map((m) => m.ocupacion_plazas),
+        markArea: {
+          silent: true,
+          itemStyle: { color: 'rgba(168,69,106,.07)' },
+          label: { show: false },
+          data: [[{ xAxis: periodoCorto('2020-03') }, { xAxis: periodoCorto('2021-06') }]]
+        }
+      }]
+    });
+
+    // — Pernoctaciones anuales por lugar de residencia, sobre años naturales completos.
+    const res = eoh.pernoctaciones_por_residencia || {};
+    const anual = eoh.anual || [];
+    const anyosEoh = anual.map((a) => a.t);
+    const sumaAnual = (puntos) => anyosEoh.map((a) => (puntos || [])
+      .filter((p) => p.t.startsWith(a)).reduce((s, p) => s + p.v, 0));
+    if (anyosEoh.length) {
+      const f6 = ficha({
+        titulo: 'Pernoctaciones hoteleras en la zona turística, por lugar de residencia',
+        unidad: 'pernoctaciones al año', ambito: 'zona_turistica',
+        fuente: 'INE, Encuesta de Ocupación Hotelera por zonas turísticas (vía Dataestur, SEGITTUR)',
+        referencia: `${anyosEoh[0]}–${anyosEoh[anyosEoh.length - 1]}, años naturales completos`,
+        actualizado: fechaActualizacion(), alto: true,
+        nota: 'Ámbito de zona turística. No es dato de Benahavís y no se suma con ningún indicador municipal.'
+      });
+      anexar('graficos-demanda', f6.art);
+      pintar(f6.lienzo, {
+        ...bo,
+        xAxis: { ...bo.xAxis, data: anyosEoh },
+        yAxis: { ...bo.yAxis,
+          axisLabel: { ...bo.yAxis.axisLabel, formatter: (v) => `${num(v / 1e6, 1)} M` } },
+        series: [
+          { name: 'Residentes en España', type: 'bar', stack: 'p', barMaxWidth: 32,
+            itemStyle: { color: PALETA[0] }, data: sumaAnual(res.espana) },
+          { name: 'Residentes en el extranjero', type: 'bar', stack: 'p', barMaxWidth: 32,
+            itemStyle: { color: PALETA[1] }, data: sumaAnual(res.extranjero) }
+        ]
+      });
+    }
+  }
+
   const primerPais = r.top_paises_12m?.[0];
   anexar('lectura-demanda', lectura(
     `En ${periodoLargo(ult.t)} se contabilizan ${num(ult.v)} turistas extranjeros con destino ` +
@@ -560,7 +684,11 @@ async function demanda() {
     (maxRef && minRef ? `La demanda presenta una concentración estacional de ${num(maxRef / minRef, 1)} ` +
       `veces entre el mes de máxima y el de mínima afluencia de ${anyoRef}. ` : '') +
     `Se reitera que estas cifras proceden de una estadística experimental basada en posicionamiento ` +
-    `de telefonía móvil y no son comparables con las pernoctaciones de la Encuesta de Ocupación Hotelera.`
+    `de telefonía móvil y no son comparables con las pernoctaciones de la Encuesta de Ocupación Hotelera. ` +
+    (mesesEoh.length ? `Como contexto supramunicipal, y sin atribuirlo al municipio, la zona turística ` +
+      `Costa del Sol (Málaga) registra un grado de ocupación por plazas del ` +
+      `${num(eoh.ultimo.ocupacion_plazas, 1)} % en ${periodoLargo(eoh.ultimo.t)}, con una estancia media ` +
+      `de ${num(eoh.ultimo.estancia_media, 1)} noches (INE, Encuesta de Ocupación Hotelera).` : '')
   ));
 }
 

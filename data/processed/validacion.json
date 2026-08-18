@@ -1,15 +1,18 @@
 {
- "generado": "2026-08-17T15:43:24Z",
- "series_revisadas": 17,
+ "generado": "2026-08-18T11:34:28Z",
+ "series_revisadas": 20,
  "series": [
   "clima.precipitacion_anual",
   "clima.temperatura_anual",
   "clima.temperatura_mensual",
   "demanda.turistas_extranjeros",
   "demanda.turistas_nacionales",
+  "eoh.ocupacion_zona_turistica",
   "hacienda.deuda_viva",
   "ine.viviendas_turisticas",
   "padron.total",
+  "renta.gini",
+  "renta.p80_p20",
   "renta.renta_bruta_hogar",
   "renta.renta_bruta_persona",
   "renta.renta_neta_hogar",
@@ -21,12 +24,6 @@
   "sepe.paro"
  ],
  "incidencias": [
-  {
-   "serie": "rta.acumulado_altas",
-   "tipo": "salto_anomalo",
-   "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
-   "gravedad": "aviso"
-  },
   {
    "serie": "demanda.turistas_extranjeros",
    "tipo": "salto_anomalo",
@@ -40,6 +37,24 @@
    "gravedad": "aviso"
   },
   {
+   "serie": "eoh.ocupacion_zona_turistica",
+   "tipo": "salto_anomalo",
+   "detalle": "2020-03 = 33.47 → 2020-04 = 0.0 (×0.0)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "eoh.ocupacion_zona_turistica",
+   "tipo": "meses_ausentes",
+   "detalle": "2 meses sin dato: 2020-05, 2020-06",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "rta.acumulado_altas",
+   "tipo": "salto_anomalo",
+   "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
+   "gravedad": "aviso"
+  },
+  {
    "serie": "clima.temperatura_mensual",
    "tipo": "meses_ausentes",
    "detalle": "2 meses sin dato: 2020-11, 2020-12",
@@ -47,5 +62,5 @@
   }
  ],
  "errores": 0,
- "avisos": 4
+ "avisos": 6
 }

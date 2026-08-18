@@ -3,22 +3,22 @@
  "codigo_ine": "29023",
  "provincia": "Málaga",
  "comarca": "Costa del Sol Occidental",
- "version": "1.0.0",
- "generado": "2026-08-17T15:43:24Z",
+ "version": "1.1.0",
+ "generado": "2026-08-18T11:34:28Z",
  "autoria_tecnica": "Consultoría AMMA",
  "destinatario": "Ayuntamiento de Benahavís",
  "bloques": {
   "demografia": {
    "actualizado": true,
-   "sello": "2026-08-17T15:43:24Z",
-   "detalle": ""
-  },
-  "oferta": {
-   "actualizado": true,
-   "sello": "2026-08-17T15:43:24Z",
+   "sello": "2026-08-18T11:34:28Z",
    "detalle": ""
   },
   "demanda": {
+   "actualizado": true,
+   "sello": "2026-08-18T11:17:16Z",
+   "detalle": ""
+  },
+  "oferta": {
    "actualizado": true,
    "sello": "2026-08-17T15:43:24Z",
    "detalle": ""

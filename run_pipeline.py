@@ -25,7 +25,7 @@ from src.contexto import (
     AEMET_ESTACION, COD_INE, COMARCA, DATA_PROC, DATA_RAW, DOCS_DATA, LOG,
     MUNICIPIO, NOMBRE_PROVINCIA, VERSION,
 )
-from src.extract import aemet, badea, dataestur, hacienda, ine_tempus, openrta, sepe
+from src.extract import aemet, badea, dataestur, eoh, hacienda, ine_tempus, openrta, sepe
 from src.extract import seguridad_social as ss
 from src.extract import visitantes as vis
 from src.load import escribir, leer_previo
@@ -76,17 +76,29 @@ def bloque_demografia() -> dict[str, Any]:
     padron = ine_tempus.padron()
     renta = ine_tempus.atlas_renta()
 
+    try:
+        desigualdad = ine_tempus.desigualdad()
+    except Exception as exc:  # noqa: BLE001 — indicador secundario del bloque
+        log.warning("Gini y P80/P20 no disponibles: %s", exc)
+        desigualdad = {}
+
     serie_temporal(INFORME, "padron.total", padron["total"], minimo=1000, maximo=50000)
     for clave, puntos in renta.items():
         serie_temporal(INFORME, f"renta.{clave}", puntos, minimo=0, maximo=500000)
+    if desigualdad.get("gini"):
+        serie_temporal(INFORME, "renta.gini", desigualdad["gini"], minimo=0, maximo=100)
+    if desigualdad.get("p80_p20"):
+        serie_temporal(INFORME, "renta.p80_p20", desigualdad["p80_p20"], minimo=0, maximo=50)
 
     ultimo = padron["total"][-1] if padron["total"] else None
     return {
         "padron": padron,
         "renta": renta,
+        "desigualdad": desigualdad,
         "poblacion_actual": ultimo,
-        "fuente": "INE · Cifras oficiales de población (tabla 2882) y Atlas de Distribución "
-                  "de Renta de los Hogares (tabla 30824)",
+        "fuente": "INE · Cifras oficiales de población (tabla 2882), Atlas de Distribución "
+                  "de Renta de los Hogares (tabla 30824) e índice de Gini y P80/P20 "
+                  "(tabla 37677)",
         "ambito": "municipal",
         "actualizado": SELLO,
     }
@@ -123,14 +135,28 @@ def bloque_demanda() -> dict[str, Any]:
     receptor = dataestur.turismo_receptor((2019, 7), (hoy.year, hoy.month))
     interno = dataestur.turismo_interno([hoy.year - 1, hoy.year])
 
+    # Indicador sustitutivo del hueco de pernoctaciones: ámbito de zona turística,
+    # nunca municipal. Su caída no puede tumbar el bloque, que sí es municipal.
+    try:
+        hotelera = eoh.zona_turistica()
+    except Exception as exc:  # noqa: BLE001 — el endpoint devuelve 504 con frecuencia
+        log.warning("EOH por zona turística no disponible: %s", exc)
+        hotelera = (leer_previo("demanda") or {}).get("eoh_zona_turistica") or {}
+
     serie_temporal(INFORME, "demanda.turistas_extranjeros", receptor["serie"],
                    minimo=0, maximo=200000, mensual=True)
     serie_temporal(INFORME, "demanda.turistas_nacionales", interno["serie"],
                    minimo=0, maximo=200000, mensual=True)
+    if hotelera.get("serie_mensual"):
+        serie_temporal(INFORME, "eoh.ocupacion_zona_turistica",
+                       [{"t": m["t"], "v": m["ocupacion_plazas"]}
+                        for m in hotelera["serie_mensual"] if m["ocupacion_plazas"] is not None],
+                       minimo=0, maximo=100, mensual=True, salto_relativo=5.0)
 
     return {
         "receptor": receptor,
         "interno": interno,
+        "eoh_zona_turistica": hotelera,
         "advertencia": (
             "Estadística EXPERIMENTAL del INE basada en el posicionamiento de teléfonos "
             "móviles, redistribuida por Dataestur (SEGITTUR). No mide pernoctaciones en "
@@ -138,7 +164,8 @@ def bloque_demanda() -> dict[str, Any]:
             "comparable con las cifras de oferta del Registro de Turismo de Andalucía."
         ),
         "fuente": "INE · Medición del turismo a partir de la posición de los teléfonos móviles "
-                  "(vía Dataestur, SEGITTUR)",
+                  "y Encuesta de Ocupación Hotelera por zonas turísticas "
+                  "(ambas vía Dataestur, SEGITTUR)",
         "ambito": "municipal",
         "es_proxy": False,
         "actualizado": SELLO,

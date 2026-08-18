@@ -5,7 +5,13 @@
 #   granularidad_temporal, unidad, definicion, limitaciones, estado
 #
 # ambito_territorial : municipal | comarcal | provincial | zona_turistica | estacion
-# estado             : disponible | no_disponible_municipal | pendiente
+# estado             : disponible | no_disponible_municipal | pendiente | no_incorporado
+#
+#   disponible              : la fuente lo publica y el pipeline lo explota.
+#   no_disponible_municipal : la fuente no lo publica para Benahavís; lleva sustituto.
+#   pendiente               : verificado pero aún no integrado, o a la espera del dato.
+#   no_incorporado          : verificado y descartado por decisión metodológica, con
+#                             el motivo escrito en «limitaciones».
 #
 # Norma de uso: ningún gráfico del observatorio puede publicar un indicador que no
 # figure aquí, y ningún indicador con ambito_territorial distinto de "municipal"
@@ -115,8 +121,12 @@
   unidad: índice
   definicion: Medidas de desigualdad en la distribución de la renta del municipio.
   limitaciones: >
-    Publicado en una tabla distinta del Atlas, aún no integrada en el pipeline.
-  estado: pendiente
+    Reside en la tabla 37677, distinta de la 30824 de las rentas medias. El Atlas
+    publica 54 tablas homónimas, una por demarcación, y solo la 37677 contiene los
+    municipios de Málaga: las contiguas responden vacío al filtro tv=19:2923. El
+    Gini se publica en escala 0–100, no 0–1. El primer año de la serie (2015) viene
+    sin dato y se descarta; no se interpola.
+  estado: disponible
 
 # ─────────────────────────────────────────────── Bloque 2 · Oferta turística
 - id: IND-OFE-001
@@ -290,7 +300,11 @@
     INDICADOR PROXY DE ÁMBITO PROVINCIAL. No describe a Benahavís: sirve únicamente
     para situar la evolución del municipio en su contexto. Todo gráfico que lo use
     debe indicar «Provincia de Málaga» en el título.
-  estado: disponible
+    NO SE INCORPORA AL PANEL por decisión metodológica: mide el mismo fenómeno que
+    IND-DEM-006 con menos proximidad al municipio —la provincia incluye la capital y
+    el interior—, y dos proxies del mismo hueco inducen a compararlos entre sí. Queda
+    documentado por si el expediente exige el marco provincial.
+  estado: no_incorporado
 
 - id: IND-DEM-006
   nombre: Ocupación hotelera en la zona turística Costa del Sol
@@ -301,11 +315,20 @@
   es_proxy: true
   granularidad_temporal: mensual
   unidad: viajeros, pernoctaciones, porcentaje
-  definicion: Ocupación hotelera agregada de la zona turística Costa del Sol.
+  definicion: >
+    Viajeros, pernoctaciones, estancia media, grado de ocupación por plazas y plazas
+    estimadas de la zona turística Costa del Sol (Málaga), con serie mensual desde
+    enero de 2012 y desglose de pernoctaciones por lugar de residencia.
   limitaciones: >
     INDICADOR PROXY DE ÁMBITO COMARCAL. Todo gráfico que lo use debe indicar
     «Zona turística Costa del Sol — referencia comarcal, no municipal» en el título.
-  estado: pendiente
+    El endpoint devuelve un fichero XLSX, no un CSV como el resto de operaciones
+    *_DL del mismo API, y responde 504 con frecuencia: necesita más reintentos.
+    Las filas desglosadas por residencia dejan en blanco el grado de ocupación y las
+    plazas, que solo constan en la fila de total; un blanco no es un cero.
+    Abril de 2020 vale 0 y mayo y junio de 2020 no se publicaron, por el cierre de
+    los establecimientos durante el confinamiento.
+  estado: disponible
 
 - id: IND-DEM-007
   nombre: Consumo de agua por municipio
