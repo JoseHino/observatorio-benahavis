@@ -1,6 +1,6 @@
 /* Página de alineación con el Decreto 72/2017. */
 
-import { num, periodoLargo, cargar, cifra } from './comun.js';
+import { FUENTES, num, periodoLargo, cargar, cifra, enlaceFuente } from './comun.js';
 
 async function iniciar() {
   const meta = await cargar('meta');
@@ -86,8 +86,8 @@ async function iniciar() {
     const sinPlazas = tipos.filter(([, v]) => !v.plazas).map(([k]) => k);
     const pie = document.createElement('p');
     pie.style.cssText = 'font-size:12px;color:#6b7883;margin:9px 0 0';
-    pie.innerHTML = '<strong>Fuente:</strong> Junta de Andalucía, Registro de Turismo de Andalucía '
-      + '(OpenRTA). '
+    pie.innerHTML = '<strong>Fuente:</strong> '
+      + `${enlaceFuente('Junta de Andalucía, Registro de Turismo de Andalucía (OpenRTA)', FUENTES.OPENRTA)}. `
       + (sinPlazas.length
         ? `Las tipologías sin plazas (${sinPlazas.join(', ')}) corresponden a servicios turísticos `
           + 'que no son alojamiento.'

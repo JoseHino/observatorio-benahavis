@@ -3,8 +3,8 @@
    queda documentada como sin datos y el resto de la página sigue funcionando. */
 
 import {
-  PALETA, MESES, num, periodoLargo, periodoCorto, cargar,
-  ficha, lectura, cifra, baseOpciones, ejeValorHorizontal, pintar,
+  PALETA, MESES, FUENTES, num, periodoLargo, periodoCorto, cargar,
+  ficha, lectura, cifra, enlaceFuente, baseOpciones, ejeValorHorizontal, pintar,
   activarPestanas, ocultarPestana, redibujar
 } from './comun.js';
 
@@ -79,6 +79,7 @@ async function demografia() {
     titulo: 'Evolución de la población empadronada',
     unidad: 'personas', ambito: 'municipal',
     fuente: 'INE, Cifras oficiales de población de los municipios españoles (tabla 2882)',
+    enlace: FUENTES.INE_PADRON,
     referencia: `${serie[0].t}–${ult.t}`, actualizado: fechaActualizacion()
   });
   anexar('graficos-demografia', f1.art);
@@ -100,6 +101,7 @@ async function demografia() {
       titulo: 'Población empadronada por sexo',
       unidad: 'personas', ambito: 'municipal',
       fuente: 'INE, Padrón municipal (tabla 2882)',
+      enlace: FUENTES.INE_PADRON,
       referencia: `${d.padron.hombres[0].t}–${ult.t}`, actualizado: fechaActualizacion()
     });
     anexar('graficos-demografia', f2.art);
@@ -121,6 +123,7 @@ async function demografia() {
       titulo: 'Renta media de los hogares',
       unidad: 'euros anuales', ambito: 'municipal',
       fuente: 'INE, Atlas de Distribución de Renta de los Hogares (tabla 30824)',
+      enlace: FUENTES.INE_RENTA,
       referencia: `${rentaP[0].t}–${uRentaP.t}`, actualizado: fechaActualizacion(),
       nota: 'Calculada sobre el conjunto de la población residente, no sobre declarantes: no comparable con la estadística del IRPF de la AEAT.'
     });
@@ -147,6 +150,7 @@ async function demografia() {
         titulo: 'Renta por unidad de consumo: media y mediana',
         unidad: 'euros anuales', ambito: 'municipal',
         fuente: 'INE, Atlas de Distribución de Renta de los Hogares (tabla 30824)',
+        enlace: FUENTES.INE_RENTA,
         referencia: `${media[0].t}–${media[media.length - 1].t}`,
         actualizado: fechaActualizacion(),
         nota: 'La distancia entre media y mediana indica el grado de dispersión de la renta.'
@@ -178,6 +182,7 @@ async function demografia() {
       titulo: 'Desigualdad en el reparto de la renta',
       unidad: 'índice de Gini (0–100) y razón P80/P20', ambito: 'municipal',
       fuente: 'INE, Atlas de Distribución de Renta de los Hogares (tabla 37677)',
+      enlace: FUENTES.INE_GINI,
       referencia: `${gini[0].t}–${uGini.t}`, actualizado: fechaActualizacion(),
       nota: 'El índice de Gini vale 0 en el reparto perfectamente igualitario y 100 en el de máxima concentración. El P80/P20 es la razón entre la renta del quintil superior y la del inferior. Ambos miden el reparto, no el nivel: son independientes de la renta media.'
     });
@@ -261,6 +266,7 @@ async function oferta() {
     titulo: 'Plazas de alojamiento por tipología, según el Registro de Turismo de Andalucía',
     unidad: 'plazas', ambito: 'municipal',
     fuente: 'Junta de Andalucía, OpenRTA',
+    enlace: FUENTES.OPENRTA,
     referencia: 'Inscripciones vigentes', actualizado: fechaActualizacion(),
     nota: 'Oferta inscrita administrativamente.'
   });
@@ -292,6 +298,7 @@ async function oferta() {
       titulo: 'Inscripciones acumuladas en el Registro de Turismo de Andalucía',
       unidad: 'inscripciones', ambito: 'municipal',
       fuente: 'Junta de Andalucía, OpenRTA',
+      enlace: FUENTES.OPENRTA,
       referencia: `Por año de alta, ${acum[0].t}–${acum[acum.length - 1].t}`,
       actualizado: fechaActualizacion(),
       nota: 'Recoge únicamente las inscripciones vivas en la fecha de descarga, no las bajas históricas.'
@@ -316,6 +323,7 @@ async function oferta() {
       titulo: 'Viviendas turísticas anunciadas en plataformas (estadística experimental del INE)',
       unidad: 'viviendas y plazas', ambito: 'municipal-experimental',
       fuente: 'INE, Viviendas turísticas en España (tablas 39363 y 39366)',
+      enlace: FUENTES.INE_VUT,
       referencia: `${periodoLargo(ine.viviendas[0].t)} – ${periodoLargo(uV.t)}`,
       actualizado: fechaActualizacion(),
       nota: 'Mide oferta ANUNCIADA en plataformas; no es la misma magnitud que el registro administrativo del gráfico anterior.'
@@ -352,6 +360,7 @@ async function oferta() {
       titulo: 'Evolución histórica de las plazas inscritas, por tipología',
       unidad: 'plazas', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, sobre el Registro de Turismo de Andalucía`,
+      enlace: FUENTES.CDS_OFERTA,
       referencia: `${periodoLargo(meses[0])} – ${periodoLargo(meses[meses.length - 1])}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'Misma fuente registral que el primer gráfico, con la serie histórica que el registro en vivo no conserva. Febrero de 2022 aparece duplicado en el fichero de origen; el observatorio no corrige el dato ajeno y deja constancia del salto en el informe de validación.'
@@ -376,6 +385,7 @@ async function oferta() {
       titulo: 'Establecimientos inscritos en el municipio',
       unidad: 'establecimientos', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, sobre el Registro de Turismo de Andalucía`,
+      enlace: FUENTES.CDS_OFERTA,
       referencia: `${periodoLargo(meses[0])} – ${periodoLargo(ultimoTotal.t)}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'La curva recoge el efecto de la inscripción obligatoria de las viviendas con fines turísticos, que multiplica el número de establecimientos sin multiplicar en la misma medida las plazas. El pico de febrero de 2022 es un duplicado del fichero de origen, no una alta real.'
@@ -507,7 +517,8 @@ function mapaOferta(rta) {
   document.getElementById('meta-mapa').textContent =
     `${num(rta.puntos.length)} alojamientos georreferenciados`;
   document.getElementById('pie-mapa').innerHTML =
-    `<strong>Fuente:</strong> Junta de Andalucía, Registro de Turismo de Andalucía (OpenRTA). `
+    `<strong>Fuente:</strong> `
+    + `${enlaceFuente('Junta de Andalucía, Registro de Turismo de Andalucía (OpenRTA)', FUENTES.OPENRTA)}. `
     + `Coordenadas originales en EPSG:25830, transformadas a WGS84. `
     + `De los ${num(rta.total_inscripciones)} registros del municipio se representan `
     + `${num(rta.puntos.length)} alojamientos; ${num(rta.alojamientos_sin_coordenadas)} carecen de `
@@ -573,6 +584,7 @@ async function demanda() {
     titulo: 'Turistas extranjeros con destino Benahavís',
     unidad: 'turistas al mes', ambito: 'municipal-experimental',
     fuente: 'INE, medición del turismo receptor a partir de la posición de los teléfonos móviles (vía Dataestur, SEGITTUR)',
+    enlace: FUENTES.DATAESTUR_MOVIL,
     referencia: `${periodoLargo(serie[0].t)} – ${periodoLargo(ult.t)}`,
     actualizado: fechaActualizacion(), alto: true,
     nota: 'Estadística experimental; no equivale a pernoctaciones en alojamiento reglado. La banda sombreada señala el periodo de restricciones de movilidad por la pandemia.'
@@ -605,6 +617,7 @@ async function demanda() {
       titulo: 'Perfil estacional de la demanda, por año natural completo',
       unidad: 'turistas al mes', ambito: 'municipal-experimental',
       fuente: 'INE, posicionamiento de telefonía móvil (vía Dataestur)',
+      enlace: FUENTES.DATAESTUR_MOVIL,
       referencia: ultimos.join(', '), actualizado: fechaActualizacion(), alto: true
     });
     anexar('graficos-demanda', f2.art);
@@ -626,6 +639,7 @@ async function demanda() {
       titulo: 'Procedencia de los turistas extranjeros, acumulado de doce meses',
       unidad: 'turistas', ambito: 'municipal-experimental',
       fuente: 'INE, posicionamiento de telefonía móvil (vía Dataestur)',
+      enlace: FUENTES.DATAESTUR_MOVIL,
       referencia: `${periodoLargo(r.ventana_12m[0])} – ${periodoLargo(r.ventana_12m[r.ventana_12m.length - 1])}`,
       actualizado: fechaActualizacion(), alto: true
     });
@@ -655,6 +669,7 @@ async function demanda() {
       titulo: 'Turistas nacionales con destino Benahavís, por municipio de origen',
       unidad: 'turistas', ambito: 'municipal-experimental',
       fuente: 'INE, medición del turismo interno a partir de la posición de los teléfonos móviles (vía Dataestur)',
+      enlace: FUENTES.DATAESTUR_MOVIL,
       referencia: `Años ${d.interno.anyos.join(' y ')}`,
       actualizado: fechaActualizacion(), alto: true
     });
@@ -687,6 +702,7 @@ async function demanda() {
       titulo: 'Grado de ocupación de la vivienda turística en Benahavís',
       unidad: 'porcentaje de ocupación', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, seguimiento de plataformas de intermediación`,
+      enlace: FUENTES.CDS_VIVIENDAS,
       referencia: `${periodoLargo(vut[0].t)} – ${periodoLargo(ultVut.t)}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'Mide la ocupación del alojamiento anunciado en plataformas, no la del alojamiento hotelero reglado.'
@@ -725,6 +741,7 @@ async function demanda() {
         titulo: 'Estacionalidad de la ocupación de la vivienda turística',
         unidad: 'porcentaje de ocupación', ambito: 'municipal',
         fuente: `${FUENTE_CDS}, seguimiento de plataformas de intermediación`,
+        enlace: FUENTES.CDS_VIVIENDAS,
         referencia: completosVut.join(', '), actualizado: fechaActualizacion(), alto: true,
         nota: 'Años naturales completos. La distancia entre el mes de máxima y el de mínima ocupación mide la presión estacional efectiva sobre el municipio.'
       });
@@ -750,6 +767,7 @@ async function demanda() {
       titulo: 'Viajeros y pernoctaciones en apartamentos turísticos de Benahavís',
       unidad: 'viajeros y pernoctaciones', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, sobre el microdato de la Encuesta de Ocupación Hotelera del INE`,
+      enlace: FUENTES.CDS_VIAJEROS,
       referencia: micro.serie.map((p) => periodoLargo(p.t)).join(', '),
       actualizado: fechaActualizacion(),
       nota: micro.cobertura
@@ -788,6 +806,7 @@ async function demanda() {
       titulo: 'Grado de ocupación hotelera por plazas en la zona turística Costa del Sol',
       unidad: 'porcentaje de plazas ocupadas', ambito: 'zona_turistica',
       fuente: 'INE, Encuesta de Ocupación Hotelera por zonas turísticas (vía Dataestur, SEGITTUR)',
+      enlace: FUENTES.DATAESTUR_EOH,
       referencia: `${periodoLargo(mesesEoh[0].t)} – ${periodoLargo(ultEoh.t)}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'Indicador sustitutivo del hueco de pernoctaciones. Describe el alojamiento reglado de toda la zona turística Costa del Sol (Málaga), no el de Benahavís. La banda sombreada señala el periodo de restricciones de movilidad.'
@@ -830,6 +849,7 @@ async function demanda() {
         titulo: 'Pernoctaciones hoteleras en la zona turística, por lugar de residencia',
         unidad: 'pernoctaciones al año', ambito: 'zona_turistica',
         fuente: 'INE, Encuesta de Ocupación Hotelera por zonas turísticas (vía Dataestur, SEGITTUR)',
+        enlace: FUENTES.DATAESTUR_EOH,
         referencia: `${anyosEoh[0]}–${anyosEoh[anyosEoh.length - 1]}, años naturales completos`,
         actualizado: fechaActualizacion(), alto: true,
         nota: 'Ámbito de zona turística. No es dato de Benahavís y no se suma con ningún indicador municipal.'
@@ -928,6 +948,7 @@ async function precios() {
       titulo: 'Precio medio por categoría hotelera',
       unidad: 'euros por habitación y noche', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, seguimiento de portales de reserva`,
+      enlace: FUENTES.CDS_PRECIOS,
       referencia: `${periodoLargo(meses[0])} – ${periodoLargo(meses[meses.length - 1])}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: `Precio anunciado, no facturado. Los meses sin oferta publicada en una categoría quedan sin punto: no se rellenan. Se representan las categorías con al menos ${SOSTENIDA} meses de muestra y oferta comercializada en el último año.`
@@ -956,6 +977,7 @@ async function precios() {
       titulo: 'Precio medio por plaza en la vivienda turística',
       unidad: 'euros por plaza y noche', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, seguimiento de plataformas de intermediación`,
+      enlace: FUENTES.CDS_VIVIENDAS,
       referencia: `${periodoLargo(conPrecio[0].t)} – ${periodoLargo(ultVut.t)}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'Universo distinto del hotelero: no se compara con el gráfico anterior.'
@@ -985,6 +1007,7 @@ async function precios() {
       titulo: 'Valoración de los clientes por tipología y categoría',
       unidad: 'puntuación de 0 a 10', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, seguimiento de portales de reserva`,
+      enlace: FUENTES.CDS_PRECIOS,
       referencia: `${periodoLargo(meses[0])} – ${periodoLargo(meses[meses.length - 1])}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'Puntuación media de las reseñas publicadas en el portal, en su propia escala. Se representan las series con muestra sostenida en el tiempo.'
@@ -1057,6 +1080,7 @@ async function trabajo() {
     titulo: 'Paro registrado mensual, por sexo',
     unidad: 'personas', ambito: 'municipal',
     fuente: 'SEPE, paro registrado por municipios',
+    enlace: FUENTES.SEPE,
     referencia: `${periodoLargo(paro[0].t)} – ${periodoLargo(uParo.t)}`,
     actualizado: fechaActualizacion(), alto: true
   });
@@ -1086,6 +1110,7 @@ async function trabajo() {
       titulo: 'Evolución comparada del paro registrado (índice, primer mes = 100)',
       unidad: 'índice', ambito: 'municipal',
       fuente: 'SEPE, paro registrado por municipios; los agregados territoriales se calculan con el mismo fichero',
+      enlace: FUENTES.SEPE,
       referencia: `Base ${periodoLargo(paro[0].t)} = 100`, actualizado: fechaActualizacion(),
       nota: 'Las cuatro series proceden de la misma fuente y metodología, por lo que son plenamente comparables.'
     });
@@ -1114,6 +1139,7 @@ async function trabajo() {
       titulo: 'Contratos registrados mensualmente, por tipo',
       unidad: 'contratos', ambito: 'municipal',
       fuente: 'SEPE, contratos registrados por municipios',
+      enlace: FUENTES.SEPE,
       referencia: `${periodoLargo(contratos[0].t)} – ${periodoLargo(uContr.t)}`,
       actualizado: fechaActualizacion(),
       nota: 'Cuenta contratos, no personas. La reforma laboral de 2022 alteró la composición entre indefinidos y temporales.'
@@ -1139,6 +1165,7 @@ async function trabajo() {
       titulo: 'Afiliación a la Seguridad Social en ramas turísticas (CNAE 55, 56, 79 y 93)',
       unidad: 'afiliados', ambito: 'municipal',
       fuente: 'Seguridad Social, afiliados por municipios CNAE 2D',
+      enlace: FUENTES.SEGURIDAD_SOCIAL,
       referencia: `${periodoLargo(s[0].t)} – ${periodoLargo(s[s.length - 1].t)}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'El trazo grueso es el mínimo observado y la banda superior el máximo posible dado el enmascaramiento «&lt;5».'
@@ -1181,6 +1208,7 @@ async function trabajo() {
       titulo: 'Afiliación por subsector turístico',
       unidad: 'personas afiliadas', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, sobre afiliación a la Seguridad Social`,
+      enlace: FUENTES.CDS_EMPLEO,
       referencia: `${trimestre(periodos[0])} – ${trimestre(ultimoTotal.t)}`,
       actualizado: fechaActualizacion(), alto: true,
       nota: 'Publicada ya agregada por subsector, de modo que no le afecta el enmascaramiento «&lt;5» del fichero por rama de actividad.'
@@ -1202,6 +1230,7 @@ async function trabajo() {
       titulo: 'Empresas con actividad turística inscritas en la Seguridad Social',
       unidad: 'empresas', ambito: 'municipal',
       fuente: `${FUENTE_CDS}, sobre afiliación a la Seguridad Social`,
+      enlace: FUENTES.CDS_EMPLEO,
       referencia: `${trimestre(periodos[0])} – ${trimestre(ultimoTotal.t)}`,
       actualizado: fechaActualizacion(), alto: true
     });
@@ -1254,8 +1283,9 @@ async function trabajo() {
       </table>`;
     const pie = document.createElement('p');
     pie.style.cssText = 'font-size:12px;color:#6b7883;margin:9px 0 0';
-    pie.innerHTML = `<strong>Fuente:</strong> Seguridad Social, afiliados por municipios CNAE 2D, `
-      + `regímenes y sexo. Los valores en cursiva son intervalos derivados del enmascaramiento `
+    pie.innerHTML = `<strong>Fuente:</strong> `
+      + `${enlaceFuente('Seguridad Social, afiliados por municipios CNAE 2D, regímenes y sexo', FUENTES.SEGURIDAD_SOCIAL)}. `
+      + `Los valores en cursiva son intervalos derivados del enmascaramiento `
       + `«&lt;5» aplicado a los valores comprendidos entre 1 y 4. ${afi.nota_censura || ''} `
       + `Actualizado el ${fechaActualizacion()}.`;
     cont.append(rot, marco, pie);
@@ -1320,7 +1350,7 @@ async function economia() {
         </table>
       </div>
       <div class="ficha__pie">
-        <strong>Fuente:</strong> Ministerio de Hacienda, deuda viva de las entidades locales.
+        <strong>Fuente:</strong> ${enlaceFuente('Ministerio de Hacienda, deuda viva de las entidades locales', FUENTES.HACIENDA_DEUDA)}.
         Recoge la deuda de la entidad principal; no incorpora la de los entes dependientes.
         Actualizado el ${fechaActualizacion()}.
       </div>`;
@@ -1330,6 +1360,7 @@ async function economia() {
       titulo: 'Deuda viva del Ayuntamiento de Benahavís',
       unidad: 'miles de euros', ambito: 'municipal',
       fuente: 'Ministerio de Hacienda, deuda viva de las entidades locales',
+      enlace: FUENTES.HACIENDA_DEUDA,
       referencia: `${serie[0].t}–${ult.t}, a 31 de diciembre`, actualizado: fechaActualizacion()
     });
     anexar('graficos-economia', f1.art);
@@ -1390,6 +1421,7 @@ async function clima() {
     titulo: 'Climograma de Benahavís: temperatura y precipitación medias mensuales',
     unidad: 'grados Celsius y milímetros', ambito: 'municipal',
     fuente: `AEMET OpenData, estación ${d.estacion?.indicativo} Benahavís (${d.estacion?.altitud_m} m)`,
+    enlace: FUENTES.AEMET,
     referencia: `Periodo ${d.primer_mes?.slice(0, 4)}–${d.ultimo_mes?.slice(0, 4)}`,
     actualizado: fechaActualizacion(), alto: true,
     nota: 'El periodo de cálculo no coincide con el trentenio estándar de la Organización Meteorológica Mundial, por lo que no son normales climatológicas en sentido estricto.'
@@ -1422,6 +1454,7 @@ async function clima() {
       titulo: 'Temperatura media anual',
       unidad: 'grados Celsius', ambito: 'municipal',
       fuente: `AEMET OpenData, estación ${d.estacion?.indicativo} Benahavís`,
+      enlace: FUENTES.AEMET,
       referencia: `${tAnual[0].t}–${uT.t}`, actualizado: fechaActualizacion(),
       nota: 'Resumen anual calculado por la propia AEMET; los años sin resumen publicado no se representan.'
     });
@@ -1450,6 +1483,7 @@ async function clima() {
       titulo: 'Precipitación anual acumulada',
       unidad: 'milímetros', ambito: 'municipal',
       fuente: `AEMET OpenData, estación ${d.estacion?.indicativo} Benahavís`,
+      enlace: FUENTES.AEMET,
       referencia: `${pAnual[0].t}–${uP.t}`, actualizado: fechaActualizacion(),
       nota: 'Resumen anual publicado por AEMET. Los registros marcados como inapreciables se contabilizan como cero.'
     });

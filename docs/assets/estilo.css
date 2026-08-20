@@ -203,6 +203,15 @@ main { padding: 34px 0 60px; }
 }
 .ficha__pie strong { color: var(--tinta-media); font-weight: 600; }
 
+/* El nombre de la fuente lleva a su página oficial. Subrayado discreto: el pie es
+   letra menuda y un enlace en color fuerte competiría con el propio gráfico. */
+.enlace-fuente {
+  color: inherit; text-decoration: underline;
+  text-decoration-color: var(--azul-400);
+  text-underline-offset: 2px;
+}
+.enlace-fuente:hover { color: var(--azul-700); text-decoration-color: currentColor; }
+
 .hueco {
   padding: 34px 22px; text-align: center; color: var(--tinta-suave);
   background: repeating-linear-gradient(45deg, #fafbfc, #fafbfc 10px, #f4f6f8 10px, #f4f6f8 20px);

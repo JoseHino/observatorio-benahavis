@@ -149,8 +149,10 @@ pipeline funciona con normalidad.
    cruda quede archivada y los reintentos sean homogéneos.
 5. Añadir la función del bloque en `run_pipeline.py` y registrarla en el diccionario `BLOQUES`,
    con sus llamadas a `serie_temporal()` para la validación.
-6. Pintar en `docs/assets/panel.js` usando el componente `ficha()`, que obliga a declarar título,
-   unidad, ámbito territorial, fuente, referencia y fecha de actualización.
+6. Añadir la dirección pública de la fuente al catálogo `FUENTES` de
+   `docs/assets/comun.js`, para que el pie del gráfico enlace a su origen.
+7. Pintar en `docs/assets/panel.js` usando el componente `ficha()`, que obliga a declarar título,
+   unidad, ámbito territorial, fuente, enlace, referencia y fecha de actualización.
 
 Un indicador que no sea de ámbito municipal **debe** declararse como tal: la etiqueta de ámbito
 aparece en el gráfico y es parte del dato.

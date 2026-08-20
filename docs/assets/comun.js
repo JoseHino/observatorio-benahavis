@@ -6,6 +6,42 @@ export const PALETA = ['#1d4e89', '#2f9e8f', '#c1743a', '#7a5ea8', '#4a7d34', '#
 export const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
   'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
+/**
+ * Dirección pública de cada fuente, para que el pie de cada gráfico lleve al
+ * origen del dato. Se centraliza aquí —y no en cada ficha— porque la misma fuente
+ * alimenta varios gráficos y un enlace roto debe corregirse en un solo sitio.
+ *
+ * Se apunta a la página consultable por una persona, no al endpoint que usa el
+ * pipeline: quien pulsa quiere ver la estadística, no descargar un CSV. Las del
+ * Big Data provincial llevan ya el municipio en la dirección.
+ */
+export const FUENTES = {
+  INE_PADRON: 'https://www.ine.es/jaxiT3/Tabla.htm?t=2882',
+  INE_RENTA: 'https://www.ine.es/jaxiT3/Tabla.htm?t=30824',
+  INE_GINI: 'https://www.ine.es/jaxiT3/Tabla.htm?t=37677',
+  INE_VUT: 'https://www.ine.es/jaxiT3/Tabla.htm?t=39363',
+  DATAESTUR_MOVIL: 'https://www.dataestur.es/viajes-ocio/medicion-del-turismo-a-partir-de-telefonia-movil/',
+  DATAESTUR_EOH: 'https://www.dataestur.es/alojamientos/encuesta-ocupacion-hoteles/',
+  OPENRTA: 'https://www.juntadeandalucia.es/datosabiertos/portal/dataset/openrta',
+  IECA_SIMA: 'https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023',
+  SEPE: 'https://www.sepe.es/HomeSepe/que-es-el-sepe/estadisticas/datos-estadisticos/municipios.html',
+  SEGURIDAD_SOCIAL: 'https://www.seg-social.es/wps/portal/wss/internet/EstadisticasPresupuestosEstudios/Estadisticas/EST8',
+  AEMET: 'https://opendata.aemet.es/centrodedescargas/inicio',
+  HACIENDA_DEUDA: 'https://www.hacienda.gob.es/es-ES/CDI/Paginas/SistemasFinanciacionDeuda/InformacionEELLs/DeudaViva.aspx',
+  CDS_PORTAL: 'https://www.costadelsolmalaga.org/bigdata/',
+  CDS_VIVIENDAS: 'https://www.costadelsolmalaga.org/bigdata/com1_tc-364273/viviendas-turisticas?mun=29023',
+  CDS_OFERTA: 'https://www.costadelsolmalaga.org/bigdata/com1_tc-357992/oferta-alojamiento?mun=29023',
+  CDS_PRECIOS: 'https://www.costadelsolmalaga.org/bigdata/com1_tc-461998/precios-hoteles?mun=29023',
+  CDS_EMPLEO: 'https://www.costadelsolmalaga.org/bigdata/com1_tc-357987/empleo-turismo?mun=29023',
+  CDS_VIAJEROS: 'https://www.costadelsolmalaga.org/bigdata/com1_tc-357990/viajeros-pernoctaciones?mun=29023',
+};
+
+/** Envuelve el nombre de la fuente en un enlace a su página oficial. */
+export function enlaceFuente(texto, url) {
+  if (!url) return texto;
+  return `<a class="enlace-fuente" href="${url}" target="_blank" rel="noopener">${texto}</a>`;
+}
+
 const fmtEntero = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 0 });
 const fmtDecimal = new Intl.NumberFormat('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
@@ -59,7 +95,8 @@ export async function cargar(nombre) {
  * Todo gráfico del observatorio lleva obligatoriamente título, unidad, ámbito
  * territorial, fuente, año de referencia y fecha de actualización.
  */
-export function ficha({ titulo, unidad, ambito, fuente, referencia, actualizado, nota, alto = false }) {
+export function ficha({ titulo, unidad, ambito, fuente, enlace, referencia, actualizado, nota,
+                        alto = false }) {
   const art = document.createElement('article');
   art.className = 'ficha';
 
@@ -79,7 +116,7 @@ export function ficha({ titulo, unidad, ambito, fuente, referencia, actualizado,
 
   const pie = document.createElement('div');
   pie.className = 'ficha__pie';
-  pie.innerHTML = `<strong>Fuente:</strong> ${fuente}.
+  pie.innerHTML = `<strong>Fuente:</strong> ${enlaceFuente(fuente, enlace)}.
     ${nota ? `${nota} ` : ''}Actualizado el ${actualizado || '—'}.`;
 
   art.append(cab, lienzo, pie);
