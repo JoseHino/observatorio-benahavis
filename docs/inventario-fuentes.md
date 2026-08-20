@@ -1,8 +1,8 @@
 # Inventario de fuentes — Observatorio Turístico y Socioeconómico de Benahavís
 
 **Municipio:** Benahavís (Málaga) · **Código INE:** 29023 · **Provincia:** 29 · **Comarca:** Costa del Sol Occidental
-**Fecha de verificación de endpoints:** 17 de agosto de 2026 (fuentes 1.5, 3.3, 3.4 y 3.4b
-reverificadas el 18 de agosto de 2026)
+**Fecha de verificación de endpoints:** 17 de agosto de 2026 · fuentes 1.5, 3.3, 3.4 y 3.4b,
+el 18 de agosto de 2026 · bloque 9 completo, el 20 de agosto de 2026
 **Autoría técnica:** Consultoría AMMA · **Destinatario:** Ayuntamiento de Benahavís
 
 ---
@@ -369,6 +369,91 @@ pipeline.
 
 ---
 
+### Bloque 9 — Big Data de Turismo y Planificación Costa del Sol
+
+Observatorio provincial de la Diputación de Málaga. Publica por municipio series que ninguna
+fuente estatal baja a un municipio del tamaño de Benahavís. **Es la fuente que resuelve el hueco
+principal del encargo**: la ocupación de alojamiento con ámbito estrictamente municipal.
+
+Portal: `https://www.costadelsolmalaga.org/bigdata/` · Visor:
+`https://visor.bigdata.costadelsolmalaga.org/informe?id={informe}&mun=29023`
+
+| # | Informe | Entidad consultada | Contenido para Benahavís | Cobertura verificada | Estado |
+|---|---|---|---|---|---|
+| 9.1 | `viviendas-turisticas` | medidas de `_Cálculos` sobre `Calendario` × `Municipios` | **Grado de ocupación**, viviendas y plazas anunciadas y **precio medio por plaza** | 101 meses, 2018-03 → 2026-07 | **Disponible** |
+| 9.2 | `oferta-alojamiento` | `RTA` × `Municipios` × `Tipologías` | Establecimientos y plazas inscritos, **serie histórica por tipología** | 94 periodos, 1998-12 → 2026-07 | **Disponible** |
+| 9.3 | `precios-hoteles` | `Lurmetrika_Booking` | Precio medio y valoración por tipología y categoría | 139 meses, 2015-01 → 2026-07 | **Disponible** |
+| 9.4 | `empleo-turismo` | `Seguridad Social Municipal` × `Municipios` | Empresas y personas afiliadas **por subsector turístico y régimen** | 30 trimestres, 2019-1T → 2026-2T | **Disponible** |
+| 9.5 | `viajeros-pernoctaciones` | `Viajeros y Pernoctaciones` | Microdato de la EOH: viajeros y pernoctaciones por tipología y país | **Solo 3 meses** de apartamentos turísticos (2025-06, 2025-07, 2025-10) | **Disponible, cobertura mínima** |
+| 9.6 | `empleo-hosteleria`, `reservas-alojamiento`, `concentracion-territorio` | varias | Afiliación en hostelería, disponibilidad de alojamiento y matriz origen-destino | Responden para el municipio | **Verificados, no incorporados** (ver nota) |
+
+**Prueba de resolución municipal (9.1):** julio de 2026 → **62,94 % de ocupación**, 804 viviendas
+y 5.050 plazas anunciadas, 112,10 € de precio medio por plaza y noche.
+
+**Prueba de resolución municipal (9.2):** julio de 2026 → 2.257 establecimientos y 16.523 plazas
+inscritas, repartidas en cinco tipologías. Diciembre de 1998, primer periodo de la serie: un
+apartamento turístico con 29 plazas.
+
+**Prueba de resolución municipal (9.4):** segundo trimestre de 2026 → 66 empresas y 737 personas
+afiliadas en los seis subsectores turísticos. **Sin censura `<5`**, porque el dato se publica ya
+agregado por subsector: cubre justo el punto ciego del fichero MUNCNAE.
+
+#### Cómo se consulta
+
+No hay API pública. Cada informe es un **Power BI embebido** y se consulta su endpoint semántico:
+
+1. **Token.** El visor incrusta un token de embed efímero en el HTML
+   (`accessToken: '…'`), que se regenera en cada carga. Hay que pedir uno por informe y ejecución.
+2. **Endpoint.** `POST https://wabi-europe-north-b-redirect.analysis.windows.net/explore/querydata?synchronous=true`
+   con `Authorization: EmbedToken <token>` y **`Origin: https://app.powerbi.com`**. La ruta
+   `/public/reports/querydata` devuelve `403`. Como el servicio solo acepta ese origen, la
+   consulta **no puede hacerse desde el navegador**: tiene que ir en el pipeline.
+3. **Identificadores.** El cuerpo exige `modelId` y `DatasetId`, que el visor no publica; se
+   obtienen de `GET /explore/reports/{reportId}/modelsAndExploration?preferReadOnlySession=true`
+   y quedan fijados en `src/extract/costadelsol.py`. El `reportId` sí se lee del visor en cada
+   ejecución, por si la Diputación republica el panel.
+4. **Esquema.** `POST /explore/conceptualschema` con `{"modelIds":[…]}` devuelve entidades y
+   columnas, que es como se localizan los nombres reales —`06. Territorio`,
+   `etiqueta_municipio`, `Municipios_Etiqueta`—, distintos en cada informe.
+
+#### Trampas verificadas
+
+- **Respuesta con BOM.** El JSON llega con marca de orden de bytes; decodificarlo como UTF-8 a
+  secas deja el BOM delante y el documento no parsea. Hay que usar `utf-8-sig`.
+- **Formato DM0.** Los datos vienen comprimidos: descriptor `S` con diccionarios `ValueDicts`,
+  máscara `R` de «repite el valor de la fila anterior» y máscara `Ø` de nulos. Sin deshacer las
+  tres cosas las etiquetas salen como números y las filas quedan corridas.
+- **Filas de total.** En 9.4 la variable `regimen` trae «Total» junto a sus componentes (General,
+  Autónomo, Mar); sumar todas las filas duplica el empleo. Lo mismo ocurre en 9.5 con el mercado
+  emisor y sus agregados continentales.
+- **Medidas frente a columnas.** En 9.1 el grado de ocupación y el precio **no son columnas**: la
+  columna homónima devuelve nulos. Hay que pedir las medidas del modelo
+  (`0.4 Grado de Ocupación`, `0.3 Precio medio por plaza mapa`) con la tabla `Calendario` como
+  contexto temporal.
+- **Decimales como texto.** Los valores no enteros llegan en cadena («62.941603…»), con punto
+  decimal.
+- **Duplicado en origen (9.2).** Febrero de 2022 dobla el registro: 2.057 establecimientos y
+  15.258 plazas entre un enero de 1.010 y 8.670 y un marzo de 1.050 y 8.878. El observatorio
+  **no corrige el dato ajeno**: lo publica, lo señala en la ficha del gráfico y lo recoge el
+  informe de validación.
+- **Frecuencia variable (9.2).** La serie es anual hasta mediados de la década pasada y mensual
+  después. Validarla entera como mensual produce doscientos «meses ausentes» que no existen.
+
+**Sobre 9.6, verificados y no incorporados.** `empleo-hosteleria` es un subconjunto de 9.4;
+`reservas-alojamiento` publica recuentos de alojamiento-día cuya definición no consta en el
+visor; y `concentracion-territorio` mide turistas por origen con una magnitud que **no reconcilia**
+con la serie de posicionamiento móvil que ya publica el bloque 3 —362.964 frente a 102.317
+turistas en 2025—, sin que el visor documente la diferencia. Publicar dos cifras del mismo
+concepto que se contradicen sería peor que no publicar ninguna.
+
+**Informes del portal que no resuelven para Benahavís:** `prevision-aeropuerto`,
+`llegadas-aeropuerto`, `rentabilidad-hoteles`, `busqueda-vuelos`, `demanda-turistica`,
+`reservas-hoteles`, `busqueda-hoteles`, `ocupacion-alojamientos`, `caracteristicas-viajeros`,
+`caracteristicas-golf` y `caracteristicas-ocio`. El visor devuelve la página de error para
+`mun=29023`.
+
+---
+
 ## 3. Fuentes que requieren solicitud formal o convenio
 
 Ninguna de estas se integra en el pipeline automático. Se listan con el organismo destinatario
@@ -427,12 +512,14 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 | 6 · Clima | 3 (requieren clave de AEMET, ya disponible) | Sí — estación `6069X` dentro del término |
 | 7 · Medio ambiente y territorio | 3 | Sí (geometría) |
 | 8 · Finanzas municipales | 1 verificada + 2 pendientes | Sí |
+| 9 · Big Data de Turismo Costa del Sol | 5 informes incorporados + 3 verificados no incorporados | Sí, los cinco |
 
-**Total: 30 fuentes verificadas contra su endpoint real**, de las cuales 26 resuelven a nivel
+**Total: 38 fuentes verificadas contra su endpoint real**, de las cuales 34 resuelven a nivel
 municipal para Benahavís.
 
 ---
 
-*Documento generado el 17 de agosto de 2026 y ampliado el 18 de agosto de 2026 con las fuentes
-1.5 (Gini y P80/P20) y 3.4 (EOH por zona turística). Consultoría AMMA para el Ayuntamiento de
+*Documento generado el 17 de agosto de 2026, ampliado el 18 de agosto de 2026 con las fuentes
+1.5 (Gini y P80/P20) y 3.4 (EOH por zona turística), y el 20 de agosto de 2026 con el bloque 9
+(Big Data de Turismo y Planificación Costa del Sol). Consultoría AMMA para el Ayuntamiento de
 Benahavís.*

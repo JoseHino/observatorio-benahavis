@@ -181,9 +181,26 @@ export function ejeValorHorizontal() {
  * la mitad. Un ResizeObserver sobre el propio nodo cubre ese caso y también el de
  * rotar el dispositivo o cambiar el zoom.
  */
+const GRAFICOS = [];
+
+/**
+ * Redibuja todos los gráficos ya creados.
+ *
+ * Hace falta al cambiar de pestaña: los gráficos de un panel oculto se
+ * inicializaron con anchura cero y el ResizeObserver no siempre llega a tiempo
+ * en el primer cambio.
+ */
+export function redibujar() {
+  GRAFICOS.forEach((g) => {
+    const nodo = g.getDom();
+    if (nodo && nodo.clientWidth > 0) g.resize();
+  });
+}
+
 export function pintar(nodo, opciones) {
   const g = echarts.init(nodo, null, { renderer: 'canvas' });
   g.setOption(opciones);
+  GRAFICOS.push(g);
 
   if (typeof ResizeObserver === 'function') {
     let pendiente = null;
@@ -202,22 +219,51 @@ export function pintar(nodo, opciones) {
   return g;
 }
 
-/** Marca en la navegación el bloque visible. */
-export function activarNavegacion() {
-  const enlaces = [...document.querySelectorAll('.nav__lista a[href^="#"]')];
-  const secciones = enlaces
-    .map((a) => document.querySelector(a.getAttribute('href')))
-    .filter(Boolean);
-  if (!secciones.length) return;
+/**
+ * Convierte las secciones temáticas en pestañas.
+ *
+ * La pestaña activa se refleja en el fragmento de la URL, de modo que un enlace
+ * a `index.html#demanda` —los hay en las otras páginas del observatorio— sigue
+ * abriendo la temática correcta y la dirección se puede compartir.
+ *
+ * Al mostrar una pestaña se avisa a quien lo necesite: un gráfico creado dentro
+ * de un panel oculto se dibujó con anchura cero, y tanto ECharts como Leaflet
+ * necesitan recalcular su tamaño en cuanto el panel se hace visible.
+ */
+export function activarPestanas(alMostrar) {
+  const pestanas = [...document.querySelectorAll('.nav__pestana')];
+  if (!pestanas.length) return;
+  const paneles = pestanas.map((b) => document.getElementById(b.dataset.panel)).filter(Boolean);
 
-  const obs = new IntersectionObserver((entradas) => {
-    entradas.forEach((e) => {
-      if (!e.isIntersecting) return;
-      enlaces.forEach((a) => a.removeAttribute('aria-current'));
-      const activo = enlaces.find((a) => a.getAttribute('href') === `#${e.target.id}`);
-      if (activo) activo.setAttribute('aria-current', 'true');
-    });
-  }, { rootMargin: '-80px 0px -70% 0px' });
+  function mostrar(id, conHistorial = true) {
+    const destino = paneles.some((p) => p.id === id) ? id : paneles[0].id;
+    paneles.forEach((p) => { p.hidden = p.id !== destino; });
+    pestanas.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.panel === destino)));
 
-  secciones.forEach((s) => obs.observe(s));
+    // En móvil la barra de pestañas se desplaza en horizontal: la activa debe quedar
+    // a la vista, o el usuario no ve en qué temática está.
+    const activa = pestanas.find((b) => b.dataset.panel === destino);
+    if (activa) activa.scrollIntoView({ block: 'nearest', inline: 'center' });
+
+    if (conHistorial && location.hash.slice(1) !== destino) {
+      history.replaceState(null, '', `#${destino}`);
+    }
+    if (typeof alMostrar === 'function') alMostrar(destino);
+  }
+
+  pestanas.forEach((b) => b.addEventListener('click', () => {
+    mostrar(b.dataset.panel);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+  window.addEventListener('hashchange', () => mostrar(location.hash.slice(1), false));
+
+  mostrar(location.hash.slice(1) || paneles[0].id, false);
+}
+
+/** Oculta la pestaña de una temática que no ha podido publicar ningún dato. */
+export function ocultarPestana(id) {
+  const boton = document.querySelector(`.nav__pestana[data-panel="${id}"]`);
+  const panel = document.getElementById(id);
+  if (boton) boton.closest('li').hidden = true;
+  if (panel) panel.hidden = true;
 }

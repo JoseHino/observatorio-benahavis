@@ -1,6 +1,6 @@
 /* Página de alineación con el Decreto 72/2017. */
 
-import { num, periodoLargo, cargar, cifra, hueco } from './comun.js';
+import { num, periodoLargo, cargar, cifra } from './comun.js';
 
 async function iniciar() {
   const meta = await cargar('meta');
@@ -11,8 +11,9 @@ async function iniciar() {
     document.getElementById('pie-generado').textContent = f;
   }
 
-  const [dem, ofe, pob, vis] = await Promise.all([
-    cargar('demanda'), cargar('oferta'), cargar('demografia'), cargar('visitantes')
+  const [dem, ofe, pob, vis, cds] = await Promise.all([
+    cargar('demanda'), cargar('oferta'), cargar('demografia'), cargar('visitantes'),
+    cargar('costadelsol')
   ]);
 
   // ── Indicadores de apoyo
@@ -33,6 +34,14 @@ async function iniciar() {
     cont.appendChild(cifra('Mes de máxima afluencia',
       periodoLargo(ventana.reduce((a, b) => (b.v > a.v ? b : a)).t), '',
       'Dentro de los últimos doce meses'));
+  }
+
+  const ocupacion = (cds?.vivienda_turistica?.serie || []).filter((p) => p.ocupacion !== null);
+  const ultOcupacion = ocupacion[ocupacion.length - 1];
+  if (ultOcupacion) {
+    cont.appendChild(cifra('Ocupación de la vivienda turística',
+      num(ultOcupacion.ocupacion, 1), '%',
+      `${periodoLargo(ultOcupacion.t)} · ${num(ultOcupacion.plazas)} plazas anunciadas`));
   }
 
   if (ofe?.rta) {
@@ -100,13 +109,15 @@ async function iniciar() {
       ${vis.recursos.join(', ')}.</p>`;
     estado.appendChild(aviso);
   } else {
-    estado.appendChild(hueco(
-      'Conteo municipal de visitantes',
-      'El módulo de ingesta está implementado y validado, pero el Ayuntamiento no ha depositado '
-      + 'todavía ningún fichero de conteo en <code>data/visitantes/</code>. En cuanto lo haga, '
-      + 'los datos aparecerán aquí y en el panel principal sin necesidad de intervención técnica.',
-      null
-    ));
+    // Sin conteos depositados no se dibuja un hueco: se explica qué hacer, que es lo
+    // único accionable para el Ayuntamiento en este punto del expediente.
+    const nota = document.createElement('div');
+    nota.className = 'aviso aviso--neutro';
+    nota.innerHTML = `<span class="aviso__titulo">El módulo queda a la espera del primer fichero</span>
+      <p>La ingesta está implementada y validada. En cuanto el Ayuntamiento deposite el primer
+      fichero de conteo con el esquema anterior, la serie aparece aquí y en el panel principal
+      sin ninguna intervención técnica.</p>`;
+    estado.appendChild(nota);
   }
 }
 

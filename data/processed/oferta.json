@@ -1,13 +1,13 @@
 {
  "rta": {
-  "total_inscripciones": 2253,
-  "plazas_totales": 15095,
-  "plazas_alojamiento": 15095,
+  "total_inscripciones": 2254,
+  "plazas_totales": 15099,
+  "plazas_alojamiento": 15099,
   "por_tipo": {
    "Vivienda de uso turístico": {
-    "establecimientos": 2243,
-    "plazas": 14212,
-    "unidades": 6559
+    "establecimientos": 2244,
+    "plazas": 14216,
+    "unidades": 6561
    },
    "Vivienda turística de alojamiento rural": {
     "establecimientos": 6,
@@ -105,7 +105,7 @@
    },
    {
     "t": "2026",
-    "v": 73
+    "v": 74
    }
   ],
   "acumulado_altas": [
@@ -175,7 +175,7 @@
    },
    {
     "t": "2026",
-    "v": 2253
+    "v": 2254
    }
   ],
   "puntos": [
@@ -17852,7 +17852,7 @@
     "lon": -5.072551
    }
   ],
-  "alojamientos_sin_coordenadas": 41,
+  "alojamientos_sin_coordenadas": 42,
   "alojamientos_coordenada_erronea": 3,
   "crs_origen": "EPSG:25830",
   "crs_puntos": "EPSG:4326"
@@ -18078,5 +18078,5 @@
  "advertencia": "El Registro de Turismo de Andalucía mide oferta inscrita administrativamente; la estadística experimental del INE mide oferta anunciada en plataformas de intermediación. Miden universos distintos y no deben compararse ni sumarse.",
  "fuente": "Junta de Andalucía · OpenRTA · e INE · Viviendas turísticas (tablas 39363 y 39366)",
  "ambito": "municipal",
- "actualizado": "2026-08-17T15:43:24Z"
+ "actualizado": "2026-08-20T09:14:59Z"
 }

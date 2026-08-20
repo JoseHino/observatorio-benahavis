@@ -25,7 +25,9 @@ from src.contexto import (
     AEMET_ESTACION, COD_INE, COMARCA, DATA_PROC, DATA_RAW, DOCS_DATA, LOG,
     MUNICIPIO, NOMBRE_PROVINCIA, VERSION,
 )
-from src.extract import aemet, badea, dataestur, eoh, hacienda, ine_tempus, openrta, sepe
+from src.extract import (
+    aemet, badea, costadelsol, dataestur, eoh, hacienda, ine_tempus, openrta, sepe,
+)
 from src.extract import seguridad_social as ss
 from src.extract import visitantes as vis
 from src.load import escribir, leer_previo
@@ -267,6 +269,71 @@ def bloque_visitantes() -> dict[str, Any]:
     }
 
 
+# ---------------------------------------------------------------- Bloque 8
+def _tramo_mensual(puntos: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Devuelve el tramo final de la serie que ya tiene periodicidad mensual.
+
+    La serie histórica del registro de alojamiento publica un dato al año hasta
+    mediados de la década pasada y pasa a mensual después. Validar el conjunto
+    como serie mensual marcaría dos décadas de huecos inexistentes, y validarlo
+    como serie anual daría por anómalo que un municipio pase de uno a dos
+    establecimientos. Solo el tramo mensual admite un control de continuidad.
+    """
+    corte = 0
+    for i in range(len(puntos) - 1, 0, -1):
+        anterior, actual = puntos[i - 1]["t"], puntos[i]["t"]
+        anyo, mes = int(anterior[:4]), int(anterior[5:7])
+        siguiente = f"{anyo + (mes // 12)}-{(mes % 12) + 1:02d}"
+        if actual != siguiente:
+            corte = i
+            break
+    return puntos[corte:]
+
+
+def bloque_costadelsol() -> dict[str, Any]:
+    """Explotación municipal del Big Data de Turismo y Planificación Costa del Sol.
+
+    Aporta las series municipales que las fuentes estadísticas generales no bajan
+    a un municipio de este tamaño: ocupación de la vivienda turística, oferta
+    inscrita con serie histórica, precios y valoración de los alojamientos y
+    empleo turístico sin la censura del «<5» de la Seguridad Social.
+    """
+    datos = costadelsol.todo()
+
+    if datos.get("vivienda_turistica", {}).get("serie"):
+        serie_temporal(INFORME, "cds.ocupacion_vut",
+                       [{"t": p["t"], "v": p["ocupacion"]}
+                        for p in datos["vivienda_turistica"]["serie"] if p["ocupacion"] is not None],
+                       minimo=0, maximo=100, mensual=True, salto_relativo=4.0)
+        serie_temporal(INFORME, "cds.viviendas_anunciadas",
+                       [{"t": p["t"], "v": p["viviendas"]}
+                        for p in datos["vivienda_turistica"]["serie"] if p["viviendas"] is not None],
+                       minimo=0, mensual=True, salto_relativo=4.0)
+    if datos.get("oferta", {}).get("total"):
+        # La serie histórica del RTA trae algún mes duplicado en origen —febrero de
+        # 2022 dobla el registro—; se publica tal cual y el aviso queda recogido en
+        # el informe de validación, que es donde debe verse.
+        mensual = _tramo_mensual(datos["oferta"]["total"])
+        serie_temporal(INFORME, "cds.plazas_inscritas",
+                       [{"t": p["t"], "v": p["plazas"]} for p in mensual],
+                       minimo=0, mensual=True, salto_relativo=1.6)
+        serie_temporal(INFORME, "cds.establecimientos_inscritos",
+                       [{"t": p["t"], "v": p["establecimientos"]} for p in mensual],
+                       minimo=0, mensual=True, salto_relativo=1.6)
+    if datos.get("empleo", {}).get("total"):
+        serie_temporal(INFORME, "cds.trabajadores_turismo",
+                       [{"t": p["t"], "v": p["trabajadores"]} for p in datos["empleo"]["total"]],
+                       minimo=0, maximo=20000)
+
+    return {
+        **datos,
+        "fuente": "Turismo y Planificación Costa del Sol (Diputación de Málaga) · Big Data",
+        "url": costadelsol.PORTAL,
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
 BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
     1: ("Demografía y renta", "demografia", bloque_demografia),
     2: ("Oferta turística", "oferta", bloque_oferta),
@@ -275,6 +342,7 @@ BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
     5: ("Economía y finanzas municipales", "economia", bloque_economia),
     6: ("Clima", "clima", bloque_clima),
     7: ("Conteo de visitantes (Decreto 72/2017)", "visitantes", bloque_visitantes),
+    8: ("Big Data de Turismo Costa del Sol", "costadelsol", bloque_costadelsol),
 }
 
 

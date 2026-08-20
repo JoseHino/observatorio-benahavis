@@ -67,6 +67,7 @@ def descargar(
     espera_inicial: float = 2.0,
     cabeceras: dict[str, str] | None = None,
     guardar: bool = True,
+    cuerpo: bytes | None = None,
 ) -> bytes:
     """Descarga una URL y devuelve su contenido en bytes.
 
@@ -79,6 +80,9 @@ def descargar(
         espera_inicial: segundos de espera tras el primer fallo; se duplica en cada intento.
         cabeceras: cabeceras HTTP adicionales.
         guardar: si es ``False`` no se archiva la descarga (ficheros muy grandes de un solo uso).
+        cuerpo: si se indica, la petición se hace por POST con ese cuerpo. Lo exige el
+            endpoint semántico de Power BI del Big Data de Turismo Costa del Sol, que
+            no admite consultas por GET.
 
     Returns:
         El cuerpo de la respuesta.
@@ -94,7 +98,10 @@ def descargar(
     ultimo_error = "sin detalle"
     for intento in range(1, reintentos + 1):
         try:
-            resp = requests.get(url, headers=cab, timeout=timeout)
+            if cuerpo is None:
+                resp = requests.get(url, headers=cab, timeout=timeout)
+            else:
+                resp = requests.post(url, headers=cab, data=cuerpo, timeout=timeout)
             if resp.status_code == 429:
                 # Límite de cadencia (AEMET lo aplica por clave): merece una espera
                 # mucho más larga que un fallo de red corriente.

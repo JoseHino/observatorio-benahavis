@@ -38,7 +38,7 @@
     <ul class="nav__lista">
       <li><a href="index.html">Panel de indicadores</a></li>
       <li><a href="#principios">Principios</a></li>
-      <li><a href="#huecos">Indicadores no disponibles</a></li>
+      <li><a href="#cobertura">Cobertura</a></li>
       <li><a href="#secreto">Secreto estadístico</a></li>
       <li><a href="#rupturas">Rupturas de serie</a></li>
       <li><a href="#divergencias">Divergencias entre fuentes</a></li>
@@ -60,8 +60,8 @@
     <ol>
       <li>
         <strong>No se inventa, interpola ni estima ningún dato que la fuente no publique.</strong>
-        Cuando un indicador no existe a escala municipal, la ficha lo declara como
-        <em>no disponible a nivel municipal</em>, indica la causa y nombra el indicador sustitutivo.
+        Un hueco en una serie es un hueco en el gráfico, y un indicador que ninguna fuente
+        resuelve a escala municipal sencillamente no se publica.
       </li>
       <li>
         <strong>Todo indicador sustitutivo lleva su ámbito territorial real en el título del
@@ -84,60 +84,24 @@
       </li>
     </ol>
 
-    <h2 id="huecos">Indicadores no disponibles a nivel municipal</h2>
+    <h2 id="cobertura">Cobertura del observatorio</h2>
     <p>
       Benahavís tiene alrededor de 9.500 habitantes y queda por debajo de varios umbrales de
-      difusión estadística. Esto no es un defecto del observatorio: es una característica del
-      municipio que hay que documentar con precisión.
+      difusión estadística. El observatorio <strong>publica únicamente aquellos indicadores para
+      los que existe dato</strong>: lo que ninguna fuente resuelve a escala municipal no ocupa
+      espacio en el panel. El inventario de fuentes conserva el rastro de lo consultado y
+      descartado, que es donde debe estar.
     </p>
-    <div class="tabla-marco">
-      <table>
-        <thead><tr>
-          <th>Indicador</th><th>Causa</th><th>Sustituto</th><th>Ámbito del sustituto</th>
-        </tr></thead>
-        <tbody>
-          <tr>
-            <td>Pernoctaciones, grado de ocupación y estancia media en hoteles</td>
-            <td>La Encuesta de Ocupación Hotelera se difunde por zonas y puntos turísticos, y
-                Benahavís no constituye punto turístico. La ficha del IECA aplica además secreto
-                estadístico por disponer el municipio de menos de cinco establecimientos.</td>
-            <td>Turistas medidos por posicionamiento de telefonía móvil (municipal) y grado de
-                ocupación, pernoctaciones y estancia media de la Encuesta de Ocupación Hotelera
-                en la zona turística a la que pertenece el municipio</td>
-            <td>Municipal el primero; zona turística Costa del Sol (Málaga) el segundo</td>
-          </tr>
-          <tr>
-            <td>Número de hoteles y plazas hoteleras según estadística agregada</td>
-            <td>El IECA devuelve «*» con la nota «Dato no significativo, al disponer el municipio
-                de menos de 5 establecimientos turísticos».</td>
-            <td>Registro de Turismo de Andalucía, que es registro nominal y no está sujeto a
-                secreto estadístico</td>
-            <td>Municipal</td>
-          </tr>
-          <tr>
-            <td>Criminalidad y tasa de delitos</td>
-            <td>El Portal Estadístico de Criminalidad del Ministerio del Interior publica dato
-                municipal solo para municipios de más de 20.000 habitantes (más de 30.000 entre
-                2017 y 2020).</td>
-            <td>Tasa de delitos provincial</td>
-            <td>Provincia de Málaga</td>
-          </tr>
-          <tr>
-            <td>Afiliación en agencias de viajes (CNAE 79)</td>
-            <td>Enmascaramiento por valores inferiores a cinco.</td>
-            <td>Ninguno: se publica como valor censurado</td>
-            <td>Municipal</td>
-          </tr>
-          <tr>
-            <td>Precio de vivienda y transacciones inmobiliarias</td>
-            <td>Varias series del Ministerio de Vivienda tienen umbral poblacional que Benahavís
-                no alcanza, y el portal rechaza peticiones automatizadas.</td>
-            <td>Pendiente de resolver</td>
-            <td>—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <p>
+      El hueco que condicionaba el diseño inicial —la ausencia de una medición municipal de
+      ocupación de alojamiento— quedó resuelto con la incorporación del <strong>Big Data de
+      Turismo y Planificación Costa del Sol</strong>, que publica para cada municipio de la
+      provincia el grado de ocupación, la oferta anunciada y el precio medio de la vivienda
+      turística, la serie histórica del registro de alojamiento, los precios y valoraciones de los
+      portales de reserva y la afiliación por subsector turístico. Donde subsiste una limitación
+      —el enmascaramiento de la Seguridad Social o la ruptura de la clasificación de
+      actividades— se explica en los apartados siguientes y se refleja en el propio gráfico.
+    </p>
 
     <div class="aviso aviso--neutro">
       <span class="aviso__titulo">Dos hipótesis de partida que la verificación desmintió</span>
@@ -265,8 +229,16 @@
               <td>Reutilización libre citando al INE</td></tr>
           <tr><td>INE / SEGITTUR</td><td>Turismo receptor e interno por posicionamiento móvil, vía Dataestur</td><td>Mensual</td>
               <td>Reutilización libre</td></tr>
+          <tr><td>INE / SEGITTUR</td><td>Encuesta de Ocupación Hotelera por zona turística, vía Dataestur</td><td>Mensual</td>
+              <td>Reutilización libre</td></tr>
           <tr><td>Junta de Andalucía</td><td>Registro de Turismo de Andalucía (OpenRTA)</td><td>Diaria</td>
               <td>Datos abiertos de la Junta de Andalucía</td></tr>
+          <tr><td>Turismo y Planificación Costa del Sol (Diputación de Málaga)</td>
+              <td>Big Data: ocupación y precio de la vivienda turística, serie histórica del
+                  registro de alojamiento, precios y valoración de portales de reserva, empleo por
+                  subsector turístico y microdato municipal de la Encuesta de Ocupación Hotelera</td>
+              <td>Mensual y trimestral</td>
+              <td>Publicación del observatorio provincial; se cita al organismo productor</td></tr>
           <tr><td>IECA</td><td>SIMA y BADEA (paro registrado municipal)</td><td>Anual</td>
               <td>CC BY</td></tr>
           <tr><td>SEPE</td><td>Paro y contratos registrados por municipios</td><td>Mensual</td>
@@ -301,7 +273,9 @@
               <td>Ayuntamiento de Benahavís</td><td>Alta</td></tr>
           <tr><td>Consorcio Provincial de Residuos</td><td>Toneladas recogidas por municipio</td>
               <td>Diputación de Málaga</td><td>Media</td></tr>
-          <tr><td>Turismo y Planificación Costa del Sol</td><td>Segmentación de mercados y perfil del visitante</td>
+          <tr><td>Turismo y Planificación Costa del Sol</td>
+              <td>Segmentación de mercados y perfil del visitante. El resto de su Big Data ya está
+                  integrado en el pipeline</td>
               <td>Diputación de Málaga</td><td>Media</td></tr>
         </tbody>
       </table>

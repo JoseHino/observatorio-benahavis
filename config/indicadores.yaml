@@ -569,3 +569,122 @@
     Requiere certificado del titular o gestor del recurso. Módulo preparado para la
     ingesta; a la fecha de generación no se han depositado datos.
   estado: pendiente
+
+# ───────────────── Bloque 9 · Big Data de Turismo y Planificación Costa del Sol
+# Explotación municipal de la Diputación de Málaga. Resuelve para Benahavís series
+# que ninguna fuente estatal baja a un municipio de este tamaño. Cómo se consulta el
+# Power BI que las sirve, y sus trampas, en docs/inventario-fuentes.md, bloque 9.
+- id: IND-CDS-001
+  nombre: Grado de ocupación de la vivienda turística
+  bloque: Demanda y ocupación
+  fuente: Turismo y Planificación Costa del Sol — Big Data, informe «viviendas-turisticas»
+  url_fuente: https://www.costadelsolmalaga.org/bigdata/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: porcentaje
+  definicion: >
+    Porcentaje de ocupación del alojamiento anunciado en plataformas de intermediación
+    en el municipio. Es la ÚNICA medición de ocupación de alojamiento con ámbito
+    estrictamente municipal disponible para Benahavís.
+  limitaciones: >
+    Mide el universo de la vivienda turística anunciada, no el del alojamiento reglado:
+    no se compara con la Encuesta de Ocupación Hotelera ni la sustituye a efectos de
+    acreditación ante la Consejería. Serie desde marzo de 2018. El valor llega como
+    texto decimal y la columna homónima de la tabla de hechos devuelve nulos: hay que
+    pedir la medida del modelo.
+  estado: disponible
+
+- id: IND-CDS-002
+  nombre: Viviendas y plazas turísticas anunciadas, y precio medio por plaza
+  bloque: Demanda y ocupación
+  fuente: Turismo y Planificación Costa del Sol — Big Data, informe «viviendas-turisticas»
+  url_fuente: https://www.costadelsolmalaga.org/bigdata/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: viviendas, plazas y euros por plaza y noche
+  definicion: >
+    Número de viviendas y plazas efectivamente anunciadas en plataformas y precio medio
+    por plaza y noche, mensual desde marzo de 2018.
+  limitaciones: >
+    Oferta anunciada, no inscrita: no se agrega con el Registro de Turismo de Andalucía.
+    El precio es el anunciado, no el cobrado.
+  estado: disponible
+
+- id: IND-CDS-003
+  nombre: Serie histórica de la oferta inscrita por tipología
+  bloque: Oferta de alojamiento
+  fuente: Turismo y Planificación Costa del Sol — Big Data, informe «oferta-alojamiento»
+  url_fuente: https://www.costadelsolmalaga.org/bigdata/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual hasta mediados de la década pasada, mensual después
+  unidad: establecimientos y plazas
+  definicion: >
+    Evolución de los establecimientos y plazas inscritos en el Registro de Turismo de
+    Andalucía por tipología, desde diciembre de 1998. Misma fuente registral que
+    IND-OFE-001, con la serie histórica que la consulta en vivo del registro no conserva.
+  limitaciones: >
+    Febrero de 2022 viene duplicado en origen —2.057 establecimientos entre un enero de
+    1.010 y un marzo de 1.050—. No se corrige: se publica, se señala en el gráfico y se
+    recoge en el informe de validación. La frecuencia cambia a lo largo de la serie, de
+    modo que solo el tramo final admite control de continuidad mensual.
+  estado: disponible
+
+- id: IND-CDS-004
+  nombre: Precio medio y valoración de los alojamientos
+  bloque: Precios y valoración
+  fuente: Turismo y Planificación Costa del Sol — Big Data, informe «precios-hoteles» (Lurmetrika sobre Booking)
+  url_fuente: https://www.costadelsolmalaga.org/bigdata/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: euros por habitación y noche, y puntuación de 0 a 10
+  definicion: >
+    Precio medio anunciado y valoración media de los clientes por tipología y categoría
+    de alojamiento, mensual desde enero de 2015.
+  limitaciones: >
+    Precio ANUNCIADO en portal de reserva, no facturado: no equivale a la tarifa media
+    diaria ni al ingreso por habitación disponible de la Encuesta de Ocupación Hotelera.
+    Las categorías con oferta residual —un hostal presente unos meses sueltos— producen
+    picos que reflejan la entrada y salida de un único establecimiento de la muestra, no
+    variaciones de precio: solo se representan las de muestra sostenida y oferta viva.
+  estado: disponible
+
+- id: IND-CDS-005
+  nombre: Empleo y empresas por subsector turístico
+  bloque: Empleo y economía
+  fuente: Turismo y Planificación Costa del Sol — Big Data, informe «empleo-turismo»
+  url_fuente: https://www.costadelsolmalaga.org/bigdata/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: trimestral
+  unidad: personas afiliadas y empresas
+  definicion: >
+    Afiliación a la Seguridad Social y empresas inscritas por subsector turístico
+    —alojamiento, restauración, agencias de viajes, ocio, transporte turístico y
+    alquiler de vehículos— y régimen, desde el primer trimestre de 2019.
+  limitaciones: >
+    NO le afecta el enmascaramiento «<5» que sí sufre IND-TRA-003, porque el dato se
+    publica ya agregado por subsector. La fila «Total» de régimen agrega a las otras
+    tres: sumarlas todas duplica el empleo.
+  estado: disponible
+
+- id: IND-CDS-006
+  nombre: Viajeros y pernoctaciones en apartamentos turísticos
+  bloque: Demanda y ocupación
+  fuente: Turismo y Planificación Costa del Sol — Big Data, informe «viajeros-pernoctaciones» (microdato EOH del INE)
+  url_fuente: https://www.costadelsolmalaga.org/bigdata/
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: mensual
+  unidad: viajeros y pernoctaciones
+  definicion: >
+    Viajeros y pernoctaciones del microdato de la Encuesta de Ocupación Hotelera que la
+    explotación provincial libera para el municipio, con desglose por país emisor.
+  limitaciones: >
+    COBERTURA MÍNIMA. El umbral de cinco establecimientos censura casi toda la serie: a
+    la fecha de verificación solo constan tres meses de 2025 de apartamentos turísticos.
+    La ficha declara la cobertura real junto al gráfico.
+  estado: disponible

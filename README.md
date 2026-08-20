@@ -15,9 +15,9 @@ Es una herramienta de consultoría pensada para defenderse ante el Ayuntamiento 
 Consejería de Turismo de la Junta de Andalucía, y para servir de evidencia documental en un
 expediente de **Municipio Turístico de Andalucía** (Decreto 72/2017).
 
-No estima, no interpola y no rellena huecos. Cuando una fuente no publica un dato a escala
-municipal, el observatorio lo declara como tal, indica la causa y nombra el indicador
-sustitutivo con su ámbito territorial real.
+No estima, no interpola y no rellena huecos: **publica solo los indicadores para los que existe
+dato**, y cuando uno es sustitutivo lleva su ámbito territorial real escrito en la ficha del
+gráfico. El rastro de lo consultado y descartado vive en el inventario de fuentes, no en el panel.
 
 ## Lo que condiciona el diseño
 
@@ -29,7 +29,8 @@ estadística. Las consecuencias están documentadas en
 - **No hay serie municipal de pernoctaciones hoteleras.** La Encuesta de Ocupación Hotelera se
   difunde por zonas y puntos turísticos, y la ficha del IECA aplica secreto estadístico con la
   nota «Dato no significativo, al disponer el municipio de menos de 5 establecimientos
-  turísticos».
+  turísticos». **Sí hay, en cambio, ocupación municipal de la vivienda turística**, mensual desde
+  2018, en el Big Data de Turismo y Planificación Costa del Sol.
 - **Sí hay medición municipal de demanda** por otra vía: la estadística experimental del INE
   basada en posicionamiento de telefonía móvil, con serie mensual desde julio de 2019 y desglose
   por país de origen. Como contexto del alojamiento reglado —y solo como contexto— se publica la
@@ -73,7 +74,11 @@ observatorio-benahavis/
 ```
 
 **Frontend:** HTML, CSS y JavaScript sin bundler. Gráficos con ECharts y mapa con Leaflet, ambos
-por CDN. Es mantenible por un consultor, no requiere un perfil de desarrollo frontend.
+por CDN. Es mantenible por un consultor, no requiere un perfil de desarrollo frontend. El panel
+se organiza en **seis pestañas temáticas** —población y renta, oferta de alojamiento, demanda y
+ocupación, precios y valoración, empleo y economía, y clima—; la pestaña activa va en el
+fragmento de la URL, de modo que cualquiera de ellas se puede enlazar y compartir. Una temática
+que no logre publicar ningún dato se oculta entera en lugar de quedarse anunciando el hueco.
 
 ## Instalación y ejecución
 
@@ -114,6 +119,7 @@ El pipeline no se detiene ni escribe datos de relleno.
 | 5 | Economía y finanzas | `economia.json` | Deuda viva del Ministerio de Hacienda |
 | 6 | Clima | `clima.json` | AEMET, estación municipal `6069X`; requiere clave |
 | 7 | Conteo de visitantes | `visitantes.json` | Decreto 72/2017; módulo preparado, a la espera de datos |
+| 8 | Big Data Costa del Sol | `costadelsol.json` | Ocupación y precio de la vivienda turística, serie histórica del RTA, precios de portales, empleo por subsector y microdato EOH |
 
 ## Variables de entorno
 

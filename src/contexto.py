@@ -67,7 +67,12 @@ CNAE_TURISTICOS = {
 RUPTURA_CNAE = "2026-01"
 """Mes en el que la Seguridad Social pasa de CNAE-2009 a CNAE-2025. Las series se cortan aquí."""
 
-VERSION = "1.1.0"
-"""1.1.0 añade el índice de Gini y P80/P20 (INE 37677) y la ocupación hotelera de la
-zona turística Costa del Sol (EOH vía Dataestur), sustituto declarado del hueco de
-pernoctaciones."""
+VERSION = "1.2.0"
+"""1.1.0 añadió el índice de Gini y P80/P20 (INE 37677) y la ocupación hotelera de la
+zona turística Costa del Sol (EOH vía Dataestur).
+
+1.2.0 incorpora el Big Data de Turismo y Planificación Costa del Sol —ocupación y
+precio de la vivienda turística, serie histórica del registro de alojamiento, precios
+y valoración de portales de reserva, empleo por subsector turístico y microdato de la
+EOH—, reorganiza el panel en pestañas temáticas y retira de la interfaz los bloques que
+solo anunciaban datos inexistentes."""

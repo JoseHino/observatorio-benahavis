@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Observatorio Turístico y Socioeconómico de Benahavís</title>
-<meta name="description" content="Observatorio de datos abiertos del municipio de Benahavís (Málaga): demografía, oferta y demanda turística, mercado de trabajo, economía y clima. Consultoría AMMA para el Ayuntamiento de Benahavís.">
+<meta name="description" content="Observatorio de datos abiertos del municipio de Benahavís (Málaga): población y renta, oferta de alojamiento, demanda y ocupación, precios, empleo y clima. Consultoría AMMA para el Ayuntamiento de Benahavís.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,16 +42,16 @@
   </div>
 </header>
 
-<nav class="nav" aria-label="Secciones del observatorio">
+<nav class="nav" aria-label="Temáticas del observatorio">
   <div class="contenedor">
-    <ul class="nav__lista">
-      <li><a href="#demografia">Demografía y renta</a></li>
-      <li><a href="#oferta">Oferta turística</a></li>
-      <li><a href="#demanda">Demanda turística</a></li>
-      <li><a href="#trabajo">Mercado de trabajo</a></li>
-      <li><a href="#economia">Finanzas municipales</a></li>
-      <li><a href="#clima">Clima</a></li>
-      <li><a href="municipio-turistico.html">Municipio Turístico</a></li>
+    <ul class="nav__lista" role="tablist">
+      <li><button role="tab" class="nav__pestana" data-panel="poblacion" aria-selected="true">Población y renta</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="oferta" aria-selected="false">Oferta de alojamiento</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="demanda" aria-selected="false">Demanda y ocupación</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="precios" aria-selected="false">Precios y valoración</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="empleo" aria-selected="false">Empleo y economía</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="clima" aria-selected="false">Clima</button></li>
+      <li class="nav__separador"><a href="municipio-turistico.html">Municipio Turístico</a></li>
       <li><a href="metodologia.html">Metodología</a></li>
     </ul>
   </div>
@@ -59,15 +59,14 @@
 
 <main class="contenedor">
 
-  <!-- ============================================================ Demografía -->
-  <section class="bloque" id="demografia">
+  <!-- ══════════════════════════════════════════════ Población y renta -->
+  <section class="bloque" id="poblacion" role="tabpanel">
     <div class="bloque__cabecera">
-      <span class="bloque__numero">Bloque 1</span>
-      <h2>Demografía y renta de los hogares</h2>
+      <h2>Población y renta de los hogares</h2>
       <p class="bloque__intro">
-        Población empadronada según las cifras oficiales del Padrón municipal y renta de los
-        hogares según el Atlas de Distribución de Renta del INE. Ambas series son de ámbito
-        municipal y no están afectadas por secreto estadístico.
+        Población empadronada según las cifras oficiales del Padrón municipal, y nivel y reparto
+        de la renta de los hogares según el Atlas de Distribución de Renta del INE. Todas las
+        series de esta pestaña son de ámbito municipal.
       </p>
     </div>
     <div class="cifras" id="cifras-demografia"></div>
@@ -75,14 +74,15 @@
     <div id="lectura-demografia"></div>
   </section>
 
-  <!-- ============================================================ Oferta -->
-  <section class="bloque" id="oferta">
+  <!-- ══════════════════════════════════════════════ Oferta -->
+  <section class="bloque" id="oferta" role="tabpanel" hidden>
     <div class="bloque__cabecera">
-      <span class="bloque__numero">Bloque 2</span>
-      <h2>Oferta turística</h2>
+      <h2>Oferta de alojamiento</h2>
       <p class="bloque__intro">
-        La oferta se mide con dos fuentes que cuentan universos distintos y que, por esa razón,
-        se presentan en gráficos separados y nunca agregadas entre sí.
+        La oferta se mide con tres fuentes que cuentan universos distintos y que, por esa razón,
+        se presentan en gráficos separados y nunca agregadas entre sí: el registro administrativo
+        de la Junta, la explotación municipal de ese mismo registro que publica Turismo Costa del
+        Sol y la estimación de oferta anunciada en plataformas del INE.
       </p>
     </div>
 
@@ -122,15 +122,15 @@
     <div id="lectura-oferta"></div>
   </section>
 
-  <!-- ============================================================ Demanda -->
-  <section class="bloque" id="demanda">
+  <!-- ══════════════════════════════════════════════ Demanda -->
+  <section class="bloque" id="demanda" role="tabpanel" hidden>
     <div class="bloque__cabecera">
-      <span class="bloque__numero">Bloque 3</span>
-      <h2>Demanda y presión turística</h2>
+      <h2>Demanda y ocupación</h2>
       <p class="bloque__intro">
-        Benahavís no dispone de serie de pernoctaciones hoteleras, pero sí de una medición
-        municipal de turistas procedente del posicionamiento de telefonía móvil. Los dos hechos
-        se documentan a continuación.
+        Tres mediciones complementarias de la demanda que recibe el municipio: los turistas
+        estimados por posicionamiento de telefonía móvil, la ocupación efectiva de la vivienda
+        turística —única serie de ocupación con ámbito estrictamente municipal— y la ocupación
+        del alojamiento reglado de la zona turística en la que se integra Benahavís.
       </p>
     </div>
 
@@ -144,27 +144,50 @@
         con ninguna de las dos.
       </p>
       <p>
-        Su definición de turista y sus márgenes de error son los propios de la metodología de
-        posicionamiento móvil. Se publican porque constituyen la única medición de demanda con
-        resolución municipal disponible para Benahavís, y se etiquetan como experimentales en
-        todos los gráficos.
+        La ocupación de la vivienda turística procede del seguimiento de plataformas de
+        intermediación que publica Turismo y Planificación Costa del Sol. Mide un universo
+        distinto del alojamiento reglado y tampoco es comparable con la Encuesta de Ocupación
+        Hotelera.
       </p>
     </div>
 
     <div class="cifras" id="cifras-demanda"></div>
     <div class="rejilla" id="graficos-demanda"></div>
-    <div id="huecos-demanda" style="margin-top:18px"></div>
     <div id="lectura-demanda"></div>
   </section>
 
-  <!-- ============================================================ Trabajo -->
-  <section class="bloque" id="trabajo">
+  <!-- ══════════════════════════════════════════════ Precios -->
+  <section class="bloque" id="precios" role="tabpanel" hidden>
     <div class="bloque__cabecera">
-      <span class="bloque__numero">Bloque 4</span>
-      <h2>Mercado de trabajo</h2>
+      <h2>Precios y valoración de los alojamientos</h2>
       <p class="bloque__intro">
-        Bloque de periodicidad mensual y ámbito municipal completo: paro registrado y contratos
-        del SEPE, y afiliación a la Seguridad Social desglosada por rama de actividad.
+        Precio medio de comercialización y valoración de los clientes en los alojamientos del
+        municipio, a partir del seguimiento de portales de reserva que publica Turismo y
+        Planificación Costa del Sol. Series municipales, con detalle por tipología y categoría.
+      </p>
+    </div>
+    <div class="aviso">
+      <span class="aviso__titulo">Qué mide y qué no mide este bloque</span>
+      <p>
+        El precio es el <strong>anunciado en el portal de reservas</strong>, no el efectivamente
+        cobrado ni la facturación media por habitación ocupada. No es, por tanto, un indicador de
+        rentabilidad hotelera ni sustituye al ADR o al RevPAR de la Encuesta de Ocupación Hotelera.
+        La valoración se expresa en la escala del propio portal, de 0 a 10.
+      </p>
+    </div>
+    <div class="cifras" id="cifras-precios"></div>
+    <div class="rejilla" id="graficos-precios"></div>
+    <div id="lectura-precios"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ Empleo y economía -->
+  <section class="bloque" id="empleo" role="tabpanel" hidden>
+    <div class="bloque__cabecera">
+      <h2>Empleo y economía</h2>
+      <p class="bloque__intro">
+        Paro registrado y contratos del SEPE, afiliación a la Seguridad Social por rama de
+        actividad y por subsector turístico, y finanzas del Ayuntamiento. Todo el bloque es de
+        periodicidad mensual o trimestral y de ámbito municipal.
       </p>
     </div>
 
@@ -174,7 +197,8 @@
         <strong>Enmascaramiento.</strong> La Seguridad Social sustituye por «&lt;5» cualquier
         valor entre 1 y 4. En Benahavís esto afecta a cerca de la mitad de las celdas, de modo
         que los totales por rama se publican como <strong>intervalo</strong> y nunca como cifra
-        puntual. Un «&lt;5» no es un cero.
+        puntual. Un «&lt;5» no es un cero. La explotación por subsector turístico de Turismo
+        Costa del Sol no sufre esta censura, por publicarse ya agregada.
       </p>
       <p>
         <strong>Ruptura de serie.</strong> En enero de 2026 la clasificación de actividades pasó
@@ -187,29 +211,16 @@
     <div class="rejilla" id="graficos-trabajo"></div>
     <div id="tabla-trabajo" style="margin-top:18px"></div>
     <div id="lectura-trabajo"></div>
-  </section>
 
-  <!-- ============================================================ Economía -->
-  <section class="bloque" id="economia">
-    <div class="bloque__cabecera">
-      <span class="bloque__numero">Bloque 5</span>
-      <h2>Finanzas municipales</h2>
-      <p class="bloque__intro">
-        Deuda viva del Ayuntamiento según el Ministerio de Hacienda. El resto de indicadores
-        financieros residen en aplicaciones web sin descarga directa y se documentan como
-        pendientes.
-      </p>
-    </div>
+    <h3 class="bloque__subtitulo">Finanzas municipales</h3>
     <div class="cifras" id="cifras-economia"></div>
     <div class="rejilla" id="graficos-economia"></div>
-    <div id="pendientes-economia" style="margin-top:18px"></div>
     <div id="lectura-economia"></div>
   </section>
 
-  <!-- ============================================================ Clima -->
-  <section class="bloque" id="clima">
+  <!-- ══════════════════════════════════════════════ Clima -->
+  <section class="bloque" id="clima" role="tabpanel" hidden>
     <div class="bloque__cabecera">
-      <span class="bloque__numero">Bloque 6</span>
       <h2>Clima</h2>
       <p class="bloque__intro">
         Serie observada en la estación meteorológica de AEMET situada dentro del término
@@ -236,8 +247,8 @@
       <a href="inventario-fuentes.md">Inventario de fuentes</a>
     </div>
     <div>
-      Datos procedentes de INE, IECA, SEPE, Seguridad Social, Junta de Andalucía,<br>
-      SEGITTUR, AEMET y Ministerio de Hacienda. Reutilizables citando la fuente original.
+      Datos procedentes de INE, IECA, SEPE, Seguridad Social, Junta de Andalucía, SEGITTUR,<br>
+      Turismo y Planificación Costa del Sol, AEMET y Ministerio de Hacienda.
     </div>
   </div>
 </footer>

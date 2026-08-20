@@ -4,11 +4,17 @@
 
 import {
   PALETA, MESES, num, periodoLargo, periodoCorto, cargar,
-  ficha, hueco, lectura, cifra, baseOpciones, ejeValorHorizontal, pintar, activarNavegacion
+  ficha, lectura, cifra, baseOpciones, ejeValorHorizontal, pintar,
+  activarPestanas, ocultarPestana, redibujar
 } from './comun.js';
 
 const RUPTURA_CNAE = '2026-01';
 let META = null;
+/** Explotación municipal del Big Data de Turismo Costa del Sol; alimenta varias pestañas. */
+let CDS = null;
+
+/** Fuente que se cita en toda ficha procedente del Big Data de Turismo Costa del Sol. */
+const FUENTE_CDS = 'Turismo y Planificación Costa del Sol (Diputación de Málaga), Big Data';
 
 function fechaActualizacion() {
   if (!META?.generado) return '—';
@@ -21,15 +27,26 @@ function anexar(idContenedor, elemento) {
   if (c) c.appendChild(elemento);
 }
 
-function sinDatos(idContenedor, bloque, motivo) {
-  anexar(idContenedor, hueco(bloque,
-    motivo || 'El pipeline no ha podido publicar este bloque en la última ejecución.'));
+/**
+ * Retira del observatorio la temática que no ha podido publicar ningún dato.
+ *
+ * El panel no muestra huecos: una pestaña sin datos se oculta entera en lugar de
+ * quedarse en pantalla anunciando lo que falta.
+ */
+function sinDatos(pestana) {
+  ocultarPestana(pestana);
+}
+
+/** Etiqueta corta de periodo trimestral: «2026-06» → «2T 2026». */
+function trimestre(t) {
+  const [a, m] = t.split('-');
+  return `${Math.ceil(Number(m) / 3)}T ${a}`;
 }
 
 /* ══════════════════════════════════════════════════ Bloque 1 · Demografía */
 async function demografia() {
   const d = await cargar('demografia');
-  if (!d?.padron?.total?.length) return sinDatos('graficos-demografia', 'Demografía y renta');
+  if (!d?.padron?.total?.length) return sinDatos('poblacion');
 
   const serie = d.padron.total;
   const ult = serie[serie.length - 1];
@@ -210,7 +227,7 @@ async function demografia() {
 /* ══════════════════════════════════════════════════ Bloque 2 · Oferta */
 async function oferta() {
   const d = await cargar('oferta');
-  if (!d?.rta) return sinDatos('graficos-oferta', 'Oferta turística');
+  if (!d?.rta) return sinDatos('oferta');
 
   const rta = d.rta;
   const tipos = Object.entries(rta.por_tipo);
@@ -324,6 +341,65 @@ async function oferta() {
     });
   }
 
+  // — Serie histórica de la oferta inscrita (Big Data de Turismo Costa del Sol).
+  //   El RTA en vivo solo da la foto de hoy; esta explotación conserva la evolución.
+  const hist = CDS?.oferta;
+  if (hist?.meses?.length) {
+    const meses = hist.meses;
+    const tipologias = Object.entries(hist.por_tipologia)
+      .sort((a, b) => (b[1][b[1].length - 1]?.plazas || 0) - (a[1][a[1].length - 1]?.plazas || 0));
+    const f4 = ficha({
+      titulo: 'Evolución histórica de las plazas inscritas, por tipología',
+      unidad: 'plazas', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, sobre el Registro de Turismo de Andalucía`,
+      referencia: `${periodoLargo(meses[0])} – ${periodoLargo(meses[meses.length - 1])}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: 'Misma fuente registral que el primer gráfico, con la serie histórica que el registro en vivo no conserva. Febrero de 2022 aparece duplicado en el fichero de origen; el observatorio no corrige el dato ajeno y deja constancia del salto en el informe de validación.'
+    });
+    anexar('graficos-oferta', f4.art);
+    pintar(f4.lienzo, {
+      ...bo,
+      xAxis: { ...bo.xAxis, data: meses.map((t) => periodoCorto(t)) },
+      series: tipologias.map(([nombre, serie]) => {
+        const porMes = Object.fromEntries(serie.map((p) => [p.t, p.plazas]));
+        return {
+          name: nombre, type: 'line', stack: 'plazas', symbol: 'none',
+          areaStyle: { opacity: 0.85 }, lineStyle: { width: 0.8 },
+          data: meses.map((t) => porMes[t] ?? 0)
+        };
+      })
+    });
+
+    const total = hist.total;
+    const ultimoTotal = total[total.length - 1];
+    const f5 = ficha({
+      titulo: 'Establecimientos inscritos en el municipio',
+      unidad: 'establecimientos', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, sobre el Registro de Turismo de Andalucía`,
+      referencia: `${periodoLargo(meses[0])} – ${periodoLargo(ultimoTotal.t)}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: 'La curva recoge el efecto de la inscripción obligatoria de las viviendas con fines turísticos, que multiplica el número de establecimientos sin multiplicar en la misma medida las plazas. El pico de febrero de 2022 es un duplicado del fichero de origen, no una alta real.'
+    });
+    anexar('graficos-oferta', f5.art);
+    pintar(f5.lienzo, {
+      ...bo,
+      legend: { show: false },
+      xAxis: { ...bo.xAxis, data: total.map((p) => periodoCorto(p.t)) },
+      tooltip: { ...bo.tooltip,
+        formatter: (ps) => {
+          const p = total[ps[0].dataIndex];
+          return `${periodoLargo(p.t)}<br><strong>${num(p.establecimientos)}</strong> establecimientos`
+            + `<br>${num(p.plazas)} plazas`;
+        } },
+      series: [{
+        name: 'Establecimientos', type: 'line', symbol: 'none',
+        lineStyle: { width: 2.2, color: PALETA[1] },
+        areaStyle: { color: 'rgba(47,158,143,.10)' },
+        data: total.map((p) => p.establecimientos)
+      }]
+    });
+  }
+
   // — Comparación explícita de los dos universos, en tabla y no en gráfico
   const cont = document.getElementById('tabla-oferta');
   const rot = document.createElement('h3');
@@ -383,6 +459,9 @@ function mapaOferta(rta) {
   if (!nodo || !rta.puntos?.length) return;
 
   const mapa = L.map(nodo, { scrollWheelZoom: false });
+  // Se expone para poder recalcular su tamaño al abrir la pestaña: un mapa creado
+  // dentro de un panel oculto se dibuja con el contenedor a cero y sale en blanco.
+  window.MAPA_OFERTA = mapa;
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OpenStreetMap, &copy; CARTO', maxZoom: 19
   }).addTo(mapa);
@@ -406,7 +485,12 @@ function mapaOferta(rta) {
     ).addTo(capa);
   });
 
-  mapa.fitBounds(L.featureGroup(capa.getLayers()).getBounds(), { padding: [24, 24] });
+  // El encuadre se guarda además de aplicarse: si el mapa se creó con su pestaña
+  // oculta, el contenedor medía cero y el ajuste inicial no sirve de nada. Al
+  // abrir la pestaña hay que recalcular tamaño y volver a encuadrar.
+  const encuadre = L.featureGroup(capa.getLayers()).getBounds();
+  mapa.MI_ENCUADRE = encuadre;
+  mapa.fitBounds(encuadre, { padding: [24, 24] });
 
   const leyenda = L.control({ position: 'bottomright' });
   leyenda.onAdd = () => {
@@ -437,18 +521,7 @@ async function demanda() {
   const d = await cargar('demanda');
   const pob = (await cargar('demografia'))?.poblacion_actual;
 
-  document.getElementById('huecos-demanda').appendChild(hueco(
-    'Pernoctaciones, grado de ocupación y estancia media en hoteles',
-    'La Encuesta de Ocupación Hotelera se difunde por zonas y puntos turísticos, y Benahavís no '
-    + 'constituye punto turístico propio. La ficha municipal del IECA aplica además secreto '
-    + 'estadístico con la nota literal «Dato no significativo, al disponer el municipio de menos '
-    + 'de 5 establecimientos turísticos».',
-    'los turistas medidos por posicionamiento móvil que se presentan en este mismo bloque, y la '
-    + 'ocupación hotelera de la zona turística Costa del Sol (Málaga), que se publica al final del '
-    + 'bloque etiquetada como dato supramunicipal.'
-  ));
-
-  if (!d?.receptor?.serie?.length) return sinDatos('graficos-demanda', 'Demanda turística');
+  if (!d?.receptor?.serie?.length) return sinDatos('demanda');
 
   const r = d.receptor;
   const serie = r.serie;
@@ -484,6 +557,13 @@ async function demanda() {
   if (ultInterno) {
     anexar('cifras-demanda', cifra('Turistas nacionales', num(ultInterno.v), '',
       periodoLargo(ultInterno.t)));
+  }
+  const ocupacionVut = (CDS?.vivienda_turistica?.serie || []).filter((p) => p.ocupacion !== null);
+  const ultOcupacion = ocupacionVut[ocupacionVut.length - 1];
+  if (ultOcupacion) {
+    anexar('cifras-demanda', cifra('Ocupación de la vivienda turística',
+      num(ultOcupacion.ocupacion, 1), '%',
+      `${periodoLargo(ultOcupacion.t)} · dato municipal`));
   }
 
   const bo = baseOpciones();
@@ -597,6 +677,102 @@ async function demanda() {
     });
   }
 
+  // — Ocupación de la vivienda turística: la única serie de ocupación de alojamiento
+  //   con ámbito estrictamente municipal que existe para Benahavís.
+  const vut = CDS?.vivienda_turistica?.serie || [];
+  if (vut.length) {
+    const conOcupacion = vut.filter((p) => p.ocupacion !== null);
+    const ultVut = conOcupacion[conOcupacion.length - 1];
+    const fVut = ficha({
+      titulo: 'Grado de ocupación de la vivienda turística en Benahavís',
+      unidad: 'porcentaje de ocupación', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, seguimiento de plataformas de intermediación`,
+      referencia: `${periodoLargo(vut[0].t)} – ${periodoLargo(ultVut.t)}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: 'Mide la ocupación del alojamiento anunciado en plataformas, no la del alojamiento hotelero reglado.'
+    });
+    anexar('graficos-demanda', fVut.art);
+    pintar(fVut.lienzo, {
+      ...bo,
+      legend: { show: false },
+      xAxis: { ...bo.xAxis, data: conOcupacion.map((p) => periodoCorto(p.t)) },
+      yAxis: { ...bo.yAxis, max: 100,
+        axisLabel: { ...bo.yAxis.axisLabel, formatter: (v) => `${num(v)} %` } },
+      tooltip: { ...bo.tooltip,
+        formatter: (ps) => {
+          const p = conOcupacion[ps[0].dataIndex];
+          return `${periodoLargo(p.t)}<br><strong>${num(p.ocupacion, 1)} %</strong> de ocupación`
+            + `<br>${num(p.viviendas)} viviendas · ${num(p.plazas)} plazas anunciadas`;
+        } },
+      series: [{
+        name: 'Ocupación', type: 'line', symbol: 'none',
+        lineStyle: { width: 2, color: PALETA[1] },
+        areaStyle: { color: 'rgba(47,158,143,.12)' },
+        data: conOcupacion.map((p) => p.ocupacion)
+      }]
+    });
+
+    // — Perfil estacional de esa ocupación, sobre los años naturales completos.
+    const porAnyoVut = {};
+    conOcupacion.forEach((p) => {
+      const a = p.t.slice(0, 4);
+      (porAnyoVut[a] = porAnyoVut[a] || {})[Number(p.t.slice(5, 7))] = p.ocupacion;
+    });
+    const completosVut = Object.keys(porAnyoVut)
+      .filter((a) => Object.keys(porAnyoVut[a]).length === 12).sort().slice(-4);
+    if (completosVut.length) {
+      const fVutEst = ficha({
+        titulo: 'Estacionalidad de la ocupación de la vivienda turística',
+        unidad: 'porcentaje de ocupación', ambito: 'municipal',
+        fuente: `${FUENTE_CDS}, seguimiento de plataformas de intermediación`,
+        referencia: completosVut.join(', '), actualizado: fechaActualizacion(), alto: true,
+        nota: 'Años naturales completos. La distancia entre el mes de máxima y el de mínima ocupación mide la presión estacional efectiva sobre el municipio.'
+      });
+      anexar('graficos-demanda', fVutEst.art);
+      pintar(fVutEst.lienzo, {
+        ...bo,
+        xAxis: { ...bo.xAxis, data: MESES.map((m) => m.slice(0, 3)) },
+        yAxis: { ...bo.yAxis, max: 100,
+          axisLabel: { ...bo.yAxis.axisLabel, formatter: (v) => `${num(v)} %` } },
+        series: completosVut.map((a, i) => ({
+          name: a, type: 'line', symbol: 'circle', symbolSize: 4,
+          lineStyle: { width: i === completosVut.length - 1 ? 2.6 : 1.6 },
+          data: Array.from({ length: 12 }, (_, m) => porAnyoVut[a][m + 1] ?? null)
+        }))
+      });
+    }
+  }
+
+  // — Viajeros y pernoctaciones del microdato de la Encuesta de Ocupación Hotelera.
+  const micro = CDS?.eoh;
+  if (micro?.serie?.length) {
+    const fMicro = ficha({
+      titulo: 'Viajeros y pernoctaciones en apartamentos turísticos de Benahavís',
+      unidad: 'viajeros y pernoctaciones', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, sobre el microdato de la Encuesta de Ocupación Hotelera del INE`,
+      referencia: micro.serie.map((p) => periodoLargo(p.t)).join(', '),
+      actualizado: fechaActualizacion(),
+      nota: micro.cobertura
+    });
+    anexar('graficos-demanda', fMicro.art);
+    pintar(fMicro.lienzo, {
+      ...bo,
+      xAxis: { ...bo.xAxis, data: micro.serie.map((p) => periodoLargo(p.t)) },
+      yAxis: [
+        { ...bo.yAxis, name: 'Pernoctaciones', nameTextStyle: { fontSize: 11, color: '#6b7883' } },
+        { ...bo.yAxis, name: 'Viajeros', nameTextStyle: { fontSize: 11, color: '#6b7883' },
+          splitLine: { show: false } }
+      ],
+      series: [
+        { name: 'Pernoctaciones', type: 'bar', barMaxWidth: 42, itemStyle: { color: PALETA[0] },
+          data: micro.serie.map((p) => p.pernoctaciones ?? null) },
+        { name: 'Viajeros', type: 'line', yAxisIndex: 1, symbol: 'circle', symbolSize: 7,
+          lineStyle: { width: 2.4, color: PALETA[2] }, itemStyle: { color: PALETA[2] },
+          data: micro.serie.map((p) => p.viajeros ?? null) }
+      ]
+    });
+  }
+
   // — Indicador sustitutivo del hueco de pernoctaciones: EOH de la zona turística.
   //   Va después de los indicadores municipales y con ámbito declarado en la ficha,
   //   para que no pueda leerse como una cifra de Benahavís.
@@ -685,6 +861,11 @@ async function demanda() {
       `veces entre el mes de máxima y el de mínima afluencia de ${anyoRef}. ` : '') +
     `Se reitera que estas cifras proceden de una estadística experimental basada en posicionamiento ` +
     `de telefonía móvil y no son comparables con las pernoctaciones de la Encuesta de Ocupación Hotelera. ` +
+    (ultOcupacion ? `La vivienda turística del municipio registra un grado de ocupación del ` +
+      `${num(ultOcupacion.ocupacion, 1)} % en ${periodoLargo(ultOcupacion.t)}, sobre ` +
+      `${num(ultOcupacion.viviendas)} viviendas y ${num(ultOcupacion.plazas)} plazas anunciadas ` +
+      `(Turismo y Planificación Costa del Sol). Es el único indicador de ocupación de alojamiento ` +
+      `con ámbito estrictamente municipal disponible para Benahavís. ` : '') +
     (mesesEoh.length ? `Como contexto supramunicipal, y sin atribuirlo al municipio, la zona turística ` +
       `Costa del Sol (Málaga) registra un grado de ocupación por plazas del ` +
       `${num(eoh.ultimo.ocupacion_plazas, 1)} % en ${periodoLargo(eoh.ultimo.t)}, con una estancia media ` +
@@ -692,10 +873,160 @@ async function demanda() {
   ));
 }
 
+/* ══════════════════════════════════ Precios y valoración de los alojamientos */
+async function precios() {
+  const series = CDS?.precios?.series || {};
+  const vut = CDS?.vivienda_turistica?.serie || [];
+  const nombres = Object.keys(series);
+  if (!nombres.length && !vut.length) return sinDatos('precios');
+
+  const bo = baseOpciones();
+  const meses = CDS?.precios?.meses || [];
+
+  // El «General» de cada tipología es el agregado ponderado de sus categorías: se
+  // usa para las cifras destacadas y se separa del detalle por categoría.
+  const general = series['Hoteles · General'] || [];
+  const ultGeneral = general[general.length - 1];
+  const ultVut = vut.filter((p) => p.precio_plaza !== null).slice(-1)[0];
+
+  if (ultGeneral) {
+    anexar('cifras-precios', cifra('Precio medio hotelero', num(ultGeneral.precio), '€',
+      `${periodoLargo(ultGeneral.t)} · por habitación y noche`));
+    if (ultGeneral.valoracion) {
+      anexar('cifras-precios', cifra('Valoración media hotelera',
+        num(ultGeneral.valoracion, 1), '/10', `${periodoLargo(ultGeneral.t)} · portal de reservas`));
+    }
+  }
+  if (ultVut) {
+    anexar('cifras-precios', cifra('Precio medio de la vivienda turística',
+      num(ultVut.precio_plaza), '€', `${periodoLargo(ultVut.t)} · por plaza y noche`));
+  }
+  const cinco = series['Hoteles · 5 Estrellas'] || [];
+  const ultCinco = cinco[cinco.length - 1];
+  if (ultCinco) {
+    anexar('cifras-precios', cifra('Precio medio en cinco estrellas',
+      num(ultCinco.precio), '€', `${periodoLargo(ultCinco.t)} · por habitación y noche`));
+  }
+
+  // — Precio por categoría hotelera.
+  //   Se representan solo las categorías con muestra sostenida y oferta viva en el
+  //   último año. Las categorías residuales —un hostal suelto durante unos meses—
+  //   dibujan picos que parecen variaciones de precio y solo reflejan la entrada y
+  //   salida de un único establecimiento de la muestra.
+  const SOSTENIDA = 36;
+  const ultimoAnyo = meses.slice(-12);
+  // «Viva» exige oferta en la mitad del último año, no un mes suelto: un hostal que
+  // aparece dos meses vuelve a introducir el pico de muestra que se quiere evitar.
+  const viva = (nombre, campo) => series[nombre].filter(
+    (p) => p[campo] !== null && ultimoAnyo.includes(p.t)).length >= 6;
+  const categorias = nombres
+    .filter((n) => n.startsWith('Hoteles · ') && !n.endsWith('General'))
+    .filter((n) => series[n].filter((p) => p.precio !== null).length >= SOSTENIDA)
+    .filter((n) => viva(n, 'precio'));
+  if (categorias.length) {
+    const f1 = ficha({
+      titulo: 'Precio medio por categoría hotelera',
+      unidad: 'euros por habitación y noche', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, seguimiento de portales de reserva`,
+      referencia: `${periodoLargo(meses[0])} – ${periodoLargo(meses[meses.length - 1])}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: `Precio anunciado, no facturado. Los meses sin oferta publicada en una categoría quedan sin punto: no se rellenan. Se representan las categorías con al menos ${SOSTENIDA} meses de muestra y oferta comercializada en el último año.`
+    });
+    anexar('graficos-precios', f1.art);
+    pintar(f1.lienzo, {
+      ...bo,
+      xAxis: { ...bo.xAxis, data: meses.map((t) => periodoCorto(t)) },
+      yAxis: { ...bo.yAxis,
+        axisLabel: { ...bo.yAxis.axisLabel, formatter: (v) => `${num(v)} €` } },
+      series: categorias.map((nombre) => {
+        const porMes = Object.fromEntries(series[nombre].map((p) => [p.t, p.precio]));
+        return {
+          name: nombre.replace('Hoteles · ', ''), type: 'line', symbol: 'none',
+          connectNulls: false, lineStyle: { width: 1.9 },
+          data: meses.map((t) => porMes[t] ?? null)
+        };
+      })
+    });
+  }
+
+  // — Precio de la vivienda turística
+  const conPrecio = vut.filter((p) => p.precio_plaza !== null);
+  if (conPrecio.length) {
+    const f2 = ficha({
+      titulo: 'Precio medio por plaza en la vivienda turística',
+      unidad: 'euros por plaza y noche', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, seguimiento de plataformas de intermediación`,
+      referencia: `${periodoLargo(conPrecio[0].t)} – ${periodoLargo(ultVut.t)}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: 'Universo distinto del hotelero: no se compara con el gráfico anterior.'
+    });
+    anexar('graficos-precios', f2.art);
+    pintar(f2.lienzo, {
+      ...bo,
+      legend: { show: false },
+      xAxis: { ...bo.xAxis, data: conPrecio.map((p) => periodoCorto(p.t)) },
+      yAxis: { ...bo.yAxis,
+        axisLabel: { ...bo.yAxis.axisLabel, formatter: (v) => `${num(v)} €` } },
+      series: [{
+        name: 'Precio medio por plaza', type: 'line', symbol: 'none',
+        lineStyle: { width: 2, color: PALETA[2] },
+        areaStyle: { color: 'rgba(193,116,58,.10)' },
+        data: conPrecio.map((p) => p.precio_plaza)
+      }]
+    });
+  }
+
+  // — Valoración de los clientes
+  const conValoracion = nombres
+    .filter((n) => series[n].filter((p) => p.valoracion).length >= SOSTENIDA)
+    .filter((n) => viva(n, 'valoracion'));
+  if (conValoracion.length) {
+    const f3 = ficha({
+      titulo: 'Valoración de los clientes por tipología y categoría',
+      unidad: 'puntuación de 0 a 10', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, seguimiento de portales de reserva`,
+      referencia: `${periodoLargo(meses[0])} – ${periodoLargo(meses[meses.length - 1])}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: 'Puntuación media de las reseñas publicadas en el portal, en su propia escala. Se representan las series con muestra sostenida en el tiempo.'
+    });
+    anexar('graficos-precios', f3.art);
+    pintar(f3.lienzo, {
+      ...bo,
+      xAxis: { ...bo.xAxis, data: meses.map((t) => periodoCorto(t)) },
+      yAxis: { ...bo.yAxis, min: 6, max: 10,
+        axisLabel: { ...bo.yAxis.axisLabel, formatter: (v) => num(v, 1) } },
+      series: conValoracion.map((nombre) => {
+        const porMes = Object.fromEntries(series[nombre].map((p) => [p.t, p.valoracion]));
+        return {
+          name: nombre.replace('Hoteles · ', ''), type: 'line', symbol: 'none',
+          connectNulls: false, lineStyle: { width: 1.9 },
+          data: meses.map((t) => porMes[t] ?? null)
+        };
+      })
+    });
+  }
+
+  const primero = general[0];
+  anexar('lectura-precios', lectura(
+    (ultGeneral ? `El precio medio anunciado por el conjunto de la planta hotelera del municipio es de ` +
+      `${num(ultGeneral.precio)} euros por habitación y noche en ${periodoLargo(ultGeneral.t)}` +
+      (primero ? `, frente a ${num(primero.precio)} euros en ${periodoLargo(primero.t)}` : '') + '. ' : '') +
+    (ultCinco ? `La categoría de cinco estrellas alcanza ${num(ultCinco.precio)} euros, cifra que ` +
+      `sitúa a Benahavís en el segmento alto del litoral occidental. ` : '') +
+    (ultVut ? `La vivienda turística se comercializa a ${num(ultVut.precio_plaza)} euros por plaza y ` +
+      `noche en ${periodoLargo(ultVut.t)}. ` : '') +
+    (ultGeneral?.valoracion ? `La valoración media de los clientes se sitúa en ` +
+      `${num(ultGeneral.valoracion, 1)} sobre 10. ` : '') +
+    `Se advierte que todas las cifras de esta pestaña son precios anunciados en portales de reserva ` +
+    `y no ingresos efectivos: no equivalen a la tarifa media diaria ni al ingreso por habitación ` +
+    `disponible que publica la Encuesta de Ocupación Hotelera.`
+  ));
+}
+
 /* ══════════════════════════════════════════════════ Bloque 4 · Trabajo */
 async function trabajo() {
   const d = await cargar('trabajo');
-  if (!d?.paro?.serie?.length) return sinDatos('graficos-trabajo', 'Mercado de trabajo');
+  if (!d?.paro?.serie?.length) return sinDatos('empleo');
 
   const paro = d.paro.serie;
   const uParo = paro[paro.length - 1];
@@ -836,6 +1167,64 @@ async function trabajo() {
     });
   }
 
+  // — Empleo turístico por subsector, sin la censura del «<5».
+  //   La misma afiliación, agregada por subsector antes de publicarse, de modo que
+  //   aquí las cifras salen completas y no como intervalo.
+  const empleoCds = CDS?.empleo;
+  if (empleoCds?.periodos?.length) {
+    const periodos = empleoCds.periodos;
+    const subsectores = Object.entries(empleoCds.por_subsector)
+      .sort((a, b) => (b[1][b[1].length - 1]?.trabajadores || 0)
+                    - (a[1][a[1].length - 1]?.trabajadores || 0));
+    const ultimoTotal = empleoCds.total[empleoCds.total.length - 1];
+    const fT = ficha({
+      titulo: 'Afiliación por subsector turístico',
+      unidad: 'personas afiliadas', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, sobre afiliación a la Seguridad Social`,
+      referencia: `${trimestre(periodos[0])} – ${trimestre(ultimoTotal.t)}`,
+      actualizado: fechaActualizacion(), alto: true,
+      nota: 'Publicada ya agregada por subsector, de modo que no le afecta el enmascaramiento «&lt;5» del fichero por rama de actividad.'
+    });
+    anexar('graficos-trabajo', fT.art);
+    pintar(fT.lienzo, {
+      ...bo,
+      xAxis: { ...bo.xAxis, data: periodos.map((t) => trimestre(t)) },
+      series: subsectores.map(([nombre, serie]) => {
+        const porPeriodo = Object.fromEntries(serie.map((p) => [p.t, p.trabajadores]));
+        return {
+          name: nombre, type: 'bar', stack: 'afiliacion', barMaxWidth: 26,
+          data: periodos.map((t) => porPeriodo[t] ?? 0)
+        };
+      })
+    });
+
+    const fE = ficha({
+      titulo: 'Empresas con actividad turística inscritas en la Seguridad Social',
+      unidad: 'empresas', ambito: 'municipal',
+      fuente: `${FUENTE_CDS}, sobre afiliación a la Seguridad Social`,
+      referencia: `${trimestre(periodos[0])} – ${trimestre(ultimoTotal.t)}`,
+      actualizado: fechaActualizacion(), alto: true
+    });
+    anexar('graficos-trabajo', fE.art);
+    pintar(fE.lienzo, {
+      ...bo,
+      legend: { show: false },
+      xAxis: { ...bo.xAxis, data: empleoCds.total.map((p) => trimestre(p.t)) },
+      tooltip: { ...bo.tooltip,
+        formatter: (ps) => {
+          const p = empleoCds.total[ps[0].dataIndex];
+          return `${trimestre(p.t)}<br><strong>${num(p.empresas)}</strong> empresas`
+            + `<br>${num(p.trabajadores)} personas afiliadas`;
+        } },
+      series: [{
+        name: 'Empresas', type: 'line', symbol: 'circle', symbolSize: 5,
+        lineStyle: { width: 2.2, color: PALETA[1] }, itemStyle: { color: PALETA[1] },
+        areaStyle: { color: 'rgba(47,158,143,.10)' },
+        data: empleoCds.total.map((p) => p.empresas)
+      }]
+    });
+  }
+
   // — Tabla de ramas del último mes
   if (afi.ultimo?.ramas?.length) {
     const u = afi.ultimo;
@@ -890,7 +1279,7 @@ async function trabajo() {
 /* ══════════════════════════════════════════════════ Bloque 5 · Economía */
 async function economia() {
   const d = await cargar('economia');
-  if (!d) return sinDatos('graficos-economia', 'Finanzas municipales');
+  if (!d) return;
 
   const serie = d.deuda_viva?.serie || [];
   const ult = serie[serie.length - 1];
@@ -959,14 +1348,6 @@ async function economia() {
     });
   }
 
-  if (d.pendientes?.length) {
-    const cont = document.getElementById('pendientes-economia');
-    d.pendientes.forEach((p) => {
-      cont.appendChild(hueco(p.indicador,
-        `Motivo: ${p.motivo}. Organismo responsable: ${p.organismo}.`, null));
-    });
-  }
-
   if (ult) {
     anexar('lectura-economia', lectura(
       `El Ayuntamiento de Benahavís presenta una deuda viva de ${num(ult.v)} miles de euros a 31 de ` +
@@ -974,9 +1355,7 @@ async function economia() {
       (serie.every((p) => p.v === 0)
         ? `, cifra que se mantiene en cero durante todo el periodo publicado (${serie[0].t}–${ult.t})` : '') +
       `. El indicador recoge la deuda financiera de la entidad principal y no incorpora la de los ` +
-      `entes dependientes. El periodo medio de pago a proveedores y la liquidación presupuestaria ` +
-      `residen en aplicaciones web sin descarga directa y quedan documentados como pendientes de ` +
-      `incorporación.`
+      `entes dependientes.`
     ));
   }
 }
@@ -984,10 +1363,7 @@ async function economia() {
 /* ══════════════════════════════════════════════════ Bloque 6 · Clima */
 async function clima() {
   const d = await cargar('clima');
-  if (!d?.normales?.length) {
-    return sinDatos('graficos-clima', 'Clima',
-      'La serie de la estación de AEMET no se ha podido descargar en la última ejecución.');
-  }
+  if (!d?.normales?.length) return sinDatos('clima');
 
   const tAnual = d.temperatura_anual || [];
   const pAnual = d.precipitacion_anual || [];
@@ -1110,14 +1486,26 @@ async function clima() {
 
 /* ══════════════════════════════════════════════════ Arranque */
 async function iniciar() {
-  META = await cargar('meta');
+  // El Big Data de Turismo Costa del Sol alimenta cuatro de las seis pestañas, de
+  // modo que se carga antes que ellas y no dentro de cada una.
+  [META, CDS] = await Promise.all([cargar('meta'), cargar('costadelsol')]);
   if (META) {
     document.getElementById('dato-actualizado').textContent = fechaActualizacion();
     document.getElementById('pie-version').textContent = META.version || '—';
     document.getElementById('pie-generado').textContent = fechaActualizacion();
   }
-  await Promise.all([demografia(), oferta(), demanda(), trabajo(), economia(), clima()]);
-  activarNavegacion();
+  await Promise.all([demografia(), oferta(), demanda(), precios(), trabajo(), economia(), clima()]);
+
+  // Los gráficos de una pestaña oculta se dibujaron con anchura cero: hay que
+  // recalcularlos en cuanto su panel se hace visible.
+  activarPestanas(() => requestAnimationFrame(() => {
+    redibujar();
+    const mapa = window.MAPA_OFERTA;
+    if (mapa) {
+      mapa.invalidateSize();
+      if (mapa.MI_ENCUADRE) mapa.fitBounds(mapa.MI_ENCUADRE, { padding: [24, 24] });
+    }
+  }));
 }
 
 iniciar();

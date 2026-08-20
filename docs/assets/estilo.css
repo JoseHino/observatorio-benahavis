@@ -95,13 +95,22 @@ a:focus-visible, button:focus-visible, select:focus-visible {
   display: flex; gap: 2px; margin: 0; padding: 0; list-style: none;
   overflow-x: auto; scrollbar-width: thin;
 }
-.nav__lista a {
-  display: block; padding: 13px 14px; font-size: 13px; font-weight: 500;
+.nav__lista a, .nav__pestana {
+  display: block; padding: 13px 11px; font-size: 12.5px; font-weight: 500;
   color: var(--tinta-media); text-decoration: none; white-space: nowrap;
-  border-bottom: 2px solid transparent;
+  border: 0; border-bottom: 2px solid transparent;
+  background: none; font-family: inherit; cursor: pointer;
 }
-.nav__lista a:hover { color: var(--azul-700); background: var(--azul-050); }
-.nav__lista a[aria-current="true"] { color: var(--azul-800); border-bottom-color: var(--azul-600); }
+.nav__lista a:hover, .nav__pestana:hover { color: var(--azul-700); background: var(--azul-050); }
+.nav__lista a[aria-current="true"],
+.nav__pestana[aria-selected="true"] {
+  color: var(--azul-800); border-bottom-color: var(--azul-600); font-weight: 600;
+}
+.nav__pestana:focus-visible { outline: 2px solid var(--azul-600); outline-offset: -2px; }
+/* Separa las pestañas de temática de los enlaces a las otras páginas. Sin
+   `margin-left:auto`: empujaba los dos últimos enlaces fuera del contenedor en
+   pantallas de portátil, que es donde se consulta el observatorio. */
+.nav__separador { margin-left: 10px; border-left: 1px solid var(--linea); padding-left: 6px; }
 
 /* ---------------------------------------------------------------- Secciones */
 main { padding: 34px 0 60px; }
@@ -113,6 +122,10 @@ main { padding: 34px 0 60px; }
   text-transform: uppercase; color: var(--azul-600); margin-bottom: 6px;
 }
 .bloque h2 { font-size: 21px; color: var(--azul-900); }
+.bloque__subtitulo {
+  margin: 40px 0 4px; padding-top: 22px; border-top: 1px solid var(--linea);
+  font-size: 17px; color: var(--azul-900);
+}
 .bloque__intro {
   margin: 12px 0 0; max-width: 78ch; color: var(--tinta-media); font-size: 14.5px;
 }

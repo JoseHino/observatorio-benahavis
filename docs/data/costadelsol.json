@@ -1,0 +1,7618 @@
+{
+ "oferta": {
+  "meses": [
+   "1998-12",
+   "1999-12",
+   "2000-12",
+   "2001-12",
+   "2002-12",
+   "2003-12",
+   "2004-12",
+   "2005-12",
+   "2006-12",
+   "2007-12",
+   "2008-12",
+   "2009-12",
+   "2010-12",
+   "2011-12",
+   "2012-12",
+   "2013-12",
+   "2014-12",
+   "2015-12",
+   "2016-12",
+   "2017-12",
+   "2018-12",
+   "2019-12",
+   "2020-08",
+   "2020-09",
+   "2020-10",
+   "2020-11",
+   "2020-12",
+   "2021-01",
+   "2021-02",
+   "2021-03",
+   "2021-04",
+   "2021-05",
+   "2021-06",
+   "2021-07",
+   "2021-08",
+   "2021-09",
+   "2021-10",
+   "2021-11",
+   "2021-12",
+   "2022-01",
+   "2022-02",
+   "2022-03",
+   "2022-04",
+   "2022-05",
+   "2022-06",
+   "2022-07",
+   "2022-08",
+   "2022-09",
+   "2022-10",
+   "2022-11",
+   "2022-12",
+   "2023-01",
+   "2023-02",
+   "2023-03",
+   "2023-04",
+   "2023-05",
+   "2023-06",
+   "2023-07",
+   "2023-08",
+   "2023-09",
+   "2023-10",
+   "2023-11",
+   "2023-12",
+   "2024-01",
+   "2024-02",
+   "2024-03",
+   "2024-04",
+   "2024-05",
+   "2024-06",
+   "2024-07",
+   "2024-08",
+   "2024-09",
+   "2024-10",
+   "2024-11",
+   "2024-12",
+   "2025-01",
+   "2025-02",
+   "2025-03",
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10",
+   "2025-11",
+   "2025-12",
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07"
+  ],
+  "por_tipologia": {
+   "Apartamentos Turísticos": [
+    {
+     "t": "1998-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "1999-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2000-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2001-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2002-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2003-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2004-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2005-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2006-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2007-12",
+     "establecimientos": 1.0,
+     "plazas": 29.0
+    },
+    {
+     "t": "2008-12",
+     "establecimientos": 2.0,
+     "plazas": 497.0
+    },
+    {
+     "t": "2009-12",
+     "establecimientos": 1.0,
+     "plazas": 468.0
+    },
+    {
+     "t": "2010-12",
+     "establecimientos": 2.0,
+     "plazas": 1146.0
+    },
+    {
+     "t": "2011-12",
+     "establecimientos": 2.0,
+     "plazas": 1146.0
+    },
+    {
+     "t": "2012-12",
+     "establecimientos": 2.0,
+     "plazas": 1146.0
+    },
+    {
+     "t": "2013-12",
+     "establecimientos": 2.0,
+     "plazas": 1146.0
+    },
+    {
+     "t": "2014-12",
+     "establecimientos": 2.0,
+     "plazas": 1146.0
+    },
+    {
+     "t": "2015-12",
+     "establecimientos": 2.0,
+     "plazas": 1146.0
+    },
+    {
+     "t": "2016-12",
+     "establecimientos": 3.0,
+     "plazas": 1472.0
+    },
+    {
+     "t": "2017-12",
+     "establecimientos": 3.0,
+     "plazas": 1350.0
+    },
+    {
+     "t": "2018-12",
+     "establecimientos": 4.0,
+     "plazas": 1420.0
+    },
+    {
+     "t": "2019-12",
+     "establecimientos": 4.0,
+     "plazas": 1490.0
+    },
+    {
+     "t": "2020-08",
+     "establecimientos": 4.0,
+     "plazas": 1490.0
+    },
+    {
+     "t": "2020-09",
+     "establecimientos": 4.0,
+     "plazas": 1490.0
+    },
+    {
+     "t": "2020-10",
+     "establecimientos": 4.0,
+     "plazas": 1490.0
+    },
+    {
+     "t": "2020-11",
+     "establecimientos": 4.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2020-12",
+     "establecimientos": 4.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2021-01",
+     "establecimientos": 4.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2021-02",
+     "establecimientos": 4.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2021-03",
+     "establecimientos": 4.0,
+     "plazas": 1418.0
+    },
+    {
+     "t": "2021-04",
+     "establecimientos": 4.0,
+     "plazas": 1418.0
+    },
+    {
+     "t": "2021-05",
+     "establecimientos": 4.0,
+     "plazas": 1418.0
+    },
+    {
+     "t": "2021-06",
+     "establecimientos": 4.0,
+     "plazas": 1418.0
+    },
+    {
+     "t": "2021-07",
+     "establecimientos": 4.0,
+     "plazas": 1418.0
+    },
+    {
+     "t": "2021-08",
+     "establecimientos": 4.0,
+     "plazas": 1418.0
+    },
+    {
+     "t": "2021-09",
+     "establecimientos": 5.0,
+     "plazas": 1442.0
+    },
+    {
+     "t": "2021-10",
+     "establecimientos": 5.0,
+     "plazas": 1442.0
+    },
+    {
+     "t": "2021-11",
+     "establecimientos": 5.0,
+     "plazas": 1442.0
+    },
+    {
+     "t": "2021-12",
+     "establecimientos": 5.0,
+     "plazas": 1442.0
+    },
+    {
+     "t": "2022-01",
+     "establecimientos": 5.0,
+     "plazas": 1442.0
+    },
+    {
+     "t": "2022-02",
+     "establecimientos": 5.0,
+     "plazas": 1384.0
+    },
+    {
+     "t": "2022-03",
+     "establecimientos": 5.0,
+     "plazas": 1384.0
+    },
+    {
+     "t": "2022-04",
+     "establecimientos": 5.0,
+     "plazas": 1384.0
+    },
+    {
+     "t": "2022-05",
+     "establecimientos": 5.0,
+     "plazas": 1384.0
+    },
+    {
+     "t": "2022-06",
+     "establecimientos": 5.0,
+     "plazas": 1384.0
+    },
+    {
+     "t": "2022-07",
+     "establecimientos": 5.0,
+     "plazas": 1384.0
+    },
+    {
+     "t": "2022-08",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2022-09",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2022-10",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2022-11",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2022-12",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-01",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-02",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-03",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-04",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-05",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-06",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-07",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-08",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-09",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-10",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-11",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2023-12",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-01",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-02",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-03",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-04",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-05",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-06",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-07",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-08",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-09",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-10",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-11",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2024-12",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2025-01",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2025-02",
+     "establecimientos": 5.0,
+     "plazas": 1410.0
+    },
+    {
+     "t": "2025-03",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-04",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-05",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-06",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-07",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-08",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-09",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-10",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-11",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2025-12",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2026-01",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2026-02",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2026-03",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2026-04",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2026-05",
+     "establecimientos": 4.0,
+     "plazas": 1386.0
+    },
+    {
+     "t": "2026-06",
+     "establecimientos": 5.0,
+     "plazas": 1392.0
+    },
+    {
+     "t": "2026-07",
+     "establecimientos": 5.0,
+     "plazas": 1392.0
+    }
+   ],
+   "Hoteles": [
+    {
+     "t": "2000-12",
+     "establecimientos": 1.0,
+     "plazas": 17.0
+    },
+    {
+     "t": "2001-12",
+     "establecimientos": 2.0,
+     "plazas": 359.0
+    },
+    {
+     "t": "2002-12",
+     "establecimientos": 3.0,
+     "plazas": 400.0
+    },
+    {
+     "t": "2003-12",
+     "establecimientos": 4.0,
+     "plazas": 588.0
+    },
+    {
+     "t": "2004-12",
+     "establecimientos": 5.0,
+     "plazas": 686.0
+    },
+    {
+     "t": "2005-12",
+     "establecimientos": 5.0,
+     "plazas": 686.0
+    },
+    {
+     "t": "2006-12",
+     "establecimientos": 6.0,
+     "plazas": 1316.0
+    },
+    {
+     "t": "2007-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2008-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2009-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2010-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2011-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2012-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2013-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2014-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2015-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2016-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2017-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2018-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2019-12",
+     "establecimientos": 6.0,
+     "plazas": 1498.0
+    },
+    {
+     "t": "2020-08",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2020-09",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2020-10",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2020-11",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2020-12",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-01",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-02",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-03",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-04",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-05",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-06",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-07",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-08",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-09",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-10",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-11",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2021-12",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-01",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-02",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-03",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-04",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-05",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-06",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-07",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-08",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-09",
+     "establecimientos": 5.0,
+     "plazas": 868.0
+    },
+    {
+     "t": "2022-10",
+     "establecimientos": 6.0,
+     "plazas": 2109.0
+    },
+    {
+     "t": "2022-11",
+     "establecimientos": 6.0,
+     "plazas": 2109.0
+    },
+    {
+     "t": "2022-12",
+     "establecimientos": 6.0,
+     "plazas": 2109.0
+    },
+    {
+     "t": "2023-01",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-02",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-03",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-04",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-05",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-06",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-07",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-08",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-09",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-10",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-11",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2023-12",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2024-01",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2024-02",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2024-03",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2024-04",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2024-05",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2024-06",
+     "establecimientos": 6.0,
+     "plazas": 1363.0
+    },
+    {
+     "t": "2024-07",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2024-08",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2024-09",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2024-10",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2024-11",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2024-12",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-01",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-02",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-03",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-04",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-05",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-06",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-07",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-08",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-09",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-10",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-11",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2025-12",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2026-01",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2026-02",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2026-03",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2026-04",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2026-05",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2026-06",
+     "establecimientos": 5.0,
+     "plazas": 1322.0
+    },
+    {
+     "t": "2026-07",
+     "establecimientos": 4.0,
+     "plazas": 827.0
+    }
+   ],
+   "Hostales y Pensiones": [
+    {
+     "t": "2001-12",
+     "establecimientos": 1.0,
+     "plazas": 8.0
+    },
+    {
+     "t": "2002-12",
+     "establecimientos": 1.0,
+     "plazas": 8.0
+    }
+   ],
+   "Alojamientos Rurales": [
+    {
+     "t": "2010-12",
+     "establecimientos": 1.0,
+     "plazas": 14.0
+    },
+    {
+     "t": "2011-12",
+     "establecimientos": 2.0,
+     "plazas": 18.0
+    },
+    {
+     "t": "2012-12",
+     "establecimientos": 2.0,
+     "plazas": 18.0
+    },
+    {
+     "t": "2013-12",
+     "establecimientos": 2.0,
+     "plazas": 18.0
+    },
+    {
+     "t": "2014-12",
+     "establecimientos": 2.0,
+     "plazas": 18.0
+    },
+    {
+     "t": "2015-12",
+     "establecimientos": 3.0,
+     "plazas": 24.0
+    },
+    {
+     "t": "2016-12",
+     "establecimientos": 4.0,
+     "plazas": 39.0
+    },
+    {
+     "t": "2017-12",
+     "establecimientos": 8.0,
+     "plazas": 84.0
+    },
+    {
+     "t": "2018-12",
+     "establecimientos": 9.0,
+     "plazas": 90.0
+    },
+    {
+     "t": "2019-12",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2020-08",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2020-09",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2020-10",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2020-11",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2020-12",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-01",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-02",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-03",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-04",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-05",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-06",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-07",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-08",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-09",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-10",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-11",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2021-12",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2022-01",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2022-02",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2022-03",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2022-04",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2022-05",
+     "establecimientos": 10.0,
+     "plazas": 100.0
+    },
+    {
+     "t": "2022-06",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2022-07",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2022-08",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2022-09",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2022-10",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2022-11",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2022-12",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2023-01",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2023-02",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2023-03",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2023-04",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2023-05",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2023-06",
+     "establecimientos": 11.0,
+     "plazas": 112.0
+    },
+    {
+     "t": "2023-07",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2023-08",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2023-09",
+     "establecimientos": 12.0,
+     "plazas": 137.0
+    },
+    {
+     "t": "2023-10",
+     "establecimientos": 12.0,
+     "plazas": 137.0
+    },
+    {
+     "t": "2023-11",
+     "establecimientos": 12.0,
+     "plazas": 137.0
+    },
+    {
+     "t": "2023-12",
+     "establecimientos": 12.0,
+     "plazas": 137.0
+    },
+    {
+     "t": "2024-01",
+     "establecimientos": 12.0,
+     "plazas": 137.0
+    },
+    {
+     "t": "2024-02",
+     "establecimientos": 12.0,
+     "plazas": 137.0
+    },
+    {
+     "t": "2024-03",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-04",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-05",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-06",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-07",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-08",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-09",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-10",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-11",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2024-12",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2025-01",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2025-02",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2025-03",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2025-04",
+     "establecimientos": 11.0,
+     "plazas": 117.0
+    },
+    {
+     "t": "2025-05",
+     "establecimientos": 12.0,
+     "plazas": 127.0
+    },
+    {
+     "t": "2025-06",
+     "establecimientos": 12.0,
+     "plazas": 127.0
+    },
+    {
+     "t": "2025-07",
+     "establecimientos": 12.0,
+     "plazas": 127.0
+    },
+    {
+     "t": "2025-08",
+     "establecimientos": 12.0,
+     "plazas": 127.0
+    },
+    {
+     "t": "2025-09",
+     "establecimientos": 12.0,
+     "plazas": 127.0
+    },
+    {
+     "t": "2025-10",
+     "establecimientos": 12.0,
+     "plazas": 127.0
+    },
+    {
+     "t": "2025-11",
+     "establecimientos": 11.0,
+     "plazas": 123.0
+    },
+    {
+     "t": "2025-12",
+     "establecimientos": 11.0,
+     "plazas": 123.0
+    },
+    {
+     "t": "2026-01",
+     "establecimientos": 11.0,
+     "plazas": 123.0
+    },
+    {
+     "t": "2026-02",
+     "establecimientos": 11.0,
+     "plazas": 123.0
+    },
+    {
+     "t": "2026-03",
+     "establecimientos": 11.0,
+     "plazas": 123.0
+    },
+    {
+     "t": "2026-04",
+     "establecimientos": 11.0,
+     "plazas": 123.0
+    },
+    {
+     "t": "2026-05",
+     "establecimientos": 12.0,
+     "plazas": 138.0
+    },
+    {
+     "t": "2026-06",
+     "establecimientos": 12.0,
+     "plazas": 138.0
+    },
+    {
+     "t": "2026-07",
+     "establecimientos": 12.0,
+     "plazas": 138.0
+    }
+   ],
+   "Viviendas con Fines Turísticos": [
+    {
+     "t": "2016-12",
+     "establecimientos": 84.0,
+     "plazas": 535.0
+    },
+    {
+     "t": "2017-12",
+     "establecimientos": 310.0,
+     "plazas": 1840.0
+    },
+    {
+     "t": "2018-12",
+     "establecimientos": 545.0,
+     "plazas": 3344.0
+    },
+    {
+     "t": "2019-12",
+     "establecimientos": 772.0,
+     "plazas": 4778.0
+    },
+    {
+     "t": "2020-08",
+     "establecimientos": 835.0,
+     "plazas": 5223.0
+    },
+    {
+     "t": "2020-09",
+     "establecimientos": 842.0,
+     "plazas": 5264.0
+    },
+    {
+     "t": "2020-10",
+     "establecimientos": 849.0,
+     "plazas": 5300.0
+    },
+    {
+     "t": "2020-11",
+     "establecimientos": 846.0,
+     "plazas": 5298.0
+    },
+    {
+     "t": "2020-12",
+     "establecimientos": 850.0,
+     "plazas": 5337.0
+    },
+    {
+     "t": "2021-01",
+     "establecimientos": 852.0,
+     "plazas": 5353.0
+    },
+    {
+     "t": "2021-02",
+     "establecimientos": 857.0,
+     "plazas": 5387.0
+    },
+    {
+     "t": "2021-03",
+     "establecimientos": 871.0,
+     "plazas": 5476.0
+    },
+    {
+     "t": "2021-04",
+     "establecimientos": 891.0,
+     "plazas": 5616.0
+    },
+    {
+     "t": "2021-05",
+     "establecimientos": 906.0,
+     "plazas": 5728.0
+    },
+    {
+     "t": "2021-06",
+     "establecimientos": 918.0,
+     "plazas": 5807.0
+    },
+    {
+     "t": "2021-07",
+     "establecimientos": 925.0,
+     "plazas": 5844.0
+    },
+    {
+     "t": "2021-08",
+     "establecimientos": 936.0,
+     "plazas": 5916.0
+    },
+    {
+     "t": "2021-09",
+     "establecimientos": 943.0,
+     "plazas": 5959.0
+    },
+    {
+     "t": "2021-10",
+     "establecimientos": 955.0,
+     "plazas": 6039.0
+    },
+    {
+     "t": "2021-11",
+     "establecimientos": 969.0,
+     "plazas": 6124.0
+    },
+    {
+     "t": "2021-12",
+     "establecimientos": 972.0,
+     "plazas": 6143.0
+    },
+    {
+     "t": "2022-01",
+     "establecimientos": 990.0,
+     "plazas": 6260.0
+    },
+    {
+     "t": "2022-02",
+     "establecimientos": 2037.0,
+     "plazas": 12906.0
+    },
+    {
+     "t": "2022-03",
+     "establecimientos": 1030.0,
+     "plazas": 6526.0
+    },
+    {
+     "t": "2022-04",
+     "establecimientos": 1051.0,
+     "plazas": 6644.0
+    },
+    {
+     "t": "2022-05",
+     "establecimientos": 1087.0,
+     "plazas": 6845.0
+    },
+    {
+     "t": "2022-06",
+     "establecimientos": 1136.0,
+     "plazas": 7126.0
+    },
+    {
+     "t": "2022-07",
+     "establecimientos": 1156.0,
+     "plazas": 7258.0
+    },
+    {
+     "t": "2022-08",
+     "establecimientos": 1193.0,
+     "plazas": 7481.0
+    },
+    {
+     "t": "2022-09",
+     "establecimientos": 1208.0,
+     "plazas": 7571.0
+    },
+    {
+     "t": "2022-10",
+     "establecimientos": 1221.0,
+     "plazas": 7666.0
+    },
+    {
+     "t": "2022-11",
+     "establecimientos": 1229.0,
+     "plazas": 7703.0
+    },
+    {
+     "t": "2022-12",
+     "establecimientos": 1249.0,
+     "plazas": 7811.0
+    },
+    {
+     "t": "2023-01",
+     "establecimientos": 1270.0,
+     "plazas": 7939.0
+    },
+    {
+     "t": "2023-02",
+     "establecimientos": 1305.0,
+     "plazas": 8174.0
+    },
+    {
+     "t": "2023-03",
+     "establecimientos": 1332.0,
+     "plazas": 8361.0
+    },
+    {
+     "t": "2023-04",
+     "establecimientos": 1374.0,
+     "plazas": 8589.0
+    },
+    {
+     "t": "2023-05",
+     "establecimientos": 1413.0,
+     "plazas": 8863.0
+    },
+    {
+     "t": "2023-06",
+     "establecimientos": 1451.0,
+     "plazas": 9122.0
+    },
+    {
+     "t": "2023-07",
+     "establecimientos": 1484.0,
+     "plazas": 9341.0
+    },
+    {
+     "t": "2023-08",
+     "establecimientos": 1516.0,
+     "plazas": 9556.0
+    },
+    {
+     "t": "2023-09",
+     "establecimientos": 1543.0,
+     "plazas": 9735.0
+    },
+    {
+     "t": "2023-10",
+     "establecimientos": 1566.0,
+     "plazas": 9878.0
+    },
+    {
+     "t": "2023-11",
+     "establecimientos": 1607.0,
+     "plazas": 10150.0
+    },
+    {
+     "t": "2023-12",
+     "establecimientos": 1619.0,
+     "plazas": 10205.0
+    },
+    {
+     "t": "2024-01",
+     "establecimientos": 1643.0,
+     "plazas": 10334.0
+    },
+    {
+     "t": "2024-02",
+     "establecimientos": 1669.0,
+     "plazas": 10524.0
+    },
+    {
+     "t": "2024-03",
+     "establecimientos": 1681.0,
+     "plazas": 10588.0
+    },
+    {
+     "t": "2024-04",
+     "establecimientos": 1717.0,
+     "plazas": 10826.0
+    },
+    {
+     "t": "2024-05",
+     "establecimientos": 1751.0,
+     "plazas": 11040.0
+    },
+    {
+     "t": "2024-06",
+     "establecimientos": 1781.0,
+     "plazas": 11234.0
+    },
+    {
+     "t": "2024-07",
+     "establecimientos": 1837.0,
+     "plazas": 11564.0
+    },
+    {
+     "t": "2024-08",
+     "establecimientos": 1841.0,
+     "plazas": 11582.0
+    },
+    {
+     "t": "2024-09",
+     "establecimientos": 1865.0,
+     "plazas": 11716.0
+    },
+    {
+     "t": "2024-10",
+     "establecimientos": 1896.0,
+     "plazas": 11886.0
+    },
+    {
+     "t": "2024-11",
+     "establecimientos": 1925.0,
+     "plazas": 12063.0
+    },
+    {
+     "t": "2024-12",
+     "establecimientos": 1935.0,
+     "plazas": 12129.0
+    },
+    {
+     "t": "2025-01",
+     "establecimientos": 1959.0,
+     "plazas": 12245.0
+    },
+    {
+     "t": "2025-02",
+     "establecimientos": 1978.0,
+     "plazas": 12372.0
+    },
+    {
+     "t": "2025-03",
+     "establecimientos": 2092.0,
+     "plazas": 13170.0
+    },
+    {
+     "t": "2025-04",
+     "establecimientos": 2116.0,
+     "plazas": 13299.0
+    },
+    {
+     "t": "2025-05",
+     "establecimientos": 2129.0,
+     "plazas": 13401.0
+    },
+    {
+     "t": "2025-06",
+     "establecimientos": 2147.0,
+     "plazas": 13523.0
+    },
+    {
+     "t": "2025-07",
+     "establecimientos": 2156.0,
+     "plazas": 13604.0
+    },
+    {
+     "t": "2025-08",
+     "establecimientos": 2163.0,
+     "plazas": 13642.0
+    },
+    {
+     "t": "2025-09",
+     "establecimientos": 2169.0,
+     "plazas": 13679.0
+    },
+    {
+     "t": "2025-10",
+     "establecimientos": 2174.0,
+     "plazas": 13715.0
+    },
+    {
+     "t": "2025-11",
+     "establecimientos": 2182.0,
+     "plazas": 13765.0
+    },
+    {
+     "t": "2025-12",
+     "establecimientos": 2182.0,
+     "plazas": 13765.0
+    },
+    {
+     "t": "2026-01",
+     "establecimientos": 2188.0,
+     "plazas": 13808.0
+    },
+    {
+     "t": "2026-02",
+     "establecimientos": 2192.0,
+     "plazas": 13825.0
+    },
+    {
+     "t": "2026-03",
+     "establecimientos": 2196.0,
+     "plazas": 13863.0
+    },
+    {
+     "t": "2026-04",
+     "establecimientos": 2204.0,
+     "plazas": 13930.0
+    },
+    {
+     "t": "2026-05",
+     "establecimientos": 2217.0,
+     "plazas": 14038.0
+    },
+    {
+     "t": "2026-06",
+     "establecimientos": 2227.0,
+     "plazas": 14093.0
+    },
+    {
+     "t": "2026-07",
+     "establecimientos": 2236.0,
+     "plazas": 14166.0
+    }
+   ]
+  },
+  "total": [
+   {
+    "t": "1998-12",
+    "establecimientos": 1.0,
+    "plazas": 29.0
+   },
+   {
+    "t": "1999-12",
+    "establecimientos": 1.0,
+    "plazas": 29.0
+   },
+   {
+    "t": "2000-12",
+    "establecimientos": 2.0,
+    "plazas": 46.0
+   },
+   {
+    "t": "2001-12",
+    "establecimientos": 4.0,
+    "plazas": 396.0
+   },
+   {
+    "t": "2002-12",
+    "establecimientos": 5.0,
+    "plazas": 437.0
+   },
+   {
+    "t": "2003-12",
+    "establecimientos": 5.0,
+    "plazas": 617.0
+   },
+   {
+    "t": "2004-12",
+    "establecimientos": 6.0,
+    "plazas": 715.0
+   },
+   {
+    "t": "2005-12",
+    "establecimientos": 6.0,
+    "plazas": 715.0
+   },
+   {
+    "t": "2006-12",
+    "establecimientos": 7.0,
+    "plazas": 1345.0
+   },
+   {
+    "t": "2007-12",
+    "establecimientos": 7.0,
+    "plazas": 1527.0
+   },
+   {
+    "t": "2008-12",
+    "establecimientos": 8.0,
+    "plazas": 1995.0
+   },
+   {
+    "t": "2009-12",
+    "establecimientos": 7.0,
+    "plazas": 1966.0
+   },
+   {
+    "t": "2010-12",
+    "establecimientos": 9.0,
+    "plazas": 2658.0
+   },
+   {
+    "t": "2011-12",
+    "establecimientos": 10.0,
+    "plazas": 2662.0
+   },
+   {
+    "t": "2012-12",
+    "establecimientos": 10.0,
+    "plazas": 2662.0
+   },
+   {
+    "t": "2013-12",
+    "establecimientos": 10.0,
+    "plazas": 2662.0
+   },
+   {
+    "t": "2014-12",
+    "establecimientos": 10.0,
+    "plazas": 2662.0
+   },
+   {
+    "t": "2015-12",
+    "establecimientos": 11.0,
+    "plazas": 2668.0
+   },
+   {
+    "t": "2016-12",
+    "establecimientos": 97.0,
+    "plazas": 3544.0
+   },
+   {
+    "t": "2017-12",
+    "establecimientos": 327.0,
+    "plazas": 4772.0
+   },
+   {
+    "t": "2018-12",
+    "establecimientos": 564.0,
+    "plazas": 6352.0
+   },
+   {
+    "t": "2019-12",
+    "establecimientos": 792.0,
+    "plazas": 7866.0
+   },
+   {
+    "t": "2020-08",
+    "establecimientos": 854.0,
+    "plazas": 7681.0
+   },
+   {
+    "t": "2020-09",
+    "establecimientos": 861.0,
+    "plazas": 7722.0
+   },
+   {
+    "t": "2020-10",
+    "establecimientos": 868.0,
+    "plazas": 7758.0
+   },
+   {
+    "t": "2020-11",
+    "establecimientos": 865.0,
+    "plazas": 7764.0
+   },
+   {
+    "t": "2020-12",
+    "establecimientos": 869.0,
+    "plazas": 7803.0
+   },
+   {
+    "t": "2021-01",
+    "establecimientos": 871.0,
+    "plazas": 7819.0
+   },
+   {
+    "t": "2021-02",
+    "establecimientos": 876.0,
+    "plazas": 7853.0
+   },
+   {
+    "t": "2021-03",
+    "establecimientos": 890.0,
+    "plazas": 7862.0
+   },
+   {
+    "t": "2021-04",
+    "establecimientos": 910.0,
+    "plazas": 8002.0
+   },
+   {
+    "t": "2021-05",
+    "establecimientos": 925.0,
+    "plazas": 8114.0
+   },
+   {
+    "t": "2021-06",
+    "establecimientos": 937.0,
+    "plazas": 8193.0
+   },
+   {
+    "t": "2021-07",
+    "establecimientos": 944.0,
+    "plazas": 8230.0
+   },
+   {
+    "t": "2021-08",
+    "establecimientos": 955.0,
+    "plazas": 8302.0
+   },
+   {
+    "t": "2021-09",
+    "establecimientos": 963.0,
+    "plazas": 8369.0
+   },
+   {
+    "t": "2021-10",
+    "establecimientos": 975.0,
+    "plazas": 8449.0
+   },
+   {
+    "t": "2021-11",
+    "establecimientos": 989.0,
+    "plazas": 8534.0
+   },
+   {
+    "t": "2021-12",
+    "establecimientos": 992.0,
+    "plazas": 8553.0
+   },
+   {
+    "t": "2022-01",
+    "establecimientos": 1010.0,
+    "plazas": 8670.0
+   },
+   {
+    "t": "2022-02",
+    "establecimientos": 2057.0,
+    "plazas": 15258.0
+   },
+   {
+    "t": "2022-03",
+    "establecimientos": 1050.0,
+    "plazas": 8878.0
+   },
+   {
+    "t": "2022-04",
+    "establecimientos": 1071.0,
+    "plazas": 8996.0
+   },
+   {
+    "t": "2022-05",
+    "establecimientos": 1107.0,
+    "plazas": 9197.0
+   },
+   {
+    "t": "2022-06",
+    "establecimientos": 1157.0,
+    "plazas": 9490.0
+   },
+   {
+    "t": "2022-07",
+    "establecimientos": 1177.0,
+    "plazas": 9622.0
+   },
+   {
+    "t": "2022-08",
+    "establecimientos": 1214.0,
+    "plazas": 9871.0
+   },
+   {
+    "t": "2022-09",
+    "establecimientos": 1229.0,
+    "plazas": 9961.0
+   },
+   {
+    "t": "2022-10",
+    "establecimientos": 1243.0,
+    "plazas": 11297.0
+   },
+   {
+    "t": "2022-11",
+    "establecimientos": 1251.0,
+    "plazas": 11334.0
+   },
+   {
+    "t": "2022-12",
+    "establecimientos": 1271.0,
+    "plazas": 11442.0
+   },
+   {
+    "t": "2023-01",
+    "establecimientos": 1292.0,
+    "plazas": 10824.0
+   },
+   {
+    "t": "2023-02",
+    "establecimientos": 1327.0,
+    "plazas": 11059.0
+   },
+   {
+    "t": "2023-03",
+    "establecimientos": 1354.0,
+    "plazas": 11246.0
+   },
+   {
+    "t": "2023-04",
+    "establecimientos": 1396.0,
+    "plazas": 11474.0
+   },
+   {
+    "t": "2023-05",
+    "establecimientos": 1435.0,
+    "plazas": 11748.0
+   },
+   {
+    "t": "2023-06",
+    "establecimientos": 1473.0,
+    "plazas": 12007.0
+   },
+   {
+    "t": "2023-07",
+    "establecimientos": 1506.0,
+    "plazas": 12231.0
+   },
+   {
+    "t": "2023-08",
+    "establecimientos": 1538.0,
+    "plazas": 12446.0
+   },
+   {
+    "t": "2023-09",
+    "establecimientos": 1566.0,
+    "plazas": 12645.0
+   },
+   {
+    "t": "2023-10",
+    "establecimientos": 1589.0,
+    "plazas": 12788.0
+   },
+   {
+    "t": "2023-11",
+    "establecimientos": 1630.0,
+    "plazas": 13060.0
+   },
+   {
+    "t": "2023-12",
+    "establecimientos": 1642.0,
+    "plazas": 13115.0
+   },
+   {
+    "t": "2024-01",
+    "establecimientos": 1666.0,
+    "plazas": 13244.0
+   },
+   {
+    "t": "2024-02",
+    "establecimientos": 1692.0,
+    "plazas": 13434.0
+   },
+   {
+    "t": "2024-03",
+    "establecimientos": 1703.0,
+    "plazas": 13478.0
+   },
+   {
+    "t": "2024-04",
+    "establecimientos": 1739.0,
+    "plazas": 13716.0
+   },
+   {
+    "t": "2024-05",
+    "establecimientos": 1773.0,
+    "plazas": 13930.0
+   },
+   {
+    "t": "2024-06",
+    "establecimientos": 1803.0,
+    "plazas": 14124.0
+   },
+   {
+    "t": "2024-07",
+    "establecimientos": 1858.0,
+    "plazas": 14413.0
+   },
+   {
+    "t": "2024-08",
+    "establecimientos": 1862.0,
+    "plazas": 14431.0
+   },
+   {
+    "t": "2024-09",
+    "establecimientos": 1886.0,
+    "plazas": 14565.0
+   },
+   {
+    "t": "2024-10",
+    "establecimientos": 1917.0,
+    "plazas": 14735.0
+   },
+   {
+    "t": "2024-11",
+    "establecimientos": 1946.0,
+    "plazas": 14912.0
+   },
+   {
+    "t": "2024-12",
+    "establecimientos": 1956.0,
+    "plazas": 14978.0
+   },
+   {
+    "t": "2025-01",
+    "establecimientos": 1980.0,
+    "plazas": 15094.0
+   },
+   {
+    "t": "2025-02",
+    "establecimientos": 1999.0,
+    "plazas": 15221.0
+   },
+   {
+    "t": "2025-03",
+    "establecimientos": 2112.0,
+    "plazas": 15995.0
+   },
+   {
+    "t": "2025-04",
+    "establecimientos": 2136.0,
+    "plazas": 16124.0
+   },
+   {
+    "t": "2025-05",
+    "establecimientos": 2150.0,
+    "plazas": 16236.0
+   },
+   {
+    "t": "2025-06",
+    "establecimientos": 2168.0,
+    "plazas": 16358.0
+   },
+   {
+    "t": "2025-07",
+    "establecimientos": 2177.0,
+    "plazas": 16439.0
+   },
+   {
+    "t": "2025-08",
+    "establecimientos": 2184.0,
+    "plazas": 16477.0
+   },
+   {
+    "t": "2025-09",
+    "establecimientos": 2190.0,
+    "plazas": 16514.0
+   },
+   {
+    "t": "2025-10",
+    "establecimientos": 2195.0,
+    "plazas": 16550.0
+   },
+   {
+    "t": "2025-11",
+    "establecimientos": 2202.0,
+    "plazas": 16596.0
+   },
+   {
+    "t": "2025-12",
+    "establecimientos": 2202.0,
+    "plazas": 16596.0
+   },
+   {
+    "t": "2026-01",
+    "establecimientos": 2208.0,
+    "plazas": 16639.0
+   },
+   {
+    "t": "2026-02",
+    "establecimientos": 2212.0,
+    "plazas": 16656.0
+   },
+   {
+    "t": "2026-03",
+    "establecimientos": 2216.0,
+    "plazas": 16694.0
+   },
+   {
+    "t": "2026-04",
+    "establecimientos": 2224.0,
+    "plazas": 16761.0
+   },
+   {
+    "t": "2026-05",
+    "establecimientos": 2238.0,
+    "plazas": 16884.0
+   },
+   {
+    "t": "2026-06",
+    "establecimientos": 2249.0,
+    "plazas": 16945.0
+   },
+   {
+    "t": "2026-07",
+    "establecimientos": 2257.0,
+    "plazas": 16523.0
+   }
+  ]
+ },
+ "vivienda_turistica": {
+  "serie": [
+   {
+    "t": "2018-03",
+    "ocupacion": 23.24,
+    "viviendas": 71.0,
+    "plazas": 351.0,
+    "precio_plaza": 45.98
+   },
+   {
+    "t": "2018-04",
+    "ocupacion": 32.42,
+    "viviendas": 98.0,
+    "plazas": 482.0,
+    "precio_plaza": 41.01
+   },
+   {
+    "t": "2018-05",
+    "ocupacion": 36.82,
+    "viviendas": 132.0,
+    "plazas": 692.0,
+    "precio_plaza": 42.34
+   },
+   {
+    "t": "2018-06",
+    "ocupacion": 40.35,
+    "viviendas": 162.0,
+    "plazas": 841.0,
+    "precio_plaza": 41.87
+   },
+   {
+    "t": "2018-07",
+    "ocupacion": 49.15,
+    "viviendas": 167.0,
+    "plazas": 877.0,
+    "precio_plaza": 46.83
+   },
+   {
+    "t": "2018-08",
+    "ocupacion": 58.46,
+    "viviendas": 173.0,
+    "plazas": 909.0,
+    "precio_plaza": 44.73
+   },
+   {
+    "t": "2018-09",
+    "ocupacion": 33.66,
+    "viviendas": 177.0,
+    "plazas": 931.0,
+    "precio_plaza": 36.9
+   },
+   {
+    "t": "2018-10",
+    "ocupacion": 19.66,
+    "viviendas": 177.0,
+    "plazas": 931.0,
+    "precio_plaza": 32.7
+   },
+   {
+    "t": "2018-11",
+    "ocupacion": 12.29,
+    "viviendas": 180.0,
+    "plazas": 953.0,
+    "precio_plaza": 21.49
+   },
+   {
+    "t": "2018-12",
+    "ocupacion": 9.12,
+    "viviendas": 180.0,
+    "plazas": 953.0,
+    "precio_plaza": 22.87
+   },
+   {
+    "t": "2019-01",
+    "ocupacion": 12.04,
+    "viviendas": 180.0,
+    "plazas": 953.0,
+    "precio_plaza": 22.07
+   },
+   {
+    "t": "2019-02",
+    "ocupacion": 13.33,
+    "viviendas": 180.0,
+    "plazas": 953.0,
+    "precio_plaza": 21.82
+   },
+   {
+    "t": "2019-03",
+    "ocupacion": 15.11,
+    "viviendas": 282.0,
+    "plazas": 1667.0,
+    "precio_plaza": 34.19
+   },
+   {
+    "t": "2019-04",
+    "ocupacion": 22.38,
+    "viviendas": 282.0,
+    "plazas": 1676.0,
+    "precio_plaza": 36.29
+   },
+   {
+    "t": "2019-05",
+    "ocupacion": 20.36,
+    "viviendas": 308.0,
+    "plazas": 1816.0,
+    "precio_plaza": 35.74
+   },
+   {
+    "t": "2019-06",
+    "ocupacion": 28.92,
+    "viviendas": 399.0,
+    "plazas": 2365.0,
+    "precio_plaza": 41.49
+   },
+   {
+    "t": "2019-07",
+    "ocupacion": 40.77,
+    "viviendas": 442.0,
+    "plazas": 2563.0,
+    "precio_plaza": 46.36
+   },
+   {
+    "t": "2019-08",
+    "ocupacion": 49.21,
+    "viviendas": 442.0,
+    "plazas": 2563.0,
+    "precio_plaza": 44.03
+   },
+   {
+    "t": "2019-09",
+    "ocupacion": 25.11,
+    "viviendas": 479.0,
+    "plazas": 2753.0,
+    "precio_plaza": 39.04
+   },
+   {
+    "t": "2019-10",
+    "ocupacion": 21.17,
+    "viviendas": 516.0,
+    "plazas": 2954.0,
+    "precio_plaza": 37.37
+   },
+   {
+    "t": "2019-11",
+    "ocupacion": 12.97,
+    "viviendas": 516.0,
+    "plazas": 2954.0,
+    "precio_plaza": 35.67
+   },
+   {
+    "t": "2019-12",
+    "ocupacion": 14.37,
+    "viviendas": 552.0,
+    "plazas": 3172.0,
+    "precio_plaza": 37.83
+   },
+   {
+    "t": "2020-01",
+    "ocupacion": 14.3,
+    "viviendas": 561.0,
+    "plazas": 3221.0,
+    "precio_plaza": 36.36
+   },
+   {
+    "t": "2020-02",
+    "ocupacion": 12.88,
+    "viviendas": 561.0,
+    "plazas": 3221.0,
+    "precio_plaza": 34.41
+   },
+   {
+    "t": "2020-03",
+    "ocupacion": 14.57,
+    "viviendas": 483.0,
+    "plazas": 2907.0,
+    "precio_plaza": 55.38
+   },
+   {
+    "t": "2020-04",
+    "ocupacion": 15.8,
+    "viviendas": 478.0,
+    "plazas": 2867.0,
+    "precio_plaza": 58.24
+   },
+   {
+    "t": "2020-05",
+    "ocupacion": 15.61,
+    "viviendas": 493.0,
+    "plazas": 2962.0,
+    "precio_plaza": 70.35
+   },
+   {
+    "t": "2020-06",
+    "ocupacion": 21.07,
+    "viviendas": 504.0,
+    "plazas": 3031.0,
+    "precio_plaza": 75.68
+   },
+   {
+    "t": "2020-07",
+    "ocupacion": 31.83,
+    "viviendas": 522.0,
+    "plazas": 3156.0,
+    "precio_plaza": 83.65
+   },
+   {
+    "t": "2020-08",
+    "ocupacion": 44.08,
+    "viviendas": 524.0,
+    "plazas": 3174.0,
+    "precio_plaza": 75.02
+   },
+   {
+    "t": "2020-09",
+    "ocupacion": 19.28,
+    "viviendas": 510.0,
+    "plazas": 3091.0,
+    "precio_plaza": 69.04
+   },
+   {
+    "t": "2020-10",
+    "ocupacion": 19.88,
+    "viviendas": 484.0,
+    "plazas": 2913.0,
+    "precio_plaza": 67.68
+   },
+   {
+    "t": "2020-11",
+    "ocupacion": 12.76,
+    "viviendas": 461.0,
+    "plazas": 2774.0,
+    "precio_plaza": 66.54
+   },
+   {
+    "t": "2020-12",
+    "ocupacion": 21.92,
+    "viviendas": 437.0,
+    "plazas": 2599.0,
+    "precio_plaza": 60.22
+   },
+   {
+    "t": "2021-01",
+    "ocupacion": 12.08,
+    "viviendas": 419.0,
+    "plazas": 2483.0,
+    "precio_plaza": 61.84
+   },
+   {
+    "t": "2021-02",
+    "ocupacion": 9.07,
+    "viviendas": 407.0,
+    "plazas": 2428.0,
+    "precio_plaza": 61.46
+   },
+   {
+    "t": "2021-03",
+    "ocupacion": 11.89,
+    "viviendas": 394.0,
+    "plazas": 2365.0,
+    "precio_plaza": 61.53
+   },
+   {
+    "t": "2021-04",
+    "ocupacion": 14.52,
+    "viviendas": 381.0,
+    "plazas": 2285.0,
+    "precio_plaza": 63.88
+   },
+   {
+    "t": "2021-05",
+    "ocupacion": 21.93,
+    "viviendas": 387.0,
+    "plazas": 2327.0,
+    "precio_plaza": 63.46
+   },
+   {
+    "t": "2021-06",
+    "ocupacion": 26.57,
+    "viviendas": 380.0,
+    "plazas": 2266.0,
+    "precio_plaza": 69.25
+   },
+   {
+    "t": "2021-07",
+    "ocupacion": 47.15,
+    "viviendas": 380.0,
+    "plazas": 2271.0,
+    "precio_plaza": 71.86
+   },
+   {
+    "t": "2021-08",
+    "ocupacion": 65.78,
+    "viviendas": 355.0,
+    "plazas": 2118.0,
+    "precio_plaza": 74.32
+   },
+   {
+    "t": "2021-09",
+    "ocupacion": 39.1,
+    "viviendas": 338.0,
+    "plazas": 2018.0,
+    "precio_plaza": 68.2
+   },
+   {
+    "t": "2021-10",
+    "ocupacion": 38.87,
+    "viviendas": 386.0,
+    "plazas": 2269.0,
+    "precio_plaza": 66.15
+   },
+   {
+    "t": "2021-11",
+    "ocupacion": 73.77,
+    "viviendas": 186.0,
+    "plazas": 1020.0,
+    "precio_plaza": 51.97
+   },
+   {
+    "t": "2021-12",
+    "ocupacion": 49.33,
+    "viviendas": 200.0,
+    "plazas": 1096.0,
+    "precio_plaza": 54.27
+   },
+   {
+    "t": "2022-01",
+    "ocupacion": 36.59,
+    "viviendas": 423.0,
+    "plazas": 2581.0,
+    "precio_plaza": 73.28
+   },
+   {
+    "t": "2022-02",
+    "ocupacion": 47.08,
+    "viviendas": 419.0,
+    "plazas": 2561.0,
+    "precio_plaza": 72.51
+   },
+   {
+    "t": "2022-03",
+    "ocupacion": 44.33,
+    "viviendas": 426.0,
+    "plazas": 2598.0,
+    "precio_plaza": 72.81
+   },
+   {
+    "t": "2022-04",
+    "ocupacion": 47.18,
+    "viviendas": 420.0,
+    "plazas": 2553.0,
+    "precio_plaza": 76.78
+   },
+   {
+    "t": "2022-05",
+    "ocupacion": 46.92,
+    "viviendas": 411.0,
+    "plazas": 2508.0,
+    "precio_plaza": 78.0
+   },
+   {
+    "t": "2022-06",
+    "ocupacion": 65.43,
+    "viviendas": 411.0,
+    "plazas": 2496.0,
+    "precio_plaza": 82.29
+   },
+   {
+    "t": "2022-07",
+    "ocupacion": 59.77,
+    "viviendas": 441.0,
+    "plazas": 2624.0,
+    "precio_plaza": 88.42
+   },
+   {
+    "t": "2022-08",
+    "ocupacion": 81.15,
+    "viviendas": 476.0,
+    "plazas": 2779.0,
+    "precio_plaza": 89.08
+   },
+   {
+    "t": "2022-09",
+    "ocupacion": 40.24,
+    "viviendas": 481.0,
+    "plazas": 2844.0,
+    "precio_plaza": 77.13
+   },
+   {
+    "t": "2022-10",
+    "ocupacion": 44.3,
+    "viviendas": 473.0,
+    "plazas": 2789.0,
+    "precio_plaza": 74.72
+   },
+   {
+    "t": "2022-11",
+    "ocupacion": 37.7,
+    "viviendas": 472.0,
+    "plazas": 2769.0,
+    "precio_plaza": 72.53
+   },
+   {
+    "t": "2022-12",
+    "ocupacion": 53.18,
+    "viviendas": 495.0,
+    "plazas": 2888.0,
+    "precio_plaza": 76.2
+   },
+   {
+    "t": "2023-01",
+    "ocupacion": 31.75,
+    "viviendas": 492.0,
+    "plazas": 2881.0,
+    "precio_plaza": 71.81
+   },
+   {
+    "t": "2023-02",
+    "ocupacion": 29.44,
+    "viviendas": 500.0,
+    "plazas": 2912.0,
+    "precio_plaza": 71.33
+   },
+   {
+    "t": "2023-03",
+    "ocupacion": 45.06,
+    "viviendas": 495.0,
+    "plazas": 2897.0,
+    "precio_plaza": 71.38
+   },
+   {
+    "t": "2023-04",
+    "ocupacion": 54.24,
+    "viviendas": 500.0,
+    "plazas": 2893.0,
+    "precio_plaza": 73.21
+   },
+   {
+    "t": "2023-05",
+    "ocupacion": 42.0,
+    "viviendas": 523.0,
+    "plazas": 3015.0,
+    "precio_plaza": 73.61
+   },
+   {
+    "t": "2023-06",
+    "ocupacion": 57.32,
+    "viviendas": 540.0,
+    "plazas": 3084.0,
+    "precio_plaza": 91.26
+   },
+   {
+    "t": "2023-07",
+    "ocupacion": 64.62,
+    "viviendas": 561.0,
+    "plazas": 3185.0,
+    "precio_plaza": 110.61
+   },
+   {
+    "t": "2023-08",
+    "ocupacion": 76.9,
+    "viviendas": 563.0,
+    "plazas": 3200.0,
+    "precio_plaza": 111.52
+   },
+   {
+    "t": "2023-09",
+    "ocupacion": 55.87,
+    "viviendas": 552.0,
+    "plazas": 3158.0,
+    "precio_plaza": 97.15
+   },
+   {
+    "t": "2023-10",
+    "ocupacion": 53.96,
+    "viviendas": 552.0,
+    "plazas": 3156.0,
+    "precio_plaza": 93.96
+   },
+   {
+    "t": "2023-11",
+    "ocupacion": 35.03,
+    "viviendas": 543.0,
+    "plazas": 3090.0,
+    "precio_plaza": 92.79
+   },
+   {
+    "t": "2023-12",
+    "ocupacion": 49.21,
+    "viviendas": 545.0,
+    "plazas": 3081.0,
+    "precio_plaza": 94.38
+   },
+   {
+    "t": "2024-01",
+    "ocupacion": 42.14,
+    "viviendas": 537.0,
+    "plazas": 3031.0,
+    "precio_plaza": 91.28
+   },
+   {
+    "t": "2024-02",
+    "ocupacion": 50.85,
+    "viviendas": 521.0,
+    "plazas": 2946.0,
+    "precio_plaza": 91.03
+   },
+   {
+    "t": "2024-03",
+    "ocupacion": 65.33,
+    "viviendas": 512.0,
+    "plazas": 2903.0,
+    "precio_plaza": 71.24
+   },
+   {
+    "t": "2024-04",
+    "ocupacion": 64.64,
+    "viviendas": 495.0,
+    "plazas": 2821.0,
+    "precio_plaza": 70.28
+   },
+   {
+    "t": "2024-05",
+    "ocupacion": 45.37,
+    "viviendas": 533.0,
+    "plazas": 2982.0,
+    "precio_plaza": 85.93
+   },
+   {
+    "t": "2024-06",
+    "ocupacion": 54.11,
+    "viviendas": 550.0,
+    "plazas": 3071.0,
+    "precio_plaza": 59.62
+   },
+   {
+    "t": "2024-07",
+    "ocupacion": 64.78,
+    "viviendas": 567.0,
+    "plazas": 3164.0,
+    "precio_plaza": 70.02
+   },
+   {
+    "t": "2024-08",
+    "ocupacion": 73.46,
+    "viviendas": 570.0,
+    "plazas": 3178.0,
+    "precio_plaza": 74.11
+   },
+   {
+    "t": "2024-09",
+    "ocupacion": 53.03,
+    "viviendas": 570.0,
+    "plazas": 3178.0,
+    "precio_plaza": 61.4
+   },
+   {
+    "t": "2024-10",
+    "ocupacion": 50.78,
+    "viviendas": 580.0,
+    "plazas": 3226.0,
+    "precio_plaza": 56.68
+   },
+   {
+    "t": "2024-11",
+    "ocupacion": 46.02,
+    "viviendas": 581.0,
+    "plazas": 3231.0,
+    "precio_plaza": 51.2
+   },
+   {
+    "t": "2024-12",
+    "ocupacion": 43.99,
+    "viviendas": 588.0,
+    "plazas": 3262.0,
+    "precio_plaza": 53.07
+   },
+   {
+    "t": "2025-01",
+    "ocupacion": 47.55,
+    "viviendas": 549.0,
+    "plazas": 3058.0,
+    "precio_plaza": 49.76
+   },
+   {
+    "t": "2025-02",
+    "ocupacion": 52.59,
+    "viviendas": 542.0,
+    "plazas": 3005.0,
+    "precio_plaza": 48.02
+   },
+   {
+    "t": "2025-03",
+    "ocupacion": 50.69,
+    "viviendas": 548.0,
+    "plazas": 3044.0,
+    "precio_plaza": 49.61
+   },
+   {
+    "t": "2025-04",
+    "ocupacion": 50.53,
+    "viviendas": 560.0,
+    "plazas": 3102.0,
+    "precio_plaza": 55.34
+   },
+   {
+    "t": "2025-05",
+    "ocupacion": 50.92,
+    "viviendas": 542.0,
+    "plazas": 3002.0,
+    "precio_plaza": 56.54
+   },
+   {
+    "t": "2025-06",
+    "ocupacion": 56.67,
+    "viviendas": 553.0,
+    "plazas": 3057.0,
+    "precio_plaza": 64.07
+   },
+   {
+    "t": "2025-07",
+    "ocupacion": 58.38,
+    "viviendas": 559.0,
+    "plazas": 3117.0,
+    "precio_plaza": 74.84
+   },
+   {
+    "t": "2025-08",
+    "ocupacion": 74.16,
+    "viviendas": 547.0,
+    "plazas": 3022.0,
+    "precio_plaza": 72.72
+   },
+   {
+    "t": "2025-09",
+    "ocupacion": 46.48,
+    "viviendas": 546.0,
+    "plazas": 3015.0,
+    "precio_plaza": 58.34
+   },
+   {
+    "t": "2025-10",
+    "ocupacion": 44.38,
+    "viviendas": 542.0,
+    "plazas": 3001.0,
+    "precio_plaza": 53.62
+   },
+   {
+    "t": "2025-11",
+    "ocupacion": 33.81,
+    "viviendas": 520.0,
+    "plazas": 2852.0,
+    "precio_plaza": 50.03
+   },
+   {
+    "t": "2025-12",
+    "ocupacion": 34.41,
+    "viviendas": 525.0,
+    "plazas": 2874.0,
+    "precio_plaza": 53.56
+   },
+   {
+    "t": "2026-01",
+    "ocupacion": 34.89,
+    "viviendas": 517.0,
+    "plazas": 2858.0,
+    "precio_plaza": 51.94
+   },
+   {
+    "t": "2026-02",
+    "ocupacion": 34.87,
+    "viviendas": 499.0,
+    "plazas": 2784.0,
+    "precio_plaza": 50.85
+   },
+   {
+    "t": "2026-03",
+    "ocupacion": 36.1,
+    "viviendas": 524.0,
+    "plazas": 2975.0,
+    "precio_plaza": 53.07
+   },
+   {
+    "t": "2026-04",
+    "ocupacion": 49.15,
+    "viviendas": 528.0,
+    "plazas": 3013.0,
+    "precio_plaza": 58.06
+   },
+   {
+    "t": "2026-05",
+    "ocupacion": 45.44,
+    "viviendas": 752.0,
+    "plazas": 4684.0,
+    "precio_plaza": 80.86
+   },
+   {
+    "t": "2026-06",
+    "ocupacion": 47.49,
+    "viviendas": 807.0,
+    "plazas": 5095.0,
+    "precio_plaza": 92.19
+   },
+   {
+    "t": "2026-07",
+    "ocupacion": 62.94,
+    "viviendas": 804.0,
+    "plazas": 5050.0,
+    "precio_plaza": 112.1
+   }
+  ]
+ },
+ "precios": {
+  "series": {
+   "Hoteles · 4 Estrellas": [
+    {
+     "t": "2015-01",
+     "precio": 73.36,
+     "valoracion": 8.28
+    },
+    {
+     "t": "2015-02",
+     "precio": 72.27,
+     "valoracion": 8.21
+    },
+    {
+     "t": "2015-03",
+     "precio": 81.54,
+     "valoracion": 8.21
+    },
+    {
+     "t": "2015-04",
+     "precio": 83.23,
+     "valoracion": 8.17
+    },
+    {
+     "t": "2015-05",
+     "precio": 84.26,
+     "valoracion": 8.19
+    },
+    {
+     "t": "2015-06",
+     "precio": 112.8,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2015-07",
+     "precio": 126.34,
+     "valoracion": 8.18
+    },
+    {
+     "t": "2015-08",
+     "precio": 170.5,
+     "valoracion": 8.29
+    },
+    {
+     "t": "2015-09",
+     "precio": 129.89,
+     "valoracion": 8.27
+    },
+    {
+     "t": "2015-10",
+     "precio": 111.64,
+     "valoracion": 8.27
+    },
+    {
+     "t": "2015-11",
+     "precio": 70.53,
+     "valoracion": 8.27
+    },
+    {
+     "t": "2015-12",
+     "precio": 76.64,
+     "valoracion": 8.26
+    },
+    {
+     "t": "2016-01",
+     "precio": 80.86,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2016-02",
+     "precio": 80.04,
+     "valoracion": 8.21
+    },
+    {
+     "t": "2016-03",
+     "precio": 88.02,
+     "valoracion": 8.2
+    },
+    {
+     "t": "2016-04",
+     "precio": 82.51,
+     "valoracion": 8.21
+    },
+    {
+     "t": "2016-05",
+     "precio": 88.24,
+     "valoracion": 8.2
+    },
+    {
+     "t": "2016-06",
+     "precio": 104.38,
+     "valoracion": 8.19
+    },
+    {
+     "t": "2016-07",
+     "precio": 141.82,
+     "valoracion": null
+    },
+    {
+     "t": "2016-08",
+     "precio": 149.84,
+     "valoracion": 8.19
+    },
+    {
+     "t": "2016-09",
+     "precio": 131.58,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2016-10",
+     "precio": 100.6,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2016-11",
+     "precio": 70.6,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2016-12",
+     "precio": 75.98,
+     "valoracion": 8.24
+    },
+    {
+     "t": "2017-01",
+     "precio": 76.97,
+     "valoracion": 8.24
+    },
+    {
+     "t": "2017-02",
+     "precio": 84.82,
+     "valoracion": 8.24
+    },
+    {
+     "t": "2017-03",
+     "precio": 84.88,
+     "valoracion": 8.21
+    },
+    {
+     "t": "2017-04",
+     "precio": 97.04,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2017-05",
+     "precio": 101.8,
+     "valoracion": 8.21
+    },
+    {
+     "t": "2017-06",
+     "precio": 146.44,
+     "valoracion": 8.19
+    },
+    {
+     "t": "2017-07",
+     "precio": 169.82,
+     "valoracion": 8.17
+    },
+    {
+     "t": "2017-08",
+     "precio": 187.16,
+     "valoracion": 8.17
+    },
+    {
+     "t": "2017-09",
+     "precio": 195.25,
+     "valoracion": 8.14
+    },
+    {
+     "t": "2017-10",
+     "precio": 97.76,
+     "valoracion": 8.16
+    },
+    {
+     "t": "2017-11",
+     "precio": 88.93,
+     "valoracion": 8.16
+    },
+    {
+     "t": "2017-12",
+     "precio": 78.56,
+     "valoracion": null
+    },
+    {
+     "t": "2018-01",
+     "precio": 82.74,
+     "valoracion": 8.14
+    },
+    {
+     "t": "2018-02",
+     "precio": 81.75,
+     "valoracion": 8.17
+    },
+    {
+     "t": "2018-03",
+     "precio": 84.16,
+     "valoracion": 8.16
+    },
+    {
+     "t": "2018-04",
+     "precio": 86.89,
+     "valoracion": 8.19
+    },
+    {
+     "t": "2018-05",
+     "precio": 117.0,
+     "valoracion": 8.16
+    },
+    {
+     "t": "2018-06",
+     "precio": 134.53,
+     "valoracion": 8.14
+    },
+    {
+     "t": "2018-07",
+     "precio": 111.22,
+     "valoracion": 8.16
+    },
+    {
+     "t": "2018-08",
+     "precio": 140.97,
+     "valoracion": 8.15
+    },
+    {
+     "t": "2018-09",
+     "precio": 120.97,
+     "valoracion": 8.08
+    },
+    {
+     "t": "2018-10",
+     "precio": 79.16,
+     "valoracion": 8.11
+    },
+    {
+     "t": "2018-11",
+     "precio": 58.1,
+     "valoracion": 8.12
+    },
+    {
+     "t": "2018-12",
+     "precio": 68.11,
+     "valoracion": 8.13
+    },
+    {
+     "t": "2019-01",
+     "precio": 66.18,
+     "valoracion": 8.14
+    },
+    {
+     "t": "2019-02",
+     "precio": 68.97,
+     "valoracion": 8.11
+    },
+    {
+     "t": "2019-03",
+     "precio": 67.98,
+     "valoracion": 8.14
+    },
+    {
+     "t": "2019-04",
+     "precio": 84.74,
+     "valoracion": 8.16
+    },
+    {
+     "t": "2019-05",
+     "precio": 87.42,
+     "valoracion": 8.15
+    },
+    {
+     "t": "2019-06",
+     "precio": 95.74,
+     "valoracion": 8.13
+    },
+    {
+     "t": "2019-07",
+     "precio": 97.14,
+     "valoracion": 8.2
+    },
+    {
+     "t": "2019-08",
+     "precio": 122.0,
+     "valoracion": 8.13
+    },
+    {
+     "t": "2019-09",
+     "precio": 95.95,
+     "valoracion": 8.36
+    },
+    {
+     "t": "2019-10",
+     "precio": 63.96,
+     "valoracion": 8.34
+    },
+    {
+     "t": "2019-11",
+     "precio": 59.37,
+     "valoracion": 8.34
+    },
+    {
+     "t": "2019-12",
+     "precio": 58.77,
+     "valoracion": 8.34
+    },
+    {
+     "t": "2020-01",
+     "precio": 59.72,
+     "valoracion": 8.34
+    },
+    {
+     "t": "2020-02",
+     "precio": 60.23,
+     "valoracion": 8.35
+    },
+    {
+     "t": "2020-03",
+     "precio": 56.04,
+     "valoracion": 8.35
+    },
+    {
+     "t": "2020-04",
+     "precio": 56.92,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2020-05",
+     "precio": 72.94,
+     "valoracion": 8.26
+    },
+    {
+     "t": "2020-06",
+     "precio": 96.9,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2020-07",
+     "precio": 99.29,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2022-08",
+     "precio": 399.0,
+     "valoracion": null
+    },
+    {
+     "t": "2022-09",
+     "precio": 281.5,
+     "valoracion": null
+    },
+    {
+     "t": "2022-10",
+     "precio": 144.0,
+     "valoracion": null
+    },
+    {
+     "t": "2022-12",
+     "precio": 173.33,
+     "valoracion": null
+    },
+    {
+     "t": "2023-02",
+     "precio": 207.8,
+     "valoracion": null
+    },
+    {
+     "t": "2023-03",
+     "precio": 138.0,
+     "valoracion": null
+    },
+    {
+     "t": "2023-04",
+     "precio": 312.0,
+     "valoracion": null
+    },
+    {
+     "t": "2023-06",
+     "precio": 162.0,
+     "valoracion": null
+    },
+    {
+     "t": "2023-07",
+     "precio": 205.07,
+     "valoracion": null
+    },
+    {
+     "t": "2023-08",
+     "precio": 244.0,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2023-09",
+     "precio": 247.1,
+     "valoracion": 8.48
+    },
+    {
+     "t": "2023-10",
+     "precio": 146.48,
+     "valoracion": null
+    },
+    {
+     "t": "2023-11",
+     "precio": 146.25,
+     "valoracion": 8.45
+    },
+    {
+     "t": "2024-02",
+     "precio": 135.71,
+     "valoracion": 8.42
+    },
+    {
+     "t": "2024-03",
+     "precio": 131.51,
+     "valoracion": 8.43
+    },
+    {
+     "t": "2024-04",
+     "precio": 138.67,
+     "valoracion": 8.2
+    },
+    {
+     "t": "2024-05",
+     "precio": 140.0,
+     "valoracion": 8.2
+    },
+    {
+     "t": "2024-06",
+     "precio": 247.5,
+     "valoracion": 8.2
+    },
+    {
+     "t": "2024-07",
+     "precio": 167.33,
+     "valoracion": 8.1
+    },
+    {
+     "t": "2024-08",
+     "precio": 315.0,
+     "valoracion": 8.1
+    },
+    {
+     "t": "2024-09",
+     "precio": 218.0,
+     "valoracion": 8.1
+    },
+    {
+     "t": "2024-10",
+     "precio": 129.0,
+     "valoracion": 8.1
+    },
+    {
+     "t": "2025-04",
+     "precio": 84.94,
+     "valoracion": 7.7
+    },
+    {
+     "t": "2025-05",
+     "precio": 85.65,
+     "valoracion": 7.55
+    },
+    {
+     "t": "2025-06",
+     "precio": 106.24,
+     "valoracion": 7.5
+    },
+    {
+     "t": "2025-07",
+     "precio": 131.68,
+     "valoracion": 7.75
+    },
+    {
+     "t": "2025-08",
+     "precio": 159.09,
+     "valoracion": 7.75
+    },
+    {
+     "t": "2025-09",
+     "precio": 108.05,
+     "valoracion": 7.75
+    },
+    {
+     "t": "2025-10",
+     "precio": 93.8,
+     "valoracion": 7.7
+    },
+    {
+     "t": "2025-11",
+     "precio": 92.85,
+     "valoracion": 7.7
+    },
+    {
+     "t": "2026-03",
+     "precio": 77.05,
+     "valoracion": 7.6
+    },
+    {
+     "t": "2026-04",
+     "precio": 81.12,
+     "valoracion": 7.6
+    },
+    {
+     "t": "2026-05",
+     "precio": 92.71,
+     "valoracion": 7.9
+    },
+    {
+     "t": "2026-06",
+     "precio": 98.91,
+     "valoracion": 8.0
+    },
+    {
+     "t": "2026-07",
+     "precio": 145.94,
+     "valoracion": 8.0
+    }
+   ],
+   "Hoteles · 5 Estrellas": [
+    {
+     "t": "2015-01",
+     "precio": 330.0,
+     "valoracion": 8.16
+    },
+    {
+     "t": "2015-04",
+     "precio": 249.09,
+     "valoracion": 8.35
+    },
+    {
+     "t": "2015-05",
+     "precio": 263.8,
+     "valoracion": 8.45
+    },
+    {
+     "t": "2015-06",
+     "precio": 261.08,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2015-07",
+     "precio": 278.52,
+     "valoracion": 7.8
+    },
+    {
+     "t": "2015-08",
+     "precio": 320.45,
+     "valoracion": 8.29
+    },
+    {
+     "t": "2015-09",
+     "precio": 213.81,
+     "valoracion": 8.25
+    },
+    {
+     "t": "2015-10",
+     "precio": 178.63,
+     "valoracion": 8.28
+    },
+    {
+     "t": "2015-12",
+     "precio": 321.99,
+     "valoracion": 8.29
+    },
+    {
+     "t": "2016-01",
+     "precio": 335.25,
+     "valoracion": 8.29
+    },
+    {
+     "t": "2016-03",
+     "precio": 253.1,
+     "valoracion": 8.29
+    },
+    {
+     "t": "2016-04",
+     "precio": 288.71,
+     "valoracion": 8.29
+    },
+    {
+     "t": "2016-05",
+     "precio": 308.29,
+     "valoracion": 8.31
+    },
+    {
+     "t": "2016-06",
+     "precio": 322.87,
+     "valoracion": 8.32
+    },
+    {
+     "t": "2016-07",
+     "precio": 437.38,
+     "valoracion": null
+    },
+    {
+     "t": "2016-08",
+     "precio": 440.2,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2016-09",
+     "precio": 302.9,
+     "valoracion": 8.76
+    },
+    {
+     "t": "2016-10",
+     "precio": 264.3,
+     "valoracion": 8.81
+    },
+    {
+     "t": "2016-11",
+     "precio": 233.0,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2016-12",
+     "precio": 320.0,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2017-01",
+     "precio": 320.0,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2017-03",
+     "precio": 178.58,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2017-04",
+     "precio": 280.44,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2017-05",
+     "precio": 286.92,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2017-06",
+     "precio": 312.44,
+     "valoracion": 8.82
+    },
+    {
+     "t": "2017-07",
+     "precio": 366.75,
+     "valoracion": 8.83
+    },
+    {
+     "t": "2017-08",
+     "precio": 451.51,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2017-09",
+     "precio": 349.94,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2017-10",
+     "precio": 332.9,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2017-11",
+     "precio": 243.98,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2017-12",
+     "precio": 379.72,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2018-01",
+     "precio": 354.71,
+     "valoracion": null
+    },
+    {
+     "t": "2018-02",
+     "precio": 353.83,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2018-03",
+     "precio": 287.69,
+     "valoracion": 8.91
+    },
+    {
+     "t": "2018-04",
+     "precio": 289.34,
+     "valoracion": 8.94
+    },
+    {
+     "t": "2018-05",
+     "precio": 310.17,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2018-06",
+     "precio": 330.45,
+     "valoracion": 8.94
+    },
+    {
+     "t": "2018-07",
+     "precio": 388.88,
+     "valoracion": 8.94
+    },
+    {
+     "t": "2018-08",
+     "precio": 421.6,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2018-09",
+     "precio": 318.68,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2018-10",
+     "precio": 260.64,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2018-11",
+     "precio": 243.23,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2018-12",
+     "precio": 308.48,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2019-01",
+     "precio": 295.23,
+     "valoracion": 8.79
+    },
+    {
+     "t": "2019-02",
+     "precio": 302.22,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2019-03",
+     "precio": 244.52,
+     "valoracion": 8.83
+    },
+    {
+     "t": "2019-04",
+     "precio": 288.43,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2019-05",
+     "precio": 311.91,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2019-06",
+     "precio": 353.61,
+     "valoracion": 8.94
+    },
+    {
+     "t": "2019-07",
+     "precio": 375.03,
+     "valoracion": 8.97
+    },
+    {
+     "t": "2019-08",
+     "precio": 425.04,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2019-09",
+     "precio": 308.03,
+     "valoracion": 8.96
+    },
+    {
+     "t": "2019-10",
+     "precio": 281.44,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2019-11",
+     "precio": 195.41,
+     "valoracion": 9.02
+    },
+    {
+     "t": "2019-12",
+     "precio": 357.11,
+     "valoracion": 9.03
+    },
+    {
+     "t": "2020-01",
+     "precio": 249.22,
+     "valoracion": 9.02
+    },
+    {
+     "t": "2020-02",
+     "precio": 261.81,
+     "valoracion": 8.96
+    },
+    {
+     "t": "2020-03",
+     "precio": 227.33,
+     "valoracion": 8.99
+    },
+    {
+     "t": "2020-04",
+     "precio": 254.01,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2020-05",
+     "precio": 275.98,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2020-06",
+     "precio": 278.62,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2020-07",
+     "precio": 245.04,
+     "valoracion": 8.99
+    },
+    {
+     "t": "2020-08",
+     "precio": 241.75,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2020-09",
+     "precio": 256.21,
+     "valoracion": 8.96
+    },
+    {
+     "t": "2020-10",
+     "precio": 247.42,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2021-03",
+     "precio": 231.46,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2021-04",
+     "precio": 218.07,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2021-05",
+     "precio": 246.52,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2021-06",
+     "precio": 272.81,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2021-07",
+     "precio": 298.25,
+     "valoracion": 8.96
+    },
+    {
+     "t": "2021-10",
+     "precio": 262.06,
+     "valoracion": 8.97
+    },
+    {
+     "t": "2021-11",
+     "precio": 260.8,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2021-12",
+     "precio": 292.88,
+     "valoracion": 8.97
+    },
+    {
+     "t": "2022-01",
+     "precio": 312.28,
+     "valoracion": 8.97
+    },
+    {
+     "t": "2022-02",
+     "precio": 316.35,
+     "valoracion": 8.96
+    },
+    {
+     "t": "2022-03",
+     "precio": 245.78,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2022-04",
+     "precio": 235.23,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2022-05",
+     "precio": 243.0,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2022-11",
+     "precio": 257.56,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2022-12",
+     "precio": 324.33,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2023-01",
+     "precio": 318.99,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2023-02",
+     "precio": 322.13,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2023-03",
+     "precio": 283.66,
+     "valoracion": 8.87
+    },
+    {
+     "t": "2023-04",
+     "precio": 247.0,
+     "valoracion": 8.87
+    },
+    {
+     "t": "2023-10",
+     "precio": 247.0,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2023-11",
+     "precio": 256.22,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2023-12",
+     "precio": 306.69,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2024-01",
+     "precio": 323.78,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2024-02",
+     "precio": 560.55,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2024-03",
+     "precio": 451.67,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2024-04",
+     "precio": 463.58,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2024-05",
+     "precio": 489.82,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2024-06",
+     "precio": 525.22,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2024-07",
+     "precio": 624.49,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2024-08",
+     "precio": 707.27,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2024-09",
+     "precio": 474.85,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2024-10",
+     "precio": 425.66,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2024-11",
+     "precio": 356.95,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2024-12",
+     "precio": 425.31,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2025-01",
+     "precio": 385.31,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2025-02",
+     "precio": 380.9,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2025-03",
+     "precio": 289.16,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2025-04",
+     "precio": 419.23,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2025-05",
+     "precio": 499.04,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2025-06",
+     "precio": 568.57,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2025-07",
+     "precio": 585.62,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2025-08",
+     "precio": 544.55,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2025-09",
+     "precio": 466.77,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2025-10",
+     "precio": 401.1,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2025-11",
+     "precio": 341.7,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2025-12",
+     "precio": 412.43,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2026-01",
+     "precio": 429.44,
+     "valoracion": 9.3
+    },
+    {
+     "t": "2026-02",
+     "precio": 374.27,
+     "valoracion": 9.3
+    },
+    {
+     "t": "2026-03",
+     "precio": 348.84,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2026-04",
+     "precio": 467.39,
+     "valoracion": 9.4
+    },
+    {
+     "t": "2026-05",
+     "precio": 530.43,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2026-06",
+     "precio": 536.85,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2026-07",
+     "precio": 636.9,
+     "valoracion": 8.95
+    }
+   ],
+   "Hoteles · General": [
+    {
+     "t": "2015-01",
+     "precio": 81.38,
+     "valoracion": null
+    },
+    {
+     "t": "2015-02",
+     "precio": 72.27,
+     "valoracion": null
+    },
+    {
+     "t": "2015-03",
+     "precio": 81.54,
+     "valoracion": null
+    },
+    {
+     "t": "2015-04",
+     "precio": 159.56,
+     "valoracion": null
+    },
+    {
+     "t": "2015-05",
+     "precio": 183.23,
+     "valoracion": null
+    },
+    {
+     "t": "2015-06",
+     "precio": 186.18,
+     "valoracion": null
+    },
+    {
+     "t": "2015-07",
+     "precio": 201.09,
+     "valoracion": null
+    },
+    {
+     "t": "2015-08",
+     "precio": 232.69,
+     "valoracion": null
+    },
+    {
+     "t": "2015-09",
+     "precio": 157.87,
+     "valoracion": null
+    },
+    {
+     "t": "2015-10",
+     "precio": 126.59,
+     "valoracion": null
+    },
+    {
+     "t": "2015-11",
+     "precio": 93.78,
+     "valoracion": null
+    },
+    {
+     "t": "2015-12",
+     "precio": 126.97,
+     "valoracion": null
+    },
+    {
+     "t": "2016-01",
+     "precio": 119.9,
+     "valoracion": null
+    },
+    {
+     "t": "2016-02",
+     "precio": 126.69,
+     "valoracion": null
+    },
+    {
+     "t": "2016-03",
+     "precio": 176.55,
+     "valoracion": null
+    },
+    {
+     "t": "2016-04",
+     "precio": 192.14,
+     "valoracion": null
+    },
+    {
+     "t": "2016-05",
+     "precio": 201.93,
+     "valoracion": null
+    },
+    {
+     "t": "2016-06",
+     "precio": 224.81,
+     "valoracion": null
+    },
+    {
+     "t": "2016-07",
+     "precio": 284.89,
+     "valoracion": null
+    },
+    {
+     "t": "2016-08",
+     "precio": 289.89,
+     "valoracion": null
+    },
+    {
+     "t": "2016-09",
+     "precio": 214.26,
+     "valoracion": null
+    },
+    {
+     "t": "2016-10",
+     "precio": 185.31,
+     "valoracion": null
+    },
+    {
+     "t": "2016-11",
+     "precio": 173.65,
+     "valoracion": null
+    },
+    {
+     "t": "2016-12",
+     "precio": 192.43,
+     "valoracion": null
+    },
+    {
+     "t": "2017-01",
+     "precio": 148.77,
+     "valoracion": null
+    },
+    {
+     "t": "2017-02",
+     "precio": 92.01,
+     "valoracion": null
+    },
+    {
+     "t": "2017-03",
+     "precio": 132.23,
+     "valoracion": null
+    },
+    {
+     "t": "2017-04",
+     "precio": 192.21,
+     "valoracion": null
+    },
+    {
+     "t": "2017-05",
+     "precio": 194.9,
+     "valoracion": null
+    },
+    {
+     "t": "2017-06",
+     "precio": 226.44,
+     "valoracion": null
+    },
+    {
+     "t": "2017-07",
+     "precio": 259.7,
+     "valoracion": null
+    },
+    {
+     "t": "2017-08",
+     "precio": 303.39,
+     "valoracion": null
+    },
+    {
+     "t": "2017-09",
+     "precio": 260.66,
+     "valoracion": null
+    },
+    {
+     "t": "2017-10",
+     "precio": 223.49,
+     "valoracion": null
+    },
+    {
+     "t": "2017-11",
+     "precio": 233.61,
+     "valoracion": null
+    },
+    {
+     "t": "2017-12",
+     "precio": 233.51,
+     "valoracion": null
+    },
+    {
+     "t": "2018-01",
+     "precio": 218.72,
+     "valoracion": null
+    },
+    {
+     "t": "2018-02",
+     "precio": 212.92,
+     "valoracion": null
+    },
+    {
+     "t": "2018-03",
+     "precio": 205.44,
+     "valoracion": null
+    },
+    {
+     "t": "2018-04",
+     "precio": 196.72,
+     "valoracion": null
+    },
+    {
+     "t": "2018-05",
+     "precio": 213.37,
+     "valoracion": null
+    },
+    {
+     "t": "2018-06",
+     "precio": 226.06,
+     "valoracion": null
+    },
+    {
+     "t": "2018-07",
+     "precio": 252.65,
+     "valoracion": null
+    },
+    {
+     "t": "2018-08",
+     "precio": 273.64,
+     "valoracion": null
+    },
+    {
+     "t": "2018-09",
+     "precio": 218.85,
+     "valoracion": null
+    },
+    {
+     "t": "2018-10",
+     "precio": 176.83,
+     "valoracion": null
+    },
+    {
+     "t": "2018-11",
+     "precio": 172.09,
+     "valoracion": null
+    },
+    {
+     "t": "2018-12",
+     "precio": 187.22,
+     "valoracion": null
+    },
+    {
+     "t": "2019-01",
+     "precio": 180.7,
+     "valoracion": null
+    },
+    {
+     "t": "2019-02",
+     "precio": 180.49,
+     "valoracion": null
+    },
+    {
+     "t": "2019-03",
+     "precio": 181.44,
+     "valoracion": null
+    },
+    {
+     "t": "2019-04",
+     "precio": 198.08,
+     "valoracion": null
+    },
+    {
+     "t": "2019-05",
+     "precio": 209.85,
+     "valoracion": null
+    },
+    {
+     "t": "2019-06",
+     "precio": 239.37,
+     "valoracion": null
+    },
+    {
+     "t": "2019-07",
+     "precio": 244.22,
+     "valoracion": null
+    },
+    {
+     "t": "2019-08",
+     "precio": 272.9,
+     "valoracion": null
+    },
+    {
+     "t": "2019-09",
+     "precio": 206.4,
+     "valoracion": null
+    },
+    {
+     "t": "2019-10",
+     "precio": 188.78,
+     "valoracion": null
+    },
+    {
+     "t": "2019-11",
+     "precio": 127.73,
+     "valoracion": null
+    },
+    {
+     "t": "2019-12",
+     "precio": 113.99,
+     "valoracion": null
+    },
+    {
+     "t": "2020-01",
+     "precio": 154.47,
+     "valoracion": null
+    },
+    {
+     "t": "2020-02",
+     "precio": 161.02,
+     "valoracion": null
+    },
+    {
+     "t": "2020-03",
+     "precio": 170.24,
+     "valoracion": null
+    },
+    {
+     "t": "2020-04",
+     "precio": 188.31,
+     "valoracion": null
+    },
+    {
+     "t": "2020-05",
+     "precio": 208.3,
+     "valoracion": null
+    },
+    {
+     "t": "2020-06",
+     "precio": 187.76,
+     "valoracion": null
+    },
+    {
+     "t": "2020-07",
+     "precio": 196.46,
+     "valoracion": null
+    },
+    {
+     "t": "2020-08",
+     "precio": 241.75,
+     "valoracion": null
+    },
+    {
+     "t": "2020-09",
+     "precio": 256.21,
+     "valoracion": null
+    },
+    {
+     "t": "2020-10",
+     "precio": 247.42,
+     "valoracion": null
+    },
+    {
+     "t": "2021-03",
+     "precio": 231.46,
+     "valoracion": null
+    },
+    {
+     "t": "2021-04",
+     "precio": 218.07,
+     "valoracion": null
+    },
+    {
+     "t": "2021-05",
+     "precio": 246.52,
+     "valoracion": null
+    },
+    {
+     "t": "2021-06",
+     "precio": 272.81,
+     "valoracion": null
+    },
+    {
+     "t": "2021-07",
+     "precio": 298.25,
+     "valoracion": null
+    },
+    {
+     "t": "2021-10",
+     "precio": 262.06,
+     "valoracion": null
+    },
+    {
+     "t": "2021-11",
+     "precio": 260.8,
+     "valoracion": null
+    },
+    {
+     "t": "2021-12",
+     "precio": 292.88,
+     "valoracion": null
+    },
+    {
+     "t": "2022-01",
+     "precio": 312.28,
+     "valoracion": null
+    },
+    {
+     "t": "2022-02",
+     "precio": 316.35,
+     "valoracion": null
+    },
+    {
+     "t": "2022-03",
+     "precio": 245.78,
+     "valoracion": null
+    },
+    {
+     "t": "2022-04",
+     "precio": 235.23,
+     "valoracion": null
+    },
+    {
+     "t": "2022-05",
+     "precio": 243.0,
+     "valoracion": null
+    },
+    {
+     "t": "2022-08",
+     "precio": 399.0,
+     "valoracion": null
+    },
+    {
+     "t": "2022-09",
+     "precio": 281.5,
+     "valoracion": null
+    },
+    {
+     "t": "2022-10",
+     "precio": 144.0,
+     "valoracion": null
+    },
+    {
+     "t": "2022-11",
+     "precio": 257.56,
+     "valoracion": null
+    },
+    {
+     "t": "2022-12",
+     "precio": 248.83,
+     "valoracion": null
+    },
+    {
+     "t": "2023-01",
+     "precio": 318.99,
+     "valoracion": null
+    },
+    {
+     "t": "2023-02",
+     "precio": 264.97,
+     "valoracion": null
+    },
+    {
+     "t": "2023-03",
+     "precio": 235.1,
+     "valoracion": null
+    },
+    {
+     "t": "2023-04",
+     "precio": 279.5,
+     "valoracion": null
+    },
+    {
+     "t": "2023-06",
+     "precio": 162.0,
+     "valoracion": null
+    },
+    {
+     "t": "2023-07",
+     "precio": 205.07,
+     "valoracion": null
+    },
+    {
+     "t": "2023-08",
+     "precio": 244.0,
+     "valoracion": null
+    },
+    {
+     "t": "2023-09",
+     "precio": 247.1,
+     "valoracion": null
+    },
+    {
+     "t": "2023-10",
+     "precio": 196.74,
+     "valoracion": null
+    },
+    {
+     "t": "2023-11",
+     "precio": 219.56,
+     "valoracion": null
+    },
+    {
+     "t": "2023-12",
+     "precio": 306.69,
+     "valoracion": null
+    },
+    {
+     "t": "2024-01",
+     "precio": 323.78,
+     "valoracion": null
+    },
+    {
+     "t": "2024-02",
+     "precio": 270.09,
+     "valoracion": null
+    },
+    {
+     "t": "2024-03",
+     "precio": 288.71,
+     "valoracion": null
+    },
+    {
+     "t": "2024-04",
+     "precio": 300.62,
+     "valoracion": null
+    },
+    {
+     "t": "2024-05",
+     "precio": 315.81,
+     "valoracion": null
+    },
+    {
+     "t": "2024-06",
+     "precio": 361.99,
+     "valoracion": null
+    },
+    {
+     "t": "2024-07",
+     "precio": 472.11,
+     "valoracion": null
+    },
+    {
+     "t": "2024-08",
+     "precio": 576.52,
+     "valoracion": null
+    },
+    {
+     "t": "2024-09",
+     "precio": 329.43,
+     "valoracion": null
+    },
+    {
+     "t": "2024-10",
+     "precio": 326.78,
+     "valoracion": null
+    },
+    {
+     "t": "2024-11",
+     "precio": 356.95,
+     "valoracion": null
+    },
+    {
+     "t": "2024-12",
+     "precio": 425.31,
+     "valoracion": null
+    },
+    {
+     "t": "2025-01",
+     "precio": 385.31,
+     "valoracion": null
+    },
+    {
+     "t": "2025-02",
+     "precio": 380.9,
+     "valoracion": null
+    },
+    {
+     "t": "2025-03",
+     "precio": 289.16,
+     "valoracion": null
+    },
+    {
+     "t": "2025-04",
+     "precio": 307.8,
+     "valoracion": null
+    },
+    {
+     "t": "2025-05",
+     "precio": 361.24,
+     "valoracion": null
+    },
+    {
+     "t": "2025-06",
+     "precio": 414.46,
+     "valoracion": null
+    },
+    {
+     "t": "2025-07",
+     "precio": 363.23,
+     "valoracion": null
+    },
+    {
+     "t": "2025-08",
+     "precio": 416.06,
+     "valoracion": null
+    },
+    {
+     "t": "2025-09",
+     "precio": 347.2,
+     "valoracion": null
+    },
+    {
+     "t": "2025-10",
+     "precio": 298.67,
+     "valoracion": null
+    },
+    {
+     "t": "2025-11",
+     "precio": 258.75,
+     "valoracion": null
+    },
+    {
+     "t": "2025-12",
+     "precio": 412.43,
+     "valoracion": null
+    },
+    {
+     "t": "2026-01",
+     "precio": 429.44,
+     "valoracion": 9.3
+    },
+    {
+     "t": "2026-02",
+     "precio": 374.27,
+     "valoracion": 9.3
+    },
+    {
+     "t": "2026-03",
+     "precio": 258.24,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2026-04",
+     "precio": 286.98,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2026-05",
+     "precio": 323.7,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2026-06",
+     "precio": 326.31,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2026-07",
+     "precio": 392.45,
+     "valoracion": 8.75
+    }
+   ],
+   "Apartamentos": [
+    {
+     "t": "2015-03",
+     "precio": 55.0,
+     "valoracion": 7.29
+    },
+    {
+     "t": "2015-04",
+     "precio": 61.29,
+     "valoracion": 6.46
+    },
+    {
+     "t": "2015-05",
+     "precio": 57.13,
+     "valoracion": 5.95
+    },
+    {
+     "t": "2015-06",
+     "precio": 68.02,
+     "valoracion": 5.26
+    },
+    {
+     "t": "2015-07",
+     "precio": 100.0,
+     "valoracion": 0.0
+    },
+    {
+     "t": "2015-08",
+     "precio": 87.34,
+     "valoracion": null
+    },
+    {
+     "t": "2015-09",
+     "precio": 83.03,
+     "valoracion": null
+    },
+    {
+     "t": "2015-10",
+     "precio": 55.22,
+     "valoracion": 6.8
+    },
+    {
+     "t": "2015-11",
+     "precio": 91.41,
+     "valoracion": 7.0
+    },
+    {
+     "t": "2015-12",
+     "precio": 153.38,
+     "valoracion": 6.94
+    },
+    {
+     "t": "2016-01",
+     "precio": 84.68,
+     "valoracion": 7.68
+    },
+    {
+     "t": "2016-02",
+     "precio": 90.0,
+     "valoracion": 7.69
+    },
+    {
+     "t": "2016-03",
+     "precio": 91.08,
+     "valoracion": 7.68
+    },
+    {
+     "t": "2016-04",
+     "precio": 95.24,
+     "valoracion": 7.91
+    },
+    {
+     "t": "2016-05",
+     "precio": 79.31,
+     "valoracion": 8.06
+    },
+    {
+     "t": "2016-06",
+     "precio": 79.26,
+     "valoracion": 8.07
+    },
+    {
+     "t": "2016-07",
+     "precio": 113.66,
+     "valoracion": 7.64
+    },
+    {
+     "t": "2016-08",
+     "precio": 132.07,
+     "valoracion": 8.51
+    },
+    {
+     "t": "2016-09",
+     "precio": 92.22,
+     "valoracion": 8.87
+    },
+    {
+     "t": "2016-10",
+     "precio": 112.41,
+     "valoracion": 8.79
+    },
+    {
+     "t": "2016-11",
+     "precio": 60.0,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2017-03",
+     "precio": 121.34,
+     "valoracion": 8.61
+    },
+    {
+     "t": "2017-04",
+     "precio": 99.8,
+     "valoracion": 8.73
+    },
+    {
+     "t": "2017-05",
+     "precio": 79.04,
+     "valoracion": 8.51
+    },
+    {
+     "t": "2017-06",
+     "precio": 90.86,
+     "valoracion": 8.56
+    },
+    {
+     "t": "2017-07",
+     "precio": 119.97,
+     "valoracion": 8.64
+    },
+    {
+     "t": "2017-08",
+     "precio": 115.14,
+     "valoracion": 8.64
+    },
+    {
+     "t": "2017-09",
+     "precio": 88.28,
+     "valoracion": 8.66
+    },
+    {
+     "t": "2017-10",
+     "precio": 77.07,
+     "valoracion": 8.73
+    },
+    {
+     "t": "2017-11",
+     "precio": 80.21,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2018-03",
+     "precio": 81.19,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2018-04",
+     "precio": 74.58,
+     "valoracion": 8.76
+    },
+    {
+     "t": "2018-05",
+     "precio": 72.46,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2018-06",
+     "precio": 89.66,
+     "valoracion": 8.77
+    },
+    {
+     "t": "2018-07",
+     "precio": 123.47,
+     "valoracion": 8.74
+    },
+    {
+     "t": "2018-08",
+     "precio": 114.68,
+     "valoracion": 8.82
+    },
+    {
+     "t": "2018-09",
+     "precio": 97.09,
+     "valoracion": 8.82
+    },
+    {
+     "t": "2018-10",
+     "precio": 77.58,
+     "valoracion": 8.96
+    },
+    {
+     "t": "2018-11",
+     "precio": 85.41,
+     "valoracion": 8.93
+    },
+    {
+     "t": "2018-12",
+     "precio": 85.0,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2019-01",
+     "precio": 85.0,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2019-02",
+     "precio": 85.0,
+     "valoracion": 8.97
+    },
+    {
+     "t": "2019-03",
+     "precio": 85.0,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2019-04",
+     "precio": 159.59,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2019-05",
+     "precio": 165.37,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2019-06",
+     "precio": 177.8,
+     "valoracion": 8.99
+    },
+    {
+     "t": "2019-07",
+     "precio": 224.73,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2019-08",
+     "precio": 192.76,
+     "valoracion": 8.91
+    },
+    {
+     "t": "2019-09",
+     "precio": 224.56,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2019-10",
+     "precio": 201.17,
+     "valoracion": 8.99
+    },
+    {
+     "t": "2019-11",
+     "precio": 255.91,
+     "valoracion": 8.97
+    },
+    {
+     "t": "2019-12",
+     "precio": 196.11,
+     "valoracion": 9.02
+    },
+    {
+     "t": "2020-01",
+     "precio": 170.27,
+     "valoracion": 8.99
+    },
+    {
+     "t": "2020-02",
+     "precio": 239.05,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2020-03",
+     "precio": 97.25,
+     "valoracion": 9.03
+    },
+    {
+     "t": "2020-04",
+     "precio": 85.14,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2020-05",
+     "precio": 67.39,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2020-06",
+     "precio": 129.38,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2020-07",
+     "precio": 127.69,
+     "valoracion": 8.64
+    },
+    {
+     "t": "2020-08",
+     "precio": 135.32,
+     "valoracion": 8.69
+    },
+    {
+     "t": "2020-09",
+     "precio": 125.91,
+     "valoracion": 8.83
+    },
+    {
+     "t": "2020-10",
+     "precio": 109.23,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2020-11",
+     "precio": 98.72,
+     "valoracion": 8.72
+    },
+    {
+     "t": "2020-12",
+     "precio": 100.74,
+     "valoracion": 8.77
+    },
+    {
+     "t": "2021-01",
+     "precio": 93.48,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2021-02",
+     "precio": 93.45,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2021-03",
+     "precio": 113.34,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2021-04",
+     "precio": 103.79,
+     "valoracion": 8.81
+    },
+    {
+     "t": "2021-05",
+     "precio": 136.82,
+     "valoracion": 8.94
+    },
+    {
+     "t": "2021-06",
+     "precio": 153.67,
+     "valoracion": 9.07
+    },
+    {
+     "t": "2021-07",
+     "precio": 167.55,
+     "valoracion": 8.99
+    },
+    {
+     "t": "2021-08",
+     "precio": 189.22,
+     "valoracion": 9.05
+    },
+    {
+     "t": "2021-09",
+     "precio": 158.99,
+     "valoracion": 9.04
+    },
+    {
+     "t": "2021-10",
+     "precio": 165.09,
+     "valoracion": 9.02
+    },
+    {
+     "t": "2021-11",
+     "precio": 211.81,
+     "valoracion": 9.03
+    },
+    {
+     "t": "2021-12",
+     "precio": 249.37,
+     "valoracion": 9.02
+    },
+    {
+     "t": "2022-01",
+     "precio": 196.83,
+     "valoracion": 8.97
+    },
+    {
+     "t": "2022-02",
+     "precio": 204.02,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2022-03",
+     "precio": 309.75,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2022-04",
+     "precio": 310.37,
+     "valoracion": 8.81
+    },
+    {
+     "t": "2022-05",
+     "precio": 316.02,
+     "valoracion": 8.65
+    },
+    {
+     "t": "2022-06",
+     "precio": 395.33,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2022-07",
+     "precio": 552.08,
+     "valoracion": 8.65
+    },
+    {
+     "t": "2022-08",
+     "precio": 394.49,
+     "valoracion": 8.71
+    },
+    {
+     "t": "2022-09",
+     "precio": 436.14,
+     "valoracion": 8.51
+    },
+    {
+     "t": "2022-10",
+     "precio": 368.61,
+     "valoracion": 8.36
+    },
+    {
+     "t": "2022-11",
+     "precio": 383.96,
+     "valoracion": 8.64
+    },
+    {
+     "t": "2022-12",
+     "precio": 416.64,
+     "valoracion": 8.44
+    },
+    {
+     "t": "2023-01",
+     "precio": 372.03,
+     "valoracion": 8.32
+    },
+    {
+     "t": "2023-02",
+     "precio": 377.82,
+     "valoracion": 8.26
+    },
+    {
+     "t": "2023-03",
+     "precio": 303.62,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2023-04",
+     "precio": 382.87,
+     "valoracion": 8.19
+    },
+    {
+     "t": "2023-05",
+     "precio": 532.82,
+     "valoracion": 8.35
+    },
+    {
+     "t": "2023-06",
+     "precio": 751.74,
+     "valoracion": 8.3
+    },
+    {
+     "t": "2023-07",
+     "precio": 691.92,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2023-08",
+     "precio": 681.9,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2023-09",
+     "precio": 428.7,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2023-10",
+     "precio": 353.11,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2023-11",
+     "precio": 321.58,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2023-12",
+     "precio": 354.81,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2024-01",
+     "precio": 332.61,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2024-02",
+     "precio": 375.5,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2024-03",
+     "precio": 362.78,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2024-04",
+     "precio": 460.4,
+     "valoracion": 9.02
+    },
+    {
+     "t": "2024-05",
+     "precio": 550.79,
+     "valoracion": 9.02
+    },
+    {
+     "t": "2024-06",
+     "precio": 562.0,
+     "valoracion": 8.71
+    },
+    {
+     "t": "2024-07",
+     "precio": 693.49,
+     "valoracion": 9.23
+    },
+    {
+     "t": "2024-08",
+     "precio": 802.87,
+     "valoracion": 8.64
+    },
+    {
+     "t": "2024-09",
+     "precio": 655.71,
+     "valoracion": 8.67
+    },
+    {
+     "t": "2024-10",
+     "precio": 742.08,
+     "valoracion": 8.67
+    },
+    {
+     "t": "2024-11",
+     "precio": 633.01,
+     "valoracion": 8.81
+    },
+    {
+     "t": "2024-12",
+     "precio": 859.99,
+     "valoracion": 8.62
+    },
+    {
+     "t": "2025-01",
+     "precio": 442.77,
+     "valoracion": 8.62
+    },
+    {
+     "t": "2025-02",
+     "precio": 405.55,
+     "valoracion": 8.77
+    },
+    {
+     "t": "2025-03",
+     "precio": 447.55,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2025-04",
+     "precio": 455.56,
+     "valoracion": 8.77
+    },
+    {
+     "t": "2025-05",
+     "precio": 508.73,
+     "valoracion": 8.59
+    },
+    {
+     "t": "2025-06",
+     "precio": 1024.33,
+     "valoracion": 8.56
+    },
+    {
+     "t": "2025-07",
+     "precio": 1217.9,
+     "valoracion": 8.71
+    },
+    {
+     "t": "2025-08",
+     "precio": 994.91,
+     "valoracion": 8.24
+    },
+    {
+     "t": "2025-09",
+     "precio": 610.55,
+     "valoracion": 8.76
+    },
+    {
+     "t": "2025-10",
+     "precio": 510.24,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2025-11",
+     "precio": 527.47,
+     "valoracion": 8.77
+    },
+    {
+     "t": "2025-12",
+     "precio": 558.48,
+     "valoracion": null
+    },
+    {
+     "t": "2026-01",
+     "precio": 468.3,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2026-02",
+     "precio": 432.49,
+     "valoracion": 9.2
+    },
+    {
+     "t": "2026-03",
+     "precio": 647.15,
+     "valoracion": 9.73
+    },
+    {
+     "t": "2026-04",
+     "precio": 600.88,
+     "valoracion": 10.0
+    },
+    {
+     "t": "2026-05",
+     "precio": 579.36,
+     "valoracion": 9.1
+    },
+    {
+     "t": "2026-06",
+     "precio": 785.36,
+     "valoracion": 9.25
+    },
+    {
+     "t": "2026-07",
+     "precio": 763.71,
+     "valoracion": 4.6
+    }
+   ],
+   "Hoteles · 3 Estrellas": [
+    {
+     "t": "2015-04",
+     "precio": 113.09,
+     "valoracion": 8.07
+    },
+    {
+     "t": "2015-05",
+     "precio": 119.25,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2015-06",
+     "precio": 112.25,
+     "valoracion": 8.23
+    },
+    {
+     "t": "2015-07",
+     "precio": 121.0,
+     "valoracion": 0.0
+    },
+    {
+     "t": "2015-08",
+     "precio": 119.34,
+     "valoracion": 8.11
+    },
+    {
+     "t": "2015-09",
+     "precio": 118.74,
+     "valoracion": 8.13
+    },
+    {
+     "t": "2015-10",
+     "precio": 111.31,
+     "valoracion": null
+    },
+    {
+     "t": "2015-11",
+     "precio": 136.45,
+     "valoracion": null
+    },
+    {
+     "t": "2016-01",
+     "precio": 180.0,
+     "valoracion": 8.11
+    },
+    {
+     "t": "2016-02",
+     "precio": 165.34,
+     "valoracion": 8.11
+    },
+    {
+     "t": "2016-03",
+     "precio": 129.66,
+     "valoracion": 8.13
+    },
+    {
+     "t": "2016-04",
+     "precio": 120.56,
+     "valoracion": 8.14
+    },
+    {
+     "t": "2016-05",
+     "precio": 115.96,
+     "valoracion": 8.14
+    },
+    {
+     "t": "2016-06",
+     "precio": 112.77,
+     "valoracion": null
+    },
+    {
+     "t": "2016-07",
+     "precio": 122.99,
+     "valoracion": null
+    },
+    {
+     "t": "2016-08",
+     "precio": 129.32,
+     "valoracion": 8.46
+    },
+    {
+     "t": "2016-09",
+     "precio": 122.6,
+     "valoracion": 8.44
+    },
+    {
+     "t": "2016-10",
+     "precio": 112.04,
+     "valoracion": 8.46
+    },
+    {
+     "t": "2016-11",
+     "precio": 145.34,
+     "valoracion": 8.47
+    },
+    {
+     "t": "2016-12",
+     "precio": 120.0,
+     "valoracion": 8.47
+    },
+    {
+     "t": "2017-02",
+     "precio": 125.55,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2017-03",
+     "precio": 136.1,
+     "valoracion": 8.49
+    },
+    {
+     "t": "2017-04",
+     "precio": 116.87,
+     "valoracion": 8.61
+    },
+    {
+     "t": "2017-05",
+     "precio": 112.87,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2017-06",
+     "precio": 110.98,
+     "valoracion": 8.73
+    },
+    {
+     "t": "2017-07",
+     "precio": 121.94,
+     "valoracion": 8.73
+    },
+    {
+     "t": "2017-08",
+     "precio": 123.39,
+     "valoracion": 8.79
+    },
+    {
+     "t": "2017-09",
+     "precio": 115.34,
+     "valoracion": 8.79
+    },
+    {
+     "t": "2017-10",
+     "precio": 117.45,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2017-11",
+     "precio": 120.69,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2017-12",
+     "precio": 120.0,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2018-02",
+     "precio": 144.75,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2018-03",
+     "precio": 116.17,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2018-04",
+     "precio": 111.45,
+     "valoracion": 8.79
+    },
+    {
+     "t": "2018-05",
+     "precio": 116.16,
+     "valoracion": 8.82
+    },
+    {
+     "t": "2018-06",
+     "precio": 115.76,
+     "valoracion": 8.82
+    },
+    {
+     "t": "2018-07",
+     "precio": 126.01,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2018-08",
+     "precio": 150.21,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2018-09",
+     "precio": 117.07,
+     "valoracion": 8.74
+    },
+    {
+     "t": "2018-10",
+     "precio": 112.27,
+     "valoracion": 8.74
+    },
+    {
+     "t": "2018-11",
+     "precio": 120.0,
+     "valoracion": 8.74
+    },
+    {
+     "t": "2018-12",
+     "precio": 120.0,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2019-02",
+     "precio": 132.86,
+     "valoracion": 8.8
+    },
+    {
+     "t": "2019-03",
+     "precio": 115.87,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2019-04",
+     "precio": 106.23,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2019-05",
+     "precio": 106.94,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2019-06",
+     "precio": 110.76,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2019-07",
+     "precio": 121.76,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2019-08",
+     "precio": 119.53,
+     "valoracion": 9.03
+    },
+    {
+     "t": "2019-09",
+     "precio": 113.6,
+     "valoracion": 9.03
+    },
+    {
+     "t": "2019-10",
+     "precio": 109.06,
+     "valoracion": 9.05
+    },
+    {
+     "t": "2019-11",
+     "precio": 106.32,
+     "valoracion": 9.08
+    },
+    {
+     "t": "2019-12",
+     "precio": 124.0,
+     "valoracion": 9.1
+    },
+    {
+     "t": "2024-02",
+     "precio": 114.0,
+     "valoracion": 9.08
+    },
+    {
+     "t": "2024-03",
+     "precio": 120.01,
+     "valoracion": 9.1
+    },
+    {
+     "t": "2024-04",
+     "precio": 136.67,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2024-05",
+     "precio": 143.6,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2024-06",
+     "precio": 150.0,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2024-09",
+     "precio": 150.0,
+     "valoracion": 8.9
+    },
+    {
+     "t": "2025-07",
+     "precio": 150.0,
+     "valoracion": 9.1
+    },
+    {
+     "t": "2026-04",
+     "precio": 132.0,
+     "valoracion": 9.1
+    },
+    {
+     "t": "2026-05",
+     "precio": 141.2,
+     "valoracion": 9.0
+    },
+    {
+     "t": "2026-06",
+     "precio": 132.62,
+     "valoracion": 9.1
+    },
+    {
+     "t": "2026-07",
+     "precio": 150.06,
+     "valoracion": 9.1
+    }
+   ],
+   "Rurales": [
+    {
+     "t": "2015-09",
+     "precio": 50.0,
+     "valoracion": null
+    },
+    {
+     "t": "2015-10",
+     "precio": 53.0,
+     "valoracion": null
+    },
+    {
+     "t": "2015-11",
+     "precio": 50.0,
+     "valoracion": null
+    },
+    {
+     "t": "2015-12",
+     "precio": 57.96,
+     "valoracion": null
+    },
+    {
+     "t": "2016-01",
+     "precio": 50.75,
+     "valoracion": null
+    },
+    {
+     "t": "2016-02",
+     "precio": 50.0,
+     "valoracion": null
+    },
+    {
+     "t": "2016-03",
+     "precio": 50.0,
+     "valoracion": null
+    },
+    {
+     "t": "2016-04",
+     "precio": 51.35,
+     "valoracion": null
+    },
+    {
+     "t": "2016-05",
+     "precio": 51.82,
+     "valoracion": null
+    },
+    {
+     "t": "2016-06",
+     "precio": 51.28,
+     "valoracion": 9.62
+    },
+    {
+     "t": "2016-07",
+     "precio": 52.9,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2016-08",
+     "precio": 56.25,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2016-09",
+     "precio": 53.87,
+     "valoracion": 8.66
+    },
+    {
+     "t": "2016-10",
+     "precio": 53.31,
+     "valoracion": 8.46
+    },
+    {
+     "t": "2016-11",
+     "precio": 51.43,
+     "valoracion": 8.53
+    },
+    {
+     "t": "2016-12",
+     "precio": 51.07,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2017-01",
+     "precio": 50.42,
+     "valoracion": 8.3
+    },
+    {
+     "t": "2017-02",
+     "precio": 50.15,
+     "valoracion": 8.36
+    },
+    {
+     "t": "2017-03",
+     "precio": 50.72,
+     "valoracion": 8.34
+    },
+    {
+     "t": "2017-04",
+     "precio": 53.47,
+     "valoracion": 8.46
+    },
+    {
+     "t": "2017-05",
+     "precio": 54.6,
+     "valoracion": 8.49
+    },
+    {
+     "t": "2017-06",
+     "precio": 53.21,
+     "valoracion": 8.47
+    },
+    {
+     "t": "2017-08",
+     "precio": 50.0,
+     "valoracion": 8.46
+    },
+    {
+     "t": "2017-09",
+     "precio": 55.34,
+     "valoracion": 8.54
+    },
+    {
+     "t": "2017-10",
+     "precio": 53.57,
+     "valoracion": 8.6
+    },
+    {
+     "t": "2017-11",
+     "precio": 51.05,
+     "valoracion": 8.6
+    },
+    {
+     "t": "2017-12",
+     "precio": 51.64,
+     "valoracion": 8.59
+    },
+    {
+     "t": "2018-01",
+     "precio": 54.44,
+     "valoracion": 8.59
+    },
+    {
+     "t": "2018-02",
+     "precio": 57.28,
+     "valoracion": 8.59
+    },
+    {
+     "t": "2018-03",
+     "precio": 54.42,
+     "valoracion": 8.59
+    },
+    {
+     "t": "2018-04",
+     "precio": 54.07,
+     "valoracion": 8.63
+    },
+    {
+     "t": "2018-05",
+     "precio": 58.61,
+     "valoracion": 8.63
+    },
+    {
+     "t": "2018-06",
+     "precio": 57.02,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2018-08",
+     "precio": 55.77,
+     "valoracion": 8.74
+    },
+    {
+     "t": "2018-09",
+     "precio": 70.0,
+     "valoracion": 8.75
+    },
+    {
+     "t": "2018-10",
+     "precio": 55.17,
+     "valoracion": 8.78
+    },
+    {
+     "t": "2018-11",
+     "precio": 51.03,
+     "valoracion": 8.76
+    },
+    {
+     "t": "2018-12",
+     "precio": 55.0,
+     "valoracion": 8.76
+    },
+    {
+     "t": "2019-01",
+     "precio": 50.28,
+     "valoracion": 8.85
+    },
+    {
+     "t": "2019-02",
+     "precio": 50.27,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2019-03",
+     "precio": 50.6,
+     "valoracion": 8.7
+    },
+    {
+     "t": "2019-04",
+     "precio": 51.51,
+     "valoracion": 8.63
+    },
+    {
+     "t": "2019-05",
+     "precio": 50.44,
+     "valoracion": 8.68
+    },
+    {
+     "t": "2019-06",
+     "precio": 58.28,
+     "valoracion": 8.72
+    },
+    {
+     "t": "2019-07",
+     "precio": 60.0,
+     "valoracion": 8.71
+    },
+    {
+     "t": "2019-09",
+     "precio": 58.45,
+     "valoracion": 8.86
+    },
+    {
+     "t": "2019-10",
+     "precio": 65.07,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2019-11",
+     "precio": 65.42,
+     "valoracion": 8.89
+    },
+    {
+     "t": "2019-12",
+     "precio": 65.93,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2020-01",
+     "precio": 58.13,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2020-02",
+     "precio": 55.01,
+     "valoracion": 8.88
+    },
+    {
+     "t": "2020-03",
+     "precio": 53.98,
+     "valoracion": 8.84
+    },
+    {
+     "t": "2020-04",
+     "precio": 50.26,
+     "valoracion": 8.98
+    },
+    {
+     "t": "2020-05",
+     "precio": 50.03,
+     "valoracion": 8.77
+    },
+    {
+     "t": "2020-06",
+     "precio": 60.0,
+     "valoracion": 8.92
+    },
+    {
+     "t": "2020-09",
+     "precio": 60.0,
+     "valoracion": 8.95
+    },
+    {
+     "t": "2021-08",
+     "precio": 171.0,
+     "valoracion": 8.6
+    },
+    {
+     "t": "2021-09",
+     "precio": 110.0,
+     "valoracion": 8.58
+    },
+    {
+     "t": "2024-07",
+     "precio": 207.0,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2025-07",
+     "precio": 201.08,
+     "valoracion": 8.5
+    },
+    {
+     "t": "2025-08",
+     "precio": 243.58,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2025-09",
+     "precio": 186.66,
+     "valoracion": 8.3
+    },
+    {
+     "t": "2025-10",
+     "precio": 190.98,
+     "valoracion": 8.2
+    },
+    {
+     "t": "2025-11",
+     "precio": 190.49,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2025-12",
+     "precio": 190.94,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2026-01",
+     "precio": 191.29,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2026-02",
+     "precio": 190.81,
+     "valoracion": 8.4
+    },
+    {
+     "t": "2026-03",
+     "precio": 220.0,
+     "valoracion": 8.3
+    },
+    {
+     "t": "2026-07",
+     "precio": 216.0,
+     "valoracion": 8.2
+    }
+   ],
+   "Hoteles · Hostales y Pensiones": [
+    {
+     "t": "2018-09",
+     "precio": 110.0,
+     "valoracion": null
+    },
+    {
+     "t": "2020-02",
+     "precio": 90.0,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2020-09",
+     "precio": 958.53,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2020-10",
+     "precio": 941.59,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2020-11",
+     "precio": 395.48,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2020-12",
+     "precio": 206.29,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-01",
+     "precio": 187.41,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-02",
+     "precio": 199.72,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-03",
+     "precio": 179.05,
+     "valoracion": null
+    },
+    {
+     "t": "2021-04",
+     "precio": 175.92,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-05",
+     "precio": 172.22,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-06",
+     "precio": 184.65,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-07",
+     "precio": 198.86,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-08",
+     "precio": 200.0,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-09",
+     "precio": 190.17,
+     "valoracion": 9.93
+    },
+    {
+     "t": "2021-10",
+     "precio": 178.66,
+     "valoracion": null
+    },
+    {
+     "t": "2021-11",
+     "precio": 179.61,
+     "valoracion": 9.92
+    },
+    {
+     "t": "2021-12",
+     "precio": 189.69,
+     "valoracion": 9.92
+    },
+    {
+     "t": "2022-01",
+     "precio": 186.64,
+     "valoracion": 9.92
+    },
+    {
+     "t": "2022-02",
+     "precio": 181.89,
+     "valoracion": 9.92
+    },
+    {
+     "t": "2022-03",
+     "precio": 181.31,
+     "valoracion": 9.9
+    },
+    {
+     "t": "2022-04",
+     "precio": 187.04,
+     "valoracion": 9.92
+    },
+    {
+     "t": "2022-05",
+     "precio": 188.22,
+     "valoracion": 9.9
+    },
+    {
+     "t": "2022-06",
+     "precio": 182.67,
+     "valoracion": 9.78
+    },
+    {
+     "t": "2022-07",
+     "precio": 187.0,
+     "valoracion": 9.72
+    },
+    {
+     "t": "2023-12",
+     "precio": 106.33,
+     "valoracion": 9.73
+    },
+    {
+     "t": "2024-01",
+     "precio": 128.38,
+     "valoracion": 9.73
+    },
+    {
+     "t": "2024-02",
+     "precio": 142.12,
+     "valoracion": 9.72
+    },
+    {
+     "t": "2024-03",
+     "precio": 149.26,
+     "valoracion": null
+    },
+    {
+     "t": "2024-04",
+     "precio": 150.0,
+     "valoracion": null
+    },
+    {
+     "t": "2024-05",
+     "precio": 150.0,
+     "valoracion": null
+    },
+    {
+     "t": "2024-06",
+     "precio": 151.61,
+     "valoracion": 9.6
+    },
+    {
+     "t": "2024-07",
+     "precio": 151.6,
+     "valoracion": 9.65
+    },
+    {
+     "t": "2024-08",
+     "precio": 152.52,
+     "valoracion": 6.77
+    },
+    {
+     "t": "2024-09",
+     "precio": 150.0,
+     "valoracion": 6.77
+    },
+    {
+     "t": "2025-10",
+     "precio": 151.52,
+     "valoracion": 7.7
+    },
+    {
+     "t": "2025-11",
+     "precio": 164.62,
+     "valoracion": 7.7
+    }
+   ]
+  },
+  "meses": [
+   "2015-01",
+   "2015-02",
+   "2015-03",
+   "2015-04",
+   "2015-05",
+   "2015-06",
+   "2015-07",
+   "2015-08",
+   "2015-09",
+   "2015-10",
+   "2015-11",
+   "2015-12",
+   "2016-01",
+   "2016-02",
+   "2016-03",
+   "2016-04",
+   "2016-05",
+   "2016-06",
+   "2016-07",
+   "2016-08",
+   "2016-09",
+   "2016-10",
+   "2016-11",
+   "2016-12",
+   "2017-01",
+   "2017-02",
+   "2017-03",
+   "2017-04",
+   "2017-05",
+   "2017-06",
+   "2017-07",
+   "2017-08",
+   "2017-09",
+   "2017-10",
+   "2017-11",
+   "2017-12",
+   "2018-01",
+   "2018-02",
+   "2018-03",
+   "2018-04",
+   "2018-05",
+   "2018-06",
+   "2018-07",
+   "2018-08",
+   "2018-09",
+   "2018-10",
+   "2018-11",
+   "2018-12",
+   "2019-01",
+   "2019-02",
+   "2019-03",
+   "2019-04",
+   "2019-05",
+   "2019-06",
+   "2019-07",
+   "2019-08",
+   "2019-09",
+   "2019-10",
+   "2019-11",
+   "2019-12",
+   "2020-01",
+   "2020-02",
+   "2020-03",
+   "2020-04",
+   "2020-05",
+   "2020-06",
+   "2020-07",
+   "2020-08",
+   "2020-09",
+   "2020-10",
+   "2020-11",
+   "2020-12",
+   "2021-01",
+   "2021-02",
+   "2021-03",
+   "2021-04",
+   "2021-05",
+   "2021-06",
+   "2021-07",
+   "2021-08",
+   "2021-09",
+   "2021-10",
+   "2021-11",
+   "2021-12",
+   "2022-01",
+   "2022-02",
+   "2022-03",
+   "2022-04",
+   "2022-05",
+   "2022-06",
+   "2022-07",
+   "2022-08",
+   "2022-09",
+   "2022-10",
+   "2022-11",
+   "2022-12",
+   "2023-01",
+   "2023-02",
+   "2023-03",
+   "2023-04",
+   "2023-05",
+   "2023-06",
+   "2023-07",
+   "2023-08",
+   "2023-09",
+   "2023-10",
+   "2023-11",
+   "2023-12",
+   "2024-01",
+   "2024-02",
+   "2024-03",
+   "2024-04",
+   "2024-05",
+   "2024-06",
+   "2024-07",
+   "2024-08",
+   "2024-09",
+   "2024-10",
+   "2024-11",
+   "2024-12",
+   "2025-01",
+   "2025-02",
+   "2025-03",
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10",
+   "2025-11",
+   "2025-12",
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07"
+  ]
+ },
+ "empleo": {
+  "periodos": [
+   "2019-03",
+   "2019-06",
+   "2019-09",
+   "2019-12",
+   "2020-03",
+   "2020-06",
+   "2020-09",
+   "2020-12",
+   "2021-03",
+   "2021-06",
+   "2021-09",
+   "2021-12",
+   "2022-03",
+   "2022-06",
+   "2022-09",
+   "2022-12",
+   "2023-03",
+   "2023-06",
+   "2023-09",
+   "2023-12",
+   "2024-03",
+   "2024-06",
+   "2024-09",
+   "2024-12",
+   "2025-03",
+   "2025-06",
+   "2025-09",
+   "2025-12",
+   "2026-03",
+   "2026-06"
+  ],
+  "por_subsector": {
+   "AAVV y TTOO": [
+    {
+     "t": "2019-03",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2019-06",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2019-09",
+     "empresas": 1.0,
+     "trabajadores": 10.0
+    },
+    {
+     "t": "2019-12",
+     "empresas": 1.0,
+     "trabajadores": 11.0
+    },
+    {
+     "t": "2020-03",
+     "empresas": 1.0,
+     "trabajadores": 12.0
+    },
+    {
+     "t": "2020-06",
+     "empresas": 1.0,
+     "trabajadores": 10.0
+    },
+    {
+     "t": "2020-09",
+     "empresas": 1.0,
+     "trabajadores": 11.0
+    },
+    {
+     "t": "2020-12",
+     "empresas": 1.0,
+     "trabajadores": 11.0
+    },
+    {
+     "t": "2021-03",
+     "empresas": 1.0,
+     "trabajadores": 11.0
+    },
+    {
+     "t": "2021-06",
+     "empresas": 1.0,
+     "trabajadores": 10.0
+    },
+    {
+     "t": "2021-09",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2021-12",
+     "empresas": 1.0,
+     "trabajadores": 9.0
+    },
+    {
+     "t": "2022-03",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2022-06",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2023-06",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2023-09",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2023-12",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2024-03",
+     "empresas": 2.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2024-06",
+     "empresas": 2.0,
+     "trabajadores": 7.0
+    },
+    {
+     "t": "2024-09",
+     "empresas": 2.0,
+     "trabajadores": 7.0
+    },
+    {
+     "t": "2024-12",
+     "empresas": 2.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2025-03",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2025-06",
+     "empresas": 2.0,
+     "trabajadores": 7.0
+    },
+    {
+     "t": "2025-09",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2025-12",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2026-03",
+     "empresas": 1.0,
+     "trabajadores": 9.0
+    },
+    {
+     "t": "2026-06",
+     "empresas": 1.0,
+     "trabajadores": 11.0
+    }
+   ],
+   "Actividades Ocio": [
+    {
+     "t": "2019-03",
+     "empresas": 7.0,
+     "trabajadores": 178.0
+    },
+    {
+     "t": "2019-06",
+     "empresas": 8.0,
+     "trabajadores": 189.0
+    },
+    {
+     "t": "2019-09",
+     "empresas": 7.0,
+     "trabajadores": 180.0
+    },
+    {
+     "t": "2019-12",
+     "empresas": 8.0,
+     "trabajadores": 177.0
+    },
+    {
+     "t": "2020-03",
+     "empresas": 7.0,
+     "trabajadores": 181.0
+    },
+    {
+     "t": "2020-06",
+     "empresas": 8.0,
+     "trabajadores": 184.0
+    },
+    {
+     "t": "2020-09",
+     "empresas": 7.0,
+     "trabajadores": 177.0
+    },
+    {
+     "t": "2020-12",
+     "empresas": 6.0,
+     "trabajadores": 176.0
+    },
+    {
+     "t": "2021-03",
+     "empresas": 8.0,
+     "trabajadores": 176.0
+    },
+    {
+     "t": "2021-06",
+     "empresas": 8.0,
+     "trabajadores": 179.0
+    },
+    {
+     "t": "2021-09",
+     "empresas": 9.0,
+     "trabajadores": 179.0
+    },
+    {
+     "t": "2021-12",
+     "empresas": 9.0,
+     "trabajadores": 172.0
+    },
+    {
+     "t": "2022-03",
+     "empresas": 9.0,
+     "trabajadores": 176.0
+    },
+    {
+     "t": "2022-06",
+     "empresas": 10.0,
+     "trabajadores": 183.0
+    },
+    {
+     "t": "2022-09",
+     "empresas": 12.0,
+     "trabajadores": 192.0
+    },
+    {
+     "t": "2022-12",
+     "empresas": 12.0,
+     "trabajadores": 188.0
+    },
+    {
+     "t": "2023-03",
+     "empresas": 12.0,
+     "trabajadores": 191.0
+    },
+    {
+     "t": "2023-06",
+     "empresas": 13.0,
+     "trabajadores": 202.0
+    },
+    {
+     "t": "2023-09",
+     "empresas": 11.0,
+     "trabajadores": 202.0
+    },
+    {
+     "t": "2023-12",
+     "empresas": 12.0,
+     "trabajadores": 202.0
+    },
+    {
+     "t": "2024-03",
+     "empresas": 12.0,
+     "trabajadores": 207.0
+    },
+    {
+     "t": "2024-06",
+     "empresas": 12.0,
+     "trabajadores": 214.0
+    },
+    {
+     "t": "2024-09",
+     "empresas": 13.0,
+     "trabajadores": 222.0
+    },
+    {
+     "t": "2024-12",
+     "empresas": 12.0,
+     "trabajadores": 219.0
+    },
+    {
+     "t": "2025-03",
+     "empresas": 11.0,
+     "trabajadores": 213.0
+    },
+    {
+     "t": "2025-06",
+     "empresas": 10.0,
+     "trabajadores": 215.0
+    },
+    {
+     "t": "2025-09",
+     "empresas": 10.0,
+     "trabajadores": 229.0
+    },
+    {
+     "t": "2025-12",
+     "empresas": 9.0,
+     "trabajadores": 231.0
+    },
+    {
+     "t": "2026-03",
+     "empresas": 9.0,
+     "trabajadores": 230.0
+    },
+    {
+     "t": "2026-06",
+     "empresas": 10.0,
+     "trabajadores": 247.0
+    }
+   ],
+   "Alojamiento": [
+    {
+     "t": "2019-03",
+     "empresas": 11.0,
+     "trabajadores": 220.0
+    },
+    {
+     "t": "2019-06",
+     "empresas": 11.0,
+     "trabajadores": 120.0
+    },
+    {
+     "t": "2019-09",
+     "empresas": 12.0,
+     "trabajadores": 106.0
+    },
+    {
+     "t": "2019-12",
+     "empresas": 10.0,
+     "trabajadores": 91.0
+    },
+    {
+     "t": "2020-03",
+     "empresas": 8.0,
+     "trabajadores": 69.0
+    },
+    {
+     "t": "2020-06",
+     "empresas": 9.0,
+     "trabajadores": 72.0
+    },
+    {
+     "t": "2020-09",
+     "empresas": 8.0,
+     "trabajadores": 63.0
+    },
+    {
+     "t": "2020-12",
+     "empresas": 7.0,
+     "trabajadores": 64.0
+    },
+    {
+     "t": "2021-03",
+     "empresas": 8.0,
+     "trabajadores": 60.0
+    },
+    {
+     "t": "2021-06",
+     "empresas": 7.0,
+     "trabajadores": 62.0
+    },
+    {
+     "t": "2021-09",
+     "empresas": 9.0,
+     "trabajadores": 77.0
+    },
+    {
+     "t": "2021-12",
+     "empresas": 8.0,
+     "trabajadores": 71.0
+    },
+    {
+     "t": "2022-03",
+     "empresas": 9.0,
+     "trabajadores": 74.0
+    },
+    {
+     "t": "2022-06",
+     "empresas": 8.0,
+     "trabajadores": 45.0
+    },
+    {
+     "t": "2022-09",
+     "empresas": 8.0,
+     "trabajadores": 44.0
+    },
+    {
+     "t": "2022-12",
+     "empresas": 6.0,
+     "trabajadores": 33.0
+    },
+    {
+     "t": "2023-03",
+     "empresas": 7.0,
+     "trabajadores": 33.0
+    },
+    {
+     "t": "2023-06",
+     "empresas": 7.0,
+     "trabajadores": 44.0
+    },
+    {
+     "t": "2023-09",
+     "empresas": 7.0,
+     "trabajadores": 39.0
+    },
+    {
+     "t": "2023-12",
+     "empresas": 6.0,
+     "trabajadores": 31.0
+    },
+    {
+     "t": "2024-03",
+     "empresas": 7.0,
+     "trabajadores": 31.0
+    },
+    {
+     "t": "2024-06",
+     "empresas": 7.0,
+     "trabajadores": 40.0
+    },
+    {
+     "t": "2024-09",
+     "empresas": 7.0,
+     "trabajadores": 35.0
+    },
+    {
+     "t": "2024-12",
+     "empresas": 6.0,
+     "trabajadores": 31.0
+    },
+    {
+     "t": "2025-03",
+     "empresas": 8.0,
+     "trabajadores": 72.0
+    },
+    {
+     "t": "2025-06",
+     "empresas": 9.0,
+     "trabajadores": 169.0
+    },
+    {
+     "t": "2025-09",
+     "empresas": 8.0,
+     "trabajadores": 152.0
+    },
+    {
+     "t": "2025-12",
+     "empresas": 8.0,
+     "trabajadores": 35.0
+    },
+    {
+     "t": "2026-03",
+     "empresas": 8.0,
+     "trabajadores": 106.0
+    },
+    {
+     "t": "2026-06",
+     "empresas": 8.0,
+     "trabajadores": 156.0
+    }
+   ],
+   "Rent a car": [
+    {
+     "t": "2019-03",
+     "empresas": 0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2019-06",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2019-09",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2019-12",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2020-03",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2020-06",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2020-09",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2020-12",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2021-03",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2021-06",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2021-09",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2021-12",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2022-03",
+     "empresas": 1.0,
+     "trabajadores": 5.0
+    },
+    {
+     "t": "2022-06",
+     "empresas": 1.0,
+     "trabajadores": 5.0
+    },
+    {
+     "t": "2022-09",
+     "empresas": 1.0,
+     "trabajadores": 5.0
+    },
+    {
+     "t": "2022-12",
+     "empresas": 1.0,
+     "trabajadores": 0
+    },
+    {
+     "t": "2023-09",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2023-12",
+     "empresas": 1.0,
+     "trabajadores": 5.0
+    },
+    {
+     "t": "2024-03",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2024-06",
+     "empresas": 1.0,
+     "trabajadores": 6.0
+    },
+    {
+     "t": "2024-09",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2024-12",
+     "empresas": 1.0,
+     "trabajadores": 7.0
+    },
+    {
+     "t": "2025-03",
+     "empresas": 1.0,
+     "trabajadores": 8.0
+    },
+    {
+     "t": "2025-06",
+     "empresas": 2.0,
+     "trabajadores": 10.0
+    },
+    {
+     "t": "2025-09",
+     "empresas": 2.0,
+     "trabajadores": 11.0
+    },
+    {
+     "t": "2025-12",
+     "empresas": 2.0,
+     "trabajadores": 10.0
+    },
+    {
+     "t": "2026-03",
+     "empresas": 2.0,
+     "trabajadores": 10.0
+    },
+    {
+     "t": "2026-06",
+     "empresas": 1.0,
+     "trabajadores": 9.0
+    }
+   ],
+   "Restauración": [
+    {
+     "t": "2019-03",
+     "empresas": 39.0,
+     "trabajadores": 208.0
+    },
+    {
+     "t": "2019-06",
+     "empresas": 41.0,
+     "trabajadores": 259.0
+    },
+    {
+     "t": "2019-09",
+     "empresas": 40.0,
+     "trabajadores": 236.0
+    },
+    {
+     "t": "2019-12",
+     "empresas": 35.0,
+     "trabajadores": 189.0
+    },
+    {
+     "t": "2020-03",
+     "empresas": 33.0,
+     "trabajadores": 190.0
+    },
+    {
+     "t": "2020-06",
+     "empresas": 34.0,
+     "trabajadores": 199.0
+    },
+    {
+     "t": "2020-09",
+     "empresas": 38.0,
+     "trabajadores": 214.0
+    },
+    {
+     "t": "2020-12",
+     "empresas": 32.0,
+     "trabajadores": 184.0
+    },
+    {
+     "t": "2021-03",
+     "empresas": 28.0,
+     "trabajadores": 157.0
+    },
+    {
+     "t": "2021-06",
+     "empresas": 33.0,
+     "trabajadores": 203.0
+    },
+    {
+     "t": "2021-09",
+     "empresas": 35.0,
+     "trabajadores": 230.0
+    },
+    {
+     "t": "2021-12",
+     "empresas": 30.0,
+     "trabajadores": 202.0
+    },
+    {
+     "t": "2022-03",
+     "empresas": 34.0,
+     "trabajadores": 253.0
+    },
+    {
+     "t": "2022-06",
+     "empresas": 41.0,
+     "trabajadores": 287.0
+    },
+    {
+     "t": "2022-09",
+     "empresas": 37.0,
+     "trabajadores": 286.0
+    },
+    {
+     "t": "2022-12",
+     "empresas": 32.0,
+     "trabajadores": 242.0
+    },
+    {
+     "t": "2023-03",
+     "empresas": 36.0,
+     "trabajadores": 269.0
+    },
+    {
+     "t": "2023-06",
+     "empresas": 40.0,
+     "trabajadores": 307.0
+    },
+    {
+     "t": "2023-09",
+     "empresas": 39.0,
+     "trabajadores": 299.0
+    },
+    {
+     "t": "2023-12",
+     "empresas": 33.0,
+     "trabajadores": 265.0
+    },
+    {
+     "t": "2024-03",
+     "empresas": 36.0,
+     "trabajadores": 280.0
+    },
+    {
+     "t": "2024-06",
+     "empresas": 39.0,
+     "trabajadores": 314.0
+    },
+    {
+     "t": "2024-09",
+     "empresas": 41.0,
+     "trabajadores": 310.0
+    },
+    {
+     "t": "2024-12",
+     "empresas": 34.0,
+     "trabajadores": 247.0
+    },
+    {
+     "t": "2025-03",
+     "empresas": 38.0,
+     "trabajadores": 271.0
+    },
+    {
+     "t": "2025-06",
+     "empresas": 42.0,
+     "trabajadores": 296.0
+    },
+    {
+     "t": "2025-09",
+     "empresas": 39.0,
+     "trabajadores": 264.0
+    },
+    {
+     "t": "2025-12",
+     "empresas": 31.0,
+     "trabajadores": 240.0
+    },
+    {
+     "t": "2026-03",
+     "empresas": 32.0,
+     "trabajadores": 237.0
+    },
+    {
+     "t": "2026-06",
+     "empresas": 32.0,
+     "trabajadores": 259.0
+    }
+   ],
+   "Transporte Turístico": [
+    {
+     "t": "2019-03",
+     "empresas": 9.0,
+     "trabajadores": 27.0
+    },
+    {
+     "t": "2019-06",
+     "empresas": 11.0,
+     "trabajadores": 29.0
+    },
+    {
+     "t": "2019-09",
+     "empresas": 11.0,
+     "trabajadores": 29.0
+    },
+    {
+     "t": "2019-12",
+     "empresas": 9.0,
+     "trabajadores": 26.0
+    },
+    {
+     "t": "2020-03",
+     "empresas": 6.0,
+     "trabajadores": 27.0
+    },
+    {
+     "t": "2020-06",
+     "empresas": 6.0,
+     "trabajadores": 28.0
+    },
+    {
+     "t": "2020-09",
+     "empresas": 10.0,
+     "trabajadores": 31.0
+    },
+    {
+     "t": "2020-12",
+     "empresas": 8.0,
+     "trabajadores": 31.0
+    },
+    {
+     "t": "2021-03",
+     "empresas": 5.0,
+     "trabajadores": 29.0
+    },
+    {
+     "t": "2021-06",
+     "empresas": 12.0,
+     "trabajadores": 40.0
+    },
+    {
+     "t": "2021-09",
+     "empresas": 12.0,
+     "trabajadores": 40.0
+    },
+    {
+     "t": "2021-12",
+     "empresas": 12.0,
+     "trabajadores": 41.0
+    },
+    {
+     "t": "2022-03",
+     "empresas": 12.0,
+     "trabajadores": 45.0
+    },
+    {
+     "t": "2022-06",
+     "empresas": 12.0,
+     "trabajadores": 44.0
+    },
+    {
+     "t": "2022-09",
+     "empresas": 10.0,
+     "trabajadores": 39.0
+    },
+    {
+     "t": "2022-12",
+     "empresas": 9.0,
+     "trabajadores": 40.0
+    },
+    {
+     "t": "2023-03",
+     "empresas": 10.0,
+     "trabajadores": 42.0
+    },
+    {
+     "t": "2023-06",
+     "empresas": 12.0,
+     "trabajadores": 47.0
+    },
+    {
+     "t": "2023-09",
+     "empresas": 12.0,
+     "trabajadores": 47.0
+    },
+    {
+     "t": "2023-12",
+     "empresas": 10.0,
+     "trabajadores": 44.0
+    },
+    {
+     "t": "2024-03",
+     "empresas": 12.0,
+     "trabajadores": 47.0
+    },
+    {
+     "t": "2024-06",
+     "empresas": 13.0,
+     "trabajadores": 50.0
+    },
+    {
+     "t": "2024-09",
+     "empresas": 13.0,
+     "trabajadores": 54.0
+    },
+    {
+     "t": "2024-12",
+     "empresas": 12.0,
+     "trabajadores": 53.0
+    },
+    {
+     "t": "2025-03",
+     "empresas": 11.0,
+     "trabajadores": 50.0
+    },
+    {
+     "t": "2025-06",
+     "empresas": 12.0,
+     "trabajadores": 49.0
+    },
+    {
+     "t": "2025-09",
+     "empresas": 9.0,
+     "trabajadores": 42.0
+    },
+    {
+     "t": "2025-12",
+     "empresas": 10.0,
+     "trabajadores": 45.0
+    },
+    {
+     "t": "2026-03",
+     "empresas": 12.0,
+     "trabajadores": 51.0
+    },
+    {
+     "t": "2026-06",
+     "empresas": 14.0,
+     "trabajadores": 55.0
+    }
+   ]
+  },
+  "total": [
+   {
+    "t": "2019-03",
+    "empresas": 67.0,
+    "trabajadores": 641.0
+   },
+   {
+    "t": "2019-06",
+    "empresas": 73.0,
+    "trabajadores": 605.0
+   },
+   {
+    "t": "2019-09",
+    "empresas": 72.0,
+    "trabajadores": 561.0
+   },
+   {
+    "t": "2019-12",
+    "empresas": 64.0,
+    "trabajadores": 494.0
+   },
+   {
+    "t": "2020-03",
+    "empresas": 56.0,
+    "trabajadores": 479.0
+   },
+   {
+    "t": "2020-06",
+    "empresas": 59.0,
+    "trabajadores": 493.0
+   },
+   {
+    "t": "2020-09",
+    "empresas": 65.0,
+    "trabajadores": 496.0
+   },
+   {
+    "t": "2020-12",
+    "empresas": 55.0,
+    "trabajadores": 466.0
+   },
+   {
+    "t": "2021-03",
+    "empresas": 51.0,
+    "trabajadores": 433.0
+   },
+   {
+    "t": "2021-06",
+    "empresas": 62.0,
+    "trabajadores": 494.0
+   },
+   {
+    "t": "2021-09",
+    "empresas": 67.0,
+    "trabajadores": 534.0
+   },
+   {
+    "t": "2021-12",
+    "empresas": 61.0,
+    "trabajadores": 495.0
+   },
+   {
+    "t": "2022-03",
+    "empresas": 66.0,
+    "trabajadores": 561.0
+   },
+   {
+    "t": "2022-06",
+    "empresas": 73.0,
+    "trabajadores": 570.0
+   },
+   {
+    "t": "2022-09",
+    "empresas": 68.0,
+    "trabajadores": 566.0
+   },
+   {
+    "t": "2022-12",
+    "empresas": 60.0,
+    "trabajadores": 503.0
+   },
+   {
+    "t": "2023-03",
+    "empresas": 65.0,
+    "trabajadores": 535.0
+   },
+   {
+    "t": "2023-06",
+    "empresas": 73.0,
+    "trabajadores": 606.0
+   },
+   {
+    "t": "2023-09",
+    "empresas": 71.0,
+    "trabajadores": 599.0
+   },
+   {
+    "t": "2023-12",
+    "empresas": 63.0,
+    "trabajadores": 553.0
+   },
+   {
+    "t": "2024-03",
+    "empresas": 70.0,
+    "trabajadores": 577.0
+   },
+   {
+    "t": "2024-06",
+    "empresas": 74.0,
+    "trabajadores": 631.0
+   },
+   {
+    "t": "2024-09",
+    "empresas": 77.0,
+    "trabajadores": 636.0
+   },
+   {
+    "t": "2024-12",
+    "empresas": 67.0,
+    "trabajadores": 563.0
+   },
+   {
+    "t": "2025-03",
+    "empresas": 70.0,
+    "trabajadores": 620.0
+   },
+   {
+    "t": "2025-06",
+    "empresas": 77.0,
+    "trabajadores": 746.0
+   },
+   {
+    "t": "2025-09",
+    "empresas": 69.0,
+    "trabajadores": 706.0
+   },
+   {
+    "t": "2025-12",
+    "empresas": 61.0,
+    "trabajadores": 569.0
+   },
+   {
+    "t": "2026-03",
+    "empresas": 64.0,
+    "trabajadores": 643.0
+   },
+   {
+    "t": "2026-06",
+    "empresas": 66.0,
+    "trabajadores": 737.0
+   }
+  ]
+ },
+ "eoh": {
+  "serie": [
+   {
+    "t": "2025-06",
+    "tipo": "Apartamentos",
+    "pernoctaciones": 15020.0,
+    "viajeros": 2831.0
+   },
+   {
+    "t": "2025-07",
+    "tipo": "Apartamentos",
+    "pernoctaciones": 23055.0,
+    "viajeros": 3265.0
+   },
+   {
+    "t": "2025-10",
+    "tipo": "Apartamentos",
+    "pernoctaciones": 6501.0,
+    "viajeros": 1013.0
+   }
+  ],
+  "por_pais": [
+   {
+    "pais": "Países Bajos",
+    "v": 10091.0
+   },
+   {
+    "pais": "Reino Unido",
+    "v": 7239.0
+   },
+   {
+    "pais": "Alemania",
+    "v": 2913.0
+   },
+   {
+    "pais": "Dinamarca",
+    "v": 2807.0
+   },
+   {
+    "pais": "Francia",
+    "v": 2548.0
+   },
+   {
+    "pais": "Italia",
+    "v": 1586.0
+   },
+   {
+    "pais": "Bélgica",
+    "v": 1507.0
+   },
+   {
+    "pais": "Irlanda",
+    "v": 1341.0
+   },
+   {
+    "pais": "Suecia",
+    "v": 1165.0
+   },
+   {
+    "pais": "Noruega",
+    "v": 942.0
+   },
+   {
+    "pais": "Finlandia",
+    "v": 912.0
+   },
+   {
+    "pais": "Portugal",
+    "v": 797.0
+   },
+   {
+    "pais": "Polonia",
+    "v": 780.0
+   },
+   {
+    "pais": "República Checa",
+    "v": 278.0
+   },
+   {
+    "pais": "Estados Unidos",
+    "v": 261.0
+   },
+   {
+    "pais": "Suiza",
+    "v": 200.0
+   },
+   {
+    "pais": "Austria",
+    "v": 136.0
+   },
+   {
+    "pais": "Rusia",
+    "v": 4.0
+   }
+  ],
+  "tipologias": [
+   "Apartamentos"
+  ],
+  "cobertura": "La Encuesta de Ocupación Hotelera solo libera para Benahavís 3 mes(es) de apartamentos: el umbral de cinco establecimientos censura el resto de la serie."
+ },
+ "fuente": "Turismo y Planificación Costa del Sol (Diputación de Málaga) · Big Data",
+ "url": "https://www.costadelsolmalaga.org/bigdata/",
+ "ambito": "municipal",
+ "actualizado": "2026-08-20T09:14:59Z"
+}
