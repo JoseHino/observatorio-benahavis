@@ -344,3 +344,12 @@ table.obs-table tbody tr:hover { background: var(--surface-2); }
 /* Los topónimos de la capa de referencia van sobre los datos: un nombre de
    urbanización tapado por una agrupación de puntos no sirve de nada. */
 .obs-map-lienzo .leaflet-shadow-pane { z-index: 650; pointer-events: none; }
+
+/* Escala continua de la capa de calor: el color codifica magnitud, así que
+   necesita su propia leyenda cuando esa capa está activa. */
+.obs-map-escala { display: inline-flex; align-items: center; gap: 7px; }
+.obs-map-escala .barra {
+  display: inline-block; width: 132px; height: 9px; border-radius: 5px;
+  border: 1px solid var(--line);
+}
+.obs-map-escala .ext { font-size: 11px; color: var(--ink-mut); }

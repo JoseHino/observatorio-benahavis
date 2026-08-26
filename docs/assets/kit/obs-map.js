@@ -40,6 +40,21 @@
     credito: 'Teselas &copy; Esri &mdash; Esri, DeLorme, NAVTEQ · Datos &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   };
 
+
+  /* Rampa cálida de densidad (ColorBrewer YlOrRd): amarillo claro donde hay
+     poco, rojo profundo donde se concentran. Es secuencial y monótona en
+     luminosidad, así que se lee bien también impresa en gris y con daltonismo:
+     lo que ordena la escala es el brillo, no solo el tono. */
+  var CALOR = {
+    0.00: '#ffffb2',
+    0.25: '#fed976',
+    0.45: '#feb24c',
+    0.62: '#fd8d3c',
+    0.78: '#fc4e2a',
+    0.90: '#e31a1c',
+    1.00: '#b10026'
+  };
+
   function esOscuro() {
     var t = document.documentElement.getAttribute('data-theme');
     return t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches);
@@ -150,7 +165,12 @@
     };
 
     /* --- capas --- */
-    var cluster = L.markerClusterGroup({
+    /* `agrupar: false` pinta un punto por registro en lugar de burbujas con el
+       recuento. Con miles de puntos hay que dibujar sobre lienzo (`L.canvas`) o
+       el navegador crea un nodo SVG por punto y la pestaña se arrastra. */
+    var agrupa = cfg.agrupar !== false;
+    var lienzoPuntos = L.canvas({ padding: 0.3 });
+    var cluster = agrupa ? L.markerClusterGroup({
       showCoverageOnHover: false, maxClusterRadius: 45, disableClusteringAtZoom: 17,
       iconCreateFunction: function (c) {
         var n = c.getChildCount();
@@ -161,14 +181,31 @@
           iconSize: L.point(talla, talla)
         });
       }
-    });
+    }) : L.layerGroup();
     var calor = null;
+
+    var RADIO = cfg.radio || (agrupa ? 6 : 4.5);
 
     function marcador(p) {
       var m = L.circleMarker([p.lat, p.lon], {
-        radius: 6, weight: 2, color: T.surface, fillColor: colorDe(p), fillOpacity: .92
+        renderer: agrupa ? undefined : lienzoPuntos,
+        radius: RADIO,
+        /* El anillo del color del fondo separa los puntos que se solapan; sin
+           agrupación, además, la semitransparencia deja que el amontonamiento
+           se lea por sí solo. */
+        weight: agrupa ? 2 : 1,
+        color: T.surface,
+        fillColor: colorDe(p),
+        fillOpacity: agrupa ? .92 : .78
       });
-      if (cfg.popup) m.bindPopup(cfg.popup(p), { maxWidth: 320, className: 'obs-popup' });
+      /* El globo se compone al hacer clic: preparar miles por adelantado
+         cuesta más que dibujar el mapa entero. */
+      if (cfg.popup) {
+        m.on('click', function (ev) {
+          L.popup({ maxWidth: 320, className: 'obs-popup' })
+            .setLatLng(ev.latlng).setContent(cfg.popup(p)).openOn(mapa);
+        });
+      }
       return m;
     }
 
@@ -262,7 +299,9 @@
 
       cluster.clearLayers();
       if (capaActiva === 'puntos') {
-        cluster.addLayers(vs.map(marcador));
+        var marcas = vs.map(marcador);
+        if (agrupa) cluster.addLayers(marcas);
+        else marcas.forEach(function (m) { cluster.addLayer(m); });
         if (!mapa.hasLayer(cluster)) mapa.addLayer(cluster);
       } else if (mapa.hasLayer(cluster)) {
         mapa.removeLayer(cluster);
@@ -280,10 +319,8 @@
         });
         calor = L.heatLayer(datos, {
           radius: 22, blur: 18, maxZoom: 16, max: max,
-          minOpacity: .28,
-          /* Rampa secuencial de un solo tono, de claro a oscuro: la magnitud es
-             continua, así que nada de arcoíris. */
-          gradient: { 0.0: '#cde2fb', 0.35: '#6da7ec', 0.65: '#2a78d6', 1.0: '#0d366b' }
+          minOpacity: .30,
+          gradient: cfg.gradiente || CALOR
         }).addTo(mapa);
       }
 
@@ -298,13 +335,38 @@
       }
     }
 
-    /* --- leyenda --- */
-    if (cfg.grupo) {
-      raiz.querySelector('[data-rol="leyenda"]').innerHTML = grupos.map(function (g, i) {
+    /* --- leyenda ---
+       Cada capa codifica el color de una forma distinta, así que cada una lleva
+       su leyenda: identidad (tipología) en la de puntos, y escala continua de
+       densidad en la de calor. Un color que significa algo sin leyenda que lo
+       diga no es legible. */
+    var cajaLeyenda = raiz.querySelector('[data-rol="leyenda"]');
+
+    function leyendaCategorias() {
+      if (!cfg.grupo) return '';
+      return grupos.map(function (g, i) {
         return '<span class="obs-map-item"><i style="background:' + T.serie[i % T.serie.length] + '"></i>' +
           Obs.esc(g) + '</span>';
       }).join('');
     }
+
+    function leyendaCalor() {
+      var g = cfg.gradiente || CALOR;
+      var paradas = Object.keys(g).map(Number).sort(function (a, b) { return a - b; });
+      var css = paradas.map(function (p) { return g[p] + ' ' + Math.round(p * 100) + '%'; }).join(', ');
+      return '<span class="obs-map-item">' + Obs.esc(cfg.calorEtiqueta || 'Densidad') + '</span>' +
+        '<span class="obs-map-escala">' +
+          '<span class="ext">menos</span>' +
+          '<span class="barra" style="background:linear-gradient(90deg,' + css + ')"></span>' +
+          '<span class="ext">más</span>' +
+        '</span>';
+    }
+
+    function leyendaSegun(capa) {
+      cajaLeyenda.innerHTML = capa === 'calor' ? leyendaCalor() : leyendaCategorias();
+      cajaLeyenda.style.display = cajaLeyenda.innerHTML ? '' : 'none';
+    }
+    leyendaSegun('puntos');
 
     /* --- conmutador de capa y reinicio --- */
     raiz.querySelector('.obs-map-capas').addEventListener('click', function (ev) {
@@ -327,7 +389,7 @@
       raiz.querySelectorAll('[data-capa]').forEach(function (x) {
         x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
       });
-      raiz.querySelector('[data-rol="leyenda"]').style.display = (capa === 'calor' && cfg.grupo) ? 'none' : '';
+      leyendaSegun(capa);
       pintar();
     });
 
@@ -361,6 +423,9 @@
     setTimeout(function () { mapa.invalidateSize(); }, 60);
     return ref;
   };
+
+  /** Mapas vivos de la página. Útil para diagnosticar desde la consola. */
+  Obs.mapasActivos = function () { return mapas; };
 
   /** Cambia las teselas al tema activo. Lo llama el armazón al conmutar. */
   Obs.mapasRepintar = function () {
