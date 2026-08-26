@@ -334,6 +334,21 @@ def bloque_costadelsol() -> dict[str, Any]:
     }
 
 
+def bloque_vut() -> dict[str, Any]:
+    """Censo nominal de viviendas turísticas, para el mapa de la pestaña de VUT.
+
+    Cruza el registro administrativo (RTA) con el rastreo de portales del Big
+    Data de Turismo Costa del Sol. Las dos fuentes NO se fusionan en una sola
+    capa: miden cosas distintas y se cruzan solo por número de inscripción para
+    enriquecer la ficha de cada vivienda.
+
+    Si el Big Data no responde, el bloque sigue publicando el censo del RTA: el
+    mapa es lo esencial de la pestaña y no debe caerse por una fuente auxiliar.
+    """
+    from build_vut import construir
+    return construir()
+
+
 BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
     1: ("Demografía y renta", "demografia", bloque_demografia),
     2: ("Oferta turística", "oferta", bloque_oferta),
@@ -343,6 +358,7 @@ BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
     6: ("Clima", "clima", bloque_clima),
     7: ("Conteo de visitantes (Decreto 72/2017)", "visitantes", bloque_visitantes),
     8: ("Big Data de Turismo Costa del Sol", "costadelsol", bloque_costadelsol),
+    9: ("Viviendas de uso turístico (censo y mapa)", "vut", bloque_vut),
 }
 
 

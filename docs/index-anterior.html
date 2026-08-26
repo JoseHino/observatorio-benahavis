@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Observatorio Turístico y Socioeconómico de Benahavís</title>
+<meta name="description" content="Observatorio de datos abiertos del municipio de Benahavís (Málaga): población y renta, oferta de alojamiento, demanda y ocupación, precios, empleo y clima. Consultoría AMMA para el Ayuntamiento de Benahavís.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="assets/estilo.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <div class="cabecera__marca">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" rx="3" stroke="#6fa3ce" stroke-width="1.5"/>
+        <path d="M8 24V15l9-6 9 6v9" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M13 24v-6h8v6" stroke="#6fa3ce" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="cabecera__entidad">Ayuntamiento de Benahavís</div>
+        <h1>Observatorio Turístico y Socioeconómico</h1>
+      </div>
+    </div>
+    <p class="cabecera__bajada">
+      Sistema de indicadores del municipio construido íntegramente sobre fuentes públicas
+      oficiales, con pipeline reproducible y trazabilidad completa de cada dato hasta su
+      origen y su fecha de obtención.
+    </p>
+    <div class="cabecera__datos">
+      <span>Código INE <strong>29023</strong></span>
+      <span>Provincia de <strong>Málaga</strong></span>
+      <span>Comarca <strong>Costa del Sol Occidental</strong></span>
+      <span>Población <strong id="dato-poblacion">—</strong></span>
+      <span>Actualizado <strong id="dato-actualizado">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Temáticas del observatorio">
+  <div class="contenedor">
+    <ul class="nav__lista" role="tablist">
+      <li><button role="tab" class="nav__pestana" data-panel="poblacion" aria-selected="true">Población y renta</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="oferta" aria-selected="false">Oferta de alojamiento</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="demanda" aria-selected="false">Demanda y ocupación</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="precios" aria-selected="false">Precios y valoración</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="empleo" aria-selected="false">Empleo y economía</button></li>
+      <li><button role="tab" class="nav__pestana" data-panel="clima" aria-selected="false">Clima</button></li>
+      <li class="nav__separador"><a href="municipio-turistico.html">Municipio Turístico</a></li>
+      <li><a href="metodologia.html">Metodología</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="contenedor">
+
+  <!-- ══════════════════════════════════════════════ Población y renta -->
+  <section class="bloque" id="poblacion" role="tabpanel">
+    <div class="bloque__cabecera">
+      <h2>Población y renta de los hogares</h2>
+      <p class="bloque__intro">
+        Población empadronada según las cifras oficiales del Padrón municipal, y nivel y reparto
+        de la renta de los hogares según el Atlas de Distribución de Renta del INE. Todas las
+        series de esta pestaña son de ámbito municipal.
+      </p>
+    </div>
+    <div class="cifras" id="cifras-demografia"></div>
+    <div class="rejilla" id="graficos-demografia"></div>
+    <div id="lectura-demografia"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ Oferta -->
+  <section class="bloque" id="oferta" role="tabpanel" hidden>
+    <div class="bloque__cabecera">
+      <h2>Oferta de alojamiento</h2>
+      <p class="bloque__intro">
+        La oferta se mide con tres fuentes que cuentan universos distintos y que, por esa razón,
+        se presentan en gráficos separados y nunca agregadas entre sí: el registro administrativo
+        de la Junta, la explotación municipal de ese mismo registro que publica Turismo Costa del
+        Sol y la estimación de oferta anunciada en plataformas del INE.
+      </p>
+    </div>
+
+    <div class="aviso">
+      <span class="aviso__titulo">Advertencia metodológica</span>
+      <p>
+        El <strong>Registro de Turismo de Andalucía</strong> recoge la oferta <strong>inscrita
+        administrativamente</strong>: es un registro nominal, con titular, dirección y plazas
+        declaradas. La <strong>estadística experimental del INE</strong> estima la oferta
+        <strong>anunciada en plataformas de intermediación</strong>. Miden cosas distintas y
+        divergen de forma sistemática. Compararlas directamente, sumarlas o representarlas en un
+        mismo eje sería técnicamente incorrecto.
+      </p>
+    </div>
+
+    <div class="cifras" id="cifras-oferta"></div>
+    <div class="rejilla" id="graficos-oferta"></div>
+
+    <div class="rejilla rejilla--completa" style="margin-top:18px">
+      <article class="ficha">
+        <div class="ficha__cabecera">
+          <h3 class="ficha__titulo">Distribución territorial del alojamiento turístico registrado</h3>
+          <div class="ficha__meta">
+            <span class="etiqueta etiqueta--municipal">Ámbito municipal</span>
+            <span>Unidad: establecimientos</span>
+            <span id="meta-mapa"></span>
+          </div>
+        </div>
+        <div id="mapa-oferta"></div>
+        <div class="ficha__pie" id="pie-mapa">
+          <strong>Fuente:</strong>
+          <a class="enlace-fuente" href="https://www.juntadeandalucia.es/datosabiertos/portal/dataset/openrta"
+             target="_blank" rel="noopener">Junta de Andalucía, Registro de Turismo de Andalucía (OpenRTA)</a>.
+        </div>
+      </article>
+    </div>
+
+    <div id="tabla-oferta" style="margin-top:18px"></div>
+    <div id="lectura-oferta"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ Demanda -->
+  <section class="bloque" id="demanda" role="tabpanel" hidden>
+    <div class="bloque__cabecera">
+      <h2>Demanda y ocupación</h2>
+      <p class="bloque__intro">
+        Tres mediciones complementarias de la demanda que recibe el municipio: los turistas
+        estimados por posicionamiento de telefonía móvil, la ocupación efectiva de la vivienda
+        turística —única serie de ocupación con ámbito estrictamente municipal— y la ocupación
+        del alojamiento reglado de la zona turística en la que se integra Benahavís.
+      </p>
+    </div>
+
+    <div class="aviso aviso--critico">
+      <span class="aviso__titulo">Naturaleza de los datos de este bloque</span>
+      <p>
+        Las cifras de turistas proceden de la <strong>estadística experimental del INE de
+        medición del turismo a partir de la posición de los teléfonos móviles</strong>,
+        redistribuida por Dataestur (SEGITTUR). <strong>No son pernoctaciones en alojamiento
+        reglado</strong> ni proceden de la Encuesta de Ocupación Hotelera, y no son comparables
+        con ninguna de las dos.
+      </p>
+      <p>
+        La ocupación de la vivienda turística procede del seguimiento de plataformas de
+        intermediación que publica Turismo y Planificación Costa del Sol. Mide un universo
+        distinto del alojamiento reglado y tampoco es comparable con la Encuesta de Ocupación
+        Hotelera.
+      </p>
+    </div>
+
+    <div class="cifras" id="cifras-demanda"></div>
+    <div class="rejilla" id="graficos-demanda"></div>
+    <div id="lectura-demanda"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ Precios -->
+  <section class="bloque" id="precios" role="tabpanel" hidden>
+    <div class="bloque__cabecera">
+      <h2>Precios y valoración de los alojamientos</h2>
+      <p class="bloque__intro">
+        Precio medio de comercialización y valoración de los clientes en los alojamientos del
+        municipio, a partir del seguimiento de portales de reserva que publica Turismo y
+        Planificación Costa del Sol. Series municipales, con detalle por tipología y categoría.
+      </p>
+    </div>
+    <div class="aviso">
+      <span class="aviso__titulo">Qué mide y qué no mide este bloque</span>
+      <p>
+        El precio es el <strong>anunciado en el portal de reservas</strong>, no el efectivamente
+        cobrado ni la facturación media por habitación ocupada. No es, por tanto, un indicador de
+        rentabilidad hotelera ni sustituye al ADR o al RevPAR de la Encuesta de Ocupación Hotelera.
+        La valoración se expresa en la escala del propio portal, de 0 a 10.
+      </p>
+    </div>
+    <div class="cifras" id="cifras-precios"></div>
+    <div class="rejilla" id="graficos-precios"></div>
+    <div id="lectura-precios"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ Empleo y economía -->
+  <section class="bloque" id="empleo" role="tabpanel" hidden>
+    <div class="bloque__cabecera">
+      <h2>Empleo y economía</h2>
+      <p class="bloque__intro">
+        Paro registrado y contratos del SEPE, afiliación a la Seguridad Social por rama de
+        actividad y por subsector turístico, y finanzas del Ayuntamiento. Todo el bloque es de
+        periodicidad mensual o trimestral y de ámbito municipal.
+      </p>
+    </div>
+
+    <div class="aviso">
+      <span class="aviso__titulo">Dos limitaciones que condicionan la lectura</span>
+      <p>
+        <strong>Enmascaramiento.</strong> La Seguridad Social sustituye por «&lt;5» cualquier
+        valor entre 1 y 4. En Benahavís esto afecta a cerca de la mitad de las celdas, de modo
+        que los totales por rama se publican como <strong>intervalo</strong> y nunca como cifra
+        puntual. Un «&lt;5» no es un cero. La explotación por subsector turístico de Turismo
+        Costa del Sol no sufre esta censura, por publicarse ya agregada.
+      </p>
+      <p>
+        <strong>Ruptura de serie.</strong> En enero de 2026 la clasificación de actividades pasó
+        de CNAE-2009 a CNAE-2025. Las series de afiliación por rama <strong>no se empalman</strong>
+        a través de esa fecha; el corte se señala en los gráficos.
+      </p>
+    </div>
+
+    <div class="cifras" id="cifras-trabajo"></div>
+    <div class="rejilla" id="graficos-trabajo"></div>
+    <div id="tabla-trabajo" style="margin-top:18px"></div>
+    <div id="lectura-trabajo"></div>
+
+    <h3 class="bloque__subtitulo">Finanzas municipales</h3>
+    <div class="cifras" id="cifras-economia"></div>
+    <div class="rejilla" id="graficos-economia"></div>
+    <div id="lectura-economia"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ Clima -->
+  <section class="bloque" id="clima" role="tabpanel" hidden>
+    <div class="bloque__cabecera">
+      <h2>Clima</h2>
+      <p class="bloque__intro">
+        Serie observada en la estación meteorológica de AEMET situada dentro del término
+        municipal. Al existir estación propia, el bloque climático es dato municipal y no un
+        indicador sustitutivo de ámbito comarcal.
+      </p>
+    </div>
+    <div class="cifras" id="cifras-clima"></div>
+    <div class="rejilla" id="graficos-clima"></div>
+    <div id="lectura-clima"></div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__filas">
+    <div>
+      <strong>Observatorio Turístico y Socioeconómico de Benahavís</strong><br>
+      Elaborado por <strong>Consultoría AMMA</strong> para el Ayuntamiento de Benahavís.
+    </div>
+    <div>
+      Versión <strong id="pie-version">—</strong> · Generado el <strong id="pie-generado">—</strong><br>
+      <a href="metodologia.html">Metodología y limitaciones</a> ·
+      <a href="inventario-fuentes.md">Inventario de fuentes</a>
+    </div>
+    <div>
+      Datos procedentes de INE, IECA, SEPE, Seguridad Social, Junta de Andalucía, SEGITTUR,<br>
+      Turismo y Planificación Costa del Sol, AEMET y Ministerio de Hacienda.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script type="module" src="assets/panel.js"></script>
+</body>
+</html>

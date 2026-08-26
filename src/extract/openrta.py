@@ -171,3 +171,110 @@ def resumir(filas: list[dict[str, Any]]) -> dict[str, Any]:
         "crs_origen": "EPSG:25830",
         "crs_puntos": "EPSG:4326",
     }
+
+
+# ────────────────────────────────────────────── censo nominal por establecimiento
+
+#: Tipologías de alojamiento en vivienda, que son las que interesan a la pestaña
+#: de VUT. El hotel se mantiene aparte: no es vivienda de uso turístico.
+TIPOS_VIVIENDA = {
+    "Vivienda de uso turístico",
+    "Vivienda turística de alojamiento rural",
+    "Apartamento turístico",
+    "Casa rural",
+}
+
+
+def _fecha_iso(valor: Any) -> str | None:
+    """``20190312`` → ``2019-03-12``. El RTA la publica como entero AAAAMMDD."""
+    s = str(valor or "").strip()
+    if len(s) != 8 or not s.isdigit():
+        return None
+    return f"{s[0:4]}-{s[4:6]}-{s[6:8]}"
+
+
+def _direccion(f: dict[str, Any]) -> str:
+    """Recompone la dirección a partir de los campos sueltos del registro.
+
+    ``establishment_address`` suele traer ya la planta y la puerta embebidas
+    («… Plta/Piso BAJA Pta/Letra 8A»), así que los campos sueltos solo se añaden
+    cuando aportan algo que no está ya escrito: si no, la dirección sale repetida.
+    """
+    base = str(f.get("establishment_address") or f.get("road_name") or "").strip()
+    partes = [base] if base and base != "None" else []
+    comparable = base.upper()
+    for clave, etiqueta in (("portal", "portal"), ("block", "bloque"),
+                            ("staircase", "esc."), ("floor", "planta"), ("door", "pta.")):
+        v = f.get(clave)
+        v = str(v).strip() if v not in (None, "") else ""
+        if v and v != "None" and v.upper() not in comparable:
+            partes.append(f"{etiqueta} {v}")
+    return ", ".join(partes)
+
+
+def censo(filas: list[dict[str, Any]]) -> dict[str, Any]:
+    """Censo nominal de establecimientos con coordenadas, para el mapa de VUT.
+
+    A diferencia de :func:`resumir`, que agrega, esto devuelve **una ficha por
+    inscripción**: es lo que alimenta el mapa, los filtros y la línea del tiempo.
+
+    Las inscripciones que no se pueden situar no se descartan en silencio: van en
+    ``sin_ubicar`` con el motivo, para poder decir en el panel cuántas son y
+    cuáles. No se reubican ni se corrigen: el dato de origen es el que es.
+    """
+    fichas: list[dict[str, Any]] = []
+    sin_ubicar: list[dict[str, Any]] = []
+
+    for f in filas:
+        tipo = (f.get("objects_type_id") or "Sin clasificar").strip()
+        if tipo not in TIPOS_ALOJAMIENTO:
+            continue
+
+        ficha = {
+            "ref": (f.get("registration_code") or "").strip(),
+            "nombre": (f.get("name") or "").strip(),
+            "tipo": tipo,
+            "modalidad": (f.get("modalities") or "").strip() or None,
+            "categoria": (f.get("categories") or "").strip() or None,
+            "grupo": (f.get("group") or "").strip() or None,
+            "plazas": _entero(f.get("tot_gen_places")),
+            "unidades": _entero(f.get("tot_gen_ua")),
+            "alta": _fecha_iso(f.get("registration_date")),
+            "inicio_actividad": _fecha_iso(f.get("activity_start_date")),
+            "direccion": _direccion(f) or None,
+            "cp": (str(f.get("postal_code") or "").strip() or None),
+            "titular": (f.get("holder") or "").strip() or None,
+            "catastro": (f.get("catastral_ref") or "").strip() or None,
+            "uso_privado": (f.get("private_use_ind") or "").strip() or None,
+        }
+
+        este = numero_es(f.get("coord_x"))
+        norte = numero_es(f.get("coord_y"))
+        if este is None or norte is None:
+            sin_ubicar.append({**ficha, "motivo": "sin coordenadas en el registro"})
+            continue
+
+        lat, lon = utm30n_a_wgs84(este, norte)
+        if not (CAJA_MUNICIPIO["lat_min"] <= lat <= CAJA_MUNICIPIO["lat_max"]
+                and CAJA_MUNICIPIO["lon_min"] <= lon <= CAJA_MUNICIPIO["lon_max"]):
+            sin_ubicar.append({**ficha, "motivo": "coordenada fuera del entorno del municipio",
+                               "lat_erronea": round(lat, 5), "lon_erronea": round(lon, 5)})
+            continue
+
+        fichas.append({**ficha, "lat": round(lat, 6), "lon": round(lon, 6)})
+
+    viviendas = [x for x in fichas if x["tipo"] in TIPOS_VIVIENDA]
+    log.info("   censo: %d fichas ubicadas (%d viviendas) y %d sin ubicar",
+             len(fichas), len(viviendas), len(sin_ubicar))
+
+    anyos = sorted({x["alta"][:4] for x in fichas + sin_ubicar if x.get("alta")})
+    return {
+        "fichas": fichas,
+        "sin_ubicar": sin_ubicar,
+        "total": len(fichas) + len(sin_ubicar),
+        "ubicadas": len(fichas),
+        "viviendas_ubicadas": len(viviendas),
+        "anyos_alta": anyos,
+        "crs_origen": "EPSG:25830",
+        "crs_salida": "EPSG:4326",
+    }

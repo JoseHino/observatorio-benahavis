@@ -442,3 +442,124 @@ def todo() -> dict[str, Any]:
     if not salida:
         raise ValueError("ningún informe del Big Data de Turismo Costa del Sol respondió")
     return salida
+
+
+# ─────────────────────────────────────── mapa de viviendas turísticas por unidad
+
+#: Columnas de la tabla «Mapa Establecimientos» del informe *viviendas-turisticas*.
+#: Es un panel **vivienda × mes** con coordenadas propias de cada alojamiento
+#: (no el centroide del municipio) y su número de inscripción en el registro, lo
+#: que permite cruzarlo con el censo del RTA.
+_MAPA_COLS = [
+    "02. Año", "03. Mes Número", "19. Nº Inscripción al RAT",
+    "17. Latitud", "18. Longitud", "10. Tipo alojamiento",
+    "13. Número de habitaciones", "13. Número de Plazas máximo",
+    "16. Precio medio plaza", "16. Rating", "08. Grado Ocupación",
+]
+
+
+def _igual_numero(origen: str, propiedad: str, valor: int) -> dict:
+    """Como :func:`_igual` pero para enteros.
+
+    El literal lleva sufijo ``L``: sin él el servicio no interpreta el valor como
+    entero, la consulta falla y la respuesta vuelve sin bloque de datos (el
+    parseo revienta con ``KeyError: 'DS'``, que no dice nada del motivo real).
+    """
+    return {"Condition": {"In": {"Expressions": [_columna(origen, propiedad)],
+                                 "Values": [[{"Literal": {"Value": f"{int(valor)}L"}}]]}}}
+
+
+def mapa_viviendas(desde: int = 2018, hasta: int | None = None) -> dict[str, Any]:
+    """Panel de viviendas turísticas anunciadas, con su punto en el mapa.
+
+    La consulta se **pagina por año**: el servicio devuelve como mucho 30.000
+    filas por petición y el panel completo del municipio las supera. Pedir el
+    total de una vez no da error, simplemente trunca en silencio y se pierden los
+    meses recientes.
+
+    Returns:
+        ``ultimo``  ficha por vivienda del último mes disponible (lo que se pinta)
+        ``activas`` nº de viviendas anunciadas por mes (la línea del tiempo del mercado)
+        ``meses``   periodos cubiertos
+    """
+    import datetime as _dt
+    hasta = hasta or _dt.date.today().year
+    ses = _sesion("viviendas-turisticas")
+    log.info("Big Data · mapa de viviendas turísticas (%d-%d)", desde, hasta)
+
+    filas: list[list[Any]] = []
+    for anyo in range(desde, hasta + 1):
+        try:
+            trozo = _consultar(
+                "viviendas-turisticas", ses, [("e", "Mapa Establecimientos")],
+                [_columna("e", c) for c in _MAPA_COLS],
+                [_igual("e", "07. Municipio", MUNICIPIO),
+                 _igual_numero("e", "02. Año", anyo)],
+                tope=30000)
+        except Exception as exc:  # noqa: BLE001 — un año caído no tumba el resto
+            log.warning("   %d: %s", anyo, exc)
+            continue
+        if len(trozo) >= 30000:
+            log.warning("   %d devuelve 30.000 filas: puede venir truncado, "
+                        "conviene paginar también por mes", anyo)
+        log.info("   %d: %d filas", anyo, len(trozo))
+        filas.extend(trozo)
+
+    if not filas:
+        raise ValueError("el mapa de viviendas turísticas no devolvió datos")
+
+    idx = {c: i for i, c in enumerate(_MAPA_COLS)}
+    def _v(f, c):
+        return f[idx[c]]
+
+    # Recuento de viviendas anunciadas por mes.
+    activas: dict[str, set] = {}
+    plazas_mes: dict[str, int] = {}
+    for f in filas:
+        a, m = _v(f, "02. Año"), _v(f, "03. Mes Número")
+        if a is None or m is None:
+            continue
+        t = f"{int(a):04d}-{int(m):02d}"
+        activas.setdefault(t, set()).add(_v(f, "19. Nº Inscripción al RAT")
+                                        or (_v(f, "17. Latitud"), _v(f, "18. Longitud")))
+        plazas_mes[t] = plazas_mes.get(t, 0) + (_numero(_v(f, "13. Número de Plazas máximo")) or 0)
+
+    meses = sorted(activas)
+    ultimo_mes = meses[-1]
+
+    # Ficha por vivienda del último mes publicado.
+    ultimo: dict[str, dict[str, Any]] = {}
+    for f in filas:
+        a, m = _v(f, "02. Año"), _v(f, "03. Mes Número")
+        if a is None or m is None or f"{int(a):04d}-{int(m):02d}" != ultimo_mes:
+            continue
+        lat, lon = _numero(_v(f, "17. Latitud")), _numero(_v(f, "18. Longitud"))
+        if lat is None or lon is None:
+            continue
+        ref = (_v(f, "19. Nº Inscripción al RAT") or "").strip() or None
+        clave = ref or f"{lat:.5f},{lon:.5f}"
+        ultimo[clave] = {
+            "ref": ref,
+            "lat": round(lat, 6), "lon": round(lon, 6),
+            "tipo": _v(f, "10. Tipo alojamiento"),
+            "habitaciones": _numero(_v(f, "13. Número de habitaciones")),
+            "plazas": _numero(_v(f, "13. Número de Plazas máximo")),
+            "precio_plaza": _numero(_v(f, "16. Precio medio plaza")),
+            "rating": _numero(_v(f, "16. Rating")),
+            "ocupacion": _numero(_v(f, "08. Grado Ocupación")),
+        }
+
+    log.info("   %d meses (%s → %s) · %d viviendas en el último mes",
+             len(meses), meses[0], ultimo_mes, len(ultimo))
+
+    return {
+        "mes_ultimo": ultimo_mes,
+        "meses": meses,
+        "activas": [{"t": t, "v": len(activas[t])} for t in meses],
+        "plazas": [{"t": t, "v": plazas_mes.get(t, 0)} for t in meses],
+        "ultimo": list(ultimo.values()),
+        "cobertura": ("Viviendas anunciadas en plataformas de alquiler vacacional y "
+                      "rastreadas por el Big Data de Turismo Costa del Sol. No es el "
+                      "registro administrativo: una vivienda inscrita en el RTA puede "
+                      "no estar anunciada, y al revés."),
+    }

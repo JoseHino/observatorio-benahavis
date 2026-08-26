@@ -756,6 +756,24 @@
      "servicios": 126,
      "sin_empleo_anterior": 10
     }
+   },
+   {
+    "t": "2026-07",
+    "total": 156,
+    "hombres": 53,
+    "mujeres": 99,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 60,
+     "mayor45": 92
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 12,
+     "servicios": 131,
+     "sin_empleo_anterior": 8
+    }
    }
   ],
   "comparativa": [
@@ -1010,6 +1028,12 @@
     "espana": 2288212,
     "andalucia": 536510,
     "malaga": 99084
+   },
+   {
+    "t": "2026-07",
+    "espana": 2307681,
+    "andalucia": 526852,
+    "malaga": 97504
    }
   ]
  },
@@ -1517,6 +1541,18 @@
      "industria": 0,
      "construccion": 51,
      "servicios": 155
+    }
+   },
+   {
+    "t": "2026-07",
+    "total": 207,
+    "indefinidos": 116,
+    "temporales": 88,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 44,
+     "servicios": 158
     }
    }
   ]
@@ -2517,5 +2553,5 @@
  },
  "fuente": "SEPE · datos abiertos de paro y contratos por municipios · Seguridad Social · Afiliados por municipios CNAE 2D · IECA/BADEA",
  "ambito": "municipal",
- "actualizado": "2026-08-20T09:14:59Z"
+ "actualizado": "2026-08-26T17:29:07Z"
 }

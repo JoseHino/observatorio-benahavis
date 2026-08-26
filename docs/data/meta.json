@@ -4,48 +4,53 @@
  "provincia": "Málaga",
  "comarca": "Costa del Sol Occidental",
  "version": "1.2.0",
- "generado": "2026-08-20T09:14:59Z",
+ "generado": "2026-08-26T17:29:07Z",
  "autoria_tecnica": "Consultoría AMMA",
  "destinatario": "Ayuntamiento de Benahavís",
  "bloques": {
   "demografia": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   },
   "oferta": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   },
   "demanda": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   },
   "trabajo": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   },
   "economia": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   },
   "clima": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   },
   "visitantes": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   },
   "costadelsol": {
    "actualizado": true,
-   "sello": "2026-08-20T09:14:59Z",
+   "sello": "2026-08-26T17:29:07Z",
+   "detalle": ""
+  },
+  "vut": {
+   "actualizado": true,
+   "sello": "2026-08-26T17:29:07Z",
    "detalle": ""
   }
  }
