@@ -27,18 +27,40 @@
 
   /* --------------------------------------------------------------- Fuentes */
 
+  /* Cada fuente apunta al dato concreto y no al portal del organismo: a la tabla
+     del INE con su número, al informe del Big Data ya centrado en el municipio,
+     a la ficha de la estación de AEMET. Comprobados uno a uno; los que devolvían
+     404 eran los `operacion.htm?cid=` del INE, que ya no resuelven. */
+  var CDS = 'https://www.costadelsolmalaga.org/bigdata/';
   var FTE = {
-    padron:   { txt: 'INE · Cifras oficiales de población', url: 'https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177011' },
-    atlas:    { txt: 'INE · Atlas de distribución de renta de los hogares', url: 'https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177088' },
-    rta:      { txt: 'Junta de Andalucía · Registro de Turismo de Andalucía', url: 'https://www.juntadeandalucia.es/datosabiertos/portal/dataset/registro-de-turismo-de-andalucia' },
-    ine_vut:  { txt: 'INE · Medición del alquiler de viviendas turísticas', url: 'https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177015' },
-    cds:      { txt: 'Turismo Costa del Sol · Big Data', url: 'https://www.costadelsolmalaga.org/bigdata/?mun=29023' },
-    moviles:  { txt: 'INE · Turismo a partir del posicionamiento de móviles', url: 'https://www.ine.es/experimental/turismo/experimental_turismo.htm' },
-    eoh:      { txt: 'INE · Encuesta de Ocupación Hotelera por zonas turísticas', url: 'https://www.dataestur.es/' },
-    sepe:     { txt: 'SEPE · datos abiertos por municipios', url: 'https://www.sepe.es/HomeSepe/que-es-el-sepe/estadisticas/datos-estadisticos/municipios.html' },
-    ss:       { txt: 'Seguridad Social · afiliación por municipio y CNAE', url: 'https://www.seg-social.es/wps/portal/wss/internet/EstadisticasPresupuestosEstudios/Estadisticas' },
-    aemet:    { txt: 'AEMET OpenData · estación 6069X Benahavís', url: 'https://opendata.aemet.es/' },
-    hacienda: { txt: 'Ministerio de Hacienda · deuda viva de entidades locales', url: 'https://www.hacienda.gob.es/es-ES/CDI/Paginas/EstabilidadPresupuestaria/InformacionAAPPs/Deuda-Viva-Ayuntamientos.aspx' }
+    padron:   { txt: 'INE · Padrón, tabla 2882', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=2882' },
+    renta:    { txt: 'INE · Atlas de renta, tabla 30824', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=30824' },
+    gini:     { txt: 'INE · Gini y P80/P20, tabla 37677', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=37677' },
+    /* El portal de datos abiertos de la Junta responde 503 en la ficha del
+       conjunto, así que se enlaza la consulta de la API ya filtrada por
+       Benahavís: es literalmente el dato que alimenta esta pestaña. */
+    rta:      { txt: 'Junta de Andalucía · RTA, consulta de Benahavís',
+                url: 'https://datos.juntadeandalucia.es/api/v0/openrta/search?id=-&object_type=-&category=-&group=-&modality=-&province=M%C3%81LAGA&municipality=BENAHAVIS&order_by=id&mode=ASC&format=json&size=5000' },
+    ine_vut:  { txt: 'INE · Viviendas turísticas, tabla 39363', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=39363' },
+    moviles:  { txt: 'Dataestur · turismo según posición de móviles',
+                url: 'https://www.dataestur.es/viajes-ocio/medicion-del-turismo-a-partir-de-telefonia-movil/' },
+    eoh:      { txt: 'Dataestur · Encuesta de Ocupación Hotelera',
+                url: 'https://www.dataestur.es/alojamientos/encuesta-ocupacion-hoteles/' },
+    sepe:     { txt: 'SEPE · paro y contratos por municipios',
+                url: 'https://www.sepe.es/HomeSepe/que-es-el-sepe/estadisticas/datos-estadisticos/municipios.html' },
+    ss:       { txt: 'Seguridad Social · afiliación por municipio',
+                url: 'https://www.seg-social.es/wps/portal/wss/internet/EstadisticasPresupuestosEstudios/Estadisticas/EST8/EST10/EST304/1470' },
+    aemet:    { txt: 'AEMET · estación 6069X Benahavís',
+                url: 'https://www.aemet.es/es/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?l=6069X&k=and' },
+    hacienda: { txt: 'Hacienda · deuda viva de las entidades locales',
+                url: 'https://www.hacienda.gob.es/es-ES/Areas%20Tematicas/Administracion%20Electronica/OVEELL/Paginas/DeudaViva.aspx' },
+    /* Big Data: cada informe tiene su propia dirección y admite ?mun=, así que
+       el enlace abre el informe correspondiente ya centrado en Benahavís. */
+    cds:         { txt: 'Turismo Costa del Sol · Big Data', url: CDS + '?mun=29023' },
+    cds_vut:     { txt: 'Big Data Costa del Sol · viviendas turísticas', url: CDS + 'com1_tc-364273/viviendas-turisticas?mun=29023' },
+    cds_oferta:  { txt: 'Big Data Costa del Sol · oferta de alojamiento', url: CDS + 'com1_tc-357992/oferta-alojamiento?mun=29023' },
+    cds_precios: { txt: 'Big Data Costa del Sol · precios de alojamiento', url: CDS + 'com1_tc-461998/precios-hoteles?mun=29023' },
+    cds_empleo:  { txt: 'Big Data Costa del Sol · empleo turístico', url: CDS + 'com1_tc-357987/empleo-turismo?mun=29023' }
   };
 
   var MENSUAL = { txt: 'Mensual', tipo: 'live' };
@@ -247,7 +269,7 @@
         },
         {
           titulo: 'Registro frente a mercado', sub: 'Viviendas inscritas en el RTA y viviendas efectivamente anunciadas',
-          chips: [MENSUAL], fuente: FTE.cds, ancho: 'full',
+          chips: [MENSUAL], fuente: FTE.cds_vut, ancho: 'full',
           nota: 'Que el mercado vaya muy por debajo del registro es lo esperable: no toda vivienda inscrita se anuncia, ' +
                 'y las que se anuncian no lo están todos los meses. La distancia entre ambas líneas es la que interesa al Ayuntamiento.',
           /* Las dos series cuentan viviendas: son comparables en el mismo eje.
@@ -263,7 +285,7 @@
         },
         {
           titulo: 'Ocupación y precio de la vivienda turística', sub: 'Grado de ocupación mensual del municipio',
-          chips: [MENSUAL], fuente: FTE.cds,
+          chips: [MENSUAL], fuente: FTE.cds_vut,
           spec: {
             type: 'line', xType: 'mes', x: ejeT(serieCDS), yFormat: 'pct',
             series: [{ name: 'Ocupación', data: serieCDS.map(function (r) { return r.ocupacion; }) }]
@@ -271,7 +293,7 @@
         },
         {
           titulo: 'Precio medio por plaza', sub: 'Euros por plaza y noche',
-          chips: [MENSUAL], fuente: FTE.cds,
+          chips: [MENSUAL], fuente: FTE.cds_vut,
           spec: {
             type: 'line', xType: 'mes', x: ejeT(serieCDS), yFormat: 'eur',
             series: [{ name: 'Precio por plaza', data: serieCDS.map(function (r) { return r.precio_plaza; }) }]
@@ -320,7 +342,7 @@
             },
             {
               titulo: 'Renta media por persona y por hogar', sub: 'Renta neta anual',
-              chips: [ANUAL], fuente: FTE.atlas,
+              chips: [ANUAL], fuente: FTE.renta,
               spec: {
                 type: 'line', xType: 'anual', xLabel: 'Año', x: ejeT(r.renta_neta_hogar), yFormat: 'eur',
                 series: [
@@ -331,7 +353,7 @@
             },
             {
               titulo: 'Desigualdad', sub: 'Índice de Gini y relación entre el 20 % más rico y el 20 % más pobre',
-              chips: [ANUAL], fuente: FTE.atlas,
+              chips: [ANUAL], fuente: FTE.gini,
               nota: 'El Gini viene en escala 0–100. Cuanto más alto, más desigual es el reparto de la renta.',
               spec: {
                 type: 'line', xType: 'anual', xLabel: 'Año', x: ejeT(g.gini), yFormat: 'dec1',
@@ -388,7 +410,7 @@
             },
             {
               titulo: 'Plazas por tipología, serie histórica', sub: 'Big Data de Turismo Costa del Sol',
-              chips: [MENSUAL], fuente: FTE.cds,
+              chips: [MENSUAL], fuente: FTE.cds_oferta,
               spec: (function () {
                 var pt = cds.por_tipologia || {};
                 var claves = Object.keys(pt).filter(function (k) { return (pt[k] || []).length; });
@@ -535,7 +557,7 @@
             },
             {
               titulo: 'Empleo turístico por subsector', sub: 'Trabajadores afiliados, Big Data de Turismo Costa del Sol',
-              chips: [{ txt: 'Trimestral' }], fuente: FTE.cds, ancho: 'full',
+              chips: [{ txt: 'Trimestral' }], fuente: FTE.cds_empleo, ancho: 'full',
               nota: 'Esta fuente no aplica el enmascarado «<5», así que da el desglose por subsector que la descarga directa de la Seguridad Social oculta.',
               spec: (function () {
                 var ps = cdsEmpleo.por_subsector || {};
@@ -579,7 +601,7 @@
           cards: [
             {
               titulo: 'Precio medio por tipología', sub: 'Euros por noche',
-              chips: [MENSUAL], fuente: FTE.cds, ancho: 'full', alto: 'tall',
+              chips: [MENSUAL], fuente: FTE.cds_precios, ancho: 'full', alto: 'tall',
               spec: {
                 type: 'line', xType: 'mes', x: meses, yFormat: 'eur',
                 series: claves.map(function (k) { return { name: k, data: serie(k, 'precio') }; })
@@ -587,7 +609,7 @@
             },
             {
               titulo: 'Valoración media de los establecimientos', sub: 'Puntuación de los portales de reserva',
-              chips: [MENSUAL], fuente: FTE.cds, ancho: 'full',
+              chips: [MENSUAL], fuente: FTE.cds_precios, ancho: 'full',
               spec: {
                 type: 'line', xType: 'mes', x: meses, yFormat: 'dec2',
                 series: claves.map(function (k) { return { name: k, data: serie(k, 'valoracion') }; })
@@ -657,7 +679,8 @@
       subtitulo: 'Datos abiertos del municipio (29023) para el expediente de Municipio Turístico de Andalucía',
       secciones: SECCIONES,
       actualizado: meta.generado,
-      fuentes: [FTE.padron, FTE.atlas, FTE.rta, FTE.ine_vut, FTE.moviles, FTE.cds, FTE.sepe, FTE.ss, FTE.aemet, FTE.hacienda],
+      fuentes: [FTE.padron, FTE.renta, FTE.gini, FTE.rta, FTE.ine_vut, FTE.moviles, FTE.eoh,
+                FTE.cds, FTE.sepe, FTE.ss, FTE.aemet, FTE.hacienda],
       metodologia: 'Un proceso automático descarga las fuentes oficiales, las normaliza y vuelca <code>docs/data/*.json</code>. ' +
         'Cada tarjeta enlaza a su fuente y permite ver los datos en tabla y descargarlos en CSV. ' +
         'El inventario completo de fuentes, con sus limitaciones, está en ' +
