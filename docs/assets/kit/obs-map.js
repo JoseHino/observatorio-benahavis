@@ -90,13 +90,18 @@
         '</div>' +
       '</div>') : '';
 
+    /* En modo automático no hay conmutador de capa: la vista la decide el zoom,
+       igual que en cualquier mapa de calor al uso. Un botón que ofrezca lo que
+       el mapa ya hace solo sirve para que el usuario se pregunte cuál elegir. */
+    var conmutador = cfg.modo === 'auto' ? '' :
+      '<div class="obs-segment" role="group">' +
+        '<button type="button" data-capa="puntos" aria-pressed="true">Puntos</button>' +
+        '<button type="button" data-capa="calor" aria-pressed="false">Calor</button>' +
+      '</div>';
+
     return '<div class="obs-map" data-mapa="' + id + '">' +
       '<div class="obs-map-tools">' + filtros +
-        '<div class="obs-map-capas">' +
-          '<div class="obs-segment" role="group">' +
-            '<button type="button" data-capa="puntos" aria-pressed="true">Puntos</button>' +
-            '<button type="button" data-capa="calor" aria-pressed="false">Calor</button>' +
-          '</div>' +
+        '<div class="obs-map-capas">' + conmutador +
           '<button type="button" class="obs-btn" data-act="reset">Restablecer</button>' +
         '</div>' +
         '<div class="obs-map-cuenta" data-rol="cuenta"></div>' +
@@ -276,7 +281,16 @@
     }
 
     /* --- pintado --- */
-    var capaActiva = 'puntos';
+    /* Zoom a partir del cual el mapa deja de resumir y enseña cada registro.
+       Por debajo, con miles de puntos amontonados, lo único legible es la
+       densidad; por encima, lo que interesa es la vivienda concreta. */
+    var ZOOM_DETALLE = cfg.zoomDetalle || 15;
+    var automatico = cfg.modo === 'auto';
+    var capaActiva = automatico ? 'calor' : 'puntos';
+
+    function capaSegunZoom() {
+      return mapa.getZoom() >= ZOOM_DETALLE ? 'puntos' : 'calor';
+    }
 
     function visibles() {
       return puntos.filter(function (p) {
@@ -303,8 +317,11 @@
         if (agrupa) cluster.addLayers(marcas);
         else marcas.forEach(function (m) { cluster.addLayer(m); });
         if (!mapa.hasLayer(cluster)) mapa.addLayer(cluster);
-      } else if (mapa.hasLayer(cluster)) {
-        mapa.removeLayer(cluster);
+      } else {
+        if (mapa.hasLayer(cluster)) mapa.removeLayer(cluster);
+        /* El lienzo de los puntos es un renderizador propio: quitar el grupo de
+           capas lo vacía, pero deja el elemento colgado en el panel. */
+        if (!agrupa && mapa.hasLayer(lienzoPuntos)) mapa.removeLayer(lienzoPuntos);
       }
 
       if (calor) { mapa.removeLayer(calor); calor = null; }
@@ -326,9 +343,14 @@
 
       var cuenta = raiz.querySelector('[data-rol="cuenta"]');
       var sinFecha = cfg.fecha ? vs.filter(function (p) { return anyoDe(cfg.fecha(p)) == null; }).length : 0;
+      var pista = (automatico && capaActiva === 'calor')
+        ? ' <span class="obs-map-pista">acerca el mapa para ver cada ' +
+          Obs.esc(cfg.unidadSingular || 'punto') + '</span>'
+        : '';
       cuenta.innerHTML = '<b>' + Obs.fmt.num(vs.length) + '</b> de ' + Obs.fmt.num(puntos.length) +
         (cfg.unidad ? ' ' + cfg.unidad : '') +
-        (sinFecha ? ' <span class="obs-map-nota">(' + Obs.fmt.num(sinFecha) + ' sin fecha)</span>' : '');
+        (sinFecha ? ' <span class="obs-map-nota">(' + Obs.fmt.num(sinFecha) + ' sin fecha)</span>' : '') +
+        pista;
       if (corte != null) {
         var lbl = raiz.querySelector('[data-rol="anyo"]');
         if (lbl) lbl.textContent = corte;
@@ -369,6 +391,17 @@
     leyendaSegun('puntos');
 
     /* --- conmutador de capa y reinicio --- */
+    /* Al acercarse o alejarse el mapa cambia solo de resumen a detalle. */
+    if (automatico) {
+      mapa.on('zoomend', function () {
+        var nueva = capaSegunZoom();
+        if (nueva === capaActiva) return;
+        capaActiva = nueva;
+        leyendaSegun(capaActiva);
+        pintar();
+      });
+    }
+
     raiz.querySelector('.obs-map-capas').addEventListener('click', function (ev) {
       var b = ev.target.closest('button');
       if (!b) return;
@@ -403,6 +436,8 @@
     });
 
     mapa.fitBounds(L.latLngBounds(puntos.map(function (p) { return [p.lat, p.lon]; })).pad(0.08));
+    if (automatico) capaActiva = capaSegunZoom();
+    leyendaSegun(capaActiva);
     pintar();
 
     /* Al mostrarse la sección el lienzo pasa de 0 a su tamaño real: hay que

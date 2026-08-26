@@ -204,15 +204,18 @@
       cards: [
         {
           titulo: 'Mapa de las viviendas turísticas de Benahavís',
-          sub: F.num(viviendas.length) + ' viviendas situadas · mueve la línea del tiempo para ver cómo se ha ido poblando el municipio',
+          sub: F.num(viviendas.length) + ' viviendas situadas · acerca el mapa para ver cada una y pinchar sus datos · mueve la línea del tiempo para ver cómo se ha ido poblando el municipio',
           chips: [{ txt: 'Por vivienda', tipo: 'live' }], fuente: FTE.rta, ancho: 'full', alto: 'tall',
-          nota: 'Cada punto es una vivienda, en la coordenada que consta en el registro. La capa de calor mide densidad de viviendas, no plazas: del amarillo (poca) al rojo (mucha).',
+          nota: 'El color mide densidad de viviendas, no plazas: del amarillo (poca) al rojo (mucha). Al acercarse aparece cada vivienda en la coordenada que consta en el registro.',
           mapa: {
             puntos: viviendas,
             unidad: 'viviendas',
-            /* Un punto por vivienda, sin agruparlos en burbujas con el recuento:
-               así el amontonamiento se ve directamente sobre el terreno. */
+            /* El mapa decide solo qué enseñar: de lejos, la densidad; al
+               acercarse, cada vivienda como un punto que se puede pinchar. */
+            modo: 'auto',
+            zoomDetalle: 15,
             agrupar: false,
+            unidadSingular: 'vivienda',
             calorEtiqueta: 'Densidad de viviendas turísticas',
             fecha: function (p) { return p.alta; },
             grupo: function (p) { return p.tipo; },
