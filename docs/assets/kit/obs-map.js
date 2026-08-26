@@ -341,21 +341,48 @@
         }).addTo(mapa);
       }
 
-      var cuenta = raiz.querySelector('[data-rol="cuenta"]');
-      var sinFecha = cfg.fecha ? vs.filter(function (p) { return anyoDe(cfg.fecha(p)) == null; }).length : 0;
-      var pista = (automatico && capaActiva === 'calor')
-        ? ' <span class="obs-map-pista">acerca el mapa para ver cada ' +
-          Obs.esc(cfg.unidadSingular || 'punto') + '</span>'
-        : '';
-      cuenta.innerHTML = '<b>' + Obs.fmt.num(vs.length) + '</b> de ' + Obs.fmt.num(puntos.length) +
-        (cfg.unidad ? ' ' + cfg.unidad : '') +
-        (sinFecha ? ' <span class="obs-map-nota">(' + Obs.fmt.num(sinFecha) + ' sin fecha)</span>' : '') +
-        pista;
+      visiblesAhora = vs;
+      actualizarCuenta();
       if (corte != null) {
         var lbl = raiz.querySelector('[data-rol="anyo"]');
         if (lbl) lbl.textContent = corte;
       }
     }
+
+    /* --- recuento ---
+       Se dice cuántos hay y, en la vista de detalle, cuántos caben en pantalla.
+       Sin ese segundo número, ver veinte puntos bajo un rótulo que pone 2.205
+       hace pensar que faltan datos, cuando lo que pasa es que el resto está
+       fuera del encuadre. */
+    var visiblesAhora = puntos;
+
+    function actualizarCuenta() {
+      var cuenta = raiz.querySelector('[data-rol="cuenta"]');
+      if (!cuenta) return;
+      var vs = visiblesAhora;
+      var sinFecha = cfg.fecha ? vs.filter(function (p) { return anyoDe(cfg.fecha(p)) == null; }).length : 0;
+      var unidad = cfg.unidad ? ' ' + cfg.unidad : '';
+
+      var txt = '<b>' + Obs.fmt.num(vs.length) + '</b>' +
+        (vs.length !== puntos.length ? ' de ' + Obs.fmt.num(puntos.length) : '') + unidad;
+
+      if (capaActiva === 'puntos' && mapa._loaded) {
+        var b = mapa.getBounds();
+        var enPantalla = vs.filter(function (p) { return b.contains([p.lat, p.lon]); }).length;
+        if (enPantalla !== vs.length) {
+          txt += ' <span class="obs-map-nota">·</span> <b>' + Obs.fmt.num(enPantalla) + '</b> en pantalla';
+        }
+      }
+      if (sinFecha) txt += ' <span class="obs-map-nota">(' + Obs.fmt.num(sinFecha) + ' sin fecha)</span>';
+      if (automatico && capaActiva === 'calor') {
+        txt += ' <span class="obs-map-pista">acerca el mapa para ver cada ' +
+          Obs.esc(cfg.unidadSingular || 'punto') + '</span>';
+      }
+      cuenta.innerHTML = txt;
+    }
+
+    /* Al desplazar el mapa cambia lo que cabe en pantalla, no lo que hay. */
+    mapa.on('moveend', actualizarCuenta);
 
     /* --- leyenda ---
        Cada capa codifica el color de una forma distinta, así que cada una lleva

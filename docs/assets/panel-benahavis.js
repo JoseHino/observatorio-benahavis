@@ -213,7 +213,7 @@
             /* El mapa decide solo qué enseñar: de lejos, la densidad; al
                acercarse, cada vivienda como un punto que se puede pinchar. */
             modo: 'auto',
-            zoomDetalle: 15,
+            zoomDetalle: 14,
             agrupar: false,
             unidadSingular: 'vivienda',
             calorEtiqueta: 'Densidad de viviendas turísticas',
