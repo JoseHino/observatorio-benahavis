@@ -355,6 +355,3146 @@
    }
   ]
  },
+ "nacionalidad": {
+  "total": {
+   "total": [
+    {
+     "t": "2003",
+     "v": 2401.0
+    },
+    {
+     "t": "2004",
+     "v": 2265.0
+    },
+    {
+     "t": "2005",
+     "v": 2649.0
+    },
+    {
+     "t": "2006",
+     "v": 2860.0
+    },
+    {
+     "t": "2007",
+     "v": 3253.0
+    },
+    {
+     "t": "2008",
+     "v": 3844.0
+    },
+    {
+     "t": "2009",
+     "v": 4373.0
+    },
+    {
+     "t": "2010",
+     "v": 4932.0
+    },
+    {
+     "t": "2011",
+     "v": 5486.0
+    },
+    {
+     "t": "2012",
+     "v": 5980.0
+    },
+    {
+     "t": "2013",
+     "v": 6380.0
+    },
+    {
+     "t": "2014",
+     "v": 6660.0
+    },
+    {
+     "t": "2015",
+     "v": 7105.0
+    },
+    {
+     "t": "2016",
+     "v": 7342.0
+    },
+    {
+     "t": "2017",
+     "v": 7348.0
+    },
+    {
+     "t": "2018",
+     "v": 7989.0
+    },
+    {
+     "t": "2019",
+     "v": 8085.0
+    },
+    {
+     "t": "2020",
+     "v": 7748.0
+    },
+    {
+     "t": "2021",
+     "v": 7829.0
+    },
+    {
+     "t": "2022",
+     "v": 8763.0
+    }
+   ],
+   "hombres": [
+    {
+     "t": "2003",
+     "v": 1196.0
+    },
+    {
+     "t": "2004",
+     "v": 1151.0
+    },
+    {
+     "t": "2005",
+     "v": 1356.0
+    },
+    {
+     "t": "2006",
+     "v": 1460.0
+    },
+    {
+     "t": "2007",
+     "v": 1679.0
+    },
+    {
+     "t": "2008",
+     "v": 1981.0
+    },
+    {
+     "t": "2009",
+     "v": 2257.0
+    },
+    {
+     "t": "2010",
+     "v": 2552.0
+    },
+    {
+     "t": "2011",
+     "v": 2812.0
+    },
+    {
+     "t": "2012",
+     "v": 3044.0
+    },
+    {
+     "t": "2013",
+     "v": 3220.0
+    },
+    {
+     "t": "2014",
+     "v": 3360.0
+    },
+    {
+     "t": "2015",
+     "v": 3555.0
+    },
+    {
+     "t": "2016",
+     "v": 3686.0
+    },
+    {
+     "t": "2017",
+     "v": 3703.0
+    },
+    {
+     "t": "2018",
+     "v": 4024.0
+    },
+    {
+     "t": "2019",
+     "v": 4043.0
+    },
+    {
+     "t": "2020",
+     "v": 3850.0
+    },
+    {
+     "t": "2021",
+     "v": 3871.0
+    },
+    {
+     "t": "2022",
+     "v": 4368.0
+    }
+   ],
+   "mujeres": [
+    {
+     "t": "2003",
+     "v": 1205.0
+    },
+    {
+     "t": "2004",
+     "v": 1114.0
+    },
+    {
+     "t": "2005",
+     "v": 1293.0
+    },
+    {
+     "t": "2006",
+     "v": 1400.0
+    },
+    {
+     "t": "2007",
+     "v": 1574.0
+    },
+    {
+     "t": "2008",
+     "v": 1863.0
+    },
+    {
+     "t": "2009",
+     "v": 2116.0
+    },
+    {
+     "t": "2010",
+     "v": 2380.0
+    },
+    {
+     "t": "2011",
+     "v": 2674.0
+    },
+    {
+     "t": "2012",
+     "v": 2936.0
+    },
+    {
+     "t": "2013",
+     "v": 3160.0
+    },
+    {
+     "t": "2014",
+     "v": 3300.0
+    },
+    {
+     "t": "2015",
+     "v": 3550.0
+    },
+    {
+     "t": "2016",
+     "v": 3656.0
+    },
+    {
+     "t": "2017",
+     "v": 3645.0
+    },
+    {
+     "t": "2018",
+     "v": 3965.0
+    },
+    {
+     "t": "2019",
+     "v": 4042.0
+    },
+    {
+     "t": "2020",
+     "v": 3898.0
+    },
+    {
+     "t": "2021",
+     "v": 3958.0
+    },
+    {
+     "t": "2022",
+     "v": 4395.0
+    }
+   ]
+  },
+  "espanola": {
+   "total": [
+    {
+     "t": "2003",
+     "v": 1252.0
+    },
+    {
+     "t": "2004",
+     "v": 1296.0
+    },
+    {
+     "t": "2005",
+     "v": 1362.0
+    },
+    {
+     "t": "2006",
+     "v": 1419.0
+    },
+    {
+     "t": "2007",
+     "v": 1577.0
+    },
+    {
+     "t": "2008",
+     "v": 1683.0
+    },
+    {
+     "t": "2009",
+     "v": 1797.0
+    },
+    {
+     "t": "2010",
+     "v": 1936.0
+    },
+    {
+     "t": "2011",
+     "v": 2090.0
+    },
+    {
+     "t": "2012",
+     "v": 2265.0
+    },
+    {
+     "t": "2013",
+     "v": 2406.0
+    },
+    {
+     "t": "2014",
+     "v": 2515.0
+    },
+    {
+     "t": "2015",
+     "v": 2597.0
+    },
+    {
+     "t": "2016",
+     "v": 2672.0
+    },
+    {
+     "t": "2017",
+     "v": 2799.0
+    },
+    {
+     "t": "2018",
+     "v": 2894.0
+    },
+    {
+     "t": "2019",
+     "v": 2954.0
+    },
+    {
+     "t": "2020",
+     "v": 3037.0
+    },
+    {
+     "t": "2021",
+     "v": 3188.0
+    },
+    {
+     "t": "2022",
+     "v": 3363.0
+    }
+   ],
+   "hombres": [
+    {
+     "t": "2003",
+     "v": 638.0
+    },
+    {
+     "t": "2004",
+     "v": 663.0
+    },
+    {
+     "t": "2005",
+     "v": 704.0
+    },
+    {
+     "t": "2006",
+     "v": 737.0
+    },
+    {
+     "t": "2007",
+     "v": 836.0
+    },
+    {
+     "t": "2008",
+     "v": 895.0
+    },
+    {
+     "t": "2009",
+     "v": 962.0
+    },
+    {
+     "t": "2010",
+     "v": 1036.0
+    },
+    {
+     "t": "2011",
+     "v": 1106.0
+    },
+    {
+     "t": "2012",
+     "v": 1194.0
+    },
+    {
+     "t": "2013",
+     "v": 1263.0
+    },
+    {
+     "t": "2014",
+     "v": 1323.0
+    },
+    {
+     "t": "2015",
+     "v": 1367.0
+    },
+    {
+     "t": "2016",
+     "v": 1405.0
+    },
+    {
+     "t": "2017",
+     "v": 1463.0
+    },
+    {
+     "t": "2018",
+     "v": 1522.0
+    },
+    {
+     "t": "2019",
+     "v": 1524.0
+    },
+    {
+     "t": "2020",
+     "v": 1567.0
+    },
+    {
+     "t": "2021",
+     "v": 1639.0
+    },
+    {
+     "t": "2022",
+     "v": 1741.0
+    }
+   ],
+   "mujeres": [
+    {
+     "t": "2003",
+     "v": 614.0
+    },
+    {
+     "t": "2004",
+     "v": 633.0
+    },
+    {
+     "t": "2005",
+     "v": 658.0
+    },
+    {
+     "t": "2006",
+     "v": 682.0
+    },
+    {
+     "t": "2007",
+     "v": 741.0
+    },
+    {
+     "t": "2008",
+     "v": 788.0
+    },
+    {
+     "t": "2009",
+     "v": 835.0
+    },
+    {
+     "t": "2010",
+     "v": 900.0
+    },
+    {
+     "t": "2011",
+     "v": 984.0
+    },
+    {
+     "t": "2012",
+     "v": 1071.0
+    },
+    {
+     "t": "2013",
+     "v": 1143.0
+    },
+    {
+     "t": "2014",
+     "v": 1192.0
+    },
+    {
+     "t": "2015",
+     "v": 1230.0
+    },
+    {
+     "t": "2016",
+     "v": 1267.0
+    },
+    {
+     "t": "2017",
+     "v": 1336.0
+    },
+    {
+     "t": "2018",
+     "v": 1372.0
+    },
+    {
+     "t": "2019",
+     "v": 1430.0
+    },
+    {
+     "t": "2020",
+     "v": 1470.0
+    },
+    {
+     "t": "2021",
+     "v": 1549.0
+    },
+    {
+     "t": "2022",
+     "v": 1622.0
+    }
+   ]
+  },
+  "extranjera": {
+   "total": [
+    {
+     "t": "2003",
+     "v": 1149.0
+    },
+    {
+     "t": "2004",
+     "v": 969.0
+    },
+    {
+     "t": "2005",
+     "v": 1287.0
+    },
+    {
+     "t": "2006",
+     "v": 1441.0
+    },
+    {
+     "t": "2007",
+     "v": 1676.0
+    },
+    {
+     "t": "2008",
+     "v": 2161.0
+    },
+    {
+     "t": "2009",
+     "v": 2576.0
+    },
+    {
+     "t": "2010",
+     "v": 2996.0
+    },
+    {
+     "t": "2011",
+     "v": 3396.0
+    },
+    {
+     "t": "2012",
+     "v": 3715.0
+    },
+    {
+     "t": "2013",
+     "v": 3974.0
+    },
+    {
+     "t": "2014",
+     "v": 4145.0
+    },
+    {
+     "t": "2015",
+     "v": 4508.0
+    },
+    {
+     "t": "2016",
+     "v": 4670.0
+    },
+    {
+     "t": "2017",
+     "v": 4549.0
+    },
+    {
+     "t": "2018",
+     "v": 5095.0
+    },
+    {
+     "t": "2019",
+     "v": 5131.0
+    },
+    {
+     "t": "2020",
+     "v": 4711.0
+    },
+    {
+     "t": "2021",
+     "v": 4641.0
+    },
+    {
+     "t": "2022",
+     "v": 5400.0
+    }
+   ],
+   "hombres": [
+    {
+     "t": "2003",
+     "v": 558.0
+    },
+    {
+     "t": "2004",
+     "v": 488.0
+    },
+    {
+     "t": "2005",
+     "v": 652.0
+    },
+    {
+     "t": "2006",
+     "v": 723.0
+    },
+    {
+     "t": "2007",
+     "v": 843.0
+    },
+    {
+     "t": "2008",
+     "v": 1086.0
+    },
+    {
+     "t": "2009",
+     "v": 1295.0
+    },
+    {
+     "t": "2010",
+     "v": 1516.0
+    },
+    {
+     "t": "2011",
+     "v": 1706.0
+    },
+    {
+     "t": "2012",
+     "v": 1850.0
+    },
+    {
+     "t": "2013",
+     "v": 1957.0
+    },
+    {
+     "t": "2014",
+     "v": 2037.0
+    },
+    {
+     "t": "2015",
+     "v": 2188.0
+    },
+    {
+     "t": "2016",
+     "v": 2281.0
+    },
+    {
+     "t": "2017",
+     "v": 2240.0
+    },
+    {
+     "t": "2018",
+     "v": 2502.0
+    },
+    {
+     "t": "2019",
+     "v": 2519.0
+    },
+    {
+     "t": "2020",
+     "v": 2283.0
+    },
+    {
+     "t": "2021",
+     "v": 2232.0
+    },
+    {
+     "t": "2022",
+     "v": 2627.0
+    }
+   ],
+   "mujeres": [
+    {
+     "t": "2003",
+     "v": 591.0
+    },
+    {
+     "t": "2004",
+     "v": 481.0
+    },
+    {
+     "t": "2005",
+     "v": 635.0
+    },
+    {
+     "t": "2006",
+     "v": 718.0
+    },
+    {
+     "t": "2007",
+     "v": 833.0
+    },
+    {
+     "t": "2008",
+     "v": 1075.0
+    },
+    {
+     "t": "2009",
+     "v": 1281.0
+    },
+    {
+     "t": "2010",
+     "v": 1480.0
+    },
+    {
+     "t": "2011",
+     "v": 1690.0
+    },
+    {
+     "t": "2012",
+     "v": 1865.0
+    },
+    {
+     "t": "2013",
+     "v": 2017.0
+    },
+    {
+     "t": "2014",
+     "v": 2108.0
+    },
+    {
+     "t": "2015",
+     "v": 2320.0
+    },
+    {
+     "t": "2016",
+     "v": 2389.0
+    },
+    {
+     "t": "2017",
+     "v": 2309.0
+    },
+    {
+     "t": "2018",
+     "v": 2593.0
+    },
+    {
+     "t": "2019",
+     "v": 2612.0
+    },
+    {
+     "t": "2020",
+     "v": 2428.0
+    },
+    {
+     "t": "2021",
+     "v": 2409.0
+    },
+    {
+     "t": "2022",
+     "v": 2773.0
+    }
+   ]
+  }
+ },
+ "nacionalidades": {
+  "anyos": [
+   "2003",
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "por_anyo": {
+   "2003": [
+    {
+     "pais": "Reino Unido",
+     "v": 502.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 98.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 44.0
+    },
+    {
+     "pais": "Francia",
+     "v": 42.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 19.0
+    },
+    {
+     "pais": "Italia",
+     "v": 16.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 14.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 11.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 7.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 6.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 5.0
+    },
+    {
+     "pais": "Chile",
+     "v": 5.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 4.0
+    },
+    {
+     "pais": "Perú",
+     "v": 4.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 4.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 2.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 2.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 2.0
+    },
+    {
+     "pais": "China",
+     "v": 2.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 1.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 356.0
+    }
+   ],
+   "2004": [
+    {
+     "pais": "Reino Unido",
+     "v": 390.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 78.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 43.0
+    },
+    {
+     "pais": "Francia",
+     "v": 30.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 26.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 23.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 12.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 11.0
+    },
+    {
+     "pais": "Italia",
+     "v": 10.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 10.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 9.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 9.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 8.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 6.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 5.0
+    },
+    {
+     "pais": "Chile",
+     "v": 5.0
+    },
+    {
+     "pais": "Perú",
+     "v": 5.0
+    },
+    {
+     "pais": "China",
+     "v": 5.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 3.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 3.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 3.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 2.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 1.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 271.0
+    }
+   ],
+   "2005": [
+    {
+     "pais": "Reino Unido",
+     "v": 570.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 92.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 48.0
+    },
+    {
+     "pais": "Francia",
+     "v": 35.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 34.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 26.0
+    },
+    {
+     "pais": "Italia",
+     "v": 23.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 17.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 16.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 14.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 12.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 12.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 11.0
+    },
+    {
+     "pais": "China",
+     "v": 11.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 7.0
+    },
+    {
+     "pais": "Chile",
+     "v": 6.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 6.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 5.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 4.0
+    },
+    {
+     "pais": "Perú",
+     "v": 4.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 4.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 3.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 1.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 1.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 324.0
+    }
+   ],
+   "2006": [
+    {
+     "pais": "Reino Unido",
+     "v": 685.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 115.0
+    },
+    {
+     "pais": "Francia",
+     "v": 50.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 29.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 28.0
+    },
+    {
+     "pais": "Italia",
+     "v": 22.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 19.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 18.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 17.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 15.0
+    },
+    {
+     "pais": "China",
+     "v": 14.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 11.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 10.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 8.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 8.0
+    },
+    {
+     "pais": "Perú",
+     "v": 6.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 5.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 5.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 4.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 4.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 3.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 2.0
+    },
+    {
+     "pais": "Chile",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 362.0
+    }
+   ],
+   "2007": [
+    {
+     "pais": "Reino Unido",
+     "v": 823.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 123.0
+    },
+    {
+     "pais": "Francia",
+     "v": 47.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 40.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 32.0
+    },
+    {
+     "pais": "Italia",
+     "v": 25.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 25.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 20.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 18.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 17.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 16.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 14.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 13.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 12.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 7.0
+    },
+    {
+     "pais": "Perú",
+     "v": 7.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 7.0
+    },
+    {
+     "pais": "China",
+     "v": 7.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 5.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 4.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 4.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 2.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 2.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 405.0
+    }
+   ],
+   "2008": [
+    {
+     "pais": "Reino Unido",
+     "v": 1057.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 155.0
+    },
+    {
+     "pais": "Francia",
+     "v": 69.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 52.0
+    },
+    {
+     "pais": "Italia",
+     "v": 49.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 48.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 38.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 28.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 21.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 19.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 18.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 17.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 15.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 15.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 9.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 8.0
+    },
+    {
+     "pais": "Perú",
+     "v": 7.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 6.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 6.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "China",
+     "v": 6.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 5.0
+    },
+    {
+     "pais": "Chile",
+     "v": 3.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 2.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 2.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 500.0
+    }
+   ],
+   "2009": [
+    {
+     "pais": "Reino Unido",
+     "v": 1295.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 163.0
+    },
+    {
+     "pais": "Francia",
+     "v": 89.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 67.0
+    },
+    {
+     "pais": "Italia",
+     "v": 55.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 42.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 37.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 33.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 28.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 22.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 21.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 17.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 16.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 15.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 12.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 10.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 9.0
+    },
+    {
+     "pais": "China",
+     "v": 9.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 7.0
+    },
+    {
+     "pais": "Chile",
+     "v": 7.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "Perú",
+     "v": 5.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 5.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 3.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 3.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 598.0
+    }
+   ],
+   "2010": [
+    {
+     "pais": "Reino Unido",
+     "v": 1508.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 189.0
+    },
+    {
+     "pais": "Francia",
+     "v": 103.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 88.0
+    },
+    {
+     "pais": "Italia",
+     "v": 55.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 51.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 43.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 40.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 39.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 27.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 24.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 21.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 17.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 17.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 14.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 12.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 10.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 9.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 9.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 7.0
+    },
+    {
+     "pais": "Perú",
+     "v": 6.0
+    },
+    {
+     "pais": "Chile",
+     "v": 4.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 4.0
+    },
+    {
+     "pais": "China",
+     "v": 4.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 3.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 690.0
+    }
+   ],
+   "2011": [
+    {
+     "pais": "Reino Unido",
+     "v": 1666.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 215.0
+    },
+    {
+     "pais": "Francia",
+     "v": 128.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 90.0
+    },
+    {
+     "pais": "Italia",
+     "v": 71.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 71.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 46.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 39.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 37.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 36.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 34.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 22.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 22.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 21.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 14.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 14.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 12.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 12.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 12.0
+    },
+    {
+     "pais": "Perú",
+     "v": 9.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 7.0
+    },
+    {
+     "pais": "China",
+     "v": 5.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 5.0
+    },
+    {
+     "pais": "Chile",
+     "v": 4.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 3.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 3.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 795.0
+    }
+   ],
+   "2012": [
+    {
+     "pais": "Reino Unido",
+     "v": 1802.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 220.0
+    },
+    {
+     "pais": "Francia",
+     "v": 159.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 126.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 108.0
+    },
+    {
+     "pais": "Italia",
+     "v": 75.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 38.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 35.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 33.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 31.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 31.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 25.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 22.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 18.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 17.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 15.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 15.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 14.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 11.0
+    },
+    {
+     "pais": "Perú",
+     "v": 6.0
+    },
+    {
+     "pais": "Chile",
+     "v": 5.0
+    },
+    {
+     "pais": "China",
+     "v": 5.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 4.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 4.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 4.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 2.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 887.0
+    }
+   ],
+   "2013": [
+    {
+     "pais": "Reino Unido",
+     "v": 1918.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 231.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 168.0
+    },
+    {
+     "pais": "Francia",
+     "v": 164.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 104.0
+    },
+    {
+     "pais": "Italia",
+     "v": 82.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 37.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 30.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 29.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 28.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 27.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 25.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 19.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 19.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 14.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 12.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 10.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 10.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 9.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 9.0
+    },
+    {
+     "pais": "Perú",
+     "v": 7.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 6.0
+    },
+    {
+     "pais": "Chile",
+     "v": 5.0
+    },
+    {
+     "pais": "China",
+     "v": 5.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 3.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 1.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 999.0
+    }
+   ],
+   "2014": [
+    {
+     "pais": "Reino Unido",
+     "v": 1892.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 238.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 217.0
+    },
+    {
+     "pais": "Francia",
+     "v": 179.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 95.0
+    },
+    {
+     "pais": "Italia",
+     "v": 81.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 44.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 42.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 30.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 29.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 26.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 25.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 20.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 18.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 15.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 12.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 11.0
+    },
+    {
+     "pais": "Chile",
+     "v": 10.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 10.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 9.0
+    },
+    {
+     "pais": "Perú",
+     "v": 7.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 7.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 5.0
+    },
+    {
+     "pais": "China",
+     "v": 5.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 2.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1108.0
+    }
+   ],
+   "2015": [
+    {
+     "pais": "Reino Unido",
+     "v": 2040.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 245.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 237.0
+    },
+    {
+     "pais": "Francia",
+     "v": 201.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 108.0
+    },
+    {
+     "pais": "Italia",
+     "v": 99.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 46.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 45.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 34.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 26.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 26.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 22.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 21.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 18.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 16.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 13.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 11.0
+    },
+    {
+     "pais": "Chile",
+     "v": 10.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 10.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 7.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 6.0
+    },
+    {
+     "pais": "Perú",
+     "v": 6.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 5.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 2.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 2.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 1.0
+    },
+    {
+     "pais": "China",
+     "v": 1.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1243.0
+    }
+   ],
+   "2016": [
+    {
+     "pais": "Reino Unido",
+     "v": 2080.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 233.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 231.0
+    },
+    {
+     "pais": "Francia",
+     "v": 222.0
+    },
+    {
+     "pais": "Italia",
+     "v": 112.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 103.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 46.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 41.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 36.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 34.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 28.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 26.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 20.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 17.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 12.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 10.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 10.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 9.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 9.0
+    },
+    {
+     "pais": "Perú",
+     "v": 9.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 6.0
+    },
+    {
+     "pais": "Chile",
+     "v": 5.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 4.0
+    },
+    {
+     "pais": "China",
+     "v": 3.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 1.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1354.0
+    }
+   ],
+   "2017": [
+    {
+     "pais": "Reino Unido",
+     "v": 1844.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 287.0
+    },
+    {
+     "pais": "Francia",
+     "v": 213.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 190.0
+    },
+    {
+     "pais": "Italia",
+     "v": 139.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 103.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 51.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 45.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 44.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 40.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 35.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 24.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 23.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 22.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 20.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 15.0
+    },
+    {
+     "pais": "Perú",
+     "v": 11.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 9.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 9.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 8.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 7.0
+    },
+    {
+     "pais": "Chile",
+     "v": 4.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 4.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 4.0
+    },
+    {
+     "pais": "China",
+     "v": 4.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 2.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 1.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1389.0
+    }
+   ],
+   "2018": [
+    {
+     "pais": "Reino Unido",
+     "v": 1988.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 353.0
+    },
+    {
+     "pais": "Francia",
+     "v": 223.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 202.0
+    },
+    {
+     "pais": "Italia",
+     "v": 169.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 103.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 60.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 57.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 54.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 46.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 43.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 29.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 24.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 24.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 21.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 15.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 13.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 11.0
+    },
+    {
+     "pais": "Perú",
+     "v": 8.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 7.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 5.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 5.0
+    },
+    {
+     "pais": "Chile",
+     "v": 4.0
+    },
+    {
+     "pais": "China",
+     "v": 4.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 3.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 1.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1615.0
+    }
+   ],
+   "2019": [
+    {
+     "pais": "Reino Unido",
+     "v": 1882.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 400.0
+    },
+    {
+     "pais": "Francia",
+     "v": 247.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 204.0
+    },
+    {
+     "pais": "Italia",
+     "v": 190.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 110.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 74.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 65.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 59.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 52.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 52.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 30.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 29.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 27.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 24.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 23.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 13.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 11.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 8.0
+    },
+    {
+     "pais": "China",
+     "v": 8.0
+    },
+    {
+     "pais": "Perú",
+     "v": 7.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 6.0
+    },
+    {
+     "pais": "Chile",
+     "v": 4.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 4.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 2.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 2.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 2.0
+    },
+    {
+     "pais": "Pakistán",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1595.0
+    }
+   ],
+   "2020": [
+    {
+     "pais": "Reino Unido",
+     "v": 1560.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 411.0
+    },
+    {
+     "pais": "Francia",
+     "v": 222.0
+    },
+    {
+     "pais": "Italia",
+     "v": 186.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 173.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 110.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 78.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 70.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 61.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 57.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 55.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 38.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 38.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 27.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 25.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 19.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 15.0
+    },
+    {
+     "pais": "China",
+     "v": 8.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 7.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 6.0
+    },
+    {
+     "pais": "Perú",
+     "v": 6.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 5.0
+    },
+    {
+     "pais": "Chile",
+     "v": 4.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 3.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 3.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 3.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 2.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1518.0
+    }
+   ],
+   "2021": [
+    {
+     "pais": "Reino Unido",
+     "v": 1592.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 392.0
+    },
+    {
+     "pais": "Francia",
+     "v": 206.0
+    },
+    {
+     "pais": "Italia",
+     "v": 183.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 175.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 123.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 76.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 73.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 64.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 54.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 51.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 49.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 46.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 38.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 28.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 15.0
+    },
+    {
+     "pais": "China",
+     "v": 13.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 11.0
+    },
+    {
+     "pais": "Perú",
+     "v": 8.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "Chile",
+     "v": 6.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 5.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 4.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 3.0
+    },
+    {
+     "pais": "República Dominicana",
+     "v": 3.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 3.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 2.0
+    },
+    {
+     "pais": "Senegal",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1411.0
+    }
+   ],
+   "2022": [
+    {
+     "pais": "Reino Unido",
+     "v": 1880.0
+    },
+    {
+     "pais": "Rusia",
+     "v": 495.0
+    },
+    {
+     "pais": "Francia",
+     "v": 215.0
+    },
+    {
+     "pais": "Alemania",
+     "v": 210.0
+    },
+    {
+     "pais": "Italia",
+     "v": 207.0
+    },
+    {
+     "pais": "Marruecos",
+     "v": 140.0
+    },
+    {
+     "pais": "Ucrania",
+     "v": 82.0
+    },
+    {
+     "pais": "Rumanía",
+     "v": 80.0
+    },
+    {
+     "pais": "Argentina",
+     "v": 71.0
+    },
+    {
+     "pais": "Brasil",
+     "v": 64.0
+    },
+    {
+     "pais": "Polonia",
+     "v": 59.0
+    },
+    {
+     "pais": "Colombia",
+     "v": 54.0
+    },
+    {
+     "pais": "Bulgaria",
+     "v": 50.0
+    },
+    {
+     "pais": "Venezuela",
+     "v": 38.0
+    },
+    {
+     "pais": "Portugal",
+     "v": 28.0
+    },
+    {
+     "pais": "Oceanía y Apátridas",
+     "v": 13.0
+    },
+    {
+     "pais": "China",
+     "v": 11.0
+    },
+    {
+     "pais": "Paraguay",
+     "v": 9.0
+    },
+    {
+     "pais": "Cuba",
+     "v": 7.0
+    },
+    {
+     "pais": "Argelia",
+     "v": 6.0
+    },
+    {
+     "pais": "Perú",
+     "v": 6.0
+    },
+    {
+     "pais": "Nigeria",
+     "v": 5.0
+    },
+    {
+     "pais": "Chile",
+     "v": 4.0
+    },
+    {
+     "pais": "Ecuador",
+     "v": 4.0
+    },
+    {
+     "pais": "Uruguay",
+     "v": 4.0
+    },
+    {
+     "pais": "Bolivia",
+     "v": 1.0
+    },
+    {
+     "pais": "Resto de países",
+     "v": 1657.0
+    }
+   ]
+  },
+  "total_extranjeros": [
+   {
+    "t": "2003",
+    "v": 1149.0
+   },
+   {
+    "t": "2004",
+    "v": 969.0
+   },
+   {
+    "t": "2005",
+    "v": 1287.0
+   },
+   {
+    "t": "2006",
+    "v": 1441.0
+   },
+   {
+    "t": "2007",
+    "v": 1676.0
+   },
+   {
+    "t": "2008",
+    "v": 2161.0
+   },
+   {
+    "t": "2009",
+    "v": 2576.0
+   },
+   {
+    "t": "2010",
+    "v": 2996.0
+   },
+   {
+    "t": "2011",
+    "v": 3396.0
+   },
+   {
+    "t": "2012",
+    "v": 3715.0
+   },
+   {
+    "t": "2013",
+    "v": 3974.0
+   },
+   {
+    "t": "2014",
+    "v": 4145.0
+   },
+   {
+    "t": "2015",
+    "v": 4508.0
+   },
+   {
+    "t": "2016",
+    "v": 4670.0
+   },
+   {
+    "t": "2017",
+    "v": 4549.0
+   },
+   {
+    "t": "2018",
+    "v": 5095.0
+   },
+   {
+    "t": "2019",
+    "v": 5131.0
+   },
+   {
+    "t": "2020",
+    "v": 4711.0
+   },
+   {
+    "t": "2021",
+    "v": 4641.0
+   },
+   {
+    "t": "2022",
+    "v": 5400.0
+   }
+  ]
+ },
+ "extranjeros_ieca": {
+  "anyo": "2025",
+  "poblacion": 9765,
+  "extranjeros": 6044,
+  "porcentaje": 61.9,
+  "principal_procedencia": "Reino Unido",
+  "peso_principal_procedencia": 25.5,
+  "fuente": "IECA · SIMA, ficha municipal (explotación propia del Padrón)",
+  "advertencia": "Explotación del IECA, distinta de las cifras oficiales del INE: su población total no coincide con la del padrón oficial y las dos cifras no deben mezclarse en una misma serie."
+ },
  "renta": {
   "renta_neta_persona": [
    {
@@ -585,6 +3725,194 @@
    }
   ]
  },
+ "renta_contexto": {
+  "espana": {
+   "renta_neta_persona": [
+    {
+     "t": "2021",
+     "v": 13268.0
+    },
+    {
+     "t": "2022",
+     "v": 14061.0
+    },
+    {
+     "t": "2023",
+     "v": 15036.0
+    }
+   ],
+   "renta_neta_hogar": [
+    {
+     "t": "2021",
+     "v": 33881.0
+    },
+    {
+     "t": "2022",
+     "v": 35815.0
+    },
+    {
+     "t": "2023",
+     "v": 38326.0
+    }
+   ]
+  },
+  "andalucia": {
+   "renta_neta_persona": [
+    {
+     "t": "2015",
+     "v": 8655.0
+    },
+    {
+     "t": "2016",
+     "v": 8878.0
+    },
+    {
+     "t": "2017",
+     "v": 9240.0
+    },
+    {
+     "t": "2018",
+     "v": 9715.0
+    },
+    {
+     "t": "2019",
+     "v": 10204.0
+    },
+    {
+     "t": "2020",
+     "v": 10293.0
+    },
+    {
+     "t": "2021",
+     "v": 10895.0
+    },
+    {
+     "t": "2022",
+     "v": 11558.0
+    },
+    {
+     "t": "2023",
+     "v": 12522.0
+    }
+   ],
+   "renta_neta_hogar": [
+    {
+     "t": "2015",
+     "v": 23367.0
+    },
+    {
+     "t": "2016",
+     "v": 23977.0
+    },
+    {
+     "t": "2017",
+     "v": 24748.0
+    },
+    {
+     "t": "2018",
+     "v": 25877.0
+    },
+    {
+     "t": "2019",
+     "v": 27091.0
+    },
+    {
+     "t": "2020",
+     "v": 27119.0
+    },
+    {
+     "t": "2021",
+     "v": 28483.0
+    },
+    {
+     "t": "2022",
+     "v": 29994.0
+    },
+    {
+     "t": "2023",
+     "v": 32378.0
+    }
+   ]
+  },
+  "malaga": {
+   "renta_neta_persona": [
+    {
+     "t": "2015",
+     "v": 8688.0
+    },
+    {
+     "t": "2016",
+     "v": 8854.0
+    },
+    {
+     "t": "2017",
+     "v": 9313.0
+    },
+    {
+     "t": "2018",
+     "v": 9832.0
+    },
+    {
+     "t": "2019",
+     "v": 10338.0
+    },
+    {
+     "t": "2020",
+     "v": 10261.0
+    },
+    {
+     "t": "2021",
+     "v": 10929.0
+    },
+    {
+     "t": "2022",
+     "v": 11744.0
+    },
+    {
+     "t": "2023",
+     "v": 12950.0
+    }
+   ],
+   "renta_neta_hogar": [
+    {
+     "t": "2015",
+     "v": 23102.0
+    },
+    {
+     "t": "2016",
+     "v": 23736.0
+    },
+    {
+     "t": "2017",
+     "v": 24743.0
+    },
+    {
+     "t": "2018",
+     "v": 26076.0
+    },
+    {
+     "t": "2019",
+     "v": 27439.0
+    },
+    {
+     "t": "2020",
+     "v": 27084.0
+    },
+    {
+     "t": "2021",
+     "v": 28574.0
+    },
+    {
+     "t": "2022",
+     "v": 30644.0
+    },
+    {
+     "t": "2023",
+     "v": 33868.0
+    }
+   ]
+  }
+ },
  "desigualdad": {
   "gini": [
    {
@@ -659,7 +3987,7 @@
   "t": "2025",
   "v": 9472.0
  },
- "fuente": "INE · Cifras oficiales de población (tabla 2882), Atlas de Distribución de Renta de los Hogares (tabla 30824) e índice de Gini y P80/P20 (tabla 37677)",
+ "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad (tablas 33571 y 33572), Atlas de Distribución de Renta de los Hogares (tablas 30824 y 53689) e índice de Gini y P80/P20 (tabla 37677) · IECA/SIMA para la población extranjera posterior a 2022",
  "ambito": "municipal",
- "actualizado": "2026-08-26T17:29:07Z"
+ "actualizado": "2026-08-27T08:08:43Z"
 }

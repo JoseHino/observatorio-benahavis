@@ -101,10 +101,24 @@
 
   /**
    * Tarjeta con gráfica, vista de tabla y exportación.
-   * @param {Object} c {titulo, sub, chips, spec, fuente:{txt,url}, nota, ancho:'full', alto:'tall'}
+   * @param {Object} c {titulo, sub, chips, spec, fuente:{txt,url}, nota, ancho:'full', alto:'tall',
+   *   control:{label, opciones:[{v,txt}], valor, spec(valor)}}
    */
   Obs.card = function (c) {
     var id = c.id || ('obs-c' + (++seq));
+    /* Un selector en la cabecera para las tarjetas que muestran un corte de los
+       datos (un año, una categoría) en lugar de una serie. La tarjeta sigue
+       siendo la misma: cambia la spec, no la tarjeta. */
+    var control = c.control
+      ? '<label class="obs-card-ctrl"><span>' + esc(c.control.label || '') + '</span>' +
+          '<select class="obs-select" data-ctrl="' + id + '">' +
+            (c.control.opciones || []).map(function (o) {
+              return '<option value="' + esc(o.v) + '"' +
+                (String(o.v) === String(c.control.valor) ? ' selected' : '') + '>' +
+                esc(o.txt == null ? o.v : o.txt) + '</option>';
+            }).join('') +
+          '</select></label>'
+      : '';
     var chips = (c.chips || []).map(function (ch) {
       var cls = ch.tipo ? ' ' + ch.tipo : '';
       return '<span class="obs-chip' + cls + '">' + (ch.tipo === 'live' ? '<span class="dot"></span>' : '') + esc(ch.txt) + '</span>';
@@ -129,7 +143,7 @@
       '<div class="obs-card-head">' +
         '<div class="t"><h3>' + esc(c.titulo) + '</h3>' +
           (c.sub ? '<div class="cs">' + esc(c.sub) + '</div>' : '') + '</div>' +
-        herramientas +
+        control + herramientas +
       '</div>' +
       cuerpo +
       '<div class="obs-card-foot">' + chips + '<span>' + fuente + '</span>' +
@@ -249,6 +263,19 @@
       var plot = art.querySelector('.obs-plot');
       Obs._observar(plot);
       Obs.chart(plot, c.spec);
+      /* El selector redibuja la misma tarjeta con otra spec; la vista de tabla y
+         la descarga leen la spec del nodo, así que se actualizan solas. */
+      if (c.control && typeof c.control.spec === 'function') {
+        var sel = art.querySelector('select[data-ctrl]');
+        if (sel) sel.addEventListener('change', function () {
+          art.classList.remove('showing-table');
+          var wrap = art.querySelector('.obs-table-wrap');
+          if (wrap) wrap.innerHTML = '';
+          var btn = art.querySelector('.obs-card-tools button[data-act="tabla"]');
+          if (btn) btn.setAttribute('aria-pressed', 'false');
+          Obs.chart(plot, c.control.spec(sel.value));
+        });
+      }
     });
   }
 

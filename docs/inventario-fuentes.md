@@ -106,6 +106,10 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 | 1.3 | INE — unidades territoriales (distritos y secciones de Benahavís) | `.../VALORES_GRUPOSTABLA/30824/90487` | Sección censal | — | JSON | Ídem | **Disponible** |
 | 1.4 | IECA — ficha municipal SIMA 29023 | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023` | Municipal | Anual | HTML | CC BY | **Disponible** (extracción HTML) |
 | 1.5 | INE — Atlas de Renta, **índice de Gini y distribución de la renta P80/P20**, tabla **37677** | `.../DATOS_TABLA/37677?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
+| 1.6 | INE — Padrón Continuo, tabla **33571** «Población por sexo, municipios, nacionalidad (español/extranjero) y edad» | `.../DATOS_TABLA/33571?tv=19:2923&nult=N` | Municipal, por sexo y nacionalidad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
+| 1.7 | INE — Padrón Continuo, tabla **33572** «Población por sexo, municipios y nacionalidad (principales nacionalidades)» | `.../DATOS_TABLA/33572?tv=19:2923&nult=N` | Municipal, por país de nacionalidad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
+| 1.8 | INE — Atlas de Renta, tabla **53689** «Indicadores de renta media y mediana» de las demarcaciones superiores | `.../DATOS_TABLA/53689?nult=N` | Nacional, comunidad y provincia | Anual | JSON | Ídem | **Disponible** |
+| 1.9 | IECA — ficha municipal del SIMA, fichero de datos | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/datos/smex99.xls` | Municipal (todos los municipios andaluces) | Anual | XLS (Excel 97) | CC BY | **Disponible** |
 
 **Prueba de resolución municipal (1.1):** Padrón a 1 de enero de 2025 → **9.472 habitantes**
 (4.732 hombres / 4.740 mujeres). Series `DPOP13531`, `DPOP13532`, `DPOP13533`.
@@ -137,6 +141,36 @@ figura en la tabla sin valor publicado y se descarta.
 > desagrega por municipio**: sus tablas llegan a nivel nacional, de comunidad autónoma y de
 > provincia. No es utilizable para Benahavís. El dato municipal de población procede
 > exclusivamente de `DPOP`.
+
+**Prueba de resolución municipal (1.6 y 1.7):** padrón de 2022 → **5.400 extranjeros** de 8.763
+habitantes (61,6 %), de los que 1.880 son de Reino Unido, 495 de Rusia, 215 de Francia, 210 de
+Alemania y 207 de Italia. Serie 2003–2022 en las dos tablas, con desglose por sexo.
+
+> **La nacionalidad municipal se acaba en 2022.** La explotación del Padrón Continuo que
+> desagrega nacionalidad por municipio **dejó de publicarse tras 2022**; su sucesora, la ECP,
+> solo baja la nacionalidad a los **83 municipios mayores** (tabla 79544, que no incluye
+> Benahavís, comprobado pidiéndola entera). La serie se publica terminada en 2022 y **no se
+> prolonga con estimaciones**. El único dato posterior es el de la ficha del SIMA (1.9).
+
+> **La ficha del SIMA no es la cifra oficial del INE.** Para 2025 publica **6.044 extranjeros**
+> sobre una población de **9.765**, mientras la cifra oficial del padrón (1.1) para ese mismo año
+> es de **9.472**. Son dos explotaciones distintas del padrón: el porcentaje de extranjeros se
+> calcula siempre con el denominador de la propia ficha y las dos fuentes **nunca se funden en
+> una misma serie**. El año va pegado al nombre de la columna («Número de extranjeros. 2025»),
+> así que hay que leerlo de la cabecera y no darlo por supuesto; el fichero es `.xls` binario y
+> necesita `xlrd`, no `openpyxl`.
+
+> **Contexto de la renta (1.8).** Las 54 tablas de «Indicadores de renta media y mediana» del
+> Atlas son una por demarcación; solo la **53689** contiene a la vez **Total Nacional, las
+> comunidades y las provincias**. Es la que permite comparar Benahavís con Málaga, Andalucía y
+> España **sin cambiar de operación**, que es lo que hace comparable la cifra (2023: Benahavís
+> 14.248 €, Málaga 12.950 €, Andalucía 12.522 €, España 15.036 €). Es también la fuente que
+> republican los portales de datos macroeconómicos.
+
+> **La serie municipal de renta pega saltos reales.** De 2022 a 2023 la renta por persona de
+> Benahavís pasa de 9.269 € a 14.248 € (+54 %). No es un error de extracción: es lo que publica
+> el INE. Con 9.000 habitantes y una renta muy concentrada, unos pocos declarantes mueven la
+> media del municipio, y por eso la comparación con los agregados lleva su aviso en la tarjeta.
 
 ---
 
@@ -296,6 +330,41 @@ Ramas no turísticas más relevantes: actividades inmobiliarias (418), construcc
 `29`, municipio `23`, confirmando la correspondencia de códigos.
 
 **Verificado (5.3):** patrón de URL estable comprobado para los ejercicios 2022, 2023 y 2024.
+
+---
+
+#### Tejido empresarial y trabajo autónomo
+
+| # | Organismo · operación | Endpoint verificado | Granularidad | Periodicidad | Formato | Licencia | Estado |
+|---|---|---|---|---|---|---|---|
+| 5.9 | INE — DIRCE, tabla **4721** «Empresas por municipio y actividad principal» | `.../DATOS_TABLA/4721?tv=19:2923&nult=N` | Municipal, por rama de actividad | Anual (1 de enero) | JSON | Reutilización libre citando al INE | **Disponible** |
+| 5.10 | IECA/BADEA — consulta **876** «Afiliaciones según sexo y municipio de residencia, por régimen» | `.../rest/v1.0/consulta/876?D_TERRITORIO_0=2934&D_TEMPORAL_0=<idPeriodo>` | Municipal, por régimen | Trimestral hasta 2021, mensual después | JSON | CC BY | **Disponible** |
+
+**Prueba de resolución municipal (5.9):** 1 de enero de 2025 → **1.200 empresas**, de las que 312
+son de servicios profesionales y administrativos, 259 inmobiliarias, 203 de comercio, transporte
+y hostelería y 180 de construcción. Serie desde 2012.
+
+**Prueba de resolución municipal (5.10):** junio de 2026 → **1.484 autónomos**, 1.750 afiliados al
+régimen general y 84 al sistema de empleados del hogar. Serie desde marzo de 2012.
+
+> **«Resto de servicios» del DIRCE no es una rama, es una suma.** Vale 808 de las 1.200 empresas
+> de 2025 porque agrega información y comunicaciones, financieras, inmobiliarias, profesionales,
+> las secciones P y Q y las R y S, que ya vienen desglosadas. Pintarla junto a las demás dobla
+> la mitad del total. Las nueve ramas restantes suman exactamente el total.
+
+> **BADEA solo devuelve un periodo por petición.** En la consulta 876 la dimensión temporal va en
+> posición de *página*: sin `D_TEMPORAL_0` responde con el último mes, y una lista separada por
+> comas devuelve **cero filas sin error alguno**. La serie hay que construirla pidiendo periodo a
+> periodo (114 peticiones para la serie completa), con los **identificadores numéricos** de la
+> jerarquía `3153` —el código `AAAAMM` no vale como filtro—, de modo que la descarga se hace
+> **incremental** sobre lo ya publicado.
+
+> **El asterisco de BADEA es «menos de 5», no un cero.** En Benahavís afecta al Régimen Especial
+> del Mar. Se publica como hueco; convertirlo en 0 hundiría cualquier media sin avisar.
+
+> **Es afiliación por municipio de RESIDENCIA**, no por centro de trabajo: mide dónde viven los
+> afiliados, no dónde está su empresa. No es intercambiable con el fichero de la Seguridad Social
+> por CNAE del bloque 4, que sí va por centro de cotización.
 
 ---
 

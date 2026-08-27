@@ -1,7 +1,8 @@
 {
- "generado": "2026-08-26T17:29:07Z",
- "series_revisadas": 25,
+ "generado": "2026-08-27T08:08:43Z",
+ "series_revisadas": 28,
  "series": [
+  "badea.autonomos",
   "cds.establecimientos_inscritos",
   "cds.ocupacion_vut",
   "cds.plazas_inscritas",
@@ -12,9 +13,11 @@
   "clima.temperatura_mensual",
   "demanda.turistas_extranjeros",
   "demanda.turistas_nacionales",
+  "dirce.empresas",
   "eoh.ocupacion_zona_turistica",
   "hacienda.deuda_viva",
   "ine.viviendas_turisticas",
+  "padron.extranjeros",
   "padron.total",
   "renta.gini",
   "renta.p80_p20",

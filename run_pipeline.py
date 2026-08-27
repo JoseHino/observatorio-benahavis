@@ -26,7 +26,7 @@ from src.contexto import (
     MUNICIPIO, NOMBRE_PROVINCIA, VERSION,
 )
 from src.extract import (
-    aemet, badea, costadelsol, dataestur, eoh, hacienda, ine_tempus, openrta, sepe,
+    aemet, badea, costadelsol, dataestur, eoh, hacienda, ine_tempus, openrta, sepe, sima,
 )
 from src.extract import seguridad_social as ss
 from src.extract import visitantes as vis
@@ -84,6 +84,32 @@ def bloque_demografia() -> dict[str, Any]:
         log.warning("Gini y P80/P20 no disponibles: %s", exc)
         desigualdad = {}
 
+    # Nacionalidad: el Padrón Continuo dejó de bajarla al municipio tras 2022, así
+    # que la serie del INE termina ahí y la única cifra reciente es la ficha del
+    # IECA. Ninguna de las dos fuentes puede tumbar el bloque: el padrón sí, ellas no.
+    try:
+        nacionalidad = ine_tempus.padron_nacionalidad()
+        paises = ine_tempus.nacionalidades()
+    except Exception as exc:  # noqa: BLE001 — indicador secundario del bloque
+        log.warning("padrón por nacionalidad no disponible: %s", exc)
+        previo_demo = leer_previo("demografia") or {}
+        nacionalidad = previo_demo.get("nacionalidad") or {}
+        paises = previo_demo.get("nacionalidades") or {}
+
+    try:
+        ieca_extranjeros = sima.poblacion_extranjera()
+    except Exception as exc:  # noqa: BLE001 — cierra el hueco 2023-hoy, no es imprescindible
+        log.warning("ficha del SIMA no disponible: %s", exc)
+        ieca_extranjeros = (leer_previo("demografia") or {}).get("extranjeros_ieca") or {}
+
+    # Contexto territorial de la renta: misma operación del INE que la municipal,
+    # de modo que la comparación es homogénea en definición, fuente y año.
+    try:
+        renta_contexto = ine_tempus.renta_comparada()
+    except Exception as exc:  # noqa: BLE001 — indicador de contexto
+        log.warning("renta de las demarcaciones superiores no disponible: %s", exc)
+        renta_contexto = (leer_previo("demografia") or {}).get("renta_contexto") or {}
+
     serie_temporal(INFORME, "padron.total", padron["total"], minimo=1000, maximo=50000)
     for clave, puntos in renta.items():
         serie_temporal(INFORME, f"renta.{clave}", puntos, minimo=0, maximo=500000)
@@ -93,14 +119,23 @@ def bloque_demografia() -> dict[str, Any]:
         serie_temporal(INFORME, "renta.p80_p20", desigualdad["p80_p20"], minimo=0, maximo=50)
 
     ultimo = padron["total"][-1] if padron["total"] else None
+    if nacionalidad.get("extranjera", {}).get("total"):
+        serie_temporal(INFORME, "padron.extranjeros", nacionalidad["extranjera"]["total"],
+                       minimo=0, maximo=20000)
+
     return {
         "padron": padron,
+        "nacionalidad": nacionalidad,
+        "nacionalidades": paises,
+        "extranjeros_ieca": ieca_extranjeros,
         "renta": renta,
+        "renta_contexto": renta_contexto,
         "desigualdad": desigualdad,
         "poblacion_actual": ultimo,
-        "fuente": "INE · Cifras oficiales de población (tabla 2882), Atlas de Distribución "
-                  "de Renta de los Hogares (tabla 30824) e índice de Gini y P80/P20 "
-                  "(tabla 37677)",
+        "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad "
+                  "(tablas 33571 y 33572), Atlas de Distribución de Renta de los Hogares "
+                  "(tablas 30824 y 53689) e índice de Gini y P80/P20 (tabla 37677) · "
+                  "IECA/SIMA para la población extranjera posterior a 2022",
         "ambito": "municipal",
         "actualizado": SELLO,
     }
@@ -211,10 +246,32 @@ def bloque_trabajo() -> dict[str, Any]:
 
 # ---------------------------------------------------------------- Bloque 5 y 8
 def bloque_economia() -> dict[str, Any]:
-    """Renta, actividad económica y finanzas municipales."""
+    """Tejido empresarial, trabajo autónomo y finanzas municipales."""
     deuda = hacienda.deuda_viva()
     serie_temporal(INFORME, "hacienda.deuda_viva", deuda["serie"], minimo=0)
+
+    try:
+        empresas = ine_tempus.empresas()
+        serie_temporal(INFORME, "dirce.empresas", empresas["total"], minimo=0, maximo=20000)
+    except Exception as exc:  # noqa: BLE001 — indicador secundario del bloque
+        log.warning("DIRCE no disponible: %s", exc)
+        empresas = (leer_previo("economia") or {}).get("empresas") or {}
+
+    # BADEA obliga a una petición por mes, así que la serie se descarga de forma
+    # incremental sobre lo ya publicado: en la ejecución mensual son uno o dos meses.
+    try:
+        regimenes = badea.afiliacion_por_regimen((leer_previo("economia") or {}).get("afiliacion_regimen"))
+        serie_temporal(INFORME, "badea.autonomos",
+                       [{"t": p["t"], "v": p["autonomos"]} for p in regimenes["serie"]
+                        if p.get("autonomos") is not None],
+                       minimo=0, maximo=10000, mensual=False)
+    except Exception as exc:  # noqa: BLE001 — indicador secundario del bloque
+        log.warning("afiliación por régimen no disponible: %s", exc)
+        regimenes = (leer_previo("economia") or {}).get("afiliacion_regimen") or {}
+
     return {
+        "empresas": empresas,
+        "afiliacion_regimen": regimenes,
         "deuda_viva": deuda,
         "pendientes": [
             {"indicador": "Periodo medio de pago a proveedores",
@@ -228,7 +285,9 @@ def bloque_economia() -> dict[str, Any]:
                        "tienen umbral poblacional que Benahavís no alcanza",
              "organismo": "Ministerio de Vivienda y Agenda Urbana"},
         ],
-        "fuente": "Ministerio de Hacienda · Deuda viva de las entidades locales",
+        "fuente": "INE · DIRCE, empresas por municipio (tabla 4721) · IECA/BADEA, "
+                  "afiliaciones por régimen (consulta 876) · Ministerio de Hacienda, "
+                  "deuda viva de las entidades locales",
         "ambito": "municipal",
         "actualizado": SELLO,
     }
@@ -354,7 +413,7 @@ BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
     2: ("Oferta turística", "oferta", bloque_oferta),
     3: ("Demanda turística", "demanda", bloque_demanda),
     4: ("Mercado de trabajo", "trabajo", bloque_trabajo),
-    5: ("Economía y finanzas municipales", "economia", bloque_economia),
+    5: ("Empresas, autónomos y finanzas municipales", "economia", bloque_economia),
     6: ("Clima", "clima", bloque_clima),
     7: ("Conteo de visitantes (Decreto 72/2017)", "visitantes", bloque_visitantes),
     8: ("Big Data de Turismo Costa del Sol", "costadelsol", bloque_costadelsol),

@@ -174,6 +174,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -.015em; }
 .obs-card-head .t { flex: 1 1 auto; min-width: 0; }
 .obs-card-head h3 { font-size: 14.5px; }
 .obs-card-head .cs { color: var(--ink-mut); font-size: 12px; margin-top: 3px; }
+.obs-card-ctrl { display: inline-flex; align-items: center; gap: 7px; flex: 0 0 auto; }
+.obs-card-ctrl span { color: var(--ink-mut); font-size: 11.5px; font-weight: 600; letter-spacing: .01em; }
+.obs-card-ctrl .obs-select { min-width: 96px; }
 .obs-card-tools { display: flex; gap: 3px; flex: none; }
 .obs-icon-btn {
   appearance: none; background: none; border: 1px solid transparent; border-radius: var(--r-sm);

@@ -124,7 +124,12 @@
       axisTick: { show: false },
       axisLabel: {
         color: T.mut, fontSize: 11, fontFamily: T.font,
-        hideOverlap: true, margin: 10,
+        /* `xTodas` obliga a rotular las doce categorías (los meses del año, los
+           días de la semana): son pocas y con nombre corto, y saltarse una de
+           cada dos deja el eje ilegible. Fuera de ese caso manda `hideOverlap`,
+           que es lo correcto en una serie larga. */
+        interval: spec.xTodas ? 0 : 'auto',
+        hideOverlap: !spec.xTodas, margin: 10,
         rotate: spec.rotarX || 0
       },
       splitLine: { show: false }
@@ -150,7 +155,18 @@
       axisTick: { show: false },
       axisLabel: {
         color: T.mut, fontSize: 11, fontFamily: T.font,
-        formatter: function (v) { return spec.yTick ? spec.yTick(v) : (spec.yFormat === 'pct' ? fmt.pct(v, 0) : fmt.abbr(v)); }
+        /* `abbr` redondea a entero, y en una serie de recorrido corto —la
+           temperatura media anual va de 17 a 19— eso repite el mismo rótulo en
+           varias marcas. En esas series el decimal solo se escribe donde hace
+           falta: «18» y «18,5», nunca «50,0» en una escala que va de diez en diez. */
+        formatter: function (v) {
+          if (spec.yTick) return spec.yTick(v);
+          if (spec.yFormat === 'pct') return fmt.pct(v, 0);
+          if (spec.yFormat === 'dec1' || spec.yFormat === 'dec2') {
+            return v % 1 === 0 ? fmt.num(v, 0) : fmt.num(v, spec.yFormat === 'dec2' ? 2 : 1);
+          }
+          return fmt.abbr(v);
+        }
       },
       /* Rejilla: hairline sólida, un paso por encima de la superficie. Nunca discontinua. */
       splitLine: { lineStyle: { color: T.grid, width: 1, type: 'solid' } }
@@ -374,10 +390,17 @@
     if (vacio) { Obs.mensaje(nodo, 'vacio', spec.vacioTxt || 'Sin datos publicados para este indicador.'); return null; }
 
     nodo.classList.remove('is-loading');
+    /* Volver a dibujar sobre el mismo contenedor —una tarjeta con selector, un
+       mensaje de vacío que se sustituye por datos— exige soltar la instancia
+       anterior ANTES de vaciar el nodo: si se vacía sin más, ECharts sigue
+       teniendo por buena una instancia cuyo lienzo ya no está en el documento y
+       la tarjeta se queda en blanco sin dar error. */
+    var previa = echarts.getInstanceByDom(nodo);
+    if (previa) previa.dispose();
     nodo.innerHTML = '';
 
     /* Canvas y no SVG: es lo que permite exportar el PNG que acaba en los informes. */
-    var inst = echarts.getInstanceByDom(nodo) || echarts.init(nodo, null, { renderer: 'canvas', devicePixelRatio: 2 });
+    var inst = echarts.init(nodo, null, { renderer: 'canvas', devicePixelRatio: 2 });
     inst.setOption(construir(spec), true);
 
     /* La spec viaja con el nodo: la vista de tabla y la exportación la releen. */

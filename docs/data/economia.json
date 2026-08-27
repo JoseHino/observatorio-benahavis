@@ -1,4 +1,1499 @@
 {
+ "empresas": {
+  "total": [
+   {
+    "t": "2012",
+    "v": 495.0
+   },
+   {
+    "t": "2013",
+    "v": 485.0
+   },
+   {
+    "t": "2014",
+    "v": 516.0
+   },
+   {
+    "t": "2015",
+    "v": 536.0
+   },
+   {
+    "t": "2016",
+    "v": 588.0
+   },
+   {
+    "t": "2017",
+    "v": 648.0
+   },
+   {
+    "t": "2018",
+    "v": 710.0
+   },
+   {
+    "t": "2019",
+    "v": 766.0
+   },
+   {
+    "t": "2020",
+    "v": 841.0
+   },
+   {
+    "t": "2021",
+    "v": 854.0
+   },
+   {
+    "t": "2022",
+    "v": 967.0
+   },
+   {
+    "t": "2023",
+    "v": 998.0
+   },
+   {
+    "t": "2024",
+    "v": 1106.0
+   },
+   {
+    "t": "2025",
+    "v": 1200.0
+   }
+  ],
+  "por_sector": {
+   "Industrias extractivas (excepto construcción)": [
+    {
+     "t": "2012",
+     "v": 8.0
+    },
+    {
+     "t": "2013",
+     "v": 7.0
+    },
+    {
+     "t": "2014",
+     "v": 9.0
+    },
+    {
+     "t": "2015",
+     "v": 10.0
+    },
+    {
+     "t": "2016",
+     "v": 10.0
+    },
+    {
+     "t": "2017",
+     "v": 10.0
+    },
+    {
+     "t": "2018",
+     "v": 12.0
+    },
+    {
+     "t": "2019",
+     "v": 14.0
+    },
+    {
+     "t": "2020",
+     "v": 13.0
+    },
+    {
+     "t": "2021",
+     "v": 10.0
+    },
+    {
+     "t": "2022",
+     "v": 11.0
+    },
+    {
+     "t": "2023",
+     "v": 12.0
+    },
+    {
+     "t": "2024",
+     "v": 12.0
+    },
+    {
+     "t": "2025",
+     "v": 9.0
+    }
+   ],
+   "Construcción": [
+    {
+     "t": "2012",
+     "v": 98.0
+    },
+    {
+     "t": "2013",
+     "v": 97.0
+    },
+    {
+     "t": "2014",
+     "v": 93.0
+    },
+    {
+     "t": "2015",
+     "v": 91.0
+    },
+    {
+     "t": "2016",
+     "v": 99.0
+    },
+    {
+     "t": "2017",
+     "v": 104.0
+    },
+    {
+     "t": "2018",
+     "v": 113.0
+    },
+    {
+     "t": "2019",
+     "v": 113.0
+    },
+    {
+     "t": "2020",
+     "v": 130.0
+    },
+    {
+     "t": "2021",
+     "v": 134.0
+    },
+    {
+     "t": "2022",
+     "v": 156.0
+    },
+    {
+     "t": "2023",
+     "v": 149.0
+    },
+    {
+     "t": "2024",
+     "v": 174.0
+    },
+    {
+     "t": "2025",
+     "v": 180.0
+    }
+   ],
+   "Comercio al por mayor y al por menor; reparación de vehículos de motor y motocicletas; transporte y almacenamiento; hostelería": [
+    {
+     "t": "2012",
+     "v": 120.0
+    },
+    {
+     "t": "2013",
+     "v": 145.0
+    },
+    {
+     "t": "2014",
+     "v": 138.0
+    },
+    {
+     "t": "2015",
+     "v": 127.0
+    },
+    {
+     "t": "2016",
+     "v": 130.0
+    },
+    {
+     "t": "2017",
+     "v": 125.0
+    },
+    {
+     "t": "2018",
+     "v": 138.0
+    },
+    {
+     "t": "2019",
+     "v": 137.0
+    },
+    {
+     "t": "2020",
+     "v": 161.0
+    },
+    {
+     "t": "2021",
+     "v": 167.0
+    },
+    {
+     "t": "2022",
+     "v": 181.0
+    },
+    {
+     "t": "2023",
+     "v": 184.0
+    },
+    {
+     "t": "2024",
+     "v": 185.0
+    },
+    {
+     "t": "2025",
+     "v": 203.0
+    }
+   ],
+   "Información y comunicaciones": [
+    {
+     "t": "2012",
+     "v": 9.0
+    },
+    {
+     "t": "2013",
+     "v": 9.0
+    },
+    {
+     "t": "2014",
+     "v": 7.0
+    },
+    {
+     "t": "2015",
+     "v": 4.0
+    },
+    {
+     "t": "2016",
+     "v": 6.0
+    },
+    {
+     "t": "2017",
+     "v": 12.0
+    },
+    {
+     "t": "2018",
+     "v": 15.0
+    },
+    {
+     "t": "2019",
+     "v": 12.0
+    },
+    {
+     "t": "2020",
+     "v": 19.0
+    },
+    {
+     "t": "2021",
+     "v": 20.0
+    },
+    {
+     "t": "2022",
+     "v": 24.0
+    },
+    {
+     "t": "2023",
+     "v": 19.0
+    },
+    {
+     "t": "2024",
+     "v": 31.0
+    },
+    {
+     "t": "2025",
+     "v": 34.0
+    }
+   ],
+   "Actividades financieras y de seguros": [
+    {
+     "t": "2012",
+     "v": 9.0
+    },
+    {
+     "t": "2013",
+     "v": 8.0
+    },
+    {
+     "t": "2014",
+     "v": 9.0
+    },
+    {
+     "t": "2015",
+     "v": 11.0
+    },
+    {
+     "t": "2016",
+     "v": 5.0
+    },
+    {
+     "t": "2017",
+     "v": 13.0
+    },
+    {
+     "t": "2018",
+     "v": 14.0
+    },
+    {
+     "t": "2019",
+     "v": 16.0
+    },
+    {
+     "t": "2020",
+     "v": 14.0
+    },
+    {
+     "t": "2021",
+     "v": 19.0
+    },
+    {
+     "t": "2022",
+     "v": 25.0
+    },
+    {
+     "t": "2023",
+     "v": 22.0
+    },
+    {
+     "t": "2024",
+     "v": 22.0
+    },
+    {
+     "t": "2025",
+     "v": 26.0
+    }
+   ],
+   "Actividades inmobiliarias": [
+    {
+     "t": "2012",
+     "v": 64.0
+    },
+    {
+     "t": "2013",
+     "v": 62.0
+    },
+    {
+     "t": "2014",
+     "v": 72.0
+    },
+    {
+     "t": "2015",
+     "v": 82.0
+    },
+    {
+     "t": "2016",
+     "v": 101.0
+    },
+    {
+     "t": "2017",
+     "v": 121.0
+    },
+    {
+     "t": "2018",
+     "v": 127.0
+    },
+    {
+     "t": "2019",
+     "v": 156.0
+    },
+    {
+     "t": "2020",
+     "v": 165.0
+    },
+    {
+     "t": "2021",
+     "v": 170.0
+    },
+    {
+     "t": "2022",
+     "v": 200.0
+    },
+    {
+     "t": "2023",
+     "v": 208.0
+    },
+    {
+     "t": "2024",
+     "v": 233.0
+    },
+    {
+     "t": "2025",
+     "v": 259.0
+    }
+   ],
+   "Actividades profesionales, científicas y técnicas; actividades administrativas y servicios auxiliares": [
+    {
+     "t": "2012",
+     "v": 122.0
+    },
+    {
+     "t": "2013",
+     "v": 105.0
+    },
+    {
+     "t": "2014",
+     "v": 127.0
+    },
+    {
+     "t": "2015",
+     "v": 143.0
+    },
+    {
+     "t": "2016",
+     "v": 160.0
+    },
+    {
+     "t": "2017",
+     "v": 164.0
+    },
+    {
+     "t": "2018",
+     "v": 193.0
+    },
+    {
+     "t": "2019",
+     "v": 216.0
+    },
+    {
+     "t": "2020",
+     "v": 212.0
+    },
+    {
+     "t": "2021",
+     "v": 205.0
+    },
+    {
+     "t": "2022",
+     "v": 221.0
+    },
+    {
+     "t": "2023",
+     "v": 244.0
+    },
+    {
+     "t": "2024",
+     "v": 272.0
+    },
+    {
+     "t": "2025",
+     "v": 312.0
+    }
+   ],
+   "Secciones P y Q": [
+    {
+     "t": "2012",
+     "v": 24.0
+    },
+    {
+     "t": "2013",
+     "v": 20.0
+    },
+    {
+     "t": "2014",
+     "v": 25.0
+    },
+    {
+     "t": "2015",
+     "v": 30.0
+    },
+    {
+     "t": "2016",
+     "v": 37.0
+    },
+    {
+     "t": "2017",
+     "v": 44.0
+    },
+    {
+     "t": "2018",
+     "v": 41.0
+    },
+    {
+     "t": "2019",
+     "v": 43.0
+    },
+    {
+     "t": "2020",
+     "v": 48.0
+    },
+    {
+     "t": "2021",
+     "v": 52.0
+    },
+    {
+     "t": "2022",
+     "v": 56.0
+    },
+    {
+     "t": "2023",
+     "v": 61.0
+    },
+    {
+     "t": "2024",
+     "v": 66.0
+    },
+    {
+     "t": "2025",
+     "v": 71.0
+    }
+   ],
+   "Secciones R y S": [
+    {
+     "t": "2012",
+     "v": 41.0
+    },
+    {
+     "t": "2013",
+     "v": 32.0
+    },
+    {
+     "t": "2014",
+     "v": 36.0
+    },
+    {
+     "t": "2015",
+     "v": 38.0
+    },
+    {
+     "t": "2016",
+     "v": 40.0
+    },
+    {
+     "t": "2017",
+     "v": 55.0
+    },
+    {
+     "t": "2018",
+     "v": 57.0
+    },
+    {
+     "t": "2019",
+     "v": 59.0
+    },
+    {
+     "t": "2020",
+     "v": 79.0
+    },
+    {
+     "t": "2021",
+     "v": 77.0
+    },
+    {
+     "t": "2022",
+     "v": 93.0
+    },
+    {
+     "t": "2023",
+     "v": 99.0
+    },
+    {
+     "t": "2024",
+     "v": 111.0
+    },
+    {
+     "t": "2025",
+     "v": 106.0
+    }
+   ],
+   "Resto de servicios": [
+    {
+     "t": "2012",
+     "v": 269.0
+    },
+    {
+     "t": "2013",
+     "v": 236.0
+    },
+    {
+     "t": "2014",
+     "v": 276.0
+    },
+    {
+     "t": "2015",
+     "v": 308.0
+    },
+    {
+     "t": "2016",
+     "v": 349.0
+    },
+    {
+     "t": "2017",
+     "v": 409.0
+    },
+    {
+     "t": "2018",
+     "v": 447.0
+    },
+    {
+     "t": "2019",
+     "v": 502.0
+    },
+    {
+     "t": "2020",
+     "v": 537.0
+    },
+    {
+     "t": "2021",
+     "v": 543.0
+    },
+    {
+     "t": "2022",
+     "v": 619.0
+    },
+    {
+     "t": "2023",
+     "v": 653.0
+    },
+    {
+     "t": "2024",
+     "v": 735.0
+    },
+    {
+     "t": "2025",
+     "v": 808.0
+    }
+   ]
+  }
+ },
+ "afiliacion_regimen": {
+  "serie": [
+   {
+    "t": "2012-03",
+    "general": 798,
+    "agrario": 15,
+    "autonomos": 493,
+    "hogar": 72,
+    "total": 1378
+   },
+   {
+    "t": "2012-06",
+    "general": 857,
+    "agrario": 14,
+    "autonomos": 514,
+    "hogar": 71,
+    "total": 1456
+   },
+   {
+    "t": "2012-09",
+    "general": 878,
+    "agrario": 14,
+    "autonomos": 541,
+    "hogar": 69,
+    "total": 1502
+   },
+   {
+    "t": "2012-12",
+    "general": 791,
+    "agrario": 15,
+    "autonomos": 544,
+    "hogar": 67,
+    "total": 1417
+   },
+   {
+    "t": "2013-03",
+    "general": 809,
+    "agrario": 15,
+    "autonomos": 539,
+    "hogar": 75,
+    "total": 1438
+   },
+   {
+    "t": "2013-06",
+    "general": 858,
+    "agrario": 13,
+    "autonomos": 550,
+    "hogar": 77,
+    "total": 1498
+   },
+   {
+    "t": "2013-09",
+    "general": 880,
+    "agrario": 13,
+    "autonomos": 559,
+    "hogar": 87,
+    "total": 1539
+   },
+   {
+    "t": "2013-12",
+    "general": 827,
+    "agrario": 15,
+    "autonomos": 564,
+    "hogar": 83,
+    "total": 1489
+   },
+   {
+    "t": "2014-03",
+    "general": 869,
+    "agrario": 15,
+    "autonomos": 584,
+    "hogar": 83,
+    "total": 1551
+   },
+   {
+    "t": "2014-06",
+    "general": 940,
+    "agrario": 13,
+    "autonomos": 606,
+    "hogar": 77,
+    "total": 1636
+   },
+   {
+    "t": "2014-09",
+    "general": 943,
+    "agrario": 10,
+    "autonomos": 616,
+    "hogar": 78,
+    "total": 1647
+   },
+   {
+    "t": "2014-12",
+    "general": 906,
+    "agrario": 13,
+    "autonomos": 616,
+    "hogar": 77,
+    "total": 1612
+   },
+   {
+    "t": "2015-03",
+    "general": 957,
+    "agrario": 12,
+    "autonomos": 629,
+    "mar": null,
+    "hogar": 75,
+    "total": 1674
+   },
+   {
+    "t": "2015-06",
+    "general": 1026,
+    "agrario": 9,
+    "autonomos": 640,
+    "mar": null,
+    "hogar": 75,
+    "total": 1751
+   },
+   {
+    "t": "2015-09",
+    "general": 1011,
+    "agrario": 9,
+    "autonomos": 651,
+    "mar": null,
+    "hogar": 72,
+    "total": 1744
+   },
+   {
+    "t": "2015-12",
+    "general": 939,
+    "agrario": 14,
+    "autonomos": 664,
+    "mar": null,
+    "hogar": 74,
+    "total": 1692
+   },
+   {
+    "t": "2016-03",
+    "general": 1000,
+    "agrario": 11,
+    "autonomos": 687,
+    "mar": null,
+    "hogar": 70,
+    "total": 1769
+   },
+   {
+    "t": "2016-06",
+    "general": 1049,
+    "agrario": 10,
+    "autonomos": 724,
+    "hogar": 74,
+    "total": 1857
+   },
+   {
+    "t": "2016-09",
+    "general": 1059,
+    "agrario": 13,
+    "autonomos": 733,
+    "hogar": 79,
+    "total": 1884
+   },
+   {
+    "t": "2016-12",
+    "general": 1002,
+    "agrario": 14,
+    "autonomos": 736,
+    "hogar": 75,
+    "total": 1827
+   },
+   {
+    "t": "2017-03",
+    "general": 1065,
+    "agrario": 15,
+    "autonomos": 758,
+    "hogar": 72,
+    "total": 1910
+   },
+   {
+    "t": "2017-06",
+    "general": 1163,
+    "agrario": 14,
+    "autonomos": 779,
+    "mar": null,
+    "hogar": 69,
+    "total": 2027
+   },
+   {
+    "t": "2017-09",
+    "general": 1153,
+    "agrario": 13,
+    "autonomos": 826,
+    "mar": null,
+    "hogar": 68,
+    "total": 2063
+   },
+   {
+    "t": "2017-12",
+    "general": 1054,
+    "agrario": 15,
+    "autonomos": 838,
+    "hogar": 68,
+    "total": 1975
+   },
+   {
+    "t": "2018-03",
+    "general": 1125,
+    "agrario": 15,
+    "autonomos": 871,
+    "mar": null,
+    "hogar": 73,
+    "total": 2086
+   },
+   {
+    "t": "2018-06",
+    "general": 1226,
+    "agrario": 13,
+    "autonomos": 899,
+    "mar": null,
+    "hogar": 74,
+    "total": 2215
+   },
+   {
+    "t": "2018-09",
+    "general": 1182,
+    "agrario": 11,
+    "autonomos": 911,
+    "mar": null,
+    "hogar": 74,
+    "total": 2179
+   },
+   {
+    "t": "2018-12",
+    "general": 1104,
+    "agrario": 9,
+    "autonomos": 902,
+    "hogar": 69,
+    "total": 2084
+   },
+   {
+    "t": "2019-03",
+    "general": 1179,
+    "agrario": 10,
+    "autonomos": 922,
+    "hogar": 66,
+    "total": 2177
+   },
+   {
+    "t": "2019-06",
+    "general": 1290,
+    "agrario": 10,
+    "autonomos": 938,
+    "mar": null,
+    "hogar": 72,
+    "total": 2311
+   },
+   {
+    "t": "2019-09",
+    "general": 1241,
+    "agrario": 10,
+    "autonomos": 961,
+    "mar": null,
+    "hogar": 68,
+    "total": 2281
+   },
+   {
+    "t": "2019-12",
+    "general": 1150,
+    "agrario": 12,
+    "autonomos": 968,
+    "hogar": 68,
+    "total": 2198
+   },
+   {
+    "t": "2020-03",
+    "general": 1073,
+    "agrario": 11,
+    "autonomos": 963,
+    "hogar": 70,
+    "total": 2117
+   },
+   {
+    "t": "2020-06",
+    "general": 1076,
+    "agrario": 12,
+    "autonomos": 976,
+    "hogar": 71,
+    "total": 2135
+   },
+   {
+    "t": "2020-09",
+    "general": 1138,
+    "agrario": 12,
+    "autonomos": 983,
+    "mar": null,
+    "hogar": 71,
+    "total": 2206
+   },
+   {
+    "t": "2020-12",
+    "general": 1116,
+    "agrario": 17,
+    "autonomos": 1011,
+    "hogar": 70,
+    "total": 2214
+   },
+   {
+    "t": "2021-03",
+    "general": 1131,
+    "agrario": 14,
+    "autonomos": 1033,
+    "hogar": 69,
+    "total": 2247
+   },
+   {
+    "t": "2021-06",
+    "general": 1240,
+    "agrario": 15,
+    "autonomos": 1095,
+    "mar": null,
+    "hogar": 70,
+    "total": 2421
+   },
+   {
+    "t": "2021-07",
+    "general": 1311,
+    "agrario": 12,
+    "autonomos": 1107,
+    "mar": null,
+    "hogar": 73,
+    "total": 2504
+   },
+   {
+    "t": "2021-08",
+    "general": 1330,
+    "agrario": 10,
+    "autonomos": 1101,
+    "mar": null,
+    "hogar": 78,
+    "total": 2520
+   },
+   {
+    "t": "2021-09",
+    "general": 1279,
+    "agrario": 11,
+    "autonomos": 1098,
+    "mar": null,
+    "hogar": 77,
+    "total": 2466
+   },
+   {
+    "t": "2021-10",
+    "general": 1298,
+    "agrario": 11,
+    "autonomos": 1114,
+    "mar": null,
+    "hogar": 75,
+    "total": 2499
+   },
+   {
+    "t": "2021-11",
+    "general": 1252,
+    "agrario": 12,
+    "autonomos": 1113,
+    "hogar": 75,
+    "total": 2452
+   },
+   {
+    "t": "2021-12",
+    "general": 1242,
+    "agrario": 13,
+    "autonomos": 1107,
+    "hogar": 74,
+    "total": 2436
+   },
+   {
+    "t": "2022-01",
+    "general": 1219,
+    "agrario": 15,
+    "autonomos": 1107,
+    "hogar": 73,
+    "total": 2414
+   },
+   {
+    "t": "2022-02",
+    "general": 1302,
+    "agrario": 15,
+    "autonomos": 1118,
+    "hogar": 72,
+    "total": 2507
+   },
+   {
+    "t": "2022-03",
+    "general": 1328,
+    "agrario": 15,
+    "autonomos": 1096,
+    "mar": null,
+    "hogar": 74,
+    "total": 2514
+   },
+   {
+    "t": "2022-04",
+    "general": 1389,
+    "agrario": 15,
+    "autonomos": 1115,
+    "mar": null,
+    "hogar": 77,
+    "total": 2597
+   },
+   {
+    "t": "2022-05",
+    "general": 1431,
+    "agrario": 15,
+    "autonomos": 1122,
+    "mar": null,
+    "hogar": 74,
+    "total": 2643
+   },
+   {
+    "t": "2022-06",
+    "general": 1428,
+    "agrario": 13,
+    "autonomos": 1125,
+    "mar": null,
+    "hogar": 70,
+    "total": 2637
+   },
+   {
+    "t": "2022-07",
+    "general": 1490,
+    "agrario": 13,
+    "autonomos": 1155,
+    "mar": null,
+    "hogar": 72,
+    "total": 2731
+   },
+   {
+    "t": "2022-08",
+    "general": 1475,
+    "agrario": 12,
+    "autonomos": 1146,
+    "mar": null,
+    "hogar": 71,
+    "total": 2705
+   },
+   {
+    "t": "2022-09",
+    "general": 1430,
+    "agrario": 12,
+    "autonomos": 1142,
+    "mar": null,
+    "hogar": 71,
+    "total": 2656
+   },
+   {
+    "t": "2022-10",
+    "general": 1403,
+    "agrario": 11,
+    "autonomos": 1135,
+    "mar": null,
+    "hogar": 68,
+    "total": 2618
+   },
+   {
+    "t": "2022-11",
+    "general": 1370,
+    "agrario": 12,
+    "autonomos": 1126,
+    "mar": null,
+    "hogar": 66,
+    "total": 2575
+   },
+   {
+    "t": "2022-12",
+    "general": 1384,
+    "agrario": 16,
+    "autonomos": 1129,
+    "hogar": 64,
+    "total": 2593
+   },
+   {
+    "t": "2023-01",
+    "general": 1364,
+    "agrario": 16,
+    "autonomos": 1132,
+    "hogar": 68,
+    "total": 2580
+   },
+   {
+    "t": "2023-02",
+    "general": 1382,
+    "agrario": 17,
+    "autonomos": 1143,
+    "hogar": 66,
+    "total": 2608
+   },
+   {
+    "t": "2023-03",
+    "general": 1419,
+    "agrario": 15,
+    "autonomos": 1160,
+    "mar": null,
+    "hogar": 66,
+    "total": 2661
+   },
+   {
+    "t": "2023-04",
+    "general": 1467,
+    "agrario": 16,
+    "autonomos": 1179,
+    "mar": null,
+    "hogar": 65,
+    "total": 2728
+   },
+   {
+    "t": "2023-05",
+    "general": 1492,
+    "agrario": 17,
+    "autonomos": 1190,
+    "mar": null,
+    "hogar": 67,
+    "total": 2767
+   },
+   {
+    "t": "2023-06",
+    "general": 1519,
+    "agrario": 15,
+    "autonomos": 1200,
+    "mar": null,
+    "hogar": 68,
+    "total": 2803
+   },
+   {
+    "t": "2023-07",
+    "general": 1559,
+    "agrario": 15,
+    "autonomos": 1216,
+    "mar": null,
+    "hogar": 70,
+    "total": 2861
+   },
+   {
+    "t": "2023-08",
+    "general": 1527,
+    "agrario": 12,
+    "autonomos": 1215,
+    "mar": null,
+    "hogar": 69,
+    "total": 2824
+   },
+   {
+    "t": "2023-09",
+    "general": 1495,
+    "agrario": 12,
+    "autonomos": 1239,
+    "mar": null,
+    "hogar": 71,
+    "total": 2818
+   },
+   {
+    "t": "2023-10",
+    "general": 1453,
+    "agrario": 12,
+    "autonomos": 1239,
+    "mar": null,
+    "hogar": 71,
+    "total": 2776
+   },
+   {
+    "t": "2023-11",
+    "general": 1407,
+    "agrario": 14,
+    "autonomos": 1246,
+    "hogar": 71,
+    "total": 2738
+   },
+   {
+    "t": "2023-12",
+    "general": 1411,
+    "agrario": 15,
+    "autonomos": 1246,
+    "hogar": 74,
+    "total": 2746
+   },
+   {
+    "t": "2024-01",
+    "general": 1363,
+    "agrario": 12,
+    "autonomos": 1218,
+    "hogar": 73,
+    "total": 2666
+   },
+   {
+    "t": "2024-02",
+    "general": 1394,
+    "agrario": 12,
+    "autonomos": 1243,
+    "hogar": 71,
+    "total": 2720
+   },
+   {
+    "t": "2024-03",
+    "general": 1440,
+    "agrario": 11,
+    "autonomos": 1259,
+    "mar": null,
+    "hogar": 70,
+    "total": 2781
+   },
+   {
+    "t": "2024-04",
+    "general": 1476,
+    "agrario": 12,
+    "autonomos": 1273,
+    "mar": null,
+    "hogar": 73,
+    "total": 2835
+   },
+   {
+    "t": "2024-05",
+    "general": 1531,
+    "agrario": 12,
+    "autonomos": 1291,
+    "mar": null,
+    "hogar": 72,
+    "total": 2907
+   },
+   {
+    "t": "2024-06",
+    "general": 1556,
+    "agrario": 11,
+    "autonomos": 1307,
+    "mar": null,
+    "hogar": 72,
+    "total": 2947
+   },
+   {
+    "t": "2024-07",
+    "general": 1585,
+    "agrario": 10,
+    "autonomos": 1312,
+    "mar": null,
+    "hogar": 72,
+    "total": 2980
+   },
+   {
+    "t": "2024-08",
+    "general": 1592,
+    "agrario": 10,
+    "autonomos": 1338,
+    "mar": null,
+    "hogar": 74,
+    "total": 3016
+   },
+   {
+    "t": "2024-09",
+    "general": 1510,
+    "agrario": 10,
+    "autonomos": 1356,
+    "mar": null,
+    "hogar": 73,
+    "total": 2951
+   },
+   {
+    "t": "2024-10",
+    "general": 1469,
+    "agrario": 10,
+    "autonomos": 1355,
+    "mar": null,
+    "hogar": 74,
+    "total": 2910
+   },
+   {
+    "t": "2024-11",
+    "general": 1440,
+    "agrario": 10,
+    "autonomos": 1354,
+    "mar": null,
+    "hogar": 78,
+    "total": 2884
+   },
+   {
+    "t": "2024-12",
+    "general": 1445,
+    "agrario": 11,
+    "autonomos": 1349,
+    "mar": null,
+    "hogar": 78,
+    "total": 2884
+   },
+   {
+    "t": "2025-01",
+    "general": 1433,
+    "agrario": 10,
+    "autonomos": 1355,
+    "mar": null,
+    "hogar": 73,
+    "total": 2872
+   },
+   {
+    "t": "2025-02",
+    "general": 1453,
+    "agrario": 10,
+    "autonomos": 1359,
+    "mar": null,
+    "hogar": 71,
+    "total": 2894
+   },
+   {
+    "t": "2025-03",
+    "general": 1488,
+    "agrario": 10,
+    "autonomos": 1374,
+    "mar": null,
+    "hogar": 72,
+    "total": 2946
+   },
+   {
+    "t": "2025-04",
+    "general": 1547,
+    "agrario": 10,
+    "autonomos": 1386,
+    "mar": null,
+    "hogar": 72,
+    "total": 3017
+   },
+   {
+    "t": "2025-05",
+    "general": 1602,
+    "agrario": 10,
+    "autonomos": 1377,
+    "mar": null,
+    "hogar": 72,
+    "total": 3063
+   },
+   {
+    "t": "2025-06",
+    "general": 1613,
+    "agrario": 10,
+    "autonomos": 1375,
+    "mar": null,
+    "hogar": 73,
+    "total": 3073
+   },
+   {
+    "t": "2025-07",
+    "general": 1741,
+    "agrario": 8,
+    "autonomos": 1421,
+    "mar": null,
+    "hogar": 79,
+    "total": 3251
+   },
+   {
+    "t": "2025-08",
+    "general": 1744,
+    "agrario": 8,
+    "autonomos": 1432,
+    "mar": null,
+    "hogar": 79,
+    "total": 3265
+   },
+   {
+    "t": "2025-09",
+    "general": 1617,
+    "agrario": 8,
+    "autonomos": 1429,
+    "mar": null,
+    "hogar": 73,
+    "total": 3129
+   },
+   {
+    "t": "2025-10",
+    "general": 1595,
+    "agrario": 8,
+    "autonomos": 1432,
+    "mar": null,
+    "hogar": 74,
+    "total": 3111
+   },
+   {
+    "t": "2025-11",
+    "general": 1569,
+    "agrario": 9,
+    "autonomos": 1459,
+    "mar": null,
+    "hogar": 74,
+    "total": 3113
+   },
+   {
+    "t": "2025-12",
+    "general": 1578,
+    "agrario": 12,
+    "autonomos": 1443,
+    "mar": null,
+    "hogar": 75,
+    "total": 3109
+   },
+   {
+    "t": "2026-01",
+    "general": 1520,
+    "agrario": 11,
+    "autonomos": 1460,
+    "mar": null,
+    "hogar": 78,
+    "total": 3070
+   },
+   {
+    "t": "2026-02",
+    "general": 1564,
+    "agrario": 10,
+    "autonomos": 1459,
+    "mar": null,
+    "hogar": 79,
+    "total": 3113
+   },
+   {
+    "t": "2026-03",
+    "general": 1628,
+    "agrario": 10,
+    "autonomos": 1449,
+    "mar": null,
+    "hogar": 79,
+    "total": 3168
+   },
+   {
+    "t": "2026-04",
+    "general": 1677,
+    "agrario": 8,
+    "autonomos": 1468,
+    "mar": null,
+    "hogar": 81,
+    "total": 3236
+   },
+   {
+    "t": "2026-05",
+    "general": 1713,
+    "agrario": 7,
+    "autonomos": 1481,
+    "mar": null,
+    "hogar": 85,
+    "total": 3288
+   },
+   {
+    "t": "2026-06",
+    "general": 1750,
+    "agrario": 8,
+    "autonomos": 1484,
+    "mar": null,
+    "hogar": 84,
+    "total": 3328
+   }
+  ],
+  "consulta": "876",
+  "nota": "Afiliaciones por municipio de RESIDENCIA del trabajador, no por centro de trabajo. El asterisco de origen («menos de 5») se publica como hueco."
+ },
  "deuda_viva": {
   "serie": [
    {
@@ -38,7 +1533,7 @@
    "organismo": "Ministerio de Vivienda y Agenda Urbana"
   }
  ],
- "fuente": "Ministerio de Hacienda · Deuda viva de las entidades locales",
+ "fuente": "INE · DIRCE, empresas por municipio (tabla 4721) · IECA/BADEA, afiliaciones por régimen (consulta 876) · Ministerio de Hacienda, deuda viva de las entidades locales",
  "ambito": "municipal",
- "actualizado": "2026-08-26T17:29:07Z"
+ "actualizado": "2026-08-27T08:08:43Z"
 }

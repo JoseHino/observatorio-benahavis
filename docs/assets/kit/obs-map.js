@@ -37,8 +37,18 @@
        urbanización no quede tapado por un grupo de puntos. */
     rotulosClaro: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
     rotulosOscuro: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
-    credito: 'Teselas &copy; Esri &mdash; Esri, DeLorme, NAVTEQ · Datos &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    /* Ortofoto del mismo servicio, sin clave. Sirve para reconocer el terreno
+       —urbanizaciones, campos de golf, monte— cuando el fondo gris no basta;
+       sus rótulos van en la capa de referencia híbrida, no en la imagen. */
+    satelite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    rotulosSatelite: 'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+    credito: 'Teselas &copy; Esri &mdash; Esri, DeLorme, NAVTEQ · Datos &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    creditoSatelite: 'Ortofoto &copy; Esri &mdash; Maxar, Earthstar Geographics y la comunidad de usuarios de Esri'
   };
+
+  /* Zoom máximo con tesela propia de cada fondo: el gris de Esri se acaba en 16
+     y la ortofoto llega a 19. Poner 16 a las dos dejaría la foto borrosa de más. */
+  var ZOOM_NATIVO = { mapa: 16, satelite: 18 };
 
 
   /* Rampa cálida de densidad (ColorBrewer YlOrRd): amarillo claro donde hay
@@ -99,9 +109,17 @@
         '<button type="button" data-capa="calor" aria-pressed="false">Calor</button>' +
       '</div>';
 
+    /* Fondo del mapa. Va aparte del conmutador de capas de datos: una cosa es
+       cómo se pintan los datos y otra sobre qué se pintan. */
+    var fondo = cfg.satelite === false ? '' :
+      '<div class="obs-segment" role="group">' +
+        '<button type="button" data-fondo="mapa" aria-pressed="true">Mapa</button>' +
+        '<button type="button" data-fondo="satelite" aria-pressed="false">Satélite</button>' +
+      '</div>';
+
     return '<div class="obs-map" data-mapa="' + id + '">' +
       '<div class="obs-map-tools">' + filtros +
-        '<div class="obs-map-capas">' + conmutador +
+        '<div class="obs-map-capas">' + fondo + conmutador +
           '<button type="button" class="obs-btn" data-act="reset">Restablecer</button>' +
         '</div>' +
         '<div class="obs-map-cuenta" data-rol="cuenta"></div>' +
@@ -145,10 +163,30 @@
     /* maxNativeZoom: el servicio de Esri no sirve teselas por encima de 16, pero
        el mapa sigue admitiendo acercarse: Leaflet reescala la última disponible
        en lugar de dejar el fondo en gris. */
+    var fondoActivo = 'mapa';
     var teselas = L.tileLayer(esOscuro() ? TESELAS.oscuro : TESELAS.claro,
-      { attribution: TESELAS.credito, maxZoom: 19, maxNativeZoom: 16 }).addTo(mapa);
+      { attribution: TESELAS.credito, maxZoom: 19, maxNativeZoom: ZOOM_NATIVO.mapa }).addTo(mapa);
     var rotulos = L.tileLayer(esOscuro() ? TESELAS.rotulosOscuro : TESELAS.rotulosClaro,
-      { maxZoom: 19, maxNativeZoom: 16, pane: 'shadowPane', opacity: .9 }).addTo(mapa);
+      { maxZoom: 19, maxNativeZoom: ZOOM_NATIVO.mapa, pane: 'shadowPane', opacity: .9 }).addTo(mapa);
+
+    /* Cambia la ortofoto por el fondo gris y viceversa. Se reutilizan las dos
+       capas ya creadas en lugar de añadir y quitar capas: así el orden de
+       pintado (datos encima del fondo, rótulos encima de los datos) no cambia. */
+    function ponerFondo(cual) {
+      fondoActivo = cual;
+      var sat = cual === 'satelite';
+      teselas.options.maxNativeZoom = sat ? ZOOM_NATIVO.satelite : ZOOM_NATIVO.mapa;
+      rotulos.options.maxNativeZoom = teselas.options.maxNativeZoom;
+      teselas.setUrl(sat ? TESELAS.satelite : (esOscuro() ? TESELAS.oscuro : TESELAS.claro));
+      rotulos.setUrl(sat ? TESELAS.rotulosSatelite
+                         : (esOscuro() ? TESELAS.rotulosOscuro : TESELAS.rotulosClaro));
+      /* Sobre la foto, los rótulos claros de la capa gris no se leerían. */
+      rotulos.setOpacity(sat ? 1 : .9);
+      raiz.classList.toggle('es-satelite', sat);
+      mapa.attributionControl.removeAttribution(TESELAS.credito);
+      mapa.attributionControl.removeAttribution(TESELAS.creditoSatelite);
+      mapa.attributionControl.addAttribution(sat ? TESELAS.creditoSatelite : TESELAS.credito);
+    }
     /* Sin scroll-zoom por defecto: en una página larga, la rueda debe seguir
        desplazando la página. Con Ctrl o tras hacer clic dentro, sí hace zoom. */
     mapa.on('click', function () { mapa.scrollWheelZoom.enable(); });
@@ -443,6 +481,16 @@
         pintar();
         return;
       }
+      var elFondo = b.getAttribute('data-fondo');
+      if (elFondo) {
+        if (elFondo === fondoActivo) return;
+        ponerFondo(elFondo);
+        raiz.querySelectorAll('[data-fondo]').forEach(function (x) {
+          x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+        });
+        pintar();
+        return;
+      }
       var capa = b.getAttribute('data-capa');
       if (!capa) return;
       capaActiva = capa;
@@ -480,7 +528,8 @@
       }).observe(lienzo);
     }
 
-    var ref = { mapa: mapa, teselas: teselas, rotulos: rotulos, repintar: pintar };
+    var ref = { mapa: mapa, teselas: teselas, rotulos: rotulos, repintar: pintar,
+                fondo: function () { return fondoActivo; } };
     mapas.push(ref);
     setTimeout(function () { mapa.invalidateSize(); }, 60);
     return ref;
@@ -492,6 +541,9 @@
   /** Cambia las teselas al tema activo. Lo llama el armazón al conmutar. */
   Obs.mapasRepintar = function () {
     mapas.forEach(function (r) {
+      /* Con la ortofoto puesta, el tema de la página no manda sobre el fondo:
+         una foto aérea no tiene versión oscura. */
+      if (r.fondo && r.fondo() === 'satelite') { r.repintar(); return; }
       r.teselas.setUrl(esOscuro() ? TESELAS.oscuro : TESELAS.claro);
       if (r.rotulos) r.rotulos.setUrl(esOscuro() ? TESELAS.rotulosOscuro : TESELAS.rotulosClaro);
       r.repintar();

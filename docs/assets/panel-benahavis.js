@@ -34,7 +34,18 @@
   var CDS = 'https://www.costadelsolmalaga.org/bigdata/';
   var FTE = {
     padron:   { txt: 'INE · Padrón, tabla 2882', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=2882' },
-    renta:    { txt: 'INE · Atlas de renta, tabla 30824', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=30824' },
+    renta:    { txt: 'INE · Atlas de renta, tablas 30824 y 53689', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=53689' },
+    padron_nacionalidad: { txt: 'INE · Padrón por nacionalidad, tablas 33571 y 33572',
+                url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=33572' },
+    sima:     { txt: 'IECA · SIMA, ficha municipal de Benahavís',
+                url: 'https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023' },
+    dirce:    { txt: 'INE · DIRCE, empresas por municipio, tabla 4721',
+                url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=4721' },
+    /* El portal de BADEA no tiene dirección estable para esta consulta, así que
+       se enlaza la petición de la API ya filtrada por Benahavís: es exactamente
+       el dato que alimenta la tarjeta. */
+    badea_regimen: { txt: 'IECA/BADEA · afiliaciones por régimen, consulta 876',
+                url: 'https://www.juntadeandalucia.es/institutodeestadisticaycartografia/intranet/admin/rest/v1.0/consulta/876?D_TERRITORIO_0=2934' },
     gini:     { txt: 'INE · Gini y P80/P20, tabla 37677', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=37677' },
     /* El portal de datos abiertos de la Junta responde 503 en la ficha del
        conjunto, así que se enlaza la consulta de la API ya filtrada por
@@ -85,6 +96,15 @@
   var DIA = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
   var MES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio',
              'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  /* Los doce meses caben en el eje si se abrevian; con el nombre entero, la
+     gráfica descarta uno de cada dos y deja el eje a medio rotular. */
+  var MES_CORTO = ['ene', 'feb', 'mar', 'abr', 'may', 'jun',
+                   'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+  var mesAnyo = function (t) {
+    if (!t) return null;
+    var p = String(t).split('-');
+    return p.length < 2 ? String(t) : MES[+p[1] - 1] + ' de ' + p[0];
+  };
   var fechaLarga = function (iso) {
     if (!iso) return '—';
     var p = String(iso).split('-');
@@ -320,16 +340,68 @@
     {
       id: 'poblacion', nombre: 'Población y renta',
       titulo: 'Población y renta',
-      desc: 'Padrón municipal y Atlas de distribución de renta del INE. Benahavís es un municipio pequeño, ' +
-            'así que muchas estadísticas oficiales no bajan hasta aquí; las que sí lo hacen están en esta pestaña.',
+      desc: 'Padrón municipal y Atlas de distribución de renta del INE. Benahavís no llega a 10.000 habitantes ' +
+            'y casi dos tercios de ellos son extranjeros: es un municipio pequeño y muy internacional, y esas dos ' +
+            'cosas condicionan qué estadística oficial baja hasta aquí y cuál no.',
       render: function () {
         var d = D.demografia || {}, p = d.padron || {}, r = d.renta || {}, g = d.desigualdad || {};
+        var nac = d.nacionalidad || {}, pais = d.nacionalidades || {}, ieca = d.extranjeros_ieca || {};
+        var rc = d.renta_contexto || {};
+
+        /* Nacionalidad y sexo comparten eje: son el mismo padrón desagregado dos
+           veces, así que el apilado suma exactamente la población del año. */
+        var esp = nac.espanola || {}, ext = nac.extranjera || {};
+        var ejeNac = ejeT(ext.total || []);
+
+        /* Reparto por países: seis nombres y un «Otros». Más porciones no se
+           distinguen ni se recuerdan, y las cinco primeras ya son el 80 %. */
+        var anyosPais = (pais.anyos || []).slice().reverse();
+        var anyoPais = anyosPais[0];
+        function repartoPaises(anyo) {
+          var filas = ((pais.por_anyo || {})[anyo] || []).slice();
+          var propios = filas.filter(function (f) { return f.pais !== 'Resto de países'; });
+          var resto = filas.filter(function (f) { return f.pais === 'Resto de países'; });
+          var cabeza = propios.slice(0, 6);
+          var cola = suma(propios.slice(6).map(function (f) { return f.v; })) +
+                     suma(resto.map(function (f) { return f.v; }));
+          var datos = cabeza.map(function (f) { return { name: f.pais, value: f.v }; });
+          if (cola > 0) datos.push({ name: 'Otras', value: cola });
+          return {
+            type: 'donut', yFormat: 'num', xLabel: 'Nacionalidad',
+            x: datos.map(function (t) { return t.name; }),
+            series: [{ name: 'Personas empadronadas en ' + anyo,
+                       data: datos.map(function (t) { return t.value; }) }]
+          };
+        }
+
+        /* Contexto de la renta: la misma operación del INE resuelve el municipio,
+           la provincia, la comunidad y España, de modo que la comparación es
+           homogénea en definición y en año de referencia. */
+        function serieRenta(indicador) {
+          var eje = ejeT(r[indicador] || []);
+          var alinear = function (puntos) {
+            var m = {};
+            (puntos || []).forEach(function (x) { m[x.t] = x.v; });
+            return eje.map(function (t) { return m[t] == null ? null : m[t]; });
+          };
+          return {
+            type: 'line', xType: 'anual', xLabel: 'Año', x: eje, yFormat: 'eur',
+            series: [
+              { name: 'Benahavís', data: vals(r[indicador] || []) },
+              { name: 'Provincia de Málaga', data: alinear((rc.malaga || {})[indicador]) },
+              { name: 'Andalucía', data: alinear((rc.andalucia || {})[indicador]) },
+              { name: 'España', data: alinear((rc.espana || {})[indicador]) }
+            ]
+          };
+        }
+
         return {
           kpis: [
             { label: 'Población empadronada', valor: (d.poblacion_actual || {}).v, serie: vals(p.total).slice(-15) },
+            { label: 'Población extranjera' + (ieca.anyo ? ' (' + ieca.anyo + ')' : ''),
+              valor: ieca.extranjeros, unidad: ieca.porcentaje != null ? F.pct(ieca.porcentaje) + ' del total' : '' },
             { label: 'Renta neta media por persona', valor: ultV(r.renta_neta_persona), unidad: '€', serie: vals(r.renta_neta_persona) },
-            { label: 'Índice de Gini', valor: ultV(g.gini), dec: 1, formato: F.num, serie: vals(g.gini) },
-            { label: 'Relación P80/P20', valor: ultV(g.p80_p20), dec: 1, formato: F.num, serie: vals(g.p80_p20) }
+            { label: 'Índice de Gini', valor: ultV(g.gini), dec: 1, formato: F.num, serie: vals(g.gini) }
           ],
           cards: [
             {
@@ -341,15 +413,64 @@
               }
             },
             {
-              titulo: 'Renta media por persona y por hogar', sub: 'Renta neta anual',
-              chips: [ANUAL], fuente: FTE.renta,
+              titulo: 'Población por nacionalidad y sexo', sub: 'Españoles y extranjeros empadronados',
+              chips: [ANUAL], fuente: FTE.padron_nacionalidad, ancho: 'full',
+              nota: 'El INE dejó de publicar la nacionalidad a escala municipal después de 2022: la Estadística ' +
+                    'Continua de Población solo la baja a los 83 municipios mayores. La serie termina ahí y no se ' +
+                    'prolonga con estimaciones' +
+                    (ieca.anyo ? '; la cifra de ' + ieca.anyo + ' del indicador es del IECA, otra explotación del padrón.' : '.'),
               spec: {
-                type: 'line', xType: 'anual', xLabel: 'Año', x: ejeT(r.renta_neta_hogar), yFormat: 'eur',
+                type: 'stack', xType: 'anual', xLabel: 'Año', x: ejeNac, yFormat: 'num',
+                /* Dos familias de color, no cuatro colores sueltos: el tono dice la
+                   nacionalidad y la intensidad, el sexo. Así se lee de un vistazo
+                   cuánto pesa cada bloque sin ir a la leyenda. */
                 series: [
-                  { name: 'Por hogar', data: vals(r.renta_neta_hogar) },
-                  { name: 'Por persona', data: vals(r.renta_neta_persona) }
+                  { name: 'Españoles', color: '#2a78d6', data: vals(esp.hombres || []) },
+                  { name: 'Españolas', color: '#8fbcec', data: vals(esp.mujeres || []) },
+                  { name: 'Extranjeros', color: '#d1541f', data: vals(ext.hombres || []) },
+                  { name: 'Extranjeras', color: '#f2a882', data: vals(ext.mujeres || []) }
                 ]
               }
+            },
+            {
+              titulo: 'Nacionalidades de la población extranjera',
+              sub: 'Reparto por país de nacionalidad',
+              chips: [ANUAL], fuente: FTE.padron_nacionalidad,
+              control: {
+                label: 'Año', valor: anyoPais,
+                opciones: anyosPais.map(function (a) { return { v: a, txt: a }; }),
+                spec: repartoPaises
+              },
+              nota: 'Se detallan los seis países con más residentes; el resto se agrupa. El reparto cierra ' +
+                    'contra el total de extranjeros del padrón, así que los porcentajes son sobre toda la ' +
+                    'población extranjera.',
+              spec: repartoPaises(anyoPais)
+            },
+            {
+              titulo: 'Población por sexo', sub: 'Serie completa del padrón municipal',
+              chips: [ANUAL], fuente: FTE.padron,
+              spec: {
+                type: 'stack', xType: 'anual', xLabel: 'Año', x: ejeT(p.total), yFormat: 'num',
+                series: [
+                  { name: 'Mujeres', data: vals(p.mujeres) },
+                  { name: 'Hombres', data: vals(p.hombres) }
+                ]
+              }
+            },
+            {
+              titulo: 'Renta neta media por persona', sub: 'Benahavís frente a su provincia, Andalucía y España',
+              chips: [ANUAL], fuente: FTE.renta, ancho: 'full',
+              nota: 'Los cuatro ámbitos salen de la misma operación del INE —el Atlas de Distribución de Renta ' +
+                    'de los Hogares—, que es la fuente que republican los portales de datos macroeconómicos. ' +
+                    'La serie municipal oscila mucho más que las agregadas —el salto de 2022 a 2023 es del 54 % y ' +
+                    'lo publica así el INE—: con 9.000 habitantes y una renta muy concentrada, unos pocos ' +
+                    'declarantes mueven la media del municipio.',
+              spec: serieRenta('renta_neta_persona')
+            },
+            {
+              titulo: 'Renta neta media por hogar', sub: 'Mismos ámbitos, renta del hogar',
+              chips: [ANUAL], fuente: FTE.renta,
+              spec: serieRenta('renta_neta_hogar')
             },
             {
               titulo: 'Desigualdad', sub: 'Índice de Gini y relación entre el 20 % más rico y el 20 % más pobre',
@@ -368,15 +489,14 @@
       }
     },
 
-    /* ------------------------------------------------------------ Oferta --- */
+    /* ------------------------------------------------------- Alojamiento --- */
     {
-      id: 'oferta', nombre: 'Oferta',
+      id: 'alojamiento', nombre: 'Alojamiento',
       titulo: 'Oferta de alojamiento',
       desc: 'Todo el alojamiento reglado del municipio según el Registro de Turismo de Andalucía, con el contraste ' +
             'de la estadística experimental del INE, que mide oferta <i>anunciada</i> y no oferta <i>inscrita</i>.',
       render: function () {
         var o = D.oferta || {}, rta = o.rta || {}, ie = o.ine_experimental || {};
-        var tipos = Object.keys(rta.por_tipo || {});
         var cds = ((D.costadelsol || {}).oferta || {});
         return {
           nota: 'El RTA y el INE <b>no se fusionan nunca</b>: el registro mide inscripción administrativa y el INE, ' +
@@ -389,28 +509,10 @@
           ],
           cards: [
             {
-              titulo: 'Oferta inscrita por tipología', sub: 'Establecimientos y plazas en el RTA',
-              chips: [{ txt: 'Censo' }], fuente: FTE.rta, ancho: 'full',
-              spec: {
-                type: 'barh', x: tipos, yFormat: 'num',
-                series: [{ name: 'Plazas', data: tipos.map(function (t) { return rta.por_tipo[t].plazas; }) }]
-              }
-            },
-            {
-              titulo: 'Viviendas turísticas anunciadas', sub: 'Estadística experimental del INE',
-              chips: [EXPERIMENTAL], fuente: FTE.ine_vut,
-              nota: 'El INE publica esta operación por oleadas, no todos los meses.',
-              spec: {
-                type: 'line', xType: 'mes', x: ejeT(ie.viviendas), yFormat: 'num',
-                series: [
-                  { name: 'Plazas', data: vals(ie.plazas) },
-                  { name: 'Viviendas', data: vals(ie.viviendas) }
-                ]
-              }
-            },
-            {
               titulo: 'Plazas por tipología, serie histórica', sub: 'Big Data de Turismo Costa del Sol',
-              chips: [MENSUAL], fuente: FTE.cds_oferta,
+              chips: [MENSUAL], fuente: FTE.cds_oferta, ancho: 'full',
+              nota: 'La vivienda turística es prácticamente toda la oferta del municipio: el alojamiento hotelero ' +
+                    'son cuatro establecimientos y no admite comparación de escala con las más de dos mil viviendas.',
               spec: (function () {
                 var pt = cds.por_tipologia || {};
                 var claves = Object.keys(pt).filter(function (k) { return (pt[k] || []).length; });
@@ -424,6 +526,18 @@
                   })
                 };
               })()
+            },
+            {
+              titulo: 'Viviendas turísticas anunciadas', sub: 'Estadística experimental del INE',
+              chips: [EXPERIMENTAL], fuente: FTE.ine_vut, ancho: 'full',
+              nota: 'El INE publica esta operación por oleadas, no todos los meses.',
+              spec: {
+                type: 'line', xType: 'mes', x: ejeT(ie.viviendas), yFormat: 'num',
+                series: [
+                  { name: 'Plazas', data: vals(ie.plazas) },
+                  { name: 'Viviendas', data: vals(ie.viviendas) }
+                ]
+              }
             }
           ]
         };
@@ -439,10 +553,10 @@
       render: seccionVUT
     },
 
-    /* ----------------------------------------------------------- Demanda --- */
+    /* ---------------------------------------------------------- Viajeros --- */
     {
-      id: 'demanda', nombre: 'Demanda',
-      titulo: 'Demanda turística',
+      id: 'viajeros', nombre: 'Viajeros',
+      titulo: 'Viajeros',
       desc: 'Turistas que pernoctan en el municipio según la estadística experimental del INE construida sobre el ' +
             'posicionamiento de teléfonos móviles. Es la única fuente que resuelve la demanda a escala municipal: ' +
             'la Encuesta de Ocupación Hotelera no baja hasta Benahavís.',
@@ -501,15 +615,40 @@
 
     /* ------------------------------------------------------------ Empleo --- */
     {
-      id: 'empleo', nombre: 'Empleo',
-      titulo: 'Mercado de trabajo',
-      desc: 'Paro registrado y contratación del SEPE, y afiliación a la Seguridad Social por actividad. ' +
-            'En un municipio de este tamaño casi la mitad de las celdas de afiliación están enmascaradas por secreto ' +
-            'estadístico, así que la afiliación se publica como <b>intervalo</b> y no como una cifra falsamente exacta.',
+      id: 'empleo', nombre: 'Empleo y empresas',
+      titulo: 'Mercado de trabajo y tejido empresarial',
+      desc: 'Paro registrado y contratación del SEPE, afiliación a la Seguridad Social por actividad, empresas ' +
+            'del DIRCE y trabajo autónomo. En un municipio de este tamaño casi la mitad de las celdas de afiliación ' +
+            'por rama están enmascaradas por secreto estadístico, así que esa afiliación se publica como ' +
+            '<b>intervalo</b> y no como una cifra falsamente exacta.',
       render: function () {
         var t = D.trabajo || {}, paro = (t.paro || {}).serie || [], con = (t.contratos || {}).serie || [];
         var afi = (t.afiliacion || {});
         var cdsEmpleo = ((D.costadelsol || {}).empleo || {});
+        var eco = D.economia || {}, emp = eco.empresas || {}, reg = (eco.afiliacion_regimen || {}).serie || [];
+        var ultimoAnyoEmp = (emp.total || []).length ? emp.total[emp.total.length - 1].t : null;
+        /* Los rótulos del DIRCE son la definición entera de la rama y no caben en
+           un eje; se acortan sin cambiar qué agrupa cada una. «Resto de servicios»
+           NO es una rama más: es la suma de las de servicios que ya están en la
+           lista, así que pintarla dobla la mitad del total. */
+        var RAMAS = {
+          'Industrias extractivas (excepto construcción)': 'Industria y extractivas',
+          'Construcción': 'Construcción',
+          'Comercio al por mayor y al por menor; reparación de vehículos de motor y motocicletas; transporte y almacenamiento; hostelería':
+            'Comercio, transporte y hostelería',
+          'Información y comunicaciones': 'Información y comunicaciones',
+          'Actividades financieras y de seguros': 'Financieras y seguros',
+          'Actividades inmobiliarias': 'Actividades inmobiliarias',
+          'Actividades profesionales, científicas y técnicas; actividades administrativas y servicios auxiliares':
+            'Profesionales y administrativas',
+          'Secciones P y Q': 'Educación y sanidad',
+          'Secciones R y S': 'Ocio y otros servicios'
+        };
+        var porSector = Object.keys(RAMAS).map(function (k) {
+          var serie = (emp.por_sector || {})[k] || [];
+          var ult = serie.length ? serie[serie.length - 1] : null;
+          return { sector: RAMAS[k], v: ult && ult.t === ultimoAnyoEmp ? ult.v : null };
+        }).filter(function (x) { return x.v; }).sort(function (a, b) { return a.v - b.v; });
         return {
           kpis: [
             { label: 'Paro registrado', valor: ultV(campo(paro, 'total').map(function (v) { return { v: v }; })), invertir: true,
@@ -517,8 +656,12 @@
             { label: 'Contratos del mes', valor: ult(campo(con, 'total')), serie: campo(con, 'total').slice(-24) },
             { label: 'Afiliación total', valor: ult((afi.serie_total || []).map(function (r) { return r.min; })),
               unidad: 'o más', serie: (afi.serie_total || []).map(function (r) { return r.min; }) },
-            { label: 'Afiliación en actividades turísticas', valor: ult((afi.serie_turistico || []).map(function (r) { return r.min; })),
-              unidad: 'o más', serie: (afi.serie_turistico || []).map(function (r) { return r.min; }) }
+            { label: 'Trabajadores autónomos', valor: (function () {
+                var v = campo(reg, 'autonomos').filter(function (x) { return x != null; });
+                return v.length ? v[v.length - 1] : null;
+              })(), serie: campo(reg, 'autonomos').slice(-24) },
+            { label: 'Empresas (DIRCE)', valor: ultV(emp.total),
+              unidad: ultimoAnyoEmp || '', serie: vals(emp.total) }
           ],
           cards: [
             {
@@ -572,6 +715,44 @@
                   })
                 };
               })()
+            },
+            {
+              titulo: 'Empresas con actividad económica', sub: 'Directorio Central de Empresas, a 1 de enero',
+              chips: [ANUAL], fuente: FTE.dirce, ancho: 'full',
+              nota: 'El DIRCE cuenta empresas con domicilio en el municipio, no establecimientos abiertos al ' +
+                    'público: en Benahavís hay mucha sociedad patrimonial e inmobiliaria domiciliada.',
+              spec: {
+                type: 'area', xType: 'anual', xLabel: 'Año', x: ejeT(emp.total), yFormat: 'num',
+                series: [{ name: 'Empresas', data: vals(emp.total) }]
+              }
+            },
+            {
+              titulo: 'Empresas por rama de actividad',
+              sub: ultimoAnyoEmp ? 'Reparto en ' + ultimoAnyoEmp : 'Último año publicado',
+              chips: [ANUAL], fuente: FTE.dirce, ancho: 'full',
+              nota: 'Las ramas suman el total del municipio. Casi la mitad de las empresas son inmobiliarias o ' +
+                    'de servicios profesionales y administrativos: el perfil de un municipio residencial de lujo, ' +
+                    'no el de uno con mucha actividad productiva.',
+              spec: {
+                type: 'barh', yFormat: 'num', xLabel: 'Rama de actividad',
+                x: porSector.map(function (x) { return x.sector; }),
+                series: [{ name: 'Empresas', data: porSector.map(function (x) { return x.v; }) }]
+              }
+            },
+            {
+              titulo: 'Afiliación por régimen: autónomos y cuenta ajena',
+              sub: 'Afiliados por municipio de residencia',
+              chips: [MENSUAL], fuente: FTE.badea_regimen, ancho: 'full',
+              nota: 'Esta fuente publica el agregado por régimen sin el enmascarado «<5» del fichero por rama de ' +
+                    'actividad, de modo que el número de autónomos sí es exacto. Hasta 2021 el dato es trimestral.',
+              spec: {
+                type: 'line', xType: 'mes', xLabel: 'Periodo', x: ejeT(reg), yFormat: 'num',
+                series: [
+                  { name: 'Régimen general', data: campo(reg, 'general') },
+                  { name: 'Autónomos', data: campo(reg, 'autonomos') },
+                  { name: 'Empleadas y empleados del hogar', data: campo(reg, 'hogar') }
+                ]
+              }
             }
           ]
         };
@@ -583,7 +764,7 @@
       id: 'precios', nombre: 'Precios',
       titulo: 'Precios del alojamiento',
       desc: 'Precio medio y valoración por tipología, a partir del rastreo de portales de reserva que publica el ' +
-            'Big Data de Turismo Costa del Sol.',
+            'Big Data de Turismo Costa del Sol. Mide <b>lo que se anuncia</b>, no lo que registra la Junta.',
       render: function () {
         var p = ((D.costadelsol || {}).precios || {});
         var series = p.series || {}, meses = p.meses || [];
@@ -602,6 +783,11 @@
             {
               titulo: 'Precio medio por tipología', sub: 'Euros por noche',
               chips: [MENSUAL], fuente: FTE.cds_precios, ancho: 'full', alto: 'tall',
+              nota: 'La categoría es la que muestra el portal de reserva, no la del Registro de Turismo de ' +
+                    'Andalucía, y las dos no coinciden: aquí aparecen «Hostales y Pensiones», una categoría sin ' +
+                    'ningún establecimiento inscrito en el municipio. Un hotel que cierra deja de rastrearse y ' +
+                    'otro anunciado con dirección de Benahavís entra aunque el RTA lo tenga en otro término, así ' +
+                    'que ninguna de estas líneas debe leerse como el precio de un establecimiento concreto.',
               spec: {
                 type: 'line', xType: 'mes', x: meses, yFormat: 'eur',
                 series: claves.map(function (k) { return { name: k, data: serie(k, 'precio') }; })
@@ -632,16 +818,20 @@
           kpis: [
             { label: 'Temperatura media anual', valor: ultV(c.temperatura_anual), unidad: '°C', dec: 1, formato: F.num, serie: vals(c.temperatura_anual) },
             { label: 'Precipitación anual', valor: ultV(c.precipitacion_anual), unidad: 'mm', formato: F.num, serie: vals(c.precipitacion_anual) },
-            { label: 'Temperatura máxima registrada', valor: (ex.ta_max || {}).valor, unidad: '°C', dec: 1, formato: F.num },
-            { label: 'Meses observados', valor: c.meses_observados }
+            /* Un extremo sin fecha no es un dato: dice cuánto, pero no cuándo. */
+            { label: 'Temperatura máxima registrada', valor: (ex.ta_max || {}).valor, dec: 1, formato: F.num,
+              unidad: '°C · ' + (mesAnyo((ex.ta_max || {}).fecha) || 'fecha no publicada') },
+            { label: 'Temperatura mínima registrada', valor: (ex.ta_min || {}).valor, dec: 1, formato: F.num,
+              unidad: '°C · ' + (mesAnyo((ex.ta_min || {}).fecha) || 'fecha no publicada') }
           ],
           cards: [
             {
-              titulo: 'Climograma', sub: 'Valores normales del periodo observado en la estación 6069X',
+              titulo: 'Pluviometría', sub: 'Precipitación media mensual en la estación 6069X, mm',
               chips: [{ txt: 'Normales' }], fuente: FTE.aemet, ancho: 'full',
               nota: 'Precipitación y temperatura no comparten eje: son magnitudes distintas y superponerlas en una sola escala falsearía la lectura.',
               spec: {
-                type: 'bar', x: n.map(function (r) { return MES[r.mes - 1]; }), yFormat: 'num', yLabel: 'mm',
+                type: 'bar', xLabel: 'Mes', xTodas: true, yFormat: 'num', yLabel: 'mm',
+                x: n.map(function (r) { return MES_CORTO[r.mes - 1]; }),
                 series: [{ name: 'Precipitación media (mm)', data: n.map(function (r) { return r.precipitacion_media; }) }]
               }
             },
@@ -649,7 +839,8 @@
               titulo: 'Temperatura media mensual', sub: 'Valores normales, °C',
               chips: [{ txt: 'Normales' }], fuente: FTE.aemet,
               spec: {
-                type: 'line', x: n.map(function (r) { return MES[r.mes - 1]; }), yFormat: 'dec1', yLabel: '°C',
+                type: 'line', xLabel: 'Mes', xTodas: true, yFormat: 'dec1', yLabel: '°C',
+                x: n.map(function (r) { return MES_CORTO[r.mes - 1]; }),
                 series: [{ name: 'Temperatura media', data: n.map(function (r) { return r.temperatura_media; }) }]
               }
             },
@@ -679,8 +870,9 @@
       subtitulo: 'Datos abiertos del municipio (29023) para el expediente de Municipio Turístico de Andalucía',
       secciones: SECCIONES,
       actualizado: meta.generado,
-      fuentes: [FTE.padron, FTE.renta, FTE.gini, FTE.rta, FTE.ine_vut, FTE.moviles, FTE.eoh,
-                FTE.cds, FTE.sepe, FTE.ss, FTE.aemet, FTE.hacienda],
+      fuentes: [FTE.padron, FTE.padron_nacionalidad, FTE.sima, FTE.renta, FTE.gini, FTE.rta,
+                FTE.ine_vut, FTE.moviles, FTE.eoh, FTE.cds, FTE.sepe, FTE.ss, FTE.dirce,
+                FTE.badea_regimen, FTE.aemet, FTE.hacienda],
       metodologia: 'Un proceso automático descarga las fuentes oficiales, las normaliza y vuelca <code>docs/data/*.json</code>. ' +
         'Cada tarjeta enlaza a su fuente y permite ver los datos en tabla y descargarlos en CSV. ' +
         'El inventario completo de fuentes, con sus limitaciones, está en ' +

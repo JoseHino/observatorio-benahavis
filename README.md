@@ -75,8 +75,8 @@ observatorio-benahavis/
 
 **Frontend:** HTML, CSS y JavaScript sin bundler. Gráficos con ECharts y mapa con Leaflet, ambos
 por CDN. Es mantenible por un consultor, no requiere un perfil de desarrollo frontend. El panel
-se organiza en **seis pestañas temáticas** —población y renta, oferta de alojamiento, demanda y
-ocupación, precios y valoración, empleo y economía, y clima—; la pestaña activa va en el
+se organiza en **siete pestañas temáticas** —población y renta, alojamiento, viviendas turísticas,
+viajeros, empleo y empresas, precios, y clima—; la pestaña activa va en el
 fragmento de la URL, de modo que cualquiera de ellas se puede enlazar y compartir. Una temática
 que no logre publicar ningún dato se oculta entera en lugar de quedarse anunciando el hueco.
 
@@ -112,11 +112,11 @@ El pipeline no se detiene ni escribe datos de relleno.
 
 | Nº | Bloque | Salida | Notas |
 |----|--------|--------|-------|
-| 1 | Demografía y renta | `demografia.json` | Padrón, Atlas de Renta e índice de Gini del INE |
+| 1 | Demografía y renta | `demografia.json` | Padrón (total, sexo y nacionalidad), Atlas de Renta con el contexto provincial, andaluz y nacional, e índice de Gini del INE; ficha del SIMA para la población extranjera posterior a 2022 |
 | 2 | Oferta turística | `oferta.json` | RTA georreferenciado e INE experimental, en gráficos separados |
 | 3 | Demanda turística | `demanda.json` | Posicionamiento móvil vía Dataestur (~30 MB por año) y EOH de la zona turística Costa del Sol, etiquetada como supramunicipal |
 | 4 | Mercado de trabajo | `trabajo.json` | SEPE y Seguridad Social; descarga **incremental** |
-| 5 | Economía y finanzas | `economia.json` | Deuda viva del Ministerio de Hacienda |
+| 5 | Empresas, autónomos y finanzas | `economia.json` | Empresas del DIRCE, afiliación por régimen de IECA/BADEA (**una petición por mes**, descarga incremental) y deuda viva del Ministerio de Hacienda |
 | 6 | Clima | `clima.json` | AEMET, estación municipal `6069X`; requiere clave |
 | 7 | Conteo de visitantes | `visitantes.json` | Decreto 72/2017; módulo preparado, a la espera de datos |
 | 8 | Big Data Costa del Sol | `costadelsol.json` | Ocupación y precio de la vivienda turística, serie histórica del RTA, precios de portales, empleo por subsector y microdato EOH |
