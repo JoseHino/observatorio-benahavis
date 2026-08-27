@@ -126,7 +126,33 @@ DIAS = {
     "np_010": "dias_lluvia",      # días con precipitación >= 1 mm
     "np_100": "dias_lluvia_fuerte",   # días con precipitación >= 10 mm
     "np_300": "dias_lluvia_torrencial",   # días con precipitación >= 30 mm
+    "nw_55": "dias_viento_fuerte",    # días con racha >= 55 km/h
 }
+
+#: Series mensuales que la estación publica además de temperatura y lluvia. Son
+#: medida directa igual que las otras y estaban sin explotar.
+MENSUALES = {
+    "hr": "humedad_mensual",          # humedad relativa media del mes, %
+    "w_med": "viento_medio_mensual",  # velocidad media del viento, km/h
+}
+
+MS_A_KMH = 3.6
+
+
+def racha(texto: Any) -> float | None:
+    """Velocidad de la racha máxima del mes, en km/h.
+
+    El campo ``w_racha`` no es un número: viene como ``08/24.2(11)``, es decir
+    **dirección / velocidad (día)**, y además la velocidad va en **m/s** mientras
+    que la velocidad media del mes (``w_med``) va en km/h. Pasarlo por el
+    conversor normal devuelve ``None`` —el texto no es un float— y mezclarlo con
+    ``w_med`` sin convertir daría una racha más lenta que el viento medio.
+    """
+    if texto is None:
+        return None
+    partes = str(texto).split("/")
+    v = numero(partes[-1])
+    return None if v is None else round(v * MS_A_KMH, 1)
 
 MESES_ANYO_COMPLETO = 12
 
@@ -159,8 +185,10 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
     acum_p: dict[int, list[float]] = {m: [] for m in range(1, 13)}
     acum_tmax: dict[int, list[float]] = {m: [] for m in range(1, 13)}
     acum_tmin: dict[int, list[float]] = {m: [] for m in range(1, 13)}
+    acum_hr: dict[int, list[float]] = {m: [] for m in range(1, 13)}
+    otras: dict[str, list[dict[str, Any]]] = {n: [] for n in MENSUALES.values()}
     dias_anyo: dict[str, dict[str, Any]] = {}
-    extremos = {"ta_max": None, "ta_min": None, "p_max": None}
+    extremos = {"ta_max": None, "ta_min": None, "p_max": None, "w_racha": None}
 
     for r in registros:
         fecha = str(r.get("fecha") or "")
@@ -185,10 +213,14 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
         if pm is not None:
             mensual_p.append({"t": clave_mes, "v": round(pm, 1)})
             acum_p[mes].append(pm)
-        for campo, acumulador in (("tm_max", acum_tmax), ("tm_min", acum_tmin)):
+        for campo, acumulador in (("tm_max", acum_tmax), ("tm_min", acum_tmin), ("hr", acum_hr)):
             v = numero(r.get(campo))
             if v is not None:
                 acumulador[mes].append(v)
+        for campo, nombre in MENSUALES.items():
+            v = numero(r.get(campo))
+            if v is not None:
+                otras[nombre].append({"t": clave_mes, "v": round(v, 1)})
 
         # Recuentos de días: se suman por año y se publica cada índice solo si
         # tiene los doce meses. La comprobación va campo a campo porque AEMET
@@ -202,8 +234,8 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
                 cuenta[nombre]["suma"] += int(v)
                 cuenta[nombre]["meses"] += 1
 
-        for clave, comparar in (("ta_max", max), ("ta_min", min), ("p_max", max)):
-            v = numero(r.get(clave))
+        for clave, comparar in (("ta_max", max), ("ta_min", min), ("p_max", max), ("w_racha", max)):
+            v = racha(r.get(clave)) if clave == "w_racha" else numero(r.get(clave))
             if v is None:
                 continue
             actual = extremos[clave]
@@ -212,6 +244,8 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
 
     mensual_t.sort(key=lambda p: p["t"])
     mensual_p.sort(key=lambda p: p["t"])
+    for puntos in otras.values():
+        puntos.sort(key=lambda p: p["t"])
 
     def media(xs: list[float]) -> float | None:
         return round(sum(xs) / len(xs), 1) if xs else None
@@ -222,6 +256,7 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
          "temperatura_maxima_media": media(acum_tmax[m]),
          "temperatura_minima_media": media(acum_tmin[m]),
          "precipitacion_media": media(acum_p[m]),
+         "humedad_media": media(acum_hr[m]),
          "anyos_promediados": len(acum_t[m])}
         for m in range(1, 13) if acum_t[m] or acum_p[m]
     ]
@@ -236,6 +271,7 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "temperatura_mensual": mensual_t,
         "precipitacion_mensual": mensual_p,
+        **otras,
         "temperatura_anual": anual_t,
         "precipitacion_anual": anual_p,
         "normales": normales,

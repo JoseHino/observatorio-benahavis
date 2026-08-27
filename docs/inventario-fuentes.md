@@ -409,21 +409,35 @@ régimen general y 84 al sistema de empleados del hogar. Serie desde marzo de 20
 
 ---
 
-#### Serie larga: reanálisis ERA5
+#### Serie larga: reanálisis ERA5 — probado y descartado
 
 | # | Organismo · operación | Endpoint verificado | Granularidad | Periodicidad | Formato | Licencia | Estado |
 |---|---|---|---|---|---|---|---|
-| 6.5 | ECMWF — reanálisis **ERA5** (temperatura de ERA5-Land, 9 km; precipitación de ERA5), servido por el archivo abierto de Open-Meteo | `https://archive-api.open-meteo.com/v1/archive?latitude=36.5436&longitude=-5.0247&start_date=1950-01-01&end_date=…&daily=temperature_2m_mean,precipitation_sum&models=era5_seamless` | Celda de malla de 9 km sobre el punto de la estación | Diaria desde 1950 | JSON | CC BY 4.0 (ECMWF) · sin clave | **Disponible** |
+| 6.5 | ECMWF — reanálisis **ERA5** (temperatura de ERA5-Land, 9 km; precipitación de ERA5), servido por el archivo abierto de Open-Meteo | `https://archive-api.open-meteo.com/v1/archive?latitude=36.5436&longitude=-5.0247&start_date=1950-01-01&end_date=…&daily=temperature_2m_mean,precipitation_sum&models=era5_seamless` | Celda de malla de 9 km sobre el punto de la estación | Diaria desde 1950 | JSON | CC BY 4.0 (ECMWF) · sin clave | **NO se publica** — decisión del cliente: el panel de clima lleva solo observación |
 
 **Prueba de resolución (6.5):** 27.992 días, de 1950-01-01 a hoy, en **una sola petición**. La
 celda cae en 36,50 N 5,00 W a **395 m**, tres metros por encima de la altitud de la estación, de
 modo que la comparación entre ambas series no arrastra una diferencia de cota.
 
-**Para qué se usa:** la estación 6069X arranca en 2004 y **veintidós años no dan para una
+**Por qué no se publica.** El cliente quiere en el panel **solo mediciones reales de la
+estación**, y el reanálisis no lo es: es un modelo que reconstruye la atmósfera asimilando
+observaciones, no un termómetro dentro del término. La ficha se conserva entera porque el trabajo
+de verificación está hecho y las cifras siguen siendo útiles si algún día hace falta el contexto de
+medio siglo —o si alguien pregunta por qué no está—.
+
+**Lo que aportaba:** la estación 6069X arranca en 2004 y **veintidós años no dan para una
 tendencia**. El reanálisis aporta 76 años completos: temperatura media anual y mensual, anomalía
 respecto a 1961–1990 y normales mensuales de tres periodos. Resultado para Benahavís: **+1,38 °C**
 entre la media de 1961–1990 (15,2 °C) y la de la última década (16,5 °C), y de **775 mm a 619 mm**
 de precipitación media anual.
+
+> **Contrastado contra 80 años de observación.** Se pidió ERA5 en el punto de **Málaga Aeropuerto
+> (6155A)**, que sí tiene serie observada desde 1943, y se comparó con la estación: la correlación
+> de las anomalías anuales es de **0,948 sobre 69 años** —el reanálisis clava qué años fueron
+> cálidos y cuáles fríos— pero el calentamiento le sale **corto**: +1,39 °C frente a los +1,86 °C
+> que mide la estación entre 1961–1990 y 2016–2025. Parte de esa diferencia es probablemente
+> urbanización del entorno del aeropuerto, que el modelo no ve. Conclusión: como estimación de
+> tendencia es un **suelo**, no un techo.
 
 > **El reanálisis va 2 °C por debajo de la estación.** Medido sobre los **253 meses** que
 > comparten: sesgo de **−2,02 °C** con una desviación de solo **0,46 °C**. Es un desfase de cota y

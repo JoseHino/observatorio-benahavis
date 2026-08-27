@@ -117,7 +117,7 @@ El pipeline no se detiene ni escribe datos de relleno.
 | 3 | Demanda turística | `demanda.json` | Posicionamiento móvil vía Dataestur (~30 MB por año) y EOH de la zona turística Costa del Sol, etiquetada como supramunicipal |
 | 4 | Mercado de trabajo | `trabajo.json` | SEPE y Seguridad Social; descarga **incremental** |
 | 5 | Empresas, autónomos y finanzas | `economia.json` | Empresas del DIRCE, afiliación por régimen de IECA/BADEA (**una petición por mes**, descarga incremental) y deuda viva del Ministerio de Hacienda |
-| 6 | Clima | `clima.json` | AEMET, estación municipal `6069X` (requiere clave) y reanálisis ERA5 del ECMWF desde 1950 en el mismo punto, para la tendencia |
+| 6 | Clima | `clima.json` | AEMET, estación municipal `6069X`; requiere clave. Solo observación: temperatura, lluvia, humedad, viento, rachas y recuentos de días |
 | 7 | Conteo de visitantes | `visitantes.json` | Decreto 72/2017; módulo preparado, a la espera de datos |
 | 8 | Big Data Costa del Sol | `costadelsol.json` | Ocupación y precio de la vivienda turística, serie histórica del RTA, precios de portales, empleo por subsector y microdato EOH |
 
