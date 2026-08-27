@@ -25,6 +25,22 @@
   };
   var suma = function (a) { return (a || []).reduce(function (s, v) { return s + (+v || 0); }, 0); };
 
+  /* Rejilla anual completa entre el primer y el último año con dato. Sin ella, una
+     serie con huecos —la estación tiene años sin publicar— pinta 2013 pegado a
+     2016 y la línea cruza el hueco como si no existiera. */
+  var rejillaAnual = function (anyos) {
+    var validos = (anyos || []).filter(Boolean).map(Number).filter(isFinite);
+    if (!validos.length) return [];
+    var x = [];
+    for (var a = Math.min.apply(null, validos); a <= Math.max.apply(null, validos); a++) x.push(String(a));
+    return x;
+  };
+  var alineado = function (x, filas, clave, campoT) {
+    var m = {};
+    (filas || []).forEach(function (r) { m[String(r[campoT || 't'])] = r[clave]; });
+    return x.map(function (a) { return m[a] == null ? null : m[a]; });
+  };
+
   /* --------------------------------------------------------------- Fuentes */
 
   /* Cada fuente apunta al dato concreto y no al portal del organismo: a la tabla
@@ -63,6 +79,10 @@
                 url: 'https://www.seg-social.es/wps/portal/wss/internet/EstadisticasPresupuestosEstudios/Estadisticas/EST8/EST10/EST304/1470' },
     aemet:    { txt: 'AEMET · estación 6069X Benahavís',
                 url: 'https://www.aemet.es/es/serviciosclimaticos/datosclimatologicos/valoresclimatologicos?l=6069X&k=and' },
+    /* El enlace lleva a la serie concreta que alimenta la tarjeta, no al portal:
+       es la misma petición que hace el pipeline, en el punto de la estación. */
+    era5:     { txt: 'ECMWF · reanálisis ERA5 en el punto de la estación (archivo de Open-Meteo)',
+                url: 'https://archive-api.open-meteo.com/v1/archive?latitude=36.5436&longitude=-5.0247&start_date=1950-01-01&end_date=2025-12-31&daily=temperature_2m_mean,precipitation_sum&timezone=Europe%2FMadrid&models=era5_seamless' },
     hacienda: { txt: 'Hacienda · deuda viva de las entidades locales',
                 url: 'https://www.hacienda.gob.es/es-ES/Areas%20Tematicas/Administracion%20Electronica/OVEELL/Paginas/DeudaViva.aspx' },
     /* Big Data: cada informe tiene su propia dirección y admite ?mun=, así que
@@ -810,10 +830,39 @@
     {
       id: 'clima', nombre: 'Clima',
       titulo: 'Clima',
-      desc: 'Serie de la estación de AEMET <b>6069X Benahavís</b>, situada dentro del término municipal a 392 m de altitud. ' +
-            'Tener estación propia evita recurrir a la de un municipio vecino, que es lo que suele objetarse en el expediente.',
+      desc: 'Dos fuentes que se complementan y no se mezclan. La estación de AEMET <b>6069X Benahavís</b>, ' +
+            'dentro del término municipal a 392 m, es la <b>observación</b>: mide lo que pasa, pero arranca en ' +
+            '2004. Para ver una tendencia hace falta más recorrido, y eso lo da el <b>reanálisis ERA5</b> del ' +
+            'ECMWF sobre el mismo punto, que llega hasta 1950.',
       render: function () {
         var c = D.clima || {}, n = c.normales || [], ex = c.extremos || {};
+        var lp = c.largo_plazo || {}, res = lp.resumen || {}, cont = lp.contraste_estacion || {};
+        var idx = c.indices_anuales || [];
+        var meses = n.map(function (r) { return MES_CORTO[r.mes - 1]; });
+
+        /* Media móvil de diez años: en una serie climática el año suelto es ruido
+           y lo que se lee es la banda por la que se mueve la década. */
+        var anualERA = lp.temperatura_anual || [];
+        var movil = anualERA.map(function (p, k) {
+          if (k < 9) return null;
+          var tramo = anualERA.slice(k - 9, k + 1).map(function (x) { return x.v; });
+          return Math.round(suma(tramo) / tramo.length * 100) / 100;
+        });
+
+        var periodos = lp.normales_por_periodo || [];
+        var avisoERA = cont.sesgo_temperatura != null
+          ? 'El reanálisis describe una celda de malla de 9 km, no el punto de la estación: en los ' +
+            F.num(cont.meses_comparados) + ' meses que comparten va ' + F.num(Math.abs(cont.sesgo_temperatura), 2) +
+            ' °C por debajo de lo que mide la estación, con una desviación de ' + F.num(cont.desviacion_temperatura, 2) +
+            ' °C. Como el desfase es tan estable, la forma y la tendencia de la serie son fiables; las cifras ' +
+            'absolutas no son la temperatura observada del municipio.'
+          : 'El reanálisis describe una celda de malla de 9 km, no el punto de la estación: sirve para la ' +
+            'tendencia, no como temperatura observada del municipio.';
+
+        var ejeIndices = rejillaAnual(campo(idx, 't'));
+        var indice = function (nombre) { return alineado(ejeIndices, idx, nombre); };
+        var ejeAnualEstacion = rejillaAnual(ejeT(c.temperatura_anual));
+
         return {
           kpis: [
             { label: 'Temperatura media anual', valor: ultV(c.temperatura_anual), unidad: '°C', dec: 1, formato: F.num, serie: vals(c.temperatura_anual) },
@@ -822,34 +871,137 @@
             { label: 'Temperatura máxima registrada', valor: (ex.ta_max || {}).valor, dec: 1, formato: F.num,
               unidad: '°C · ' + (mesAnyo((ex.ta_max || {}).fecha) || 'fecha no publicada') },
             { label: 'Temperatura mínima registrada', valor: (ex.ta_min || {}).valor, dec: 1, formato: F.num,
-              unidad: '°C · ' + (mesAnyo((ex.ta_min || {}).fecha) || 'fecha no publicada') }
+              unidad: '°C · ' + (mesAnyo((ex.ta_min || {}).fecha) || 'fecha no publicada') },
+            { label: 'Calentamiento desde ' + (res.referencia || '1961–1990'), valor: res.calentamiento,
+              dec: 2, formato: F.signo, unidad: '°C', serie: vals(lp.anomalia_anual).slice(-40) }
           ],
           cards: [
             {
+              titulo: 'Temperatura media anual desde ' + (lp.desde || '1950'),
+              sub: 'Reanálisis ERA5 sobre el punto de la estación · ' + (res.anyos || '') + ' años',
+              chips: [ANUAL, { txt: 'Reanálisis', tipo: 'warn' }], fuente: FTE.era5, ancho: 'full',
+              nota: avisoERA,
+              spec: {
+                type: 'line', xType: 'anual', xLabel: 'Año', yFormat: 'dec1', yLabel: '°C',
+                /* La serie entera visible de entrada: el zoom por defecto del kit
+                   entra al 55 % y en una serie climática eso esconde justo el
+                   tramo con el que hay que comparar. */
+                x: ejeT(anualERA), zoom: true, zoomDesde: 0,
+                series: [
+                  { name: 'Media anual', data: vals(anualERA) },
+                  { name: 'Media de 10 años', data: movil }
+                ]
+              }
+            },
+            {
+              titulo: 'Temperatura media mes a mes desde ' + (lp.desde || '1950'),
+              sub: 'Serie mensual completa del reanálisis · ' + F.num((lp.temperatura_mensual || []).length) + ' meses',
+              chips: [MENSUAL, { txt: 'Reanálisis', tipo: 'warn' }], fuente: FTE.era5, ancho: 'full',
+              nota: 'Es la serie mensual más larga que existe para este punto: la estación del municipio no ' +
+                    'empieza hasta 2004. Se puede acercar el tramo que interese con la barra inferior, y ver los ' +
+                    'valores en tabla o descargarlos en CSV con los botones de la tarjeta.',
+              spec: {
+                type: 'line', xType: 'mes', xLabel: 'Mes', yFormat: 'dec1', yLabel: '°C',
+                x: ejeT(lp.temperatura_mensual), zoom: true, zoomDesde: 0,
+                series: [{ name: 'Temperatura media mensual', data: vals(lp.temperatura_mensual) }]
+              }
+            },
+            {
+              titulo: 'Cuánto se ha calentado Benahavís',
+              sub: 'Diferencia de cada año con la media de ' + (res.referencia || '1961–1990'),
+              chips: [ANUAL, { txt: 'Reanálisis', tipo: 'warn' }], fuente: FTE.era5, ancho: 'full',
+              nota: 'La anomalía compara la serie consigo misma, así que el desfase con la estación se cancela: ' +
+                    'es la parte del reanálisis que sí se puede leer en términos absolutos. La década ' +
+                    (res.referencia ? 'de referencia es ' + res.referencia : 'de referencia') + ', con ' +
+                    F.num(res.temperatura_referencia, 1) + ' °C de media, es la referencia clásica de la OMM para medir el cambio.',
+              spec: {
+                type: 'bar', xType: 'anual', xLabel: 'Año', yFormat: 'dec1', yLabel: '°C',
+                /* Las barras se anclan en cero, pero el cero aquí NO es el suelo del
+                   eje: los años por debajo de la referencia son parte del dato y
+                   con el mínimo forzado a cero desaparecerían de la gráfica. */
+                x: ejeT(lp.anomalia_anual), zoom: true, zoomDesde: 0,
+                yMin: Math.floor(Math.min.apply(null, [0].concat(vals(lp.anomalia_anual).filter(function (v) { return v != null; }))) * 2) / 2,
+                series: [{ name: 'Anomalía respecto a ' + (res.referencia || '1961–1990'), data: vals(lp.anomalia_anual) }]
+              }
+            },
+            {
+              titulo: 'El año, mes a mes, en tres épocas',
+              sub: 'Temperatura media mensual del reanálisis',
+              chips: [{ txt: 'Reanálisis', tipo: 'warn' }], fuente: FTE.era5,
+              nota: 'El calentamiento no reparte igual: se nota más en los meses de verano que en los de invierno.',
+              spec: {
+                type: 'line', xLabel: 'Mes', xTodas: true, yFormat: 'dec1', yLabel: '°C',
+                x: MES_CORTO,
+                series: periodos.map(function (p) {
+                  return { name: p.etiqueta, data: (p.valores || []).map(function (v) { return v.temperatura_media; }) };
+                })
+              }
+            },
+            {
+              titulo: 'Precipitación anual desde ' + (lp.desde || '1950'),
+              sub: 'Reanálisis ERA5 · litros por metro cuadrado y año',
+              chips: [ANUAL, { txt: 'Reanálisis', tipo: 'warn' }], fuente: FTE.era5,
+              nota: 'De ' + F.num(res.precipitacion_referencia) + ' mm de media en ' + (res.referencia || '1961–1990') +
+                    ' a ' + F.num(res.precipitacion_ultima_decada) + ' mm en la última década. La lluvia varía ' +
+                    'muchísimo de un año a otro, así que lo que cuenta aquí es el nivel medio, no el año concreto.',
+              spec: {
+                type: 'line', xType: 'anual', xLabel: 'Año', yFormat: 'num', yLabel: 'mm',
+                x: ejeT(lp.precipitacion_anual), zoom: true, zoomDesde: 0,
+                series: [{ name: 'Precipitación anual', data: vals(lp.precipitacion_anual) }]
+              }
+            },
+            {
               titulo: 'Pluviometría', sub: 'Precipitación media mensual en la estación 6069X, mm',
-              chips: [{ txt: 'Normales' }], fuente: FTE.aemet, ancho: 'full',
+              chips: [{ txt: 'Normales' }], fuente: FTE.aemet,
               nota: 'Precipitación y temperatura no comparten eje: son magnitudes distintas y superponerlas en una sola escala falsearía la lectura.',
               spec: {
                 type: 'bar', xLabel: 'Mes', xTodas: true, yFormat: 'num', yLabel: 'mm',
-                x: n.map(function (r) { return MES_CORTO[r.mes - 1]; }),
+                x: meses,
                 series: [{ name: 'Precipitación media (mm)', data: n.map(function (r) { return r.precipitacion_media; }) }]
               }
             },
             {
-              titulo: 'Temperatura media mensual', sub: 'Valores normales, °C',
+              titulo: 'Temperatura media, máxima y mínima', sub: 'Valores normales de la estación, °C',
               chips: [{ txt: 'Normales' }], fuente: FTE.aemet,
+              nota: 'Máxima y mínima son las medias de las máximas y las mínimas diarias del mes, no los récords.',
               spec: {
                 type: 'line', xLabel: 'Mes', xTodas: true, yFormat: 'dec1', yLabel: '°C',
-                x: n.map(function (r) { return MES_CORTO[r.mes - 1]; }),
-                series: [{ name: 'Temperatura media', data: n.map(function (r) { return r.temperatura_media; }) }]
+                x: meses,
+                series: [
+                  { name: 'Máxima media', data: n.map(function (r) { return r.temperatura_maxima_media; }) },
+                  { name: 'Media', data: n.map(function (r) { return r.temperatura_media; }) },
+                  { name: 'Mínima media', data: n.map(function (r) { return r.temperatura_minima_media; }) }
+                ]
               }
             },
             {
-              titulo: 'Temperatura media anual', sub: 'Serie de la estación',
-              chips: [ANUAL], fuente: FTE.aemet,
+              titulo: 'Días de calor y días de lluvia', sub: 'Recuento observado en la estación',
+              chips: [ANUAL], fuente: FTE.aemet, ancho: 'full',
+              nota: 'Recuento de la propia AEMET, no un umbral aplicado sobre una media: días con máxima de 30 °C ' +
+                    'o más y días con 1 mm de lluvia o más. Solo aparecen los años con los doce meses publicados, ' +
+                    'y por eso la serie tiene huecos. Estos recuentos NO se sacan del reanálisis: promediar una ' +
+                    'celda de 9 km recorta los extremos diarios y dejaría los días de calor en una sexta parte.',
               spec: {
-                type: 'line', xType: 'anual', xLabel: 'Año', x: ejeT(c.temperatura_anual), yFormat: 'dec1',
-                series: [{ name: 'Temperatura media', data: vals(c.temperatura_anual) }]
+                type: 'line', xType: 'anual', xLabel: 'Año', yFormat: 'num', yLabel: 'días',
+                x: ejeIndices,
+                series: [
+                  { name: 'Días de 30 °C o más', data: indice('dias_calor') },
+                  { name: 'Días de lluvia (≥ 1 mm)', data: indice('dias_lluvia') },
+                  { name: 'Días de lluvia fuerte (≥ 10 mm)', data: indice('dias_lluvia_fuerte') }
+                ]
+              }
+            },
+            {
+              titulo: 'Temperatura media anual en la estación', sub: 'Observación de la 6069X, desde 2006',
+              chips: [ANUAL], fuente: FTE.aemet,
+              nota: 'Es la serie observada del municipio. Va 2 °C por encima de la del reanálisis porque mide un ' +
+                    'punto concreto y no el promedio de una celda de malla. Los huecos son años en los que a la ' +
+                    'estación le faltó algún mes: AEMET solo publica el resumen anual de los años completos y aquí ' +
+                    'no se rellena lo que la fuente no da.',
+              spec: {
+                type: 'line', xType: 'anual', xLabel: 'Año', x: ejeAnualEstacion, yFormat: 'dec1', yLabel: '°C',
+                series: [{ name: 'Temperatura media',
+                           data: alineado(ejeAnualEstacion, c.temperatura_anual, 'v') }]
               }
             }
           ]
@@ -872,7 +1024,7 @@
       actualizado: meta.generado,
       fuentes: [FTE.padron, FTE.padron_nacionalidad, FTE.sima, FTE.renta, FTE.gini, FTE.rta,
                 FTE.ine_vut, FTE.moviles, FTE.eoh, FTE.cds, FTE.sepe, FTE.ss, FTE.dirce,
-                FTE.badea_regimen, FTE.aemet, FTE.hacienda],
+                FTE.badea_regimen, FTE.aemet, FTE.era5, FTE.hacienda],
       metodologia: 'Un proceso automático descarga las fuentes oficiales, las normaliza y vuelca <code>docs/data/*.json</code>. ' +
         'Cada tarjeta enlaza a su fuente y permite ver los datos en tabla y descargarlos en CSV. ' +
         'El inventario completo de fuentes, con sus limitaciones, está en ' +

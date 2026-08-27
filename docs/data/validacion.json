@@ -1,6 +1,6 @@
 {
- "generado": "2026-08-27T08:08:43Z",
- "series_revisadas": 28,
+ "generado": "2026-08-27T09:04:37Z",
+ "series_revisadas": 29,
  "series": [
   "badea.autonomos",
   "cds.establecimientos_inscritos",
@@ -10,6 +10,7 @@
   "cds.viviendas_anunciadas",
   "clima.precipitacion_anual",
   "clima.temperatura_anual",
+  "clima.temperatura_anual_era5",
   "clima.temperatura_mensual",
   "demanda.turistas_extranjeros",
   "demanda.turistas_nacionales",
@@ -32,6 +33,12 @@
   "sepe.paro"
  ],
  "incidencias": [
+  {
+   "serie": "clima.temperatura_mensual",
+   "tipo": "meses_ausentes",
+   "detalle": "17 meses sin dato: 2005-08, 2007-06, 2008-07, 2009-06, 2009-07, 2009-08…",
+   "gravedad": "aviso"
+  },
   {
    "serie": "rta.acumulado_altas",
    "tipo": "salto_anomalo",
@@ -60,12 +67,6 @@
    "serie": "eoh.ocupacion_zona_turistica",
    "tipo": "meses_ausentes",
    "detalle": "2 meses sin dato: 2020-05, 2020-06",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "clima.temperatura_mensual",
-   "tipo": "meses_ausentes",
-   "detalle": "2 meses sin dato: 2020-11, 2020-12",
    "gravedad": "aviso"
   },
   {

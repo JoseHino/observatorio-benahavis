@@ -375,7 +375,7 @@ régimen general y 84 al sistema de empleados del hogar. Serie desde marzo de 20
 | 6.1 | AEMET OpenData — **estación 6069X BENAHAVÍS** | `https://opendata.aemet.es/opendata/api/valores/climatologicos/mensualesanuales/datos/anioini/{a}/aniofin/{b}/estacion/6069X?api_key=…` | **Municipal** (estación dentro del término) | Mensual y anual, desde 2004 | **Disponible** |
 | 6.2 | AEMET OpenData — estaciones de contraste: `6155A` Málaga Aeropuerto, `6058I` Estepona, `6083X` Marbella | Mismo endpoint, cambiando el indicativo | Estación de medida | Diaria | **Disponible** |
 | 6.3 | AEMET OpenData — inventario de estaciones | `.../valores/climatologicos/inventarioestaciones/todasestaciones` | 921 estaciones, 26 en Málaga | — | **Disponible** |
-| 6.4 | Copernicus CDS — reanálisis ERA5 | API CDS | Celda ~9 km sobre el término municipal | Horaria desde 1940 | **Opcional** — solo si se requiere serie homogénea anterior a la estación |
+| 6.4 | Copernicus CDS — reanálisis ERA5 | API CDS | Celda ~9 km sobre el término municipal | Horaria desde 1940 | **Descartado a favor de 6.5**: el CDS exige alta, clave y cola de trabajos; el archivo abierto sirve el mismo ERA5 sin clave y en una sola petición |
 
 > **Corrección a la hipótesis del encargo: sí existe estación meteorológica en Benahavís.**
 > El inventario de AEMET incluye la estación **`6069X BENAHAVÍS`**, a 392 m de altitud
@@ -406,6 +406,65 @@ régimen general y 84 al sistema de empleados del hogar. Serie desde marzo de 20
 >    entre paréntesis que indican el día del extremo.
 > 7. El **«mes» 13 de cada año no es un mes**: es el resumen anual. Tratarlo como mes natural
 >    duplicaría e inflaría la serie mensual.
+
+---
+
+#### Serie larga: reanálisis ERA5
+
+| # | Organismo · operación | Endpoint verificado | Granularidad | Periodicidad | Formato | Licencia | Estado |
+|---|---|---|---|---|---|---|---|
+| 6.5 | ECMWF — reanálisis **ERA5** (temperatura de ERA5-Land, 9 km; precipitación de ERA5), servido por el archivo abierto de Open-Meteo | `https://archive-api.open-meteo.com/v1/archive?latitude=36.5436&longitude=-5.0247&start_date=1950-01-01&end_date=…&daily=temperature_2m_mean,precipitation_sum&models=era5_seamless` | Celda de malla de 9 km sobre el punto de la estación | Diaria desde 1950 | JSON | CC BY 4.0 (ECMWF) · sin clave | **Disponible** |
+
+**Prueba de resolución (6.5):** 27.992 días, de 1950-01-01 a hoy, en **una sola petición**. La
+celda cae en 36,50 N 5,00 W a **395 m**, tres metros por encima de la altitud de la estación, de
+modo que la comparación entre ambas series no arrastra una diferencia de cota.
+
+**Para qué se usa:** la estación 6069X arranca en 2004 y **veintidós años no dan para una
+tendencia**. El reanálisis aporta 76 años completos: temperatura media anual y mensual, anomalía
+respecto a 1961–1990 y normales mensuales de tres periodos. Resultado para Benahavís: **+1,38 °C**
+entre la media de 1961–1990 (15,2 °C) y la de la última década (16,5 °C), y de **775 mm a 619 mm**
+de precipitación media anual.
+
+> **El reanálisis va 2 °C por debajo de la estación.** Medido sobre los **253 meses** que
+> comparten: sesgo de **−2,02 °C** con una desviación de solo **0,46 °C**. Es un desfase de cota y
+> de promediado espacial, no un error: la celda de 9 km no es el punto a 392 m. Como es tan
+> estable, **la forma y la tendencia sirven y las cifras absolutas no**, y por eso el panel publica
+> la anomalía —que se compara consigo misma y cancela el desfase— junto a la serie. El pipeline
+> recalcula ese contraste en cada ejecución y lo publica en `clima.json`, para que la advertencia
+> no se quede con un número viejo.
+
+> **Del reanálisis NO salen recuentos de días de calor.** Comprobado: en los años que comparten,
+> la estación registra **60 días al año** con máxima de 30 °C o más y el reanálisis **10**.
+> Corrigiendo el sesgo medio mes a mes sube a 33, todavía la mitad: promediar una celda de 9 km no
+> solo baja la media, **recorta los extremos diarios**, que son justo los que definen un día de
+> calor. Ajustarlo exigiría un reescalado de cuantiles, que ya sería una serie inventada. Los
+> recuentos de días se publican solo desde la estación (campos `nt_30`, `np_010`, `np_100`).
+
+> **`models=era5_land` a secas devuelve la precipitación entera a nulo**, con HTTP 200 y sin aviso.
+> Hay que pedir **`era5_seamless`**, que combina la temperatura de ERA5-Land con la precipitación
+> de ERA5.
+
+> **El cupo del archivo abierto se pondera por volumen, no por peticiones.** Pedir cuatro variables
+> sobre 76 años agota la cuota horaria en pocos intentos y responde **429**. Se piden solo las dos
+> que se publican; en la ejecución mensual del pipeline es una única llamada.
+
+#### Trampas de la estación de AEMET (verificadas al ampliar el bloque)
+
+> **El mes viene sin cero a la izquierda** (`2004-2`, no `2004-02`). Ordenar la serie tal cual la
+> deja alfabética —octubre antes que febrero—, y las etiquetas de periodo del panel, que esperan
+> dos cifras, se quedan sin traducir. El primer mes de la serie de Benahavís no es octubre de 2004
+> sino **febrero de 2004**; con el orden alfabético parecía lo contrario.
+
+> **Del año en curso vienen los doce meses, la mayoría vacíos.** Contar registros para decidir si
+> un año está completo da por bueno agosto de 2026 con siete meses de dato. La comprobación se hace
+> **campo a campo**: cada índice anual se publica solo si ese contador tiene sus doce meses. Por eso
+> la serie de días de calor tiene huecos y no una línea continua: son los años a los que la estación
+> les faltó algún mes.
+
+> **Campos de recuento que sí publica AEMET en el resumen mensual**, y que evitan tener que
+> deducirlos: `nt_30` (días con máxima ≥ 30 °C), `nt_00` (días de helada), `np_001` / `np_010` /
+> `np_100` / `np_300` (días con ≥ 0,1 / 1 / 10 / 30 mm), además de `tm_max` y `tm_min` (medias de
+> las máximas y las mínimas diarias del mes).
 
 ---
 

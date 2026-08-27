@@ -26,7 +26,8 @@ from src.contexto import (
     MUNICIPIO, NOMBRE_PROVINCIA, VERSION,
 )
 from src.extract import (
-    aemet, badea, costadelsol, dataestur, eoh, hacienda, ine_tempus, openrta, sepe, sima,
+    aemet, badea, costadelsol, dataestur, eoh, hacienda, ine_tempus, openrta, reanalisis,
+    sepe, sima,
 )
 from src.extract import seguridad_social as ss
 from src.extract import visitantes as vis
@@ -295,7 +296,14 @@ def bloque_economia() -> dict[str, Any]:
 
 # ---------------------------------------------------------------- Bloque 6
 def bloque_clima() -> dict[str, Any]:
-    """Clima observado en la estación de AEMET situada dentro del término municipal."""
+    """Clima del municipio: la estación de AEMET y la serie larga de reanálisis.
+
+    La estación ``6069X`` está dentro del término y es **observación**, pero
+    arranca en 2004: no da para ver una tendencia. El reanálisis ERA5 sobre el
+    mismo punto llega a 1950 y sí la da, a cambio de describir una celda de malla
+    y no un punto. Se publican los dos, cada uno etiquetado, y el pipeline mide el
+    desfase entre ambos en los meses que comparten.
+    """
     resumen = aemet.resumir(aemet.serie_mensual(AEMET_ESTACION))
     serie_temporal(INFORME, "clima.temperatura_anual", resumen["temperatura_anual"],
                    minimo=5, maximo=30, salto_relativo=1.5)
@@ -303,11 +311,23 @@ def bloque_clima() -> dict[str, Any]:
                    minimo=0, maximo=3000, salto_relativo=6.0)
     serie_temporal(INFORME, "clima.temperatura_mensual", resumen["temperatura_mensual"],
                    minimo=-5, maximo=40, salto_relativo=3.0, mensual=True)
+
+    try:
+        largo = reanalisis.serie()
+        largo["contraste_estacion"] = reanalisis.contraste(largo, resumen)
+        serie_temporal(INFORME, "clima.temperatura_anual_era5", largo["temperatura_anual"],
+                       minimo=5, maximo=30, salto_relativo=1.5)
+    except Exception as exc:  # noqa: BLE001 — la serie larga no puede tumbar el dato observado
+        log.warning("reanálisis ERA5 no disponible: %s", exc)
+        largo = (leer_previo("clima") or {}).get("largo_plazo") or {}
+
     return {
         **resumen,
+        "largo_plazo": largo,
         "estacion": {"indicativo": AEMET_ESTACION, "nombre": "Benahavís",
                      "altitud_m": 392, "dentro_del_termino": True},
-        "fuente": "AEMET OpenData · estación 6069X Benahavís",
+        "fuente": "AEMET OpenData · estación 6069X Benahavís · ECMWF ERA5 vía Open-Meteo "
+                  "para la serie larga",
         "ambito": "municipal",
         "actualizado": SELLO,
     }

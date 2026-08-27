@@ -118,13 +118,38 @@ def serie_mensual(estacion: str = AEMET_ESTACION, *, desde: int = 1998,
     return registros
 
 
+#: Recuentos de días que la propia AEMET publica en el resumen mensual. Son
+#: observación, no un umbral aplicado por este pipeline sobre una media.
+DIAS = {
+    "nt_30": "dias_calor",        # días con temperatura máxima >= 30 °C
+    "nt_00": "dias_helada",       # días con temperatura mínima <= 0 °C
+    "np_010": "dias_lluvia",      # días con precipitación >= 1 mm
+    "np_100": "dias_lluvia_fuerte",   # días con precipitación >= 10 mm
+    "np_300": "dias_lluvia_torrencial",   # días con precipitación >= 30 mm
+}
+
+MESES_ANYO_COMPLETO = 12
+
+
+def _periodo(fecha: str) -> str:
+    """Normaliza ``2004-2`` a ``2004-02``.
+
+    AEMET publica el mes **sin cero a la izquierda**. Sin normalizarlo, la serie
+    se ordena alfabéticamente —octubre antes que febrero— y las etiquetas de
+    periodo del panel, que esperan dos cifras, se quedan sin traducir.
+    """
+    anyo, mes = fecha.split("-", 1)
+    return f"{anyo}-{int(mes):02d}"
+
+
 def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
     """Organiza los registros de AEMET en las series publicables del observatorio.
 
     Returns:
-        Series mensuales de temperatura media y precipitación, series anuales
-        tomadas del resumen que la propia AEMET calcula (mes 13), y valores medios
-        por mes calendario sobre todo el periodo disponible.
+        Series mensuales de temperatura y precipitación, series anuales tomadas
+        del resumen que la propia AEMET calcula (mes 13), valores medios por mes
+        calendario sobre todo el periodo disponible e índices anuales de días de
+        calor, lluvia y helada.
     """
     mensual_t: list[dict[str, Any]] = []
     mensual_p: list[dict[str, Any]] = []
@@ -132,6 +157,9 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
     anual_p: list[dict[str, Any]] = []
     acum_t: dict[int, list[float]] = {m: [] for m in range(1, 13)}
     acum_p: dict[int, list[float]] = {m: [] for m in range(1, 13)}
+    acum_tmax: dict[int, list[float]] = {m: [] for m in range(1, 13)}
+    acum_tmin: dict[int, list[float]] = {m: [] for m in range(1, 13)}
+    dias_anyo: dict[str, dict[str, Any]] = {}
     extremos = {"ta_max": None, "ta_min": None, "p_max": None}
 
     for r in registros:
@@ -150,12 +178,29 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
             continue
 
         mes = int(periodo)
+        clave_mes = _periodo(fecha)
         if tm is not None:
-            mensual_t.append({"t": fecha, "v": round(tm, 1)})
+            mensual_t.append({"t": clave_mes, "v": round(tm, 1)})
             acum_t[mes].append(tm)
         if pm is not None:
-            mensual_p.append({"t": fecha, "v": round(pm, 1)})
+            mensual_p.append({"t": clave_mes, "v": round(pm, 1)})
             acum_p[mes].append(pm)
+        for campo, acumulador in (("tm_max", acum_tmax), ("tm_min", acum_tmin)):
+            v = numero(r.get(campo))
+            if v is not None:
+                acumulador[mes].append(v)
+
+        # Recuentos de días: se suman por año y se publica cada índice solo si
+        # tiene los doce meses. La comprobación va campo a campo porque AEMET
+        # devuelve el registro del mes aunque falte un contador —y los meses
+        # futuros del año en curso vienen ya creados y vacíos—, de modo que
+        # contar registros daría por completo un año que no lo está.
+        cuenta = dias_anyo.setdefault(anyo, {n: {"suma": 0, "meses": 0} for n in DIAS.values()})
+        for campo, nombre in DIAS.items():
+            v = numero(r.get(campo))
+            if v is not None:
+                cuenta[nombre]["suma"] += int(v)
+                cuenta[nombre]["meses"] += 1
 
         for clave, comparar in (("ta_max", max), ("ta_min", min), ("p_max", max)):
             v = numero(r.get(clave))
@@ -163,7 +208,10 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
                 continue
             actual = extremos[clave]
             if actual is None or comparar(v, actual["valor"]) == v:
-                extremos[clave] = {"valor": round(v, 1), "fecha": fecha}
+                extremos[clave] = {"valor": round(v, 1), "fecha": clave_mes}
+
+    mensual_t.sort(key=lambda p: p["t"])
+    mensual_p.sort(key=lambda p: p["t"])
 
     def media(xs: list[float]) -> float | None:
         return round(sum(xs) / len(xs), 1) if xs else None
@@ -171,10 +219,19 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
     normales = [
         {"mes": m,
          "temperatura_media": media(acum_t[m]),
+         "temperatura_maxima_media": media(acum_tmax[m]),
+         "temperatura_minima_media": media(acum_tmin[m]),
          "precipitacion_media": media(acum_p[m]),
          "anyos_promediados": len(acum_t[m])}
         for m in range(1, 13) if acum_t[m] or acum_p[m]
     ]
+
+    indices = []
+    for anyo, cuenta in sorted(dias_anyo.items()):
+        fila = {nombre: datos["suma"] for nombre, datos in cuenta.items()
+                if datos["meses"] >= MESES_ANYO_COMPLETO}
+        if fila:
+            indices.append({"t": anyo, **fila})
 
     return {
         "temperatura_mensual": mensual_t,
@@ -182,6 +239,7 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
         "temperatura_anual": anual_t,
         "precipitacion_anual": anual_p,
         "normales": normales,
+        "indices_anuales": indices,
         "extremos": extremos,
         "meses_observados": len(mensual_t),
         "primer_mes": mensual_t[0]["t"] if mensual_t else None,
