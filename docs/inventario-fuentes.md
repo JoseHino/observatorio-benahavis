@@ -110,6 +110,12 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 | 1.7 | INE — Padrón Continuo, tabla **33572** «Población por sexo, municipios y nacionalidad (principales nacionalidades)» | `.../DATOS_TABLA/33572?tv=19:2923&nult=N` | Municipal, por país de nacionalidad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
 | 1.8 | INE — Atlas de Renta, tabla **53689** «Indicadores de renta media y mediana» de las demarcaciones superiores | `.../DATOS_TABLA/53689?nult=N` | Nacional, comunidad y provincia | Anual | JSON | Ídem | **Disponible** |
 | 1.9 | IECA — ficha municipal del SIMA, fichero de datos | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/datos/smex99.xls` | Municipal (todos los municipios andaluces) | Anual | XLS (Excel 97) | CC BY | **Disponible** |
+| 1.10 | INE — Padrón Continuo, tabla **33570** «Población por sexo, municipios y edad (grupos quinquenales)» | `.../DATOS_TABLA/33570?tv=19:2923&nult=N` | Municipal, por sexo y grupo de edad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
+| 1.11 | INE — Padrón Continuo, tabla **33574** «Población por sexo, municipios y lugar de nacimiento» | `.../DATOS_TABLA/33574?tv=19:2923&nult=N` | Municipal, por sexo y lugar de nacimiento | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
+| 1.12 | INE — Atlas de Renta, tabla **30832** «Indicadores demográficos» | `.../DATOS_TABLA/30832?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
+| 1.13 | INE — Atlas de Renta, tabla **30825** «Distribución por fuente de ingresos» | `.../DATOS_TABLA/30825?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
+| 1.14 | INE — Atlas de Renta, tabla **30826** «Población con ingresos por unidad de consumo por debajo de umbrales absolutos» | `.../DATOS_TABLA/30826?tv=19:2923&nult=N` | Municipal, total y por sexo | Anual | JSON | Ídem | **Disponible** |
+| 1.15 | INE — Estadística de Migraciones y Cambios de Residencia (`EMCR`), tabla **69767** «Saldos por municipio, año, sexo y tipo de saldo» | `.../DATOS_TABLA/69767?tv=19:2923&nult=N` | Municipal, por sexo y tipo de saldo | Anual | JSON | Ídem | **Disponible** |
 
 **Prueba de resolución municipal (1.1):** Padrón a 1 de enero de 2025 → **9.472 habitantes**
 (4.732 hombres / 4.740 mujeres). Series `DPOP13531`, `DPOP13532`, `DPOP13533`.
@@ -172,6 +178,69 @@ Alemania y 207 de Italia. Serie 2003–2022 en las dos tablas, con desglose por 
 > el INE. Con 9.000 habitantes y una renta muy concentrada, unos pocos declarantes mueven la
 > media del municipio, y por eso la comparación con los agregados lleva su aviso en la tarjeta.
 
+**Prueba de resolución municipal (1.10):** padrón de 2022 → 21 grupos quinquenales por sexo que
+suman los 8.763 habitantes del año. El tramo más numeroso es el de **45 a 49 años** (846
+personas): no es la forma de un municipio envejecido, porque a Benahavís se llega ya en edad de
+trabajar. Serie 2003–2022.
+
+**Prueba de resolución municipal (1.11):** padrón de 2022 → de 8.763 empadronados, **5.524
+nacieron en el extranjero** (63 %), 613 en el propio municipio, 1.564 en otro municipio de
+Málaga, 460 en otra provincia andaluza y 602 en otra comunidad autónoma. Serie 2003–2022.
+
+> **Categorías anidadas en la 33574.** La tabla publica a la vez el total, los agregados
+> intermedios («En España», «En la misma Comunidad Autónoma», «Misma Provincia») y los
+> desgloses finales. Apilar todo lo que devuelve da **el doble de población de la que hay**.
+> Solo son excluyentes entre sí cinco categorías —mismo municipio, misma provincia, otra
+> provincia andaluza, otra comunidad, extranjero—, y son las únicas que se publican; comprueban
+> el total exactamente (613 + 1.564 + 460 + 602 + 5.524 = 8.763).
+
+**Prueba de resolución municipal (1.12):** ejercicio 2023 → edad media **39,8 años**, **21,7 %**
+de menores de 18, **13,6 %** de 65 y más, tamaño medio del hogar **2,4**, **33,4 %** de hogares
+unipersonales y **38,3 %** de población española. Serie desde 2015.
+
+> **La 30832 llega donde el Padrón por nacionalidad ya no llega.** El «porcentaje de población
+> española» del Atlas se publica hasta **2023**, un año más allá del cierre de la serie del
+> Padrón Continuo (1.6). No son la misma operación y **no se encadenan en una sola serie**: se
+> publican por separado y cada tarjeta dice de dónde sale su tramo.
+
+> **La tabla del Atlas es la segunda de su familia, no la primera.** Igual que en la familia de
+> rentas medias la que resuelve Málaga es la 30824 —la segunda de las 54— y no la 30656, en las
+> de indicadores demográficos es la **30832** y en las de fuente de ingresos la **30825**. El
+> identificador no se deduce del nombre ni del orden alfabético: hay que probar la familia
+> entera contra `tv=19:2923` y quedarse con la que devuelve contenido.
+
+**Prueba de resolución municipal (1.13):** ejercicio 2023 → **49,4 %** de la renta viene de
+salario, **36,9 %** de «otros ingresos» (rentas del capital, de la propiedad y de actividades
+económicas), **10,9 %** de pensiones, **1,8 %** de otras prestaciones y **1,1 %** de
+prestaciones por desempleo. Los cinco conceptos suman 100. El peso de «otros ingresos» es el
+rasgo que distingue a Benahavís: en un municipio medio el salario se lleva la mayor parte.
+
+**Prueba de resolución municipal (1.14):** ejercicio 2023 → **13,7 %** de la población con
+ingresos por unidad de consumo por debajo de 5.000 €, **19,5 %** por debajo de 7.500 € y
+**27,0 %** por debajo de 10.000 €. Son umbrales **absolutos**, no la tasa de riesgo de pobreza:
+no dependen de la mediana del propio municipio y por eso se pueden comparar entre municipios.
+
+> **La familia de umbrales tiene 324 tablas y duplicados.** Además de las homónimas por
+> demarcación, los identificadores **30826–30831** y **31108–31113** devuelven exactamente el
+> mismo contenido para `tv=19:2923`. Se usa la primera serie (30826, umbrales absolutos, total
+> del municipio); las que separan por edad o nacionalidad devuelven celdas vacías para
+> Benahavís.
+
+**Prueba de resolución municipal (1.15):** saldo migratorio de 2024 → **+485** residentes en
+total, de los que **+411** con el extranjero y **+74** con el resto de España. Es el **dato
+municipal más reciente de todo el bloque**: adelanta un año al Atlas de Renta (2023) y dos al
+Padrón por nacionalidad (2022). Serie 2021–2024.
+
+> **2023 es el único año con saldo negativo** (−69 en total, −136 con el extranjero) y rompe el
+> patrón de todos los demás. No es un fallo de extracción: lo publica así el INE, y la
+> validación del pipeline lo marca como salto anómalo precisamente por eso.
+
+> **Trampa del filtro por rótulo en la 69767.** La tabla devuelve nueve series: tres tipos de
+> saldo × tres cortes de sexo, y las nueve llevan el mismo rótulo de tipo («Saldo total»,
+> «Saldo exterior», «Saldo interior»). Buscar el rótulo **por contención** en el nombre casa con
+> la primera que aparezca y mezcla hombres con ambos sexos. Hay que filtrar primero por «Ambos
+> sexos» y luego comparar el tipo **por posición** en el nombre separado por puntos.
+
 ---
 
 ### Bloque 2 — Oferta turística
@@ -227,8 +296,25 @@ turísticas**, **5.453 plazas**, 6,33 plazas por vivienda. Periodo anterior: 917
 Benahavís, con desglose por 40+ países de origen y por continente. Para dimensionar: el
 municipio tiene 9.472 habitantes empadronados.
 
-**Prueba de resolución municipal (3.2):** 222 registros de origen-destino que implican a
-Benahavís en 2025 (p. ej. enero 2025: 36 turistas con origen Algeciras y destino Benahavís).
+**Prueba de resolución municipal (3.2):** serie mensual de **82 meses**, de julio de 2019 a
+junio de 2026, y **107 municipios de origen distintos**. Encabeza siempre Madrid (3.236 turistas
+en 2023, el máximo de la serie), seguida de Sevilla y del arco del Campo de Gibraltar
+—Algeciras, La Línea, San Roque—.
+
+> **La operación publica desde 2019, no solo los dos últimos años.** Los ficheros anuales
+> `?año=YYYY` responden para **2019 a 2026**; el de 2019 arranca en julio, igual que el de
+> turismo receptor (3.1), así que su total **no es un año completo** y no se ofrece como opción
+> comparable en el panel. Pedir solo los dos últimos años, como hacía la primera versión del
+> pipeline, deja fuera cinco años que la fuente sí da.
+
+> **El origen es el MUNICIPIO, no la provincia.** El campo se llama `MUNICIPIO_ORIGEN` y por eso
+> los rankings los encabezan ciudades y no territorios. Rotular la tarjeta como «provincia de
+> origen» describe mal lo que se está enseñando.
+
+> **Filas de agregado intercaladas.** El fichero mete la fila de total nacional entre los
+> municipios. Se usa esa fila para la serie mensual —es más completa que la suma de los
+> municipios listados— pero **nunca** como municipio de procedencia, o encabezaría todos los
+> rankings.
 
 **Prueba de resolución de la zona turística (3.4):** junio de 2026 → zona **Costa del Sol
 (Málaga), Andalucía**: 565.438 viajeros, 2.193.961 pernoctaciones, estancia media 3,88 noches,
@@ -490,6 +576,26 @@ de precipitación media anual.
 | 7.2 | DERA (IECA) | `https://www.ideandalucia.es/services/DERA_g3_hidrografia/wfs?` y grupos análogos | **Disponible** — el nombre del servicio incluye el grupo temático; no existe un `DERA` genérico |
 | 7.3 | IGN/CNIG — PNOA, LiDAR, MDT | Centro de descargas del CNIG | **Disponible** |
 | 7.4 | Copernicus Sentinel-2 — NDVI | Sentinel Hub | **Requiere registro** (y rechaza EPSG:25830 — usar EPSG:32630) |
+| 7.5 | OpenStreetMap — **límite del término municipal**, relación `341434` (`boundary=administrative`, `admin_level=8`, `ine:municipio=29023`) | `https://overpass-api.de/api/interpreter` con `relation[...][name="Benahavís"]; out geom;` | **Disponible** — se descarga una vez y se archiva en `docs/data/limite.json` |
+
+**Prueba de resolución municipal (7.5):** la relación monta un anillo cerrado de **383
+vértices** con bbox −5,1401 / 36,4692 / −4,9706 / 36,6424, y lleva la etiqueta `ine:municipio`
+con el código **29023**, que es la que garantiza que es el término que se busca y no un
+homónimo.
+
+> **Contraste contra el censo de VUT.** De las 2.209 viviendas geolocalizadas del RTA, **2.189
+> caen dentro del polígono y 20 fuera** (99,1 %). Las veinte son de urbanizaciones que montan a
+> caballo del límite —Los Flamingos, El Paraíso, Los Arqueros Beach, Vega del Colorado—, donde
+> la geocodificación por calle deja el punto unos metros al otro lado. Es imprecisión de
+> geocodificación, no un error del límite ni del registro, y **el polígono no se usa para
+> filtrar**: solo se dibuja.
+
+> **Overpass exige `User-Agent`.** Sin cabecera propia responde **`406 Not Acceptable`**, no un
+> error de consulta, de modo que el fallo despista.
+
+> **Por qué no se pide en cada ejecución.** El límite de un término municipal no cambia de un
+> mes para otro. Se archiva el GeoJSON en el repositorio (8 KB) y así el panel no depende de que
+> Overpass responda, que es un servicio comunitario con cupos.
 
 > **Limitaciones verificadas:** Montes Públicos de Andalucía y Zonas de peligro de incendio
 > ofrecen **solo WMS** (su WFS responde `400`). Los servicios de `wms.mapama.gob.es` (dominio
@@ -646,22 +752,24 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 
 | Bloque | Fuentes verificadas y automatizables | Con dato municipal real |
 |---|---|---|
-| 1 · Demografía y territorio | 5 | Sí |
+| 1 · Demografía y territorio | 15 | Sí |
 | 2 · Oferta turística | 4 | Sí |
 | 3 · Demanda y presión turística | 4 verificadas + 1 pendiente + 1 no disponible (3.4b) | Sí (3.1 y 3.2); 3.3 y 3.4 son proxies etiquetados |
 | 4 · Mercado de trabajo | 6 | Sí |
 | 5 · Renta y actividad económica | 4 verificadas + 3 pendientes | Sí |
 | 6 · Clima | 3 (requieren clave de AEMET, ya disponible) | Sí — estación `6069X` dentro del término |
-| 7 · Medio ambiente y territorio | 3 | Sí (geometría) |
+| 7 · Medio ambiente y territorio | 4 | Sí (geometría) |
 | 8 · Finanzas municipales | 1 verificada + 2 pendientes | Sí |
 | 9 · Big Data de Turismo Costa del Sol | 5 informes incorporados + 3 verificados no incorporados | Sí, los cinco |
 
-**Total: 38 fuentes verificadas contra su endpoint real**, de las cuales 34 resuelven a nivel
+**Total: 49 fuentes verificadas contra su endpoint real**, de las cuales 45 resuelven a nivel
 municipal para Benahavís.
 
 ---
 
 *Documento generado el 17 de agosto de 2026, ampliado el 18 de agosto de 2026 con las fuentes
-1.5 (Gini y P80/P20) y 3.4 (EOH por zona turística), y el 20 de agosto de 2026 con el bloque 9
-(Big Data de Turismo y Planificación Costa del Sol). Consultoría AMMA para el Ayuntamiento de
-Benahavís.*
+1.5 (Gini y P80/P20) y 3.4 (EOH por zona turística), el 20 de agosto de 2026 con el bloque 9
+(Big Data de Turismo y Planificación Costa del Sol) y el 31 de agosto de 2026 con seis fuentes
+más del INE que sí resuelven Benahavís y estaban sin explotar (1.10 a 1.15), el recorrido
+completo del turismo interno desde 2019 (3.2) y el límite del término municipal (7.5).
+Consultoría AMMA para el Ayuntamiento de Benahavís.*

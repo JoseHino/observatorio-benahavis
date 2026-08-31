@@ -142,6 +142,40 @@
        sí pueden recortar el eje, que es donde importa la variación. */
     var exigeCero = spec.type === 'bar' || spec.type === 'stack' || spec.type === 'area';
     var cero = exigeCero || spec.desdeCero === true;
+    /* Con datos negativos —un saldo, una variación, un déficit— «desde cero» no
+       puede significar «el eje empieza en cero»: eso recorta las barras que van
+       hacia abajo y el año sale vacío, como si no hubiera dato. Lo que hay que
+       garantizar es que el eje CONTENGA el cero, y de eso ya se encarga ECharts
+       solo mientras no se le fije un mínimo. */
+    var hayNegativos = (spec.series || []).some(function (s) {
+      return (s.data || []).some(function (v) { return v != null && v < 0; });
+    });
+    if (hayNegativos) cero = false;
+
+    /* Unidad del eje: una sola para todas las marcas.
+       `abbr` decide por valor —a partir de 10.000 escribe «mil»—, y en un eje que
+       llega justo a esa cifra sale «10 mil» encima de «8.000»: la misma escala
+       rotulada en dos unidades. La unidad la fija aquí el tope de los datos y se
+       aplica igual a todas las marcas. En las apiladas el tope es la suma de la
+       columna, no el mayor de las series. */
+    var tope = 0;
+    if (spec.type === 'stack') {
+      ((spec.series || [])[0] || {}).data && (spec.series[0].data || []).forEach(function (_, i) {
+        var col = 0;
+        spec.series.forEach(function (s) { var v = (s.data || [])[i]; if (v != null && isFinite(v)) col += v; });
+        if (Math.abs(col) > tope) tope = Math.abs(col);
+      });
+    } else {
+      (spec.series || []).forEach(function (s) {
+        (s.data || []).forEach(function (v) {
+          if (v != null && isFinite(v) && Math.abs(v) > tope) tope = Math.abs(v);
+        });
+      });
+    }
+    var unidad = tope >= 1e9 ? { div: 1e9, suf: ' MM' }
+               : tope >= 1e6 ? { div: 1e6, suf: ' M' }
+               : tope >= 2e4 ? { div: 1e3, suf: ' mil' }
+               : { div: 1, suf: '' };
     return {
       type: 'value',
       name: spec.yLabel || '',
@@ -149,7 +183,7 @@
       nameGap: 12,
       min: spec.yMin != null ? spec.yMin : (cero ? 0 : undefined),
       max: spec.yMax,
-      scale: spec.yMin == null && !cero,
+      scale: spec.yMin == null && !cero && !hayNegativos,
       splitNumber: 5,
       axisLine: { show: false },
       axisTick: { show: false },
@@ -165,7 +199,7 @@
           if (spec.yFormat === 'dec1' || spec.yFormat === 'dec2') {
             return v % 1 === 0 ? fmt.num(v, 0) : fmt.num(v, spec.yFormat === 'dec2' ? 2 : 1);
           }
-          return fmt.abbr(v);
+          return fmt.num(v / unidad.div, 0) + unidad.suf;
         }
       },
       /* Rejilla: hairline sólida, un paso por encima de la superficie. Nunca discontinua. */
@@ -264,9 +298,11 @@
     if (spec.type === 'barh') {
       var cats = spec.x || [];
       return {
-        /* left generoso: con containLabel, ECharts recorta la primera letra de las
-           etiquetas largas del eje de categorías si el margen es demasiado justo. */
-        grid: { left: 14, right: 52, top: 12, bottom: 6, containLabel: true },
+        /* left generoso: `containLabel` calcula el hueco a partir del ancho que
+           ECharts estima para la etiqueta más larga, y esa estimación se queda
+           corta con las tipografías de la interfaz, así que la primera letra de
+           un rótulo largo —«Comercio, transporte y hostelería»— se recorta. */
+        grid: { left: 26, right: 52, top: 12, bottom: 6, containLabel: true },
         tooltip: tooltip(spec, T, fn),
         legend: leyenda(spec, T, n, ss.map(function (x) { return x.name; })),
         xAxis: { type: 'value', axisLine: { show: false }, axisTick: { show: false },

@@ -187,6 +187,11 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
     acum_tmin: dict[int, list[float]] = {m: [] for m in range(1, 13)}
     acum_hr: dict[int, list[float]] = {m: [] for m in range(1, 13)}
     otras: dict[str, list[dict[str, Any]]] = {n: [] for n in MENSUALES.values()}
+    # Los mismos campos mensuales, pero guardados año a año en vez de promediados.
+    # Sin esto el panel solo puede enseñar el año medio de la serie, y no hay forma
+    # de mirar el ciclo de un año concreto —cómo fue el verano de 2022, cuánto
+    # llovió el otoño de 2018— que es lo que se pregunta de una estación.
+    por_anyo: dict[str, dict[int, dict[str, Any]]] = {}
     dias_anyo: dict[str, dict[str, Any]] = {}
     extremos = {"ta_max": None, "ta_min": None, "p_max": None, "w_racha": None}
 
@@ -213,10 +218,18 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
         if pm is not None:
             mensual_p.append({"t": clave_mes, "v": round(pm, 1)})
             acum_p[mes].append(pm)
-        for campo, acumulador in (("tm_max", acum_tmax), ("tm_min", acum_tmin), ("hr", acum_hr)):
+        fila_mes = por_anyo.setdefault(anyo, {}).setdefault(mes, {"mes": mes})
+        if tm is not None:
+            fila_mes["temperatura_media"] = round(tm, 1)
+        if pm is not None:
+            fila_mes["precipitacion_media"] = round(pm, 1)
+        for campo, acumulador, nombre_mes in (("tm_max", acum_tmax, "temperatura_maxima_media"),
+                                              ("tm_min", acum_tmin, "temperatura_minima_media"),
+                                              ("hr", acum_hr, "humedad_media")):
             v = numero(r.get(campo))
             if v is not None:
                 acumulador[mes].append(v)
+                fila_mes[nombre_mes] = round(v, 1)
         for campo, nombre in MENSUALES.items():
             v = numero(r.get(campo))
             if v is not None:
@@ -268,6 +281,20 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
         if fila:
             indices.append({"t": anyo, **fila})
 
+    mensual_por_anyo = {anyo: [meses[m] for m in sorted(meses)]
+                        for anyo, meses in sorted(por_anyo.items())}
+
+    # Qué años se pueden ofrecer para elegir. NO vale contar registros: AEMET
+    # devuelve los doce meses del año en curso aunque casi todos vengan vacíos, y
+    # en los años antiguos devuelve el mes con unos campos y sin otros. Hay que
+    # contar campo a campo, y además por separado para cada variable, porque no
+    # coinciden: 2009 tiene los doce meses de lluvia y solo seis de temperatura.
+    # Un año al que le falta el otoño enseñaría un ciclo con agujeros que se
+    # leería como sequía, así que no se ofrece.
+    def anyos_completos(*campos: str) -> list[str]:
+        return [anyo for anyo, filas in mensual_por_anyo.items()
+                if all(sum(1 for f in filas if c in f) == MESES_ANYO_COMPLETO for c in campos)]
+
     return {
         "temperatura_mensual": mensual_t,
         "precipitacion_mensual": mensual_p,
@@ -275,6 +302,10 @@ def resumir(registros: list[dict[str, Any]]) -> dict[str, Any]:
         "temperatura_anual": anual_t,
         "precipitacion_anual": anual_p,
         "normales": normales,
+        "mensual_por_anyo": mensual_por_anyo,
+        "anyos_temperatura": anyos_completos("temperatura_media", "temperatura_maxima_media",
+                                             "temperatura_minima_media"),
+        "anyos_precipitacion": anyos_completos("precipitacion_media"),
         "indices_anuales": indices,
         "extremos": extremos,
         "meses_observados": len(mensual_t),

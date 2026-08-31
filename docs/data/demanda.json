@@ -7747,6 +7747,262 @@
  "interno": {
   "serie": [
    {
+    "t": "2019-07",
+    "v": 2968
+   },
+   {
+    "t": "2019-08",
+    "v": 3944
+   },
+   {
+    "t": "2019-09",
+    "v": 2456
+   },
+   {
+    "t": "2019-10",
+    "v": 1840
+   },
+   {
+    "t": "2019-11",
+    "v": 1658
+   },
+   {
+    "t": "2019-12",
+    "v": 1600
+   },
+   {
+    "t": "2020-01",
+    "v": 1684
+   },
+   {
+    "t": "2020-02",
+    "v": 1924
+   },
+   {
+    "t": "2020-03",
+    "v": 1302
+   },
+   {
+    "t": "2020-04",
+    "v": 418
+   },
+   {
+    "t": "2020-05",
+    "v": 366
+   },
+   {
+    "t": "2020-06",
+    "v": 977
+   },
+   {
+    "t": "2020-07",
+    "v": 2088
+   },
+   {
+    "t": "2020-08",
+    "v": 3390
+   },
+   {
+    "t": "2020-09",
+    "v": 2011
+   },
+   {
+    "t": "2020-10",
+    "v": 1338
+   },
+   {
+    "t": "2020-11",
+    "v": 848
+   },
+   {
+    "t": "2020-12",
+    "v": 961
+   },
+   {
+    "t": "2021-01",
+    "v": 853
+   },
+   {
+    "t": "2021-02",
+    "v": 425
+   },
+   {
+    "t": "2021-03",
+    "v": 672
+   },
+   {
+    "t": "2021-04",
+    "v": 728
+   },
+   {
+    "t": "2021-05",
+    "v": 1392
+   },
+   {
+    "t": "2021-06",
+    "v": 1950
+   },
+   {
+    "t": "2021-07",
+    "v": 2577
+   },
+   {
+    "t": "2021-08",
+    "v": 4241
+   },
+   {
+    "t": "2021-09",
+    "v": 1961
+   },
+   {
+    "t": "2021-10",
+    "v": 1335
+   },
+   {
+    "t": "2021-11",
+    "v": 1143
+   },
+   {
+    "t": "2021-12",
+    "v": 1085
+   },
+   {
+    "t": "2022-01",
+    "v": 1072
+   },
+   {
+    "t": "2022-02",
+    "v": 935
+   },
+   {
+    "t": "2022-03",
+    "v": 903
+   },
+   {
+    "t": "2022-04",
+    "v": 1696
+   },
+   {
+    "t": "2022-05",
+    "v": 1366
+   },
+   {
+    "t": "2022-06",
+    "v": 2140
+   },
+   {
+    "t": "2022-07",
+    "v": 2797
+   },
+   {
+    "t": "2022-08",
+    "v": 3670
+   },
+   {
+    "t": "2022-09",
+    "v": 2293
+   },
+   {
+    "t": "2022-10",
+    "v": 1770
+   },
+   {
+    "t": "2022-11",
+    "v": 1632
+   },
+   {
+    "t": "2022-12",
+    "v": 1797
+   },
+   {
+    "t": "2023-01",
+    "v": 1935
+   },
+   {
+    "t": "2023-02",
+    "v": 1626
+   },
+   {
+    "t": "2023-03",
+    "v": 1960
+   },
+   {
+    "t": "2023-04",
+    "v": 2808
+   },
+   {
+    "t": "2023-05",
+    "v": 2483
+   },
+   {
+    "t": "2023-06",
+    "v": 2595
+   },
+   {
+    "t": "2023-07",
+    "v": 1884
+   },
+   {
+    "t": "2023-08",
+    "v": 2031
+   },
+   {
+    "t": "2023-09",
+    "v": 1238
+   },
+   {
+    "t": "2023-10",
+    "v": 1210
+   },
+   {
+    "t": "2023-11",
+    "v": 901
+   },
+   {
+    "t": "2023-12",
+    "v": 889
+   },
+   {
+    "t": "2024-03",
+    "v": 1048
+   },
+   {
+    "t": "2024-04",
+    "v": 998
+   },
+   {
+    "t": "2024-05",
+    "v": 1561
+   },
+   {
+    "t": "2024-06",
+    "v": 1625
+   },
+   {
+    "t": "2024-07",
+    "v": 1979
+   },
+   {
+    "t": "2024-08",
+    "v": 2876
+   },
+   {
+    "t": "2024-09",
+    "v": 1526
+   },
+   {
+    "t": "2024-10",
+    "v": 1009
+   },
+   {
+    "t": "2024-11",
+    "v": 995
+   },
+   {
+    "t": "2024-12",
+    "v": 1060
+   },
+   {
     "t": "2025-01",
     "v": 1186
    },
@@ -7823,128 +8079,642 @@
   "top_origenes": [
    {
     "municipio": "Madrid",
-    "v": 3186
+    "v": 18919
    },
    {
     "municipio": "Sevilla",
-    "v": 881
-   },
-   {
-    "municipio": "Línea de la Concepción, La",
-    "v": 826
-   },
-   {
-    "municipio": "Córdoba",
-    "v": 715
-   },
-   {
-    "municipio": "Granada",
-    "v": 623
+    "v": 5543
    },
    {
     "municipio": "Algeciras",
-    "v": 535
+    "v": 5342
    },
    {
-    "municipio": "Jerez de la Frontera",
-    "v": 438
+    "municipio": "Línea de la Concepción, La",
+    "v": 4614
+   },
+   {
+    "municipio": "San Roque",
+    "v": 3759
    },
    {
     "municipio": "Ceuta",
-    "v": 378
+    "v": 3412
    },
    {
-    "municipio": "Gor",
-    "v": 192
+    "municipio": "Jerez de la Frontera",
+    "v": 3012
    },
    {
-    "municipio": "Palma del Río",
-    "v": 170
-   },
-   {
-    "municipio": "Aguilar de la Frontera",
-    "v": 166
-   },
-   {
-    "municipio": "Caldes de Malavella",
-    "v": 138
-   },
-   {
-    "municipio": "Pozuelo de Alarcón",
-    "v": 132
-   },
-   {
-    "municipio": "Alcobendas",
-    "v": 101
-   },
-   {
-    "municipio": "Arcos de la Frontera",
-    "v": 92
-   }
-  ],
-  "top_destinos_emisor": [
-   {
-    "municipio": "Madrid",
-    "v": 2188
-   },
-   {
-    "municipio": "Sevilla",
-    "v": 780
+    "municipio": "Córdoba",
+    "v": 2905
    },
    {
     "municipio": "Granada",
-    "v": 716
+    "v": 2615
    },
    {
-    "municipio": "Tarifa",
-    "v": 615
+    "municipio": "Barcelona",
+    "v": 1625
    },
    {
-    "municipio": "Jerez de la Frontera",
-    "v": 527
+    "municipio": "Almería",
+    "v": 712
    },
    {
-    "municipio": "Barbate",
-    "v": 447
+    "municipio": "Alcalá del Valle",
+    "v": 647
    },
    {
-    "municipio": "Monachil",
-    "v": 377
+    "municipio": "Olvera",
+    "v": 637
    },
    {
-    "municipio": "Chiclana de la Frontera",
-    "v": 365
-   },
-   {
-    "municipio": "Cádiz",
-    "v": 334
-   },
-   {
-    "municipio": "Ceuta",
-    "v": 254
-   },
-   {
-    "municipio": "Vejer de la Frontera",
-    "v": 229
-   },
-   {
-    "municipio": "Conil de la Frontera",
-    "v": 200
-   },
-   {
-    "municipio": "Güéjar Sierra",
-    "v": 118
+    "municipio": "Pozuelo de Alarcón",
+    "v": 634
    },
    {
     "municipio": "Villamartín",
-    "v": 86
+    "v": 452
+   }
+  ],
+  "top_origenes_por_anyo": {
+   "2019": [
+    {
+     "municipio": "Madrid",
+     "v": 1679
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 857
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 739
+    },
+    {
+     "municipio": "San Roque",
+     "v": 677
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 619
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 403
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 390
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 374
+    },
+    {
+     "municipio": "Granada",
+     "v": 277
+    },
+    {
+     "municipio": "Barcelona",
+     "v": 171
+    },
+    {
+     "municipio": "Chiclana de la Frontera",
+     "v": 160
+    },
+    {
+     "municipio": "Alcalá del Valle",
+     "v": 118
+    },
+    {
+     "municipio": "Cádiz",
+     "v": 71
+    },
+    {
+     "municipio": "Barrios, Los",
+     "v": 67
+    },
+    {
+     "municipio": "Almería",
+     "v": 66
+    }
+   ],
+   "2020": [
+    {
+     "municipio": "Madrid",
+     "v": 2033
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 1194
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 1117
+    },
+    {
+     "municipio": "San Roque",
+     "v": 1024
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 691
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 517
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 393
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 345
+    },
+    {
+     "municipio": "Granada",
+     "v": 254
+    },
+    {
+     "municipio": "Benalup-Casas Viejas",
+     "v": 94
+    },
+    {
+     "municipio": "Barcelona",
+     "v": 92
+    },
+    {
+     "municipio": "Palmar de Troya, El",
+     "v": 85
+    },
+    {
+     "municipio": "Cádiz",
+     "v": 73
+    },
+    {
+     "municipio": "Dos Hermanas",
+     "v": 71
+    },
+    {
+     "municipio": "Almería",
+     "v": 67
+    }
+   ],
+   "2021": [
+    {
+     "municipio": "Madrid",
+     "v": 2988
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 896
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 838
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 790
+    },
+    {
+     "municipio": "San Roque",
+     "v": 534
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 515
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 372
+    },
+    {
+     "municipio": "Granada",
+     "v": 367
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 313
+    },
+    {
+     "municipio": "Barcelona",
+     "v": 224
+    },
+    {
+     "municipio": "Pozuelo de Alarcón",
+     "v": 166
+    },
+    {
+     "municipio": "Alcobendas",
+     "v": 82
+    },
+    {
+     "municipio": "Boadilla del Monte",
+     "v": 78
+    },
+    {
+     "municipio": "Almería",
+     "v": 76
+    },
+    {
+     "municipio": "Zahara",
+     "v": 68
+    }
+   ],
+   "2022": [
+    {
+     "municipio": "Madrid",
+     "v": 2965
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 820
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 790
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 533
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 478
+    },
+    {
+     "municipio": "Granada",
+     "v": 463
+    },
+    {
+     "municipio": "San Roque",
+     "v": 400
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 369
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 352
+    },
+    {
+     "municipio": "Barcelona",
+     "v": 254
+    },
+    {
+     "municipio": "Olvera",
+     "v": 135
+    },
+    {
+     "municipio": "Almería",
+     "v": 118
+    },
+    {
+     "municipio": "Dos Hermanas",
+     "v": 100
+    },
+    {
+     "municipio": "Ubrique",
+     "v": 96
+    },
+    {
+     "municipio": "Alcobendas",
+     "v": 95
+    }
+   ],
+   "2023": [
+    {
+     "municipio": "Madrid",
+     "v": 3236
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 906
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 646
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 574
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 572
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 532
+    },
+    {
+     "municipio": "San Roque",
+     "v": 525
+    },
+    {
+     "municipio": "Olvera",
+     "v": 472
+    },
+    {
+     "municipio": "Barcelona",
+     "v": 391
+    },
+    {
+     "municipio": "Granada",
+     "v": 374
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 370
+    },
+    {
+     "municipio": "Almería",
+     "v": 115
+    },
+    {
+     "municipio": "Palma del Río",
+     "v": 91
+    },
+    {
+     "municipio": "Pozuelo de Alarcón",
+     "v": 84
+    },
+    {
+     "municipio": "Barrios, Los",
+     "v": 79
+    }
+   ],
+   "2024": [
+    {
+     "municipio": "Madrid",
+     "v": 2832
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 788
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 604
+    },
+    {
+     "municipio": "San Roque",
+     "v": 524
+    },
+    {
+     "municipio": "Barcelona",
+     "v": 416
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 402
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 388
+    },
+    {
+     "municipio": "Alcalá del Valle",
+     "v": 362
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 352
+    },
+    {
+     "municipio": "Villamartín",
+     "v": 308
+    },
+    {
+     "municipio": "Granada",
+     "v": 257
+    },
+    {
+     "municipio": "Setenil de las Bodegas",
+     "v": 234
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 216
+    },
+    {
+     "municipio": "Almería",
+     "v": 196
+    },
+    {
+     "municipio": "Puerto de Santa María, El",
+     "v": 189
+    }
+   ],
+   "2025": [
+    {
+     "municipio": "Madrid",
+     "v": 2234
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 661
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 527
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 466
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 423
+    },
+    {
+     "municipio": "Granada",
+     "v": 303
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 284
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 278
+    },
+    {
+     "municipio": "Gor",
+     "v": 192
+    },
+    {
+     "municipio": "Palma del Río",
+     "v": 170
+    },
+    {
+     "municipio": "Caldes de Malavella",
+     "v": 138
+    },
+    {
+     "municipio": "Aguilar de la Frontera",
+     "v": 86
+    },
+    {
+     "municipio": "Barcelona",
+     "v": 77
+    },
+    {
+     "municipio": "San Roque",
+     "v": 75
+    },
+    {
+     "municipio": "Almería",
+     "v": 74
+    }
+   ],
+   "2026": [
+    {
+     "municipio": "Madrid",
+     "v": 952
+    },
+    {
+     "municipio": "Sevilla",
+     "v": 354
+    },
+    {
+     "municipio": "Granada",
+     "v": 320
+    },
+    {
+     "municipio": "Córdoba",
+     "v": 292
+    },
+    {
+     "municipio": "Línea de la Concepción, La",
+     "v": 165
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 154
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 100
+    },
+    {
+     "municipio": "Arcos de la Frontera",
+     "v": 92
+    },
+    {
+     "municipio": "Aguilar de la Frontera",
+     "v": 80
+    },
+    {
+     "municipio": "Guadalajara",
+     "v": 80
+    },
+    {
+     "municipio": "Algeciras",
+     "v": 69
+    },
+    {
+     "municipio": "Rozas de Madrid, Las",
+     "v": 66
+    },
+    {
+     "municipio": "Pozuelo de Alarcón",
+     "v": 65
+    },
+    {
+     "municipio": "Gandia",
+     "v": 41
+    },
+    {
+     "municipio": "Torrejón de Ardoz",
+     "v": 40
+    }
+   ]
+  },
+  "top_destinos_emisor": [
+   {
+    "municipio": "Madrid",
+    "v": 12648
    },
    {
-    "municipio": "Puerto de Santa María, El",
-    "v": 77
+    "municipio": "Tarifa",
+    "v": 5069
+   },
+   {
+    "municipio": "Sevilla",
+    "v": 4997
+   },
+   {
+    "municipio": "Granada",
+    "v": 3899
+   },
+   {
+    "municipio": "San Roque",
+    "v": 3827
+   },
+   {
+    "municipio": "Barcelona",
+    "v": 2875
+   },
+   {
+    "municipio": "Línea de la Concepción, La",
+    "v": 2799
+   },
+   {
+    "municipio": "Chiclana de la Frontera",
+    "v": 2395
+   },
+   {
+    "municipio": "Jerez de la Frontera",
+    "v": 2365
+   },
+   {
+    "municipio": "Monachil",
+    "v": 2227
+   },
+   {
+    "municipio": "Barbate",
+    "v": 1887
+   },
+   {
+    "municipio": "Conil de la Frontera",
+    "v": 1756
+   },
+   {
+    "municipio": "Algeciras",
+    "v": 1746
+   },
+   {
+    "municipio": "Córdoba",
+    "v": 1469
+   },
+   {
+    "municipio": "Ceuta",
+    "v": 1306
    }
   ],
   "anyos": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "anyos_pedidos": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
    2025,
    2026
   ]
@@ -9736,14 +10506,14 @@
    },
    {
     "t": "2025-07",
-    "viajeros": 624828.0,
-    "pernoctaciones": 2486925.0,
-    "estancia_media": 3.98,
-    "ocupacion_plazas": 75.54,
-    "ocupacion_fin_semana": 79.92,
-    "plazas_estimadas": 100576.0,
-    "establecimientos": 524.0,
-    "personal_empleado": 18726.0
+    "viajeros": 622296.0,
+    "pernoctaciones": 2496094.0,
+    "estancia_media": 4.01,
+    "ocupacion_plazas": 75.74,
+    "ocupacion_fin_semana": 79.59,
+    "plazas_estimadas": 100900.0,
+    "establecimientos": 527.0,
+    "personal_empleado": 18755.0
    },
    {
     "t": "2025-08",
@@ -9865,6 +10635,17 @@
     "plazas_estimadas": 96652.0,
     "establecimientos": 513.0,
     "personal_empleado": 20966.0
+   },
+   {
+    "t": "2026-07",
+    "viajeros": 632316.0,
+    "pernoctaciones": 2577061.0,
+    "estancia_media": 4.07,
+    "ocupacion_plazas": 80.08,
+    "ocupacion_fin_semana": 81.75,
+    "plazas_estimadas": 99824.0,
+    "establecimientos": 513.0,
+    "personal_empleado": 21685.0
    }
   ],
   "pernoctaciones_por_residencia": {
@@ -10519,7 +11300,7 @@
     },
     {
      "t": "2025-07",
-     "v": 726154.0
+     "v": 720808.0
     },
     {
      "t": "2025-08",
@@ -10564,6 +11345,10 @@
     {
      "t": "2026-06",
      "v": 436784.0
+    },
+    {
+     "t": "2026-07",
+     "v": 713184.0
     }
    ],
    "extranjero": [
@@ -11217,7 +12002,7 @@
     },
     {
      "t": "2025-07",
-     "v": 1760771.0
+     "v": 1775286.0
     },
     {
      "t": "2025-08",
@@ -11262,6 +12047,10 @@
     {
      "t": "2026-06",
      "v": 1757177.0
+    },
+    {
+     "t": "2026-07",
+     "v": 1863877.0
     }
    ]
   },
@@ -11346,9 +12135,9 @@
    },
    {
     "t": "2025",
-    "pernoctaciones": 21139267.0,
-    "viajeros": 5729167.0,
-    "ocupacion_media": 62.45
+    "pernoctaciones": 21148436.0,
+    "viajeros": 5726635.0,
+    "ocupacion_media": 62.46
    }
   ],
   "estacionalidad": [
@@ -11378,7 +12167,7 @@
    },
    {
     "mes": 7,
-    "ocupacion_media": 77.16
+    "ocupacion_media": 77.2
    },
    {
     "mes": 8,
@@ -11409,15 +12198,15 @@
    "2025"
   ],
   "ultimo": {
-   "t": "2026-06",
-   "viajeros": 565438.0,
-   "pernoctaciones": 2193961.0,
-   "estancia_media": 3.88,
-   "ocupacion_plazas": 73.6,
-   "ocupacion_fin_semana": 78.49,
-   "plazas_estimadas": 96652.0,
+   "t": "2026-07",
+   "viajeros": 632316.0,
+   "pernoctaciones": 2577061.0,
+   "estancia_media": 4.07,
+   "ocupacion_plazas": 80.08,
+   "ocupacion_fin_semana": 81.75,
+   "plazas_estimadas": 99824.0,
    "establecimientos": 513.0,
-   "personal_empleado": 20966.0
+   "personal_empleado": 21685.0
   },
   "ambito": "zona_turistica",
   "es_proxy": true,
@@ -11428,5 +12217,5 @@
  "fuente": "INE · Medición del turismo a partir de la posición de los teléfonos móviles y Encuesta de Ocupación Hotelera por zonas turísticas (ambas vía Dataestur, SEGITTUR)",
  "ambito": "municipal",
  "es_proxy": false,
- "actualizado": "2026-08-26T17:29:07Z"
+ "actualizado": "2026-08-31T08:37:29Z"
 }

@@ -51,19 +51,39 @@
   var ZOOM_NATIVO = { mapa: 16, satelite: 18 };
 
 
-  /* Rampa cálida de densidad (ColorBrewer YlOrRd): amarillo claro donde hay
-     poco, rojo profundo donde se concentran. Es secuencial y monótona en
-     luminosidad, así que se lee bien también impresa en gris y con daltonismo:
-     lo que ordena la escala es el brillo, no solo el tono. */
+  /* Rampa cálida de densidad (ColorBrewer YlOrBr): del crema donde hay poco al
+     marrón rojizo donde se concentran. Es secuencial y monótona en luminosidad,
+     así que se lee bien también impresa en gris y con daltonismo: lo que ordena
+     la escala es el brillo, no solo el tono.
+
+     El extremo frío se ha alargado a propósito. Leaflet.heat usa el canal alfa
+     acumulado como índice de la rampa, de modo que el tramo bajo es el que pinta
+     casi todo el mapa: si arranca en un amarillo saturado, una casa suelta mancha
+     igual que un barrio entero. */
   var CALOR = {
-    0.00: '#ffffb2',
-    0.25: '#fed976',
-    0.45: '#feb24c',
-    0.62: '#fd8d3c',
-    0.78: '#fc4e2a',
-    0.90: '#e31a1c',
-    1.00: '#b10026'
+    0.00: '#fff7bc',
+    0.18: '#fee391',
+    0.36: '#fec44f',
+    0.54: '#fe9929',
+    0.70: '#ec7014',
+    0.85: '#cc4c02',
+    1.00: '#8c2d04'
   };
+
+  /* Geometría del pincel de calor, en píxeles de pantalla. Radio corto y desenfoque
+     largo: la mancha sigue siendo continua, pero conserva la forma de las
+     urbanizaciones en lugar de fundirlas en un borrón. */
+  var CALOR_RADIO = 17;
+  var CALOR_BLUR = 21;
+  /* Suelo de opacidad por punto. Es EL parámetro que decide si el mapa satura:
+     como las circunferencias se componen unas sobre otras, con 0,30 bastaban
+     tres viviendas solapadas para llegar al 66 % de alfa —y por tanto al rojo—.
+     Con 0,07 hacen falta decenas, que es justo lo que se quiere señalar. */
+  var CALOR_SUELO = 0.07;
+  /* Percentil de la densidad local que se lleva el extremo caliente de la rampa.
+     No se usa el máximo absoluto: un único rascacielos de apartamentos dejaría
+     el resto del municipio en el primer escalón de color. */
+  var CALOR_PERCENTIL = 0.96;
 
   function esOscuro() {
     var t = document.documentElement.getAttribute('data-theme');
@@ -112,10 +132,12 @@
     /* Fondo del mapa. Va aparte del conmutador de capas de datos: una cosa es
        cómo se pintan los datos y otra sobre qué se pintan. */
     var fondo = cfg.satelite === false ? '' :
-      '<div class="obs-segment" role="group">' +
-        '<button type="button" data-fondo="mapa" aria-pressed="true">Mapa</button>' +
-        '<button type="button" data-fondo="satelite" aria-pressed="false">Satélite</button>' +
-      '</div>';
+      '<label class="obs-map-f obs-map-fondo"><span>Fondo del mapa</span>' +
+        '<span class="obs-segment" role="group">' +
+          '<button type="button" data-fondo="mapa" aria-pressed="true">Mapa</button>' +
+          '<button type="button" data-fondo="satelite" aria-pressed="false">Satélite</button>' +
+        '</span>' +
+      '</label>';
 
     return '<div class="obs-map" data-mapa="' + id + '">' +
       '<div class="obs-map-tools">' + filtros +
@@ -159,34 +181,97 @@
     var lienzo = raiz.querySelector('[data-rol="lienzo"]');
 
     var T = Obs.tema();
-    var mapa = L.map(lienzo, { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
-    /* maxNativeZoom: el servicio de Esri no sirve teselas por encima de 16, pero
-       el mapa sigue admitiendo acercarse: Leaflet reescala la última disponible
-       en lugar de dejar el fondo en gris. */
-    var fondoActivo = 'mapa';
-    var teselas = L.tileLayer(esOscuro() ? TESELAS.oscuro : TESELAS.claro,
-      { attribution: TESELAS.credito, maxZoom: 19, maxNativeZoom: ZOOM_NATIVO.mapa }).addTo(mapa);
-    var rotulos = L.tileLayer(esOscuro() ? TESELAS.rotulosOscuro : TESELAS.rotulosClaro,
-      { maxZoom: 19, maxNativeZoom: ZOOM_NATIVO.mapa, pane: 'shadowPane', opacity: .9 }).addTo(mapa);
+    /* `zoomSnap` en cuartos: con el salto de 1 que trae Leaflet por defecto,
+       `fitBounds` redondea hacia abajo y un término que cabría a zoom 11,9 se
+       encuadra a 11, es decir a la mitad de tamaño y rodeado de vacío. */
+    var mapa = L.map(lienzo, { scrollWheelZoom: false, zoomControl: true,
+                               attributionControl: true, zoomSnap: 0.25, zoomDelta: 0.5 });
+    /* Panel propio para el velo del término, entre el fondo y los datos. Sin él
+       habría que meterlo en el panel de teselas, y allí el orden lo decide el
+       orden de inserción en el DOM: cualquier capa de fondo añadida después
+       taparía el velo. */
+    mapa.createPane('obsVelo');
+    mapa.getPane('obsVelo').style.zIndex = 250;
+    mapa.getPane('obsVelo').style.pointerEvents = 'none';
 
-    /* Cambia la ortofoto por el fondo gris y viceversa. Se reutilizan las dos
-       capas ya creadas en lugar de añadir y quitar capas: así el orden de
-       pintado (datos encima del fondo, rótulos encima de los datos) no cambia. */
+    /* Las dos parejas de capas —fondo y rótulos— se crean de una vez y se
+       intercambian añadiéndolas y quitándolas.
+
+       No se reutiliza una sola capa con `setUrl`: en Leaflet 1.9 `setUrl` llama a
+       `redraw()`, que fija el zoom de tesela con `_clampZoom(map.getZoom())` SIN
+       redondear. Con `zoomSnap` fraccionado eso mete el zoom decimal en la URL
+       —«…/tile/11.75/1345/1673»—, el servidor no devuelve nada y el mapa se queda
+       negro sin dar ningún error. Añadir la capa vuelve a pasar por `onAdd`, que
+       sí redondea.
+
+       maxNativeZoom: el gris de Esri no sirve teselas por encima de 16 y la
+       ortofoto llega a 18; por encima Leaflet reescala la última en lugar de
+       dejar el fondo vacío. */
+    var fondoActivo = 'mapa';
+    function tesela(url, extra) {
+      return L.tileLayer(url, Object.assign({ maxZoom: 19 }, extra));
+    }
+    var CAPAS = {
+      mapa: {
+        base: function () { return esOscuro() ? TESELAS.oscuro : TESELAS.claro; },
+        rot: function () { return esOscuro() ? TESELAS.rotulosOscuro : TESELAS.rotulosClaro; },
+        nativo: ZOOM_NATIVO.mapa, credito: TESELAS.credito, opacidadRot: .9, velo: .30
+      },
+      satelite: {
+        base: function () { return TESELAS.satelite; },
+        rot: function () { return TESELAS.rotulosSatelite; },
+        nativo: ZOOM_NATIVO.satelite, credito: TESELAS.creditoSatelite, opacidadRot: 1, velo: .45
+      }
+    };
+    var teselas = null, rotulos = null;
+
     function ponerFondo(cual) {
+      var c = CAPAS[cual] || CAPAS.mapa;
       fondoActivo = cual;
-      var sat = cual === 'satelite';
-      teselas.options.maxNativeZoom = sat ? ZOOM_NATIVO.satelite : ZOOM_NATIVO.mapa;
-      rotulos.options.maxNativeZoom = teselas.options.maxNativeZoom;
-      teselas.setUrl(sat ? TESELAS.satelite : (esOscuro() ? TESELAS.oscuro : TESELAS.claro));
-      rotulos.setUrl(sat ? TESELAS.rotulosSatelite
-                         : (esOscuro() ? TESELAS.rotulosOscuro : TESELAS.rotulosClaro));
-      /* Sobre la foto, los rótulos claros de la capa gris no se leerían. */
-      rotulos.setOpacity(sat ? 1 : .9);
-      raiz.classList.toggle('es-satelite', sat);
+      if (teselas) { mapa.removeLayer(teselas); mapa.removeLayer(rotulos); }
+      teselas = tesela(c.base(), { attribution: c.credito, maxNativeZoom: c.nativo }).addTo(mapa);
+      /* Los topónimos van en una capa aparte y por encima de los datos: si
+         fuesen parte del fondo, un grupo de puntos taparía el nombre de la
+         urbanización que se está mirando. */
+      rotulos = tesela(c.rot(), { maxNativeZoom: c.nativo, pane: 'shadowPane',
+                                  opacity: c.opacidadRot }).addTo(mapa);
+      if (velo) velo.setStyle({ fillOpacity: cual === 'satelite' ? c.velo : (esOscuro() ? .22 : c.velo) });
+      raiz.classList.toggle('es-satelite', cual === 'satelite');
       mapa.attributionControl.removeAttribution(TESELAS.credito);
       mapa.attributionControl.removeAttribution(TESELAS.creditoSatelite);
-      mapa.attributionControl.addAttribution(sat ? TESELAS.creditoSatelite : TESELAS.credito);
+      mapa.attributionControl.addAttribution(c.credito);
     }
+    /* --- término municipal ---
+       Sin el límite dibujado, una mancha de densidad no dice dónde acaba el
+       municipio: la de Benahavís se derrama visualmente sobre San Pedro y
+       Estepona y cualquiera diría que hay viviendas allí. Con el contorno puesto
+       —y el exterior atenuado— se ve de un vistazo qué se está midiendo.
+
+       Se pinta con dos trazos superpuestos, uno claro y ancho por debajo y otro
+       fino por encima, para que la línea se lea igual sobre el gris que sobre la
+       ortofoto sin tener que cambiarla de color. */
+    var limite = null, velo = null;
+    if (cfg.limite && cfg.limite.geometry) {
+      var anillo = cfg.limite.geometry.coordinates[0].map(function (c) { return [c[1], c[0]]; });
+      /* Velo exterior: un polígono con el mundo entero como contorno y el término
+         como hueco. Es un rectángulo con agujero, no un borrado del lienzo, así
+         que funciona igual con teselas grises que con la foto aérea. */
+      velo = L.polygon([[[90, -180], [90, 180], [-90, 180], [-90, -180]], anillo], {
+        stroke: false, fillColor: '#0b1b2b', fillOpacity: .30,
+        interactive: false, pane: 'obsVelo', className: 'obs-map-velo'
+      }).addTo(mapa);
+      limite = L.polygon(anillo, {
+        color: '#ffffff', weight: 5, opacity: .55, fill: false,
+        interactive: false, pane: 'overlayPane'
+      }).addTo(mapa);
+      L.polygon(anillo, {
+        color: '#0d3b66', weight: 1.6, opacity: .95, dashArray: '7 4', fill: false,
+        interactive: false, pane: 'overlayPane'
+      }).addTo(mapa);
+    }
+
+    ponerFondo('mapa');
+
     /* Sin scroll-zoom por defecto: en una página larga, la rueda debe seguir
        desplazando la página. Con Ctrl o tras hacer clic dentro, sí hace zoom. */
     mapa.on('click', function () { mapa.scrollWheelZoom.enable(); });
@@ -227,19 +312,27 @@
     }) : L.layerGroup();
     var calor = null;
 
+    /* El radio admite una función: sirve para que el punto diga además cuánto
+       vale el registro —plazas, superficie, importe— sin gastar otro canal.
+       Se escala con la raíz cuadrada porque lo que compara el ojo es el ÁREA del
+       círculo: con escala lineal, una vivienda de 12 plazas se ve seis veces más
+       grande que una de dos, no tres. */
     var RADIO = cfg.radio || (agrupa ? 6 : 4.5);
+    var radioDe = typeof RADIO === 'function' ? RADIO : function () { return RADIO; };
 
     function marcador(p) {
       var m = L.circleMarker([p.lat, p.lon], {
         renderer: agrupa ? undefined : lienzoPuntos,
-        radius: RADIO,
+        radius: radioDe(p),
         /* El anillo del color del fondo separa los puntos que se solapan; sin
            agrupación, además, la semitransparencia deja que el amontonamiento
-           se lea por sí solo. */
-        weight: agrupa ? 2 : 1,
-        color: T.surface,
+           se lea por sí solo. Sobre la ortofoto el anillo se pone blanco: el
+           color de la interfaz se pierde contra el verde del monte. */
+        weight: fondoActivo === 'satelite' ? 1.6 : (agrupa ? 2 : 1.1),
+        color: fondoActivo === 'satelite' ? '#ffffff' : T.surface,
+        opacity: fondoActivo === 'satelite' ? .95 : 1,
         fillColor: colorDe(p),
-        fillOpacity: agrupa ? .92 : .78
+        fillOpacity: fondoActivo === 'satelite' ? .95 : (agrupa ? .92 : .85)
       });
       /* El globo se compone al hacer clic: preparar miles por adelantado
          cuesta más que dibujar el mapa entero. */
@@ -318,6 +411,49 @@
       });
     }
 
+    /* Encuadre de partida: si hay término municipal manda él, para que el mapa
+       abra enseñando el municipio entero y no la nube de puntos, que se queda
+       corta por el norte cuando no hay viviendas en la sierra. */
+    function encuadre() {
+      var b = limite ? limite.getBounds()
+                     : L.latLngBounds(puntos.map(function (p) { return [p.lat, p.lon]; }));
+      mapa.fitBounds(b.pad(0.04));
+    }
+
+    /* --- normalización del calor ---
+       El problema clásico de una capa de calor es que satura: la librería divide
+       la intensidad acumulada de cada celda entre un `max` fijo, de modo que si
+       ese tope se queda corto —y con `max: 1` se queda corto siempre— cualquier
+       sitio con unos pocos puntos encima ya llega al extremo de la rampa y el
+       mapa entero sale rojo. Además la densidad por píxel depende del zoom: lo
+       que a escala de comarca es un borrón, a escala de urbanización son cuatro
+       casas sueltas, así que un tope calculado una sola vez no vale.
+
+       Aquí se mide la densidad que hay de verdad a cada zoom, replicando la
+       misma rejilla que usa la librería (celdas de radio/2 en píxeles de
+       pantalla), y se toma un percentil alto de las celdas ocupadas. Así el
+       extremo caliente lo alcanza lo que de verdad es excepcional en ese
+       encuadre, y el resto reparte color por todo el recorrido de la rampa. */
+    var calorRef = null, calorZoom = null;
+
+    function densidadDeReferencia(vs, zoom) {
+      var celda = CALOR_RADIO / 2;
+      var suma = {}, i, k;
+      for (i = 0; i < vs.length; i++) {
+        var pt = mapa.project([vs[i].lat, vs[i].lon], zoom);
+        k = Math.floor(pt.x / celda) + ':' + Math.floor(pt.y / celda);
+        suma[k] = (suma[k] || 0) + (cfg.peso ? (+cfg.peso(vs[i]) || 1) : 1);
+      }
+      var cargas = [];
+      for (k in suma) if (suma.hasOwnProperty(k)) cargas.push(suma[k]);
+      if (!cargas.length) return 1;
+      cargas.sort(function (a, b) { return a - b; });
+      var ref = cargas[Math.min(cargas.length - 1, Math.floor(cargas.length * CALOR_PERCENTIL))];
+      /* Con muy pocos puntos el percentil vale 1 y todo saldría al rojo: el tope
+         nunca baja de 2, que es la densidad mínima que merece llamarse tal. */
+      return Math.max(2, ref);
+    }
+
     /* --- pintado --- */
     /* Zoom a partir del cual el mapa deja de resumir y enseña cada registro.
        Por debajo, con miles de puntos amontonados, lo único legible es la
@@ -366,17 +502,25 @@
       /* Leaflet.heat llama a getImageData sobre su propio lienzo: si la sección
          todavía está oculta el lienzo mide 0 y lanza una excepción. Se pospone. */
       if (capaActiva === 'calor' && lienzo.offsetWidth > 0) {
-        var max = 1;
-        var datos = vs.map(function (p) {
-          var w = cfg.peso ? (+cfg.peso(p) || 1) : 1;
-          if (w > max) max = w;
-          return [p.lat, p.lon, w];
-        });
-        calor = L.heatLayer(datos, {
-          radius: 22, blur: 18, maxZoom: 16, max: max,
-          minOpacity: .30,
+        var z = mapa.getZoom();
+        var ref = densidadDeReferencia(vs, z);
+        calor = L.heatLayer(vs.map(function (p) {
+          return [p.lat, p.lon, cfg.peso ? (+cfg.peso(p) || 1) : 1];
+        }), {
+          radius: CALOR_RADIO, blur: CALOR_BLUR,
+          /* `maxZoom` no es hasta dónde se dibuja: es el zoom en que la librería
+             considera que un punto vale su peso entero, y por debajo lo divide
+             por 2^((maxZoom−zoom)/2). Ese reescalado oculto es incompatible con
+             normalizar por densidad medida, así que se ancla al zoom actual
+             —factor 1— y la normalización la lleva `max`. */
+          maxZoom: z,
+          max: ref,
+          /* Suelo bajo: una vivienda aislada deja un tinte, no una mancha. */
+          minOpacity: CALOR_SUELO,
           gradient: cfg.gradiente || CALOR
         }).addTo(mapa);
+        calorRef = ref;
+        calorZoom = z;
       }
 
       visiblesAhora = vs;
@@ -431,10 +575,20 @@
 
     function leyendaCategorias() {
       if (!cfg.grupo) return '';
-      return grupos.map(function (g, i) {
+      var cats = grupos.map(function (g, i) {
         return '<span class="obs-map-item"><i style="background:' + T.serie[i % T.serie.length] + '"></i>' +
           Obs.esc(g) + '</span>';
       }).join('');
+      /* Si el tamaño del punto codifica algo, hay que decirlo: un círculo más
+         grande que otro es una afirmación, y sin leyenda no se sabe cuál. */
+      if (typeof RADIO === 'function' && cfg.radioEtiqueta) {
+        cats += '<span class="obs-map-item obs-map-tallas">' +
+          '<i class="talla" style="width:7px;height:7px;border-radius:50%;background:' + T.serie[0] + '"></i>' +
+          '<i class="talla" style="width:11px;height:11px;border-radius:50%;background:' + T.serie[0] + '"></i>' +
+          '<i class="talla" style="width:16px;height:16px;border-radius:50%;background:' + T.serie[0] + '"></i>' +
+          Obs.esc(cfg.radioEtiqueta) + '</span>';
+      }
+      return cats;
     }
 
     function leyendaCalor() {
@@ -457,15 +611,18 @@
 
     /* --- conmutador de capa y reinicio --- */
     /* Al acercarse o alejarse el mapa cambia solo de resumen a detalle. */
-    if (automatico) {
-      mapa.on('zoomend', function () {
-        var nueva = capaSegunZoom();
-        if (nueva === capaActiva) return;
+    mapa.on('zoomend', function () {
+      var nueva = automatico ? capaSegunZoom() : capaActiva;
+      if (nueva !== capaActiva) {
         capaActiva = nueva;
         leyendaSegun(capaActiva);
         pintar();
-      });
-    }
+        return;
+      }
+      /* Aunque no cambie de capa hay que rehacer el calor: su tope se calculó
+         para el zoom anterior y con otro la escala miente. */
+      if (capaActiva === 'calor' && calorZoom !== mapa.getZoom()) pintar();
+    });
 
     raiz.querySelector('.obs-map-capas').addEventListener('click', function (ev) {
       var b = ev.target.closest('button');
@@ -477,7 +634,7 @@
         });
         var r = raiz.querySelector('[data-rol="tiempo"]');
         if (r) { r.value = r.max; corte = anyos[anyos.length - 1]; }
-        mapa.fitBounds(L.latLngBounds(puntos.map(function (p) { return [p.lat, p.lon]; })).pad(0.08));
+        encuadre();
         pintar();
         return;
       }
@@ -510,7 +667,7 @@
       else if (s.x && s.y && capaActiva === 'calor' && !calor) pintar();
     });
 
-    mapa.fitBounds(L.latLngBounds(puntos.map(function (p) { return [p.lat, p.lon]; })).pad(0.08));
+    encuadre();
     if (automatico) capaActiva = capaSegunZoom();
     leyendaSegun(capaActiva);
     pintar();
@@ -528,8 +685,11 @@
       }).observe(lienzo);
     }
 
-    var ref = { mapa: mapa, teselas: teselas, rotulos: rotulos, repintar: pintar,
-                fondo: function () { return fondoActivo; } };
+    var ref = { mapa: mapa, repintar: pintar,
+                fondo: function () { return fondoActivo; },
+                /* Rehace el fondo con el tema activo. Las capas se recrean al
+                   conmutar, así que no se pueden guardar aquí. */
+                retema: function () { ponerFondo(fondoActivo); } };
     mapas.push(ref);
     setTimeout(function () { mapa.invalidateSize(); }, 60);
     return ref;
@@ -542,10 +702,8 @@
   Obs.mapasRepintar = function () {
     mapas.forEach(function (r) {
       /* Con la ortofoto puesta, el tema de la página no manda sobre el fondo:
-         una foto aérea no tiene versión oscura. */
-      if (r.fondo && r.fondo() === 'satelite') { r.repintar(); return; }
-      r.teselas.setUrl(esOscuro() ? TESELAS.oscuro : TESELAS.claro);
-      if (r.rotulos) r.rotulos.setUrl(esOscuro() ? TESELAS.rotulosOscuro : TESELAS.rotulosClaro);
+         una foto aérea no tiene versión oscura, solo cambia el velo. */
+      r.retema();
       r.repintar();
     });
   };

@@ -296,7 +296,12 @@ table.obs-table tbody tr:hover { background: var(--surface-2); }
 }
 .obs-map-f { display: flex; flex-direction: column; gap: 4px; font-size: 11.5px; color: var(--ink-mut); font-weight: 500; }
 .obs-map-f .obs-select { min-width: 148px; }
-.obs-map-capas { display: flex; gap: 8px; align-items: center; }
+.obs-map-capas { display: flex; gap: 12px; align-items: flex-end; }
+/* El conmutador de fondo va rotulado como un filtro más: el mapa y la ortofoto
+   son dos formas de mirar lo mismo, y sin rótulo el par de botones pasa por
+   decoración y nadie descubre que hay foto aérea. */
+.obs-map-fondo .obs-segment { padding: 3px; }
+.obs-map-fondo .obs-segment button { padding: 6px 13px; }
 .obs-map-cuenta { margin-left: auto; font-size: 12.5px; color: var(--ink-2); align-self: center; }
 .obs-map-cuenta b { font-size: 15px; color: var(--ink); }
 .obs-map-nota { color: var(--ink-mut); }
@@ -317,6 +322,10 @@ table.obs-table tbody tr:hover { background: var(--surface-2); }
 .obs-map-leyenda { display: flex; flex-wrap: wrap; gap: 12px; padding: 10px 17px 0; }
 .obs-map-item { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-2); }
 .obs-map-item i { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+/* Escala de tallas: tres círculos crecientes delante del rótulo. */
+.obs-map-tallas { gap: 4px; }
+.obs-map-tallas .talla { opacity: .75; }
+.obs-map-tallas .talla + .talla { margin-left: 1px; }
 
 /* Agrupaciones y globos, revestidos con los tokens */
 .obs-cluster {

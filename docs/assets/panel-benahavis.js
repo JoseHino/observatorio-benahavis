@@ -63,6 +63,17 @@
     badea_regimen: { txt: 'IECA/BADEA · afiliaciones por régimen, consulta 876',
                 url: 'https://www.juntadeandalucia.es/institutodeestadisticaycartografia/intranet/admin/rest/v1.0/consulta/876?D_TERRITORIO_0=2934' },
     gini:     { txt: 'INE · Gini y P80/P20, tabla 37677', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=37677' },
+    padron_edad: { txt: 'INE · Padrón por edad, tabla 33570', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=33570' },
+    padron_nacimiento: { txt: 'INE · Padrón por lugar de nacimiento, tabla 33574',
+                url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=33574' },
+    atlas_demografia: { txt: 'INE · Atlas de renta, indicadores demográficos, tabla 30832',
+                url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=30832' },
+    atlas_ingresos: { txt: 'INE · Atlas de renta, fuente de ingresos, tabla 30825',
+                url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=30825' },
+    atlas_umbrales: { txt: 'INE · Atlas de renta, umbrales de ingreso, tabla 30826',
+                url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=30826' },
+    migraciones: { txt: 'INE · Migraciones y cambios de residencia, tabla 69767',
+                url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=69767' },
     /* El portal de datos abiertos de la Junta responde 503 en la ficha del
        conjunto, así que se enlaza la consulta de la API ya filtrada por
        Benahavís: es literalmente el dato que alimenta esta pestaña. */
@@ -262,9 +273,14 @@
       cards: [
         {
           titulo: 'Mapa de las viviendas turísticas de Benahavís',
-          sub: F.num(viviendas.length) + ' viviendas situadas · acerca el mapa para ver cada una y pinchar sus datos · mueve la línea del tiempo para ver cómo se ha ido poblando el municipio',
+          sub: F.num(viviendas.length) + ' viviendas situadas · cambia a satélite para verlas sobre la ortofoto · acerca el mapa para ver cada una y pinchar sus datos · mueve la línea del tiempo para ver cómo se ha ido poblando el municipio',
           chips: [{ txt: 'Por vivienda', tipo: 'live' }], fuente: FTE.rta, ancho: 'full', alto: 'tall',
-          nota: 'El color mide densidad de viviendas, no plazas: del amarillo (poca) al rojo (mucha). Al acercarse aparece cada vivienda en la coordenada que consta en el registro.',
+          nota: 'El color mide densidad de viviendas, no plazas: cuanta más concentración, más cálido —del crema al rojo—. ' +
+                'La escala se recalcula a cada nivel de zoom contra la densidad que hay de verdad en el encuadre, así que ' +
+                'el extremo caliente siempre señala lo excepcional y no se convierte en una mancha uniforme. Fuera del ' +
+                'término municipal el fondo va atenuado: lo que se derrama sobre San Pedro o Cancelada son viviendas de ' +
+                'Benahavís pegadas al límite, no viviendas de esos municipios. Al acercarse aparece cada vivienda en la ' +
+                'coordenada que consta en el registro, con el tamaño del punto proporcional a sus plazas.',
           mapa: {
             puntos: viviendas,
             unidad: 'viviendas',
@@ -273,8 +289,17 @@
             modo: 'auto',
             zoomDetalle: 14,
             agrupar: false,
+            limite: D.limite,
             unidadSingular: 'vivienda',
             calorEtiqueta: 'Densidad de viviendas turísticas',
+            /* El tamaño del punto son las plazas. Se recorta en 20 porque el RTA
+               tiene cuatro registros de 188 a 342 plazas —complejos enteros
+               inscritos como una sola vivienda— que, sin tope, saldrían como un
+               disco del tamaño de media urbanización. */
+            radio: function (p) {
+              return 3.0 + Math.sqrt(Math.min(Math.max(+p.plazas || 2, 1), 20)) * 1.25;
+            },
+            radioEtiqueta: 'Plazas de la vivienda',
             fecha: function (p) { return p.alta; },
             grupo: function (p) { return p.tipo; },
             popup: fichaVUT,
@@ -363,6 +388,48 @@
         var d = D.demografia || {}, p = d.padron || {}, r = d.renta || {}, g = d.desigualdad || {};
         var nac = d.nacionalidad || {}, pais = d.nacionalidades || {}, ieca = d.extranjeros_ieca || {};
         var rc = d.renta_contexto || {};
+        var ed = d.edad || {}, nacim = d.nacimiento || {}, saldo = d.saldo_migratorio || {};
+        var atl = d.atlas_demografia || {}, ingr = d.fuente_ingresos || {}, umbr = d.umbrales_ingreso || {};
+
+        /* --- estructura por edad ---
+           El Padrón la publica por grupos quinquenales desde 2003 y hasta 2022,
+           que es cuando el INE dejó de bajar la edad al municipio. Se pinta como
+           barras emparejadas y no como pirámide con valores negativos: el eje
+           saldría rotulado con «−300 hombres», que no es una cantidad de nadie. */
+        var gruposEdad = (ed.grupos || []).map(function (g) {
+          return g.replace(/^De /, '').replace(/ años$/, '').replace(/^100 y más$/, '100+');
+        });
+        var anyosEdad = ed.anyos || [];
+        var anyoEdad = anyosEdad.length ? anyosEdad[anyosEdad.length - 1] : null;
+        function specEdad(anyo) {
+          var filas = (ed.por_anyo || {})[anyo] || [];
+          return {
+            type: 'bar', xLabel: 'Grupo de edad', xTodas: true, yFormat: 'num',
+            x: gruposEdad,
+            series: [
+              { name: 'Hombres', color: '#2a78d6', data: filas.map(function (f) { return f.hombres; }) },
+              { name: 'Mujeres', color: '#d1541f', data: filas.map(function (f) { return f.mujeres; }) }
+            ]
+          };
+        }
+
+        /* --- lugar de nacimiento ---
+           Las cinco categorías son excluyentes entre sí y suman el padrón del
+           año: el INE publica además los subtotales anidados, que aquí se
+           descartan porque apilados darían el doble de población de la que hay. */
+        var ejeNacim = ejeT(nacim.total || []);
+        var NACIMIENTO = [
+          { k: 'mismo_municipio', n: 'En Benahavís' },
+          { k: 'misma_provincia', n: 'En otro municipio de Málaga' },
+          { k: 'otra_provincia', n: 'En otra provincia andaluza' },
+          { k: 'otra_comunidad', n: 'En otra comunidad autónoma' },
+          { k: 'extranjero', n: 'En el extranjero' }
+        ];
+
+        var ejeSaldo = rejillaAnual(ejeT(saldo.total || []));
+        var ejeAtlas = ejeT(atl.edad_media || []);
+        var ejeIngr = ejeT(ingr.salario || []);
+        var alinearEn = function (eje, puntos) { return alineado(eje, puntos, 'v'); };
 
         /* Nacionalidad y sexo comparten eje: son el mismo padrón desagregado dos
            veces, así que el apilado suma exactamente la población del año. */
@@ -417,7 +484,17 @@
             { label: 'Población extranjera' + (ieca.anyo ? ' (' + ieca.anyo + ')' : ''),
               valor: ieca.extranjeros, unidad: ieca.porcentaje != null ? F.pct(ieca.porcentaje) + ' del total' : '' },
             { label: 'Renta neta media por persona', valor: ultV(r.renta_neta_persona), unidad: '€', serie: vals(r.renta_neta_persona) },
-            { label: 'Índice de Gini', valor: ultV(g.gini), dec: 1, formato: F.num, serie: vals(g.gini) }
+            { label: 'Índice de Gini', valor: ultV(g.gini), dec: 1, formato: F.num, serie: vals(g.gini) },
+            /* Los dos indicadores más recientes de la pestaña: el saldo migratorio
+               llega un año más lejos que el Atlas y dos más que el Padrón. */
+            { label: 'Saldo migratorio' + (ejeSaldo.length ? ' (' + ejeSaldo[ejeSaldo.length - 1] + ')' : ''),
+              valor: ultV(saldo.total), formato: function (x) { return F.signo(x, 0); },
+              unidad: 'residentes', serie: vals(saldo.total) },
+            { label: 'Renta que no viene del salario' +
+                     ((ejeIngr.length) ? ' (' + ejeIngr[ejeIngr.length - 1] + ')' : ''),
+              valor: ultV(ingr.salario) == null ? null : 100 - ultV(ingr.salario),
+              unidad: '%', dec: 1, formato: F.num,
+              serie: vals(ingr.salario).map(function (v) { return v == null ? null : 100 - v; }) }
           ],
           cards: [
             {
@@ -497,6 +574,104 @@
                 series: [
                   { name: 'Gini (0–100)', data: vals(g.gini) },
                   { name: 'P80 / P20', data: vals(g.p80_p20) }
+                ]
+              }
+            },
+            {
+              titulo: 'Estructura por edad', sub: 'Población empadronada por grupo quinquenal y sexo',
+              chips: [ANUAL], fuente: FTE.padron_edad, ancho: 'full',
+              control: anyosEdad.length ? {
+                label: 'Año', valor: anyoEdad,
+                opciones: anyosEdad.slice().reverse().map(function (a) { return { v: a, txt: a }; }),
+                spec: specEdad
+              } : null,
+              nota: 'Serie 2003–2022: el Padrón Continuo dejó de bajar la edad al municipio después de 2022 y aquí ' +
+                    'no se prolonga con estimaciones. La forma no es la de un municipio envejecido —hay más gente ' +
+                    'entre 40 y 55 años que en ningún otro tramo— porque quien llega a Benahavís llega ya en edad ' +
+                    'de trabajar.',
+              spec: specEdad(anyoEdad)
+            },
+            {
+              titulo: 'Dónde nació la población empadronada', sub: 'Cinco orígenes que suman el padrón del año',
+              chips: [ANUAL], fuente: FTE.padron_nacimiento, ancho: 'full',
+              nota: 'Es el indicador que mejor mide lo internacional que es el municipio, y no dice lo mismo que la ' +
+                    'nacionalidad: hay vecinos con pasaporte español nacidos fuera y al revés. Solo se apilan las ' +
+                    'cinco categorías que no se solapan; el INE publica además los subtotales anidados, que sumados ' +
+                    'a estas darían el doble de población de la que hay.',
+              spec: {
+                type: 'stack', xType: 'anual', xLabel: 'Año', x: ejeNacim, yFormat: 'num',
+                series: NACIMIENTO.map(function (c) {
+                  return { name: c.n, data: alinearEn(ejeNacim, nacim[c.k]) };
+                })
+              }
+            },
+            {
+              titulo: 'Saldo migratorio', sub: 'Población que el municipio gana o pierde cada año por migración',
+              chips: [ANUAL], fuente: FTE.migraciones, ancho: 'full',
+              nota: 'Es el dato municipal más reciente de esta pestaña: llega a ' +
+                    (ejeSaldo.length ? ejeSaldo[ejeSaldo.length - 1] : 'el último año publicado') +
+                    ', un año por delante del Atlas de renta y dos por delante del Padrón por nacionalidad. ' +
+                    'El crecimiento de Benahavís no lo explican los nacimientos sino la llegada de residentes, y ' +
+                    'sobre todo desde el extranjero: el saldo exterior es casi todo el saldo total. La excepción es ' +
+                    '2023, el único año en que el municipio pierde población por migración, y la pierde justo por ' +
+                    'donde suele ganarla: el saldo con el extranjero se va a −136.',
+              spec: {
+                type: 'bar', xType: 'anual', xLabel: 'Año', x: ejeSaldo, yFormat: 'num',
+                series: [
+                  { name: 'Saldo con el extranjero', data: alinearEn(ejeSaldo, saldo.exterior) },
+                  { name: 'Saldo con el resto de España', data: alinearEn(ejeSaldo, saldo.interior) },
+                  { name: 'Saldo total', data: alinearEn(ejeSaldo, saldo.total) }
+                ]
+              }
+            },
+            {
+              titulo: 'De dónde sale la renta de los hogares', sub: 'Reparto del ingreso declarado por fuente, %',
+              chips: [ANUAL], fuente: FTE.atlas_ingresos, ancho: 'full',
+              nota: 'Los cinco conceptos suman 100. Lo que distingue a Benahavís es el peso de los otros ingresos ' +
+                    '—rentas del capital, de la propiedad y de actividades económicas—: en un municipio medio el ' +
+                    'salario se lleva la mayor parte y aquí no llega a la mitad. Sale de la misma operación del INE ' +
+                    'que la renta media, así que se lee contra ella sin cambiar de fuente.',
+              spec: {
+                type: 'stack', xType: 'anual', xLabel: 'Año', x: ejeIngr, yFormat: 'dec1', yMax: 100,
+                series: [
+                  { name: 'Salario', data: alinearEn(ejeIngr, ingr.salario) },
+                  { name: 'Otros ingresos', data: alinearEn(ejeIngr, ingr.otros_ingresos) },
+                  { name: 'Pensiones', data: alinearEn(ejeIngr, ingr.pensiones) },
+                  { name: 'Otras prestaciones', data: alinearEn(ejeIngr, ingr.otras_prestaciones) },
+                  { name: 'Prestaciones por desempleo', data: alinearEn(ejeIngr, ingr.desempleo) }
+                ]
+              }
+            },
+            {
+              titulo: 'Hogares y estructura de la población', sub: 'Indicadores demográficos del Atlas de renta',
+              chips: [ANUAL], fuente: FTE.atlas_demografia,
+              nota: 'Un tercio de los hogares del municipio son de una sola persona. La edad media apenas se mueve ' +
+                    'en toda la serie: el municipio crece mucho pero no envejece, porque crece por llegada de ' +
+                    'población adulta y no por acumulación de años.',
+              spec: {
+                type: 'line', xType: 'anual', xLabel: 'Año', x: ejeAtlas, yFormat: 'dec1',
+                series: [
+                  { name: 'Edad media (años)', data: alinearEn(ejeAtlas, atl.edad_media) },
+                  { name: 'Hogares unipersonales (%)', data: alinearEn(ejeAtlas, atl.pct_hogares_unipersonales) },
+                  { name: 'Menores de 18 (%)', data: alinearEn(ejeAtlas, atl.pct_menores_18) },
+                  { name: '65 y más años (%)', data: alinearEn(ejeAtlas, atl.pct_65_y_mas) },
+                  { name: 'Tamaño medio del hogar', data: alinearEn(ejeAtlas, atl.tamanyo_hogar) }
+                ]
+              }
+            },
+            {
+              titulo: 'Población bajo umbrales de ingreso', sub: 'Porcentaje por debajo de cada umbral, en euros por unidad de consumo',
+              chips: [ANUAL], fuente: FTE.atlas_umbrales,
+              nota: 'Son umbrales absolutos en euros, no la tasa de riesgo de pobreza: no dependen de la mediana ' +
+                    'del propio municipio, de modo que se pueden comparar entre municipios y a lo largo del tiempo. ' +
+                    'Conviene leerlos junto al Gini: que la renta media sea alta no impide que una parte de la ' +
+                    'población esté por debajo de estos umbrales.',
+              spec: {
+                type: 'line', xType: 'anual', xLabel: 'Año', x: ejeT(umbr.bajo_5000 || []), yFormat: 'dec1',
+                series: [
+                  { name: 'Menos de 5.000 €', data: vals(umbr.bajo_5000) },
+                  { name: 'Menos de 7.500 €', data: vals(umbr.bajo_7500) },
+                  { name: 'Menos de 10.000 €', data: vals(umbr.bajo_10000) }
                 ]
               }
             }
@@ -579,6 +754,60 @@
       render: function () {
         var d = D.demanda || {}, rec = d.receptor || {}, itn = d.interno || {}, eoh = d.eoh_zona_turistica || {};
         var top = rec.top_paises_12m || [];
+
+        /* --- mercados emisores por año ---
+           El fichero trae la serie mensual completa de cada país desde julio de
+           2019, así que el ranking de un año se arma aquí sin pedir nada más. Se
+           deja «Últimos 12 meses» como opción por defecto porque es la que
+           responde a «cómo está esto ahora», y los años cerrados debajo.
+
+           2019 se excluye de la lista: la serie empieza en julio, de modo que su
+           total no es un año y quedaría a la mitad frente a los demás. */
+        var DOCE = '12m';
+        var porPais = rec.por_pais || {};
+        var anyosPais = (function () {
+          var vistos = {};
+          Object.keys(porPais).forEach(function (p) {
+            porPais[p].forEach(function (x) { vistos[String(x.t).slice(0, 4)] = true; });
+          });
+          return Object.keys(vistos).sort().filter(function (a) { return a !== '2019'; });
+        })();
+        function paisesDe(anyo) {
+          if (anyo === DOCE) return top.slice(0, 10);
+          return Object.keys(porPais).map(function (p) {
+            return {
+              pais: p,
+              v: suma(porPais[p].filter(function (x) { return String(x.t).slice(0, 4) === anyo; })
+                               .map(function (x) { return x.v; }))
+            };
+          }).filter(function (r) { return r.v > 0; })
+            .sort(function (a, b) { return b.v - a.v; }).slice(0, 10);
+        }
+        function specPaises(anyo) {
+          var filas = paisesDe(anyo);
+          return {
+            type: 'barh', yFormat: 'num', xLabel: 'País de origen',
+            x: filas.map(function (r) { return r.pais; }),
+            series: [{ name: anyo === DOCE ? 'Turistas (últimos 12 meses)' : 'Turistas en ' + anyo,
+                       data: filas.map(function (r) { return r.v; }) }]
+          };
+        }
+
+        /* --- procedencia nacional por año ---
+           El pipeline ya guarda un ranking por año; si por lo que sea solo hay el
+           acumulado —un año cuyo fichero de 30 MB expiró—, la tarjeta sigue
+           funcionando con él y no ofrece selector. */
+        var origenAnyo = itn.top_origenes_por_anyo || {};
+        var anyosOrigen = Object.keys(origenAnyo).sort();
+        var origenPorDefecto = anyosOrigen.length ? anyosOrigen[anyosOrigen.length - 1] : null;
+        function specOrigenes(anyo) {
+          var filas = (origenAnyo[anyo] || itn.top_origenes || []).slice(0, 10);
+          return {
+            type: 'barh', yFormat: 'num', xLabel: 'Municipio de origen',
+            x: filas.map(function (r) { return r.municipio; }),
+            series: [{ name: anyo ? 'Turistas en ' + anyo : 'Turistas', data: filas.map(function (r) { return r.v; }) }]
+          };
+        }
         return {
           nota: 'Estadística <b>experimental</b> del INE. Mide presencia detectada por posicionamiento de móviles, no encuestas a viajeros: ' +
                 'sirve perfectamente para la evolución y el peso relativo de cada mercado, y con más cautela para las cifras absolutas.',
@@ -598,21 +827,28 @@
               }
             },
             {
-              titulo: 'Mercados emisores', sub: 'Turistas por país de origen, últimos 12 meses',
+              titulo: 'Mercados emisores', sub: 'Turistas extranjeros por país de origen',
               chips: [EXPERIMENTAL], fuente: FTE.moviles,
-              spec: {
-                type: 'barh', x: top.slice(0, 10).map(function (r) { return r.pais; }), yFormat: 'num',
-                series: [{ name: 'Turistas', data: top.slice(0, 10).map(function (r) { return r.v; }) }]
-              }
+              control: { label: 'Periodo', valor: DOCE,
+                         opciones: [{ v: DOCE, txt: 'Últimos 12 meses' }].concat(
+                           anyosPais.slice().reverse().map(function (a) { return { v: a, txt: a }; })),
+                         spec: specPaises },
+              nota: 'Los diez primeros de cada periodo. El ranking se rehace por completo en cada año, así que un ' +
+                    'país que aparece o desaparece de la lista es un cambio real de mercado. 2019 no está: la serie ' +
+                    'empieza en julio y su total no sería un año entero.',
+              spec: specPaises(DOCE)
             },
             {
-              titulo: 'Turismo nacional por provincia de origen', sub: 'Principales orígenes',
+              titulo: 'Turismo nacional por municipio de origen', sub: 'De dónde vienen los turistas residentes en España',
               chips: [EXPERIMENTAL], fuente: FTE.moviles,
-              spec: {
-                type: 'barh', yFormat: 'num',
-                x: (itn.top_origenes || []).slice(0, 10).map(function (r) { return r.municipio; }),
-                series: [{ name: 'Turistas', data: (itn.top_origenes || []).slice(0, 10).map(function (r) { return r.v; }) }]
-              }
+              control: anyosOrigen.length > 1 ? {
+                label: 'Año', valor: origenPorDefecto,
+                opciones: anyosOrigen.slice().reverse().map(function (a) { return { v: a, txt: a }; }),
+                spec: specOrigenes
+              } : null,
+              nota: 'La fuente resuelve el municipio de origen, no la provincia, y por eso encabezan la lista ' +
+                    'ciudades y no territorios. El año en curso va incompleto: solo suma los meses publicados.',
+              spec: specOrigenes(origenPorDefecto)
             },
             {
               titulo: 'Ocupación hotelera de la zona turística', sub: 'Costa del Sol (Málaga) — indicador sustitutivo',
@@ -660,11 +896,26 @@
           'Secciones P y Q': 'Educación y sanidad',
           'Secciones R y S': 'Ocio y otros servicios'
         };
-        var porSector = Object.keys(RAMAS).map(function (k) {
-          var serie = (emp.por_sector || {})[k] || [];
-          var ult = serie.length ? serie[serie.length - 1] : null;
-          return { sector: RAMAS[k], v: ult && ult.t === ultimoAnyoEmp ? ult.v : null };
-        }).filter(function (x) { return x.v; }).sort(function (a, b) { return a.v - b.v; });
+        /* El DIRCE publica la serie completa de cada rama desde 2012, no solo el
+           último corte: con el selector se puede ver cómo cambió el tejido
+           empresarial —cuándo despega lo inmobiliario, cuándo la construcción— en
+           lugar de una única foto fija. */
+        var anyosEmp = ejeT(emp.total);
+        function ramasDe(anyo) {
+          return Object.keys(RAMAS).map(function (k) {
+            var punto = ((emp.por_sector || {})[k] || []).filter(function (x) { return x.t === anyo; })[0];
+            return { sector: RAMAS[k], v: punto ? punto.v : null };
+          }).filter(function (x) { return x.v; }).sort(function (a, b) { return a.v - b.v; });
+        }
+        function specRamas(anyo) {
+          var filas = ramasDe(anyo);
+          return {
+            type: 'barh', yFormat: 'num', xLabel: 'Rama de actividad',
+            x: filas.map(function (x) { return x.sector; }),
+            series: [{ name: 'Empresas en ' + anyo, data: filas.map(function (x) { return x.v; }) }]
+          };
+        }
+        var porSector = ramasDe(ultimoAnyoEmp);
         return {
           kpis: [
             { label: 'Paro registrado', valor: ultV(campo(paro, 'total').map(function (v) { return { v: v }; })), invertir: true,
@@ -744,16 +995,16 @@
             },
             {
               titulo: 'Empresas por rama de actividad',
-              sub: ultimoAnyoEmp ? 'Reparto en ' + ultimoAnyoEmp : 'Último año publicado',
+              sub: 'Reparto del tejido empresarial, año a año',
               chips: [ANUAL], fuente: FTE.dirce, ancho: 'full',
+              control: { label: 'Año', valor: ultimoAnyoEmp,
+                         opciones: anyosEmp.slice().reverse().map(function (a) { return { v: a, txt: a }; }),
+                         spec: specRamas },
               nota: 'Las ramas suman el total del municipio. Casi la mitad de las empresas son inmobiliarias o ' +
                     'de servicios profesionales y administrativos: el perfil de un municipio residencial de lujo, ' +
-                    'no el de uno con mucha actividad productiva.',
-              spec: {
-                type: 'barh', yFormat: 'num', xLabel: 'Rama de actividad',
-                x: porSector.map(function (x) { return x.sector; }),
-                series: [{ name: 'Empresas', data: porSector.map(function (x) { return x.v; }) }]
-              }
+                    'no el de uno con mucha actividad productiva. El orden de las barras se recalcula en cada año, ' +
+                    'así que un cambio de posición es un cambio real de tamaño y no un efecto del orden fijo.',
+              spec: specRamas(ultimoAnyoEmp)
             },
             {
               titulo: 'Afiliación por régimen: autónomos y cuenta ajena',
@@ -841,7 +1092,94 @@
         var indice = function (nombre) { return alineado(ejeIndices, idx, nombre); };
         var ejeAnual = rejillaAnual(ejeT(c.temperatura_anual).concat(ejeT(c.precipitacion_anual)));
 
-        var ultimoCompleto = idx.length ? idx[idx.length - 1] : {};
+        /* Lluvia por año a partir de los meses publicados. Coincide al decimal con
+           el resumen anual de AEMET en los años completos —comprobado en los 17
+           que lo tienen—, y además permite distinguir el año incompleto del año
+           seco: una barra que falta se lee como «no llovió», y en 2020 y 2021
+           llovió, lo que pasa es que a la estación le faltan los meses de otoño. */
+        var lluviaAnyo = {};
+        (c.precipitacion_mensual || []).forEach(function (x) {
+          var a = String(x.t).slice(0, 4);
+          var e = lluviaAnyo[a] || (lluviaAnyo[a] = { suma: 0, meses: 0 });
+          e.suma += x.v; e.meses++;
+        });
+        var mesesDe = function (a) { return (lluviaAnyo[a] || {}).meses || 0; };
+        var lluviaSi = function (completo) {
+          return ejeAnual.map(function (a) {
+            var e = lluviaAnyo[a];
+            if (!e || (e.meses === 12) !== completo) return null;
+            return Math.round(e.suma * 10) / 10;
+          });
+        };
+        var incompletos = ejeAnual.filter(function (a) {
+          var m = mesesDe(a);
+          return m > 0 && m < 12;
+        });
+        var detalleIncompletos = incompletos.map(function (a) {
+          return a + ' (' + mesesDe(a) + ' meses, ' + F.num(lluviaAnyo[a].suma) + ' mm)';
+        }).join(', ');
+        var sinTemperatura = ejeAnual.filter(function (a) {
+          return !(c.temperatura_anual || []).some(function (x) { return String(x.t) === a; });
+        });
+
+        /* --- ciclo anual: la media de la serie o un año concreto ---
+           Las dos tarjetas del ciclo mensual enseñaban solo los valores normales,
+           es decir el año medio de veintidós. Con el selector se puede además
+           mirar un año concreto y ver si fue seco o caluroso frente a esa media,
+           que es la pregunta que se le hace a una estación.
+
+           La lista de años NO es la misma para lluvia que para temperatura: AEMET
+           publica cada mes con unos campos y sin otros, y hay años con los doce
+           meses de lluvia y solo seis de temperatura. Cada tarjeta ofrece los
+           suyos. */
+        var porAnyoClima = c.mensual_por_anyo || {};
+        var NORMAL = 'normal';
+        function opcionesAnyo(anyos) {
+          return [{ v: NORMAL, txt: 'Media de la serie' }].concat(
+            (anyos || []).slice().reverse().map(function (a) { return { v: a, txt: a }; }));
+        }
+        function filasClima(anyo) {
+          return anyo === NORMAL ? n : (porAnyoClima[anyo] || []);
+        }
+        /* La media de toda la serie se queda de fondo al elegir un año suelto: un
+           ciclo anual sin referencia no dice si ese año fue normal o raro. Va en
+           gris neutro y con el rótulo completo —«media de los 22 años»— para que
+           no se confunda con la media mensual del propio año. */
+        var GRIS_REF = '#9aa8bb';
+        function normalDe(clave) { return n.map(function (r) { return r[clave]; }); }
+        function specPluviometria(anyo) {
+          var filas = filasClima(anyo);
+          var series = [{ name: anyo === NORMAL ? 'Precipitación media del mes' : 'Precipitación de ' + anyo,
+                          data: filas.map(function (r) { return r.precipitacion_media; }) }];
+          /* Barras emparejadas, no una línea encima: en una gráfica de barras el
+             kit pinta todas las series como barras, y comparar dos alturas juntas
+             es justo lo que se quiere hacer aquí. */
+          if (anyo !== NORMAL) {
+            series.push({ name: 'Media de todos los años', color: GRIS_REF,
+                          data: normalDe('precipitacion_media') });
+          }
+          return {
+            type: 'bar', xLabel: 'Mes', xTodas: true, yFormat: 'num',
+            x: meses, series: series
+          };
+        }
+        function specTemperaturas(anyo) {
+          var filas = filasClima(anyo);
+          var sufijo = anyo === NORMAL ? '' : ' de ' + anyo;
+          var series = [
+            { name: 'Máxima media' + sufijo, data: filas.map(function (r) { return r.temperatura_maxima_media; }) },
+            { name: 'Media' + sufijo, data: filas.map(function (r) { return r.temperatura_media; }) },
+            { name: 'Mínima media' + sufijo, data: filas.map(function (r) { return r.temperatura_minima_media; }) }
+          ];
+          if (anyo !== NORMAL) {
+            series.push({ name: 'Media de todos los años', color: GRIS_REF, dashed: true,
+                          data: normalDe('temperatura_media') });
+          }
+          return {
+            type: 'line', xLabel: 'Mes', xTodas: true, yFormat: 'dec1',
+            x: meses, series: series
+          };
+        }
 
         return {
           kpis: [
@@ -884,8 +1222,10 @@
             {
               titulo: 'Temperatura media anual', sub: 'Resumen anual que publica AEMET',
               chips: [ANUAL], fuente: FTE.aemet,
-              nota: 'Los huecos son años a los que a la estación le faltó algún mes: AEMET solo publica el resumen ' +
-                    'anual de los años completos y aquí no se rellena lo que la fuente no da.',
+              nota: 'Faltan ' + (sinTemperatura.length ? sinTemperatura.join(', ') : 'algunos años') +
+                    ': a esos años les faltó algún mes en la estación. No se rellenan ni se calcula la media con ' +
+                    'lo que hay, porque la media de un año al que le falta noviembre y diciembre sale alta y no es ' +
+                    'comparable con la de un año entero.',
               spec: {
                 type: 'line', xType: 'anual', xLabel: 'Año', x: ejeAnual, yFormat: 'dec1', yLabel: '°C',
                 series: [{ name: 'Temperatura media', data: alineado(ejeAnual, c.temperatura_anual, 'v') }]
@@ -893,35 +1233,42 @@
             },
             {
               titulo: 'Precipitación anual', sub: 'Total recogido en el año',
-              chips: [ANUAL], fuente: FTE.aemet,
+              chips: [ANUAL], fuente: FTE.aemet, ancho: 'full',
+              nota: (incompletos.length
+                      ? 'Ojo con ' + detalleIncompletos + ': no son años secos, son años a los que la estación ' +
+                        'no publicó todos los meses, y justo los que faltan son los del otoño, que es cuando más ' +
+                        'llueve aquí. Van en otro color para que no se lean como un año entero.'
+                      : 'Todos los años de la serie tienen sus doce meses publicados.') +
+                    ' En los años completos la suma de los meses coincide al decimal con el resumen anual de AEMET.',
               spec: {
                 type: 'bar', xType: 'anual', xLabel: 'Año', x: ejeAnual, yFormat: 'num', yLabel: 'mm',
-                series: [{ name: 'Precipitación anual', data: alineado(ejeAnual, c.precipitacion_anual, 'v') }]
-              }
-            },
-            {
-              titulo: 'Pluviometría', sub: 'Precipitación media de cada mes del año, mm',
-              chips: [{ txt: 'Normales' }], fuente: FTE.aemet,
-              nota: 'Precipitación y temperatura no comparten eje: son magnitudes distintas y superponerlas en una sola escala falsearía la lectura.',
-              spec: {
-                type: 'bar', xLabel: 'Mes', xTodas: true, yFormat: 'num', yLabel: 'mm',
-                x: meses,
-                series: [{ name: 'Precipitación media (mm)', data: n.map(function (r) { return r.precipitacion_media; }) }]
-              }
-            },
-            {
-              titulo: 'Temperatura media, máxima y mínima', sub: 'Valores normales de la estación, °C',
-              chips: [{ txt: 'Normales' }], fuente: FTE.aemet,
-              nota: 'Máxima y mínima son las medias de las máximas y las mínimas diarias del mes, no los récords.',
-              spec: {
-                type: 'line', xLabel: 'Mes', xTodas: true, yFormat: 'dec1', yLabel: '°C',
-                x: meses,
                 series: [
-                  { name: 'Máxima media', data: n.map(function (r) { return r.temperatura_maxima_media; }) },
-                  { name: 'Media', data: n.map(function (r) { return r.temperatura_media; }) },
-                  { name: 'Mínima media', data: n.map(function (r) { return r.temperatura_minima_media; }) }
+                  { name: 'Año completo', data: lluviaSi(true) },
+                  { name: 'Año incompleto (solo los meses publicados)', color: 'warn', data: lluviaSi(false) }
                 ]
               }
+            },
+            {
+              titulo: 'Pluviometría', sub: 'Precipitación de cada mes del año, mm',
+              chips: [{ txt: 'Ciclo anual' }], fuente: FTE.aemet,
+              control: { label: 'Año', valor: NORMAL, opciones: opcionesAnyo(c.anyos_precipitacion),
+                         spec: specPluviometria },
+              nota: 'Precipitación y temperatura no comparten eje: son magnitudes distintas y superponerlas en una ' +
+                    'sola escala falsearía la lectura. En el selector solo aparecen los ' +
+                    F.num((c.anyos_precipitacion || []).length) + ' años con los doce meses de lluvia publicados; ' +
+                    'al elegir uno, la media de toda la serie se queda de fondo para poder compararlo.',
+              spec: specPluviometria(NORMAL)
+            },
+            {
+              titulo: 'Temperatura media, máxima y mínima', sub: 'Ciclo anual de la estación, °C',
+              chips: [{ txt: 'Ciclo anual' }], fuente: FTE.aemet,
+              control: { label: 'Año', valor: NORMAL, opciones: opcionesAnyo(c.anyos_temperatura),
+                         spec: specTemperaturas },
+              nota: 'Máxima y mínima son las medias de las máximas y las mínimas diarias del mes, no los récords. ' +
+                    'Hay menos años que en la lluvia (' + F.num((c.anyos_temperatura || []).length) + ' frente a ' +
+                    F.num((c.anyos_precipitacion || []).length) + ') porque AEMET publica cada mes con unos campos ' +
+                    'y sin otros: hay años con los doce meses de precipitación y solo la mitad de temperatura.',
+              spec: specTemperaturas(NORMAL)
             },
             {
               titulo: 'Días de calor, de lluvia y de viento fuerte', sub: 'Recuento observado en la estación',
@@ -970,7 +1317,7 @@
   /* ----------------------------------------------------------- Arranque --- */
 
   var FICHEROS = ['meta', 'demografia', 'oferta', 'vut', 'demanda', 'trabajo',
-                  'economia', 'clima', 'visitantes', 'costadelsol', 'validacion'];
+                  'economia', 'clima', 'visitantes', 'costadelsol', 'validacion', 'limite'];
 
   function arrancar() {
     var meta = D.meta || {};

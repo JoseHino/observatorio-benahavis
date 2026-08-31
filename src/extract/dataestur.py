@@ -129,6 +129,10 @@ def turismo_interno(anyos: list[int]) -> dict[str, Any]:
     origenes: dict[str, int] = defaultdict(int)
     salidas: dict[str, int] = defaultdict(int)
     total_nacional: dict[str, int] = defaultdict(int)
+    # Los mismos orígenes, pero sin fundir los años. Un ranking acumulado de siete
+    # años esconde justo lo que interesa —qué mercados suben y cuáles se caen—, y
+    # además cambia de significado cada vez que se añade un año al pipeline.
+    origenes_anyo: dict[int, dict[str, int]] = defaultdict(lambda: defaultdict(int))
 
     for anyo in anyos:
         try:
@@ -157,6 +161,7 @@ def turismo_interno(anyos: list[int]) -> dict[str, Any]:
                     total_nacional[t] += turistas
                 else:
                     origenes[origen] += turistas
+                    origenes_anyo[anyo][origen] += turistas
                     serie[t] += turistas
                 n += 1
             if origen == MUNICIPIO and not _es_agregado(destino):
@@ -176,12 +181,21 @@ def turismo_interno(anyos: list[int]) -> dict[str, Any]:
     log.info("   serie mensual: %d meses (%s) · %d municipios de origen distintos",
              len(meses), origen_serie, len(origenes))
 
+    def ranking(cuenta: dict[str, int], tope: int = 15) -> list[dict[str, Any]]:
+        return [{"municipio": m, "v": v}
+                for m, v in sorted(cuenta.items(), key=lambda x: -x[1])[:tope]]
+
+    # Solo se ofrecen los años que de verdad han traído datos: si un fichero falla
+    # —el de un año pesa unos 30 MB y a veces expira—, ese año no debe aparecer
+    # como opción vacía en el selector del panel.
+    anyos_con_datos = sorted(a for a in origenes_anyo if origenes_anyo[a])
+
     return {
         "serie": [{"t": t, "v": serie[t]} for t in meses],
         "origen_serie": origen_serie,
-        "top_origenes": [{"municipio": m, "v": v}
-                         for m, v in sorted(origenes.items(), key=lambda x: -x[1])[:15]],
-        "top_destinos_emisor": [{"municipio": m, "v": v}
-                                for m, v in sorted(salidas.items(), key=lambda x: -x[1])[:15]],
-        "anyos": anyos,
+        "top_origenes": ranking(origenes),
+        "top_origenes_por_anyo": {str(a): ranking(origenes_anyo[a]) for a in anyos_con_datos},
+        "top_destinos_emisor": ranking(salidas),
+        "anyos": anyos_con_datos,
+        "anyos_pedidos": anyos,
     }

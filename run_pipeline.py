@@ -110,7 +110,34 @@ def bloque_demografia() -> dict[str, Any]:
         log.warning("renta de las demarcaciones superiores no disponible: %s", exc)
         renta_contexto = (leer_previo("demografia") or {}).get("renta_contexto") or {}
 
+    # Indicadores que el INE sí publica para Benahavís y que estaban sin explotar.
+    # Van en un solo bloque tolerante a fallos: son ampliación, no el esqueleto del
+    # observatorio, y ninguno puede tumbar el padrón. Cada uno tiene su propio
+    # calendario —el saldo migratorio adelanta un año al Atlas y dos al Padrón—,
+    # así que se guardan por separado y nunca se encadenan en una sola serie.
+    previo = leer_previo("demografia") or {}
+    ampliacion: dict[str, Any] = {}
+    for clave, extractor in (
+        ("atlas_demografia", ine_tempus.atlas_demografia),
+        ("fuente_ingresos", ine_tempus.atlas_fuente_ingresos),
+        ("umbrales_ingreso", ine_tempus.atlas_pobreza),
+        ("saldo_migratorio", ine_tempus.saldo_migratorio),
+        ("edad", ine_tempus.padron_edad),
+        ("nacimiento", ine_tempus.padron_nacimiento),
+    ):
+        try:
+            ampliacion[clave] = extractor()
+        except Exception as exc:  # noqa: BLE001 — indicador secundario del bloque
+            log.warning("%s no disponible: %s", clave, exc)
+            ampliacion[clave] = previo.get(clave) or {}
+
     serie_temporal(INFORME, "padron.total", padron["total"], minimo=1000, maximo=50000)
+    if ampliacion.get("saldo_migratorio", {}).get("total"):
+        serie_temporal(INFORME, "migracion.saldo_total",
+                       ampliacion["saldo_migratorio"]["total"], minimo=-2000, maximo=3000)
+    if ampliacion.get("atlas_demografia", {}).get("edad_media"):
+        serie_temporal(INFORME, "atlas.edad_media",
+                       ampliacion["atlas_demografia"]["edad_media"], minimo=20, maximo=60)
     for clave, puntos in renta.items():
         serie_temporal(INFORME, f"renta.{clave}", puntos, minimo=0, maximo=500000)
     if desigualdad.get("gini"):
@@ -132,9 +159,12 @@ def bloque_demografia() -> dict[str, Any]:
         "renta_contexto": renta_contexto,
         "desigualdad": desigualdad,
         "poblacion_actual": ultimo,
+        **ampliacion,
         "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad "
-                  "(tablas 33571 y 33572), Atlas de Distribución de Renta de los Hogares "
-                  "(tablas 30824 y 53689) e índice de Gini y P80/P20 (tabla 37677) · "
+                  "(tablas 33571 y 33572), por edad (33570) y por lugar de nacimiento (33574), "
+                  "Atlas de Distribución de Renta de los Hogares (tablas 30824, 53689, 30825, "
+                  "30826, 30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de "
+                  "Migraciones y Cambios de Residencia (tabla 69767) · "
                   "IECA/SIMA para la población extranjera posterior a 2022",
         "ambito": "municipal",
         "actualizado": SELLO,
@@ -170,7 +200,11 @@ def bloque_demanda() -> dict[str, Any]:
     """Demanda turística municipal a partir de posicionamiento de telefonía móvil."""
     hoy = dt.date.today()
     receptor = dataestur.turismo_receptor((2019, 7), (hoy.year, hoy.month))
-    interno = dataestur.turismo_interno([hoy.year - 1, hoy.year])
+    # Todos los años publicados, no solo los dos últimos: la serie de turismo
+    # interno arranca en julio de 2019 igual que la de receptor, y con dos años no
+    # se puede comparar un origen consigo mismo. Son unos 30 MB por año, que se
+    # filtran en memoria y no se archivan.
+    interno = dataestur.turismo_interno(list(range(2019, hoy.year + 1)))
 
     # Indicador sustitutivo del hueco de pernoctaciones: ámbito de zona turística,
     # nunca municipal. Su caída no puede tumbar el bloque, que sí es municipal.

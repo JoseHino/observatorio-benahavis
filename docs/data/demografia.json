@@ -3987,7 +3987,3284 @@
   "t": "2025",
   "v": 9472.0
  },
- "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad (tablas 33571 y 33572), Atlas de Distribución de Renta de los Hogares (tablas 30824 y 53689) e índice de Gini y P80/P20 (tabla 37677) · IECA/SIMA para la población extranjera posterior a 2022",
+ "atlas_demografia": {
+  "edad_media": [
+   {
+    "t": "2015",
+    "v": 40.9
+   },
+   {
+    "t": "2016",
+    "v": 39.4
+   },
+   {
+    "t": "2017",
+    "v": 39.8
+   },
+   {
+    "t": "2018",
+    "v": 40.7
+   },
+   {
+    "t": "2019",
+    "v": 39.5
+   },
+   {
+    "t": "2020",
+    "v": 39.7
+   },
+   {
+    "t": "2021",
+    "v": 40.4
+   },
+   {
+    "t": "2022",
+    "v": 40.3
+   },
+   {
+    "t": "2023",
+    "v": 39.8
+   }
+  ],
+  "pct_menores_18": [
+   {
+    "t": "2015",
+    "v": 20.0
+   },
+   {
+    "t": "2016",
+    "v": 22.3
+   },
+   {
+    "t": "2017",
+    "v": 21.1
+   },
+   {
+    "t": "2018",
+    "v": 20.8
+   },
+   {
+    "t": "2019",
+    "v": 22.2
+   },
+   {
+    "t": "2020",
+    "v": 21.7
+   },
+   {
+    "t": "2021",
+    "v": 21.2
+   },
+   {
+    "t": "2022",
+    "v": 21.4
+   },
+   {
+    "t": "2023",
+    "v": 21.7
+   }
+  ],
+  "pct_65_y_mas": [
+   {
+    "t": "2015",
+    "v": 16.7
+   },
+   {
+    "t": "2016",
+    "v": 14.7
+   },
+   {
+    "t": "2017",
+    "v": 14.3
+   },
+   {
+    "t": "2018",
+    "v": 15.5
+   },
+   {
+    "t": "2019",
+    "v": 13.9
+   },
+   {
+    "t": "2020",
+    "v": 13.8
+   },
+   {
+    "t": "2021",
+    "v": 15.1
+   },
+   {
+    "t": "2022",
+    "v": 14.4
+   },
+   {
+    "t": "2023",
+    "v": 13.6
+   }
+  ],
+  "tamanyo_hogar": [
+   {
+    "t": "2015",
+    "v": 2.4
+   },
+   {
+    "t": "2016",
+    "v": 2.4
+   },
+   {
+    "t": "2017",
+    "v": 2.4
+   },
+   {
+    "t": "2018",
+    "v": 2.4
+   },
+   {
+    "t": "2019",
+    "v": 2.4
+   },
+   {
+    "t": "2020",
+    "v": 2.4
+   },
+   {
+    "t": "2021",
+    "v": 2.4
+   },
+   {
+    "t": "2022",
+    "v": 2.4
+   },
+   {
+    "t": "2023",
+    "v": 2.4
+   }
+  ],
+  "pct_hogares_unipersonales": [
+   {
+    "t": "2015",
+    "v": 33.6
+   },
+   {
+    "t": "2016",
+    "v": 27.9
+   },
+   {
+    "t": "2017",
+    "v": 36.2
+   },
+   {
+    "t": "2018",
+    "v": 34.5
+   },
+   {
+    "t": "2019",
+    "v": 33.8
+   },
+   {
+    "t": "2020",
+    "v": 34.1
+   },
+   {
+    "t": "2021",
+    "v": 31.7
+   },
+   {
+    "t": "2022",
+    "v": 32.5
+   },
+   {
+    "t": "2023",
+    "v": 33.4
+   }
+  ],
+  "pct_espanola": [
+   {
+    "t": "2015",
+    "v": 41.6
+   },
+   {
+    "t": "2016",
+    "v": 50.3
+   },
+   {
+    "t": "2017",
+    "v": 48.5
+   },
+   {
+    "t": "2018",
+    "v": 47.5
+   },
+   {
+    "t": "2019",
+    "v": 46.0
+   },
+   {
+    "t": "2020",
+    "v": 40.7
+   },
+   {
+    "t": "2021",
+    "v": 38.4
+   },
+   {
+    "t": "2022",
+    "v": 37.6
+   },
+   {
+    "t": "2023",
+    "v": 38.3
+   }
+  ]
+ },
+ "fuente_ingresos": {
+  "salario": [
+   {
+    "t": "2015",
+    "v": 54.0
+   },
+   {
+    "t": "2016",
+    "v": 56.4
+   },
+   {
+    "t": "2017",
+    "v": 57.8
+   },
+   {
+    "t": "2018",
+    "v": 56.2
+   },
+   {
+    "t": "2019",
+    "v": 53.1
+   },
+   {
+    "t": "2020",
+    "v": 51.5
+   },
+   {
+    "t": "2021",
+    "v": 52.2
+   },
+   {
+    "t": "2022",
+    "v": 49.4
+   },
+   {
+    "t": "2023",
+    "v": 49.4
+   }
+  ],
+  "pensiones": [
+   {
+    "t": "2015",
+    "v": 13.9
+   },
+   {
+    "t": "2016",
+    "v": 14.2
+   },
+   {
+    "t": "2017",
+    "v": 13.1
+   },
+   {
+    "t": "2018",
+    "v": 12.2
+   },
+   {
+    "t": "2019",
+    "v": 11.3
+   },
+   {
+    "t": "2020",
+    "v": 12.6
+   },
+   {
+    "t": "2021",
+    "v": 12.6
+   },
+   {
+    "t": "2022",
+    "v": 11.1
+   },
+   {
+    "t": "2023",
+    "v": 10.9
+   }
+  ],
+  "desempleo": [
+   {
+    "t": "2015",
+    "v": 2.6
+   },
+   {
+    "t": "2016",
+    "v": 2.1
+   },
+   {
+    "t": "2017",
+    "v": 1.6
+   },
+   {
+    "t": "2018",
+    "v": 1.6
+   },
+   {
+    "t": "2019",
+    "v": 1.6
+   },
+   {
+    "t": "2020",
+    "v": 6.9
+   },
+   {
+    "t": "2021",
+    "v": 3.3
+   },
+   {
+    "t": "2022",
+    "v": 1.2
+   },
+   {
+    "t": "2023",
+    "v": 1.1
+   }
+  ],
+  "otras_prestaciones": [
+   {
+    "t": "2015",
+    "v": 1.3
+   },
+   {
+    "t": "2016",
+    "v": 1.5
+   },
+   {
+    "t": "2017",
+    "v": 1.3
+   },
+   {
+    "t": "2018",
+    "v": 1.7
+   },
+   {
+    "t": "2019",
+    "v": 1.6
+   },
+   {
+    "t": "2020",
+    "v": 1.8
+   },
+   {
+    "t": "2021",
+    "v": 1.9
+   },
+   {
+    "t": "2022",
+    "v": 1.7
+   },
+   {
+    "t": "2023",
+    "v": 1.8
+   }
+  ],
+  "otros_ingresos": [
+   {
+    "t": "2015",
+    "v": 28.3
+   },
+   {
+    "t": "2016",
+    "v": 25.9
+   },
+   {
+    "t": "2017",
+    "v": 26.3
+   },
+   {
+    "t": "2018",
+    "v": 28.3
+   },
+   {
+    "t": "2019",
+    "v": 32.5
+   },
+   {
+    "t": "2020",
+    "v": 27.3
+   },
+   {
+    "t": "2021",
+    "v": 30.0
+   },
+   {
+    "t": "2022",
+    "v": 36.7
+   },
+   {
+    "t": "2023",
+    "v": 36.9
+   }
+  ]
+ },
+ "umbrales_ingreso": {
+  "bajo_5000": [
+   {
+    "t": "2015",
+    "v": 28.4
+   },
+   {
+    "t": "2016",
+    "v": 28.8
+   },
+   {
+    "t": "2017",
+    "v": 24.7
+   },
+   {
+    "t": "2018",
+    "v": 20.6
+   },
+   {
+    "t": "2019",
+    "v": 19.7
+   },
+   {
+    "t": "2020",
+    "v": 21.2
+   },
+   {
+    "t": "2021",
+    "v": 16.9
+   },
+   {
+    "t": "2022",
+    "v": 15.8
+   },
+   {
+    "t": "2023",
+    "v": 13.7
+   }
+  ],
+  "bajo_7500": [
+   {
+    "t": "2015",
+    "v": 36.4
+   },
+   {
+    "t": "2016",
+    "v": 38.4
+   },
+   {
+    "t": "2017",
+    "v": 33.5
+   },
+   {
+    "t": "2018",
+    "v": 29.8
+   },
+   {
+    "t": "2019",
+    "v": 27.5
+   },
+   {
+    "t": "2020",
+    "v": 30.2
+   },
+   {
+    "t": "2021",
+    "v": 25.5
+   },
+   {
+    "t": "2022",
+    "v": 22.8
+   },
+   {
+    "t": "2023",
+    "v": 19.5
+   }
+  ],
+  "bajo_10000": [
+   {
+    "t": "2015",
+    "v": 48.8
+   },
+   {
+    "t": "2016",
+    "v": 50.4
+   },
+   {
+    "t": "2017",
+    "v": 44.5
+   },
+   {
+    "t": "2018",
+    "v": 40.8
+   },
+   {
+    "t": "2019",
+    "v": 37.1
+   },
+   {
+    "t": "2020",
+    "v": 40.1
+   },
+   {
+    "t": "2021",
+    "v": 35.5
+   },
+   {
+    "t": "2022",
+    "v": 30.7
+   },
+   {
+    "t": "2023",
+    "v": 27.0
+   }
+  ]
+ },
+ "saldo_migratorio": {
+  "total": [
+   {
+    "t": "2021",
+    "v": 666.0
+   },
+   {
+    "t": "2022",
+    "v": 684.0
+   },
+   {
+    "t": "2023",
+    "v": -69.0
+   },
+   {
+    "t": "2024",
+    "v": 485.0
+   }
+  ],
+  "exterior": [
+   {
+    "t": "2021",
+    "v": 537.0
+   },
+   {
+    "t": "2022",
+    "v": 625.0
+   },
+   {
+    "t": "2023",
+    "v": -136.0
+   },
+   {
+    "t": "2024",
+    "v": 411.0
+   }
+  ],
+  "interior": [
+   {
+    "t": "2021",
+    "v": 129.0
+   },
+   {
+    "t": "2022",
+    "v": 59.0
+   },
+   {
+    "t": "2023",
+    "v": 67.0
+   },
+   {
+    "t": "2024",
+    "v": 74.0
+   }
+  ]
+ },
+ "edad": {
+  "grupos": [
+   "De 0 a 4 años",
+   "De 5 a 9 años",
+   "De 10 a 14 años",
+   "De 15 a 19 años",
+   "De 20 a 24 años",
+   "De 25 a 29 años",
+   "De 30 a 34 años",
+   "De 35 a 39 años",
+   "De 40 a 44 años",
+   "De 45 a 49 años",
+   "De 50 a 54 años",
+   "De 55 a 59 años",
+   "De 60 a 64 años",
+   "De 65 a 69 años",
+   "De 70 a 74 años",
+   "De 75 a 79 años",
+   "De 80 a 84 años",
+   "De 85 a 89 años",
+   "De 90 a 94 años",
+   "De 95 a 99 años",
+   "100 y más años"
+  ],
+  "anyos": [
+   "2003",
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "por_anyo": {
+   "2003": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 46.0,
+     "mujeres": 44.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 61.0,
+     "mujeres": 60.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 62.0,
+     "mujeres": 61.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 46.0,
+     "mujeres": 59.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 63.0,
+     "mujeres": 71.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 76.0,
+     "mujeres": 73.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 94.0,
+     "mujeres": 120.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 107.0,
+     "mujeres": 115.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 97.0,
+     "mujeres": 87.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 75.0,
+     "mujeres": 85.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 92.0,
+     "mujeres": 85.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 76.0,
+     "mujeres": 88.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 92.0,
+     "mujeres": 89.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 82.0,
+     "mujeres": 63.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 62.0,
+     "mujeres": 38.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 35.0,
+     "mujeres": 36.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 18.0,
+     "mujeres": 19.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 8.0,
+     "mujeres": 7.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 4.0,
+     "mujeres": 4.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    }
+   ],
+   "2004": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 59.0,
+     "mujeres": 61.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 66.0,
+     "mujeres": 56.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 71.0,
+     "mujeres": 63.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 46.0,
+     "mujeres": 64.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 59.0,
+     "mujeres": 60.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 72.0,
+     "mujeres": 83.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 104.0,
+     "mujeres": 115.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 116.0,
+     "mujeres": 114.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 99.0,
+     "mujeres": 92.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 69.0,
+     "mujeres": 76.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 76.0,
+     "mujeres": 67.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 62.0,
+     "mujeres": 66.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 82.0,
+     "mujeres": 66.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 72.0,
+     "mujeres": 58.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 55.0,
+     "mujeres": 23.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 23.0,
+     "mujeres": 28.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 12.0,
+     "mujeres": 14.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 6.0,
+     "mujeres": 4.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 2.0,
+     "mujeres": 3.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    }
+   ],
+   "2005": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 78.0,
+     "mujeres": 71.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 87.0,
+     "mujeres": 70.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 93.0,
+     "mujeres": 70.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 49.0,
+     "mujeres": 72.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 71.0,
+     "mujeres": 64.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 68.0,
+     "mujeres": 93.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 119.0,
+     "mujeres": 129.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 133.0,
+     "mujeres": 149.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 123.0,
+     "mujeres": 110.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 89.0,
+     "mujeres": 92.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 83.0,
+     "mujeres": 76.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 72.0,
+     "mujeres": 68.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 96.0,
+     "mujeres": 77.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 81.0,
+     "mujeres": 66.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 63.0,
+     "mujeres": 28.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 28.0,
+     "mujeres": 29.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 16.0,
+     "mujeres": 20.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 6.0,
+     "mujeres": 5.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 1.0,
+     "mujeres": 2.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    }
+   ],
+   "2006": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 74.0,
+     "mujeres": 60.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 88.0,
+     "mujeres": 80.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 105.0,
+     "mujeres": 81.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 58.0,
+     "mujeres": 68.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 63.0,
+     "mujeres": 70.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 85.0,
+     "mujeres": 88.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 115.0,
+     "mujeres": 142.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 143.0,
+     "mujeres": 160.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 142.0,
+     "mujeres": 112.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 94.0,
+     "mujeres": 106.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 89.0,
+     "mujeres": 83.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 83.0,
+     "mujeres": 85.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 94.0,
+     "mujeres": 91.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 94.0,
+     "mujeres": 72.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 70.0,
+     "mujeres": 38.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 30.0,
+     "mujeres": 30.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 23.0,
+     "mujeres": 25.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 9.0,
+     "mujeres": 5.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 1.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 2.0
+    }
+   ],
+   "2007": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 103.0,
+     "mujeres": 82.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 101.0,
+     "mujeres": 77.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 109.0,
+     "mujeres": 85.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 68.0,
+     "mujeres": 72.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 73.0,
+     "mujeres": 82.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 107.0,
+     "mujeres": 109.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 126.0,
+     "mujeres": 158.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 169.0,
+     "mujeres": 168.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 158.0,
+     "mujeres": 145.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 121.0,
+     "mujeres": 115.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 92.0,
+     "mujeres": 100.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 97.0,
+     "mujeres": 89.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 104.0,
+     "mujeres": 100.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 102.0,
+     "mujeres": 78.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 74.0,
+     "mujeres": 49.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 40.0,
+     "mujeres": 29.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 26.0,
+     "mujeres": 25.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 7.0,
+     "mujeres": 9.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 2.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2008": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 113.0,
+     "mujeres": 99.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 120.0,
+     "mujeres": 96.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 134.0,
+     "mujeres": 112.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 83.0,
+     "mujeres": 71.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 72.0,
+     "mujeres": 79.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 129.0,
+     "mujeres": 137.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 159.0,
+     "mujeres": 185.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 198.0,
+     "mujeres": 202.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 188.0,
+     "mujeres": 177.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 151.0,
+     "mujeres": 144.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 109.0,
+     "mujeres": 106.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 107.0,
+     "mujeres": 103.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 125.0,
+     "mujeres": 124.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 115.0,
+     "mujeres": 89.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 87.0,
+     "mujeres": 66.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 57.0,
+     "mujeres": 32.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 25.0,
+     "mujeres": 24.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 6.0,
+     "mujeres": 14.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 3.0,
+     "mujeres": 2.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2009": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 131.0,
+     "mujeres": 119.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 147.0,
+     "mujeres": 127.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 142.0,
+     "mujeres": 125.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 105.0,
+     "mujeres": 74.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 81.0,
+     "mujeres": 84.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 125.0,
+     "mujeres": 154.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 178.0,
+     "mujeres": 198.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 225.0,
+     "mujeres": 240.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 217.0,
+     "mujeres": 208.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 189.0,
+     "mujeres": 160.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 123.0,
+     "mujeres": 125.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 128.0,
+     "mujeres": 111.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 145.0,
+     "mujeres": 130.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 129.0,
+     "mujeres": 107.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 90.0,
+     "mujeres": 73.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 66.0,
+     "mujeres": 34.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 23.0,
+     "mujeres": 26.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 10.0,
+     "mujeres": 15.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 3.0,
+     "mujeres": 5.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2010": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 170.0,
+     "mujeres": 138.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 167.0,
+     "mujeres": 146.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 166.0,
+     "mujeres": 122.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 127.0,
+     "mujeres": 81.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 87.0,
+     "mujeres": 97.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 129.0,
+     "mujeres": 150.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 184.0,
+     "mujeres": 227.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 236.0,
+     "mujeres": 272.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 260.0,
+     "mujeres": 242.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 205.0,
+     "mujeres": 184.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 154.0,
+     "mujeres": 149.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 148.0,
+     "mujeres": 127.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 148.0,
+     "mujeres": 139.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 157.0,
+     "mujeres": 122.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 98.0,
+     "mujeres": 90.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 70.0,
+     "mujeres": 41.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 28.0,
+     "mujeres": 29.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 14.0,
+     "mujeres": 18.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 4.0,
+     "mujeres": 5.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    }
+   ],
+   "2011": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 190.0,
+     "mujeres": 152.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 180.0,
+     "mujeres": 162.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 173.0,
+     "mujeres": 140.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 140.0,
+     "mujeres": 107.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 101.0,
+     "mujeres": 100.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 135.0,
+     "mujeres": 167.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 219.0,
+     "mujeres": 235.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 225.0,
+     "mujeres": 293.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 283.0,
+     "mujeres": 283.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 249.0,
+     "mujeres": 206.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 179.0,
+     "mujeres": 183.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 158.0,
+     "mujeres": 145.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 165.0,
+     "mujeres": 164.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 175.0,
+     "mujeres": 134.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 110.0,
+     "mujeres": 100.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 75.0,
+     "mujeres": 49.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 34.0,
+     "mujeres": 32.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 15.0,
+     "mujeres": 15.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 6.0,
+     "mujeres": 7.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2012": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 177.0,
+     "mujeres": 170.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 225.0,
+     "mujeres": 187.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 183.0,
+     "mujeres": 179.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 153.0,
+     "mujeres": 119.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 113.0,
+     "mujeres": 99.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 119.0,
+     "mujeres": 178.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 222.0,
+     "mujeres": 244.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 249.0,
+     "mujeres": 322.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 302.0,
+     "mujeres": 284.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 255.0,
+     "mujeres": 241.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 230.0,
+     "mujeres": 192.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 162.0,
+     "mujeres": 164.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 178.0,
+     "mujeres": 171.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 189.0,
+     "mujeres": 161.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 133.0,
+     "mujeres": 103.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 82.0,
+     "mujeres": 60.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 47.0,
+     "mujeres": 35.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 16.0,
+     "mujeres": 20.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 7.0,
+     "mujeres": 6.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 2.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2013": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 178.0,
+     "mujeres": 178.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 226.0,
+     "mujeres": 201.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 198.0,
+     "mujeres": 188.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 172.0,
+     "mujeres": 135.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 123.0,
+     "mujeres": 92.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 113.0,
+     "mujeres": 163.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 221.0,
+     "mujeres": 271.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 269.0,
+     "mujeres": 366.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 314.0,
+     "mujeres": 301.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 281.0,
+     "mujeres": 270.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 246.0,
+     "mujeres": 205.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 167.0,
+     "mujeres": 172.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 183.0,
+     "mujeres": 175.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 208.0,
+     "mujeres": 189.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 147.0,
+     "mujeres": 119.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 89.0,
+     "mujeres": 71.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 60.0,
+     "mujeres": 32.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 18.0,
+     "mujeres": 20.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 4.0,
+     "mujeres": 11.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 3.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2014": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 182.0,
+     "mujeres": 184.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 241.0,
+     "mujeres": 217.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 207.0,
+     "mujeres": 206.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 146.0,
+     "mujeres": 149.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 141.0,
+     "mujeres": 91.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 125.0,
+     "mujeres": 158.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 203.0,
+     "mujeres": 279.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 276.0,
+     "mujeres": 379.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 342.0,
+     "mujeres": 308.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 299.0,
+     "mujeres": 280.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 263.0,
+     "mujeres": 217.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 193.0,
+     "mujeres": 193.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 190.0,
+     "mujeres": 171.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 209.0,
+     "mujeres": 203.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 167.0,
+     "mujeres": 129.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 94.0,
+     "mujeres": 73.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 59.0,
+     "mujeres": 33.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 16.0,
+     "mujeres": 19.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 6.0,
+     "mujeres": 8.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 1.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 2.0
+    }
+   ],
+   "2015": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 171.0,
+     "mujeres": 188.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 265.0,
+     "mujeres": 239.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 224.0,
+     "mujeres": 232.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 164.0,
+     "mujeres": 155.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 141.0,
+     "mujeres": 116.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 129.0,
+     "mujeres": 147.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 178.0,
+     "mujeres": 257.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 284.0,
+     "mujeres": 371.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 354.0,
+     "mujeres": 375.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 348.0,
+     "mujeres": 304.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 263.0,
+     "mujeres": 236.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 216.0,
+     "mujeres": 210.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 205.0,
+     "mujeres": 190.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 220.0,
+     "mujeres": 218.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 188.0,
+     "mujeres": 147.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 108.0,
+     "mujeres": 91.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 63.0,
+     "mujeres": 39.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 23.0,
+     "mujeres": 26.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 10.0,
+     "mujeres": 7.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 1.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    }
+   ],
+   "2016": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 162.0,
+     "mujeres": 174.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 275.0,
+     "mujeres": 235.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 241.0,
+     "mujeres": 236.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 190.0,
+     "mujeres": 175.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 156.0,
+     "mujeres": 142.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 136.0,
+     "mujeres": 141.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 174.0,
+     "mujeres": 265.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 273.0,
+     "mujeres": 346.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 332.0,
+     "mujeres": 407.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 367.0,
+     "mujeres": 302.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 304.0,
+     "mujeres": 262.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 228.0,
+     "mujeres": 220.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 205.0,
+     "mujeres": 190.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 223.0,
+     "mujeres": 235.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 193.0,
+     "mujeres": 157.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 114.0,
+     "mujeres": 88.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 65.0,
+     "mujeres": 50.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 34.0,
+     "mujeres": 24.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 11.0,
+     "mujeres": 4.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 3.0,
+     "mujeres": 2.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 1.0
+    }
+   ],
+   "2017": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 181.0,
+     "mujeres": 169.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 256.0,
+     "mujeres": 230.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 257.0,
+     "mujeres": 241.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 192.0,
+     "mujeres": 186.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 161.0,
+     "mujeres": 150.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 154.0,
+     "mujeres": 150.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 164.0,
+     "mujeres": 265.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 274.0,
+     "mujeres": 334.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 321.0,
+     "mujeres": 411.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 378.0,
+     "mujeres": 296.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 292.0,
+     "mujeres": 273.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 266.0,
+     "mujeres": 230.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 188.0,
+     "mujeres": 184.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 211.0,
+     "mujeres": 200.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 186.0,
+     "mujeres": 153.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 111.0,
+     "mujeres": 90.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 60.0,
+     "mujeres": 47.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 36.0,
+     "mujeres": 28.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 12.0,
+     "mujeres": 6.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 3.0,
+     "mujeres": 2.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2018": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 183.0,
+     "mujeres": 168.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 276.0,
+     "mujeres": 250.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 280.0,
+     "mujeres": 258.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 214.0,
+     "mujeres": 194.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 170.0,
+     "mujeres": 170.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 176.0,
+     "mujeres": 167.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 172.0,
+     "mujeres": 250.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 273.0,
+     "mujeres": 366.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 349.0,
+     "mujeres": 455.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 410.0,
+     "mujeres": 357.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 334.0,
+     "mujeres": 300.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 295.0,
+     "mujeres": 250.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 223.0,
+     "mujeres": 207.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 204.0,
+     "mujeres": 205.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 214.0,
+     "mujeres": 174.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 125.0,
+     "mujeres": 98.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 66.0,
+     "mujeres": 58.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 47.0,
+     "mujeres": 26.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 11.0,
+     "mujeres": 10.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 2.0,
+     "mujeres": 2.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2019": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 176.0,
+     "mujeres": 156.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 272.0,
+     "mujeres": 248.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 305.0,
+     "mujeres": 258.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 220.0,
+     "mujeres": 208.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 159.0,
+     "mujeres": 183.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 168.0,
+     "mujeres": 169.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 169.0,
+     "mujeres": 271.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 284.0,
+     "mujeres": 355.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 316.0,
+     "mujeres": 444.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 425.0,
+     "mujeres": 371.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 330.0,
+     "mujeres": 323.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 318.0,
+     "mujeres": 264.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 227.0,
+     "mujeres": 212.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 191.0,
+     "mujeres": 184.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 216.0,
+     "mujeres": 192.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 144.0,
+     "mujeres": 104.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 62.0,
+     "mujeres": 58.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 44.0,
+     "mujeres": 26.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 13.0,
+     "mujeres": 14.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 4.0,
+     "mujeres": 2.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2020": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 179.0,
+     "mujeres": 174.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 285.0,
+     "mujeres": 252.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 299.0,
+     "mujeres": 258.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 229.0,
+     "mujeres": 207.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 155.0,
+     "mujeres": 170.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 155.0,
+     "mujeres": 158.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 171.0,
+     "mujeres": 252.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 263.0,
+     "mujeres": 363.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 329.0,
+     "mujeres": 416.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 397.0,
+     "mujeres": 392.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 310.0,
+     "mujeres": 314.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 273.0,
+     "mujeres": 248.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 230.0,
+     "mujeres": 196.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 191.0,
+     "mujeres": 172.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 177.0,
+     "mujeres": 161.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 113.0,
+     "mujeres": 83.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 57.0,
+     "mujeres": 49.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 27.0,
+     "mujeres": 21.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 7.0,
+     "mujeres": 11.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 3.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2021": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 168.0,
+     "mujeres": 184.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 274.0,
+     "mujeres": 247.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 298.0,
+     "mujeres": 253.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 224.0,
+     "mujeres": 201.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 176.0,
+     "mujeres": 186.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 165.0,
+     "mujeres": 165.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 186.0,
+     "mujeres": 256.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 243.0,
+     "mujeres": 374.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 321.0,
+     "mujeres": 407.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 385.0,
+     "mujeres": 401.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 346.0,
+     "mujeres": 307.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 288.0,
+     "mujeres": 265.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 227.0,
+     "mujeres": 203.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 196.0,
+     "mujeres": 186.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 169.0,
+     "mujeres": 157.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 107.0,
+     "mujeres": 88.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 60.0,
+     "mujeres": 42.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 23.0,
+     "mujeres": 25.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 13.0,
+     "mujeres": 10.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 2.0,
+     "mujeres": 1.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 0.0,
+     "mujeres": 0.0
+    }
+   ],
+   "2022": [
+    {
+     "grupo": "De 0 a 4 años",
+     "hombres": 194.0,
+     "mujeres": 179.0
+    },
+    {
+     "grupo": "De 5 a 9 años",
+     "hombres": 285.0,
+     "mujeres": 292.0
+    },
+    {
+     "grupo": "De 10 a 14 años",
+     "hombres": 323.0,
+     "mujeres": 262.0
+    },
+    {
+     "grupo": "De 15 a 19 años",
+     "hombres": 250.0,
+     "mujeres": 228.0
+    },
+    {
+     "grupo": "De 20 a 24 años",
+     "hombres": 202.0,
+     "mujeres": 203.0
+    },
+    {
+     "grupo": "De 25 a 29 años",
+     "hombres": 169.0,
+     "mujeres": 191.0
+    },
+    {
+     "grupo": "De 30 a 34 años",
+     "hombres": 232.0,
+     "mujeres": 248.0
+    },
+    {
+     "grupo": "De 35 a 39 años",
+     "hombres": 256.0,
+     "mujeres": 422.0
+    },
+    {
+     "grupo": "De 40 a 44 años",
+     "hombres": 337.0,
+     "mujeres": 413.0
+    },
+    {
+     "grupo": "De 45 a 49 años",
+     "hombres": 406.0,
+     "mujeres": 444.0
+    },
+    {
+     "grupo": "De 50 a 54 años",
+     "hombres": 401.0,
+     "mujeres": 358.0
+    },
+    {
+     "grupo": "De 55 a 59 años",
+     "hombres": 313.0,
+     "mujeres": 303.0
+    },
+    {
+     "grupo": "De 60 a 64 años",
+     "hombres": 281.0,
+     "mujeres": 240.0
+    },
+    {
+     "grupo": "De 65 a 69 años",
+     "hombres": 235.0,
+     "mujeres": 217.0
+    },
+    {
+     "grupo": "De 70 a 74 años",
+     "hombres": 209.0,
+     "mujeres": 180.0
+    },
+    {
+     "grupo": "De 75 a 79 años",
+     "hombres": 154.0,
+     "mujeres": 116.0
+    },
+    {
+     "grupo": "De 80 a 84 años",
+     "hombres": 74.0,
+     "mujeres": 58.0
+    },
+    {
+     "grupo": "De 85 a 89 años",
+     "hombres": 24.0,
+     "mujeres": 27.0
+    },
+    {
+     "grupo": "De 90 a 94 años",
+     "hombres": 20.0,
+     "mujeres": 12.0
+    },
+    {
+     "grupo": "De 95 a 99 años",
+     "hombres": 2.0,
+     "mujeres": 2.0
+    },
+    {
+     "grupo": "100 y más años",
+     "hombres": 1.0,
+     "mujeres": 0.0
+    }
+   ]
+  }
+ },
+ "nacimiento": {
+  "mismo_municipio": [
+   {
+    "t": "2003",
+    "v": 305.0
+   },
+   {
+    "t": "2004",
+    "v": 325.0
+   },
+   {
+    "t": "2005",
+    "v": 327.0
+   },
+   {
+    "t": "2006",
+    "v": 330.0
+   },
+   {
+    "t": "2007",
+    "v": 358.0
+   },
+   {
+    "t": "2008",
+    "v": 378.0
+   },
+   {
+    "t": "2009",
+    "v": 401.0
+   },
+   {
+    "t": "2010",
+    "v": 441.0
+   },
+   {
+    "t": "2011",
+    "v": 466.0
+   },
+   {
+    "t": "2012",
+    "v": 499.0
+   },
+   {
+    "t": "2013",
+    "v": 517.0
+   },
+   {
+    "t": "2014",
+    "v": 533.0
+   },
+   {
+    "t": "2015",
+    "v": 550.0
+   },
+   {
+    "t": "2016",
+    "v": 562.0
+   },
+   {
+    "t": "2017",
+    "v": 585.0
+   },
+   {
+    "t": "2018",
+    "v": 590.0
+   },
+   {
+    "t": "2019",
+    "v": 582.0
+   },
+   {
+    "t": "2020",
+    "v": 600.0
+   },
+   {
+    "t": "2021",
+    "v": 590.0
+   },
+   {
+    "t": "2022",
+    "v": 613.0
+   }
+  ],
+  "misma_provincia": [
+   {
+    "t": "2003",
+    "v": 526.0
+   },
+   {
+    "t": "2004",
+    "v": 552.0
+   },
+   {
+    "t": "2005",
+    "v": 590.0
+   },
+   {
+    "t": "2006",
+    "v": 631.0
+   },
+   {
+    "t": "2007",
+    "v": 700.0
+   },
+   {
+    "t": "2008",
+    "v": 756.0
+   },
+   {
+    "t": "2009",
+    "v": 816.0
+   },
+   {
+    "t": "2010",
+    "v": 927.0
+   },
+   {
+    "t": "2011",
+    "v": 1025.0
+   },
+   {
+    "t": "2012",
+    "v": 1106.0
+   },
+   {
+    "t": "2013",
+    "v": 1160.0
+   },
+   {
+    "t": "2014",
+    "v": 1200.0
+   },
+   {
+    "t": "2015",
+    "v": 1231.0
+   },
+   {
+    "t": "2016",
+    "v": 1266.0
+   },
+   {
+    "t": "2017",
+    "v": 1313.0
+   },
+   {
+    "t": "2018",
+    "v": 1361.0
+   },
+   {
+    "t": "2019",
+    "v": 1402.0
+   },
+   {
+    "t": "2020",
+    "v": 1401.0
+   },
+   {
+    "t": "2021",
+    "v": 1468.0
+   },
+   {
+    "t": "2022",
+    "v": 1564.0
+   }
+  ],
+  "otra_provincia": [
+   {
+    "t": "2003",
+    "v": 172.0
+   },
+   {
+    "t": "2004",
+    "v": 180.0
+   },
+   {
+    "t": "2005",
+    "v": 189.0
+   },
+   {
+    "t": "2006",
+    "v": 197.0
+   },
+   {
+    "t": "2007",
+    "v": 220.0
+   },
+   {
+    "t": "2008",
+    "v": 237.0
+   },
+   {
+    "t": "2009",
+    "v": 257.0
+   },
+   {
+    "t": "2010",
+    "v": 275.0
+   },
+   {
+    "t": "2011",
+    "v": 297.0
+   },
+   {
+    "t": "2012",
+    "v": 329.0
+   },
+   {
+    "t": "2013",
+    "v": 359.0
+   },
+   {
+    "t": "2014",
+    "v": 375.0
+   },
+   {
+    "t": "2015",
+    "v": 380.0
+   },
+   {
+    "t": "2016",
+    "v": 374.0
+   },
+   {
+    "t": "2017",
+    "v": 379.0
+   },
+   {
+    "t": "2018",
+    "v": 399.0
+   },
+   {
+    "t": "2019",
+    "v": 402.0
+   },
+   {
+    "t": "2020",
+    "v": 412.0
+   },
+   {
+    "t": "2021",
+    "v": 436.0
+   },
+   {
+    "t": "2022",
+    "v": 460.0
+   }
+  ],
+  "otra_comunidad": [
+   {
+    "t": "2003",
+    "v": 176.0
+   },
+   {
+    "t": "2004",
+    "v": 181.0
+   },
+   {
+    "t": "2005",
+    "v": 205.0
+   },
+   {
+    "t": "2006",
+    "v": 216.0
+   },
+   {
+    "t": "2007",
+    "v": 264.0
+   },
+   {
+    "t": "2008",
+    "v": 284.0
+   },
+   {
+    "t": "2009",
+    "v": 312.0
+   },
+   {
+    "t": "2010",
+    "v": 323.0
+   },
+   {
+    "t": "2011",
+    "v": 360.0
+   },
+   {
+    "t": "2012",
+    "v": 371.0
+   },
+   {
+    "t": "2013",
+    "v": 407.0
+   },
+   {
+    "t": "2014",
+    "v": 444.0
+   },
+   {
+    "t": "2015",
+    "v": 446.0
+   },
+   {
+    "t": "2016",
+    "v": 468.0
+   },
+   {
+    "t": "2017",
+    "v": 477.0
+   },
+   {
+    "t": "2018",
+    "v": 519.0
+   },
+   {
+    "t": "2019",
+    "v": 526.0
+   },
+   {
+    "t": "2020",
+    "v": 543.0
+   },
+   {
+    "t": "2021",
+    "v": 566.0
+   },
+   {
+    "t": "2022",
+    "v": 602.0
+   }
+  ],
+  "extranjero": [
+   {
+    "t": "2003",
+    "v": 1222.0
+   },
+   {
+    "t": "2004",
+    "v": 1027.0
+   },
+   {
+    "t": "2005",
+    "v": 1338.0
+   },
+   {
+    "t": "2006",
+    "v": 1486.0
+   },
+   {
+    "t": "2007",
+    "v": 1711.0
+   },
+   {
+    "t": "2008",
+    "v": 2189.0
+   },
+   {
+    "t": "2009",
+    "v": 2587.0
+   },
+   {
+    "t": "2010",
+    "v": 2966.0
+   },
+   {
+    "t": "2011",
+    "v": 3338.0
+   },
+   {
+    "t": "2012",
+    "v": 3675.0
+   },
+   {
+    "t": "2013",
+    "v": 3937.0
+   },
+   {
+    "t": "2014",
+    "v": 4108.0
+   },
+   {
+    "t": "2015",
+    "v": 4498.0
+   },
+   {
+    "t": "2016",
+    "v": 4672.0
+   },
+   {
+    "t": "2017",
+    "v": 4594.0
+   },
+   {
+    "t": "2018",
+    "v": 5120.0
+   },
+   {
+    "t": "2019",
+    "v": 5173.0
+   },
+   {
+    "t": "2020",
+    "v": 4792.0
+   },
+   {
+    "t": "2021",
+    "v": 4769.0
+   },
+   {
+    "t": "2022",
+    "v": 5524.0
+   }
+  ],
+  "total": [
+   {
+    "t": "2003",
+    "v": 2401.0
+   },
+   {
+    "t": "2004",
+    "v": 2265.0
+   },
+   {
+    "t": "2005",
+    "v": 2649.0
+   },
+   {
+    "t": "2006",
+    "v": 2860.0
+   },
+   {
+    "t": "2007",
+    "v": 3253.0
+   },
+   {
+    "t": "2008",
+    "v": 3844.0
+   },
+   {
+    "t": "2009",
+    "v": 4373.0
+   },
+   {
+    "t": "2010",
+    "v": 4932.0
+   },
+   {
+    "t": "2011",
+    "v": 5486.0
+   },
+   {
+    "t": "2012",
+    "v": 5980.0
+   },
+   {
+    "t": "2013",
+    "v": 6380.0
+   },
+   {
+    "t": "2014",
+    "v": 6660.0
+   },
+   {
+    "t": "2015",
+    "v": 7105.0
+   },
+   {
+    "t": "2016",
+    "v": 7342.0
+   },
+   {
+    "t": "2017",
+    "v": 7348.0
+   },
+   {
+    "t": "2018",
+    "v": 7989.0
+   },
+   {
+    "t": "2019",
+    "v": 8085.0
+   },
+   {
+    "t": "2020",
+    "v": 7748.0
+   },
+   {
+    "t": "2021",
+    "v": 7829.0
+   },
+   {
+    "t": "2022",
+    "v": 8763.0
+   }
+  ]
+ },
+ "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad (tablas 33571 y 33572), por edad (33570) y por lugar de nacimiento (33574), Atlas de Distribución de Renta de los Hogares (tablas 30824, 53689, 30825, 30826, 30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de Migraciones y Cambios de Residencia (tabla 69767) · IECA/SIMA para la población extranjera posterior a 2022",
  "ambito": "municipal",
- "actualizado": "2026-08-27T08:08:43Z"
+ "actualizado": "2026-08-31T08:34:58Z"
 }

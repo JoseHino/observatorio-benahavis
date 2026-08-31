@@ -1,7 +1,8 @@
 {
- "generado": "2026-08-27T09:37:53Z",
- "series_revisadas": 29,
+ "generado": "2026-08-31T08:37:29Z",
+ "series_revisadas": 31,
  "series": [
+  "atlas.edad_media",
   "badea.autonomos",
   "cds.establecimientos_inscritos",
   "cds.ocupacion_vut",
@@ -18,6 +19,7 @@
   "eoh.ocupacion_zona_turistica",
   "hacienda.deuda_viva",
   "ine.viviendas_turisticas",
+  "migracion.saldo_total",
   "padron.extranjeros",
   "padron.total",
   "renta.gini",
@@ -34,18 +36,6 @@
  ],
  "incidencias": [
   {
-   "serie": "clima.temperatura_mensual",
-   "tipo": "meses_ausentes",
-   "detalle": "17 meses sin dato: 2005-08, 2007-06, 2008-07, 2009-06, 2009-07, 2009-08…",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "rta.acumulado_altas",
-   "tipo": "salto_anomalo",
-   "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
-   "gravedad": "aviso"
-  },
-  {
    "serie": "demanda.turistas_extranjeros",
    "tipo": "salto_anomalo",
    "detalle": "2020-03 = 2848 → 2020-04 = 721 (×0.3)",
@@ -58,6 +48,18 @@
    "gravedad": "aviso"
   },
   {
+   "serie": "demanda.turistas_nacionales",
+   "tipo": "salto_anomalo",
+   "detalle": "2020-03 = 1302 → 2020-04 = 418 (×0.3)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "demanda.turistas_nacionales",
+   "tipo": "meses_ausentes",
+   "detalle": "2 meses sin dato: 2024-01, 2024-02",
+   "gravedad": "aviso"
+  },
+  {
    "serie": "eoh.ocupacion_zona_turistica",
    "tipo": "salto_anomalo",
    "detalle": "2020-03 = 33.47 → 2020-04 = 0.0 (×0.0)",
@@ -67,6 +69,30 @@
    "serie": "eoh.ocupacion_zona_turistica",
    "tipo": "meses_ausentes",
    "detalle": "2 meses sin dato: 2020-05, 2020-06",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "clima.temperatura_mensual",
+   "tipo": "meses_ausentes",
+   "detalle": "17 meses sin dato: 2005-08, 2007-06, 2008-07, 2009-06, 2009-07, 2009-08…",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "migracion.saldo_total",
+   "tipo": "salto_anomalo",
+   "detalle": "2022 = 684.0 → 2023 = -69.0 (×-0.1)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "migracion.saldo_total",
+   "tipo": "salto_anomalo",
+   "detalle": "2023 = -69.0 → 2024 = 485.0 (×-7.0)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "rta.acumulado_altas",
+   "tipo": "salto_anomalo",
+   "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
    "gravedad": "aviso"
   },
   {
@@ -95,5 +121,5 @@
   }
  ],
  "errores": 0,
- "avisos": 10
+ "avisos": 14
 }

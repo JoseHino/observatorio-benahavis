@@ -69,6 +69,7 @@ observatorio-benahavis/
 │   ├── plantilla-conteo-visitantes.csv
 │   ├── assets/                 # CSS y JavaScript, sin paso de compilación
 │   └── data/                   # JSON que consume el frontend
+│       └── limite.json         # término municipal (OSM); se archiva, no se pide en cada pasada
 └── .github/workflows/
     └── actualizar-datos.yml    # ejecución mensual y manual
 ```
@@ -79,6 +80,25 @@ se organiza en **siete pestañas temáticas** —población y renta, alojamiento
 viajeros, empleo y empresas, precios, y clima—; la pestaña activa va en el
 fragmento de la URL, de modo que cualquiera de ellas se puede enlazar y compartir. Una temática
 que no logre publicar ningún dato se oculta entera en lugar de quedarse anunciando el hueco.
+
+**Selector de año.** Las tarjetas que enseñan un corte —un ranking, un reparto, un ciclo anual—
+llevan un desplegable en la cabecera para elegir el periodo, en lugar de quedarse fijas en el
+último. Lo llevan los mercados emisores, el turismo nacional por municipio de origen, las
+nacionalidades de la población extranjera, la estructura por edad, las empresas por rama de
+actividad, la pluviometría y las temperaturas. En las dos del clima, al elegir un año concreto la
+media de toda la serie se queda de fondo para poder compararlo. La lista de años **no se inventa**:
+solo se ofrecen los periodos con dato completo, y no coinciden entre indicadores (AEMET publica
+cada mes con unos campos y sin otros, así que hay 17 años con los doce meses de lluvia y solo 12
+con los de temperatura).
+
+**Mapa de viviendas turísticas.** Fondo gris o **ortofoto**, a elegir. El término municipal va
+dibujado y el exterior atenuado, porque una mancha de densidad sin límite se derrama sobre San
+Pedro y Estepona y parece decir que hay viviendas allí. La capa de calor **renormaliza su escala
+en cada nivel de zoom** contra la densidad que hay realmente en el encuadre —percentil 96 de las
+celdas ocupadas— en lugar de usar un tope fijo: con un tope fijo, cualquier sitio con cuatro
+viviendas encima ya llegaba al extremo de la rampa y el municipio entero salía rojo. Al acercarse,
+el mapa pasa solo de densidad a vivienda concreta, con el tamaño del punto proporcional a sus
+plazas.
 
 ## Instalación y ejecución
 

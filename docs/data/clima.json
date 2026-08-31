@@ -4061,6 +4061,2173 @@
    "anyos_promediados": 21
   }
  ],
+ "mensual_por_anyo": {
+  "2004": [
+   {
+    "mes": 1
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 11.5,
+    "temperatura_maxima_media": 15.0,
+    "temperatura_minima_media": 8.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 13.2,
+    "temperatura_maxima_media": 17.4,
+    "temperatura_minima_media": 9.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 14.5,
+    "temperatura_maxima_media": 19.0,
+    "temperatura_minima_media": 10.0,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 15.8,
+    "temperatura_maxima_media": 19.9,
+    "temperatura_minima_media": 11.6,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 23.0,
+    "temperatura_maxima_media": 28.2,
+    "temperatura_minima_media": 17.8,
+    "humedad_media": 52.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 24.4,
+    "temperatura_maxima_media": 29.4,
+    "temperatura_minima_media": 19.4,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 25.9,
+    "temperatura_maxima_media": 31.2,
+    "temperatura_minima_media": 20.6,
+    "humedad_media": 52.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 23.3,
+    "temperatura_maxima_media": 28.5,
+    "temperatura_minima_media": 18.1,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 19.1,
+    "temperatura_maxima_media": 23.8,
+    "temperatura_minima_media": 14.4,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 13.9,
+    "precipitacion_media": 61.0,
+    "temperatura_maxima_media": 18.0,
+    "temperatura_minima_media": 9.8,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 11.5,
+    "temperatura_maxima_media": 15.2,
+    "temperatura_minima_media": 7.8,
+    "humedad_media": 69.0
+   }
+  ],
+  "2005": [
+   {
+    "mes": 1,
+    "temperatura_media": 10.4,
+    "precipitacion_media": 5.2,
+    "temperatura_maxima_media": 15.2,
+    "temperatura_minima_media": 5.5,
+    "humedad_media": 63.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 9.9,
+    "precipitacion_media": 129.4,
+    "temperatura_maxima_media": 14.5,
+    "temperatura_minima_media": 5.3,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.5,
+    "precipitacion_media": 103.4,
+    "temperatura_maxima_media": 16.8,
+    "temperatura_minima_media": 8.2,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 16.1,
+    "precipitacion_media": 5.6,
+    "temperatura_maxima_media": 21.2,
+    "temperatura_minima_media": 10.9,
+    "humedad_media": 54.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.6,
+    "precipitacion_media": 16.2,
+    "temperatura_maxima_media": 24.5,
+    "temperatura_minima_media": 14.5,
+    "humedad_media": 49.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 23.0,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 27.9,
+    "temperatura_minima_media": 17.9,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.8,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.9,
+    "temperatura_minima_media": 20.6,
+    "humedad_media": 46.0
+   },
+   {
+    "mes": 8,
+    "humedad_media": 52.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.2,
+    "precipitacion_media": 3.8,
+    "temperatura_maxima_media": 27.2,
+    "temperatura_minima_media": 17.1,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 18.0,
+    "precipitacion_media": 95.8,
+    "temperatura_maxima_media": 22.2,
+    "temperatura_minima_media": 13.7,
+    "humedad_media": 75.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 13.2,
+    "precipitacion_media": 89.8,
+    "temperatura_maxima_media": 17.4,
+    "temperatura_minima_media": 9.0,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 11.7,
+    "precipitacion_media": 44.8,
+    "temperatura_maxima_media": 15.0,
+    "temperatura_minima_media": 8.3,
+    "humedad_media": 75.0
+   }
+  ],
+  "2006": [
+   {
+    "mes": 1,
+    "temperatura_media": 9.8,
+    "precipitacion_media": 194.8,
+    "temperatura_maxima_media": 13.5,
+    "temperatura_minima_media": 6.1,
+    "humedad_media": 77.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 10.7,
+    "precipitacion_media": 83.6,
+    "temperatura_maxima_media": 14.9,
+    "temperatura_minima_media": 6.4,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 14.3,
+    "precipitacion_media": 150.0,
+    "temperatura_maxima_media": 19.2,
+    "temperatura_minima_media": 9.2,
+    "humedad_media": 63.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 16.9,
+    "precipitacion_media": 48.4,
+    "temperatura_maxima_media": 21.6,
+    "temperatura_minima_media": 12.1,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.4,
+    "precipitacion_media": 1.2,
+    "temperatura_maxima_media": 23.8,
+    "temperatura_minima_media": 14.9,
+    "humedad_media": 63.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 21.7,
+    "precipitacion_media": 8.6,
+    "temperatura_maxima_media": 26.8,
+    "temperatura_minima_media": 16.5,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.9,
+    "precipitacion_media": 0.8,
+    "temperatura_maxima_media": 31.3,
+    "temperatura_minima_media": 20.4,
+    "humedad_media": 46.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 24.9,
+    "precipitacion_media": 17.4,
+    "temperatura_maxima_media": 30.3,
+    "temperatura_minima_media": 19.5,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.8,
+    "precipitacion_media": 7.8,
+    "temperatura_maxima_media": 27.8,
+    "temperatura_minima_media": 17.8,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 19.4,
+    "precipitacion_media": 98.4,
+    "temperatura_maxima_media": 23.2,
+    "temperatura_minima_media": 15.7
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 15.5,
+    "precipitacion_media": 168.0,
+    "temperatura_maxima_media": 19.1,
+    "temperatura_minima_media": 11.9
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 11.6,
+    "precipitacion_media": 31.2,
+    "temperatura_maxima_media": 15.5,
+    "temperatura_minima_media": 7.7
+   }
+  ],
+  "2007": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.6,
+    "precipitacion_media": 70.8,
+    "temperatura_maxima_media": 16.5,
+    "temperatura_minima_media": 6.8
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 13.3,
+    "precipitacion_media": 93.0,
+    "temperatura_maxima_media": 17.5,
+    "temperatura_minima_media": 9.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 13.8,
+    "precipitacion_media": 14.4,
+    "temperatura_maxima_media": 18.9,
+    "temperatura_minima_media": 8.6
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 14.0,
+    "precipitacion_media": 96.0,
+    "temperatura_maxima_media": 18.1,
+    "temperatura_minima_media": 9.9,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.1,
+    "precipitacion_media": 46.2,
+    "temperatura_maxima_media": 24.4,
+    "temperatura_minima_media": 13.7,
+    "humedad_media": 48.0
+   },
+   {
+    "mes": 6
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.5,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.3,
+    "temperatura_minima_media": 19.7,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 25.3,
+    "precipitacion_media": 0.8,
+    "temperatura_maxima_media": 30.7,
+    "temperatura_minima_media": 19.8,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 21.5,
+    "precipitacion_media": 65.0,
+    "temperatura_maxima_media": 26.1,
+    "temperatura_minima_media": 16.8,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 18.5,
+    "precipitacion_media": 43.8,
+    "temperatura_maxima_media": 23.0,
+    "temperatura_minima_media": 14.0,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 14.5,
+    "precipitacion_media": 25.2,
+    "temperatura_maxima_media": 18.5,
+    "temperatura_minima_media": 10.5,
+    "humedad_media": 74.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 12.4,
+    "precipitacion_media": 227.4,
+    "temperatura_maxima_media": 16.1,
+    "temperatura_minima_media": 8.7,
+    "humedad_media": 73.0
+   }
+  ],
+  "2008": [
+   {
+    "mes": 1,
+    "temperatura_media": 12.5,
+    "precipitacion_media": 42.8,
+    "temperatura_maxima_media": 16.8,
+    "temperatura_minima_media": 8.2,
+    "humedad_media": 73.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 12.4,
+    "precipitacion_media": 102.2,
+    "temperatura_maxima_media": 15.4,
+    "temperatura_minima_media": 9.3,
+    "humedad_media": 79.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 14.9,
+    "precipitacion_media": 11.2,
+    "temperatura_maxima_media": 20.3,
+    "temperatura_minima_media": 9.5,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.7,
+    "precipitacion_media": 11.0,
+    "temperatura_maxima_media": 20.1,
+    "temperatura_minima_media": 11.2,
+    "humedad_media": 58.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 17.5,
+    "precipitacion_media": 36.0,
+    "temperatura_maxima_media": 22.6,
+    "temperatura_minima_media": 12.4,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.2,
+    "precipitacion_media": 0.2,
+    "temperatura_maxima_media": 27.4,
+    "temperatura_minima_media": 16.9,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 7,
+    "precipitacion_media": 0.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 25.9,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.0,
+    "temperatura_minima_media": 20.7,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.1,
+    "precipitacion_media": 154.0,
+    "temperatura_maxima_media": 26.6,
+    "temperatura_minima_media": 17.7,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 18.1,
+    "precipitacion_media": 160.8,
+    "temperatura_maxima_media": 22.2,
+    "temperatura_minima_media": 14.0,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 12.6,
+    "precipitacion_media": 138.6,
+    "temperatura_maxima_media": 16.6,
+    "temperatura_minima_media": 8.6,
+    "humedad_media": 68.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 10.6,
+    "precipitacion_media": 97.2,
+    "temperatura_maxima_media": 14.1,
+    "temperatura_minima_media": 7.1,
+    "humedad_media": 69.0
+   }
+  ],
+  "2009": [
+   {
+    "mes": 1,
+    "temperatura_media": 10.3,
+    "precipitacion_media": 65.8,
+    "temperatura_maxima_media": 14.1,
+    "temperatura_minima_media": 6.4,
+    "humedad_media": 71.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 10.7,
+    "precipitacion_media": 140.0,
+    "temperatura_maxima_media": 14.4,
+    "temperatura_minima_media": 7.0,
+    "humedad_media": 75.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 13.4,
+    "precipitacion_media": 38.2,
+    "temperatura_maxima_media": 17.7,
+    "temperatura_minima_media": 9.0,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.5,
+    "precipitacion_media": 27.4,
+    "temperatura_maxima_media": 21.0,
+    "temperatura_minima_media": 10.0,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.4,
+    "precipitacion_media": 5.6,
+    "temperatura_maxima_media": 24.6,
+    "temperatura_minima_media": 14.1,
+    "humedad_media": 51.0
+   },
+   {
+    "mes": 6,
+    "precipitacion_media": 4.5
+   },
+   {
+    "mes": 7,
+    "precipitacion_media": 0.0
+   },
+   {
+    "mes": 8,
+    "precipitacion_media": 0.0
+   },
+   {
+    "mes": 9,
+    "precipitacion_media": 10.0
+   },
+   {
+    "mes": 10,
+    "precipitacion_media": 29.0
+   },
+   {
+    "mes": 11,
+    "precipitacion_media": 33.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 12.7,
+    "precipitacion_media": 465.4,
+    "temperatura_maxima_media": 16.5,
+    "temperatura_minima_media": 8.7,
+    "humedad_media": 74.0
+   }
+  ],
+  "2010": [
+   {
+    "mes": 1,
+    "precipitacion_media": 340.5
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 11.9,
+    "precipitacion_media": 370.2,
+    "temperatura_maxima_media": 15.1,
+    "temperatura_minima_media": 8.6,
+    "humedad_media": 80.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.6,
+    "precipitacion_media": 229.0,
+    "temperatura_maxima_media": 16.3,
+    "temperatura_minima_media": 8.8,
+    "humedad_media": 73.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.4,
+    "precipitacion_media": 194.0,
+    "temperatura_maxima_media": 19.4,
+    "temperatura_minima_media": 11.4,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 18.2,
+    "precipitacion_media": 18.6,
+    "temperatura_maxima_media": 23.2,
+    "temperatura_minima_media": 13.1,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 21.9,
+    "precipitacion_media": 10.2,
+    "temperatura_maxima_media": 27.0,
+    "temperatura_minima_media": 16.7,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.8,
+    "precipitacion_media": 0.8,
+    "temperatura_maxima_media": 30.8,
+    "temperatura_minima_media": 20.7,
+    "humedad_media": 52.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 26.0,
+    "precipitacion_media": 6.0,
+    "temperatura_maxima_media": 31.0,
+    "temperatura_minima_media": 20.9,
+    "humedad_media": 56.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.5,
+    "precipitacion_media": 19.4,
+    "temperatura_maxima_media": 27.1,
+    "temperatura_minima_media": 17.7,
+    "humedad_media": 61.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 18.3,
+    "precipitacion_media": 61.6,
+    "temperatura_maxima_media": 23.3,
+    "temperatura_minima_media": 13.3,
+    "humedad_media": 65.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 14.0,
+    "precipitacion_media": 130.0,
+    "temperatura_maxima_media": 18.1,
+    "temperatura_minima_media": 9.9,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 11.9,
+    "precipitacion_media": 397.7,
+    "temperatura_maxima_media": 15.1,
+    "temperatura_minima_media": 8.7,
+    "humedad_media": 79.0
+   }
+  ],
+  "2011": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.5,
+    "precipitacion_media": 109.5,
+    "temperatura_maxima_media": 15.2,
+    "temperatura_minima_media": 7.8,
+    "humedad_media": 77.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 12.6,
+    "precipitacion_media": 45.2,
+    "temperatura_maxima_media": 17.6,
+    "temperatura_minima_media": 7.4,
+    "humedad_media": 65.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.6,
+    "precipitacion_media": 219.8,
+    "temperatura_maxima_media": 16.2,
+    "temperatura_minima_media": 9.0,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 16.2,
+    "precipitacion_media": 117.6,
+    "temperatura_maxima_media": 20.3,
+    "temperatura_minima_media": 12.0,
+    "humedad_media": 71.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 18.7,
+    "precipitacion_media": 101.4,
+    "temperatura_maxima_media": 23.0,
+    "temperatura_minima_media": 14.3,
+    "humedad_media": 63.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.4,
+    "precipitacion_media": 4.4,
+    "temperatura_maxima_media": 27.6,
+    "temperatura_minima_media": 17.3,
+    "humedad_media": 60.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.5,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.3,
+    "temperatura_minima_media": 19.6,
+    "humedad_media": 49.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 26.2,
+    "precipitacion_media": 1.0,
+    "temperatura_maxima_media": 31.6,
+    "temperatura_minima_media": 20.9,
+    "humedad_media": 54.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.6,
+    "precipitacion_media": 3.2,
+    "temperatura_maxima_media": 27.4,
+    "temperatura_minima_media": 17.8,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 19.3,
+    "precipitacion_media": 120.0,
+    "temperatura_maxima_media": 23.7,
+    "temperatura_minima_media": 14.9,
+    "humedad_media": 68.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 14.1,
+    "precipitacion_media": 194.2,
+    "temperatura_maxima_media": 18.4,
+    "temperatura_minima_media": 9.9,
+    "humedad_media": 73.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 13.1,
+    "precipitacion_media": 2.6,
+    "temperatura_maxima_media": 18.0,
+    "temperatura_minima_media": 8.2,
+    "humedad_media": 66.0
+   }
+  ],
+  "2012": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.9,
+    "precipitacion_media": 28.4,
+    "temperatura_maxima_media": 16.7,
+    "temperatura_minima_media": 7.0,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 10.2,
+    "precipitacion_media": 7.4,
+    "temperatura_maxima_media": 15.2,
+    "temperatura_minima_media": 5.2,
+    "humedad_media": 51.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 13.0,
+    "precipitacion_media": 9.6,
+    "temperatura_maxima_media": 17.6,
+    "temperatura_minima_media": 8.3,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.0,
+    "precipitacion_media": 57.8,
+    "temperatura_maxima_media": 20.1,
+    "temperatura_minima_media": 9.9,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.4,
+    "precipitacion_media": 27.8,
+    "temperatura_maxima_media": 24.9,
+    "temperatura_minima_media": 13.9,
+    "humedad_media": 52.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 24.9,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.8,
+    "temperatura_minima_media": 19.0,
+    "humedad_media": 43.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.9,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.6,
+    "temperatura_minima_media": 20.3,
+    "humedad_media": 42.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 28.3,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 34.5,
+    "temperatura_minima_media": 22.2,
+    "humedad_media": 42.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.3,
+    "precipitacion_media": 48.0,
+    "temperatura_maxima_media": 27.2,
+    "temperatura_minima_media": 17.3,
+    "humedad_media": 63.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 18.7,
+    "precipitacion_media": 159.6,
+    "temperatura_maxima_media": 23.3,
+    "temperatura_minima_media": 14.1,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 14.1,
+    "precipitacion_media": 288.6,
+    "temperatura_maxima_media": 17.6,
+    "temperatura_minima_media": 10.6,
+    "humedad_media": 81.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 13.2,
+    "precipitacion_media": 37.8,
+    "temperatura_maxima_media": 17.7,
+    "temperatura_minima_media": 8.7,
+    "humedad_media": 69.0
+   }
+  ],
+  "2013": [
+   {
+    "mes": 1,
+    "temperatura_media": 12.8,
+    "precipitacion_media": 48.8,
+    "temperatura_maxima_media": 17.5,
+    "temperatura_minima_media": 8.1,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 11.4,
+    "precipitacion_media": 135.6,
+    "temperatura_maxima_media": 16.0,
+    "temperatura_minima_media": 6.8,
+    "humedad_media": 58.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.9,
+    "precipitacion_media": 271.8,
+    "temperatura_maxima_media": 16.3,
+    "temperatura_minima_media": 9.4,
+    "humedad_media": 74.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 14.8,
+    "precipitacion_media": 60.4,
+    "temperatura_maxima_media": 19.4,
+    "temperatura_minima_media": 10.2,
+    "humedad_media": 69.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 17.8,
+    "precipitacion_media": 8.8,
+    "temperatura_maxima_media": 23.1,
+    "temperatura_minima_media": 12.5,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 20.7,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 25.9,
+    "temperatura_minima_media": 15.5,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 23.9,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 28.9,
+    "temperatura_minima_media": 18.8,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 25.0,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 29.9,
+    "temperatura_minima_media": 20.0,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.3,
+    "precipitacion_media": 22.4,
+    "temperatura_maxima_media": 26.8,
+    "temperatura_minima_media": 17.8,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 20.7,
+    "precipitacion_media": 21.8,
+    "temperatura_maxima_media": 25.4,
+    "temperatura_minima_media": 16.0,
+    "humedad_media": 63.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 15.0,
+    "precipitacion_media": 2.4,
+    "temperatura_maxima_media": 19.5,
+    "temperatura_minima_media": 10.3,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 11.9,
+    "precipitacion_media": 52.0,
+    "temperatura_maxima_media": 15.5,
+    "temperatura_minima_media": 8.3,
+    "humedad_media": 70.0
+   }
+  ],
+  "2014": [
+   {
+    "mes": 1,
+    "temperatura_media": 12.3,
+    "precipitacion_media": 56.0,
+    "temperatura_maxima_media": 16.1,
+    "temperatura_minima_media": 8.4,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 11.9,
+    "precipitacion_media": 70.5,
+    "temperatura_maxima_media": 15.7,
+    "temperatura_minima_media": 8.0,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 13.6,
+    "precipitacion_media": 38.4,
+    "temperatura_maxima_media": 18.0,
+    "temperatura_minima_media": 9.1,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 17.3,
+    "precipitacion_media": 84.8,
+    "temperatura_maxima_media": 22.0,
+    "temperatura_minima_media": 12.6,
+    "humedad_media": 60.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 18.7,
+    "precipitacion_media": 19.6,
+    "temperatura_maxima_media": 23.5,
+    "temperatura_minima_media": 13.8,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.6,
+    "precipitacion_media": 15.6,
+    "temperatura_maxima_media": 27.9,
+    "temperatura_minima_media": 17.2,
+    "humedad_media": 51.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.0,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.4,
+    "temperatura_minima_media": 19.5,
+    "humedad_media": 48.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 26.4,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.7,
+    "temperatura_minima_media": 21.1,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 23.8,
+    "precipitacion_media": 62.8,
+    "temperatura_maxima_media": 28.7,
+    "temperatura_minima_media": 18.9,
+    "humedad_media": 58.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 20.3,
+    "precipitacion_media": 51.9,
+    "temperatura_maxima_media": 24.7,
+    "temperatura_minima_media": 16.0,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 15.1,
+    "precipitacion_media": 246.2,
+    "temperatura_maxima_media": 18.5,
+    "temperatura_minima_media": 11.6,
+    "humedad_media": 75.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 12.1,
+    "precipitacion_media": 34.8,
+    "temperatura_maxima_media": 16.2,
+    "temperatura_minima_media": 8.0,
+    "humedad_media": 69.0
+   }
+  ],
+  "2015": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.6,
+    "precipitacion_media": 65.4,
+    "temperatura_maxima_media": 15.9,
+    "temperatura_minima_media": 7.2,
+    "humedad_media": 65.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 11.1,
+    "precipitacion_media": 28.0,
+    "temperatura_maxima_media": 15.2,
+    "temperatura_minima_media": 6.9,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 14.6,
+    "precipitacion_media": 148.0,
+    "temperatura_maxima_media": 19.3,
+    "temperatura_minima_media": 9.9,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.4,
+    "precipitacion_media": 48.2,
+    "temperatura_maxima_media": 19.3,
+    "temperatura_minima_media": 11.4,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 20.6,
+    "precipitacion_media": 3.6,
+    "temperatura_maxima_media": 25.8,
+    "temperatura_minima_media": 15.4,
+    "humedad_media": 51.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.2,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 26.8,
+    "temperatura_minima_media": 17.5,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 28.0,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 33.6,
+    "temperatura_minima_media": 22.4,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 26.4,
+    "precipitacion_media": 0.2,
+    "temperatura_maxima_media": 31.0,
+    "temperatura_minima_media": 21.7,
+    "humedad_media": 54.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.4,
+    "precipitacion_media": 19.5,
+    "temperatura_maxima_media": 27.4,
+    "temperatura_minima_media": 17.4,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 18.8,
+    "precipitacion_media": 127.6,
+    "temperatura_maxima_media": 22.6,
+    "temperatura_minima_media": 15.0,
+    "humedad_media": 76.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 15.4,
+    "precipitacion_media": 73.2,
+    "temperatura_maxima_media": 19.9,
+    "temperatura_minima_media": 11.0,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 14.0,
+    "precipitacion_media": 7.2,
+    "temperatura_maxima_media": 17.7,
+    "temperatura_minima_media": 10.2,
+    "humedad_media": 75.0
+   }
+  ],
+  "2016": [
+   {
+    "mes": 1,
+    "temperatura_media": 13.2,
+    "precipitacion_media": 53.4,
+    "temperatura_maxima_media": 17.2,
+    "temperatura_minima_media": 9.1,
+    "humedad_media": 74.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 12.9,
+    "precipitacion_media": 34.6,
+    "temperatura_maxima_media": 17.2,
+    "temperatura_minima_media": 8.6,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 13.8,
+    "precipitacion_media": 27.0,
+    "temperatura_maxima_media": 19.1,
+    "temperatura_minima_media": 8.4,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.8,
+    "precipitacion_media": 57.8,
+    "temperatura_maxima_media": 20.1,
+    "temperatura_minima_media": 11.5,
+    "humedad_media": 65.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 17.6,
+    "precipitacion_media": 144.0,
+    "temperatura_maxima_media": 22.0,
+    "temperatura_minima_media": 13.2,
+    "humedad_media": 63.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 23.1,
+    "precipitacion_media": 0.2,
+    "temperatura_maxima_media": 28.7,
+    "temperatura_minima_media": 17.5,
+    "humedad_media": 46.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.2,
+    "precipitacion_media": 1.8,
+    "temperatura_maxima_media": 29.9,
+    "temperatura_minima_media": 20.6,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 25.2,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 29.5,
+    "temperatura_minima_media": 20.8,
+    "humedad_media": 58.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 23.5,
+    "precipitacion_media": 1.0,
+    "temperatura_maxima_media": 28.2,
+    "temperatura_minima_media": 18.7,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 19.6,
+    "precipitacion_media": 47.4,
+    "temperatura_maxima_media": 23.7,
+    "temperatura_minima_media": 15.6,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 14.0,
+    "precipitacion_media": 213.8,
+    "temperatura_maxima_media": 17.8,
+    "temperatura_minima_media": 10.1,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 12.2,
+    "precipitacion_media": 280.6,
+    "temperatura_maxima_media": 15.2,
+    "temperatura_minima_media": 9.2,
+    "humedad_media": 80.0
+   }
+  ],
+  "2017": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.1,
+    "precipitacion_media": 37.8,
+    "temperatura_maxima_media": 15.8,
+    "temperatura_minima_media": 6.4,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 12.6,
+    "precipitacion_media": 99.8,
+    "temperatura_maxima_media": 16.0,
+    "temperatura_minima_media": 9.0,
+    "humedad_media": 75.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 14.0,
+    "precipitacion_media": 68.4,
+    "temperatura_maxima_media": 18.5,
+    "temperatura_minima_media": 9.4,
+    "humedad_media": 61.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 16.1,
+    "precipitacion_media": 102.8,
+    "temperatura_maxima_media": 20.5,
+    "temperatura_minima_media": 11.6,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 18.9,
+    "precipitacion_media": 15.6,
+    "temperatura_maxima_media": 23.7,
+    "temperatura_minima_media": 14.1,
+    "humedad_media": 56.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 24.2,
+    "precipitacion_media": 0.6,
+    "temperatura_maxima_media": 29.4,
+    "temperatura_minima_media": 18.9,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.6,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.8,
+    "temperatura_minima_media": 20.4,
+    "humedad_media": 51.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 25.3,
+    "precipitacion_media": 11.6,
+    "temperatura_maxima_media": 30.1,
+    "temperatura_minima_media": 20.4,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 23.0,
+    "precipitacion_media": 3.6,
+    "temperatura_maxima_media": 28.1,
+    "temperatura_minima_media": 17.9,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 19.7,
+    "precipitacion_media": 57.4,
+    "temperatura_maxima_media": 24.1,
+    "temperatura_minima_media": 15.3,
+    "humedad_media": 68.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 14.9,
+    "precipitacion_media": 66.8,
+    "temperatura_maxima_media": 19.4,
+    "temperatura_minima_media": 10.4,
+    "humedad_media": 68.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 11.9,
+    "precipitacion_media": 20.4,
+    "temperatura_maxima_media": 15.7,
+    "temperatura_minima_media": 8.1,
+    "humedad_media": 66.0
+   }
+  ],
+  "2018": [
+   {
+    "mes": 1,
+    "precipitacion_media": 71.3
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 11.1,
+    "precipitacion_media": 41.4,
+    "temperatura_maxima_media": 15.5,
+    "temperatura_minima_media": 6.5,
+    "humedad_media": 61.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.6,
+    "precipitacion_media": 278.4,
+    "temperatura_maxima_media": 16.6,
+    "temperatura_minima_media": 8.4,
+    "humedad_media": 71.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 14.7,
+    "precipitacion_media": 87.4,
+    "temperatura_maxima_media": 19.2,
+    "temperatura_minima_media": 10.2,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 17.4,
+    "precipitacion_media": 17.2,
+    "temperatura_maxima_media": 22.3,
+    "temperatura_minima_media": 12.6,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.0,
+    "precipitacion_media": 2.4,
+    "temperatura_maxima_media": 27.1,
+    "temperatura_minima_media": 17.0,
+    "humedad_media": 51.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.7,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.4,
+    "temperatura_minima_media": 19.9,
+    "humedad_media": 42.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 25.8,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.3,
+    "temperatura_minima_media": 21.2,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 9,
+    "precipitacion_media": 20.8
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 17.6,
+    "precipitacion_media": 360.0,
+    "temperatura_maxima_media": 21.4,
+    "temperatura_minima_media": 13.6,
+    "humedad_media": 75.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 13.8,
+    "precipitacion_media": 117.6,
+    "temperatura_maxima_media": 17.7,
+    "temperatura_minima_media": 9.9,
+    "humedad_media": 76.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 13.8,
+    "precipitacion_media": 4.2,
+    "temperatura_maxima_media": 18.3,
+    "temperatura_minima_media": 9.2,
+    "humedad_media": 69.0
+   }
+  ],
+  "2019": [
+   {
+    "mes": 1,
+    "temperatura_media": 12.2,
+    "precipitacion_media": 24.2,
+    "temperatura_maxima_media": 16.7,
+    "temperatura_minima_media": 7.5,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 12.0,
+    "precipitacion_media": 16.0,
+    "temperatura_maxima_media": 16.5,
+    "temperatura_minima_media": 7.5,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 14.6,
+    "precipitacion_media": 27.6,
+    "temperatura_maxima_media": 18.9,
+    "temperatura_minima_media": 10.2,
+    "humedad_media": 60.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 14.8,
+    "precipitacion_media": 56.4,
+    "temperatura_maxima_media": 19.5,
+    "temperatura_minima_media": 10.1,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 20.1,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 25.3,
+    "temperatura_minima_media": 14.8,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 21.9,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 27.2,
+    "temperatura_minima_media": 16.6,
+    "humedad_media": 48.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.6,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.6,
+    "temperatura_minima_media": 20.5,
+    "humedad_media": 49.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 26.1,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.1,
+    "temperatura_minima_media": 21.1,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.6,
+    "precipitacion_media": 88.8,
+    "temperatura_maxima_media": 27.0,
+    "temperatura_minima_media": 18.2,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 20.3,
+    "precipitacion_media": 1.2,
+    "temperatura_maxima_media": 25.5,
+    "temperatura_minima_media": 14.9,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 14.9,
+    "precipitacion_media": 101.4,
+    "temperatura_maxima_media": 19.1,
+    "temperatura_minima_media": 10.6,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 13.7,
+    "precipitacion_media": 82.3,
+    "temperatura_maxima_media": 17.8,
+    "temperatura_minima_media": 9.6,
+    "humedad_media": 70.0
+   }
+  ],
+  "2020": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.3,
+    "precipitacion_media": 154.0,
+    "temperatura_maxima_media": 15.3,
+    "temperatura_minima_media": 7.2,
+    "humedad_media": 76.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 14.6,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 19.2,
+    "temperatura_minima_media": 9.9,
+    "humedad_media": 68.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 14.4,
+    "precipitacion_media": 126.4,
+    "temperatura_maxima_media": 18.9,
+    "temperatura_minima_media": 10.0,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 14.4,
+    "precipitacion_media": 91.0,
+    "temperatura_maxima_media": 18.0,
+    "temperatura_minima_media": 10.7,
+    "humedad_media": 76.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.4,
+    "precipitacion_media": 49.0,
+    "temperatura_maxima_media": 23.9,
+    "temperatura_minima_media": 14.8,
+    "humedad_media": 60.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.9,
+    "precipitacion_media": 3.6,
+    "temperatura_maxima_media": 28.5,
+    "temperatura_minima_media": 17.3,
+    "humedad_media": 49.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 25.7,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.6,
+    "temperatura_minima_media": 20.8,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 27.2,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 32.5,
+    "temperatura_minima_media": 21.8,
+    "humedad_media": 45.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.8,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 27.3,
+    "temperatura_minima_media": 18.2,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 18.1,
+    "temperatura_maxima_media": 23.0,
+    "temperatura_minima_media": 13.1,
+    "humedad_media": 60.0
+   },
+   {
+    "mes": 11
+   },
+   {
+    "mes": 12
+   }
+  ],
+  "2021": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.8,
+    "precipitacion_media": 178.6,
+    "temperatura_maxima_media": 16.1,
+    "temperatura_minima_media": 7.4,
+    "humedad_media": 69.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 13.3,
+    "precipitacion_media": 44.2,
+    "temperatura_maxima_media": 17.3,
+    "temperatura_minima_media": 9.3,
+    "humedad_media": 73.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 13.6,
+    "precipitacion_media": 95.6,
+    "temperatura_maxima_media": 17.5,
+    "temperatura_minima_media": 9.7,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.3,
+    "precipitacion_media": 69.2,
+    "temperatura_maxima_media": 19.1,
+    "temperatura_minima_media": 11.5,
+    "humedad_media": 75.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.2,
+    "precipitacion_media": 1.6,
+    "temperatura_maxima_media": 24.1,
+    "temperatura_minima_media": 14.2,
+    "humedad_media": 55.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.3,
+    "precipitacion_media": 4.6,
+    "temperatura_maxima_media": 27.3,
+    "temperatura_minima_media": 17.2,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 26.3,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.8,
+    "temperatura_minima_media": 20.8,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 26.5,
+    "precipitacion_media": 1.0,
+    "temperatura_maxima_media": 31.4,
+    "temperatura_minima_media": 21.5,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 23.3,
+    "precipitacion_media": 26.2,
+    "temperatura_maxima_media": 28.1,
+    "temperatura_minima_media": 18.5,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 10
+   },
+   {
+    "mes": 11
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 13.7,
+    "precipitacion_media": 86.0,
+    "temperatura_maxima_media": 17.6,
+    "temperatura_minima_media": 9.7,
+    "humedad_media": 69.0
+   }
+  ],
+  "2022": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.6,
+    "precipitacion_media": 22.0,
+    "temperatura_maxima_media": 15.3,
+    "temperatura_minima_media": 7.8,
+    "humedad_media": 69.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 13.1,
+    "precipitacion_media": 21.2,
+    "temperatura_maxima_media": 17.3,
+    "temperatura_minima_media": 8.8,
+    "humedad_media": 65.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.4,
+    "precipitacion_media": 338.8,
+    "temperatura_maxima_media": 15.9,
+    "temperatura_minima_media": 8.8,
+    "humedad_media": 77.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 15.0,
+    "precipitacion_media": 115.4,
+    "temperatura_maxima_media": 19.6,
+    "temperatura_minima_media": 10.3,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 20.3,
+    "precipitacion_media": 13.2,
+    "temperatura_maxima_media": 25.6,
+    "temperatura_minima_media": 15.0,
+    "humedad_media": 51.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 24.7,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 30.4,
+    "temperatura_minima_media": 18.8,
+    "humedad_media": 42.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 26.5,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 31.5,
+    "temperatura_minima_media": 21.5,
+    "humedad_media": 49.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 26.3,
+    "precipitacion_media": 4.0,
+    "temperatura_maxima_media": 31.5,
+    "temperatura_minima_media": 21.1,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 24.5,
+    "precipitacion_media": 2.4,
+    "temperatura_maxima_media": 29.9,
+    "temperatura_minima_media": 19.0,
+    "humedad_media": 49.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 21.0,
+    "precipitacion_media": 6.4,
+    "temperatura_maxima_media": 25.2,
+    "temperatura_minima_media": 16.7,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 17.4,
+    "precipitacion_media": 14.6,
+    "temperatura_maxima_media": 22.1,
+    "temperatura_minima_media": 12.6,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 14.6,
+    "precipitacion_media": 216.0,
+    "temperatura_maxima_media": 18.3,
+    "temperatura_minima_media": 10.8,
+    "humedad_media": 77.0
+   }
+  ],
+  "2023": [
+   {
+    "mes": 1,
+    "temperatura_media": 12.0,
+    "precipitacion_media": 21.6,
+    "temperatura_maxima_media": 16.3,
+    "temperatura_minima_media": 7.7,
+    "humedad_media": 66.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 11.5,
+    "precipitacion_media": 108.0,
+    "temperatura_maxima_media": 15.1,
+    "temperatura_minima_media": 7.8,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 3,
+    "precipitacion_media": 31.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 19.4,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 24.8,
+    "temperatura_minima_media": 13.9,
+    "humedad_media": 44.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.0,
+    "precipitacion_media": 63.4,
+    "temperatura_maxima_media": 23.8,
+    "temperatura_minima_media": 14.3,
+    "humedad_media": 61.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 23.4,
+    "precipitacion_media": 13.8,
+    "temperatura_maxima_media": 28.1,
+    "temperatura_minima_media": 18.5,
+    "humedad_media": 52.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 27.8,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 33.2,
+    "temperatura_minima_media": 22.4,
+    "humedad_media": 46.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 27.5,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 32.5,
+    "temperatura_minima_media": 22.4,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 22.2,
+    "precipitacion_media": 16.4,
+    "temperatura_maxima_media": 26.7,
+    "temperatura_minima_media": 17.6,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 19.6,
+    "precipitacion_media": 49.0,
+    "temperatura_maxima_media": 23.7,
+    "temperatura_minima_media": 15.6,
+    "humedad_media": 68.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 17.2,
+    "precipitacion_media": 1.2,
+    "temperatura_maxima_media": 22.2,
+    "temperatura_minima_media": 12.1,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 13.6,
+    "precipitacion_media": 11.6,
+    "temperatura_maxima_media": 18.2,
+    "temperatura_minima_media": 8.8,
+    "humedad_media": 63.0
+   }
+  ],
+  "2024": [
+   {
+    "mes": 1,
+    "temperatura_media": 13.5,
+    "precipitacion_media": 69.4,
+    "temperatura_maxima_media": 17.6,
+    "temperatura_minima_media": 9.4,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 14.2,
+    "precipitacion_media": 60.4,
+    "temperatura_maxima_media": 18.9,
+    "temperatura_minima_media": 9.5,
+    "humedad_media": 62.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 14.1,
+    "precipitacion_media": 222.2,
+    "temperatura_maxima_media": 18.0,
+    "temperatura_minima_media": 10.2,
+    "humedad_media": 67.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 17.0,
+    "precipitacion_media": 4.6,
+    "temperatura_maxima_media": 21.9,
+    "temperatura_minima_media": 12.0,
+    "humedad_media": 58.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.9,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 25.4,
+    "temperatura_minima_media": 14.3,
+    "humedad_media": 48.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 22.7,
+    "precipitacion_media": 0.4,
+    "temperatura_maxima_media": 27.7,
+    "temperatura_minima_media": 17.6,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 27.0,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 32.4,
+    "temperatura_minima_media": 21.6,
+    "humedad_media": 47.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 27.2,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 32.0,
+    "temperatura_minima_media": 22.3,
+    "humedad_media": 57.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 23.2,
+    "precipitacion_media": 5.8,
+    "temperatura_maxima_media": 27.8,
+    "temperatura_minima_media": 18.6,
+    "humedad_media": 59.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 19.6,
+    "precipitacion_media": 246.6,
+    "temperatura_maxima_media": 23.7,
+    "temperatura_minima_media": 15.4,
+    "humedad_media": 71.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 16.7,
+    "precipitacion_media": 44.4,
+    "temperatura_maxima_media": 20.2,
+    "temperatura_minima_media": 13.1,
+    "humedad_media": 80.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 13.4,
+    "precipitacion_media": 33.2,
+    "temperatura_maxima_media": 17.3,
+    "temperatura_minima_media": 9.4,
+    "humedad_media": 70.0
+   }
+  ],
+  "2025": [
+   {
+    "mes": 1,
+    "temperatura_media": 12.8,
+    "precipitacion_media": 52.2,
+    "temperatura_maxima_media": 17.2,
+    "temperatura_minima_media": 8.3,
+    "humedad_media": 69.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 13.2,
+    "precipitacion_media": 43.0,
+    "temperatura_maxima_media": 17.7,
+    "temperatura_minima_media": 8.7,
+    "humedad_media": 70.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.8,
+    "precipitacion_media": 372.2,
+    "temperatura_maxima_media": 16.3,
+    "temperatura_minima_media": 9.3,
+    "humedad_media": 79.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 16.6,
+    "precipitacion_media": 61.8,
+    "temperatura_maxima_media": 20.7,
+    "temperatura_minima_media": 12.4,
+    "humedad_media": 64.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.7,
+    "precipitacion_media": 32.2,
+    "temperatura_maxima_media": 24.5,
+    "temperatura_minima_media": 14.8,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 25.2,
+    "precipitacion_media": 6.0,
+    "temperatura_maxima_media": 30.1,
+    "temperatura_minima_media": 20.2,
+    "humedad_media": 49.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 26.5,
+    "precipitacion_media": 0.4,
+    "temperatura_maxima_media": 31.3,
+    "temperatura_minima_media": 21.6,
+    "humedad_media": 50.0
+   },
+   {
+    "mes": 8,
+    "temperatura_media": 27.1,
+    "precipitacion_media": 2.6,
+    "temperatura_maxima_media": 32.0,
+    "temperatura_minima_media": 22.1,
+    "humedad_media": 44.0
+   },
+   {
+    "mes": 9,
+    "temperatura_media": 23.4,
+    "precipitacion_media": 11.6,
+    "temperatura_maxima_media": 28.0,
+    "temperatura_minima_media": 18.9,
+    "humedad_media": 58.0
+   },
+   {
+    "mes": 10,
+    "temperatura_media": 21.1,
+    "precipitacion_media": 25.4,
+    "temperatura_maxima_media": 25.5,
+    "temperatura_minima_media": 16.7,
+    "humedad_media": 68.0
+   },
+   {
+    "mes": 11,
+    "temperatura_media": 15.2,
+    "precipitacion_media": 93.6,
+    "temperatura_maxima_media": 19.3,
+    "temperatura_minima_media": 11.0,
+    "humedad_media": 69.0
+   },
+   {
+    "mes": 12,
+    "temperatura_media": 11.8,
+    "precipitacion_media": 137.6,
+    "temperatura_maxima_media": 15.5,
+    "temperatura_minima_media": 8.1,
+    "humedad_media": 78.0
+   }
+  ],
+  "2026": [
+   {
+    "mes": 1,
+    "temperatura_media": 11.3,
+    "precipitacion_media": 245.8,
+    "temperatura_maxima_media": 14.8,
+    "temperatura_minima_media": 7.8,
+    "humedad_media": 75.0
+   },
+   {
+    "mes": 2,
+    "temperatura_media": 13.2,
+    "precipitacion_media": 149.4,
+    "temperatura_maxima_media": 17.4,
+    "temperatura_minima_media": 9.0,
+    "humedad_media": 72.0
+   },
+   {
+    "mes": 3,
+    "temperatura_media": 12.7,
+    "precipitacion_media": 37.0,
+    "temperatura_maxima_media": 16.5,
+    "temperatura_minima_media": 8.8,
+    "humedad_media": 69.0
+   },
+   {
+    "mes": 4,
+    "temperatura_media": 16.7,
+    "precipitacion_media": 53.0,
+    "temperatura_maxima_media": 21.0,
+    "temperatura_minima_media": 12.3,
+    "humedad_media": 60.0
+   },
+   {
+    "mes": 5,
+    "temperatura_media": 19.3,
+    "precipitacion_media": 4.8,
+    "temperatura_maxima_media": 23.8,
+    "temperatura_minima_media": 14.7,
+    "humedad_media": 53.0
+   },
+   {
+    "mes": 6,
+    "temperatura_media": 24.5,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 29.2,
+    "temperatura_minima_media": 19.8,
+    "humedad_media": 54.0
+   },
+   {
+    "mes": 7,
+    "temperatura_media": 28.5,
+    "precipitacion_media": 0.0,
+    "temperatura_maxima_media": 33.8,
+    "temperatura_minima_media": 23.1,
+    "humedad_media": 38.0
+   },
+   {
+    "mes": 8
+   },
+   {
+    "mes": 9
+   },
+   {
+    "mes": 10
+   },
+   {
+    "mes": 11
+   },
+   {
+    "mes": 12
+   }
+  ]
+ },
+ "anyos_temperatura": [
+  "2006",
+  "2011",
+  "2012",
+  "2013",
+  "2014",
+  "2015",
+  "2016",
+  "2017",
+  "2019",
+  "2022",
+  "2024",
+  "2025"
+ ],
+ "anyos_precipitacion": [
+  "2006",
+  "2008",
+  "2009",
+  "2010",
+  "2011",
+  "2012",
+  "2013",
+  "2014",
+  "2015",
+  "2016",
+  "2017",
+  "2018",
+  "2019",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
  "indices_anuales": [
   {
    "t": "2006",
@@ -4243,5 +6410,5 @@
  },
  "fuente": "AEMET OpenData · estación 6069X Benahavís",
  "ambito": "municipal",
- "actualizado": "2026-08-27T09:37:53Z"
+ "actualizado": "2026-08-31T08:36:40Z"
 }
