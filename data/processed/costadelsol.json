@@ -7611,8 +7611,1680 @@
   ],
   "cobertura": "La Encuesta de Ocupación Hotelera solo libera para Benahavís 3 mes(es) de apartamentos: el umbral de cinco establecimientos censura el resto de la serie."
  },
+ "origen": {
+  "serie_mensual": [
+   {
+    "t": "2019-07",
+    "nacional": 2968.0,
+    "internacional": 24938.0
+   },
+   {
+    "t": "2019-08",
+    "nacional": 3944.0,
+    "internacional": 28940.0
+   },
+   {
+    "t": "2019-09",
+    "nacional": 2456.0,
+    "internacional": 22918.0
+   },
+   {
+    "t": "2019-10",
+    "nacional": 1840.0,
+    "internacional": 21125.0
+   },
+   {
+    "t": "2019-11",
+    "nacional": 1658.0,
+    "internacional": 12703.0
+   },
+   {
+    "t": "2019-12",
+    "nacional": 1600.0,
+    "internacional": 7918.0
+   },
+   {
+    "t": "2020-01",
+    "nacional": 1684.0,
+    "internacional": 11605.0
+   },
+   {
+    "t": "2020-02",
+    "nacional": 1924.0,
+    "internacional": 9758.0
+   },
+   {
+    "t": "2020-03",
+    "nacional": 1302.0,
+    "internacional": 7167.0
+   },
+   {
+    "t": "2020-04",
+    "nacional": 418.0,
+    "internacional": 1515.0
+   },
+   {
+    "t": "2020-05",
+    "nacional": 366.0,
+    "internacional": 1302.0
+   },
+   {
+    "t": "2020-06",
+    "nacional": 977.0,
+    "internacional": 1777.0
+   },
+   {
+    "t": "2020-07",
+    "nacional": 2088.0,
+    "internacional": 9435.0
+   },
+   {
+    "t": "2020-08",
+    "nacional": 3390.0,
+    "internacional": 13073.0
+   },
+   {
+    "t": "2020-09",
+    "nacional": 2011.0,
+    "internacional": 5423.0
+   },
+   {
+    "t": "2020-10",
+    "nacional": 1338.0,
+    "internacional": 5280.0
+   },
+   {
+    "t": "2020-11",
+    "nacional": 848.0,
+    "internacional": 4453.0
+   },
+   {
+    "t": "2020-12",
+    "nacional": 961.0,
+    "internacional": 3557.0
+   },
+   {
+    "t": "2021-01",
+    "nacional": 853.0,
+    "internacional": 4816.0
+   },
+   {
+    "t": "2021-02",
+    "nacional": 425.0,
+    "internacional": 3193.0
+   },
+   {
+    "t": "2021-03",
+    "nacional": 672.0,
+    "internacional": 4035.0
+   },
+   {
+    "t": "2021-04",
+    "nacional": 728.0,
+    "internacional": 6295.0
+   },
+   {
+    "t": "2021-05",
+    "nacional": 1392.0,
+    "internacional": 8471.0
+   },
+   {
+    "t": "2021-06",
+    "nacional": 1950.0,
+    "internacional": 10612.0
+   },
+   {
+    "t": "2021-07",
+    "nacional": 2577.0,
+    "internacional": 17693.0
+   },
+   {
+    "t": "2021-08",
+    "nacional": 4241.0,
+    "internacional": 25328.0
+   },
+   {
+    "t": "2021-09",
+    "nacional": 1961.0,
+    "internacional": 17562.0
+   },
+   {
+    "t": "2021-10",
+    "nacional": 1335.0,
+    "internacional": 19521.0
+   },
+   {
+    "t": "2021-11",
+    "nacional": 1143.0,
+    "internacional": 15086.0
+   },
+   {
+    "t": "2021-12",
+    "nacional": 1085.0,
+    "internacional": 7568.0
+   },
+   {
+    "t": "2022-01",
+    "nacional": 1072.0,
+    "internacional": 11871.0
+   },
+   {
+    "t": "2022-02",
+    "nacional": 935.0,
+    "internacional": 9691.0
+   },
+   {
+    "t": "2022-03",
+    "nacional": 903.0,
+    "internacional": 13423.0
+   },
+   {
+    "t": "2022-04",
+    "nacional": 1696.0,
+    "internacional": 20409.0
+   },
+   {
+    "t": "2022-05",
+    "nacional": 1366.0,
+    "internacional": 19022.0
+   },
+   {
+    "t": "2022-06",
+    "nacional": 2140.0,
+    "internacional": 18683.0
+   },
+   {
+    "t": "2022-07",
+    "nacional": 2797.0,
+    "internacional": 23978.0
+   },
+   {
+    "t": "2022-08",
+    "nacional": 3670.0,
+    "internacional": 26879.0
+   },
+   {
+    "t": "2022-09",
+    "nacional": 2293.0,
+    "internacional": 18304.0
+   },
+   {
+    "t": "2022-10",
+    "nacional": 1770.0,
+    "internacional": 17823.0
+   },
+   {
+    "t": "2022-11",
+    "nacional": 1632.0,
+    "internacional": 14248.0
+   },
+   {
+    "t": "2022-12",
+    "nacional": 1797.0,
+    "internacional": 9898.0
+   },
+   {
+    "t": "2023-01",
+    "nacional": 1935.0,
+    "internacional": 14488.0
+   },
+   {
+    "t": "2023-02",
+    "nacional": 1626.0,
+    "internacional": 10113.0
+   },
+   {
+    "t": "2023-03",
+    "nacional": 1960.0,
+    "internacional": 13419.0
+   },
+   {
+    "t": "2023-04",
+    "nacional": 2808.0,
+    "internacional": 20735.0
+   },
+   {
+    "t": "2023-05",
+    "nacional": 2483.0,
+    "internacional": 21273.0
+   },
+   {
+    "t": "2023-06",
+    "nacional": 2595.0,
+    "internacional": 18634.0
+   },
+   {
+    "t": "2023-07",
+    "nacional": 1884.0,
+    "internacional": 23687.0
+   },
+   {
+    "t": "2023-08",
+    "nacional": 2031.0,
+    "internacional": 29457.0
+   },
+   {
+    "t": "2023-09",
+    "nacional": 1238.0,
+    "internacional": 20637.0
+   },
+   {
+    "t": "2023-10",
+    "nacional": 1210.0,
+    "internacional": 20856.0
+   },
+   {
+    "t": "2023-11",
+    "nacional": 1007.0,
+    "internacional": 14419.0
+   },
+   {
+    "t": "2023-12",
+    "nacional": 889.0,
+    "internacional": 10647.0
+   },
+   {
+    "t": "2024-01",
+    "nacional": 978.0,
+    "internacional": 13896.0
+   },
+   {
+    "t": "2024-02",
+    "nacional": 818.0,
+    "internacional": 13153.0
+   },
+   {
+    "t": "2024-03",
+    "nacional": 1153.0,
+    "internacional": 15639.0
+   },
+   {
+    "t": "2024-04",
+    "nacional": 1108.0,
+    "internacional": 21040.0
+   },
+   {
+    "t": "2024-05",
+    "nacional": 1715.0,
+    "internacional": 24237.0
+   },
+   {
+    "t": "2024-06",
+    "nacional": 1821.0,
+    "internacional": 23311.0
+   },
+   {
+    "t": "2024-07",
+    "nacional": 1979.0,
+    "internacional": 28108.0
+   },
+   {
+    "t": "2024-08",
+    "nacional": 2876.0,
+    "internacional": 32912.0
+   },
+   {
+    "t": "2024-09",
+    "nacional": 1526.0,
+    "internacional": 23255.0
+   },
+   {
+    "t": "2024-10",
+    "nacional": 1009.0,
+    "internacional": 24229.0
+   },
+   {
+    "t": "2024-11",
+    "nacional": 995.0,
+    "internacional": 17984.0
+   },
+   {
+    "t": "2024-12",
+    "nacional": 1060.0,
+    "internacional": 12107.0
+   },
+   {
+    "t": "2025-01",
+    "nacional": 1186.0,
+    "internacional": 16848.0
+   },
+   {
+    "t": "2025-02",
+    "nacional": 773.0,
+    "internacional": 13737.0
+   },
+   {
+    "t": "2025-03",
+    "nacional": 1098.0,
+    "internacional": 17772.0
+   },
+   {
+    "t": "2025-04",
+    "nacional": 1727.0,
+    "internacional": 20528.0
+   },
+   {
+    "t": "2025-05",
+    "nacional": 1575.0,
+    "internacional": 21317.0
+   },
+   {
+    "t": "2025-06",
+    "nacional": 1792.0,
+    "internacional": 22667.0
+   },
+   {
+    "t": "2025-07",
+    "nacional": 2202.0,
+    "internacional": 28488.0
+   },
+   {
+    "t": "2025-08",
+    "nacional": 2571.0,
+    "internacional": 34246.0
+   },
+   {
+    "t": "2025-09",
+    "nacional": 1428.0,
+    "internacional": 25537.0
+   },
+   {
+    "t": "2025-10",
+    "nacional": 1178.0,
+    "internacional": 24382.0
+   },
+   {
+    "t": "2025-11",
+    "nacional": 1020.0,
+    "internacional": 17494.0
+   },
+   {
+    "t": "2025-12",
+    "nacional": 847.0,
+    "internacional": 12857.0
+   }
+  ],
+  "anyos": [
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "por_ambito": {
+   "Países": {
+    "2019": [
+     {
+      "territorio": "Reino Unido",
+      "v": 16857.0
+     },
+     {
+      "territorio": "Países Bajos",
+      "v": 4765.0
+     },
+     {
+      "territorio": "Bélgica",
+      "v": 4110.0
+     },
+     {
+      "territorio": "Francia",
+      "v": 3609.0
+     },
+     {
+      "territorio": "Suecia",
+      "v": 2518.0
+     },
+     {
+      "territorio": "Alemania",
+      "v": 2364.0
+     },
+     {
+      "territorio": "Dinamarca",
+      "v": 1441.0
+     },
+     {
+      "territorio": "Irlanda",
+      "v": 1320.0
+     },
+     {
+      "territorio": "Rusia",
+      "v": 1262.0
+     },
+     {
+      "territorio": "Noruega",
+      "v": 1105.0
+     },
+     {
+      "territorio": "Estados Unidos",
+      "v": 1014.0
+     },
+     {
+      "territorio": "Suiza",
+      "v": 884.0
+     },
+     {
+      "territorio": "Marruecos",
+      "v": 877.0
+     },
+     {
+      "territorio": "Austria",
+      "v": 753.0
+     },
+     {
+      "territorio": "Italia",
+      "v": 564.0
+     }
+    ],
+    "2020": [
+     {
+      "territorio": "Reino Unido",
+      "v": 6719.0
+     },
+     {
+      "territorio": "Países Bajos",
+      "v": 4420.0
+     },
+     {
+      "territorio": "Bélgica",
+      "v": 3865.0
+     },
+     {
+      "territorio": "Francia",
+      "v": 2289.0
+     },
+     {
+      "territorio": "Suecia",
+      "v": 1980.0
+     },
+     {
+      "territorio": "Alemania",
+      "v": 1615.0
+     },
+     {
+      "territorio": "Rusia",
+      "v": 1071.0
+     },
+     {
+      "territorio": "Dinamarca",
+      "v": 775.0
+     },
+     {
+      "territorio": "Gibraltar",
+      "v": 653.0
+     },
+     {
+      "territorio": "Estados Unidos",
+      "v": 480.0
+     },
+     {
+      "territorio": "Suiza",
+      "v": 477.0
+     },
+     {
+      "territorio": "Noruega",
+      "v": 407.0
+     },
+     {
+      "territorio": "Austria",
+      "v": 400.0
+     },
+     {
+      "territorio": "Polonia",
+      "v": 366.0
+     },
+     {
+      "territorio": "Irlanda",
+      "v": 253.0
+     }
+    ],
+    "2021": [
+     {
+      "territorio": "Reino Unido",
+      "v": 12445.0
+     },
+     {
+      "territorio": "Bélgica",
+      "v": 6645.0
+     },
+     {
+      "territorio": "Países Bajos",
+      "v": 6155.0
+     },
+     {
+      "territorio": "Suecia",
+      "v": 4645.0
+     },
+     {
+      "territorio": "Francia",
+      "v": 4547.0
+     },
+     {
+      "territorio": "Alemania",
+      "v": 3434.0
+     },
+     {
+      "territorio": "Dinamarca",
+      "v": 2221.0
+     },
+     {
+      "territorio": "Suiza",
+      "v": 1461.0
+     },
+     {
+      "territorio": "Rusia",
+      "v": 1197.0
+     },
+     {
+      "territorio": "Austria",
+      "v": 1073.0
+     },
+     {
+      "territorio": "Polonia",
+      "v": 977.0
+     },
+     {
+      "territorio": "Noruega",
+      "v": 875.0
+     },
+     {
+      "territorio": "Estados Unidos",
+      "v": 737.0
+     },
+     {
+      "territorio": "Irlanda",
+      "v": 667.0
+     },
+     {
+      "territorio": "Gibraltar",
+      "v": 524.0
+     }
+    ],
+    "2022": [
+     {
+      "territorio": "Reino Unido",
+      "v": 26842.0
+     },
+     {
+      "territorio": "Países Bajos",
+      "v": 7724.0
+     },
+     {
+      "territorio": "Bélgica",
+      "v": 7034.0
+     },
+     {
+      "territorio": "Suecia",
+      "v": 5688.0
+     },
+     {
+      "territorio": "Francia",
+      "v": 4799.0
+     },
+     {
+      "territorio": "Alemania",
+      "v": 3773.0
+     },
+     {
+      "territorio": "Dinamarca",
+      "v": 2762.0
+     },
+     {
+      "territorio": "Irlanda",
+      "v": 2330.0
+     },
+     {
+      "territorio": "Suiza",
+      "v": 2260.0
+     },
+     {
+      "territorio": "Polonia",
+      "v": 2193.0
+     },
+     {
+      "territorio": "Noruega",
+      "v": 2156.0
+     },
+     {
+      "territorio": "Estados Unidos",
+      "v": 1546.0
+     },
+     {
+      "territorio": "Austria",
+      "v": 1219.0
+     },
+     {
+      "territorio": "Marruecos",
+      "v": 1201.0
+     },
+     {
+      "territorio": "Italia",
+      "v": 990.0
+     }
+    ],
+    "2023": [
+     {
+      "territorio": "Reino Unido",
+      "v": 26866.0
+     },
+     {
+      "territorio": "Países Bajos",
+      "v": 7954.0
+     },
+     {
+      "territorio": "Bélgica",
+      "v": 6851.0
+     },
+     {
+      "territorio": "Suecia",
+      "v": 5988.0
+     },
+     {
+      "territorio": "Francia",
+      "v": 5395.0
+     },
+     {
+      "territorio": "Alemania",
+      "v": 4193.0
+     },
+     {
+      "territorio": "Dinamarca",
+      "v": 3285.0
+     },
+     {
+      "territorio": "Polonia",
+      "v": 2603.0
+     },
+     {
+      "territorio": "Estados Unidos",
+      "v": 2526.0
+     },
+     {
+      "territorio": "Irlanda",
+      "v": 2444.0
+     },
+     {
+      "territorio": "Suiza",
+      "v": 2315.0
+     },
+     {
+      "territorio": "Austria",
+      "v": 1784.0
+     },
+     {
+      "territorio": "Noruega",
+      "v": 1696.0
+     },
+     {
+      "territorio": "Marruecos",
+      "v": 1464.0
+     },
+     {
+      "territorio": "Italia",
+      "v": 1155.0
+     }
+    ],
+    "2024": [
+     {
+      "territorio": "Reino Unido",
+      "v": 28669.0
+     },
+     {
+      "territorio": "Países Bajos",
+      "v": 9112.0
+     },
+     {
+      "territorio": "Bélgica",
+      "v": 8341.0
+     },
+     {
+      "territorio": "Francia",
+      "v": 6325.0
+     },
+     {
+      "territorio": "Suecia",
+      "v": 6076.0
+     },
+     {
+      "territorio": "Alemania",
+      "v": 5474.0
+     },
+     {
+      "territorio": "Dinamarca",
+      "v": 3602.0
+     },
+     {
+      "territorio": "Austria",
+      "v": 3008.0
+     },
+     {
+      "territorio": "Estados Unidos",
+      "v": 3008.0
+     },
+     {
+      "territorio": "Polonia",
+      "v": 2981.0
+     },
+     {
+      "territorio": "Suiza",
+      "v": 2908.0
+     },
+     {
+      "territorio": "Irlanda",
+      "v": 2697.0
+     },
+     {
+      "territorio": "Noruega",
+      "v": 1923.0
+     },
+     {
+      "territorio": "Marruecos",
+      "v": 1579.0
+     },
+     {
+      "territorio": "Italia",
+      "v": 1522.0
+     }
+    ],
+    "2025": [
+     {
+      "territorio": "Reino Unido",
+      "v": 25149.0
+     },
+     {
+      "territorio": "Países Bajos",
+      "v": 9737.0
+     },
+     {
+      "territorio": "Bélgica",
+      "v": 6902.0
+     },
+     {
+      "territorio": "Francia",
+      "v": 6186.0
+     },
+     {
+      "territorio": "Suecia",
+      "v": 5992.0
+     },
+     {
+      "territorio": "Alemania",
+      "v": 5527.0
+     },
+     {
+      "territorio": "Dinamarca",
+      "v": 4220.0
+     },
+     {
+      "territorio": "Polonia",
+      "v": 3658.0
+     },
+     {
+      "territorio": "Estados Unidos",
+      "v": 3213.0
+     },
+     {
+      "territorio": "Irlanda",
+      "v": 2967.0
+     },
+     {
+      "territorio": "Suiza",
+      "v": 2612.0
+     },
+     {
+      "territorio": "Noruega",
+      "v": 2453.0
+     },
+     {
+      "territorio": "Austria",
+      "v": 2342.0
+     },
+     {
+      "territorio": "Marruecos",
+      "v": 2042.0
+     },
+     {
+      "territorio": "Italia",
+      "v": 1552.0
+     }
+    ]
+   },
+   "Comunidad Autónoma": {
+    "2019": [
+     {
+      "territorio": "Andalucía",
+      "v": 9011.0
+     },
+     {
+      "territorio": "Comunidad de Madrid",
+      "v": 2585.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 390.0
+     },
+     {
+      "territorio": "Cataluña",
+      "v": 386.0
+     },
+     {
+      "territorio": "Comunidad Valenciana",
+      "v": 323.0
+     },
+     {
+      "territorio": "Castilla - La Mancha",
+      "v": 239.0
+     },
+     {
+      "territorio": "País Vasco",
+      "v": 207.0
+     },
+     {
+      "territorio": "Extremadura",
+      "v": 135.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 104.0
+     },
+     {
+      "territorio": "Canarias",
+      "v": 97.0
+     },
+     {
+      "territorio": "Región de Murcia",
+      "v": 90.0
+     },
+     {
+      "territorio": "Galicia",
+      "v": 81.0
+     },
+     {
+      "territorio": "Castilla y León",
+      "v": 76.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 53.0
+     }
+    ],
+    "2020": [
+     {
+      "territorio": "Andalucía",
+      "v": 11246.0
+     },
+     {
+      "territorio": "Comunidad de Madrid",
+      "v": 3115.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 517.0
+     },
+     {
+      "territorio": "Cataluña",
+      "v": 365.0
+     },
+     {
+      "territorio": "Comunidad Valenciana",
+      "v": 312.0
+     },
+     {
+      "territorio": "Castilla - La Mancha",
+      "v": 157.0
+     },
+     {
+      "territorio": "País Vasco",
+      "v": 153.0
+     },
+     {
+      "territorio": "Extremadura",
+      "v": 131.0
+     },
+     {
+      "territorio": "Región de Murcia",
+      "v": 107.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 37.0
+     },
+     {
+      "territorio": "Galicia",
+      "v": 32.0
+     }
+    ],
+    "2021": [
+     {
+      "territorio": "Andalucía",
+      "v": 9157.0
+     },
+     {
+      "territorio": "Comunidad de Madrid",
+      "v": 4671.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 896.0
+     },
+     {
+      "territorio": "Cataluña",
+      "v": 612.0
+     },
+     {
+      "territorio": "Comunidad Valenciana",
+      "v": 399.0
+     },
+     {
+      "territorio": "País Vasco",
+      "v": 396.0
+     },
+     {
+      "territorio": "Castilla y León",
+      "v": 228.0
+     },
+     {
+      "territorio": "Castilla - La Mancha",
+      "v": 168.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 101.0
+     },
+     {
+      "territorio": "Extremadura",
+      "v": 86.0
+     },
+     {
+      "territorio": "Galicia",
+      "v": 70.0
+     },
+     {
+      "territorio": "Región de Murcia",
+      "v": 69.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 34.0
+     }
+    ],
+    "2022": [
+     {
+      "territorio": "Andalucía",
+      "v": 12099.0
+     },
+     {
+      "territorio": "Comunidad de Madrid",
+      "v": 4760.0
+     },
+     {
+      "territorio": "Cataluña",
+      "v": 784.0
+     },
+     {
+      "territorio": "Comunidad Valenciana",
+      "v": 776.0
+     },
+     {
+      "territorio": "País Vasco",
+      "v": 639.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 369.0
+     },
+     {
+      "territorio": "Castilla y León",
+      "v": 319.0
+     },
+     {
+      "territorio": "Castilla - La Mancha",
+      "v": 194.0
+     },
+     {
+      "territorio": "Canarias",
+      "v": 159.0
+     },
+     {
+      "territorio": "Extremadura",
+      "v": 158.0
+     },
+     {
+      "territorio": "Galicia",
+      "v": 143.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 130.0
+     },
+     {
+      "territorio": "Región de Murcia",
+      "v": 120.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 109.0
+     },
+     {
+      "territorio": "Aragón",
+      "v": 77.0
+     }
+    ],
+    "2023": [
+     {
+      "territorio": "Andalucía",
+      "v": 11358.0
+     },
+     {
+      "territorio": "Comunidad de Madrid",
+      "v": 4937.0
+     },
+     {
+      "territorio": "Cataluña",
+      "v": 932.0
+     },
+     {
+      "territorio": "Comunidad Valenciana",
+      "v": 802.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 637.0
+     },
+     {
+      "territorio": "Castilla - La Mancha",
+      "v": 397.0
+     },
+     {
+      "territorio": "País Vasco",
+      "v": 312.0
+     },
+     {
+      "territorio": "Canarias",
+      "v": 272.0
+     },
+     {
+      "territorio": "Castilla y León",
+      "v": 220.0
+     },
+     {
+      "territorio": "Galicia",
+      "v": 151.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 112.0
+     },
+     {
+      "territorio": "Extremadura",
+      "v": 88.0
+     },
+     {
+      "territorio": "Región de Murcia",
+      "v": 67.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 30.0
+     }
+    ],
+    "2024": [
+     {
+      "territorio": "Andalucía",
+      "v": 9130.0
+     },
+     {
+      "territorio": "Comunidad de Madrid",
+      "v": 4280.0
+     },
+     {
+      "territorio": "Cataluña",
+      "v": 863.0
+     },
+     {
+      "territorio": "Comunidad Valenciana",
+      "v": 634.0
+     },
+     {
+      "territorio": "País Vasco",
+      "v": 285.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 232.0
+     },
+     {
+      "territorio": "Castilla - La Mancha",
+      "v": 158.0
+     },
+     {
+      "territorio": "Región de Murcia",
+      "v": 103.0
+     },
+     {
+      "territorio": "Aragón",
+      "v": 42.0
+     },
+     {
+      "territorio": "Castilla y León",
+      "v": 37.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 36.0
+     },
+     {
+      "territorio": "Galicia",
+      "v": 34.0
+     }
+    ],
+    "2025": [
+     {
+      "territorio": "Andalucía",
+      "v": 8777.0
+     },
+     {
+      "territorio": "Comunidad de Madrid",
+      "v": 3974.0
+     },
+     {
+      "territorio": "Comunidad Valenciana",
+      "v": 851.0
+     },
+     {
+      "territorio": "Cataluña",
+      "v": 703.0
+     },
+     {
+      "territorio": "Castilla - La Mancha",
+      "v": 291.0
+     },
+     {
+      "territorio": "Castilla y León",
+      "v": 281.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 278.0
+     },
+     {
+      "territorio": "Galicia",
+      "v": 208.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 194.0
+     },
+     {
+      "territorio": "Región de Murcia",
+      "v": 133.0
+     },
+     {
+      "territorio": "País Vasco",
+      "v": 129.0
+     },
+     {
+      "territorio": "Extremadura",
+      "v": 71.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 63.0
+     },
+     {
+      "territorio": "Cantabria",
+      "v": 36.0
+     }
+    ]
+   },
+   "Provincia": {
+    "2019": [
+     {
+      "territorio": "Cádiz",
+      "v": 5143.0
+     },
+     {
+      "territorio": "Madrid",
+      "v": 2585.0
+     },
+     {
+      "territorio": "Sevilla",
+      "v": 1572.0
+     },
+     {
+      "territorio": "Granada",
+      "v": 727.0
+     },
+     {
+      "territorio": "Córdoba",
+      "v": 685.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 390.0
+     },
+     {
+      "territorio": "Almería",
+      "v": 343.0
+     },
+     {
+      "territorio": "Barcelona",
+      "v": 338.0
+     },
+     {
+      "territorio": "Jaén",
+      "v": 205.0
+     },
+     {
+      "territorio": "Huelva",
+      "v": 203.0
+     },
+     {
+      "territorio": "Alicante",
+      "v": 140.0
+     },
+     {
+      "territorio": "Vizcaya",
+      "v": 105.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 104.0
+     },
+     {
+      "territorio": "Murcia",
+      "v": 90.0
+     },
+     {
+      "territorio": "Valencia",
+      "v": 77.0
+     }
+    ],
+    "2020": [
+     {
+      "territorio": "Cádiz",
+      "v": 6720.0
+     },
+     {
+      "territorio": "Madrid",
+      "v": 3115.0
+     },
+     {
+      "territorio": "Sevilla",
+      "v": 1874.0
+     },
+     {
+      "territorio": "Granada",
+      "v": 903.0
+     },
+     {
+      "territorio": "Córdoba",
+      "v": 874.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 517.0
+     },
+     {
+      "territorio": "Barcelona",
+      "v": 299.0
+     },
+     {
+      "territorio": "Jaén",
+      "v": 296.0
+     },
+     {
+      "territorio": "Murcia",
+      "v": 107.0
+     },
+     {
+      "territorio": "Huelva",
+      "v": 106.0
+     },
+     {
+      "territorio": "Almería",
+      "v": 89.0
+     },
+     {
+      "territorio": "Alicante",
+      "v": 75.0
+     },
+     {
+      "territorio": "Vizcaya",
+      "v": 53.0
+     },
+     {
+      "territorio": "Valencia",
+      "v": 46.0
+     },
+     {
+      "territorio": "Ciudad Real",
+      "v": 42.0
+     }
+    ],
+    "2021": [
+     {
+      "territorio": "Madrid",
+      "v": 4671.0
+     },
+     {
+      "territorio": "Cádiz",
+      "v": 4328.0
+     },
+     {
+      "territorio": "Sevilla",
+      "v": 1985.0
+     },
+     {
+      "territorio": "Granada",
+      "v": 1057.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 896.0
+     },
+     {
+      "territorio": "Córdoba",
+      "v": 652.0
+     },
+     {
+      "territorio": "Barcelona",
+      "v": 441.0
+     },
+     {
+      "territorio": "Jaén",
+      "v": 410.0
+     },
+     {
+      "territorio": "Almería",
+      "v": 303.0
+     },
+     {
+      "territorio": "Vizcaya",
+      "v": 253.0
+     },
+     {
+      "territorio": "Alicante",
+      "v": 162.0
+     },
+     {
+      "territorio": "Huelva",
+      "v": 146.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 101.0
+     },
+     {
+      "territorio": "Gipuzkoa",
+      "v": 84.0
+     },
+     {
+      "territorio": "Valencia",
+      "v": 74.0
+     }
+    ],
+    "2022": [
+     {
+      "territorio": "Cádiz",
+      "v": 5875.0
+     },
+     {
+      "territorio": "Madrid",
+      "v": 4760.0
+     },
+     {
+      "territorio": "Sevilla",
+      "v": 2270.0
+     },
+     {
+      "territorio": "Granada",
+      "v": 1438.0
+     },
+     {
+      "territorio": "Córdoba",
+      "v": 1014.0
+     },
+     {
+      "territorio": "Almería",
+      "v": 674.0
+     },
+     {
+      "territorio": "Barcelona",
+      "v": 559.0
+     },
+     {
+      "territorio": "Jaén",
+      "v": 469.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 369.0
+     },
+     {
+      "territorio": "Alicante",
+      "v": 360.0
+     },
+     {
+      "territorio": "Vizcaya",
+      "v": 315.0
+     },
+     {
+      "territorio": "Valencia",
+      "v": 201.0
+     },
+     {
+      "territorio": "Huelva",
+      "v": 180.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 130.0
+     },
+     {
+      "territorio": "Murcia",
+      "v": 120.0
+     }
+    ],
+    "2023": [
+     {
+      "territorio": "Cádiz",
+      "v": 5859.0
+     },
+     {
+      "territorio": "Madrid",
+      "v": 4937.0
+     },
+     {
+      "territorio": "Sevilla",
+      "v": 2238.0
+     },
+     {
+      "territorio": "Granada",
+      "v": 1172.0
+     },
+     {
+      "territorio": "Córdoba",
+      "v": 1061.0
+     },
+     {
+      "territorio": "Barcelona",
+      "v": 738.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 637.0
+     },
+     {
+      "territorio": "Almería",
+      "v": 469.0
+     },
+     {
+      "territorio": "Alicante",
+      "v": 352.0
+     },
+     {
+      "territorio": "Valencia",
+      "v": 321.0
+     },
+     {
+      "territorio": "Jaén",
+      "v": 305.0
+     },
+     {
+      "territorio": "Las Palmas",
+      "v": 149.0
+     },
+     {
+      "territorio": "Islas Baleares",
+      "v": 112.0
+     },
+     {
+      "territorio": "Vizcaya",
+      "v": 93.0
+     },
+     {
+      "territorio": "Coruña",
+      "v": 84.0
+     }
+    ],
+    "2024": [
+     {
+      "territorio": "Cádiz",
+      "v": 4965.0
+     },
+     {
+      "territorio": "Madrid",
+      "v": 4280.0
+     },
+     {
+      "territorio": "Sevilla",
+      "v": 1813.0
+     },
+     {
+      "territorio": "Barcelona",
+      "v": 757.0
+     },
+     {
+      "territorio": "Granada",
+      "v": 698.0
+     },
+     {
+      "territorio": "Córdoba",
+      "v": 693.0
+     },
+     {
+      "territorio": "Almería",
+      "v": 480.0
+     },
+     {
+      "territorio": "Alicante",
+      "v": 240.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 232.0
+     },
+     {
+      "territorio": "Valencia",
+      "v": 217.0
+     },
+     {
+      "territorio": "Huelva",
+      "v": 156.0
+     },
+     {
+      "territorio": "Vizcaya",
+      "v": 124.0
+     },
+     {
+      "territorio": "Jaén",
+      "v": 103.0
+     },
+     {
+      "territorio": "Murcia",
+      "v": 103.0
+     },
+     {
+      "territorio": "Gipuzkoa",
+      "v": 65.0
+     }
+    ],
+    "2025": [
+     {
+      "territorio": "Madrid",
+      "v": 3974.0
+     },
+     {
+      "territorio": "Cádiz",
+      "v": 3797.0
+     },
+     {
+      "territorio": "Sevilla",
+      "v": 1618.0
+     },
+     {
+      "territorio": "Granada",
+      "v": 1283.0
+     },
+     {
+      "territorio": "Córdoba",
+      "v": 1144.0
+     },
+     {
+      "territorio": "Barcelona",
+      "v": 468.0
+     },
+     {
+      "territorio": "Alicante",
+      "v": 382.0
+     },
+     {
+      "territorio": "Jaén",
+      "v": 362.0
+     },
+     {
+      "territorio": "Ceuta",
+      "v": 278.0
+     },
+     {
+      "territorio": "Valencia",
+      "v": 227.0
+     },
+     {
+      "territorio": "Almería",
+      "v": 203.0
+     },
+     {
+      "territorio": "Asturias",
+      "v": 194.0
+     },
+     {
+      "territorio": "Girona",
+      "v": 144.0
+     },
+     {
+      "territorio": "Murcia",
+      "v": 133.0
+     },
+     {
+      "territorio": "Pontevedra",
+      "v": 90.0
+     }
+    ]
+   }
+  },
+  "advertencia": "Contrastado mes a mes con la serie del INE que publica esta misma pestaña: el turismo NACIONAL coincide al entero en 71 de los 76 meses comunes —es el mismo dato redistribuido—, pero el INTERNACIONAL sale sistemáticamente entre 2,4 y 2,5 veces más alto. Son universos distintos, no un error de una de las dos. Por eso las cifras absolutas de internacional no se comparan con las del INE ni se encadenan con ellas: lo que aporta este informe es el REPARTO por territorio de origen, que el INE no baja de municipio.",
+  "contraste_ine": {
+   "meses_comparados": 76,
+   "nacional_coincide": 71,
+   "razon_internacional": 2.47
+  },
+  "fuente": "Big Data de Turismo y Planificación Costa del Sol · concentración en el territorio"
+ },
  "fuente": "Turismo y Planificación Costa del Sol (Diputación de Málaga) · Big Data",
  "url": "https://www.costadelsolmalaga.org/bigdata/",
  "ambito": "municipal",
- "actualizado": "2026-08-26T17:29:07Z"
+ "actualizado": "2026-08-31T11:56:30Z"
 }

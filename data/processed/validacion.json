@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-31T08:37:29Z",
+ "generado": "2026-08-31T11:56:30Z",
  "series_revisadas": 31,
  "series": [
   "atlas.edad_media",
@@ -35,6 +35,42 @@
   "sepe.paro"
  ],
  "incidencias": [
+  {
+   "serie": "migracion.saldo_total",
+   "tipo": "salto_anomalo",
+   "detalle": "2022 = 684.0 → 2023 = -69.0 (×-0.1)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "migracion.saldo_total",
+   "tipo": "salto_anomalo",
+   "detalle": "2023 = -69.0 → 2024 = 485.0 (×-7.0)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "cds.plazas_inscritas",
+   "tipo": "salto_anomalo",
+   "detalle": "2022-01 = 8670.0 → 2022-02 = 15258.0 (×1.8)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "cds.plazas_inscritas",
+   "tipo": "salto_anomalo",
+   "detalle": "2022-02 = 15258.0 → 2022-03 = 8878.0 (×0.6)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "cds.establecimientos_inscritos",
+   "tipo": "salto_anomalo",
+   "detalle": "2022-01 = 1010.0 → 2022-02 = 2057.0 (×2.0)",
+   "gravedad": "aviso"
+  },
+  {
+   "serie": "cds.establecimientos_inscritos",
+   "tipo": "salto_anomalo",
+   "detalle": "2022-02 = 2057.0 → 2022-03 = 1050.0 (×0.5)",
+   "gravedad": "aviso"
+  },
   {
    "serie": "demanda.turistas_extranjeros",
    "tipo": "salto_anomalo",
@@ -78,45 +114,9 @@
    "gravedad": "aviso"
   },
   {
-   "serie": "migracion.saldo_total",
-   "tipo": "salto_anomalo",
-   "detalle": "2022 = 684.0 → 2023 = -69.0 (×-0.1)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "migracion.saldo_total",
-   "tipo": "salto_anomalo",
-   "detalle": "2023 = -69.0 → 2024 = 485.0 (×-7.0)",
-   "gravedad": "aviso"
-  },
-  {
    "serie": "rta.acumulado_altas",
    "tipo": "salto_anomalo",
    "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "cds.plazas_inscritas",
-   "tipo": "salto_anomalo",
-   "detalle": "2022-01 = 8670.0 → 2022-02 = 15258.0 (×1.8)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "cds.plazas_inscritas",
-   "tipo": "salto_anomalo",
-   "detalle": "2022-02 = 15258.0 → 2022-03 = 8878.0 (×0.6)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "cds.establecimientos_inscritos",
-   "tipo": "salto_anomalo",
-   "detalle": "2022-01 = 1010.0 → 2022-02 = 2057.0 (×2.0)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "cds.establecimientos_inscritos",
-   "tipo": "salto_anomalo",
-   "detalle": "2022-02 = 2057.0 → 2022-03 = 1050.0 (×0.5)",
    "gravedad": "aviso"
   }
  ],

@@ -109,16 +109,22 @@
     /* Un selector en la cabecera para las tarjetas que muestran un corte de los
        datos (un año, una categoría) en lugar de una serie. La tarjeta sigue
        siendo la misma: cambia la spec, no la tarjeta. */
-    var control = c.control
-      ? '<label class="obs-card-ctrl"><span>' + esc(c.control.label || '') + '</span>' +
-          '<select class="obs-select" data-ctrl="' + id + '">' +
-            (c.control.opciones || []).map(function (o) {
-              return '<option value="' + esc(o.v) + '"' +
-                (String(o.v) === String(c.control.valor) ? ' selected' : '') + '>' +
-                esc(o.txt == null ? o.v : o.txt) + '</option>';
-            }).join('') +
-          '</select></label>'
-      : '';
+    /* Una tarjeta puede llevar más de un corte —el ámbito territorial y el año,
+       por ejemplo—. `control` sigue admitiendo uno solo por compatibilidad;
+       `controles` acepta la lista, y entonces la spec recibe un objeto con el
+       valor de cada uno en vez de un valor suelto. */
+    var controles = c.controles || (c.control ? [c.control] : []);
+    var control = controles.map(function (ctrl, n) {
+      return '<label class="obs-card-ctrl"><span>' + esc(ctrl.label || '') + '</span>' +
+        '<select class="obs-select" data-ctrl="' + id + '" data-ctrl-n="' + n + '"' +
+          (ctrl.id ? ' data-ctrl-id="' + esc(ctrl.id) + '"' : '') + '>' +
+          (ctrl.opciones || []).map(function (o) {
+            return '<option value="' + esc(o.v) + '"' +
+              (String(o.v) === String(ctrl.valor) ? ' selected' : '') + '>' +
+              esc(o.txt == null ? o.v : o.txt) + '</option>';
+          }).join('') +
+        '</select></label>';
+    }).join('');
     var chips = (c.chips || []).map(function (ch) {
       var cls = ch.tipo ? ' ' + ch.tipo : '';
       return '<span class="obs-chip' + cls + '">' + (ch.tipo === 'live' ? '<span class="dot"></span>' : '') + esc(ch.txt) + '</span>';
@@ -234,6 +240,12 @@
     pintadas[sec.id] = true;
 
     var res = sec.render ? sec.render(CFG.datos) : {};
+    /* Una tarjeta puede declararse condicionalmente —«esta solo si la fuente ha
+       traído datos»— y quedarse en null. Se descartan aquí y no en cada
+       observatorio, porque además el índice de esta lista es el que empareja
+       cada tarjeta con su nodo al dibujar las gráficas: un hueco descuadra
+       todas las que vienen detrás. */
+    if (res.cards) res.cards = res.cards.filter(Boolean);
     var html = '';
     if (sec.titulo || sec.desc) {
       html += '<div class="obs-section-head">' + (sec.titulo ? '<h2>' + esc(sec.titulo) + '</h2>' : '') +
@@ -265,15 +277,32 @@
       Obs.chart(plot, c.spec);
       /* El selector redibuja la misma tarjeta con otra spec; la vista de tabla y
          la descarga leen la spec del nodo, así que se actualizan solas. */
-      if (c.control && typeof c.control.spec === 'function') {
-        var sel = art.querySelector('select[data-ctrl]');
-        if (sel) sel.addEventListener('change', function () {
-          art.classList.remove('showing-table');
-          var wrap = art.querySelector('.obs-table-wrap');
-          if (wrap) wrap.innerHTML = '';
-          var btn = art.querySelector('.obs-card-tools button[data-act="tabla"]');
-          if (btn) btn.setAttribute('aria-pressed', 'false');
-          Obs.chart(plot, c.control.spec(sel.value));
+      var ctrls = c.controles || (c.control ? [c.control] : []);
+      var rehacer = (c.controles && typeof c.spec2 === 'function') ? c.spec2
+                  : (c.control && typeof c.control.spec === 'function') ? c.control.spec
+                  : null;
+      if (ctrls.length && rehacer) {
+        var selects = Array.prototype.slice.call(art.querySelectorAll('select[data-ctrl]'));
+        var leer = function () {
+          /* Con un solo selector se pasa el valor tal cual, que es lo que
+             esperan las tarjetas que ya existían. Con varios, un objeto
+             indexado por el `id` de cada control. */
+          if (!c.controles) return selects[0].value;
+          var v = {};
+          selects.forEach(function (s, i) {
+            v[ctrls[i].id || ('c' + i)] = s.value;
+          });
+          return v;
+        };
+        selects.forEach(function (sel) {
+          sel.addEventListener('change', function () {
+            art.classList.remove('showing-table');
+            var wrap = art.querySelector('.obs-table-wrap');
+            if (wrap) wrap.innerHTML = '';
+            var btn = art.querySelector('.obs-card-tools button[data-act="tabla"]');
+            if (btn) btn.setAttribute('aria-pressed', 'false');
+            Obs.chart(plot, rehacer(leer()));
+          });
         });
       }
     });

@@ -84,6 +84,16 @@
      No se usa el máximo absoluto: un único rascacielos de apartamentos dejaría
      el resto del municipio en el primer escalón de color. */
   var CALOR_PERCENTIL = 0.96;
+  /* Opacidad de la mancha cuando comparte mapa con los puntos. Baja lo justo
+     para que los círculos se despeguen del fondo; por debajo de esto la
+     densidad deja de leerse y la capa sobra. */
+  var CALOR_ATENUADO = 0.8;
+  /* Suelo del tope de densidad. Al acercarse, la mayoría de las celdas tienen
+     una sola vivienda y el percentil valdría 1: cada casa saldría como un punto
+     rojo saturado y la escala dejaría de significar nada. Con este suelo, de
+     cerca la mancha se lee como lo que es —dónde se agrupan— y no como un mapa
+     de chinchetas de colores. */
+  var CALOR_TOPE_MINIMO = 3;
 
   function esOscuro() {
     var t = document.documentElement.getAttribute('data-theme');
@@ -120,14 +130,19 @@
         '</div>' +
       '</div>') : '';
 
-    /* En modo automático no hay conmutador de capa: la vista la decide el zoom,
-       igual que en cualquier mapa de calor al uso. Un botón que ofrezca lo que
-       el mapa ya hace solo sirve para que el usuario se pregunte cuál elegir. */
-    var conmutador = cfg.modo === 'auto' ? '' :
-      '<div class="obs-segment" role="group">' +
-        '<button type="button" data-capa="puntos" aria-pressed="true">Puntos</button>' +
-        '<button type="button" data-capa="calor" aria-pressed="false">Calor</button>' +
-      '</div>';
+    /* Dos interruptores independientes, no un selector de una capa entre dos: la
+       densidad y los registros se pueden ver a la vez, y de hecho es lo normal
+       al mirar el detalle. El zoom los mueve solo mientras el usuario no los
+       toque; en cuanto los toca, manda él. */
+    var conmutador = cfg.capas === false ? '' :
+      '<label class="obs-map-f obs-map-fondo"><span>Capas</span>' +
+        '<span class="obs-segment obs-segment-multi" role="group">' +
+          '<button type="button" data-capa="calor" aria-pressed="true">' +
+            Obs.esc(cfg.calorBoton || 'Densidad') + '</button>' +
+          '<button type="button" data-capa="puntos" aria-pressed="false">' +
+            Obs.esc(cfg.puntosBoton || 'Registros') + '</button>' +
+        '</span>' +
+      '</label>';
 
     /* Fondo del mapa. Va aparte del conmutador de capas de datos: una cosa es
        cómo se pintan los datos y otra sobre qué se pintan. */
@@ -449,21 +464,29 @@
       if (!cargas.length) return 1;
       cargas.sort(function (a, b) { return a - b; });
       var ref = cargas[Math.min(cargas.length - 1, Math.floor(cargas.length * CALOR_PERCENTIL))];
-      /* Con muy pocos puntos el percentil vale 1 y todo saldría al rojo: el tope
-         nunca baja de 2, que es la densidad mínima que merece llamarse tal. */
-      return Math.max(2, ref);
+      return Math.max(CALOR_TOPE_MINIMO, ref);
     }
 
-    /* --- pintado --- */
-    /* Zoom a partir del cual el mapa deja de resumir y enseña cada registro.
-       Por debajo, con miles de puntos amontonados, lo único legible es la
-       densidad; por encima, lo que interesa es la vivienda concreta. */
+    /* --- pintado ---
+       Las dos capas son independientes y NO se excluyen. La densidad es la
+       lectura de conjunto y sigue diciendo algo por muy cerca que se mire —qué
+       parte de la urbanización concentra las viviendas—, así que quitarla al
+       acercarse deja al usuario sin la mitad de la información justo cuando
+       está mirando el detalle.
+
+       Lo que decide el zoom es solo si además aparece cada registro: de lejos,
+       con miles de puntos amontonados, lo único legible es la mancha. Ese
+       automatismo se puede sobrescribir con los dos conmutadores. */
     var ZOOM_DETALLE = cfg.zoomDetalle || 15;
     var automatico = cfg.modo === 'auto';
-    var capaActiva = automatico ? 'calor' : 'puntos';
+    var verCalor = true;
+    var verPuntos = !automatico;
+    /* Deja de mandar el zoom en cuanto el usuario toca el conmutador de puntos:
+       si no, el siguiente acercamiento le desharía la elección. */
+    var puntosManual = false;
 
-    function capaSegunZoom() {
-      return mapa.getZoom() >= ZOOM_DETALLE ? 'puntos' : 'calor';
+    function puntosSegunZoom() {
+      return mapa.getZoom() >= ZOOM_DETALLE;
     }
 
     function visibles() {
@@ -486,7 +509,7 @@
       var vs = visibles();
 
       cluster.clearLayers();
-      if (capaActiva === 'puntos') {
+      if (verPuntos) {
         var marcas = vs.map(marcador);
         if (agrupa) cluster.addLayers(marcas);
         else marcas.forEach(function (m) { cluster.addLayer(m); });
@@ -501,7 +524,7 @@
       if (calor) { mapa.removeLayer(calor); calor = null; }
       /* Leaflet.heat llama a getImageData sobre su propio lienzo: si la sección
          todavía está oculta el lienzo mide 0 y lanza una excepción. Se pospone. */
-      if (capaActiva === 'calor' && lienzo.offsetWidth > 0) {
+      if (verCalor && lienzo.offsetWidth > 0) {
         var z = mapa.getZoom();
         var ref = densidadDeReferencia(vs, z);
         calor = L.heatLayer(vs.map(function (p) {
@@ -519,6 +542,12 @@
           minOpacity: CALOR_SUELO,
           gradient: cfg.gradiente || CALOR
         }).addTo(mapa);
+        /* Con los puntos encima, la mancha pasa a ser fondo: a plena intensidad
+           se comería los círculos y no se distinguiría cuál es cuál. Se atenúa
+           por CSS sobre su lienzo, que es lo único que expone la librería. */
+        if (calor._canvas) {
+          calor._canvas.style.opacity = verPuntos ? CALOR_ATENUADO : 1;
+        }
         calorRef = ref;
         calorZoom = z;
       }
@@ -548,7 +577,7 @@
       var txt = '<b>' + Obs.fmt.num(vs.length) + '</b>' +
         (vs.length !== puntos.length ? ' de ' + Obs.fmt.num(puntos.length) : '') + unidad;
 
-      if (capaActiva === 'puntos' && mapa._loaded) {
+      if (verPuntos && mapa._loaded) {
         var b = mapa.getBounds();
         var enPantalla = vs.filter(function (p) { return b.contains([p.lat, p.lon]); }).length;
         if (enPantalla !== vs.length) {
@@ -556,7 +585,7 @@
         }
       }
       if (sinFecha) txt += ' <span class="obs-map-nota">(' + Obs.fmt.num(sinFecha) + ' sin fecha)</span>';
-      if (automatico && capaActiva === 'calor') {
+      if (automatico && !verPuntos && !puntosManual) {
         txt += ' <span class="obs-map-pista">acerca el mapa para ver cada ' +
           Obs.esc(cfg.unidadSingular || 'punto') + '</span>';
       }
@@ -603,26 +632,39 @@
         '</span>';
     }
 
-    function leyendaSegun(capa) {
-      cajaLeyenda.innerHTML = capa === 'calor' ? leyendaCalor() : leyendaCategorias();
+    /* Con las dos capas puestas hacen falta las dos leyendas: el color de la
+       mancha y el color del punto significan cosas distintas —densidad una,
+       tipología el otro— y sin decirlo se leerían como la misma escala. */
+    function leyenda() {
+      var partes = [];
+      if (verCalor) partes.push(leyendaCalor());
+      if (verPuntos) partes.push(leyendaCategorias());
+      cajaLeyenda.innerHTML = partes.filter(Boolean).join('');
       cajaLeyenda.style.display = cajaLeyenda.innerHTML ? '' : 'none';
     }
-    leyendaSegun('puntos');
 
-    /* --- conmutador de capa y reinicio --- */
-    /* Al acercarse o alejarse el mapa cambia solo de resumen a detalle. */
+    /* --- conmutadores de capa y reinicio --- */
+    /* Al acercarse aparecen los registros uno a uno; la mancha de densidad NO se
+       quita: sigue diciendo dónde se concentran dentro de lo que se está
+       mirando. Y en cualquier caso hay que rehacerla, porque su tope se calculó
+       para el zoom anterior y con otro la escala mentiría. */
     mapa.on('zoomend', function () {
-      var nueva = automatico ? capaSegunZoom() : capaActiva;
-      if (nueva !== capaActiva) {
-        capaActiva = nueva;
-        leyendaSegun(capaActiva);
-        pintar();
-        return;
+      var antes = verPuntos;
+      if (automatico && !puntosManual) verPuntos = puntosSegunZoom();
+      if (verPuntos !== antes) {
+        sincronizarBotones();
+        leyenda();
       }
-      /* Aunque no cambie de capa hay que rehacer el calor: su tope se calculó
-         para el zoom anterior y con otro la escala miente. */
-      if (capaActiva === 'calor' && calorZoom !== mapa.getZoom()) pintar();
+      if (verPuntos !== antes || (verCalor && calorZoom !== mapa.getZoom())) pintar();
     });
+
+    /* Deja los botones diciendo lo que de verdad se está viendo. */
+    function sincronizarBotones() {
+      var b = raiz.querySelector('[data-capa="calor"]');
+      if (b) b.setAttribute('aria-pressed', verCalor ? 'true' : 'false');
+      b = raiz.querySelector('[data-capa="puntos"]');
+      if (b) b.setAttribute('aria-pressed', verPuntos ? 'true' : 'false');
+    }
 
     raiz.querySelector('.obs-map-capas').addEventListener('click', function (ev) {
       var b = ev.target.closest('button');
@@ -650,11 +692,19 @@
       }
       var capa = b.getAttribute('data-capa');
       if (!capa) return;
-      capaActiva = capa;
-      raiz.querySelectorAll('[data-capa]').forEach(function (x) {
-        x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
-      });
-      leyendaSegun(capa);
+      /* Interruptores independientes, no un selector de una entre dos: las dos
+         capas se pueden ver a la vez, que es lo normal al mirar el detalle. */
+      if (capa === 'calor') {
+        /* Nunca las dos apagadas: quedaría un mapa vacío sin explicación. */
+        if (verCalor && !verPuntos) return;
+        verCalor = !verCalor;
+      } else {
+        if (verPuntos && !verCalor) return;
+        verPuntos = !verPuntos;
+        puntosManual = true;
+      }
+      sincronizarBotones();
+      leyenda();
       pintar();
     });
 
@@ -664,12 +714,13 @@
     mapa.on('resize', function () {
       var s = mapa.getSize();
       if ((!s.x || !s.y) && calor) { mapa.removeLayer(calor); calor = null; }
-      else if (s.x && s.y && capaActiva === 'calor' && !calor) pintar();
+      else if (s.x && s.y && verCalor && !calor) pintar();
     });
 
     encuadre();
-    if (automatico) capaActiva = capaSegunZoom();
-    leyendaSegun(capaActiva);
+    if (automatico) verPuntos = puntosSegunZoom();
+    sincronizarBotones();
+    leyenda();
     pintar();
 
     /* Al mostrarse la sección el lienzo pasa de 0 a su tamaño real: hay que

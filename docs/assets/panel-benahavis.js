@@ -98,8 +98,21 @@
     cds_vut:     { txt: 'Big Data Costa del Sol · viviendas turísticas', url: CDS + 'com1_tc-364273/viviendas-turisticas?mun=29023' },
     cds_oferta:  { txt: 'Big Data Costa del Sol · oferta de alojamiento', url: CDS + 'com1_tc-357992/oferta-alojamiento?mun=29023' },
     cds_precios: { txt: 'Big Data Costa del Sol · precios de alojamiento', url: CDS + 'com1_tc-461998/precios-hoteles?mun=29023' },
-    cds_empleo:  { txt: 'Big Data Costa del Sol · empleo turístico', url: CDS + 'com1_tc-357987/empleo-turismo?mun=29023' }
+    cds_empleo:  { txt: 'Big Data Costa del Sol · empleo turístico', url: CDS + 'com1_tc-357987/empleo-turismo?mun=29023' },
+    cds_origen:  { txt: 'Big Data Costa del Sol · concentración en el territorio',
+                   url: CDS + 'com1_tc-357993/concentracion-territorio?mun=29023' },
+    ieca_ficha:  { txt: 'IECA · SIMA, ficha municipal de Benahavís',
+                   url: 'https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023' }
   };
+
+  /* La ficha del IECA trae cada indicador con SU año: mezcla el padrón de 2025
+     con el censo de viviendas de 2021 y la superficie de 2019. No hay un «año de
+     la ficha», así que cada cifra se rotula con el suyo y nunca se presentan
+     juntas bajo una etiqueta temporal común. */
+  var fichaIECA = function () { return (D.demografia || {}).ficha_ieca || {}; };
+  var fv = function (clave) { var x = fichaIECA()[clave]; return x ? x.v : null; };
+  var fa = function (clave) { var x = fichaIECA()[clave]; return x ? x.anyo : null; };
+  var fcensura = function (clave) { var x = fichaIECA()[clave]; return x ? x.censura : null; };
 
   var MENSUAL = { txt: 'Mensual', tipo: 'live' };
   var ANUAL = { txt: 'Anual' };
@@ -198,6 +211,95 @@
     '</article>';
   }
 
+  /* Bloque de la ficha municipal del IECA. Son cifras de un solo año cada una
+     —no series—, así que la forma honesta de publicarlas es una tabla con su año
+     al lado, y no una gráfica que insinúe evolución donde no la hay. */
+  var GRUPOS_FICHA = [
+    { titulo: 'Territorio y poblamiento', filas: [
+      ['superficie_km2', 'Extensión superficial', 'km²', 2],
+      ['nucleos', 'Núcleos de población', '', 0],
+      ['poblacion_nucleos', 'Población en núcleos', 'hab.', 0],
+      ['poblacion_diseminados', 'Población en diseminados', 'hab.', 0],
+      ['variacion_10_anyos', 'Variación de la población en diez años', '%', 1]
+    ] },
+    { titulo: 'Movimiento natural y migraciones', filas: [
+      ['nacimientos', 'Nacimientos', '', 0],
+      ['defunciones', 'Defunciones', '', 0],
+      ['matrimonios', 'Matrimonios', '', 0],
+      ['inmigraciones', 'Inmigraciones', '', 0],
+      ['emigraciones', 'Emigraciones', '', 0]
+    ] },
+    { titulo: 'Vivienda y suelo', filas: [
+      ['viviendas_principales', 'Viviendas familiares principales', '', 0],
+      ['transacciones_usada', 'Compraventas de vivienda de segunda mano', '', 0],
+      ['transacciones_nueva', 'Compraventas de vivienda nueva', '', 0],
+      ['ibi_urbana_recibos', 'Recibos de IBI urbano', '', 0],
+      ['parcelas_edificadas', 'Parcelas catastrales edificadas', '', 0],
+      ['solares', 'Solares', '', 0]
+    ] },
+    { titulo: 'Consumo y equipamiento', filas: [
+      ['energia_total_mwh', 'Consumo de energía eléctrica', 'MWh', 0],
+      ['energia_residencial_mwh', 'Consumo de energía eléctrica residencial', 'MWh', 0],
+      ['turismos', 'Parque de turismos', '', 0],
+      ['hoteles', 'Hoteles', '', 0],
+      ['plazas_hoteles', 'Plazas hoteleras', '', 0]
+    ] },
+    { titulo: 'Actividad económica', filas: [
+      ['establecimientos', 'Establecimientos con actividad', '', 0],
+      ['est_sin_asalariados', 'Establecimientos sin asalariados', '', 0],
+      ['est_hasta_5', 'Establecimientos de hasta 5 asalariados', '', 0],
+      ['est_6_a_19', 'Establecimientos de 6 a 19 asalariados', '', 0],
+      ['est_20_y_mas', 'Establecimientos de 20 o más asalariados', '', 0],
+      ['tasa_paro', 'Tasa municipal de desempleo', '%', 1]
+    ] },
+    { titulo: 'Hacienda municipal y renta declarada', filas: [
+      ['presupuesto_ingresos', 'Presupuesto liquidado de ingresos', '€', 0],
+      ['presupuesto_gastos', 'Presupuesto liquidado de gastos', '€', 0],
+      ['ingresos_por_habitante', 'Ingresos por habitante', '€', 0],
+      ['gastos_por_habitante', 'Gastos por habitante', '€', 0],
+      ['declaraciones_irpf', 'Declaraciones de IRPF', '', 0],
+      ['renta_bruta_aeat', 'Renta bruta media declarada (AEAT)', '€', 0],
+      ['renta_disponible_aeat', 'Renta disponible media declarada (AEAT)', '€', 0]
+    ] }
+  ];
+
+  function bloqueFichaIECA() {
+    var ficha = fichaIECA();
+    if (!Object.keys(ficha).length) return '';
+    var cuerpo = GRUPOS_FICHA.map(function (g) {
+      var filas = g.filas.filter(function (f) { return ficha[f[0]]; }).map(function (f) {
+        var e = ficha[f[0]];
+        var valor = e.censura === 'secreto_estadistico'
+          ? '<span class="obs-chip warn">secreto estadístico</span>'
+          : e.censura ? '<span class="obs-map-nota">sin dato</span>'
+          : F.num(e.v, f[3]) + (f[2] ? ' ' + f[2] : '');
+        return '<tr><td style="text-align:left">' + f[1] + '</td>' +
+               '<td style="text-align:right">' + valor + '</td>' +
+               '<td style="text-align:right">' + (e.anyo || '—') + '</td></tr>';
+      }).join('');
+      if (!filas) return '';
+      return '<tr><th colspan="3" style="text-align:left">' + g.titulo + '</th></tr>' + filas;
+    }).join('');
+
+    return '<article class="obs-card span-2">' +
+      '<div class="obs-card-head"><div class="t"><h3>Ficha municipal del IECA</h3>' +
+        '<div class="cs">Treinta y siete indicadores que no publica ninguna otra fuente a escala municipal</div></div></div>' +
+      '<div class="obs-table-wrap completa">' +
+        '<table class="obs-table"><thead><tr>' +
+          '<th style="text-align:left">Indicador</th><th>Valor</th><th>Año</th>' +
+        '</tr></thead><tbody>' + cuerpo + '</tbody></table></div>' +
+      '<div class="obs-card-foot"><span class="obs-chip">Ficha municipal</span>' +
+        '<span>Fuente: <a href="' + FTE.ieca_ficha.url + '" target="_blank" rel="noopener">' +
+          FTE.ieca_ficha.txt + '</a></span>' +
+        '<span style="flex-basis:100%;font-style:italic">Cada indicador lleva su propio año porque la ficha ' +
+          'mezcla operaciones distintas: el padrón es de 2025, el censo de viviendas de 2021 y la superficie ' +
+          'de 2019. No hay «año de la ficha», y por eso no se presentan bajo una etiqueta común. Las celdas ' +
+          'marcadas como secreto estadístico no son ceros: hay dato, pero identificaría al titular. La renta ' +
+          'de la AEAT se calcula sobre declarantes y NO es comparable con la del Atlas del INE, que reparte ' +
+          'entre toda la población residente.</span>' +
+      '</div></article>';
+  }
+
   function seccionVUT() {
     var v = D.vut || {};
     var reg = v.registro || {}, mer = v.mercado || {};
@@ -253,6 +355,15 @@
         extra: [
           { label: 'Plazas inscritas', valor: plazasVUT },
           { label: 'Plazas por cada 100 habitantes', valor: poblacion ? plazasVUT / poblacion * 100 : null, formato: function (x) { return F.num(x, 1); } },
+        /* El denominador que le faltaba al censo: cuántas viviendas turísticas
+           hay por cada cien viviendas donde vive alguien todo el año. Es la
+           cifra que mide de verdad la presión, y no la que se calcula sobre
+           población, porque una vivienda turística no compite por habitantes:
+           compite por vivienda. */
+        { label: 'Viviendas turísticas por cada 100 viviendas principales' +
+                 (fa('viviendas_principales') ? ' (' + fa('viviendas_principales') + ')' : ''),
+          valor: fv('viviendas_principales') ? totalVUT / fv('viviendas_principales') * 100 : null,
+          formato: function (x) { return F.num(x, 1); } },
           { label: 'Anunciadas en portales (' + Obs.periodo(mer.mes_ultimo, 'mes') + ')', valor: (mer.ultimo || []).length }
         ]
       },
@@ -292,6 +403,7 @@
             limite: D.limite,
             unidadSingular: 'vivienda',
             calorEtiqueta: 'Densidad de viviendas turísticas',
+            calorBoton: 'Densidad', puntosBoton: 'Viviendas',
             /* El tamaño del punto son las plazas. Se recorta en 20 porque el RTA
                tiene cuatro registros de 188 a 342 plazas —complejos enteros
                inscritos como una sola vivienda— que, sin tope, saldrían como un
@@ -360,6 +472,35 @@
             series: [{ name: 'Precio por plaza', data: serieCDS.map(function (r) { return r.precio_plaza; }) }]
           }
         },
+        (fv('viviendas_principales') ? {
+          titulo: 'La vivienda turística dentro del parque residencial',
+          sub: 'Cuántas viviendas hay en Benahavís y de qué tipo',
+          chips: [{ txt: 'Ficha municipal' }], fuente: FTE.ieca_ficha, ancho: 'full',
+          nota: 'Las tres cifras salen de fuentes distintas y por eso no encajan como un reparto exacto, pero ' +
+                'juntas dicen lo esencial: en Benahavís hay muchas más viviendas que hogares. Los recibos de IBI ' +
+                'urbano (' + fa('ibi_urbana_recibos') + ') cuentan todo el parque construido; las viviendas ' +
+                'principales (censo de ' + fa('viviendas_principales') + ') solo aquellas donde alguien reside ' +
+                'todo el año. La diferencia es segunda residencia, vivienda vacía y vivienda turística.',
+          spec: {
+            type: 'barh', yFormat: 'num', xLabel: 'Parque de vivienda',
+            x: ['Viviendas turísticas inscritas en el RTA',
+                'Viviendas principales (censo ' + fa('viviendas_principales') + ')',
+                'Recibos de IBI urbano (' + fa('ibi_urbana_recibos') + ')'],
+            series: [{ name: 'Viviendas',
+                       data: [totalVUT, fv('viviendas_principales'), fv('ibi_urbana_recibos')] }]
+          }
+        } : null),
+        (fv('transacciones_usada') ? {
+          titulo: 'Compraventa de vivienda', sub: 'Transacciones inmobiliarias registradas en ' + fa('transacciones_usada'),
+          chips: [ANUAL], fuente: FTE.ieca_ficha,
+          nota: 'Casi todo el mercado es de segunda mano. Es un dato anual y de la ficha del IECA, no una serie: ' +
+                'sirve para dimensionar el año en curso, no para ver una tendencia.',
+          spec: {
+            type: 'barh', yFormat: 'num', xLabel: 'Tipo de vivienda',
+            x: ['Vivienda de segunda mano', 'Vivienda nueva'],
+            series: [{ name: 'Transacciones', data: [fv('transacciones_usada'), fv('transacciones_nueva')] }]
+          }
+        } : null),
         {
           titulo: 'Tamaño de las viviendas', sub: 'Inscripciones por tramo de plazas',
           chips: [{ txt: 'Censo' }], fuente: FTE.rta,
@@ -659,6 +800,39 @@
                 ]
               }
             },
+            (fv('nacimientos') ? {
+              titulo: 'De dónde sale el crecimiento',
+              sub: 'Altas y bajas de población en ' + fa('nacimientos'),
+              chips: [ANUAL], fuente: FTE.ieca_ficha, ancho: 'full',
+              nota: 'Puesto uno al lado del otro se ve que Benahavís no crece por nacimientos: llegan más de ' +
+                    'veinte veces más personas de las que nacen. El saldo que resulta —' +
+                    F.num((fv('inmigraciones') || 0) - (fv('emigraciones') || 0)) + ' por migración y ' +
+                    F.num((fv('nacimientos') || 0) - (fv('defunciones') || 0)) + ' por movimiento natural— ' +
+                    'coincide con el que publica el INE en la tarjeta anterior, que es la comprobación de que ' +
+                    'las dos fuentes están contando lo mismo.',
+              spec: {
+                type: 'barh', yFormat: 'num', xLabel: 'Concepto',
+                x: ['Inmigraciones', 'Emigraciones', 'Nacimientos', 'Defunciones'],
+                series: [{ name: 'Personas en ' + fa('nacimientos'),
+                           data: [fv('inmigraciones'), fv('emigraciones'),
+                                  fv('nacimientos'), fv('defunciones')] }]
+              }
+            } : null),
+            (fv('energia_total_mwh') ? {
+              titulo: 'Consumo de energía eléctrica', sub: 'Total del municipio y parte residencial, ' + fa('energia_total_mwh'),
+              chips: [ANUAL], fuente: FTE.ieca_ficha,
+              nota: 'El consumo es el proxy de presión que más se acerca al de agua, que es el que pedía el ' +
+                    'expediente y que exige convenio con Acosol. Este no: viene en la ficha del IECA. Lo que ' +
+                    'no es residencial —' + F.num((fv('energia_total_mwh') || 0) - (fv('energia_residencial_mwh') || 0)) +
+                    ' MWh— es actividad económica, alumbrado y servicios.',
+              spec: {
+                type: 'barh', yFormat: 'num', xLabel: 'Consumo',
+                x: ['Residencial', 'Resto (actividad y servicios)'],
+                series: [{ name: 'MWh en ' + fa('energia_total_mwh'),
+                           data: [fv('energia_residencial_mwh'),
+                                  (fv('energia_total_mwh') || 0) - (fv('energia_residencial_mwh') || 0)] }]
+              }
+            } : null),
             {
               titulo: 'Población bajo umbrales de ingreso', sub: 'Porcentaje por debajo de cada umbral, en euros por unidad de consumo',
               chips: [ANUAL], fuente: FTE.atlas_umbrales,
@@ -675,7 +849,8 @@
                 ]
               }
             }
-          ]
+          ],
+          extra: bloqueFichaIECA()
         };
       }
     },
@@ -793,6 +968,27 @@
           };
         }
 
+        /* --- origen del turismo, por el observatorio provincial ---
+           Es la única fuente que sube la procedencia de municipio a PROVINCIA y
+           COMUNIDAD AUTÓNOMA, que es como se habla del mercado nacional. Va en
+           tarjeta aparte de la del INE y no se mezcla con ella: contrastadas mes
+           a mes, la parte nacional es el mismo dato pero la internacional sale
+           2,5 veces más alta. */
+        var org = (D.costadelsol || {}).origen || {};
+        var ambitosOrg = Object.keys(org.por_ambito || {});
+        var anyosOrg = (org.anyos || []).slice().reverse();
+        function specOrigenBD(v) {
+          var filas = ((org.por_ambito || {})[v.ambito] || {})[v.anyo] || [];
+          filas = filas.slice(0, 12);
+          return {
+            type: 'barh', yFormat: 'num', xLabel: v.ambito,
+            x: filas.map(function (r) { return r.territorio; }),
+            series: [{ name: 'Turistas en ' + v.anyo, data: filas.map(function (r) { return r.v; }) }]
+          };
+        }
+        var origenBDInicial = { ambito: ambitosOrg.indexOf('Provincia') >= 0 ? 'Provincia' : ambitosOrg[0],
+                                anyo: anyosOrg[0] };
+
         /* --- procedencia nacional por año ---
            El pipeline ya guarda un ranking por año; si por lo que sea solo hay el
            acumulado —un año cuyo fichero de 30 MB expiró—, la tarjeta sigue
@@ -847,9 +1043,31 @@
                 spec: specOrigenes
               } : null,
               nota: 'La fuente resuelve el municipio de origen, no la provincia, y por eso encabezan la lista ' +
-                    'ciudades y no territorios. El año en curso va incompleto: solo suma los meses publicados.',
+                    'ciudades y no territorios. Para verlo por provincia o por comunidad autónoma, la tarjeta ' +
+                    'siguiente. El año en curso va incompleto: solo suma los meses publicados.',
               spec: specOrigenes(origenPorDefecto)
             },
+            (ambitosOrg.length ? {
+              titulo: 'Origen de los turistas, por territorio',
+              sub: 'Provincia, comunidad autónoma o país de procedencia',
+              chips: [ANUAL, EXPERIMENTAL], fuente: FTE.cds_origen, ancho: 'full',
+              controles: [
+                { id: 'ambito', label: 'Ver por',
+                  opciones: ambitosOrg.map(function (a) { return { v: a, txt: a }; }),
+                  valor: origenBDInicial.ambito },
+                { id: 'anyo', label: 'Año',
+                  opciones: anyosOrg.map(function (a) { return { v: a, txt: a }; }),
+                  valor: origenBDInicial.anyo }
+              ],
+              spec2: specOrigenBD,
+              nota: 'Del observatorio provincial, no del INE, y por eso va aparte. Contrastadas mes a mes las dos ' +
+                    'fuentes: el turismo nacional coincide al entero en 71 de los 76 meses comunes —es el mismo ' +
+                    'dato— pero el internacional sale aquí entre 2,4 y 2,5 veces más alto, con una razón muy ' +
+                    'estable en siete años. No es un error de ninguna de las dos: miden universos distintos. ' +
+                    'Lo que aporta esta tarjeta es el REPARTO por territorio, no la cifra absoluta, y es la única ' +
+                    'fuente que sube la procedencia de municipio a provincia y a comunidad autónoma.',
+              spec: specOrigenBD(origenBDInicial)
+            } : null),
             {
               titulo: 'Ocupación hotelera de la zona turística', sub: 'Costa del Sol (Málaga) — indicador sustitutivo',
               chips: [MENSUAL, SUPRA], fuente: FTE.eoh, ancho: 'full',

@@ -136,6 +136,37 @@
     };
   }
 
+  /* Unidad del eje de valor: una sola para todas sus marcas.
+     `abbr` decide por valor —a partir de 10.000 escribe «mil»—, y en un eje que
+     llega justo a esa cifra sale «10 mil» encima de «8.000»: la misma escala
+     rotulada en dos unidades. La unidad la fija el tope de los datos y se aplica
+     igual a todas las marcas. En las apiladas el tope es la suma de la columna,
+     no el mayor de las series. */
+  function unidadDe(spec) {
+    var tope = 0;
+    if (spec.type === 'stack') {
+      var primera = ((spec.series || [])[0] || {}).data || [];
+      primera.forEach(function (_, i) {
+        var col = 0;
+        spec.series.forEach(function (s) {
+          var v = (s.data || [])[i];
+          if (v != null && isFinite(v)) col += v;
+        });
+        if (Math.abs(col) > tope) tope = Math.abs(col);
+      });
+    } else {
+      (spec.series || []).forEach(function (s) {
+        (s.data || []).forEach(function (v) {
+          if (v != null && isFinite(v) && Math.abs(v) > tope) tope = Math.abs(v);
+        });
+      });
+    }
+    return tope >= 1e9 ? { div: 1e9, suf: ' MM' }
+         : tope >= 1e6 ? { div: 1e6, suf: ' M' }
+         : tope >= 2e4 ? { div: 1e3, suf: ' mil' }
+         : { div: 1, suf: '' };
+  }
+
   function ejeY(spec, T, fn) {
     /* Barras y áreas SIEMPRE desde cero: la longitud del rectángulo (o el área
        rellena) codifica la magnitud, y una base recortada la falsea. Las líneas
@@ -152,30 +183,7 @@
     });
     if (hayNegativos) cero = false;
 
-    /* Unidad del eje: una sola para todas las marcas.
-       `abbr` decide por valor —a partir de 10.000 escribe «mil»—, y en un eje que
-       llega justo a esa cifra sale «10 mil» encima de «8.000»: la misma escala
-       rotulada en dos unidades. La unidad la fija aquí el tope de los datos y se
-       aplica igual a todas las marcas. En las apiladas el tope es la suma de la
-       columna, no el mayor de las series. */
-    var tope = 0;
-    if (spec.type === 'stack') {
-      ((spec.series || [])[0] || {}).data && (spec.series[0].data || []).forEach(function (_, i) {
-        var col = 0;
-        spec.series.forEach(function (s) { var v = (s.data || [])[i]; if (v != null && isFinite(v)) col += v; });
-        if (Math.abs(col) > tope) tope = Math.abs(col);
-      });
-    } else {
-      (spec.series || []).forEach(function (s) {
-        (s.data || []).forEach(function (v) {
-          if (v != null && isFinite(v) && Math.abs(v) > tope) tope = Math.abs(v);
-        });
-      });
-    }
-    var unidad = tope >= 1e9 ? { div: 1e9, suf: ' MM' }
-               : tope >= 1e6 ? { div: 1e6, suf: ' M' }
-               : tope >= 2e4 ? { div: 1e3, suf: ' mil' }
-               : { div: 1, suf: '' };
+    var unidad = unidadDe(spec);
     return {
       type: 'value',
       name: spec.yLabel || '',
@@ -306,7 +314,10 @@
         tooltip: tooltip(spec, T, fn),
         legend: leyenda(spec, T, n, ss.map(function (x) { return x.name; })),
         xAxis: { type: 'value', axisLine: { show: false }, axisTick: { show: false },
-                 axisLabel: { color: T.mut, fontSize: 11, fontFamily: T.font, formatter: function (v) { return fmt.abbr(v); } },
+                 axisLabel: { color: T.mut, fontSize: 11, fontFamily: T.font,
+                              formatter: (function (u) {
+                                return function (v) { return fmt.num(v / u.div, 0) + u.suf; };
+                              })(unidadDe(spec)) },
                  splitLine: { lineStyle: { color: T.grid, width: 1, type: 'solid' } } },
         yAxis: { type: 'category', data: cats, inverse: true,
                  axisLine: { lineStyle: { color: T.axis } }, axisTick: { show: false },

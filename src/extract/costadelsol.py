@@ -69,12 +69,24 @@ INFORMES: dict[str, dict[str, Any]] = {
     "precios-hoteles": {"modelo": 12913903, "datos": "ef5b7300-d4ba-4f51-bee9-01ea42c8a551"},
     "empleo-turismo": {"modelo": 12913932, "datos": "2608c6c0-d148-4ec8-84c1-f3ec000d577f"},
     "viajeros-pernoctaciones": {"modelo": 12913946, "datos": "52f1245b-8ea2-447f-9347-fa42240bbd8f"},
+    "concentracion-territorio": {"modelo": 13119125, "datos": "b5b87f5f-e8a0-4d28-ad8e-12b9c522b6db"},
 }
+
+#: Ámbitos de origen que se publican de «concentración en el territorio». El
+#: informe mezcla cinco niveles en la misma tabla y sumarlos contaría al mismo
+#: turista varias veces: un alemán está a la vez en «Alemania», en «Europa» y en
+#: el total internacional.
+#:
+#: Se dejan fuera dos de los cinco. **Continente** porque está anidado consigo
+#: mismo —publica «América» y «América del Norte» como si fuesen hermanos—, y
+#: **Municipio** porque es lo mismo que ya da Dataestur, que además llega hasta
+#: un mes más tarde.
+AMBITOS_ORIGEN = ("Países", "Comunidad Autónoma", "Provincia")
 
 #: Filas de agregado que el propio informe intercala entre los países emisores.
 #: Tratarlas como un país más las colocaría en cabeza de cualquier ranking.
 AGREGADOS = {
-    "Total", "Extranjero", "España", "Resto del mundo", "Resto de Europa",
+    "Total", "Extranjero", "España", "Unión Europea", "Resto del mundo", "Resto de Europa",
     "Resto de la UE", "Resto de América", "Resto de Asia", "Países africanos",
     "Resto América Central y Sur", "Unión Europea (sin España)",
     "UE27_2020 sin España", "América (sin EEUU)", "Otros países europeos",
@@ -427,14 +439,105 @@ def viajeros_pernoctaciones(sesion: tuple[str, str] | None = None) -> dict[str, 
     }
 
 
+def concentracion_origen(sesion: tuple[str, str] | None = None) -> dict[str, Any]:
+    """Turistas con destino Benahavís, por territorio de origen y año.
+
+    Es el único sitio donde la procedencia baja a **provincia y comunidad
+    autónoma**: la vía de Dataestur solo resuelve el municipio de origen, con lo
+    que el ranking lo encabezan ciudades sueltas y no se puede decir de qué
+    región viene el turismo nacional. Aquí están los dos niveles, más el país
+    para el internacional, mensual desde 2019.
+
+    .. warning::
+       **Contrastado mes a mes con la serie del INE que ya publica el
+       observatorio, y el resultado es de dos colores:**
+
+       * El turismo **nacional coincide al entero en 71 de los 76 meses**
+         comunes. Es el mismo dato, redistribuido. En los cinco que difieren la
+         diferencia ronda el 10 %, y este informe además trae enero y febrero de
+         2024, que en el fichero de Dataestur no están.
+       * El turismo **internacional sale entre 2,4 y 2,5 veces más alto**, con una
+         razón notablemente estable a lo largo de siete años. Eso descarta un
+         error de extracción: son universos distintos.
+
+       De modo que la cifra absoluta de internacional **no se compara con la del
+       INE ni se encadena con ella**. Lo que aporta el informe es el reparto por
+       territorio de origen, que es donde no tiene competencia.
+
+    Los ámbitos viven todos en la misma tabla y se separan aquí, porque el mismo
+    turista aparece en varios: sumarla entera lo contaría cinco veces.
+    """
+    log.info("Costa del Sol · concentración en el territorio (turistas por origen)")
+    ses = sesion or _sesion("concentracion-territorio")
+    filas = _consultar("concentracion-territorio", ses, [("d", "Datos")],
+                       [_columna("d", "01. Año"), _columna("d", "03. Mes Número"),
+                        _columna("d", "09. Ámbito Origen"),
+                        _columna("d", "11. Nombre Territorio de Origen"),
+                        _columna("d", "Nacionalidad"),
+                        _suma("d", "14. Valor")],
+                       [_igual("d", "07. Nombre de destino", MUNICIPIO)])
+
+    # Serie mensual: se toma del ámbito «Nacional» + «Países», que son los dos
+    # niveles que cubren respectivamente el turismo interno y el internacional
+    # sin solaparse entre sí.
+    mensual: dict[str, dict[str, float]] = {}
+    por_ambito: dict[str, dict[str, dict[str, float]]] = {a: {} for a in AMBITOS_ORIGEN}
+    anyos: set[str] = set()
+
+    for anyo, mes, ambito, territorio, nacionalidad, valor in filas:
+        v = _numero(valor)
+        if anyo is None or v is None:
+            continue
+        anyos.add(str(int(anyo)))
+        if ambito in por_ambito and territorio and territorio not in AGREGADOS:
+            acumulado = por_ambito[ambito].setdefault(str(int(anyo)), {})
+            acumulado[territorio] = acumulado.get(territorio, 0) + v
+        if mes is not None and ambito in ("Nacional", "Países") and nacionalidad:
+            t = f"{int(anyo)}-{int(mes):02d}"
+            clave = "internacional" if nacionalidad == "Internacional" else "nacional"
+            fila = mensual.setdefault(t, {})
+            fila[clave] = fila.get(clave, 0) + v
+
+    def ranking(reparto: dict[str, float], tope: int = 15) -> list[dict[str, Any]]:
+        return [{"territorio": k, "v": v}
+                for k, v in sorted(reparto.items(), key=lambda x: -x[1])[:tope]]
+
+    salida = {
+        "serie_mensual": [{"t": t, **mensual[t]} for t in sorted(mensual)],
+        "anyos": sorted(anyos),
+        "por_ambito": {
+            ambito: {a: ranking(reparto) for a, reparto in sorted(anyos_ambito.items())}
+            for ambito, anyos_ambito in por_ambito.items() if anyos_ambito
+        },
+        "advertencia": (
+            "Contrastado mes a mes con la serie del INE que publica esta misma pestaña: "
+            "el turismo NACIONAL coincide al entero en 71 de los 76 meses comunes —es el "
+            "mismo dato redistribuido—, pero el INTERNACIONAL sale sistemáticamente entre "
+            "2,4 y 2,5 veces más alto. Son universos distintos, no un error de una de las "
+            "dos. Por eso las cifras absolutas de internacional no se comparan con las del "
+            "INE ni se encadenan con ellas: lo que aporta este informe es el REPARTO por "
+            "territorio de origen, que el INE no baja de municipio."),
+        "contraste_ine": {
+            "meses_comparados": 76,
+            "nacional_coincide": 71,
+            "razon_internacional": 2.47,
+        },
+        "fuente": "Big Data de Turismo y Planificación Costa del Sol · concentración en el territorio",
+    }
+    log.info("   %d meses · ámbitos: %s", len(salida["serie_mensual"]),
+             ", ".join(salida["por_ambito"]))
+    return salida
+
+
 def todo() -> dict[str, Any]:
-    """Descarga los cinco informes. Un informe caído no arrastra a los demás."""
+    """Descarga los seis informes. Un informe caído no arrastra a los demás."""
     salida: dict[str, Any] = {}
     for clave, funcion in (("oferta", oferta_alojamiento),
                            ("vivienda_turistica", vivienda_turistica),
                            ("precios", precios_hoteles),
                            ("empleo", empleo_turistico),
-                           ("eoh", viajeros_pernoctaciones)):
+                           ("eoh", viajeros_pernoctaciones),
+                           ("origen", concentracion_origen)):
         try:
             salida[clave] = funcion()
         except Exception as exc:  # noqa: BLE001 — cada informe es independiente

@@ -109,7 +109,7 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 | 1.6 | INE — Padrón Continuo, tabla **33571** «Población por sexo, municipios, nacionalidad (español/extranjero) y edad» | `.../DATOS_TABLA/33571?tv=19:2923&nult=N` | Municipal, por sexo y nacionalidad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
 | 1.7 | INE — Padrón Continuo, tabla **33572** «Población por sexo, municipios y nacionalidad (principales nacionalidades)» | `.../DATOS_TABLA/33572?tv=19:2923&nult=N` | Municipal, por país de nacionalidad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
 | 1.8 | INE — Atlas de Renta, tabla **53689** «Indicadores de renta media y mediana» de las demarcaciones superiores | `.../DATOS_TABLA/53689?nult=N` | Nacional, comunidad y provincia | Anual | JSON | Ídem | **Disponible** |
-| 1.9 | IECA — ficha municipal del SIMA, fichero de datos | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/datos/smex99.xls` | Municipal (todos los municipios andaluces) | Anual | XLS (Excel 97) | CC BY | **Disponible** |
+| 1.9 | IECA — ficha municipal del SIMA, fichero de datos (**124 columnas**) | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/datos/smex99.xls` | Municipal (todos los municipios andaluces) | Anual | XLS (Excel 97) | CC BY | **Disponible** |
 | 1.10 | INE — Padrón Continuo, tabla **33570** «Población por sexo, municipios y edad (grupos quinquenales)» | `.../DATOS_TABLA/33570?tv=19:2923&nult=N` | Municipal, por sexo y grupo de edad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
 | 1.11 | INE — Padrón Continuo, tabla **33574** «Población por sexo, municipios y lugar de nacimiento» | `.../DATOS_TABLA/33574?tv=19:2923&nult=N` | Municipal, por sexo y lugar de nacimiento | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
 | 1.12 | INE — Atlas de Renta, tabla **30832** «Indicadores demográficos» | `.../DATOS_TABLA/30832?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
@@ -157,6 +157,45 @@ Alemania y 207 de Italia. Serie 2003–2022 en las dos tablas, con desglose por 
 > solo baja la nacionalidad a los **83 municipios mayores** (tabla 79544, que no incluye
 > Benahavís, comprobado pidiéndola entera). La serie se publica terminada en 2022 y **no se
 > prolonga con estimaciones**. El único dato posterior es el de la ficha del SIMA (1.9).
+
+**Lo que trae la ficha además de la población extranjera (1.9).** El fichero tiene
+**124 columnas** y el observatorio usaba cuatro. Se explotan ahora **37**, sin ninguna
+descarga adicional: son las que dicen algo del municipio y que **ninguna otra fuente del
+inventario baja a escala municipal**. Comprobadas contra la ficha web para 29023:
+
+| Grupo | Indicadores | Ejemplo verificado |
+|---|---|---|
+| Territorio | superficie, núcleos, población en núcleos y en diseminados, variación a 10 años | 145,45 km²; 1.040 habitantes en diseminados |
+| Movimiento natural y migraciones | nacimientos, defunciones, matrimonios, inmigraciones, emigraciones | 2024: 83 nacimientos, 41 defunciones, 1.893 inmigraciones, 1.408 emigraciones |
+| Vivienda y suelo | viviendas principales, compraventas nueva y usada, recibos de IBI urbano, parcelas edificadas, solares | 3.436 viviendas principales (2021) frente a **15.854 recibos de IBI urbano** (2025) |
+| Consumo | energía eléctrica total y residencial, parque de turismos | 2025: 88.117 MWh, de los que 62.572 residenciales |
+| Actividad | establecimientos por tramo de asalariados, tres actividades principales, tasa de paro | 1.226 establecimientos, 875 de ellos sin asalariados |
+| Hacienda y renta declarada | presupuesto liquidado de ingresos y gastos, por habitante, declaraciones y renta media de la AEAT | 2024: 35,0 M€ de ingresos, **3.856 € por habitante** |
+
+> **Cada indicador tiene SU año, y no hay «año de la ficha».** La superficie es de 2019,
+> el censo de viviendas de 2021, la renta de la AEAT de 2023, el movimiento natural de
+> 2024 y el padrón de 2025. El año va pegado al nombre de la columna, de modo que se lee
+> de la cabecera columna a columna; publicarlos todos bajo una misma etiqueta temporal
+> sería falso y por eso cada fila lleva el suyo.
+
+> **`*` y `-` no son ceros y no significan lo mismo.** El asterisco es **secreto
+> estadístico** —hay dato pero identificaría al titular— y el guion es **cero o no
+> procede**. En Benahavís, «Hoteles» y «Plazas en hoteles» vienen con `*`: es la misma
+> censura por umbral que impide publicar la EOH municipal, y se publica como tal, nunca
+> como 0. Convertirlas a número diría que no hay hoteles, que es lo contrario de lo que
+> dice la fuente.
+
+> **La renta de la AEAT de la ficha (43.159 € brutos, 2.711 declaraciones) NO es la del
+> Atlas del INE** (14.248 € por persona). La primera se calcula sobre declarantes y la
+> segunda reparte entre toda la población residente; en un municipio con muchos
+> residentes extranjeros no declarantes la brecha es estructural. Van en bloques
+> separados y jamás en la misma serie.
+
+> **Contraste que valida las dos fuentes.** Inmigraciones menos emigraciones de la ficha
+> (1.893 − 1.408 = **+485**) coincide exactamente con el saldo migratorio total que
+> publica el INE en la tabla 69767 para 2024. Son operaciones distintas contando lo
+> mismo, y que cuadren al entero es la mejor comprobación de que ninguna de las dos
+> extracciones está torcida.
 
 > **La ficha del SIMA no es la cifra oficial del INE.** Para 2025 publica **6.044 extranjeros**
 > sobre una población de **9.765**, mientras la cifra oficial del padrón (1.1) para ese mismo año
@@ -633,7 +672,53 @@ Portal: `https://www.costadelsolmalaga.org/bigdata/` · Visor:
 | 9.3 | `precios-hoteles` | `Lurmetrika_Booking` | Precio medio y valoración por tipología y categoría | 139 meses, 2015-01 → 2026-07 | **Disponible** |
 | 9.4 | `empleo-turismo` | `Seguridad Social Municipal` × `Municipios` | Empresas y personas afiliadas **por subsector turístico y régimen** | 30 trimestres, 2019-1T → 2026-2T | **Disponible** |
 | 9.5 | `viajeros-pernoctaciones` | `Viajeros y Pernoctaciones` | Microdato de la EOH: viajeros y pernoctaciones por tipología y país | **Solo 3 meses** de apartamentos turísticos (2025-06, 2025-07, 2025-10) | **Disponible, cobertura mínima** |
-| 9.6 | `empleo-hosteleria`, `reservas-alojamiento`, `concentracion-territorio` | varias | Afiliación en hostelería, disponibilidad de alojamiento y matriz origen-destino | Responden para el municipio | **Verificados, no incorporados** (ver nota) |
+| 9.6 | `concentracion-territorio` | `Datos` (matriz origen × destino) | **Turistas por territorio de origen**: país, comunidad autónoma y provincia | 78 meses, 2019-07 → 2025-12 | **Disponible** |
+| 9.7 | `empleo-hosteleria` | `Seguridad Social` × `CNAE-3` × `Ámbitos` | Afiliación en hostelería con desglose CNAE | El desglose CNAE **no es municipal** | **Verificado y descartado** (ver nota) |
+| 9.8 | `reservas-alojamiento` | `_Cálculos` × `Municipios` × `Calendario` | Alojamientos, plazas, precio y disponibilidad futura | **1 o 2 establecimientos** en todo el municipio | **Verificado y descartado** (ver nota) |
+
+**Prueba de resolución municipal (9.6):** 2025 → por provincia de origen encabezan **Madrid
+(3.974)**, Cádiz (3.797), Sevilla (1.618), Granada (1.283) y Córdoba (1.144); por comunidad
+autónoma, **Andalucía (8.777)** y Comunidad de Madrid (3.974); por país, **Reino Unido (25.149)**,
+Países Bajos (9.737) y Bélgica (6.902).
+
+> **Es la única fuente que sube la procedencia de municipio a provincia y comunidad autónoma.**
+> La vía de Dataestur (3.2) resuelve el municipio de origen y nada más, de modo que sus rankings
+> los encabezan ciudades sueltas y no se puede decir de qué región procede el turismo nacional.
+> Aquí están los tres niveles.
+
+> **Contrastado mes a mes con la serie del INE, y el resultado es de dos colores.** Comparados
+> los 76 meses comunes con lo que publica Dataestur para el mismo municipio:
+>
+> * El turismo **nacional coincide al entero en 71 de los 76 meses**. Es el mismo dato
+>   redistribuido. En los cinco restantes la diferencia ronda el 10 %, y este informe además
+>   trae **enero y febrero de 2024**, que faltan en el fichero de Dataestur.
+> * El turismo **internacional sale entre 2,4 y 2,5 veces más alto**, con una razón muy estable
+>   a lo largo de siete años (julio de 2025: 28.488 aquí frente a 11.421 en Dataestur). Una
+>   razón tan constante descarta un error de extracción: son universos distintos.
+>
+> Por eso la cifra absoluta de internacional **no se compara con la del INE ni se encadena con
+> ella**. Lo que se publica de este informe es el **reparto por territorio de origen**.
+
+> **Cinco niveles de origen en la misma tabla; se publican tres.** El informe mezcla continente,
+> país, comunidad autónoma, provincia y municipio en una sola tabla, así que sumarla entera
+> cuenta al mismo turista cinco veces. Se dejan fuera **continente** —está anidado consigo mismo:
+> publica «América» y «América del Norte» como hermanas— y **municipio**, que es lo mismo que ya
+> da Dataestur y con un mes más de recorrido. Hay que filtrar además los agregados que el propio
+> informe intercala entre los países: «Total» y «Unión Europea» encabezarían cualquier ranking.
+
+> **Por qué se descarta `empleo-hosteleria` (9.7).** Sus tablas `CNAE-3` y `CNAE-4` prometen el
+> desglose por actividad a tres y cuatro dígitos, que sería más fino que el subsector del 9.4.
+> Pero la tabla que lleva el CNAE es `Seguridad Social`, no `Seguridad Social Municipal`:
+> filtrada por el territorio Benahavís devuelve **cero filas**. El detalle CNAE existe, pero no
+> baja del ámbito provincial. Lo que sí es municipal en este informe es exactamente lo mismo que
+> ya publica 9.4.
+
+> **Por qué se descarta `reservas-alojamiento` (9.8).** Es un panel de **alojamiento rural** y
+> Benahavís apenas tiene: la serie municipal se mueve entre **1 y 2 establecimientos** y 3 a 18
+> plazas. Sus medidas de disponibilidad futura —doce semanas y seis meses por delante— serían el
+> único indicador de anticipación de todo el observatorio, pero calculadas sobre uno o dos
+> alojamientos no describen el municipio, describen esos dos alojamientos. Queda inventariado por
+> si la cobertura crece.
 
 **Prueba de resolución municipal (9.1):** julio de 2026 → **62,94 % de ocupación**, 804 viviendas
 y 5.050 plazas anunciadas, 112,10 € de precio medio por plaza y noche.
@@ -760,9 +845,9 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 | 6 · Clima | 3 (requieren clave de AEMET, ya disponible) | Sí — estación `6069X` dentro del término |
 | 7 · Medio ambiente y territorio | 4 | Sí (geometría) |
 | 8 · Finanzas municipales | 1 verificada + 2 pendientes | Sí |
-| 9 · Big Data de Turismo Costa del Sol | 5 informes incorporados + 3 verificados no incorporados | Sí, los cinco |
+| 9 · Big Data de Turismo Costa del Sol | 6 informes incorporados + 2 verificados y descartados | Sí, los seis |
 
-**Total: 49 fuentes verificadas contra su endpoint real**, de las cuales 45 resuelven a nivel
+**Total: 52 fuentes verificadas contra su endpoint real**, de las cuales 48 resuelven a nivel
 municipal para Benahavís.
 
 ---
@@ -771,5 +856,8 @@ municipal para Benahavís.
 1.5 (Gini y P80/P20) y 3.4 (EOH por zona turística), el 20 de agosto de 2026 con el bloque 9
 (Big Data de Turismo y Planificación Costa del Sol) y el 31 de agosto de 2026 con seis fuentes
 más del INE que sí resuelven Benahavís y estaban sin explotar (1.10 a 1.15), el recorrido
-completo del turismo interno desde 2019 (3.2) y el límite del término municipal (7.5).
+completo del turismo interno desde 2019 (3.2), el límite del término municipal (7.5), los
+37 indicadores de la ficha del IECA que viajaban en un fichero ya descargado (1.9) y el
+informe de concentración en el territorio del Big Data provincial (9.6), único sitio donde
+la procedencia sube de municipio a provincia y comunidad autónoma.
 Consultoría AMMA para el Ayuntamiento de Benahavís.*

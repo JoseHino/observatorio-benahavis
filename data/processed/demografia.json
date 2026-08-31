@@ -3495,6 +3495,195 @@
   "fuente": "IECA · SIMA, ficha municipal (explotación propia del Padrón)",
   "advertencia": "Explotación del IECA, distinta de las cifras oficiales del INE: su población total no coincide con la del padrón oficial y las dos cifras no deben mezclarse en una misma serie."
  },
+ "ficha_ieca": {
+  "superficie_km2": {
+   "anyo": "2019",
+   "etiqueta": "Extensión superficial (Km2)",
+   "v": 145.45
+  },
+  "nucleos": {
+   "anyo": "2025",
+   "etiqueta": "Número de núcleos que componen el municipio",
+   "v": 6.0
+  },
+  "poblacion_nucleos": {
+   "anyo": "2025",
+   "etiqueta": "Población en núcleos",
+   "v": 8725.0
+  },
+  "poblacion_diseminados": {
+   "anyo": "2025",
+   "etiqueta": "Población en diseminados",
+   "v": 1040.0
+  },
+  "variacion_10_anyos": {
+   "anyo": "2024",
+   "etiqueta": "Variación relativa de la población en diez años (%)",
+   "v": 36.3
+  },
+  "nacimientos": {
+   "anyo": "2024",
+   "etiqueta": "Nacimientos",
+   "v": 83.0
+  },
+  "defunciones": {
+   "anyo": "2024",
+   "etiqueta": "Defunciones",
+   "v": 41.0
+  },
+  "matrimonios": {
+   "anyo": "2024",
+   "etiqueta": "Matrimonios",
+   "v": 29.0
+  },
+  "inmigraciones": {
+   "anyo": "2024",
+   "etiqueta": "Inmigraciones",
+   "v": 1893.0
+  },
+  "emigraciones": {
+   "anyo": "2024",
+   "etiqueta": "Emigraciones",
+   "v": 1408.0
+  },
+  "viviendas_principales": {
+   "anyo": "2021",
+   "etiqueta": "Viviendas familiares principales",
+   "v": 3436.0
+  },
+  "transacciones_nueva": {
+   "anyo": "2025",
+   "etiqueta": "Transacciones inmobiliarias. Vivienda nueva",
+   "v": 23.0
+  },
+  "transacciones_usada": {
+   "anyo": "2025",
+   "etiqueta": "Transacciones inmobiliarias. Vivienda segunda mano",
+   "v": 688.0
+  },
+  "ibi_urbana_recibos": {
+   "anyo": "2025",
+   "etiqueta": "IBI de naturaleza urbana. Número de recibos",
+   "v": 15854.0
+  },
+  "parcelas_edificadas": {
+   "anyo": "2025",
+   "etiqueta": "Número de parcelas catastrales: Parcelas edificadas",
+   "v": 2505.0
+  },
+  "solares": {
+   "anyo": "2025",
+   "etiqueta": "Número de parcelas catastrales: Solares",
+   "v": 1491.0
+  },
+  "energia_total_mwh": {
+   "anyo": "2025",
+   "etiqueta": "Consumo de energía eléctrica (MWh)",
+   "v": 88117.0
+  },
+  "energia_residencial_mwh": {
+   "anyo": "2025",
+   "etiqueta": "Consumo de energía eléctrica residencial (MWh)",
+   "v": 62572.0
+  },
+  "establecimientos": {
+   "anyo": "2024",
+   "etiqueta": "Total establecimientos",
+   "v": 1226.0
+  },
+  "est_sin_asalariados": {
+   "anyo": "2024",
+   "etiqueta": "Sin asalariados",
+   "v": 875.0
+  },
+  "est_hasta_5": {
+   "anyo": "2024",
+   "etiqueta": "Hasta 5 asalariados",
+   "v": 278.0
+  },
+  "est_6_a_19": {
+   "anyo": "2024",
+   "etiqueta": "Entre 6 y 19 asalariados",
+   "v": 47.0
+  },
+  "est_20_y_mas": {
+   "anyo": "2024",
+   "etiqueta": "De 20 y más asalariados",
+   "v": 26.0
+  },
+  "actividad_1": {
+   "anyo": "2024",
+   "etiqueta": "Actividad 1",
+   "v": "Sección L. Actividades inmobiliarias: 282"
+  },
+  "actividad_2": {
+   "anyo": "2024",
+   "etiqueta": "Actividad 2",
+   "v": "Sección F. Construcción: 255"
+  },
+  "actividad_3": {
+   "anyo": "2024",
+   "etiqueta": "Actividad 3",
+   "v": "Sección N. Actividades administrativas y servicios auxiliares: 128"
+  },
+  "hoteles": {
+   "anyo": "2025",
+   "etiqueta": "Hoteles",
+   "v": null,
+   "censura": "secreto_estadistico"
+  },
+  "plazas_hoteles": {
+   "anyo": "2025",
+   "etiqueta": "Plazas en hoteles",
+   "v": null,
+   "censura": "secreto_estadistico"
+  },
+  "presupuesto_ingresos": {
+   "anyo": "2024",
+   "etiqueta": "Presupuesto liquidado de ingresos (euros)",
+   "v": 35000326.0
+  },
+  "presupuesto_gastos": {
+   "anyo": "2024",
+   "etiqueta": "Presupuesto liquidado de gastos (euros)",
+   "v": 20036252.0
+  },
+  "ingresos_por_habitante": {
+   "anyo": "2024",
+   "etiqueta": "Ingresos por habitante (euros)",
+   "v": 3856.0
+  },
+  "gastos_por_habitante": {
+   "anyo": "2024",
+   "etiqueta": "Gastos por habitante (euros)",
+   "v": 2207.0
+  },
+  "declaraciones_irpf": {
+   "anyo": "2023",
+   "etiqueta": "Número de declaraciones",
+   "v": 2711.0
+  },
+  "renta_bruta_aeat": {
+   "anyo": "2023",
+   "etiqueta": "Renta bruta media",
+   "v": 43159.0
+  },
+  "renta_disponible_aeat": {
+   "anyo": "2023",
+   "etiqueta": "Renta disponible media",
+   "v": 33539.0
+  },
+  "tasa_paro": {
+   "anyo": "2025",
+   "etiqueta": "Tasa municipal de desempleo (%)",
+   "v": 5.8
+  },
+  "turismos": {
+   "anyo": "2025",
+   "etiqueta": "Parque de vehículos. Turismos",
+   "v": 6675.0
+  }
+ },
  "renta": {
   "renta_neta_persona": [
    {
@@ -7264,7 +7453,7 @@
    }
   ]
  },
- "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad (tablas 33571 y 33572), por edad (33570) y por lugar de nacimiento (33574), Atlas de Distribución de Renta de los Hogares (tablas 30824, 53689, 30825, 30826, 30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de Migraciones y Cambios de Residencia (tabla 69767) · IECA/SIMA para la población extranjera posterior a 2022",
+ "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad (tablas 33571 y 33572), por edad (33570) y por lugar de nacimiento (33574), Atlas de Distribución de Renta de los Hogares (tablas 30824, 53689, 30825, 30826, 30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de Migraciones y Cambios de Residencia (tabla 69767) · IECA/SIMA, ficha municipal completa (población extranjera posterior a 2022, movimiento natural, vivienda, consumo eléctrico y presupuesto)",
  "ambito": "municipal",
- "actualizado": "2026-08-31T08:34:58Z"
+ "actualizado": "2026-08-31T11:56:30Z"
 }

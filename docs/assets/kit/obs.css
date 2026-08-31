@@ -214,7 +214,13 @@ h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -.015em; }
 /* --------------------------------------------- 10. Tabla (relieve obligatorio) */
 /* La paleta clara tiene 3 slots por debajo de 3:1 de contraste: la regla de
    relieve exige que SIEMPRE exista vista de tabla. Por eso va en el kit. */
-.obs-table-wrap { display: none; padding: 4px 17px 14px; overflow-x: auto; max-height: 330px; }
+/* `overflow-x` sola recortaba las tablas largas contra el max-height sin dejar
+   barra vertical: la vista de tabla de una serie de cien meses se cortaba por la
+   mitad y no había forma de llegar al resto. */
+.obs-table-wrap { display: none; padding: 4px 17px 14px; overflow: auto; max-height: 330px; }
+/* Tabla que ES el contenido de la tarjeta, no la alternativa a una gráfica: se
+   lee entera y de un tirón, sin tope de alto. */
+.obs-table-wrap.completa { display: block; max-height: none; overflow-x: auto; }
 .obs-card.showing-table .obs-table-wrap { display: block; }
 .obs-card.showing-table .obs-plot { display: none; }
 table.obs-table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
@@ -302,6 +308,15 @@ table.obs-table tbody tr:hover { background: var(--surface-2); }
    decoración y nadie descubre que hay foto aérea. */
 .obs-map-fondo .obs-segment { padding: 3px; }
 .obs-map-fondo .obs-segment button { padding: 6px 13px; }
+/* Interruptores independientes: a diferencia del conmutador de fondo, aquí
+   pueden estar los dos encendidos, así que el estado apagado tiene que leerse
+   como apagado y no como "la otra opción". */
+.obs-segment-multi button[aria-pressed="false"] { opacity: .55; }
+.obs-segment-multi button[aria-pressed="true"]::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--brand); display: inline-block; margin-right: 6px;
+  vertical-align: middle;
+}
 .obs-map-cuenta { margin-left: auto; font-size: 12.5px; color: var(--ink-2); align-self: center; }
 .obs-map-cuenta b { font-size: 15px; color: var(--ink); }
 .obs-map-nota { color: var(--ink-mut); }

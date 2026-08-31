@@ -98,9 +98,16 @@ def bloque_demografia() -> dict[str, Any]:
 
     try:
         ieca_extranjeros = sima.poblacion_extranjera()
+        # El resto de la ficha viaja en el mismo fichero: 37 indicadores más que
+        # no cuestan una descarga adicional y que ninguna otra fuente del
+        # inventario da a escala municipal (transacciones de vivienda, consumo
+        # eléctrico, presupuesto liquidado, movimiento natural…).
+        ieca_ficha = sima.ficha_completa()
     except Exception as exc:  # noqa: BLE001 — cierra el hueco 2023-hoy, no es imprescindible
         log.warning("ficha del SIMA no disponible: %s", exc)
-        ieca_extranjeros = (leer_previo("demografia") or {}).get("extranjeros_ieca") or {}
+        previo_sima = leer_previo("demografia") or {}
+        ieca_extranjeros = previo_sima.get("extranjeros_ieca") or {}
+        ieca_ficha = previo_sima.get("ficha_ieca") or {}
 
     # Contexto territorial de la renta: misma operación del INE que la municipal,
     # de modo que la comparación es homogénea en definición, fuente y año.
@@ -155,6 +162,7 @@ def bloque_demografia() -> dict[str, Any]:
         "nacionalidad": nacionalidad,
         "nacionalidades": paises,
         "extranjeros_ieca": ieca_extranjeros,
+        "ficha_ieca": ieca_ficha,
         "renta": renta,
         "renta_contexto": renta_contexto,
         "desigualdad": desigualdad,
@@ -165,7 +173,8 @@ def bloque_demografia() -> dict[str, Any]:
                   "Atlas de Distribución de Renta de los Hogares (tablas 30824, 53689, 30825, "
                   "30826, 30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de "
                   "Migraciones y Cambios de Residencia (tabla 69767) · "
-                  "IECA/SIMA para la población extranjera posterior a 2022",
+                  "IECA/SIMA, ficha municipal completa (población extranjera posterior a "
+                  "2022, movimiento natural, vivienda, consumo eléctrico y presupuesto)",
         "ambito": "municipal",
         "actualizado": SELLO,
     }
