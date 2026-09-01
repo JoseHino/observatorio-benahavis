@@ -102,13 +102,13 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 | # | Organismo · operación | Endpoint verificado | Granularidad | Periodicidad | Formato | Licencia | Estado |
 |---|---|---|---|---|---|---|---|
 | 1.1 | INE — Cifras oficiales de población (Padrón), tabla **2882** «Málaga: población por municipios y sexo» | `https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/2882?nult=N` | Municipal, por sexo | Anual (1 de enero) | JSON | Reutilización libre citando al INE | **Disponible** |
-| 1.2 | INE — Atlas de Distribución de Renta de los Hogares, tabla **30824** | `.../DATOS_TABLA/30824?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
+| 1.2 | INE — Atlas de Distribución de Renta de los Hogares, tabla **30824** | `.../DATOS_TABLA/30824?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible, no explotada** — las rentas medias del panel salen de 1.16 |
 | 1.3 | INE — unidades territoriales (distritos y secciones de Benahavís) | `.../VALORES_GRUPOSTABLA/30824/90487` | Sección censal | — | JSON | Ídem | **Disponible** |
 | 1.4 | IECA — ficha municipal SIMA 29023 | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023` | Municipal | Anual | HTML | CC BY | **Disponible** (extracción HTML) |
 | 1.5 | INE — Atlas de Renta, **índice de Gini y distribución de la renta P80/P20**, tabla **37677** | `.../DATOS_TABLA/37677?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
 | 1.6 | INE — Padrón Continuo, tabla **33571** «Población por sexo, municipios, nacionalidad (español/extranjero) y edad» | `.../DATOS_TABLA/33571?tv=19:2923&nult=N` | Municipal, por sexo y nacionalidad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
 | 1.7 | INE — Padrón Continuo, tabla **33572** «Población por sexo, municipios y nacionalidad (principales nacionalidades)» | `.../DATOS_TABLA/33572?tv=19:2923&nult=N` | Municipal, por país de nacionalidad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
-| 1.8 | INE — Atlas de Renta, tabla **53689** «Indicadores de renta media y mediana» de las demarcaciones superiores | `.../DATOS_TABLA/53689?nult=N` | Nacional, comunidad y provincia | Anual | JSON | Ídem | **Disponible** |
+| 1.8 | INE — Atlas de Renta, tabla **53689** «Indicadores de renta media y mediana» de las demarcaciones superiores | `.../DATOS_TABLA/53689?nult=N` | Nacional, comunidad y provincia | Anual | JSON | Ídem | **Disponible, no explotada** — era el contexto territorial de 1.2 |
 | 1.9 | IECA — ficha municipal del SIMA, fichero de datos (**124 columnas**) | `https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/datos/smex99.xls` | Municipal (todos los municipios andaluces) | Anual | XLS (Excel 97) | CC BY | **Disponible** |
 | 1.10 | INE — Padrón Continuo, tabla **33570** «Población por sexo, municipios y edad (grupos quinquenales)» | `.../DATOS_TABLA/33570?tv=19:2923&nult=N` | Municipal, por sexo y grupo de edad | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
 | 1.11 | INE — Padrón Continuo, tabla **33574** «Población por sexo, municipios y lugar de nacimiento» | `.../DATOS_TABLA/33574?tv=19:2923&nult=N` | Municipal, por sexo y lugar de nacimiento | Anual | JSON | Ídem | **Disponible, serie cerrada en 2022** |
@@ -116,6 +116,7 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 | 1.13 | INE — Atlas de Renta, tabla **30825** «Distribución por fuente de ingresos» | `.../DATOS_TABLA/30825?tv=19:2923&nult=N` | Municipal y por sección censal | Anual | JSON | Ídem | **Disponible** |
 | 1.14 | INE — Atlas de Renta, tabla **30826** «Población con ingresos por unidad de consumo por debajo de umbrales absolutos» | `.../DATOS_TABLA/30826?tv=19:2923&nult=N` | Municipal, total y por sexo | Anual | JSON | Ídem | **Disponible** |
 | 1.15 | INE — Estadística de Migraciones y Cambios de Residencia (`EMCR`), tabla **69767** «Saldos por municipio, año, sexo y tipo de saldo» | `.../DATOS_TABLA/69767?tv=19:2923&nult=N` | Municipal, por sexo y tipo de saldo | Anual | JSON | Ídem | **Disponible** |
+| 1.16 | Datosmacro (Expansión) — **renta declarada por municipios**, que republica la Estadística de declarantes del IRPF de la AEAT (ver 5.1) | `https://datosmacro.expansion.com/mercado-laboral/renta/espana/municipios/andalucia/malaga/benahavis` | Municipal | Anual | HTML | Cita de Datosmacro y de la AEAT | **Disponible** (extracción HTML; es la fuente de la renta media del panel) |
 
 **Prueba de resolución municipal (1.1):** Padrón a 1 de enero de 2025 → **9.472 habitantes**
 (4.732 hombres / 4.740 mujeres). Series `DPOP13531`, `DPOP13532`, `DPOP13533`.
@@ -123,7 +124,38 @@ cuestión que un técnico de la Junta puede plantear en la defensa del expedient
 **Prueba de resolución municipal (1.2):** Atlas de Renta 2023 → renta neta media por persona
 **14.248 €**; renta neta media por hogar **37.268 €**; renta bruta media por persona
 **20.419 €**; renta bruta media por hogar **53.410 €**; mediana de renta por unidad de consumo
-**17.850 €**. Serie disponible desde 2015.
+**17.850 €**. Serie disponible desde 2015. Estas cifras **ya no se publican en el panel**: la
+renta media del observatorio pasó a 1.16, la estadística de declarantes del IRPF.
+
+**Prueba de resolución municipal (1.16):** ejercicio 2023 → renta bruta media **43.159 €**,
+renta bruta mediana **25.311 €**, **puesto 56 de España** y **puesto 1 de Andalucía**, con
+**9.077 habitantes** de referencia. Serie 2013–2023. Contraste del mismo año y misma tabla:
+Málaga capital **30.030 €**, Marbella **32.306 €**, Estepona **28.431 €**.
+
+> **Columna mal rotulada en 1.16 — verificado.** Datosmacro titula su segunda columna «Renta
+> Disponible», pero **no lo es**. Contrastada fila a fila contra la publicación original de la
+> AEAT —[«Posicionamiento de los municipios mayores de 1.000 habitantes por Renta bruta media»,
+> ejercicio 2023](https://sede.agenciatributaria.gob.es/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/irpfmunicipios/2023/jrubikf6b1df8fe9d9e1b349886f03cf541e3fd2e65dd05.html)—
+> corresponde a la **mediana de la renta bruta**. La AEAT publica cuatro columnas de importe en
+> este orden: renta bruta media, renta bruta mediana, renta disponible media y renta disponible
+> mediana. Para **Benahavís-29023** son `43.159 · 25.311 · 33.539 · 21.367`, y Datosmacro muestra
+> 43.159 y 25.311. En **Marbella-29069** son `32.306 · 22.281 · 25.912 · 19.048` y Datosmacro
+> muestra 32.306 y 22.281: el mismo desplazamiento. El observatorio publica esta serie **con su
+> nombre correcto, renta bruta mediana**. La renta disponible media sí figura, para el último año
+> y sin serie, en la ficha del SIMA (1.9): **33.539 € en 2023**, coincidente con la AEAT.
+
+> **Ámbito de 1.16.** Datosmacro publica esta estadística **solo con serie municipal**. Sus
+> páginas de provincia, comunidad autónoma y España contienen rankings de municipios, no una
+> serie agregada, y **no admiten parámetro de año** (`?anio=`, `?year=` y `?sc=` se ignoran y
+> devuelven siempre el último ejercicio). El único agregado nacional es una frase de la página
+> de rankings con la **renta bruta media de España del último ejercicio** —31.333 € en 2023,
+> **excluidos País Vasco y Navarra**, de hacienda foral—. Por eso el contexto territorial de la
+> renta se construye con otros municipios y no con Andalucía ni España.
+
+> **Lectura de la tabla de 1.16.** Las cifras se toman de los atributos `data-value` de las
+> celdas `td.numero` y `td.fecha`, no del texto visible, que trae separador de miles y `&nbsp;€`.
+> La cabecera declara `colspan=2` en «Renta Bruta» porque intercala una celda con la barra del
+> gráfico; filtrar por la clase `numero` ya la descarta.
 
 **Prueba de resolución municipal (1.5):** ejercicio 2023 → **índice de Gini 43,6** y
 **distribución P80/P20 = 4,0**, frente a 46,7 y 5,9 en 2016. Serie 2016–2023; el año 2015
@@ -136,12 +168,15 @@ figura en la tabla sin valor publicado y se descarta.
 > tabla de rentas medias (30824). Además, **el Gini se publica en escala 0–100**, no 0–1:
 > tratarlo como proporción da una desigualdad cien veces menor.
 
-> **Nota metodológica obligatoria.** El Atlas de Renta del INE y la Estadística de declarantes
-> del IRPF de la AEAT (fuente 5.1) **no son comparables** y darán cifras muy distintas para
-> Benahavís: el Atlas reparte la renta entre **toda la población residente**, mientras que la
-> AEAT la calcula sobre **declarantes**. En un municipio con alta proporción de residentes
-> extranjeros no declarantes en España, la brecha es estructural, no un error. Irán en gráficos
-> separados.
+> **Nota metodológica obligatoria.** El Atlas de Renta del INE (1.2) y la Estadística de
+> declarantes del IRPF de la AEAT (1.16 y 5.1) **no son comparables** y dan cifras muy distintas
+> para Benahavís: el Atlas reparte la renta entre **toda la población residente**, mientras que
+> la AEAT la calcula sobre **declarantes**. En 2023 la brecha es de 14.248 € frente a 43.159 €.
+> En un municipio con alta proporción de residentes extranjeros no declarantes en España, la
+> brecha es estructural, no un error. El observatorio publica **solo la de declarantes** para no
+> mantener dos definiciones de «renta media» a la vez; del Atlas conserva el Gini (1.5), la
+> fuente de ingresos (1.13), los umbrales (1.14) y los indicadores demográficos (1.12), que la
+> AEAT no publica.
 
 > **Aviso ECP.** La Estadística Continua de Población (operación `ECP`, 78 tablas) **no
 > desagrega por municipio**: sus tablas llegan a nivel nacional, de comunidad autónoma y de
@@ -196,6 +231,56 @@ inventario baja a escala municipal**. Comprobadas contra la ficha web para 29023
 > publica el INE en la tabla 69767 para 2024. Son operaciones distintas contando lo
 > mismo, y que cuadren al entero es la mejor comprobación de que ninguna de las dos
 > extracciones está torcida.
+
+#### El histórico de la ficha: BADEA, el banco de datos del propio IECA
+
+La ficha `smex99.xls` publica **un solo valor por variable**, el último. El histórico de esas
+mismas variables está en **BADEA**, y se explota con las consultas del árbol del SIMA
+(`badea/informe/anual?CodOper=b3_151&idNode=23204`, que devuelve el catálogo completo en JSON:
+**452 consultas** repartidas en seis áreas temáticas).
+
+| Consulta | Indicador | Desde |
+|---|---|---|
+| **39837** | Consumo de energía eléctrica por sectores | 2000 |
+| **24842** | Transacciones inmobiliarias según antigüedad de la vivienda | 2004 |
+| **22084** | Nacimientos, defunciones y crecimiento vegetativo por sexo | 1996 |
+| **22827** / **22637** | Inmigraciones y emigraciones por sexo | 2002 |
+| **1343** | Ingresos y gastos por habitante | 2000 |
+| **22587** | Empresas según tramo de empleo | 1998 |
+| **1231** | Parque de vehículos por tipo | 2000 |
+| **2517** | IBI de naturaleza urbana | 2000 |
+| **105037** | Renta bruta y disponible (AEAT) | 2013 |
+| **117646** / **117503** | Plazas y establecimientos de alojamiento turístico por tipo | 2010 |
+
+> **BADEA devuelve UN SOLO PERIODO por petición, y no hay forma de esquivarlo.** La dimensión
+> temporal va en posición de *página*. Comprobado uno por uno:
+> * una lista separada por comas (`D_TEMPORAL_0=181106,181087`) responde **`NO_DATA`**;
+> * dos identificadores sueltos responden **`SYSTEM_DATA`**;
+> * dejar el filtro vacío devuelve solo el último año;
+> * el parámetro `format` existe pero contesta **«Formato no disponible»** a `csv`, `xls`,
+>   `xlsx`, `px`, `tsv`, `xml`, `pcaxis` y `html`, así que tampoco hay descarga masiva;
+> * y poner la dimensión en posición de fila no cambia nada: la consulta 22587 ya la trae en
+>   fila y sigue devolviendo un año.
+>
+> La única vía es **pedir año a año**. Por eso el bloque va contra la ejecución anterior: en
+> régimen solo se descargan el año nuevo y el último publicado, que puede haberse revisado.
+
+> **Los identificadores de periodo parecen años pero no lo son.** La jerarquía temporal
+> (`jerarquia/2`, la misma para las doce consultas) numera de 19 en 19 desde 1900: el año 2000
+> es el identificador `1919` y el 1976 es el `1444`. Confundirlos hace que se pidan años que no
+> son los que se creen, y el fallo no salta porque la respuesta es válida.
+
+> **El calendario va de 1900 a 2070** —171 nodos— y BADEA no dice desde cuándo publica cada
+> indicador. La ventana de años se fija a mano por indicador: arrancar en 1900 serían 126
+> peticiones por serie para traer sobre todo vacíos.
+
+> **Cuidado con la fila de total.** Varias consultas la intercalan entre las categorías
+> (`TOTAL` en la de energía, `Total` en la de transacciones). Apilarla junto a sus componentes
+> duplica la magnitud, así que las tarjetas apiladas declaran explícitamente qué categorías
+> pintan.
+
+> **Concurrencia baja.** Con cinco hilos el servidor empieza a fallar la resolución de nombre;
+> con tres va estable. No es un límite documentado, es lo que se observa.
 
 > **La ficha del SIMA no es la cifra oficial del INE.** Para 2025 publica **6.044 extranjeros**
 > sobre una población de **9.765**, mientras la cifra oficial del padrón (1.1) para ese mismo año
@@ -443,7 +528,8 @@ Ramas no turísticas más relevantes: actividades inmobiliarias (418), construcc
 | # | Organismo · operación | Acceso | Granularidad | Periodicidad | Estado |
 |---|---|---|---|---|---|
 | 5.1 | AEAT — Estadística de declarantes del IRPF por municipios (EDM) | Páginas HTML por municipio bajo `.../sites/irpfmunicipios/{año}/` + conjunto en datos.gob.es | Municipal (>1.000 hab.) | Anual | **Disponible** (extracción HTML; URLs con hash no predecible → requiere resolución del índice) |
-| 5.2 | INE — Atlas de Renta (ver 1.2) | API Tempus3 | Municipal y sección censal | Anual | **Disponible** |
+| 5.2 | INE — Atlas de Renta (ver 1.2) | API Tempus3 | Municipal y sección censal | Anual | **Disponible, no explotada** para rentas medias |
+| 5.9 | Datosmacro (Expansión) — renta declarada por municipios (ver 1.16) | HTML | Municipal | Anual | **Disponible** — vía de acceso efectiva a 5.1 |
 | 5.3 | Ministerio de Hacienda — Deuda viva de las entidades locales | `https://www.hacienda.gob.es/cdi/sist financiacion y deuda/informacioneells/{AAAA}/deuda-viva-ayuntamientos-{AAAA}12.xlsx` | Municipal | Anual (a 31/12) | **Disponible** |
 | 5.4 | Ministerio de Hacienda — Periodo medio de pago a proveedores | `https://serviciostelematicosext.hacienda.gob.es/SGCIEF/PMP_NET/` | Municipal | Mensual/trimestral | **Pendiente** (aplicación web con formulario; sin descarga directa verificada) |
 | 5.5 | Ministerio de Hacienda — Presupuestos y liquidaciones de EELL | `https://serviciostelematicosext.hacienda.gob.es/SGCIEF/` | Municipal | Anual | **Pendiente** (misma limitación) |
@@ -455,6 +541,11 @@ Ramas no turísticas más relevantes: actividades inmobiliarias (418), construcc
 `29`, municipio `23`, confirmando la correspondencia de códigos.
 
 **Verificado (5.3):** patrón de URL estable comprobado para los ejercicios 2022, 2023 y 2024.
+
+**Verificado (5.9):** la tabla de Datosmacro resuelve el problema de 5.1 —las URL de la sede
+de la AEAT llevan un hash no predecible— sin resolver ningún índice: la ruta del municipio es
+legible y estable (`{ccaa}/{provincia}/{municipio}`) y trae la serie completa desde 2013 en
+una sola petición.
 
 ---
 
@@ -900,7 +991,7 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 
 | Bloque | Fuentes verificadas y automatizables | Con dato municipal real |
 |---|---|---|
-| 1 · Demografía y territorio | 15 | Sí |
+| 1 · Demografía y territorio | 15 + 12 series de BADEA | Sí |
 | 2 · Oferta turística | 4 | Sí |
 | 3 · Demanda y presión turística | 4 verificadas + 1 pendiente + 1 no disponible (3.4b) | Sí (3.1 y 3.2); 3.3 y 3.4 son proxies etiquetados |
 | 4 · Mercado de trabajo | 6 | Sí |
@@ -910,7 +1001,7 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 | 8 · Finanzas municipales | 1 verificada + 2 pendientes | Sí |
 | 9 · Big Data de Turismo Costa del Sol | 6 informes incorporados + 2 verificados y descartados | Sí, los seis |
 
-**Total: 54 fuentes verificadas contra su endpoint real**, de las cuales 50 resuelven a nivel
+**Total: 66 fuentes verificadas contra su endpoint real**, de las cuales 62 resuelven a nivel
 municipal para Benahavís.
 
 ---

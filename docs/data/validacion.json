@@ -1,6 +1,6 @@
 {
- "generado": "2026-09-01T07:29:21Z",
- "series_revisadas": 31,
+ "generado": "2026-09-01T08:47:39Z",
+ "series_revisadas": 27,
  "series": [
   "atlas.edad_media",
   "badea.autonomos",
@@ -24,12 +24,8 @@
   "padron.total",
   "renta.gini",
   "renta.p80_p20",
-  "renta.renta_bruta_hogar",
-  "renta.renta_bruta_persona",
-  "renta.renta_neta_hogar",
-  "renta.renta_neta_persona",
-  "renta.renta_uc_media",
-  "renta.renta_uc_mediana",
+  "renta.renta_bruta_media",
+  "renta.renta_bruta_mediana",
   "rta.acumulado_altas",
   "sepe.contratos",
   "sepe.paro"

@@ -4,10 +4,17 @@
 Cubre tres operaciones, todas verificadas contra el endpoint real para Benahavís:
 
 * ``DPOP`` tabla **2882** — Padrón municipal por sexo (Málaga).
-* ``ADRH`` tabla **30824** — Atlas de Distribución de Renta de los Hogares.
 * ``ADRH`` tabla **37677** — Índice de Gini y distribución de la renta P80/P20.
 * ``VTE`` tablas **39363** y **39366** — Viviendas turísticas y su peso sobre el
   parque residencial.
+
+.. note::
+   La **renta media del municipio** ya no sale de aquí. La tabla 30824 (Atlas de
+   Distribución de Renta de los Hogares) y la 53689 (mismo Atlas, demarcaciones
+   superiores) se retiraron del módulo cuando el observatorio pasó a tomar la renta
+   de Datosmacro —renta declarada de IRPF, ver :mod:`src.extract.datosmacro`—. De la
+   familia del Atlas siguen usándose las tablas de Gini, fuente de ingresos, umbrales
+   de ingreso e indicadores demográficos, que Datosmacro no publica.
 
 .. warning::
    El campo ``Fecha`` que devuelve Tempus3 viene expresado en hora de Madrid. Al
@@ -29,7 +36,6 @@ log = get_logger("extract.ine")
 BASE = "https://servicios.ine.es/wstempus/js/ES"
 
 TABLA_PADRON = "2882"
-TABLA_RENTA = "30824"
 #: El Atlas publica 54 tablas homónimas de Gini, una por demarcación. Solo la 37677
 #: contiene los municipios de Málaga: las contiguas devuelven una respuesta vacía
 #: para ``tv=19:2923``, de modo que el identificador no es intercambiable.
@@ -112,33 +118,6 @@ def padron(nult: int = 30) -> dict[str, Any]:
     return salida
 
 
-def atlas_renta(nult: int = 12) -> dict[str, list]:
-    """Indicadores de renta media y mediana del Atlas del INE para Benahavís.
-
-    Se usa el filtro ``tv`` sobre la variable territorial: la tabla 30824 cubre
-    todos los municipios de España, de modo que sin filtro la respuesta sería
-    inmanejable.
-    """
-    log.info("INE · Atlas de Renta (tabla %s, tv=%s)", TABLA_RENTA, INE_TV_MUNICIPIO)
-    crudo = _datos_tabla(TABLA_RENTA, nult=nult, tv=INE_TV_MUNICIPIO)
-    claves = {
-        "Renta neta media por persona": "renta_neta_persona",
-        "Renta neta media por hogar": "renta_neta_hogar",
-        "Media de la renta por unidad de consumo": "renta_uc_media",
-        "Mediana de la renta por unidad de consumo": "renta_uc_mediana",
-        "Renta bruta media por persona": "renta_bruta_persona",
-        "Renta bruta media por hogar": "renta_bruta_hogar",
-    }
-    salida: dict[str, list] = {}
-    for s in crudo:
-        nombre = s.get("Nombre", "")
-        for etiqueta, clave in claves.items():
-            if etiqueta in nombre:
-                salida[clave] = _serie(s)
-    log.info("   %d indicadores de renta", len(salida))
-    return salida
-
-
 def desigualdad(nult: int = 12) -> dict[str, list]:
     """Índice de Gini y distribución P80/P20 de Benahavís, serie anual.
 
@@ -212,8 +191,6 @@ def viviendas_turisticas(nult: int = 24) -> dict[str, Any]:
 TABLA_NACIONALIDAD = "33571"
 #: Padrón continuo: población por sexo, municipio y principales nacionalidades.
 TABLA_PAISES = "33572"
-#: Atlas de renta con las demarcaciones superiores (Nacional, comunidades y provincias).
-TABLA_RENTA_COMPARADA = "53689"
 #: DIRCE: empresas por municipio y grupo de actividad.
 TABLA_EMPRESAS = "4721"
 
@@ -321,34 +298,6 @@ def nacionalidades(nult: int = 25) -> dict[str, Any]:
         "por_anyo": por_anyo,
         "total_extranjeros": [{"t": a, "v": extranjeros[a]} for a in anyos],
     }
-
-
-def renta_comparada(nult: int = 15) -> dict[str, Any]:
-    """Renta neta media de España, Andalucía y la provincia de Málaga.
-
-    Sale de la **misma operación** que la renta municipal —el Atlas de
-    Distribución de Renta de los Hogares—, de modo que la comparación con
-    Benahavís es homogénea en definición, fuente y año de referencia. Es también
-    la cifra que republican los portales de datos macroeconómicos.
-    """
-    log.info("INE · Atlas de renta, demarcaciones superiores (tabla %s)", TABLA_RENTA_COMPARADA)
-    crudo = _datos_tabla(TABLA_RENTA_COMPARADA, nult=nult)
-    ambitos = {"Total Nacional": "espana", "Andalucía": "andalucia", "Málaga": "malaga"}
-    indicadores = {"Renta neta media por persona": "renta_neta_persona",
-                   "Renta neta media por hogar": "renta_neta_hogar"}
-    salida: dict[str, dict[str, list]] = {v: {} for v in ambitos.values()}
-    for s in crudo:
-        nombre = s.get("Nombre", "")
-        clave = ambitos.get(nombre.split(".")[0].strip())
-        if clave is None:
-            continue
-        for etiqueta, indicador in indicadores.items():
-            if etiqueta in nombre:
-                salida[clave][indicador] = _serie(s)
-    faltan = [k for k, v in salida.items() if not v.get("renta_neta_persona")]
-    if faltan:
-        log.warning("   sin renta por persona para: %s", ", ".join(faltan))
-    return salida
 
 
 def empresas(nult: int = 15) -> dict[str, Any]:

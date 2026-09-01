@@ -29,13 +29,34 @@ fuentes:
     licencia: Reutilización libre citando al INE como fuente
     tablas:
       padron:              {id: "2882",  periodicidad: anual,      filtro: nombre_serie}
-      atlas_renta:         {id: "30824", periodicidad: anual,      filtro: tv}
-      viviendas_turisticas:{id: "39363", periodicidad: semestral,  filtro: tv}
+      viviendas_turisticas: {id: "39363", periodicidad: semestral,  filtro: tv}
       vut_porcentaje:      {id: "39366", periodicidad: semestral,  filtro: tv}
     notas: >
       El campo Fecha viene en hora de Madrid; convertido a UTC desplaza la serie un mes.
       El periodo se construye siempre con Anyo y FK_Periodo.
       Sin el filtro tv, las tablas 39363 y 39366 devuelven las 24.621 series de España.
+
+  datosmacro:
+    organismo: Datosmacro (Expansión), que republica a la Agencia Tributaria
+    base: https://datosmacro.expansion.com/mercado-laboral/renta/espana/municipios
+    licencia: Cita obligatoria de Datosmacro y de la AEAT como fuente original
+    periodicidad: anual
+    municipio: andalucia/malaga/benahavis
+    contraste: [andalucia/malaga/malaga, andalucia/malaga/marbella, andalucia/malaga/estepona]
+    indicadores: [renta bruta media, renta bruta mediana, puesto nacional, puesto CCAA, población]
+    notas: >
+      Estadística de declarantes del IRPF: renta media POR DECLARANTE, no por persona
+      ni por hogar. No es comparable con el Atlas de Renta del INE, del que salían
+      antes estos indicadores. Excluye País Vasco y Navarra, de hacienda foral.
+      Solo hay serie histórica de ámbito MUNICIPAL: las páginas de provincia, comunidad
+      y España son rankings de municipios y no admiten parámetro de año. El único
+      agregado nacional es la renta bruta media del último ejercicio, en una frase de
+      la página de rankings. Por eso el contexto territorial se arma con municipios.
+      La tabla se lee de los atributos data-value, no del texto visible.
+      OJO: la columna que el portal rotula «Renta Disponible» es en realidad la MEDIANA de la
+      renta bruta. Verificado contra la publicación original de la AEAT: Benahavís 2023 =
+      43.159 (bruta media) · 25.311 (bruta mediana) · 33.539 (disponible media) · 21.367
+      (disponible mediana), y Datosmacro muestra 43.159 y 25.311. Se publica con su nombre real.
 
   openrta:
     organismo: Consejería de Turismo de la Junta de Andalucía

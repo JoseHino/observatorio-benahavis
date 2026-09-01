@@ -151,7 +151,7 @@ El pipeline no se detiene ni escribe datos de relleno.
 
 | Nº | Bloque | Salida | Notas |
 |----|--------|--------|-------|
-| 1 | Demografía y renta | `demografia.json` | Padrón (total, sexo y nacionalidad), Atlas de Renta con el contexto provincial, andaluz y nacional, e índice de Gini del INE; ficha del SIMA para la población extranjera posterior a 2022 |
+| 1 | Demografía y renta | `demografia.json` | Padrón (total, sexo y nacionalidad) e índice de Gini del INE; renta declarada de IRPF de Datosmacro (Benahavís, con Málaga, Marbella y Estepona de contraste); ficha del SIMA para la población extranjera posterior a 2022 |
 | 2 | Oferta turística | `oferta.json` | RTA georreferenciado e INE experimental, en gráficos separados |
 | 3 | Demanda turística | `demanda.json` | Posicionamiento móvil vía Dataestur (~30 MB por año) y EOH de la zona turística Costa del Sol, etiquetada como supramunicipal |
 | 4 | Mercado de trabajo | `trabajo.json` | SEPE y Seguridad Social; descarga **incremental** |

@@ -50,64 +50,83 @@
   estado: disponible
 
 - id: IND-REN-001
-  nombre: Renta neta media por persona
+  nombre: Renta bruta media declarada
   bloque: Demografía y territorio
-  fuente: INE — Atlas de Distribución de Renta de los Hogares
-  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
+  fuente: Datosmacro (Expansión) — republica la Estadística de los declarantes del IRPF de la AEAT
+  url_fuente: https://datosmacro.expansion.com/mercado-laboral/renta/espana/municipios/andalucia/malaga/benahavis
   ambito_territorial: municipal
   es_proxy: false
   granularidad_temporal: anual
   unidad: euros
   definicion: >
-    Renta neta media anual por habitante, calculada sobre el conjunto de la población
-    residente a partir de fuentes tributarias y del Padrón.
+    Renta media anual antes de impuestos y cotizaciones de los contribuyentes del IRPF
+    con domicilio fiscal en el municipio. Serie desde 2013.
   limitaciones: >
-    No es comparable con la Estadística de declarantes del IRPF de la AEAT, que se
-    calcula sobre declarantes y no sobre población. En Benahavís la divergencia entre
-    ambas es estructural por el peso de residentes no declarantes en España.
-    Se publica con dos años de retraso.
+    Calculada sobre DECLARANTES, no sobre el conjunto de la población: no es comparable
+    con la renta neta por persona ni por hogar del Atlas de Renta del INE, que era la
+    fuente anterior de este indicador. Excluye País Vasco y Navarra, de hacienda foral,
+    lo que afecta a los rankings y a la media nacional. En un municipio de 9.000
+    habitantes y renta muy concentrada, unos pocos declarantes mueven la media: la serie
+    oscila mucho más que la de los municipios grandes.
   estado: disponible
 
 - id: IND-REN-002
-  nombre: Renta neta media por hogar
+  nombre: Renta bruta mediana declarada
   bloque: Demografía y territorio
-  fuente: INE — Atlas de Distribución de Renta de los Hogares
-  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
-  ambito_territorial: municipal
-  es_proxy: false
-  granularidad_temporal: anual
-  unidad: euros
-  definicion: Renta neta media anual del conjunto de los hogares del municipio.
-  limitaciones: Las mismas que IND-REN-001.
-  estado: disponible
-
-- id: IND-REN-003
-  nombre: Renta bruta media por persona y por hogar
-  bloque: Demografía y territorio
-  fuente: INE — Atlas de Distribución de Renta de los Hogares
-  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
-  ambito_territorial: municipal
-  es_proxy: false
-  granularidad_temporal: anual
-  unidad: euros
-  definicion: Renta antes de deducciones, por habitante y por hogar.
-  limitaciones: Las mismas que IND-REN-001.
-  estado: disponible
-
-- id: IND-REN-004
-  nombre: Media y mediana de la renta por unidad de consumo
-  bloque: Demografía y territorio
-  fuente: INE — Atlas de Distribución de Renta de los Hogares
-  url_fuente: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/30824
+  fuente: Datosmacro (Expansión) — republica la Estadística de los declarantes del IRPF de la AEAT
+  url_fuente: https://datosmacro.expansion.com/mercado-laboral/renta/espana/municipios/andalucia/malaga/benahavis
   ambito_territorial: municipal
   es_proxy: false
   granularidad_temporal: anual
   unidad: euros
   definicion: >
-    Renta equivalente, que corrige el tamaño y la composición del hogar mediante la
-    escala de la OCDE modificada. La mediana es menos sensible que la media a los
-    valores extremos, relevante en un municipio con rentas muy dispares.
-  limitaciones: Las mismas que IND-REN-001.
+    Renta bruta del declarante que ocupa la posición central: la mitad de los
+    contribuyentes del municipio declara menos y la otra mitad, más. Leída contra
+    IND-REN-001 mide lo concentrada que está la renta.
+  limitaciones: >
+    Datosmacro rotula esta columna como «Renta Disponible», pero contrastada fila a fila
+    contra la publicación original de la AEAT es la MEDIANA de la renta bruta. Para
+    Benahavís en 2023 la AEAT publica 43.159 € de renta bruta media, 25.311 € de renta
+    bruta mediana, 33.539 € de renta disponible media y 21.367 € de renta disponible
+    mediana; Datosmacro muestra 43.159 y 25.311. La renta disponible NO está en esta
+    fuente: la cifra municipal más reciente está en la ficha del SIMA (`renta_disponible_aeat`).
+    Resto de limitaciones, las de IND-REN-001.
+  estado: disponible
+
+- id: IND-REN-003
+  nombre: Puesto del municipio en el ranking de renta
+  bloque: Demografía y territorio
+  fuente: Datosmacro (Expansión) — republica la Estadística de los declarantes del IRPF de la AEAT
+  url_fuente: https://datosmacro.expansion.com/mercado-laboral/renta/espana/municipios/andalucia/malaga/benahavis
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: puesto
+  definicion: >
+    Posición de Benahavís por renta bruta media entre los municipios de España y entre
+    los de Andalucía, en el mismo año de referencia.
+  limitaciones: >
+    El ranking solo incluye municipios de régimen común y de más de 1.000 habitantes.
+    Cuanto más bajo el número, más arriba la posición.
+  estado: disponible
+
+- id: IND-REN-004
+  nombre: Contexto territorial de la renta declarada
+  bloque: Demografía y territorio
+  fuente: Datosmacro (Expansión) — republica la Estadística de los declarantes del IRPF de la AEAT
+  url_fuente: https://datosmacro.expansion.com/mercado-laboral/renta/espana/municipios
+  ambito_territorial: municipal
+  es_proxy: false
+  granularidad_temporal: anual
+  unidad: euros
+  definicion: >
+    Misma renta declarada de Málaga capital, Marbella y Estepona, para leer la cifra de
+    Benahavís contra municipios de su entorno con idéntica definición y año.
+  limitaciones: >
+    Datosmacro NO publica serie histórica de provincia, comunidad ni España en esta
+    estadística: sus páginas de esos ámbitos son rankings de municipios y no admiten
+    parámetro de año. El único agregado nacional disponible es la renta bruta media de
+    España del último ejercicio, que se recoge como cifra suelta y no como serie.
   estado: disponible
 
 - id: IND-REN-005
@@ -121,7 +140,8 @@
   unidad: índice
   definicion: Medidas de desigualdad en la distribución de la renta del municipio.
   limitaciones: >
-    Reside en la tabla 37677, distinta de la 30824 de las rentas medias. El Atlas
+    Reside en la tabla 37677 del Atlas de Renta del INE, la única familia del Atlas
+    que sigue alimentando el observatorio tras pasar las rentas medias a Datosmacro. El Atlas
     publica 54 tablas homónimas, una por demarcación, y solo la 37677 contiene los
     municipios de Málaga: las contiguas responden vacío al filtro tv=19:2923. El
     Gini se publica en escala 0–100, no 0–1. El primer año de la serie (2015) viene
@@ -465,10 +485,12 @@
     Renta bruta media declarada por los contribuyentes del IRPF con domicilio fiscal en
     el municipio, para municipios de más de 1.000 habitantes.
   limitaciones: >
-    Calculada sobre DECLARANTES, no sobre población: no comparable con el Atlas de
-    Renta del INE. Publicada en páginas HTML con identificador no predecible, lo que
-    obliga a resolver el índice antes de la extracción.
-  estado: pendiente
+    Calculada sobre DECLARANTES, no sobre población. La sede de la AEAT la publica en
+    páginas HTML con identificador no predecible, lo que obliga a resolver el índice
+    antes de la extracción; por eso el observatorio la toma de Datosmacro, que la
+    republica con serie histórica por municipio.
+  estado: disponible
+  ver: IND-REN-001
 
 - id: IND-ECO-003
   nombre: Periodo medio de pago a proveedores

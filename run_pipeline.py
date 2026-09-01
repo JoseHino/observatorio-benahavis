@@ -26,7 +26,8 @@ from src.contexto import (
     MUNICIPIO, NOMBRE_PROVINCIA, VERSION,
 )
 from src.extract import (
-    aemet, badea, costadelsol, dataestur, eoh, hacienda, ine_tempus, openrta, sepe, sima,
+    aemet, badea, costadelsol, dataestur, datosmacro, eoh, hacienda, ine_tempus, openrta,
+    sepe, sima,
 )
 from src.extract import seguridad_social as ss
 from src.extract import visitantes as vis
@@ -76,7 +77,11 @@ def _bloque(nombre: str, clave: str, funcion: Callable[[], Any]) -> None:
 def bloque_demografia() -> dict[str, Any]:
     """Población empadronada y renta de los hogares."""
     padron = ine_tempus.padron()
-    renta = ine_tempus.atlas_renta()
+    # Renta declarada: Datosmacro republica la estadística de declarantes de IRPF de la
+    # AEAT, con serie municipal desde 2013 y un ejercicio más de recorrido que el Atlas
+    # del INE. Sustituye a `ine_tempus.atlas_renta()`: es renta por declarante, media y
+    # mediana, no renta neta por persona ni por hogar.
+    renta = datosmacro.renta()
 
     try:
         desigualdad = ine_tempus.desigualdad()
@@ -109,13 +114,23 @@ def bloque_demografia() -> dict[str, Any]:
         ieca_extranjeros = previo_sima.get("extranjeros_ieca") or {}
         ieca_ficha = previo_sima.get("ficha_ieca") or {}
 
-    # Contexto territorial de la renta: misma operación del INE que la municipal,
-    # de modo que la comparación es homogénea en definición, fuente y año.
+    # Contexto de la renta. Datosmacro solo publica serie histórica de ámbito municipal
+    # —sus páginas de provincia, comunidad y España son rankings de municipios, no
+    # series—, así que la comparación se hace contra otros municipios de la misma
+    # fuente: la capital provincial y los dos vecinos de la Costa del Sol Occidental.
     try:
-        renta_contexto = ine_tempus.renta_comparada()
+        renta_contexto = datosmacro.renta_contexto()
     except Exception as exc:  # noqa: BLE001 — indicador de contexto
-        log.warning("renta de las demarcaciones superiores no disponible: %s", exc)
+        log.warning("renta de los municipios de contraste no disponible: %s", exc)
         renta_contexto = (leer_previo("demografia") or {}).get("renta_contexto") or {}
+
+    # Única cifra agregada del portal: la renta bruta media nacional del último
+    # ejercicio. No es una serie y excluye País Vasco y Navarra (haciendas forales).
+    try:
+        renta_espana = datosmacro.referencia_espana()
+    except Exception as exc:  # noqa: BLE001 — referencia de lectura, no serie
+        log.warning("referencia nacional de renta no disponible: %s", exc)
+        renta_espana = (leer_previo("demografia") or {}).get("renta_espana") or {}
 
     # Indicadores que el INE sí publica para Benahavís y que estaban sin explotar.
     # Van en un solo bloque tolerante a fallos: son ampliación, no el esqueleto del
@@ -145,8 +160,9 @@ def bloque_demografia() -> dict[str, Any]:
     if ampliacion.get("atlas_demografia", {}).get("edad_media"):
         serie_temporal(INFORME, "atlas.edad_media",
                        ampliacion["atlas_demografia"]["edad_media"], minimo=20, maximo=60)
-    for clave, puntos in renta.items():
-        serie_temporal(INFORME, f"renta.{clave}", puntos, minimo=0, maximo=500000)
+    for clave in ("renta_bruta_media", "renta_bruta_mediana"):
+        if renta.get(clave):
+            serie_temporal(INFORME, f"renta.{clave}", renta[clave], minimo=0, maximo=500000)
     if desigualdad.get("gini"):
         serie_temporal(INFORME, "renta.gini", desigualdad["gini"], minimo=0, maximo=100)
     if desigualdad.get("p80_p20"):
@@ -165,16 +181,19 @@ def bloque_demografia() -> dict[str, Any]:
         "ficha_ieca": ieca_ficha,
         "renta": renta,
         "renta_contexto": renta_contexto,
+        "renta_espana": renta_espana,
         "desigualdad": desigualdad,
         "poblacion_actual": ultimo,
         **ampliacion,
         "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad "
                   "(tablas 33571 y 33572), por edad (33570) y por lugar de nacimiento (33574), "
-                  "Atlas de Distribución de Renta de los Hogares (tablas 30824, 53689, 30825, "
-                  "30826, 30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de "
+                  "Atlas de Distribución de Renta de los Hogares (tablas 30825, 30826 y "
+                  "30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de "
                   "Migraciones y Cambios de Residencia (tabla 69767) · "
                   "IECA/SIMA, ficha municipal completa (población extranjera posterior a "
-                  "2022, movimiento natural, vivienda, consumo eléctrico y presupuesto)",
+                  "2022, movimiento natural, vivienda, consumo eléctrico y presupuesto) · "
+                  "Datosmacro (Expansión), renta declarada por municipios, que republica la "
+                  "estadística de declarantes del IRPF de la AEAT",
         "ambito": "municipal",
         "actualizado": SELLO,
     }
@@ -379,6 +398,66 @@ def bloque_visitantes() -> dict[str, Any]:
     }
 
 
+# ---------------------------------------------------------------- Bloque 10
+#: Series anuales del SIMA que dan histórico a los indicadores de la ficha
+#: municipal del IECA. La ficha (``smex99.xls``) solo publica el último valor de
+#: cada variable; estas consultas de BADEA son las mismas variables con su serie.
+#:
+#: ``desde`` se fija a mano porque BADEA no dice a partir de qué año publica cada
+#: indicador y hay que pedirle año por año: empezar en 1900 serían 126 peticiones
+#: por indicador para traer sobre todo vacíos.
+SERIES_FICHA: dict[str, dict[str, Any]] = {
+    "energia":        {"consulta": 39837,  "desde": 2000},
+    "transacciones":  {"consulta": 24842,  "desde": 2004},
+    "movimiento":     {"consulta": 22084,  "desde": 1996},
+    "inmigraciones":  {"consulta": 22827,  "desde": 2002},
+    "emigraciones":   {"consulta": 22637,  "desde": 2002},
+    "presupuesto":    {"consulta": 1343,   "desde": 2000},
+    "empresas_tramo": {"consulta": 22587,  "desde": 1998},
+    "vehiculos":      {"consulta": 1231,   "desde": 2000},
+    "ibi":            {"consulta": 2517,   "desde": 2000},
+    "renta_aeat":     {"consulta": 105037, "desde": 2013},
+    "plazas_turismo": {"consulta": 117646, "desde": 2010},
+    "alojamientos":   {"consulta": 117503, "desde": 2010},
+}
+
+
+def bloque_ficha() -> dict[str, Any]:
+    """Histórico de los indicadores de la ficha municipal del IECA.
+
+    Es el bloque más lento del pipeline con diferencia: BADEA **solo devuelve un
+    periodo por petición** —no admite listas de periodos ni descarga masiva—, de
+    modo que cada indicador cuesta una llamada por año. Por eso todo va contra la
+    ejecución anterior: en régimen solo se descargan el año nuevo y el último, que
+    puede haberse revisado.
+    """
+    hoy = dt.date.today().year
+    previo = leer_previo("ficha") or {}
+    salida: dict[str, Any] = {}
+    for clave, cfg in SERIES_FICHA.items():
+        try:
+            salida[clave] = badea.serie_anual(cfg["consulta"], cfg["desde"], hoy,
+                                              previo=previo.get(clave), hilos=3)
+        except Exception as exc:  # noqa: BLE001 — un indicador caído no tumba el bloque
+            log.warning("serie «%s» (consulta %s) no disponible: %s",
+                        clave, cfg["consulta"], exc)
+            salida[clave] = previo.get(clave) or {}
+
+    con_datos = [k for k, v in salida.items() if (v or {}).get("anyos")]
+    log.info("   %d de %d series con histórico", len(con_datos), len(SERIES_FICHA))
+    return {
+        **salida,
+        "nota": ("Mismas variables que la ficha municipal del IECA, pero con su serie. "
+                 "La ficha (smex99.xls) solo publica el último valor de cada una; el "
+                 "histórico está en BADEA, el banco de datos del propio IECA, que "
+                 "obliga a pedir año por año."),
+        "fuente": "IECA · BADEA, consultas del Sistema de Información Multiterritorial "
+                  "de Andalucía (SIMA)",
+        "ambito": "municipal",
+        "actualizado": SELLO,
+    }
+
+
 # ---------------------------------------------------------------- Bloque 8
 def _tramo_mensual(puntos: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Devuelve el tramo final de la serie que ya tiene periodicidad mensual.
@@ -469,6 +548,7 @@ BLOQUES: dict[int, tuple[str, str, Callable[[], Any]]] = {
     7: ("Conteo de visitantes (Decreto 72/2017)", "visitantes", bloque_visitantes),
     8: ("Big Data de Turismo Costa del Sol", "costadelsol", bloque_costadelsol),
     9: ("Viviendas de uso turístico (censo y mapa)", "vut", bloque_vut),
+    10: ("Ficha municipal del IECA con histórico", "ficha", bloque_ficha),
 }
 
 

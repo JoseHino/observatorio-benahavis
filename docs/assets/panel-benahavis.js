@@ -50,7 +50,11 @@
   var CDS = 'https://www.costadelsolmalaga.org/bigdata/';
   var FTE = {
     padron:   { txt: 'INE · Padrón, tabla 2882', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=2882' },
-    renta:    { txt: 'INE · Atlas de renta, tablas 30824 y 53689', url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=53689' },
+    /* La renta declarada ya no sale del Atlas del INE: se toma de Datosmacro
+       (Expansión), que republica la estadística de declarantes del IRPF de la
+       AEAT. Enlaza a la ficha del propio municipio, no a la portada. */
+    renta:    { txt: 'Datosmacro (Expansión) · renta declarada de Benahavís (AEAT)',
+                url: 'https://datosmacro.expansion.com/mercado-laboral/renta/espana/municipios/andalucia/malaga/benahavis' },
     padron_nacionalidad: { txt: 'INE · Padrón por nacionalidad, tablas 33571 y 33572',
                 url: 'https://www.ine.es/jaxiT3/Tabla.htm?t=33572' },
     sima:     { txt: 'IECA · SIMA, ficha municipal de Benahavís',
@@ -101,6 +105,8 @@
     cds_empleo:  { txt: 'Big Data Costa del Sol · empleo turístico', url: CDS + 'com1_tc-357987/empleo-turismo?mun=29023' },
     cds_origen:  { txt: 'Big Data Costa del Sol · concentración en el territorio',
                    url: CDS + 'com1_tc-357993/concentracion-territorio?mun=29023' },
+    badea_sima:  { txt: 'IECA · BADEA, series del SIMA para Benahavís',
+                   url: 'https://www.juntadeandalucia.es/institutodeestadisticaycartografia/badea/informe/anual?CodOper=b3_151&idNode=23204' },
     ieca_ficha:  { txt: 'IECA · SIMA, ficha municipal de Benahavís',
                    url: 'https://www.juntadeandalucia.es/institutodeestadisticaycartografia/sima/ficha.htm?mun=29023' }
   };
@@ -229,9 +235,84 @@
     '</article>';
   }
 
+  /* ------------------------------------------------- Series de la ficha IECA -
+     Todas las consultas del SIMA vuelven con la misma forma —categorías × años ×
+     medidas—, así que la tarjeta se arma una vez y se declara con opciones en
+     vez de escribirse doce veces.
+
+     `serie` es el bloque tal cual lo deja el pipeline; `cat` elige y renombra las
+     categorías que se pintan, y `medida` cuál de las medidas, cuando hay varias. */
+  var FICHA_SERIES = function () { return D.ficha || {}; };
+
+  function hayFicha(clave) {
+    var b = FICHA_SERIES()[clave];
+    return !!(b && b.anyos && b.anyos.length);
+  }
+
+  /* Puntos de una categoría alineados con el eje, tomando la medida pedida. */
+  function serieFicha(bloque, categoria, medida) {
+    var filas = (bloque.serie || {})[categoria] || [];
+    var m = medida || (bloque.medidas || [])[0];
+    var mapa = {};
+    filas.forEach(function (f) { mapa[f.t] = f[m]; });
+    return (bloque.anyos || []).map(function (a) {
+      return mapa[a] == null ? null : mapa[a];
+    });
+  }
+
+  /**
+   * Tarjeta de una serie anual de la ficha del IECA.
+   * @param {string} clave  bloque dentro de ficha.json
+   * @param {Object} o  {titulo, sub, tipo, cat:[[categoría, rótulo, color]],
+   *                     medida, medidas:[[medida, rótulo]], yFormat, nota, ancho}
+   */
+  function tarjetaFicha(clave, o) {
+    var b = FICHA_SERIES()[clave];
+    if (!b || !b.anyos || !b.anyos.length) return null;
+
+    var series;
+    if (o.medidas) {
+      /* Varias medidas de la misma categoría: nacimientos y defunciones del
+         total, ingresos y gastos por habitante… */
+      var cat = o.categoria || (b.categorias || [])[0];
+      series = o.medidas.map(function (m) {
+        return { name: m[1], color: m[2], data: serieFicha(b, cat, m[0]) };
+      });
+    } else {
+      /* `fuera` quita categorías sin tener que enumerar las demás. Hace falta
+         porque casi todas estas consultas intercalan una fila «Total» que es la
+         suma de las otras: apilada junto a ellas duplica la magnitud. */
+      var fuera = o.fuera || [];
+      var lista = o.cat || (b.categorias || [])
+        .filter(function (c) { return fuera.indexOf(c) < 0; })
+        .map(function (c) { return [c, c]; });
+      series = lista
+        .filter(function (c) { return (b.serie || {})[c[0]]; })
+        .map(function (c) {
+          return { name: c[1], color: c[2], data: serieFicha(b, c[0], o.medida) };
+        });
+    }
+    if (!series.length) return null;
+
+    return {
+      titulo: o.titulo, sub: o.sub,
+      chips: [ANUAL], fuente: FTE.badea_sima, ancho: o.ancho,
+      nota: o.nota,
+      spec: {
+        type: o.tipo || 'line', xType: 'anual', xLabel: 'Año',
+        x: b.anyos, yFormat: o.yFormat || 'num',
+        yMax: o.yMax, series: series
+      }
+    };
+  }
+
   /* Bloque de la ficha municipal del IECA. Son cifras de un solo año cada una
      —no series—, así que la forma honesta de publicarlas es una tabla con su año
      al lado, y no una gráfica que insinúe evolución donde no la hay. */
+  /* Lo que queda en la tabla es lo que NO tiene serie: o porque no cambia
+     —la superficie del término—, o porque es un corte censal, o porque la
+     fuente lo censura. El resto de la ficha está repartido en gráficas por las
+     pestañas que le corresponden, y la nota del pie dice dónde. */
   var GRUPOS_FICHA = [
     { titulo: 'Territorio y poblamiento', filas: [
       ['superficie_km2', 'Extensión superficial', 'km²', 2],
@@ -240,45 +321,38 @@
       ['poblacion_diseminados', 'Población en diseminados', 'hab.', 0],
       ['variacion_10_anyos', 'Variación de la población en diez años', '%', 1]
     ] },
-    { titulo: 'Movimiento natural y migraciones', filas: [
-      ['nacimientos', 'Nacimientos', '', 0],
-      ['defunciones', 'Defunciones', '', 0],
-      ['matrimonios', 'Matrimonios', '', 0],
-      ['inmigraciones', 'Inmigraciones', '', 0],
-      ['emigraciones', 'Emigraciones', '', 0]
-    ] },
     { titulo: 'Vivienda y suelo', filas: [
-      ['viviendas_principales', 'Viviendas familiares principales', '', 0],
-      ['transacciones_usada', 'Compraventas de vivienda de segunda mano', '', 0],
-      ['transacciones_nueva', 'Compraventas de vivienda nueva', '', 0],
+      ['viviendas_principales', 'Viviendas familiares principales (censo)', '', 0],
       ['ibi_urbana_recibos', 'Recibos de IBI urbano', '', 0],
       ['parcelas_edificadas', 'Parcelas catastrales edificadas', '', 0],
       ['solares', 'Solares', '', 0]
     ] },
-    { titulo: 'Consumo y equipamiento', filas: [
-      ['energia_total_mwh', 'Consumo de energía eléctrica', 'MWh', 0],
-      ['energia_residencial_mwh', 'Consumo de energía eléctrica residencial', 'MWh', 0],
-      ['turismos', 'Parque de turismos', '', 0],
+    { titulo: 'Alojamiento reglado', filas: [
       ['hoteles', 'Hoteles', '', 0],
       ['plazas_hoteles', 'Plazas hoteleras', '', 0]
     ] },
-    { titulo: 'Actividad económica', filas: [
-      ['establecimientos', 'Establecimientos con actividad', '', 0],
-      ['est_sin_asalariados', 'Establecimientos sin asalariados', '', 0],
-      ['est_hasta_5', 'Establecimientos de hasta 5 asalariados', '', 0],
-      ['est_6_a_19', 'Establecimientos de 6 a 19 asalariados', '', 0],
-      ['est_20_y_mas', 'Establecimientos de 20 o más asalariados', '', 0],
-      ['tasa_paro', 'Tasa municipal de desempleo', '%', 1]
-    ] },
-    { titulo: 'Hacienda municipal y renta declarada', filas: [
+    { titulo: 'Actividad y hacienda', filas: [
+      ['matrimonios', 'Matrimonios', '', 0],
+      ['tasa_paro', 'Tasa municipal de desempleo', '%', 1],
+      ['actividad_1', 'Actividad económica principal', '', 0],
+      ['actividad_2', 'Segunda actividad', '', 0],
+      ['actividad_3', 'Tercera actividad', '', 0],
       ['presupuesto_ingresos', 'Presupuesto liquidado de ingresos', '€', 0],
-      ['presupuesto_gastos', 'Presupuesto liquidado de gastos', '€', 0],
-      ['ingresos_por_habitante', 'Ingresos por habitante', '€', 0],
-      ['gastos_por_habitante', 'Gastos por habitante', '€', 0],
-      ['declaraciones_irpf', 'Declaraciones de IRPF', '', 0],
-      ['renta_bruta_aeat', 'Renta bruta media declarada (AEAT)', '€', 0],
-      ['renta_disponible_aeat', 'Renta disponible media declarada (AEAT)', '€', 0]
+      ['presupuesto_gastos', 'Presupuesto liquidado de gastos', '€', 0]
     ] }
+  ];
+
+  /* Dónde ha ido a parar cada indicador de la ficha que sí tiene serie. */
+  var FICHA_EN_GRAFICAS = [
+    ['Nacimientos, defunciones y crecimiento vegetativo', 'poblacion'],
+    ['Inmigraciones y emigraciones', 'poblacion'],
+    ['Consumo de energía eléctrica por sector', 'poblacion'],
+    ['Parque de vehículos', 'poblacion'],
+    ['Compraventa de vivienda', 'vut'],
+    ['Plazas y establecimientos de alojamiento turístico', 'alojamiento'],
+    ['Empresas por tamaño', 'empleo'],
+    ['Presupuesto municipal por habitante', 'empleo'],
+    ['Renta declarada a la AEAT', 'empleo']
   ];
 
   function bloqueFichaIECA() {
@@ -301,7 +375,7 @@
 
     return '<article class="obs-card span-2">' +
       '<div class="obs-card-head"><div class="t"><h3>Ficha municipal del IECA</h3>' +
-        '<div class="cs">Treinta y siete indicadores que no publica ninguna otra fuente a escala municipal</div></div></div>' +
+        '<div class="cs">Lo que la ficha publica sin serie histórica</div></div></div>' +
       '<div class="obs-table-wrap completa">' +
         '<table class="obs-table"><thead><tr>' +
           '<th style="text-align:left">Indicador</th><th>Valor</th><th>Año</th>' +
@@ -309,12 +383,15 @@
       '<div class="obs-card-foot"><span class="obs-chip">Ficha municipal</span>' +
         '<span>Fuente: <a href="' + FTE.ieca_ficha.url + '" target="_blank" rel="noopener">' +
           FTE.ieca_ficha.txt + '</a></span>' +
-        '<span style="flex-basis:100%;font-style:italic">Cada indicador lleva su propio año porque la ficha ' +
-          'mezcla operaciones distintas: el padrón es de 2025, el censo de viviendas de 2021 y la superficie ' +
-          'de 2019. No hay «año de la ficha», y por eso no se presentan bajo una etiqueta común. Las celdas ' +
-          'marcadas como secreto estadístico no son ceros: hay dato, pero identificaría al titular. La renta ' +
-          'de la AEAT se calcula sobre declarantes y NO es comparable con la del Atlas del INE, que reparte ' +
-          'entre toda la población residente.</span>' +
+        '<span style="flex-basis:100%;font-style:italic">Aquí solo queda lo que <b>no tiene serie</b>: la ' +
+          'superficie del término no cambia, las viviendas principales son un corte censal y los hoteles vienen ' +
+          'censurados. Todo lo demás de la ficha se publica ya como gráfica con su histórico, repartido por las ' +
+          'pestañas: ' + FICHA_EN_GRAFICAS.map(function (x) {
+            return '<a href="#' + x[1] + '">' + Obs.esc(x[0]) + '</a>';
+          }).join(' · ') + '. ' +
+          'Cada indicador lleva su propio año porque la ficha mezcla operaciones distintas: el padrón es de ' +
+          '2025, el censo de viviendas de 2021 y la superficie de 2019, así que no hay «año de la ficha». Las ' +
+          'celdas marcadas como secreto estadístico no son ceros: hay dato, pero identificaría al titular.</span>' +
       '</div></article>';
   }
 
@@ -555,17 +632,15 @@
                        data: [totalVUT, fv('viviendas_principales'), fv('ibi_urbana_recibos')] }]
           }
         } : null),
-        (fv('transacciones_usada') ? {
-          titulo: 'Compraventa de vivienda', sub: 'Transacciones inmobiliarias registradas en ' + fa('transacciones_usada'),
-          chips: [ANUAL], fuente: FTE.ieca_ficha,
-          nota: 'Casi todo el mercado es de segunda mano. Es un dato anual y de la ficha del IECA, no una serie: ' +
-                'sirve para dimensionar el año en curso, no para ver una tendencia.',
-          spec: {
-            type: 'barh', yFormat: 'num', xLabel: 'Tipo de vivienda',
-            x: ['Vivienda de segunda mano', 'Vivienda nueva'],
-            series: [{ name: 'Transacciones', data: [fv('transacciones_usada'), fv('transacciones_nueva')] }]
-          }
-        } : null),
+        tarjetaFicha('transacciones', {
+          titulo: 'Compraventa de vivienda', sub: 'Transacciones inmobiliarias registradas cada año',
+          tipo: 'stack', ancho: 'full',
+          cat: [['Vivienda segunda mano', 'Segunda mano'], ['Vivienda nueva', 'Obra nueva']],
+          nota: 'Casi todo el mercado es de segunda mano; la obra nueva aparece a tirones, cuando se entrega una ' +
+                'promoción. Se excluye la fila Total de la fuente porque es la suma de las dos y apilarla ' +
+                'duplicaría el mercado. Puesto al lado del parque de viviendas turísticas dice a qué ritmo se ' +
+                'mueve la propiedad en el municipio.'
+        }),
         {
           titulo: 'Tamaño de las viviendas', sub: 'Inscripciones por tramo de plazas',
           chips: [{ txt: 'Censo' }], fuente: FTE.rta,
@@ -587,7 +662,7 @@
     {
       id: 'poblacion', nombre: 'Población y renta',
       titulo: 'Población y renta',
-      desc: 'Padrón municipal y Atlas de distribución de renta del INE. Benahavís no llega a 10.000 habitantes ' +
+      desc: 'Padrón municipal del INE y renta declarada de Datosmacro. Benahavís no llega a 10.000 habitantes ' +
             'y casi dos tercios de ellos son extranjeros: es un municipio pequeño y muy internacional, y esas dos ' +
             'cosas condicionan qué estadística oficial baja hasta aquí y cuál no.',
       render: function () {
@@ -663,9 +738,13 @@
           };
         }
 
-        /* Contexto de la renta: la misma operación del INE resuelve el municipio,
-           la provincia, la comunidad y España, de modo que la comparación es
-           homogénea en definición y en año de referencia. */
+        /* Contexto de la renta. Datosmacro solo publica serie histórica por
+           municipios: sus páginas de provincia, comunidad y España son rankings,
+           no series. La comparación se hace por tanto contra otros municipios de
+           la misma tabla —capital provincial y vecinos de la Costa del Sol—, que
+           comparten definición y año de referencia. El único agregado nacional
+           que da el portal es la cifra de un año, y va en la nota, no en el eje. */
+        var CONTRASTE = ['malaga', 'marbella', 'estepona'];
         function serieRenta(indicador) {
           var eje = ejeT(r[indicador] || []);
           var alinear = function (puntos) {
@@ -673,23 +752,32 @@
             (puntos || []).forEach(function (x) { m[x.t] = x.v; });
             return eje.map(function (t) { return m[t] == null ? null : m[t]; });
           };
-          return {
-            type: 'line', xType: 'anual', xLabel: 'Año', x: eje, yFormat: 'eur',
-            series: [
-              { name: 'Benahavís', data: vals(r[indicador] || []) },
-              { name: 'Provincia de Málaga', data: alinear((rc.malaga || {})[indicador]) },
-              { name: 'Andalucía', data: alinear((rc.andalucia || {})[indicador]) },
-              { name: 'España', data: alinear((rc.espana || {})[indicador]) }
-            ]
-          };
+          var series = [{ name: 'Benahavís', data: vals(r[indicador] || []) }];
+          CONTRASTE.forEach(function (k) {
+            var m = rc[k];
+            if (m && m[indicador]) series.push({ name: m.nombre || k, data: alinear(m[indicador]) });
+          });
+          return { type: 'line', xType: 'anual', xLabel: 'Año', x: eje, yFormat: 'eur', series: series };
         }
+
+        /* Referencia nacional: un solo punto, no una serie. Se redacta aparte
+           para que su año y su salvedad viajen siempre pegados al número. */
+        var refES = d.renta_espana || {};
+        var notaES = refES.v == null ? '' :
+          ' La renta bruta media de España en ' + refES.t + ' fue de ' + F.eur(refES.v) +
+          ', excluidos País Vasco y Navarra, que tienen hacienda foral y no entran en la ' +
+          'estadística de la AEAT; Datosmacro solo publica esa cifra para el último ' +
+          'ejercicio, así que no puede dibujarse como serie.';
 
         return {
           kpis: [
             { label: 'Población empadronada', valor: (d.poblacion_actual || {}).v, serie: vals(p.total).slice(-15) },
             { label: 'Población extranjera' + (ieca.anyo ? ' (' + ieca.anyo + ')' : ''),
               valor: ieca.extranjeros, unidad: ieca.porcentaje != null ? F.pct(ieca.porcentaje) + ' del total' : '' },
-            { label: 'Renta neta media por persona', valor: ultV(r.renta_neta_persona), unidad: '€', serie: vals(r.renta_neta_persona) },
+            { label: 'Renta bruta media declarada', valor: ultV(r.renta_bruta_media), unidad: '€', serie: vals(r.renta_bruta_media) },
+            { label: 'Renta bruta mediana', valor: ultV(r.renta_bruta_mediana), unidad: '€', serie: vals(r.renta_bruta_mediana) },
+            { label: 'Puesto por renta en Andalucía', valor: ultV(r.puesto_ccaa), formato: F.num,
+              unidad: ultV(r.puesto_nacional) == null ? '' : 'nº ' + F.num(ultV(r.puesto_nacional), 0) + ' de España' },
             { label: 'Índice de Gini', valor: ultV(g.gini), dec: 1, formato: F.num, serie: vals(g.gini) },
             /* Los dos indicadores más recientes de la pestaña: el saldo migratorio
                llega un año más lejos que el Atlas y dos más que el Padrón. */
@@ -757,19 +845,41 @@
               }
             },
             {
-              titulo: 'Renta neta media por persona', sub: 'Benahavís frente a su provincia, Andalucía y España',
+              titulo: 'Renta bruta media declarada', sub: 'Benahavís frente a Málaga, Marbella y Estepona',
               chips: [ANUAL], fuente: FTE.renta, ancho: 'full',
-              nota: 'Los cuatro ámbitos salen de la misma operación del INE —el Atlas de Distribución de Renta ' +
-                    'de los Hogares—, que es la fuente que republican los portales de datos macroeconómicos. ' +
-                    'La serie municipal oscila mucho más que las agregadas —el salto de 2022 a 2023 es del 54 % y ' +
-                    'lo publica así el INE—: con 9.000 habitantes y una renta muy concentrada, unos pocos ' +
-                    'declarantes mueven la media del municipio.',
-              spec: serieRenta('renta_neta_persona')
+              nota: 'Renta media por declarante de IRPF, antes de impuestos y cotizaciones. Los cuatro ' +
+                    'municipios salen de la misma tabla de Datosmacro, que republica la estadística de ' +
+                    'declarantes de la Agencia Tributaria, así que comparten definición y año de referencia. ' +
+                    'No es la renta neta por persona del Atlas del INE ni es comparable con ella: mide la renta ' +
+                    'de quien declara, no la de toda la población. La serie municipal oscila mucho más que la de ' +
+                    'los municipios grandes: con unos 9.000 habitantes y una renta muy concentrada, unos pocos ' +
+                    'declarantes mueven la media.' + notaES,
+              spec: serieRenta('renta_bruta_media')
             },
             {
-              titulo: 'Renta neta media por hogar', sub: 'Mismos ámbitos, renta del hogar',
+              titulo: 'Renta bruta mediana', sub: 'La renta del declarante que queda justo en el medio',
               chips: [ANUAL], fuente: FTE.renta,
-              spec: serieRenta('renta_neta_hogar')
+              nota: 'La mediana deja a la mitad de los declarantes por debajo y a la otra mitad por encima, así ' +
+                    'que no la arrastran los pocos contribuyentes muy ricos que sí levantan la media. La distancia ' +
+                    'entre las dos cifras es la medida más directa de lo concentrada que está la renta: en ' +
+                    'Benahavís la mediana es poco más de la mitad de la media, un desajuste mucho mayor que el de ' +
+                    'Málaga o Estepona. Datosmacro rotula esta columna como «Renta Disponible», pero contrastada ' +
+                    'contra la publicación original de la AEAT es la mediana de la renta bruta; aquí se publica ' +
+                    'con su nombre correcto.',
+              spec: serieRenta('renta_bruta_mediana')
+            },
+            {
+              titulo: 'Posición de Benahavís por renta', sub: 'Puesto en el ranking de municipios, nacional y andaluz',
+              chips: [ANUAL], fuente: FTE.renta,
+              nota: 'Cuanto más bajo, más arriba en el ranking. El puesto se calcula sobre los municipios de ' +
+                    'régimen común: País Vasco y Navarra no entran en la estadística de la AEAT.',
+              spec: {
+                type: 'line', xType: 'anual', xLabel: 'Año', x: ejeT(r.puesto_nacional || []), yFormat: 'num',
+                series: [
+                  { name: 'Puesto en España', data: vals(r.puesto_nacional || []) },
+                  { name: 'Puesto en Andalucía', data: vals(r.puesto_ccaa || []) }
+                ]
+              }
             },
             {
               titulo: 'Desigualdad', sub: 'Índice de Gini y relación entre el 20 % más rico y el 20 % más pobre',
@@ -865,39 +975,76 @@
                 ]
               }
             },
-            (fv('nacimientos') ? {
-              titulo: 'De dónde sale el crecimiento',
-              sub: 'Altas y bajas de población en ' + fa('nacimientos'),
-              chips: [ANUAL], fuente: FTE.ieca_ficha, ancho: 'full',
-              nota: 'Puesto uno al lado del otro se ve que Benahavís no crece por nacimientos: llegan más de ' +
-                    'veinte veces más personas de las que nacen. El saldo que resulta —' +
-                    F.num((fv('inmigraciones') || 0) - (fv('emigraciones') || 0)) + ' por migración y ' +
-                    F.num((fv('nacimientos') || 0) - (fv('defunciones') || 0)) + ' por movimiento natural— ' +
-                    'coincide con el que publica el INE en la tarjeta anterior, que es la comprobación de que ' +
-                    'las dos fuentes están contando lo mismo.',
-              spec: {
-                type: 'barh', yFormat: 'num', xLabel: 'Concepto',
-                x: ['Inmigraciones', 'Emigraciones', 'Nacimientos', 'Defunciones'],
-                series: [{ name: 'Personas en ' + fa('nacimientos'),
-                           data: [fv('inmigraciones'), fv('emigraciones'),
-                                  fv('nacimientos'), fv('defunciones')] }]
-              }
-            } : null),
-            (fv('energia_total_mwh') ? {
-              titulo: 'Consumo de energía eléctrica', sub: 'Total del municipio y parte residencial, ' + fa('energia_total_mwh'),
-              chips: [ANUAL], fuente: FTE.ieca_ficha,
-              nota: 'El consumo es el proxy de presión que más se acerca al de agua, que es el que pedía el ' +
-                    'expediente y que exige convenio con Acosol. Este no: viene en la ficha del IECA. Lo que ' +
-                    'no es residencial —' + F.num((fv('energia_total_mwh') || 0) - (fv('energia_residencial_mwh') || 0)) +
-                    ' MWh— es actividad económica, alumbrado y servicios.',
-              spec: {
-                type: 'barh', yFormat: 'num', xLabel: 'Consumo',
-                x: ['Residencial', 'Resto (actividad y servicios)'],
-                series: [{ name: 'MWh en ' + fa('energia_total_mwh'),
-                           data: [fv('energia_residencial_mwh'),
-                                  (fv('energia_total_mwh') || 0) - (fv('energia_residencial_mwh') || 0)] }]
-              }
-            } : null),
+            tarjetaFicha('movimiento', {
+              titulo: 'Nacimientos y defunciones', sub: 'Movimiento natural de la población',
+              categoria: 'Ambos sexos',
+              medidas: [['Nacimientos', 'Nacimientos'], ['Defunciones', 'Defunciones'],
+                        ['Crecimiento vegetativo', 'Crecimiento vegetativo']],
+              nota: 'El crecimiento vegetativo es positivo pero pequeño: en un municipio que ha ganado un tercio ' +
+                    'de su población en diez años, los nacimientos no explican casi nada. La comparación con las ' +
+                    'migraciones está en la tarjeta siguiente.'
+            }),
+            (hayFicha('inmigraciones') && hayFicha('emigraciones') ? (function () {
+              /* Dos consultas distintas de BADEA, cada una con su eje. Se cruzan
+                 sobre los años que tienen las dos, que es lo único comparable. */
+              var inm = FICHA_SERIES().inmigraciones, emi = FICHA_SERIES().emigraciones;
+              var eje = inm.anyos.filter(function (a) { return emi.anyos.indexOf(a) >= 0; });
+              var alinea = function (b, cat) {
+                var m = {};
+                ((b.serie || {})[cat] || []).forEach(function (f) { m[f.t] = f[(b.medidas || [])[0]]; });
+                return eje.map(function (a) { return m[a] == null ? null : m[a]; });
+              };
+              var catI = inm.categorias.indexOf('Ambos sexos') >= 0 ? 'Ambos sexos' : inm.categorias[0];
+              var catE = emi.categorias.indexOf('Ambos sexos') >= 0 ? 'Ambos sexos' : emi.categorias[0];
+              var llegan = alinea(inm, catI), se_van = alinea(emi, catE);
+              return {
+                titulo: 'De dónde sale el crecimiento', sub: 'Personas que llegan y que se van cada año',
+                chips: [ANUAL], fuente: FTE.badea_sima, ancho: 'full',
+                nota: 'Aquí se ve el motor del municipio: Benahavís no crece por nacimientos sino porque llegan ' +
+                      'muchas más personas de las que se van. Las dos series salen de consultas distintas de ' +
+                      'BADEA y se cruzan solo sobre los años que tienen ambas. El saldo que resulta coincide con ' +
+                      'el que publica el INE en la tarjeta del saldo migratorio, que es la comprobación de que ' +
+                      'las dos fuentes cuentan lo mismo.',
+                spec: {
+                  type: 'line', xType: 'anual', xLabel: 'Año', x: eje, yFormat: 'num',
+                  series: [
+                    { name: 'Inmigraciones', data: llegan },
+                    { name: 'Emigraciones', data: se_van },
+                    { name: 'Saldo', color: '#1c7f6b',
+                      data: eje.map(function (_, i) {
+                        return (llegan[i] == null || se_van[i] == null) ? null : llegan[i] - se_van[i];
+                      }) }
+                  ]
+                }
+              };
+            })() : null),
+            tarjetaFicha('energia', {
+              titulo: 'Consumo de energía eléctrica', sub: 'MWh distribuidos por Endesa, por sector',
+              ancho: 'full', tipo: 'stack', fuera: ['TOTAL', 'Total'],
+              cat: [['Sector residencial', 'Residencial'],
+                    ['Comercio_Servicios', 'Comercio y servicios'],
+                    ['Industria', 'Industria'],
+                    ['Administración-Servicios públicos', 'Administración y servicios públicos'],
+                    ['Agricultura', 'Agricultura'],
+                    ['Resto', 'Resto']],
+              nota: 'Es el proxy de presión que más se acerca al del agua, que es el que pedía el expediente y ' +
+                    'que exige convenio con Acosol. Este no hace falta pedirlo. Se excluye la fila TOTAL de la ' +
+                    'fuente porque es la suma de las demás y apilarla duplicaría el consumo. Solo recoge lo que ' +
+                    'distribuye Endesa: si otra comercializadora abastece parte del municipio, no está aquí.'
+            }),
+            tarjetaFicha('vehiculos', {
+              titulo: 'Parque de vehículos', sub: 'Vehículos con domicilio en el municipio, por tipo',
+              tipo: 'stack', ancho: 'full', fuera: ['Total', 'TOTAL'],
+              nota: 'La serie de esta consulta solo arranca en 2021: es lo que publica el IECA por municipio, no ' +
+                    'un recorte. Se excluye la fila Total, que es la suma de las demás.'
+            }),
+            tarjetaFicha('ibi', {
+              titulo: 'IBI de naturaleza urbana', sub: 'Recibos y base imponible del impuesto',
+              medidas: [['Número de recibos', 'Recibos']],
+              nota: 'El número de recibos cuenta todo el parque construido, viva alguien en él o no. Comparado ' +
+                    'con las viviendas principales del censo dice cuánta vivienda del municipio no es residencia ' +
+                    'habitual, que es el contexto en el que hay que leer las 2.250 viviendas turísticas.'
+            }),
             {
               titulo: 'Población bajo umbrales de ingreso', sub: 'Porcentaje por debajo de cada umbral, en euros por unidad de consumo',
               chips: [ANUAL], fuente: FTE.atlas_umbrales,
@@ -958,6 +1105,20 @@
                 };
               })()
             },
+            tarjetaFicha('plazas_turismo', {
+              titulo: 'Plazas de alojamiento turístico reglado', sub: 'Plazas inscritas por tipo de establecimiento',
+              tipo: 'stack', ancho: 'full', fuera: ['Total', 'TOTAL'],
+              nota: 'Registro de Turismo de Andalucía visto por el IECA, con serie. Es el mismo universo que la ' +
+                    'primera tarjeta de esta pestaña pero contado por otra vía, así que sirve de contraste. ' +
+                    'Las celdas vacías no son ceros: son el secreto estadístico que se aplica cuando hay tan ' +
+                    'pocos establecimientos de un tipo que publicarlos identificaría al titular.'
+            }),
+            tarjetaFicha('alojamientos', {
+              titulo: 'Establecimientos de alojamiento turístico', sub: 'Número de establecimientos inscritos por tipo',
+              tipo: 'stack', ancho: 'full', fuera: ['Total', 'TOTAL'],
+              nota: 'Puesto al lado de las plazas dice el tamaño medio de cada tipo. La vivienda turística ' +
+                    'domina en número de establecimientos desde que existe como figura registral.'
+            }),
             {
               titulo: 'Viviendas turísticas anunciadas', sub: 'Estadística experimental del INE',
               chips: [EXPERIMENTAL], fuente: FTE.ine_vut, ancho: 'full',
@@ -1289,6 +1450,35 @@
                     'así que un cambio de posición es un cambio real de tamaño y no un efecto del orden fijo.',
               spec: specRamas(ultimoAnyoEmp)
             },
+            tarjetaFicha('empresas_tramo', {
+              titulo: 'Empresas por tamaño', sub: 'Empresas según su número de personas asalariadas',
+              tipo: 'stack', ancho: 'full',
+              medida: 'Empresas Directorio Cnae09', fuera: ['Total', 'TOTAL'],
+              nota: 'El tejido empresarial de Benahavís es casi todo micro: la inmensa mayoría de las empresas ' +
+                    'no tiene ni un asalariado. Complementa al DIRCE de la tarjeta anterior, que las clasifica ' +
+                    'por rama pero no por tamaño. La fuente arrastra dos medidas —CNAE-93 y CNAE-09— porque la ' +
+                    'serie cruza el cambio de clasificación; aquí se pinta la vigente.'
+            }),
+            tarjetaFicha('presupuesto', {
+              titulo: 'Presupuesto municipal por habitante', sub: 'Ingresos y gastos liquidados, euros por habitante',
+              medidas: [['Ingresos por habitante', 'Ingresos por habitante'],
+                        ['Gastos por habitante', 'Gastos por habitante']],
+              yFormat: 'num',
+              nota: 'Es de los argumentos más sólidos del expediente de Municipio Turístico: un ayuntamiento que ' +
+                    'ingresa y gasta por habitante muy por encima de lo normal está sosteniendo servicios para ' +
+                    'una población que no es la empadronada. La diferencia entre las dos líneas es el superávit.'
+            }),
+            tarjetaFicha('renta_aeat', {
+              titulo: 'Renta declarada a la AEAT', sub: 'Renta bruta y disponible de los declarantes de IRPF',
+              yFormat: 'num',
+              medidas: [['Renta bruta media', 'Renta bruta media'],
+                        ['Renta disponible media', 'Renta disponible media'],
+                        ['Renta bruta mediana', 'Renta bruta mediana']],
+              nota: 'OJO, no es la renta del Atlas del INE que aparece en la pestaña de población. Esta se ' +
+                    'calcula sobre DECLARANTES de IRPF y aquella reparte entre toda la población residente; en ' +
+                    'un municipio con muchos residentes extranjeros no declarantes la brecha es estructural. ' +
+                    'Las dos son correctas y no se mezclan en la misma serie.'
+            }),
             {
               titulo: 'Afiliación por régimen: autónomos y cuenta ajena',
               sub: 'Afiliados por municipio de residencia',
@@ -1600,7 +1790,8 @@
   /* ----------------------------------------------------------- Arranque --- */
 
   var FICHEROS = ['meta', 'demografia', 'oferta', 'vut', 'demanda', 'trabajo',
-                  'economia', 'clima', 'visitantes', 'costadelsol', 'validacion', 'limite'];
+                  'economia', 'clima', 'visitantes', 'costadelsol', 'validacion', 'limite',
+                  'ficha'];
 
   function arrancar() {
     var meta = D.meta || {};

@@ -46,6 +46,22 @@ RTA_MUNICIPIO = "BENAHAVIS"
 RTA_PROVINCIA = "MÁLAGA"
 """Valor del enum de provincia en OpenRTA: mayúsculas y CON tilde."""
 
+DATOSMACRO_MUNICIPIO = "andalucia/malaga/benahavis"
+"""Ruta de Benahavís en la sección de renta municipal de Datosmacro (Expansión)."""
+
+DATOSMACRO_CONTRASTE = {
+    "malaga": ("andalucia/malaga/malaga", "Málaga"),
+    "marbella": ("andalucia/malaga/marbella", "Marbella"),
+    "estepona": ("andalucia/malaga/estepona", "Estepona"),
+}
+"""Municipios con los que se contrasta la renta de Benahavís.
+
+Datosmacro solo publica serie histórica de renta a escala municipal: sus páginas de
+provincia, comunidad y España son rankings, no series. El contexto territorial de la
+renta es por tanto la capital provincial y los dos municipios colindantes de la Costa
+del Sol Occidental, todos con la misma definición y el mismo año de referencia.
+"""
+
 AEMET_ESTACION = "6069X"
 """Estación de AEMET situada dentro del término municipal de Benahavís (392 m)."""
 
