@@ -386,10 +386,12 @@
           titulo: 'Mapa de las viviendas turísticas de Benahavís',
           sub: F.num(viviendas.length) + ' viviendas situadas · cambia a satélite para verlas sobre la ortofoto · acerca el mapa para ver cada una y pinchar sus datos · mueve la línea del tiempo para ver cómo se ha ido poblando el municipio',
           chips: [{ txt: 'Por vivienda', tipo: 'live' }], fuente: FTE.rta, ancho: 'full', alto: 'tall',
-          nota: 'El color mide densidad de viviendas, no plazas: cuanta más concentración, más cálido —del crema al rojo—. ' +
-                'La escala se recalcula a cada nivel de zoom contra la densidad que hay de verdad en el encuadre, así que ' +
-                'el extremo caliente siempre señala lo excepcional y no se convierte en una mancha uniforme. Fuera del ' +
-                'término municipal el fondo va atenuado: lo que se derrama sobre San Pedro o Cancelada son viviendas de ' +
+          nota: 'El color mide densidad de viviendas, no plazas: de azul donde hay pocas a rojo donde se amontonan, ' +
+                'pasando por cian, verde y amarillo. Es la misma escala que el mapa de viviendas turísticas del ' +
+                'observatorio de Marbella, de modo que los dos municipios se pueden mirar uno al lado del otro sin ' +
+                'traducir colores. El techo de la escala sube al alejar el zoom, porque de lejos cualquier celda con ' +
+                'unas decenas de viviendas llegaría al rojo y el término entero saldría saturado. Fuera del término ' +
+                'municipal el fondo va atenuado: lo que se derrama sobre San Pedro o Cancelada son viviendas de ' +
                 'Benahavís pegadas al límite, no viviendas de esos municipios. Al acercarse aparece cada vivienda en la ' +
                 'coordenada que consta en el registro, con el tamaño del punto proporcional a sus plazas.',
           mapa: {
@@ -402,8 +404,32 @@
             agrupar: false,
             limite: D.limite,
             unidadSingular: 'vivienda',
-            calorEtiqueta: 'Densidad de viviendas turísticas',
+            calorEtiqueta: 'Densidad de VUT',
             calorBoton: 'Densidad', puntosBoton: 'Viviendas',
+            /* Mismo formato de calor que el mapa de VUT del observatorio de
+               Marbella, para que los dos municipios se lean con la misma escala
+               y se puedan poner uno al lado del otro sin traducir colores.
+
+               La rampa térmica —azul noche, cian, verde, amarillo, rojo— separa
+               mucho más los niveles intermedios que la cálida, que es lo que
+               interesa cuando la pregunta es dónde están los focos.
+
+               El techo (`max`) SUBE al alejar el zoom: de lejos cualquier celda
+               con unas decenas de viviendas alcanzaría el rojo y el término
+               entero saldría saturado. Y el suelo de opacidad se queda en 0,05
+               porque cada sello parte de esa alfa y los solapes suman: con 0,4
+               el mapa sale rojo se ponga el techo que se ponga. */
+            gradiente: 'termica',
+            calorZoom: [
+              [10, { radius: 8,  blur: 6,  max: 3 }],
+              [11, { radius: 9,  blur: 7,  max: 2.2 }],
+              [12, { radius: 10, blur: 8,  max: 2 }],
+              [13, { radius: 12, blur: 9,  max: 1.2 }],
+              [14, { radius: 14, blur: 10, max: 1 }]
+            ],
+            calorZoomFondo: { radius: 16, blur: 12, max: 0.8 },
+            calorMaxZoom: 18,
+            calorSuelo: 0.05,
             /* El tamaño del punto son las plazas. Se recorta en 20 porque el RTA
                tiene cuatro registros de 188 a 342 plazas —complejos enteros
                inscritos como una sola vivienda— que, sin tope, saldrían como un

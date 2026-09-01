@@ -95,10 +95,14 @@ con los de temperatura).
 
 **Mapa de viviendas turísticas.** Fondo gris o **ortofoto**, a elegir. El término municipal va
 dibujado y el exterior atenuado, porque una mancha de densidad sin límite se derrama sobre San
-Pedro y Estepona y parece decir que hay viviendas allí. La capa de calor **renormaliza su escala
-en cada nivel de zoom** contra la densidad que hay realmente en el encuadre —percentil 96 de las
-celdas ocupadas— en lugar de usar un tope fijo: con un tope fijo, cualquier sitio con cuatro
-viviendas encima ya llegaba al extremo de la rampa y el municipio entero salía rojo.
+Pedro y Estepona y parece decir que hay viviendas allí.
+
+La capa de calor usa **el mismo formato que el mapa de VUT del [observatorio de
+Marbella](https://josehino.github.io/observatorio-turistico-marbella/mapa-vut/)** —rampa térmica
+de azul noche a rojo, y la misma tabla de radio, desenfoque y techo por nivel de zoom— para que
+los dos municipios se lean con la misma escala y se puedan poner uno al lado del otro sin
+traducir colores. El techo **sube al alejar el zoom**: con un techo fijo, de lejos cualquier
+celda con unas decenas de viviendas alcanzaría el rojo y el término entero saldría saturado.
 
 Densidad y viviendas son **dos capas independientes, no una alternativa a la otra**: la mancha no
 se quita al acercarse, porque sigue diciendo dónde se concentran las viviendas dentro de lo que se

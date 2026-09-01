@@ -51,24 +51,38 @@
   var ZOOM_NATIVO = { mapa: 16, satelite: 18 };
 
 
-  /* Rampa cálida de densidad (ColorBrewer YlOrBr): del crema donde hay poco al
-     marrón rojizo donde se concentran. Es secuencial y monótona en luminosidad,
-     así que se lee bien también impresa en gris y con daltonismo: lo que ordena
-     la escala es el brillo, no solo el tono.
+  /* Paletas de densidad. `cfg.gradiente` admite el nombre de una de estas o un
+     objeto de paradas propio.
 
-     El extremo frío se ha alargado a propósito. Leaflet.heat usa el canal alfa
-     acumulado como índice de la rampa, de modo que el tramo bajo es el que pinta
-     casi todo el mapa: si arranca en un amarillo saturado, una casa suelta mancha
-     igual que un barrio entero. */
-  var CALOR = {
-    0.00: '#fff7bc',
-    0.18: '#fee391',
-    0.36: '#fec44f',
-    0.54: '#fe9929',
-    0.70: '#ec7014',
-    0.85: '#cc4c02',
-    1.00: '#8c2d04'
+     · `calida` (ColorBrewer YlOrBr): secuencial y monótona en luminosidad, así
+       que se lee también impresa en gris y con daltonismo, porque lo que ordena
+       la escala es el brillo y no solo el tono. El extremo frío va alargado a
+       propósito: leaflet.heat usa el alfa acumulado como índice de la rampa y el
+       tramo bajo es el que pinta casi todo el mapa, de modo que si arranca en un
+       amarillo saturado una casa suelta mancha igual que un barrio entero.
+
+     · `termica`: la rampa clásica de mapa de calor, de azul noche a rojo pasando
+       por cian, verde y amarillo. No es monótona en luminosidad —en gris se lee
+       mal— pero separa muchísimo más los niveles intermedios, que es justo lo que
+       se quiere cuando la pregunta es «dónde están los focos». Es la que usa el
+       observatorio de Marbella. */
+  var PALETAS = {
+    calida: {
+      0.00: '#fff7bc', 0.18: '#fee391', 0.36: '#fec44f', 0.54: '#fe9929',
+      0.70: '#ec7014', 0.85: '#cc4c02', 1.00: '#8c2d04'
+    },
+    termica: {
+      0.05: '#000033', 0.20: '#0033ff', 0.40: '#00ffff', 0.55: '#00ff00',
+      0.70: '#ffff00', 0.85: '#ff6600', 1.00: '#ff0033'
+    }
   };
+  var CALOR = PALETAS.calida;
+
+  function paletaDe(cfg) {
+    var g = cfg.gradiente;
+    if (!g) return CALOR;
+    return typeof g === 'string' ? (PALETAS[g] || CALOR) : g;
+  }
 
   /* Geometría del pincel de calor, en píxeles de pantalla. Radio corto y desenfoque
      largo: la mancha sigue siendo continua, pero conserva la forma de las
@@ -451,6 +465,43 @@
        encuadre, y el resto reparte color por todo el recorrido de la rampa. */
     var calorRef = null, calorZoom = null;
 
+    /* Dos formas de escalar el calor, y la declaración elige:
+
+       · **Por tabla** (`cfg.calorZoom`): una lista `[zoom, {radius, blur, max}]`
+         calibrada a ojo contra el mapa real, como la del observatorio de
+         Marbella. El techo sube al alejarse para que solo los focos de verdad
+         densos lleguen al rojo. Es reproducible entre observatorios: dos mapas
+         con la misma tabla se ven igual.
+
+       · **Por densidad medida** (por defecto): el kit mide la densidad que hay
+         en el encuadre y pone el techo en un percentil alto. Se adapta solo a
+         cualquier nube de puntos, pero por eso mismo dos mapas nunca se ven
+         exactamente igual.
+
+       Se usa la tabla cuando se declara, porque cuando alguien la declara es
+       justamente porque quiere ESE aspecto y no uno calculado. */
+    function escalaCalor(zoom, vs) {
+      var tabla = cfg.calorZoom;
+      if (tabla && tabla.length) {
+        var elegida = null;
+        for (var i = 0; i < tabla.length; i++) {
+          if (zoom <= tabla[i][0]) { elegida = tabla[i][1]; break; }
+        }
+        var o = elegida || cfg.calorZoomFondo || tabla[tabla.length - 1][1];
+        return {
+          radius: o.radius, blur: o.blur, max: o.max,
+          maxZoom: cfg.calorMaxZoom || 18,
+          minOpacity: cfg.calorSuelo != null ? cfg.calorSuelo : 0.05
+        };
+      }
+      return {
+        radius: CALOR_RADIO, blur: CALOR_BLUR,
+        max: densidadDeReferencia(vs, zoom),
+        maxZoom: zoom,
+        minOpacity: cfg.calorSuelo != null ? cfg.calorSuelo : CALOR_SUELO
+      };
+    }
+
     function densidadDeReferencia(vs, zoom) {
       var celda = CALOR_RADIO / 2;
       var suma = {}, i, k;
@@ -526,27 +577,31 @@
          todavía está oculta el lienzo mide 0 y lanza una excepción. Se pospone. */
       if (verCalor && lienzo.offsetWidth > 0) {
         var z = mapa.getZoom();
-        var ref = densidadDeReferencia(vs, z);
+        var esc = escalaCalor(z, vs);
         calor = L.heatLayer(vs.map(function (p) {
           return [p.lat, p.lon, cfg.peso ? (+cfg.peso(p) || 1) : 1];
         }), {
-          radius: CALOR_RADIO, blur: CALOR_BLUR,
+          radius: esc.radius, blur: esc.blur,
           /* `maxZoom` no es hasta dónde se dibuja: es el zoom en que la librería
              considera que un punto vale su peso entero, y por debajo lo divide
-             por 2^((maxZoom−zoom)/2). Ese reescalado oculto es incompatible con
-             normalizar por densidad medida, así que se ancla al zoom actual
-             —factor 1— y la normalización la lleva `max`. */
-          maxZoom: z,
-          max: ref,
-          /* Suelo bajo: una vivienda aislada deja un tinte, no una mancha. */
-          minOpacity: CALOR_SUELO,
-          gradient: cfg.gradiente || CALOR
+             por 2^((maxZoom−zoom)/2). Con la escala por tabla ese factor es
+             parte de la calibración y se respeta; con la escala por densidad
+             estorba, y entonces se ancla al zoom actual para anularlo. */
+          maxZoom: esc.maxZoom,
+          max: esc.max,
+          minOpacity: esc.minOpacity,
+          gradient: paletaDe(cfg)
         }).addTo(mapa);
-        /* Con los puntos encima, la mancha pasa a ser fondo: a plena intensidad
-           se comería los círculos y no se distinguiría cuál es cuál. Se atenúa
-           por CSS sobre su lienzo, que es lo único que expone la librería. */
+        /* Con los puntos encima, la mancha calculada por densidad pasa a ser
+           fondo: a plena intensidad se comería los círculos. Se atenúa por CSS
+           sobre su lienzo, que es lo único que expone la librería.
+
+           Con una escala declarada por tabla NO se atenúa: si alguien fija la
+           escala a mano es porque quiere exactamente ese aspecto, y bajarle la
+           opacidad por detrás lo cambiaría. */
         if (calor._canvas) {
-          calor._canvas.style.opacity = verPuntos ? CALOR_ATENUADO : 1;
+          var atenuar = verPuntos && !(cfg.calorZoom && cfg.calorZoom.length);
+          calor._canvas.style.opacity = atenuar ? CALOR_ATENUADO : 1;
         }
         calorRef = ref;
         calorZoom = z;
@@ -621,7 +676,7 @@
     }
 
     function leyendaCalor() {
-      var g = cfg.gradiente || CALOR;
+      var g = paletaDe(cfg);
       var paradas = Object.keys(g).map(Number).sort(function (a, b) { return a - b; });
       var css = paradas.map(function (p) { return g[p] + ' ' + Math.round(p * 100) + '%'; }).join(', ');
       return '<span class="obs-map-item">' + Obs.esc(cfg.calorEtiqueta || 'Densidad') + '</span>' +
