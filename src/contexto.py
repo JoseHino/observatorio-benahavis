@@ -83,9 +83,19 @@ CNAE_TURISTICOS = {
 RUPTURA_CNAE = "2026-01"
 """Mes en el que la Seguridad Social pasa de CNAE-2009 a CNAE-2025. Las series se cortan aquí."""
 
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 """1.1.0 añadió el índice de Gini y P80/P20 (INE 37677) y la ocupación hotelera de la
 zona turística Costa del Sol (EOH vía Dataestur).
+
+1.3.0 saca la renta media del Atlas de Renta del INE y la toma de Datosmacro
+—renta declarada de IRPF de la AEAT, serie municipal 2013-2023—, con Málaga capital,
+Marbella y Estepona como contexto en lugar de provincia, comunidad y España, que esa
+fuente no publica en serie. La columna que Datosmacro rotula «Renta Disponible» se
+publica con su nombre real, renta bruta mediana, tras contrastarla con la AEAT.
+
+Esta versión sella los assets de `docs/index.html` con `?v=`: hay que subirla siempre
+que cambie la forma de los JSON, porque si no el navegador puede quedarse con el JS
+anterior —cacheado 10 minutos por GitHub Pages— leyendo un dato que ya no encaja.
 
 1.2.0 incorpora el Big Data de Turismo y Planificación Costa del Sol —ocupación y
 precio de la vivienda turística, serie histórica del registro de alojamiento, precios
