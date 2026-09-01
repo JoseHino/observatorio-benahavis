@@ -308,7 +308,10 @@
     });
   }
 
+  var seccionActiva = null;
+
   function activar(id) {
+    var cambia = seccionActiva !== null && seccionActiva !== id;
     CFG.secciones.forEach(function (s) {
       var sec = document.getElementById('sec-' + s.id);
       var btn = document.querySelector('.obs-nav button[data-sec="' + s.id + '"]');
@@ -318,10 +321,95 @@
     });
     var s = CFG.secciones.filter(function (x) { return x.id === id; })[0];
     if (s) pintarSeccion(s);
+    seccionActiva = id;
     Obs.resize();
+    if (cambia) alPrincipio();
     if (global.history && history.replaceState) history.replaceState(null, '', '#' + id);
   }
   Obs.ir = activar;
+
+  /* Al cambiar de pestaña se vuelve al principio.
+     Sin esto, el navegador conserva el desplazamiento: si venías del final de
+     una pestaña larga y saltas a una corta, apareces más abajo de donde acaba el
+     contenido —o directamente en el pie— y parece que la pestaña está vacía.
+
+     El salto es instantáneo a propósito: animar ocho mil píxeles marea y además
+     tarda más que el propio cambio de pestaña. */
+  function alPrincipio() {
+    /* Se sube del todo, sin cálculos.
+       La tentación es dejar la navegación pegada arriba y colocarse justo
+       debajo, pero la barra es `position: sticky`: cuando la página está
+       desplazada, su rectángulo devuelve la posición PEGADA —top 0— y no la que
+       ocupa en el documento, así que cualquier cuenta a partir de ahí termina
+       restando el alto de la barra al desplazamiento actual y dejando al usuario
+       casi donde estaba. El cero no tiene ese problema. */
+    try {
+      global.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    } catch (e) {
+      global.scrollTo(0, 0);
+    }
+  }
+
+  /* --------------------------------------------------------- 5b. Impresión
+
+     Imprimir un panel de pestañas tiene dos problemas y los dos rompen el PDF.
+
+     El primero es que **las secciones se pintan cuando se abren**: al imprimir,
+     la hoja de estilos las enseña todas, pero seis de las siete están vacías
+     porque nadie las ha visitado. El PDF sale con una pestaña y seis huecos.
+
+     El segundo es que **las gráficas son lienzos de tamaño fijo**. ECharts las
+     dimensiona en píxeles al dibujarlas, así que conservan el ancho de la
+     ventana —1.300 px en un portátil— dentro de una página que mide 794. Se
+     salen del papel y aparecen recortadas por la derecha.
+
+     Los dos se arreglan igual: antes de imprimir se pintan todas las secciones y
+     se reajustan las gráficas, y al terminar se deja el panel como estaba. Se
+     escucha `beforeprint` y también el cambio del medio `print`, porque no todos
+     los navegadores disparan el primero, y Chrome aplica los estilos de
+     impresión después de él. */
+
+  var antesDeImprimir = null;
+
+  function abrirTodo() {
+    antesDeImprimir = seccionActiva;
+    CFG.secciones.forEach(function (s) {
+      var sec = document.getElementById('sec-' + s.id);
+      /* Se enseñan desde JavaScript y no solo desde la hoja de estilos: una
+         gráfica dibujada dentro de un contenedor oculto mide cero y sale en
+         blanco, y el orden en que el navegador aplica los estilos de impresión
+         no está garantizado. */
+      if (sec) sec.hidden = false;
+      pintarSeccion(s);
+    });
+    Obs.resize();
+    if (Obs.mapasActivos) {
+      Obs.mapasActivos().forEach(function (r) {
+        try { r.mapa.invalidateSize(); } catch (e) {}
+      });
+    }
+  }
+
+  function cerrarTodo() {
+    if (antesDeImprimir == null) return;
+    CFG.secciones.forEach(function (s) {
+      var sec = document.getElementById('sec-' + s.id);
+      if (sec) sec.hidden = s.id !== antesDeImprimir;
+    });
+    antesDeImprimir = null;
+    Obs.resize();
+  }
+
+  function prepararImpresion() {
+    global.addEventListener('beforeprint', abrirTodo);
+    global.addEventListener('afterprint', cerrarTodo);
+    if (global.matchMedia) {
+      var mq = global.matchMedia('print');
+      var alCambiar = function (e) { if (e.matches) abrirTodo(); else cerrarTodo(); };
+      if (mq.addEventListener) mq.addEventListener('change', alCambiar);
+      else if (mq.addListener) mq.addListener(alCambiar);
+    }
+  }
 
   /* ------------------------------------------------------------- 6. Tema */
 
@@ -397,6 +485,7 @@
     });
     engancharTarjetas(raiz);
     document.getElementById('obs-imprimir').addEventListener('click', function () { global.print(); });
+    prepararImpresion();
     document.getElementById('obs-tema-btn').addEventListener('click', function () {
       var actual = document.documentElement.getAttribute('data-theme');
       var oscuroAhora = actual === 'dark' || (!actual && matchMedia('(prefers-color-scheme: dark)').matches);

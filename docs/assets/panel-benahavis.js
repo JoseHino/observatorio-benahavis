@@ -379,12 +379,19 @@
     var cuerpo = GRUPOS_FICHA.map(function (g) {
       var filas = g.filas.filter(function (f) { return ficha[f[0]]; }).map(function (f) {
         var e = ficha[f[0]];
+        /* Tres filas de la ficha no son números sino texto —«Sección L.
+           Actividades inmobiliarias: 282»—, y pasarlas por el formateador
+           numérico las convertía en una raya. */
+        var esNumero = typeof e.v === 'number';
         var valor = e.censura === 'secreto_estadistico'
           ? '<span class="obs-chip warn">secreto estadístico</span>'
           : e.censura ? '<span class="obs-map-nota">sin dato</span>'
-          : F.num(e.v, f[3]) + (f[2] ? ' ' + f[2] : '');
+          : e.v == null ? '<span class="obs-map-nota">sin dato</span>'
+          : esNumero ? F.num(e.v, f[3]) + (f[2] ? ' ' + f[2] : '')
+          : Obs.esc(e.v);
         return '<tr><td style="text-align:left">' + f[1] + '</td>' +
-               '<td style="text-align:right">' + valor + '</td>' +
+               '<td style="text-align:' + (esNumero || e.censura ? 'right' : 'left') + '">' +
+                 valor + '</td>' +
                '<td style="text-align:right">' + (e.anyo || '—') + '</td></tr>';
       }).join('');
       if (!filas) return '';

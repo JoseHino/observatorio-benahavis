@@ -83,8 +83,11 @@ CNAE_TURISTICOS = {
 RUPTURA_CNAE = "2026-01"
 """Mes en el que la Seguridad Social pasa de CNAE-2009 a CNAE-2025. Las series se cortan aquí."""
 
-VERSION = "1.4.0"
-"""1.4.0 da histórico a la ficha municipal del IECA: doce series de BADEA que
+VERSION = "1.4.1"
+"""1.4.1 arregla la impresión —el PDF salía con una pestaña y seis huecos, y las
+gráficas se salían del folio— y hace que al cambiar de pestaña se vuelva al principio.
+
+1.4.0 da histórico a la ficha municipal del IECA: doce series de BADEA que
 sustituyen a la tabla de valores sueltos —consumo eléctrico, compraventa de vivienda,
 movimiento natural, migraciones, presupuesto por habitante, empresas por tamaño,
 parque de vehículos, IBI, renta de la AEAT y alojamiento turístico— y añade a

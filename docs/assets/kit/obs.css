@@ -282,12 +282,64 @@ table.obs-table tbody tr:hover { background: var(--surface-2); }
 
 /* ------------------------------------------------------------- 14. Impresión */
 @media print {
-  .obs-nav, .obs-toolbar, .obs-card-tools, .obs-header-actions { display: none !important; }
+  /* Fuera todo lo que solo sirve para interactuar: navegación, herramientas de
+     tarjeta, filtros del mapa, línea del tiempo y conmutadores. En papel no se
+     pulsa nada, y ocupan el sitio de los datos. */
+  .obs-nav, .obs-toolbar, .obs-card-tools, .obs-header-actions,
+  .obs-map-tools, .obs-map-linea, .leaflet-control-container,
+  .obs-card-ctrl { display: none !important; }
+
   body { background: #fff; }
+  /* Las secciones se abren además desde JavaScript antes de imprimir; esto es
+     el cinturón por si el navegador aplica los estilos antes de ese momento. */
   .obs-section[hidden] { display: block !important; }
-  .obs-card { break-inside: avoid; box-shadow: none; }
+
+  /* Cada pestaña empieza en su propia hoja: un informe de siete temas leído de
+     corrido, con las tarjetas de uno colgando debajo de otro, no se entiende. */
+  .obs-section + .obs-section { break-before: page; }
+  .obs-section-head { break-after: avoid; }
+
+  .obs-card { break-inside: avoid; box-shadow: none; border-color: #ccd3dc; }
   .obs-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Las tarjetas anchas y el mapa siguen ocupando las dos columnas. */
+  .obs-card.span-2 { grid-column: 1 / -1; }
+  /* En papel no hay desplazamiento: una tarjeta alta recortada a 620 px pierde
+     la mitad del mapa. */
+  .obs-card.tall .obs-map-lienzo { height: 150mm; }
+  .obs-plot { height: auto; min-height: 62mm; }
+  /* Red de seguridad para los lienzos. Aunque se reajustan por JavaScript antes
+     de imprimir, no todos los navegadores dejan que ese reajuste llegue a tiempo
+     al maquetado de impresion. Un canvas es una imagen: forzarlo al 100 % del
+     ancho con el alto automatico lo encaja siempre en el papel, conservando la
+     proporcion, en vez de dejarlo salirse por la derecha. */
+  .obs-plot canvas, .obs-plot > div {
+    width: 100% !important; height: auto !important; max-width: 100% !important;
+  }
+
+  /* La tabla se lee entera: el tope de alto y el desplazamiento son cosa de la
+     pantalla. Pero el contenido tiene que ENVOLVER: las celdas van sin partir
+     para que en pantalla no se descoloquen las cifras, y en papel eso hacía que
+     una tabla de direcciones largas midiera 1.700 px y empujara toda la página
+     fuera del folio. */
+  .obs-table-wrap, .obs-table-wrap.completa {
+    display: block !important; max-height: none !important; overflow: hidden !important;
+  }
+  table.obs-table { table-layout: fixed; width: 100%; }
+  table.obs-table th, table.obs-table td {
+    white-space: normal; overflow-wrap: anywhere; font-size: 10px; padding: 4px 6px;
+  }
+  /* Los KPI en tres columnas: a cuatro salen apretados en A4. */
+  .obs-kpis { grid-template-columns: repeat(3, 1fr); }
+
+  /* Los enlaces de fuente se imprimen con su dirección detrás, que es lo que
+     convierte el PDF en un documento citable. Solo los externos: un enlace
+     interno imprimiría «(#poblacion)», que en papel no lleva a ninguna parte. */
+  .obs-card-foot a[href^="http"]::after {
+    content: " (" attr(href) ")"; font-size: 9px; word-break: break-all;
+  }
+  a { text-decoration: none; color: inherit; }
 }
+@page { margin: 12mm 10mm; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
