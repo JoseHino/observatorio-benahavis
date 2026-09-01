@@ -83,8 +83,16 @@ CNAE_TURISTICOS = {
 RUPTURA_CNAE = "2026-01"
 """Mes en el que la Seguridad Social pasa de CNAE-2009 a CNAE-2025. Las series se cortan aquí."""
 
-VERSION = "1.3.0"
-"""1.1.0 añadió el índice de Gini y P80/P20 (INE 37677) y la ocupación hotelera de la
+VERSION = "1.4.0"
+"""1.4.0 da histórico a la ficha municipal del IECA: doce series de BADEA que
+sustituyen a la tabla de valores sueltos —consumo eléctrico, compraventa de vivienda,
+movimiento natural, migraciones, presupuesto por habitante, empresas por tamaño,
+parque de vehículos, IBI, renta de la AEAT y alojamiento turístico— y añade a
+`docs/data/` el fichero `ficha.json`. Antes, en la misma versión, el mapa de viviendas
+turísticas pasó a repartir la densidad sobre las huellas de edificación del Catastro,
+porque el RTA georreferencia por parcela y no por vivienda.
+
+1.1.0 añadió el índice de Gini y P80/P20 (INE 37677) y la ocupación hotelera de la
 zona turística Costa del Sol (EOH vía Dataestur).
 
 1.3.0 saca la renta media del Atlas de Renta del INE y la toma de Datosmacro
