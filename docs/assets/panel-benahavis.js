@@ -169,6 +169,24 @@
         fila('Unidades de alojamiento', F.num(p.unidades)) +
         (p.titular ? fila('Titular', e(p.titular)) : '') +
         (p.catastro ? fila('Ref. catastral', '<span style="font-size:11px">' + e(p.catastro) + '</span>') : '') +
+        /* Qué parte del complejo está inscrita como turística. Es de lo más
+           revelador del registro y no se ve en ninguna otra parte: la parcela de
+           El Paraíso tiene 131 viviendas turísticas de las 207 que cuenta el
+           Catastro, o sea casi dos de cada tres. */
+        (p.parcela_vut > 1 ? fila('En esta parcela',
+            F.num(p.parcela_vut) + ' viviendas turísticas' +
+            (p.parcela_viviendas
+              ? ' de ' + F.num(p.parcela_viviendas) + ' viviendas (' +
+                F.num(p.parcela_vut / p.parcela_viviendas * 100, 0) + ' %)'
+              : '')) : '') +
+        (p.parcela_m2 ? fila('Superficie de la parcela', F.num(p.parcela_m2) + ' m²') : '') +
+        (p.lat_rta != null ? '<div class="sep"></div>' + fila('Situación en el mapa',
+            '<span style="font-size:11px">Aproximada, dentro de los edificios de su parcela: ' +
+            'el registro publica una coordenada por parcela y no por vivienda' +
+            (p.parcela_vut > 1
+              ? ', y aquí la comparten ' + F.num(p.parcela_vut) + ' viviendas turísticas'
+              : '') +
+            '.</span>') : '') +
         (conMercado ?
           '<div class="sep"></div>' +
           fila('Precio medio por plaza', m.precio_plaza != null ? F.eur(m.precio_plaza, 2) : null) +
@@ -306,7 +324,20 @@
     var fichas = (reg.fichas || []);
     var TIPOS_VIVIENDA = ['Vivienda de uso turístico', 'Vivienda turística de alojamiento rural',
                           'Apartamento turístico', 'Casa rural'];
-    var viviendas = fichas.filter(function (p) { return TIPOS_VIVIENDA.indexOf(p.tipo) >= 0; });
+    /* Los puntos del mapa van todos sobre la huella de edificación, no sobre la
+       coordenada del registro. Tener dos geometrías —la densidad repartida y los
+       marcadores apilados— dejaba el mapa incoherente: al acercarse a El Paraíso
+       se veía una mancha roja de doscientos metros y un solo círculo pinchable a
+       un lado, aunque el contador dijese 131 viviendas.
+
+       Y entre las dos, la repartida es la MENOS engañosa: poner 131 viviendas en
+       una coordenada con seis decimales aparenta una precisión que el registro no
+       tiene. La ficha dice de dónde sale cada posición. */
+    var viviendas = fichas.filter(function (p) { return TIPOS_VIVIENDA.indexOf(p.tipo) >= 0; })
+      .map(function (p) {
+        if (p.lat_h == null) return p;
+        return Object.assign({}, p, { lat: p.lat_h, lon: p.lon_h, lat_rta: p.lat, lon_rta: p.lon });
+      });
     var sinUbicarViv = (reg.sin_ubicar || []).filter(function (p) { return TIPOS_VIVIENDA.indexOf(p.tipo) >= 0; });
 
     var totalVUT = viviendas.length + sinUbicarViv.length;
@@ -384,16 +415,22 @@
       cards: [
         {
           titulo: 'Mapa de las viviendas turísticas de Benahavís',
-          sub: F.num(viviendas.length) + ' viviendas situadas · cambia a satélite para verlas sobre la ortofoto · acerca el mapa para ver cada una y pinchar sus datos · mueve la línea del tiempo para ver cómo se ha ido poblando el municipio',
+          sub: F.num(viviendas.length) + ' viviendas situadas · densidad repartida sobre las huellas de edificación del Catastro · ' +
+               'cambia a satélite para verlas sobre la ortofoto · acerca el mapa para ver cada una y pinchar sus datos',
           chips: [{ txt: 'Por vivienda', tipo: 'live' }], fuente: FTE.rta, ancho: 'full', alto: 'tall',
           nota: 'El color mide densidad de viviendas, no plazas: de azul donde hay pocas a rojo donde se amontonan, ' +
-                'pasando por cian, verde y amarillo. Es la misma escala que el mapa de viviendas turísticas del ' +
-                'observatorio de Marbella, de modo que los dos municipios se pueden mirar uno al lado del otro sin ' +
-                'traducir colores. El techo de la escala sube al alejar el zoom, porque de lejos cualquier celda con ' +
-                'unas decenas de viviendas llegaría al rojo y el término entero saldría saturado. Fuera del término ' +
-                'municipal el fondo va atenuado: lo que se derrama sobre San Pedro o Cancelada son viviendas de ' +
-                'Benahavís pegadas al límite, no viviendas de esos municipios. Al acercarse aparece cada vivienda en la ' +
-                'coordenada que consta en el registro, con el tamaño del punto proporcional a sus plazas.',
+                'pasando por cian, verde y amarillo. Es la misma rampa que el mapa de viviendas turísticas del ' +
+                'observatorio de Marbella. ' +
+                'IMPORTANTE, sobre de dónde sale la densidad: el Registro de Turismo de Andalucía georreferencia por ' +
+                'PARCELA catastral y no por vivienda, de modo que en Benahavís el 81 % de las viviendas comparte ' +
+                'coordenada con otra y una sola parcela llega a acumular 131 —las de El Paraíso, que en realidad ' +
+                'están repartidas por una urbanización de 4,5 hectáreas—. Dibujado tal cual, el mapa amontonaba ' +
+                'urbanizaciones enteras en un lunar y no distinguía una parcela de 18 viviendas de otra de 131. ' +
+                'Para la densidad, cada vivienda se coloca dentro de alguno de los edificios que el Catastro dibuja ' +
+                'en su parcela, repartidas en proporción a la superficie de cada cuerpo: no se sabe en qué portal ' +
+                'está cada una, pero sí que está en ese grupo de edificios, y la ficha de cada vivienda lo dice. ' +
+                'Fuera del término municipal el fondo va atenuado: lo que se derrama sobre San Pedro o Cancelada son ' +
+                'viviendas de Benahavís pegadas al límite, no viviendas de esos municipios.',
           mapa: {
             puntos: viviendas,
             unidad: 'viviendas',
@@ -429,6 +466,8 @@
             ],
             calorZoomFondo: { radius: 16, blur: 12, max: 0.8 },
             calorMaxZoom: 18,
+            /* El pincel es el de Marbella; el techo se mide aqui. Ver la nota. */
+            calorTope: 'medido',
             calorSuelo: 0.05,
             /* El tamaño del punto son las plazas. Se recorta en 20 porque el RTA
                tiene cuatro registros de 188 a 342 plazas —complejos enteros

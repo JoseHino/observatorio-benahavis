@@ -97,12 +97,21 @@ con los de temperatura).
 dibujado y el exterior atenuado, porque una mancha de densidad sin límite se derrama sobre San
 Pedro y Estepona y parece decir que hay viviendas allí.
 
-La capa de calor usa **el mismo formato que el mapa de VUT del [observatorio de
-Marbella](https://josehino.github.io/observatorio-turistico-marbella/mapa-vut/)** —rampa térmica
-de azul noche a rojo, y la misma tabla de radio, desenfoque y techo por nivel de zoom— para que
-los dos municipios se lean con la misma escala y se puedan poner uno al lado del otro sin
-traducir colores. El techo **sube al alejar el zoom**: con un techo fijo, de lejos cualquier
-celda con unas decenas de viviendas alcanzaría el rojo y el término entero saldría saturado.
+La capa de calor usa la **rampa térmica del [mapa de VUT de
+Marbella](https://josehino.github.io/observatorio-turistico-marbella/mapa-vut/)** y su mismo
+pincel por nivel de zoom.
+
+**La densidad no se dibuja sobre la coordenada del registro.** El RTA georreferencia por *parcela
+catastral*, no por vivienda: en Benahavís el 81 % de las viviendas comparte punto con otra y una
+sola parcela acumula 131, que en realidad están repartidas por una urbanización de 4,5 hectáreas.
+Dibujado tal cual, el mapa amontonaba urbanizaciones enteras en un lunar y a zoom 15 llegaba a
+correlacionar **negativamente** con la densidad real. Para el mapa de densidad, cada vivienda se
+coloca dentro de alguno de los cuerpos de edificación que el **Catastro** dibuja en su parcela,
+en proporción a la superficie de cada uno; la ficha que sale al pinchar conserva la coordenada
+oficial. El detalle, con las cifras del contraste, está en  (7.6-7.7).
+
+El techo de la escala **se mide sobre los datos en cada nivel de zoom**, no se escribe a mano: un
+techo fijo solo vale para la nube de puntos con la que se calibró.
 
 Densidad y viviendas son **dos capas independientes, no una alternativa a la otra**: la mancha no
 se quita al acercarse, porque sigue diciendo dónde se concentran las viviendas dentro de lo que se

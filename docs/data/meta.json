@@ -4,10 +4,15 @@
  "provincia": "Málaga",
  "comarca": "Costa del Sol Occidental",
  "version": "1.2.0",
- "generado": "2026-08-31T11:56:30Z",
+ "generado": "2026-09-01T07:29:21Z",
  "autoria_tecnica": "Consultoría AMMA",
  "destinatario": "Ayuntamiento de Benahavís",
  "bloques": {
+  "vut": {
+   "actualizado": true,
+   "sello": "2026-09-01T07:29:21Z",
+   "detalle": ""
+  },
   "demografia": {
    "actualizado": true,
    "sello": "2026-08-31T11:56:30Z",
@@ -44,11 +49,6 @@
    "detalle": ""
   },
   "visitantes": {
-   "actualizado": true,
-   "sello": "2026-08-26T17:29:07Z",
-   "detalle": ""
-  },
-  "vut": {
    "actualizado": true,
    "sello": "2026-08-26T17:29:07Z",
    "detalle": ""

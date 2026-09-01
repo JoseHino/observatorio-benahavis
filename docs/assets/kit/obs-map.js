@@ -95,9 +95,15 @@
      Con 0,07 hacen falta decenas, que es justo lo que se quiere señalar. */
   var CALOR_SUELO = 0.07;
   /* Percentil de la densidad local que se lleva el extremo caliente de la rampa.
-     No se usa el máximo absoluto: un único rascacielos de apartamentos dejaría
-     el resto del municipio en el primer escalón de color. */
-  var CALOR_PERCENTIL = 0.96;
+     No se usa el máximo absoluto: un único bloque de apartamentos dejaría el
+     resto del municipio en el primer escalón de color.
+
+     El valor no está puesto a ojo. Se barrió de 0,80 a 0,995 midiendo, para cada
+     uno, la correlación de rangos entre el alfa que acaba pintando el lienzo y la
+     densidad real de viviendas en 150 m alrededor de cada punto. 0,85 es el que
+     mejor se porta a la vez en todos los niveles de zoom (rho de 0,84 a 0,97);
+     por encima de 0,95 el mapa se enfría y por debajo de 0,80 empieza a saturar. */
+  var CALOR_PERCENTIL = 0.85;
   /* Opacidad de la mancha cuando comparte mapa con los puntos. Baja lo justo
      para que los círculos se despeguen del fondo; por debajo de esto la
      densidad deja de leerse y la capa sobra. */
@@ -465,6 +471,18 @@
        encuadre, y el resto reparte color por todo el recorrido de la rampa. */
     var calorRef = null, calorZoom = null;
 
+    /* La densidad puede medirse en un sitio distinto de donde se pincha el
+       registro. Pasa siempre que la fuente georreferencia por unidad
+       administrativa y no por unidad física: el registro de turismo da una
+       coordenada por parcela catastral, así que la ficha de la vivienda tiene
+       que seguir en el punto oficial —es lo que dice el registro— mientras que
+       la densidad se mide donde están de verdad los edificios. Sin separarlo,
+       hay que elegir entre una ficha falsa o un mapa de densidad falso. */
+    function posicionCalor(p) {
+      var c = cfg.posicionCalor ? cfg.posicionCalor(p) : null;
+      return (c && isFinite(c[0]) && isFinite(c[1])) ? c : [p.lat, p.lon];
+    }
+
     /* Dos formas de escalar el calor, y la declaración elige:
 
        · **Por tabla** (`cfg.calorZoom`): una lista `[zoom, {radius, blur, max}]`
@@ -482,31 +500,46 @@
        justamente porque quiere ESE aspecto y no uno calculado. */
     function escalaCalor(zoom, vs) {
       var tabla = cfg.calorZoom;
+      var suelo = cfg.calorSuelo != null ? cfg.calorSuelo : CALOR_SUELO;
       if (tabla && tabla.length) {
         var elegida = null;
         for (var i = 0; i < tabla.length; i++) {
           if (zoom <= tabla[i][0]) { elegida = tabla[i][1]; break; }
         }
         var o = elegida || cfg.calorZoomFondo || tabla[tabla.length - 1][1];
-        return {
-          radius: o.radius, blur: o.blur, max: o.max,
-          maxZoom: cfg.calorMaxZoom || 18,
-          minOpacity: cfg.calorSuelo != null ? cfg.calorSuelo : 0.05
-        };
+        var mz = cfg.calorMaxZoom || 18;
+        var max = o.max;
+        if (cfg.calorTope === 'medido') {
+          /* El pincel viene de la tabla —es lo que da el aspecto—, pero el techo
+             se mide sobre los datos. Un techo escrito a mano solo vale para la
+             nube de puntos con la que se calibró; con otra distinta, o satura o
+             se queda corto.
+
+             Hay que devolverlo en las unidades de la librería, no en viviendas:
+             internamente cada punto no vale 1 sino `v`, un factor que depende
+             del zoom. Si se pasa el recuento en bruto, el techo queda `1/v`
+             veces demasiado alto y el mapa sale en frío. */
+          var v = 1 / Math.pow(2, Math.max(0, Math.min(mz - zoom, 12)) / 2);
+          max = densidadDeReferencia(vs, zoom, o.radius + o.blur) * v;
+        }
+        return { radius: o.radius, blur: o.blur, max: max, maxZoom: mz, minOpacity: suelo };
       }
       return {
         radius: CALOR_RADIO, blur: CALOR_BLUR,
-        max: densidadDeReferencia(vs, zoom),
+        max: densidadDeReferencia(vs, zoom, CALOR_RADIO + CALOR_BLUR),
         maxZoom: zoom,
-        minOpacity: cfg.calorSuelo != null ? cfg.calorSuelo : CALOR_SUELO
+        minOpacity: suelo
       };
     }
 
-    function densidadDeReferencia(vs, zoom) {
-      var celda = CALOR_RADIO / 2;
+    function densidadDeReferencia(vs, zoom, radioPincel) {
+      /* La rejilla tiene que ser LA MISMA que usa la librería por dentro
+         —celdas de (radio + desenfoque) / 2 en píxeles de pantalla—, o se estaría
+         midiendo la densidad de una cuadrícula y aplicándosela a otra. */
+      var celda = (radioPincel || CALOR_RADIO) / 2;
       var suma = {}, i, k;
       for (i = 0; i < vs.length; i++) {
-        var pt = mapa.project([vs[i].lat, vs[i].lon], zoom);
+        var pt = mapa.project(posicionCalor(vs[i]), zoom);
         k = Math.floor(pt.x / celda) + ':' + Math.floor(pt.y / celda);
         suma[k] = (suma[k] || 0) + (cfg.peso ? (+cfg.peso(vs[i]) || 1) : 1);
       }
@@ -515,6 +548,8 @@
       if (!cargas.length) return 1;
       cargas.sort(function (a, b) { return a - b; });
       var ref = cargas[Math.min(cargas.length - 1, Math.floor(cargas.length * CALOR_PERCENTIL))];
+      /* El percentil se toma sobre las celdas OCUPADAS: incluir las vacías, que
+         son la inmensa mayoría del término, dejaría el techo en 1 siempre. */
       return Math.max(CALOR_TOPE_MINIMO, ref);
     }
 
@@ -579,7 +614,8 @@
         var z = mapa.getZoom();
         var esc = escalaCalor(z, vs);
         calor = L.heatLayer(vs.map(function (p) {
-          return [p.lat, p.lon, cfg.peso ? (+cfg.peso(p) || 1) : 1];
+          var c = posicionCalor(p);
+          return [c[0], c[1], cfg.peso ? (+cfg.peso(p) || 1) : 1];
         }), {
           radius: esc.radius, blur: esc.blur,
           /* `maxZoom` no es hasta dónde se dibuja: es el zoom en que la librería
@@ -602,6 +638,11 @@
         if (calor._canvas) {
           var atenuar = verPuntos && !(cfg.calorZoom && cfg.calorZoom.length);
           calor._canvas.style.opacity = atenuar ? CALOR_ATENUADO : 1;
+          /* El lienzo del calor es el último hijo del panel, así que queda por
+             encima del de los puntos y se traga los clics: con la mancha puesta
+             no se podía abrir la ficha de ninguna vivienda. Es una capa de
+             lectura, no de interacción, y nunca debe interceptar el puntero. */
+          calor._canvas.style.pointerEvents = 'none';
         }
         calorRef = ref;
         calorZoom = z;

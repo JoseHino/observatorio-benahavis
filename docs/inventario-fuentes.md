@@ -616,6 +616,69 @@ de precipitación media anual.
 | 7.3 | IGN/CNIG — PNOA, LiDAR, MDT | Centro de descargas del CNIG | **Disponible** |
 | 7.4 | Copernicus Sentinel-2 — NDVI | Sentinel Hub | **Requiere registro** (y rechaza EPSG:25830 — usar EPSG:32630) |
 | 7.5 | OpenStreetMap — **límite del término municipal**, relación `341434` (`boundary=administrative`, `admin_level=8`, `ine:municipio=29023`) | `https://overpass-api.de/api/interpreter` con `relation[...][name="Benahavís"]; out geom;` | **Disponible** — se descarga una vez y se archiva en `docs/data/limite.json` |
+| 7.6 | Catastro — **parcelas catastrales** (INSPIRE `CadastralParcels`) | `https://www.catastro.hacienda.gob.es/INSPIRE/CadastralParcels/29/29023-BENAHAVIS/A.ES.SDGC.CP.29023.zip` | **Disponible** — 4.685 parcelas con superficie y geometría |
+| 7.7 | Catastro — **huellas de edificación** (INSPIRE `Buildings`) | `https://www.catastro.hacienda.gob.es/INSPIRE/buildings/29/29023-BENAHAVIS/A.ES.SDGC.BU.29023.zip` | **Disponible** — 2.499 parcelas edificadas, 4.468 cuerpos, con número de viviendas |
+
+#### Por qué hizo falta el Catastro: el registro de turismo no georreferencia por vivienda
+
+**El hallazgo.** El RTA publica **una coordenada por parcela catastral, no por vivienda**. En
+Benahavís, 2.205 viviendas inscritas comparten solo **604 coordenadas distintas**: el **81 %**
+está apilada sobre otra. El caso extremo es la urbanización **El Paraíso**, donde **131
+viviendas** —de bloques, portales y calles distintas, según sus propias direcciones— caen todas
+en el mismo punto, porque la parcela mide **45.025 m²** y el registro devuelve un punto para ella.
+No es un fallo de extracción ni de geocodificación: es la resolución de la fuente. La referencia
+catastral no lo arregla (621 parcelas frente a 604 coordenadas: las 131 de El Paraíso están en
+**una sola** parcela).
+
+**Por qué eso rompe un mapa de calor.** Miente en las dos direcciones a la vez:
+
+1. **Por geometría.** Una urbanización de 4,5 ha se dibuja como un lunar del tamaño del pincel,
+   mientras que unas pocas villas dispersas, al tener cada una su parcela, generan varias manchas
+   que se solapan y ocupan más superficie. El ojo lee superficie como cantidad, así que lo disperso
+   parece más denso que lo denso.
+2. **Por escala.** Con todas las viviendas de una parcela en un punto, la intensidad de esa celda
+   se dispara y satura el techo. Medido sobre el mapa publicado: a zoom 13, **131 viviendas
+   pintaban `#ff1329` y 18 viviendas pintaban `#ff4c0d`**; de 18 en adelante, todo el mismo rojo.
+
+**Medición del error.** Correlación de rangos (Spearman) entre el alfa que acaba en el lienzo y la
+densidad real de viviendas en 150 m alrededor de cada punto, sobre las 2.206 viviendas:
+
+| Zoom | Antes | Después |
+|---|---|---|
+| 12 | 0,835 | 0,843 |
+| 13 | 0,827 | **0,971** |
+| 14 | 0,405 | **0,967** |
+| 15 | **−0,122** | **0,864** |
+
+A zoom 15 la correlación era **negativa**: el mapa pintaba más caliente donde había *menos*
+viviendas. En el color más caliente convivían densidades de 21 a 132 viviendas/150 m.
+
+**La corrección.** Cada vivienda se coloca dentro de alguno de los cuerpos de edificación que el
+Catastro dibuja en su parcela, repartidas en proporción a la superficie de cada cuerpo y sobre una
+rejilla regular recortada por el contorno. El reparto es **determinista**: dos ejecuciones del
+pipeline dan el mismo mapa. Resultado: **604 → 2.200 coordenadas distintas**, viviendas apiladas
+de 1.789 a 19, máximo en un punto de 131 a 3. Alcanza al **96 %** de las viviendas (2.123 en 547
+parcelas); las 84 restantes son de parcelas sin geometría de edificación y se quedan en la
+coordenada del registro.
+
+> **Lo que esto afirma y lo que no.** No averigua en qué portal ni en qué piso está cada vivienda:
+> esa información no la publica nadie. Afirma algo más débil y cierto —*la vivienda está en alguno
+> de los edificios de su parcela*— y lo dice en la propia tarjeta. La **coordenada oficial del RTA
+> se conserva intacta** y es la que usa la ficha de cada vivienda al pinchar: el mapa de densidad y
+> el registro nominal no comparten geometría a propósito.
+
+> **Trampa de codificación.** Los dos ficheros son ZIP con GML dentro y **no comparten
+> codificación**: las parcelas vienen en UTF-8 y los edificios en **ISO-8859-1**, declarado en su
+> prólogo. Leer los edificios como UTF-8 rompe en cuanto aparece un topónimo con tilde.
+
+> **Un `Building` no es un edificio.** Es la agrupación de todos los cuerpos de una parcela y trae
+> tantos `posList` como cuerpos tenga: la parcela 9119104UF1481N tiene **139**. Y
+> `numberOfDwellings` es el recuento del Catastro para la parcela entera, no por cuerpo.
+
+**Indicador que sale de regalo.** Cruzando las VUT de cada parcela con las viviendas que el
+Catastro cuenta en ella se obtiene **qué parte de cada complejo está inscrita como turística**:
+El Paraíso **131 de 207 (63 %)**, Torre Tarín 103 de 262 (39 %), Parque Botánico 74 de 225 (33 %).
+Va en la ficha de cada vivienda.
 
 **Prueba de resolución municipal (7.5):** la relación monta un anillo cerrado de **383
 vértices** con bbox −5,1401 / 36,4692 / −4,9706 / 36,6424, y lleva la etiqueta `ine:municipio`
@@ -843,11 +906,11 @@ Se documentarán como tales en la interfaz, con la causa y el proxy sustitutivo.
 | 4 · Mercado de trabajo | 6 | Sí |
 | 5 · Renta y actividad económica | 4 verificadas + 3 pendientes | Sí |
 | 6 · Clima | 3 (requieren clave de AEMET, ya disponible) | Sí — estación `6069X` dentro del término |
-| 7 · Medio ambiente y territorio | 4 | Sí (geometría) |
+| 7 · Medio ambiente y territorio | 6 | Sí (geometría) |
 | 8 · Finanzas municipales | 1 verificada + 2 pendientes | Sí |
 | 9 · Big Data de Turismo Costa del Sol | 6 informes incorporados + 2 verificados y descartados | Sí, los seis |
 
-**Total: 52 fuentes verificadas contra su endpoint real**, de las cuales 48 resuelven a nivel
+**Total: 54 fuentes verificadas contra su endpoint real**, de las cuales 50 resuelven a nivel
 municipal para Benahavís.
 
 ---
