@@ -265,6 +265,20 @@ mismas variables está en **BADEA**, y se explota con las consultas del árbol d
 > La única vía es **pedir año a año**. Por eso el bloque va contra la ejecución anterior: en
 > régimen solo se descargan el año nuevo y el último publicado, que puede haberse revisado.
 
+> **El alias territorial NO siempre es `D_TERRITORIO_0`, y equivocarse no da error.**
+> La consulta 101690 (saldo migratorio) filtra por `D_TERRITORIO_2`. Pasarle el alias que usan
+> las demás **no produce ningún mensaje**: BADEA ignora el filtro y devuelve los **794 municipios
+> de Andalucía**, de modo que un parser que se quede con la última fila publica tan campante la
+> serie de otro pueblo. Es la trampa más peligrosa de esta fuente porque el resultado parece
+> perfectamente válido. El extractor lee el alias de las `hierarchies` de la propia respuesta y,
+> por si acaso, descarta fila a fila lo que no sea Benahavís.
+
+> **Dos familias de consultas de migraciones que NO dicen lo mismo.** Las 22827 y 22637
+> («Inmigraciones/Emigraciones por sexo», estadística antigua) dan **157 inmigraciones en 2021**;
+> la 101690 da **2.098** para ese mismo año. La buena es la 101690: cuadra al entero con la ficha
+> del IECA (2024: 1.893 llegadas, 1.408 salidas) y con la tabla 69767 del INE (saldo +485 en 2024,
+> −69 en 2023). Tres fuentes independientes coincidiendo a la unidad.
+
 > **Los identificadores de periodo parecen años pero no lo son.** La jerarquía temporal
 > (`jerarquia/2`, la misma para las doce consultas) numera de 19 en 19 desde 1900: el año 2000
 > es el identificador `1919` y el 1976 es el `1444`. Confundirlos hace que se pidan años que no

@@ -410,8 +410,11 @@ SERIES_FICHA: dict[str, dict[str, Any]] = {
     "energia":        {"consulta": 39837,  "desde": 2000},
     "transacciones":  {"consulta": 24842,  "desde": 2004},
     "movimiento":     {"consulta": 22084,  "desde": 1996},
-    "inmigraciones":  {"consulta": 22827,  "desde": 2002},
-    "emigraciones":   {"consulta": 22637,  "desde": 2002},
+    # 101690 en vez de las 22827/22637 de la estadística antigua: aquellas dan
+    # 157 inmigraciones en 2021 donde esta da 2.098, y es esta la que cuadra al
+    # entero con la ficha del IECA y con la tabla 69767 del INE. Trae además las
+    # tres medidas —llegadas, salidas y saldo— en una sola consulta.
+    "migraciones":    {"consulta": 101690, "desde": 2015},
     "presupuesto":    {"consulta": 1343,   "desde": 2000},
     "empresas_tramo": {"consulta": 22587,  "desde": 1998},
     "vehiculos":      {"consulta": 1231,   "desde": 2000},

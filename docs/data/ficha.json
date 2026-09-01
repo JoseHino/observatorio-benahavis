@@ -1,0 +1,4431 @@
+{
+ "energia": {
+  "consulta": "39837",
+  "titulo": "Consumo de energía eléctrica por sectores",
+  "medidas": [
+   "Consumo de energía eléctrica"
+  ],
+  "categorias": [
+   "Administración-Servicios públicos",
+   "Agricultura",
+   "Comercio_Servicios",
+   "Industria",
+   "Resto",
+   "Sector residencial",
+   "TOTAL"
+  ],
+  "anyos": [
+   "2000",
+   "2001",
+   "2002",
+   "2003",
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serie": {
+   "Agricultura": [
+    {
+     "t": "2000",
+     "Consumo de energía eléctrica": 215.0
+    },
+    {
+     "t": "2001",
+     "Consumo de energía eléctrica": 304.0
+    },
+    {
+     "t": "2002",
+     "Consumo de energía eléctrica": 467.0
+    },
+    {
+     "t": "2003",
+     "Consumo de energía eléctrica": 353.0
+    },
+    {
+     "t": "2004",
+     "Consumo de energía eléctrica": 450.0
+    },
+    {
+     "t": "2005",
+     "Consumo de energía eléctrica": 432.0
+    },
+    {
+     "t": "2006",
+     "Consumo de energía eléctrica": 350.0
+    },
+    {
+     "t": "2007",
+     "Consumo de energía eléctrica": 343.0
+    },
+    {
+     "t": "2008",
+     "Consumo de energía eléctrica": 519.0
+    },
+    {
+     "t": "2009",
+     "Consumo de energía eléctrica": 791.0
+    },
+    {
+     "t": "2010",
+     "Consumo de energía eléctrica": 591.0
+    },
+    {
+     "t": "2011",
+     "Consumo de energía eléctrica": 818.3
+    },
+    {
+     "t": "2012",
+     "Consumo de energía eléctrica": 713.91
+    },
+    {
+     "t": "2013",
+     "Consumo de energía eléctrica": 987.46
+    },
+    {
+     "t": "2014",
+     "Consumo de energía eléctrica": 691.78
+    },
+    {
+     "t": "2015",
+     "Consumo de energía eléctrica": 990.43
+    },
+    {
+     "t": "2016",
+     "Consumo de energía eléctrica": 1080.49
+    },
+    {
+     "t": "2017",
+     "Consumo de energía eléctrica": 1128.28
+    },
+    {
+     "t": "2018",
+     "Consumo de energía eléctrica": 1103.45
+    },
+    {
+     "t": "2019",
+     "Consumo de energía eléctrica": 1112.635603
+    },
+    {
+     "t": "2020",
+     "Consumo de energía eléctrica": 1223.833186
+    },
+    {
+     "t": "2021",
+     "Consumo de energía eléctrica": 1871.808131
+    },
+    {
+     "t": "2022",
+     "Consumo de energía eléctrica": 1874.70597
+    },
+    {
+     "t": "2023",
+     "Consumo de energía eléctrica": 1879.993721
+    },
+    {
+     "t": "2024",
+     "Consumo de energía eléctrica": 1879.085472
+    },
+    {
+     "t": "2025",
+     "Consumo de energía eléctrica": 1944.171324
+    }
+   ],
+   "Industria": [
+    {
+     "t": "2000",
+     "Consumo de energía eléctrica": 978.0
+    },
+    {
+     "t": "2001",
+     "Consumo de energía eléctrica": 7.0
+    },
+    {
+     "t": "2002",
+     "Consumo de energía eléctrica": 7.0
+    },
+    {
+     "t": "2003",
+     "Consumo de energía eléctrica": 9.0
+    },
+    {
+     "t": "2004",
+     "Consumo de energía eléctrica": 8.0
+    },
+    {
+     "t": "2005",
+     "Consumo de energía eléctrica": 9.0
+    },
+    {
+     "t": "2006",
+     "Consumo de energía eléctrica": 11.0
+    },
+    {
+     "t": "2007",
+     "Consumo de energía eléctrica": 11.0
+    },
+    {
+     "t": "2008",
+     "Consumo de energía eléctrica": 11.0
+    },
+    {
+     "t": "2009",
+     "Consumo de energía eléctrica": 12.0
+    },
+    {
+     "t": "2010",
+     "Consumo de energía eléctrica": 11.0
+    },
+    {
+     "t": "2011",
+     "Consumo de energía eléctrica": 9.41
+    },
+    {
+     "t": "2012",
+     "Consumo de energía eléctrica": 10.31
+    },
+    {
+     "t": "2013",
+     "Consumo de energía eléctrica": 7.74
+    },
+    {
+     "t": "2014",
+     "Consumo de energía eléctrica": 6.76
+    },
+    {
+     "t": "2015",
+     "Consumo de energía eléctrica": 6.44
+    },
+    {
+     "t": "2016",
+     "Consumo de energía eléctrica": 5.88
+    },
+    {
+     "t": "2017",
+     "Consumo de energía eléctrica": 3.89
+    },
+    {
+     "t": "2018",
+     "Consumo de energía eléctrica": 13.13
+    },
+    {
+     "t": "2019",
+     "Consumo de energía eléctrica": 32.761278
+    },
+    {
+     "t": "2020",
+     "Consumo de energía eléctrica": 27.751104
+    },
+    {
+     "t": "2021",
+     "Consumo de energía eléctrica": 43.861711
+    },
+    {
+     "t": "2022",
+     "Consumo de energía eléctrica": 80.45234
+    },
+    {
+     "t": "2023",
+     "Consumo de energía eléctrica": 66.116747
+    },
+    {
+     "t": "2024",
+     "Consumo de energía eléctrica": 74.027994
+    },
+    {
+     "t": "2025",
+     "Consumo de energía eléctrica": 5957.434151
+    }
+   ],
+   "Comercio_Servicios": [
+    {
+     "t": "2000",
+     "Consumo de energía eléctrica": 4752.0
+    },
+    {
+     "t": "2001",
+     "Consumo de energía eléctrica": 1431.0
+    },
+    {
+     "t": "2002",
+     "Consumo de energía eléctrica": 1712.0
+    },
+    {
+     "t": "2003",
+     "Consumo de energía eléctrica": 2316.0
+    },
+    {
+     "t": "2004",
+     "Consumo de energía eléctrica": 3866.0
+    },
+    {
+     "t": "2005",
+     "Consumo de energía eléctrica": 8336.0
+    },
+    {
+     "t": "2006",
+     "Consumo de energía eléctrica": 8240.0
+    },
+    {
+     "t": "2007",
+     "Consumo de energía eléctrica": 8913.0
+    },
+    {
+     "t": "2008",
+     "Consumo de energía eléctrica": 9463.0
+    },
+    {
+     "t": "2009",
+     "Consumo de energía eléctrica": 7905.0
+    },
+    {
+     "t": "2010",
+     "Consumo de energía eléctrica": 7794.0
+    },
+    {
+     "t": "2011",
+     "Consumo de energía eléctrica": 7258.48
+    },
+    {
+     "t": "2012",
+     "Consumo de energía eléctrica": 6197.79
+    },
+    {
+     "t": "2013",
+     "Consumo de energía eléctrica": 6250.23
+    },
+    {
+     "t": "2014",
+     "Consumo de energía eléctrica": 6018.27
+    },
+    {
+     "t": "2015",
+     "Consumo de energía eléctrica": 6606.86
+    },
+    {
+     "t": "2016",
+     "Consumo de energía eléctrica": 6775.26
+    },
+    {
+     "t": "2017",
+     "Consumo de energía eléctrica": 7010.91
+    },
+    {
+     "t": "2018",
+     "Consumo de energía eléctrica": 7256.77
+    },
+    {
+     "t": "2019",
+     "Consumo de energía eléctrica": 7828.512046
+    },
+    {
+     "t": "2020",
+     "Consumo de energía eléctrica": 5311.086828
+    },
+    {
+     "t": "2021",
+     "Consumo de energía eléctrica": 6769.836463
+    },
+    {
+     "t": "2022",
+     "Consumo de energía eléctrica": 8809.17244
+    },
+    {
+     "t": "2023",
+     "Consumo de energía eléctrica": 9778.286149
+    },
+    {
+     "t": "2024",
+     "Consumo de energía eléctrica": 11207.319548
+    },
+    {
+     "t": "2025",
+     "Consumo de energía eléctrica": 12877.504578
+    }
+   ],
+   "Sector residencial": [
+    {
+     "t": "2000",
+     "Consumo de energía eléctrica": 3616.0
+    },
+    {
+     "t": "2001",
+     "Consumo de energía eléctrica": 5196.0
+    },
+    {
+     "t": "2002",
+     "Consumo de energía eléctrica": 6578.0
+    },
+    {
+     "t": "2003",
+     "Consumo de energía eléctrica": 7829.0
+    },
+    {
+     "t": "2004",
+     "Consumo de energía eléctrica": 10598.0
+    },
+    {
+     "t": "2005",
+     "Consumo de energía eléctrica": 14860.0
+    },
+    {
+     "t": "2006",
+     "Consumo de energía eléctrica": 19699.0
+    },
+    {
+     "t": "2007",
+     "Consumo de energía eléctrica": 24221.0
+    },
+    {
+     "t": "2008",
+     "Consumo de energía eléctrica": 31204.0
+    },
+    {
+     "t": "2009",
+     "Consumo de energía eléctrica": 30629.0
+    },
+    {
+     "t": "2010",
+     "Consumo de energía eléctrica": 31916.0
+    },
+    {
+     "t": "2011",
+     "Consumo de energía eléctrica": 33238.02
+    },
+    {
+     "t": "2012",
+     "Consumo de energía eléctrica": 35405.62
+    },
+    {
+     "t": "2013",
+     "Consumo de energía eléctrica": 36460.25
+    },
+    {
+     "t": "2014",
+     "Consumo de energía eléctrica": 36707.24
+    },
+    {
+     "t": "2015",
+     "Consumo de energía eléctrica": 40055.26
+    },
+    {
+     "t": "2016",
+     "Consumo de energía eléctrica": 42039.3
+    },
+    {
+     "t": "2017",
+     "Consumo de energía eléctrica": 44412.76
+    },
+    {
+     "t": "2018",
+     "Consumo de energía eléctrica": 47018.83
+    },
+    {
+     "t": "2019",
+     "Consumo de energía eléctrica": 47980.5474
+    },
+    {
+     "t": "2020",
+     "Consumo de energía eléctrica": 45884.465949
+    },
+    {
+     "t": "2021",
+     "Consumo de energía eléctrica": 51694.876816
+    },
+    {
+     "t": "2022",
+     "Consumo de energía eléctrica": 52417.20765
+    },
+    {
+     "t": "2023",
+     "Consumo de energía eléctrica": 54864.892846
+    },
+    {
+     "t": "2024",
+     "Consumo de energía eléctrica": 57862.015906
+    },
+    {
+     "t": "2025",
+     "Consumo de energía eléctrica": 62572.297613
+    }
+   ],
+   "TOTAL": [
+    {
+     "t": "2000",
+     "Consumo de energía eléctrica": 9561.0
+    },
+    {
+     "t": "2001",
+     "Consumo de energía eléctrica": 10580.0
+    },
+    {
+     "t": "2002",
+     "Consumo de energía eléctrica": 12720.0
+    },
+    {
+     "t": "2003",
+     "Consumo de energía eléctrica": 16029.0
+    },
+    {
+     "t": "2004",
+     "Consumo de energía eléctrica": 22782.0
+    },
+    {
+     "t": "2005",
+     "Consumo de energía eléctrica": 32753.0
+    },
+    {
+     "t": "2006",
+     "Consumo de energía eléctrica": 38122.0
+    },
+    {
+     "t": "2007",
+     "Consumo de energía eléctrica": 44058.0
+    },
+    {
+     "t": "2008",
+     "Consumo de energía eléctrica": 53223.0
+    },
+    {
+     "t": "2009",
+     "Consumo de energía eléctrica": 51245.0
+    },
+    {
+     "t": "2010",
+     "Consumo de energía eléctrica": 50260.0
+    },
+    {
+     "t": "2011",
+     "Consumo de energía eléctrica": 50978.18
+    },
+    {
+     "t": "2012",
+     "Consumo de energía eléctrica": 51750.5
+    },
+    {
+     "t": "2013",
+     "Consumo de energía eléctrica": 51860.91
+    },
+    {
+     "t": "2014",
+     "Consumo de energía eléctrica": 51855.47
+    },
+    {
+     "t": "2015",
+     "Consumo de energía eléctrica": 56171.4
+    },
+    {
+     "t": "2016",
+     "Consumo de energía eléctrica": 59113.62
+    },
+    {
+     "t": "2017",
+     "Consumo de energía eléctrica": 61714.85
+    },
+    {
+     "t": "2018",
+     "Consumo de energía eléctrica": 65736.58
+    },
+    {
+     "t": "2019",
+     "Consumo de energía eléctrica": 68645.605885
+    },
+    {
+     "t": "2020",
+     "Consumo de energía eléctrica": 62869.075629
+    },
+    {
+     "t": "2021",
+     "Consumo de energía eléctrica": 71935.727712
+    },
+    {
+     "t": "2022",
+     "Consumo de energía eléctrica": 74771.72852
+    },
+    {
+     "t": "2023",
+     "Consumo de energía eléctrica": 78425.462841
+    },
+    {
+     "t": "2024",
+     "Consumo de energía eléctrica": 81198.033275
+    },
+    {
+     "t": "2025",
+     "Consumo de energía eléctrica": 88117.474396
+    }
+   ],
+   "Administración-Servicios públicos": [
+    {
+     "t": "2001",
+     "Consumo de energía eléctrica": 2545.0
+    },
+    {
+     "t": "2002",
+     "Consumo de energía eléctrica": 2815.0
+    },
+    {
+     "t": "2003",
+     "Consumo de energía eléctrica": 3165.0
+    },
+    {
+     "t": "2004",
+     "Consumo de energía eléctrica": 3570.0
+    },
+    {
+     "t": "2005",
+     "Consumo de energía eléctrica": 5092.0
+    },
+    {
+     "t": "2006",
+     "Consumo de energía eléctrica": 4927.0
+    },
+    {
+     "t": "2007",
+     "Consumo de energía eléctrica": 5788.0
+    },
+    {
+     "t": "2008",
+     "Consumo de energía eléctrica": 7469.0
+    },
+    {
+     "t": "2009",
+     "Consumo de energía eléctrica": 7791.0
+    },
+    {
+     "t": "2010",
+     "Consumo de energía eléctrica": 6503.0
+    },
+    {
+     "t": "2011",
+     "Consumo de energía eléctrica": 6506.64
+    },
+    {
+     "t": "2012",
+     "Consumo de energía eléctrica": 7228.28
+    },
+    {
+     "t": "2013",
+     "Consumo de energía eléctrica": 6211.18
+    },
+    {
+     "t": "2014",
+     "Consumo de energía eléctrica": 6254.03
+    },
+    {
+     "t": "2015",
+     "Consumo de energía eléctrica": 6481.38
+    },
+    {
+     "t": "2016",
+     "Consumo de energía eléctrica": 6856.26
+    },
+    {
+     "t": "2017",
+     "Consumo de energía eléctrica": 6131.8
+    },
+    {
+     "t": "2018",
+     "Consumo de energía eléctrica": 6846.98
+    },
+    {
+     "t": "2019",
+     "Consumo de energía eléctrica": 7982.48316
+    },
+    {
+     "t": "2020",
+     "Consumo de energía eléctrica": 7044.989146
+    },
+    {
+     "t": "2021",
+     "Consumo de energía eléctrica": 7353.741581
+    },
+    {
+     "t": "2022",
+     "Consumo de energía eléctrica": 7401.7481
+    },
+    {
+     "t": "2023",
+     "Consumo de energía eléctrica": 7568.789332
+    },
+    {
+     "t": "2024",
+     "Consumo de energía eléctrica": 7150.287038
+    },
+    {
+     "t": "2025",
+     "Consumo de energía eléctrica": 1426.900088
+    }
+   ],
+   "Resto": [
+    {
+     "t": "2001",
+     "Consumo de energía eléctrica": 1097.0
+    },
+    {
+     "t": "2002",
+     "Consumo de energía eléctrica": 1141.0
+    },
+    {
+     "t": "2003",
+     "Consumo de energía eléctrica": 2357.0
+    },
+    {
+     "t": "2004",
+     "Consumo de energía eléctrica": 4290.0
+    },
+    {
+     "t": "2005",
+     "Consumo de energía eléctrica": 4024.0
+    },
+    {
+     "t": "2006",
+     "Consumo de energía eléctrica": 4895.0
+    },
+    {
+     "t": "2007",
+     "Consumo de energía eléctrica": 4782.0
+    },
+    {
+     "t": "2008",
+     "Consumo de energía eléctrica": 4557.0
+    },
+    {
+     "t": "2009",
+     "Consumo de energía eléctrica": 4117.0
+    },
+    {
+     "t": "2010",
+     "Consumo de energía eléctrica": 3445.0
+    },
+    {
+     "t": "2011",
+     "Consumo de energía eléctrica": 3147.33
+    },
+    {
+     "t": "2012",
+     "Consumo de energía eléctrica": 2194.59
+    },
+    {
+     "t": "2013",
+     "Consumo de energía eléctrica": 1944.05
+    },
+    {
+     "t": "2014",
+     "Consumo de energía eléctrica": 2177.39
+    },
+    {
+     "t": "2015",
+     "Consumo de energía eléctrica": 2031.03
+    },
+    {
+     "t": "2016",
+     "Consumo de energía eléctrica": 2356.43
+    },
+    {
+     "t": "2017",
+     "Consumo de energía eléctrica": 3027.21
+    },
+    {
+     "t": "2018",
+     "Consumo de energía eléctrica": 3497.42
+    },
+    {
+     "t": "2019",
+     "Consumo de energía eléctrica": 3708.666398
+    },
+    {
+     "t": "2020",
+     "Consumo de energía eléctrica": 3376.949416
+    },
+    {
+     "t": "2021",
+     "Consumo de energía eléctrica": 4201.60301
+    },
+    {
+     "t": "2022",
+     "Consumo de energía eléctrica": 4188.44202
+    },
+    {
+     "t": "2023",
+     "Consumo de energía eléctrica": 4267.384046
+    },
+    {
+     "t": "2024",
+     "Consumo de energía eléctrica": 3025.297317
+    },
+    {
+     "t": "2025",
+     "Consumo de energía eléctrica": 3339.166642
+    }
+   ]
+  }
+ },
+ "transacciones": {
+  "consulta": "24842",
+  "titulo": "Transacciones inmobiliarias según antigüedad de la vivienda",
+  "medidas": [
+   "Transacciones"
+  ],
+  "categorias": [
+   "Total",
+   "Vivienda nueva",
+   "Vivienda segunda mano"
+  ],
+  "anyos": [
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serie": {
+   "Vivienda nueva": [
+    {
+     "t": "2004",
+     "Transacciones": 353.0
+    },
+    {
+     "t": "2005",
+     "Transacciones": 411.0
+    },
+    {
+     "t": "2006",
+     "Transacciones": 650.0
+    },
+    {
+     "t": "2007",
+     "Transacciones": 633.0
+    },
+    {
+     "t": "2008",
+     "Transacciones": 438.0
+    },
+    {
+     "t": "2009",
+     "Transacciones": 559.0
+    },
+    {
+     "t": "2010",
+     "Transacciones": 422.0
+    },
+    {
+     "t": "2011",
+     "Transacciones": 310.0
+    },
+    {
+     "t": "2012",
+     "Transacciones": 593.0
+    },
+    {
+     "t": "2013",
+     "Transacciones": 532.0
+    },
+    {
+     "t": "2014",
+     "Transacciones": 707.0
+    },
+    {
+     "t": "2015",
+     "Transacciones": 743.0
+    },
+    {
+     "t": "2016",
+     "Transacciones": 624.0
+    },
+    {
+     "t": "2017",
+     "Transacciones": 499.0
+    },
+    {
+     "t": "2018",
+     "Transacciones": 109.0
+    },
+    {
+     "t": "2019",
+     "Transacciones": 63.0
+    },
+    {
+     "t": "2020",
+     "Transacciones": 74.0
+    },
+    {
+     "t": "2021",
+     "Transacciones": 139.0
+    },
+    {
+     "t": "2022",
+     "Transacciones": 125.0
+    },
+    {
+     "t": "2023",
+     "Transacciones": 136.0
+    },
+    {
+     "t": "2024",
+     "Transacciones": 83.0
+    },
+    {
+     "t": "2025",
+     "Transacciones": 23.0
+    }
+   ],
+   "Total": [
+    {
+     "t": "2004",
+     "Transacciones": 353.0
+    },
+    {
+     "t": "2005",
+     "Transacciones": 412.0
+    },
+    {
+     "t": "2006",
+     "Transacciones": 650.0
+    },
+    {
+     "t": "2007",
+     "Transacciones": 633.0
+    },
+    {
+     "t": "2008",
+     "Transacciones": 438.0
+    },
+    {
+     "t": "2009",
+     "Transacciones": 559.0
+    },
+    {
+     "t": "2010",
+     "Transacciones": 422.0
+    },
+    {
+     "t": "2011",
+     "Transacciones": 311.0
+    },
+    {
+     "t": "2012",
+     "Transacciones": 593.0
+    },
+    {
+     "t": "2013",
+     "Transacciones": 532.0
+    },
+    {
+     "t": "2014",
+     "Transacciones": 708.0
+    },
+    {
+     "t": "2015",
+     "Transacciones": 743.0
+    },
+    {
+     "t": "2016",
+     "Transacciones": 625.0
+    },
+    {
+     "t": "2017",
+     "Transacciones": 499.0
+    },
+    {
+     "t": "2018",
+     "Transacciones": 627.0
+    },
+    {
+     "t": "2019",
+     "Transacciones": 645.0
+    },
+    {
+     "t": "2020",
+     "Transacciones": 458.0
+    },
+    {
+     "t": "2021",
+     "Transacciones": 859.0
+    },
+    {
+     "t": "2022",
+     "Transacciones": 1127.0
+    },
+    {
+     "t": "2023",
+     "Transacciones": 1068.0
+    },
+    {
+     "t": "2024",
+     "Transacciones": 800.0
+    },
+    {
+     "t": "2025",
+     "Transacciones": 711.0
+    }
+   ],
+   "Vivienda segunda mano": [
+    {
+     "t": "2005",
+     "Transacciones": 1.0
+    },
+    {
+     "t": "2011",
+     "Transacciones": 1.0
+    },
+    {
+     "t": "2014",
+     "Transacciones": 1.0
+    },
+    {
+     "t": "2016",
+     "Transacciones": 1.0
+    },
+    {
+     "t": "2018",
+     "Transacciones": 518.0
+    },
+    {
+     "t": "2019",
+     "Transacciones": 582.0
+    },
+    {
+     "t": "2020",
+     "Transacciones": 384.0
+    },
+    {
+     "t": "2021",
+     "Transacciones": 720.0
+    },
+    {
+     "t": "2022",
+     "Transacciones": 1002.0
+    },
+    {
+     "t": "2023",
+     "Transacciones": 932.0
+    },
+    {
+     "t": "2024",
+     "Transacciones": 717.0
+    },
+    {
+     "t": "2025",
+     "Transacciones": 688.0
+    }
+   ]
+  }
+ },
+ "movimiento": {
+  "consulta": "22084",
+  "titulo": "Nacimientos, defunciones y crecimiento vegetativo por sexo",
+  "medidas": [
+   "Nacimientos",
+   "Defunciones",
+   "Crecimiento vegetativo"
+  ],
+  "categorias": [
+   "Ambos sexos",
+   "Hombres",
+   "Mujeres"
+  ],
+  "anyos": [
+   "1996",
+   "1997",
+   "1998",
+   "1999",
+   "2000",
+   "2001",
+   "2002",
+   "2003",
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "serie": {
+   "Hombres": [
+    {
+     "t": "1996",
+     "Nacimientos": 15.0,
+     "Defunciones": 2.0,
+     "Crecimiento vegetativo": 13.0
+    },
+    {
+     "t": "1997",
+     "Nacimientos": 9.0,
+     "Defunciones": 3.0,
+     "Crecimiento vegetativo": 6.0
+    },
+    {
+     "t": "1998",
+     "Nacimientos": 7.0,
+     "Defunciones": 3.0,
+     "Crecimiento vegetativo": 4.0
+    },
+    {
+     "t": "1999",
+     "Nacimientos": 11.0,
+     "Defunciones": 2.0,
+     "Crecimiento vegetativo": 9.0
+    },
+    {
+     "t": "2000",
+     "Nacimientos": 11.0,
+     "Defunciones": 3.0,
+     "Crecimiento vegetativo": 8.0
+    },
+    {
+     "t": "2001",
+     "Nacimientos": 9.0,
+     "Defunciones": 2.0,
+     "Crecimiento vegetativo": 7.0
+    },
+    {
+     "t": "2002",
+     "Nacimientos": 13.0,
+     "Defunciones": 6.0,
+     "Crecimiento vegetativo": 7.0
+    },
+    {
+     "t": "2003",
+     "Nacimientos": 16.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 11.0
+    },
+    {
+     "t": "2004",
+     "Nacimientos": 13.0,
+     "Defunciones": 6.0,
+     "Crecimiento vegetativo": 7.0
+    },
+    {
+     "t": "2005",
+     "Nacimientos": 17.0,
+     "Defunciones": 3.0,
+     "Crecimiento vegetativo": 14.0
+    },
+    {
+     "t": "2006",
+     "Nacimientos": 24.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 17.0
+    },
+    {
+     "t": "2007",
+     "Nacimientos": 19.0,
+     "Defunciones": 9.0,
+     "Crecimiento vegetativo": 10.0
+    },
+    {
+     "t": "2008",
+     "Nacimientos": 25.0,
+     "Defunciones": 6.0,
+     "Crecimiento vegetativo": 19.0
+    },
+    {
+     "t": "2009",
+     "Nacimientos": 31.0,
+     "Defunciones": 8.0,
+     "Crecimiento vegetativo": 23.0
+    },
+    {
+     "t": "2010",
+     "Nacimientos": 23.0,
+     "Defunciones": 19.0,
+     "Crecimiento vegetativo": 4.0
+    },
+    {
+     "t": "2011",
+     "Nacimientos": 23.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 18.0
+    },
+    {
+     "t": "2012",
+     "Nacimientos": 27.0,
+     "Defunciones": 11.0,
+     "Crecimiento vegetativo": 16.0
+    },
+    {
+     "t": "2013",
+     "Nacimientos": 32.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 27.0
+    },
+    {
+     "t": "2014",
+     "Nacimientos": 22.0,
+     "Defunciones": 6.0,
+     "Crecimiento vegetativo": 16.0
+    },
+    {
+     "t": "2015",
+     "Nacimientos": 23.0,
+     "Defunciones": 13.0,
+     "Crecimiento vegetativo": 10.0
+    },
+    {
+     "t": "2016",
+     "Nacimientos": 30.0,
+     "Defunciones": 13.0,
+     "Crecimiento vegetativo": 17.0
+    },
+    {
+     "t": "2017",
+     "Nacimientos": 29.0,
+     "Defunciones": 10.0,
+     "Crecimiento vegetativo": 19.0
+    },
+    {
+     "t": "2018",
+     "Nacimientos": 28.0,
+     "Defunciones": 13.0,
+     "Crecimiento vegetativo": 15.0
+    },
+    {
+     "t": "2019",
+     "Nacimientos": 28.0,
+     "Defunciones": 10.0,
+     "Crecimiento vegetativo": 18.0
+    },
+    {
+     "t": "2020",
+     "Nacimientos": 32.0,
+     "Defunciones": 21.0,
+     "Crecimiento vegetativo": 11.0
+    },
+    {
+     "t": "2021",
+     "Nacimientos": 36.0,
+     "Defunciones": 18.0,
+     "Crecimiento vegetativo": 18.0
+    },
+    {
+     "t": "2022",
+     "Nacimientos": 35.0,
+     "Defunciones": 25.0,
+     "Crecimiento vegetativo": 10.0
+    },
+    {
+     "t": "2023",
+     "Nacimientos": 22.0,
+     "Defunciones": 26.0,
+     "Crecimiento vegetativo": -4.0
+    },
+    {
+     "t": "2024",
+     "Nacimientos": 27.0,
+     "Defunciones": 23.0,
+     "Crecimiento vegetativo": 4.0
+    }
+   ],
+   "Mujeres": [
+    {
+     "t": "1996",
+     "Nacimientos": 9.0,
+     "Defunciones": 2.0,
+     "Crecimiento vegetativo": 7.0
+    },
+    {
+     "t": "1997",
+     "Nacimientos": 4.0,
+     "Defunciones": 1.0,
+     "Crecimiento vegetativo": 3.0
+    },
+    {
+     "t": "1998",
+     "Nacimientos": 6.0,
+     "Defunciones": 4.0,
+     "Crecimiento vegetativo": 2.0
+    },
+    {
+     "t": "1999",
+     "Nacimientos": 10.0,
+     "Defunciones": 1.0,
+     "Crecimiento vegetativo": 9.0
+    },
+    {
+     "t": "2000",
+     "Nacimientos": 14.0,
+     "Defunciones": 3.0,
+     "Crecimiento vegetativo": 11.0
+    },
+    {
+     "t": "2001",
+     "Nacimientos": 8.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 3.0
+    },
+    {
+     "t": "2002",
+     "Nacimientos": 7.0,
+     "Defunciones": null,
+     "Crecimiento vegetativo": 7.0
+    },
+    {
+     "t": "2003",
+     "Nacimientos": 11.0,
+     "Defunciones": 8.0,
+     "Crecimiento vegetativo": 3.0
+    },
+    {
+     "t": "2004",
+     "Nacimientos": 13.0,
+     "Defunciones": 3.0,
+     "Crecimiento vegetativo": 10.0
+    },
+    {
+     "t": "2005",
+     "Nacimientos": 12.0,
+     "Defunciones": 2.0,
+     "Crecimiento vegetativo": 10.0
+    },
+    {
+     "t": "2006",
+     "Nacimientos": 16.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 9.0
+    },
+    {
+     "t": "2007",
+     "Nacimientos": 19.0,
+     "Defunciones": 4.0,
+     "Crecimiento vegetativo": 15.0
+    },
+    {
+     "t": "2008",
+     "Nacimientos": 26.0,
+     "Defunciones": 4.0,
+     "Crecimiento vegetativo": 22.0
+    },
+    {
+     "t": "2009",
+     "Nacimientos": 24.0,
+     "Defunciones": 1.0,
+     "Crecimiento vegetativo": 23.0
+    },
+    {
+     "t": "2010",
+     "Nacimientos": 29.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 24.0
+    },
+    {
+     "t": "2011",
+     "Nacimientos": 25.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 18.0
+    },
+    {
+     "t": "2012",
+     "Nacimientos": 29.0,
+     "Defunciones": 8.0,
+     "Crecimiento vegetativo": 21.0
+    },
+    {
+     "t": "2013",
+     "Nacimientos": 28.0,
+     "Defunciones": 4.0,
+     "Crecimiento vegetativo": 24.0
+    },
+    {
+     "t": "2014",
+     "Nacimientos": 27.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 22.0
+    },
+    {
+     "t": "2015",
+     "Nacimientos": 31.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 24.0
+    },
+    {
+     "t": "2016",
+     "Nacimientos": 38.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 33.0
+    },
+    {
+     "t": "2017",
+     "Nacimientos": 17.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 10.0
+    },
+    {
+     "t": "2018",
+     "Nacimientos": 25.0,
+     "Defunciones": 6.0,
+     "Crecimiento vegetativo": 19.0
+    },
+    {
+     "t": "2019",
+     "Nacimientos": 31.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 24.0
+    },
+    {
+     "t": "2020",
+     "Nacimientos": 27.0,
+     "Defunciones": 12.0,
+     "Crecimiento vegetativo": 15.0
+    },
+    {
+     "t": "2021",
+     "Nacimientos": 32.0,
+     "Defunciones": 16.0,
+     "Crecimiento vegetativo": 16.0
+    },
+    {
+     "t": "2022",
+     "Nacimientos": 33.0,
+     "Defunciones": 13.0,
+     "Crecimiento vegetativo": 20.0
+    },
+    {
+     "t": "2023",
+     "Nacimientos": 37.0,
+     "Defunciones": 11.0,
+     "Crecimiento vegetativo": 26.0
+    },
+    {
+     "t": "2024",
+     "Nacimientos": 56.0,
+     "Defunciones": 18.0,
+     "Crecimiento vegetativo": 38.0
+    }
+   ],
+   "Ambos sexos": [
+    {
+     "t": "1996",
+     "Nacimientos": 24.0,
+     "Defunciones": 4.0,
+     "Crecimiento vegetativo": 20.0
+    },
+    {
+     "t": "1997",
+     "Nacimientos": 13.0,
+     "Defunciones": 4.0,
+     "Crecimiento vegetativo": 9.0
+    },
+    {
+     "t": "1998",
+     "Nacimientos": 13.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 6.0
+    },
+    {
+     "t": "1999",
+     "Nacimientos": 21.0,
+     "Defunciones": 3.0,
+     "Crecimiento vegetativo": 18.0
+    },
+    {
+     "t": "2000",
+     "Nacimientos": 25.0,
+     "Defunciones": 6.0,
+     "Crecimiento vegetativo": 19.0
+    },
+    {
+     "t": "2001",
+     "Nacimientos": 17.0,
+     "Defunciones": 7.0,
+     "Crecimiento vegetativo": 10.0
+    },
+    {
+     "t": "2002",
+     "Nacimientos": 20.0,
+     "Defunciones": 6.0,
+     "Crecimiento vegetativo": 14.0
+    },
+    {
+     "t": "2003",
+     "Nacimientos": 27.0,
+     "Defunciones": 13.0,
+     "Crecimiento vegetativo": 14.0
+    },
+    {
+     "t": "2004",
+     "Nacimientos": 26.0,
+     "Defunciones": 9.0,
+     "Crecimiento vegetativo": 17.0
+    },
+    {
+     "t": "2005",
+     "Nacimientos": 29.0,
+     "Defunciones": 5.0,
+     "Crecimiento vegetativo": 24.0
+    },
+    {
+     "t": "2006",
+     "Nacimientos": 40.0,
+     "Defunciones": 14.0,
+     "Crecimiento vegetativo": 26.0
+    },
+    {
+     "t": "2007",
+     "Nacimientos": 38.0,
+     "Defunciones": 13.0,
+     "Crecimiento vegetativo": 25.0
+    },
+    {
+     "t": "2008",
+     "Nacimientos": 51.0,
+     "Defunciones": 10.0,
+     "Crecimiento vegetativo": 41.0
+    },
+    {
+     "t": "2009",
+     "Nacimientos": 55.0,
+     "Defunciones": 9.0,
+     "Crecimiento vegetativo": 46.0
+    },
+    {
+     "t": "2010",
+     "Nacimientos": 52.0,
+     "Defunciones": 24.0,
+     "Crecimiento vegetativo": 28.0
+    },
+    {
+     "t": "2011",
+     "Nacimientos": 48.0,
+     "Defunciones": 12.0,
+     "Crecimiento vegetativo": 36.0
+    },
+    {
+     "t": "2012",
+     "Nacimientos": 56.0,
+     "Defunciones": 19.0,
+     "Crecimiento vegetativo": 37.0
+    },
+    {
+     "t": "2013",
+     "Nacimientos": 60.0,
+     "Defunciones": 9.0,
+     "Crecimiento vegetativo": 51.0
+    },
+    {
+     "t": "2014",
+     "Nacimientos": 49.0,
+     "Defunciones": 11.0,
+     "Crecimiento vegetativo": 38.0
+    },
+    {
+     "t": "2015",
+     "Nacimientos": 54.0,
+     "Defunciones": 20.0,
+     "Crecimiento vegetativo": 34.0
+    },
+    {
+     "t": "2016",
+     "Nacimientos": 68.0,
+     "Defunciones": 18.0,
+     "Crecimiento vegetativo": 50.0
+    },
+    {
+     "t": "2017",
+     "Nacimientos": 46.0,
+     "Defunciones": 17.0,
+     "Crecimiento vegetativo": 29.0
+    },
+    {
+     "t": "2018",
+     "Nacimientos": 53.0,
+     "Defunciones": 19.0,
+     "Crecimiento vegetativo": 34.0
+    },
+    {
+     "t": "2019",
+     "Nacimientos": 59.0,
+     "Defunciones": 17.0,
+     "Crecimiento vegetativo": 42.0
+    },
+    {
+     "t": "2020",
+     "Nacimientos": 59.0,
+     "Defunciones": 33.0,
+     "Crecimiento vegetativo": 26.0
+    },
+    {
+     "t": "2021",
+     "Nacimientos": 68.0,
+     "Defunciones": 34.0,
+     "Crecimiento vegetativo": 34.0
+    },
+    {
+     "t": "2022",
+     "Nacimientos": 68.0,
+     "Defunciones": 38.0,
+     "Crecimiento vegetativo": 30.0
+    },
+    {
+     "t": "2023",
+     "Nacimientos": 59.0,
+     "Defunciones": 37.0,
+     "Crecimiento vegetativo": 22.0
+    },
+    {
+     "t": "2024",
+     "Nacimientos": 83.0,
+     "Defunciones": 41.0,
+     "Crecimiento vegetativo": 42.0
+    }
+   ]
+  }
+ },
+ "migraciones": {
+  "consulta": "101690",
+  "titulo": "Saldo migratorio según sexo y tipo de migración",
+  "medidas": [
+   "Inmigraciones",
+   "Emigraciones",
+   "Saldo migratorio"
+  ],
+  "categorias": [
+   "Ambos sexos"
+  ],
+  "anyos": [
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "serie": {
+   "Ambos sexos": [
+    {
+     "t": "2021",
+     "Inmigraciones": 2098.0,
+     "Emigraciones": 1432.0,
+     "Saldo migratorio": 666.0
+    },
+    {
+     "t": "2022",
+     "Inmigraciones": 1749.0,
+     "Emigraciones": 1065.0,
+     "Saldo migratorio": 684.0
+    },
+    {
+     "t": "2023",
+     "Inmigraciones": 1725.0,
+     "Emigraciones": 1794.0,
+     "Saldo migratorio": -69.0
+    },
+    {
+     "t": "2024",
+     "Inmigraciones": 1893.0,
+     "Emigraciones": 1408.0,
+     "Saldo migratorio": 485.0
+    }
+   ]
+  }
+ },
+ "presupuesto": {
+  "consulta": "1343",
+  "titulo": "Ingresos y gastos por habitante",
+  "medidas": [
+   "Ingresos por habitante",
+   "Gastos por habitante"
+  ],
+  "categorias": [
+   "Total"
+  ],
+  "anyos": [
+   "2000",
+   "2001",
+   "2002",
+   "2003",
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "serie": {
+   "Total": [
+    {
+     "t": "2000",
+     "Ingresos por habitante": 2373.12,
+     "Gastos por habitante": 1633.45
+    },
+    {
+     "t": "2001",
+     "Ingresos por habitante": 3999.01,
+     "Gastos por habitante": 1537.36
+    },
+    {
+     "t": "2002",
+     "Ingresos por habitante": 5429.58,
+     "Gastos por habitante": 3743.33
+    },
+    {
+     "t": "2003",
+     "Ingresos por habitante": 5534.1,
+     "Gastos por habitante": 3354.62
+    },
+    {
+     "t": "2004",
+     "Ingresos por habitante": 7292.89,
+     "Gastos por habitante": 3530.57
+    },
+    {
+     "t": "2005",
+     "Ingresos por habitante": 6043.08,
+     "Gastos por habitante": 2607.6
+    },
+    {
+     "t": "2006",
+     "Ingresos por habitante": 4377.2,
+     "Gastos por habitante": 2731.39
+    },
+    {
+     "t": "2007",
+     "Ingresos por habitante": 4925.66,
+     "Gastos por habitante": 3610.04
+    },
+    {
+     "t": "2008",
+     "Ingresos por habitante": 3753.33,
+     "Gastos por habitante": 3696.52
+    },
+    {
+     "t": "2009",
+     "Ingresos por habitante": 3268.61,
+     "Gastos por habitante": 3951.45
+    },
+    {
+     "t": "2010",
+     "Ingresos por habitante": 2511.28,
+     "Gastos por habitante": 2558.51
+    },
+    {
+     "t": "2011",
+     "Ingresos por habitante": 2766.28,
+     "Gastos por habitante": 2224.43
+    },
+    {
+     "t": "2012",
+     "Ingresos por habitante": 2759.62,
+     "Gastos por habitante": 1886.75
+    },
+    {
+     "t": "2013",
+     "Ingresos por habitante": 2770.15,
+     "Gastos por habitante": 1965.03
+    },
+    {
+     "t": "2014",
+     "Ingresos por habitante": 3115.64,
+     "Gastos por habitante": 1838.3
+    },
+    {
+     "t": "2015",
+     "Ingresos por habitante": 3289.41,
+     "Gastos por habitante": 1946.73
+    },
+    {
+     "t": "2016",
+     "Ingresos por habitante": 2762.87,
+     "Gastos por habitante": 1781.72
+    },
+    {
+     "t": "2017",
+     "Ingresos por habitante": 2802.9,
+     "Gastos por habitante": 1720.7
+    },
+    {
+     "t": "2018",
+     "Ingresos por habitante": 2428.878502942,
+     "Gastos por habitante": 1469.869700839
+    },
+    {
+     "t": "2019",
+     "Ingresos por habitante": 2724.663542362,
+     "Gastos por habitante": 1646.584703772
+    },
+    {
+     "t": "2020",
+     "Ingresos por habitante": 2656.347999484,
+     "Gastos por habitante": 1748.322622612
+    },
+    {
+     "t": "2021",
+     "Ingresos por habitante": 3054.362977392,
+     "Gastos por habitante": 2316.269335803
+    },
+    {
+     "t": "2022",
+     "Ingresos por habitante": 2916.75060938,
+     "Gastos por habitante": 2198.303158736
+    },
+    {
+     "t": "2023",
+     "Ingresos por habitante": 3615.289043704,
+     "Gastos por habitante": 2262.271167244
+    },
+    {
+     "t": "2024",
+     "Ingresos por habitante": 3855.935435717,
+     "Gastos por habitante": 2207.365020381
+    }
+   ]
+  }
+ },
+ "empresas_tramo": {
+  "consulta": "22587",
+  "titulo": "Empresas según tramo de empleo. Serie completa desde 1998",
+  "medidas": [
+   "Empresas Directorio Cnae93",
+   "Empresas Directorio Cnae09"
+  ],
+  "categorias": [
+   "250 o más empleados",
+   "De 0 a 2 empleados",
+   "De 100 a 249 empleados",
+   "De 20 a 49 empleados",
+   "De 3 a 5 empleados",
+   "De 50 a 99 empleados",
+   "De 6 a 19 empleados",
+   "Sin empleo conocido",
+   "TOTAL"
+  ],
+  "anyos": [
+   "1998",
+   "1999",
+   "2000",
+   "2001",
+   "2002",
+   "2003",
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serie": {
+   "De 0 a 2 empleados": [
+    {
+     "t": "1998",
+     "Empresas Directorio Cnae93": 49.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "1999",
+     "Empresas Directorio Cnae93": 71.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2000",
+     "Empresas Directorio Cnae93": 74.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2001",
+     "Empresas Directorio Cnae93": 65.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2002",
+     "Empresas Directorio Cnae93": 65.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 83.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2004",
+     "Empresas Directorio Cnae93": 94.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2005",
+     "Empresas Directorio Cnae93": 160.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 184.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 274.0,
+     "Empresas Directorio Cnae09": 275.0
+    },
+    {
+     "t": "2008",
+     "Empresas Directorio Cnae93": 321.0,
+     "Empresas Directorio Cnae09": 321.0
+    },
+    {
+     "t": "2009",
+     "Empresas Directorio Cnae93": 316.0,
+     "Empresas Directorio Cnae09": 316.0
+    },
+    {
+     "t": "2010",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 321.0
+    },
+    {
+     "t": "2011",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 346.0
+    },
+    {
+     "t": "2012",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 381.0
+    },
+    {
+     "t": "2013",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 400.0
+    },
+    {
+     "t": "2014",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 426.0
+    },
+    {
+     "t": "2015",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 460.0
+    },
+    {
+     "t": "2016",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 432.0
+    },
+    {
+     "t": "2017",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 420.0
+    },
+    {
+     "t": "2018",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 556.0
+    },
+    {
+     "t": "2019",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 664.0
+    },
+    {
+     "t": "2020",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 690.0
+    },
+    {
+     "t": "2021",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 719.0
+    },
+    {
+     "t": "2022",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 844.0
+    },
+    {
+     "t": "2023",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 868.0
+    },
+    {
+     "t": "2024",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 945.0
+    },
+    {
+     "t": "2025",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1134.0
+    }
+   ],
+   "De 3 a 5 empleados": [
+    {
+     "t": "1998",
+     "Empresas Directorio Cnae93": 6.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "1999",
+     "Empresas Directorio Cnae93": 7.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2000",
+     "Empresas Directorio Cnae93": 10.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2001",
+     "Empresas Directorio Cnae93": 14.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2002",
+     "Empresas Directorio Cnae93": 20.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 25.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2004",
+     "Empresas Directorio Cnae93": 22.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2005",
+     "Empresas Directorio Cnae93": 24.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 25.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 34.0,
+     "Empresas Directorio Cnae09": 34.0
+    },
+    {
+     "t": "2008",
+     "Empresas Directorio Cnae93": 26.0,
+     "Empresas Directorio Cnae09": 26.0
+    },
+    {
+     "t": "2009",
+     "Empresas Directorio Cnae93": 31.0,
+     "Empresas Directorio Cnae09": 31.0
+    },
+    {
+     "t": "2010",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 39.0
+    },
+    {
+     "t": "2011",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 32.0
+    },
+    {
+     "t": "2012",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 28.0
+    },
+    {
+     "t": "2013",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 34.0
+    },
+    {
+     "t": "2014",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 33.0
+    },
+    {
+     "t": "2015",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 40.0
+    },
+    {
+     "t": "2016",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 31.0
+    },
+    {
+     "t": "2017",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 38.0
+    },
+    {
+     "t": "2018",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 40.0
+    },
+    {
+     "t": "2019",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 47.0
+    },
+    {
+     "t": "2020",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 46.0
+    },
+    {
+     "t": "2021",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 46.0
+    },
+    {
+     "t": "2022",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 55.0
+    },
+    {
+     "t": "2023",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 54.0
+    },
+    {
+     "t": "2024",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 52.0
+    },
+    {
+     "t": "2025",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 50.0
+    }
+   ],
+   "De 6 a 19 empleados": [
+    {
+     "t": "1998",
+     "Empresas Directorio Cnae93": 3.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "1999",
+     "Empresas Directorio Cnae93": 5.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2000",
+     "Empresas Directorio Cnae93": 10.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2001",
+     "Empresas Directorio Cnae93": 9.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2002",
+     "Empresas Directorio Cnae93": 13.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 18.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2004",
+     "Empresas Directorio Cnae93": 19.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2005",
+     "Empresas Directorio Cnae93": 12.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 25.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 27.0,
+     "Empresas Directorio Cnae09": 27.0
+    },
+    {
+     "t": "2008",
+     "Empresas Directorio Cnae93": 23.0,
+     "Empresas Directorio Cnae09": 23.0
+    },
+    {
+     "t": "2009",
+     "Empresas Directorio Cnae93": 21.0,
+     "Empresas Directorio Cnae09": 21.0
+    },
+    {
+     "t": "2010",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 14.0
+    },
+    {
+     "t": "2011",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 21.0
+    },
+    {
+     "t": "2012",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 25.0
+    },
+    {
+     "t": "2013",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 20.0
+    },
+    {
+     "t": "2014",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 24.0
+    },
+    {
+     "t": "2015",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 19.0
+    },
+    {
+     "t": "2016",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 26.0
+    },
+    {
+     "t": "2017",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 26.0
+    },
+    {
+     "t": "2018",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 27.0
+    },
+    {
+     "t": "2019",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 29.0
+    },
+    {
+     "t": "2020",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 27.0
+    },
+    {
+     "t": "2021",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 32.0
+    },
+    {
+     "t": "2022",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 32.0
+    },
+    {
+     "t": "2023",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 31.0
+    },
+    {
+     "t": "2024",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 39.0
+    },
+    {
+     "t": "2025",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 37.0
+    }
+   ],
+   "De 20 a 49 empleados": [
+    {
+     "t": "1998",
+     "Empresas Directorio Cnae93": 3.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "1999",
+     "Empresas Directorio Cnae93": 3.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2000",
+     "Empresas Directorio Cnae93": 6.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2001",
+     "Empresas Directorio Cnae93": 8.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2002",
+     "Empresas Directorio Cnae93": 6.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 5.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2004",
+     "Empresas Directorio Cnae93": 5.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2005",
+     "Empresas Directorio Cnae93": 6.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 5.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 6.0,
+     "Empresas Directorio Cnae09": 6.0
+    },
+    {
+     "t": "2008",
+     "Empresas Directorio Cnae93": 8.0,
+     "Empresas Directorio Cnae09": 8.0
+    },
+    {
+     "t": "2009",
+     "Empresas Directorio Cnae93": 4.0,
+     "Empresas Directorio Cnae09": 4.0
+    },
+    {
+     "t": "2010",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 4.0
+    },
+    {
+     "t": "2011",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 4.0
+    },
+    {
+     "t": "2012",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 6.0
+    },
+    {
+     "t": "2013",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 6.0
+    },
+    {
+     "t": "2014",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 5.0
+    },
+    {
+     "t": "2015",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 5.0
+    },
+    {
+     "t": "2016",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 7.0
+    },
+    {
+     "t": "2017",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 8.0
+    },
+    {
+     "t": "2018",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 11.0
+    },
+    {
+     "t": "2019",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 11.0
+    },
+    {
+     "t": "2020",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 11.0
+    },
+    {
+     "t": "2021",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 9.0
+    },
+    {
+     "t": "2022",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 11.0
+    },
+    {
+     "t": "2023",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 10.0
+    },
+    {
+     "t": "2024",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 9.0
+    },
+    {
+     "t": "2025",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 7.0
+    }
+   ],
+   "Sin empleo conocido": [
+    {
+     "t": "1998",
+     "Empresas Directorio Cnae93": 19.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "1999",
+     "Empresas Directorio Cnae93": 22.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2000",
+     "Empresas Directorio Cnae93": 17.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2001",
+     "Empresas Directorio Cnae93": 17.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2002",
+     "Empresas Directorio Cnae93": 22.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 23.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2004",
+     "Empresas Directorio Cnae93": 27.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2005",
+     "Empresas Directorio Cnae93": 56.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 41.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": null
+    }
+   ],
+   "TOTAL": [
+    {
+     "t": "1998",
+     "Empresas Directorio Cnae93": 80.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "1999",
+     "Empresas Directorio Cnae93": 108.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2000",
+     "Empresas Directorio Cnae93": 118.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2001",
+     "Empresas Directorio Cnae93": 113.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2002",
+     "Empresas Directorio Cnae93": 128.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 157.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2004",
+     "Empresas Directorio Cnae93": 169.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2005",
+     "Empresas Directorio Cnae93": 260.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 282.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 344.0,
+     "Empresas Directorio Cnae09": 344.0
+    },
+    {
+     "t": "2008",
+     "Empresas Directorio Cnae93": 382.0,
+     "Empresas Directorio Cnae09": 382.0
+    },
+    {
+     "t": "2009",
+     "Empresas Directorio Cnae93": 376.0,
+     "Empresas Directorio Cnae09": 376.0
+    },
+    {
+     "t": "2010",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 382.0
+    },
+    {
+     "t": "2011",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 406.0
+    },
+    {
+     "t": "2012",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 445.0
+    },
+    {
+     "t": "2013",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 463.0
+    },
+    {
+     "t": "2014",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 491.0
+    },
+    {
+     "t": "2015",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 528.0
+    },
+    {
+     "t": "2016",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 499.0
+    },
+    {
+     "t": "2017",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 495.0
+    },
+    {
+     "t": "2018",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 636.0
+    },
+    {
+     "t": "2019",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 753.0
+    },
+    {
+     "t": "2020",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 775.0
+    },
+    {
+     "t": "2021",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 807.0
+    },
+    {
+     "t": "2022",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 943.0
+    },
+    {
+     "t": "2023",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 965.0
+    },
+    {
+     "t": "2024",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1048.0
+    },
+    {
+     "t": "2025",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1231.0
+    }
+   ],
+   "De 50 a 99 empleados": [
+    {
+     "t": "2000",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2002",
+     "Empresas Directorio Cnae93": 2.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 2.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2004",
+     "Empresas Directorio Cnae93": 2.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2005",
+     "Empresas Directorio Cnae93": 2.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2008",
+     "Empresas Directorio Cnae93": 2.0,
+     "Empresas Directorio Cnae09": 2.0
+    },
+    {
+     "t": "2009",
+     "Empresas Directorio Cnae93": 3.0,
+     "Empresas Directorio Cnae09": 3.0
+    },
+    {
+     "t": "2010",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 3.0
+    },
+    {
+     "t": "2011",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 2.0
+    },
+    {
+     "t": "2012",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 4.0
+    },
+    {
+     "t": "2013",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 3.0
+    },
+    {
+     "t": "2014",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 2.0
+    },
+    {
+     "t": "2015",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 3.0
+    },
+    {
+     "t": "2016",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 2.0
+    },
+    {
+     "t": "2017",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 2.0
+    },
+    {
+     "t": "2018",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2019",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2020",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2021",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2022",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2023",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 2.0
+    },
+    {
+     "t": "2024",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 3.0
+    },
+    {
+     "t": "2025",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 3.0
+    }
+   ],
+   "De 100 a 249 empleados": [
+    {
+     "t": "2003",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2006",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": null
+    },
+    {
+     "t": "2007",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2008",
+     "Empresas Directorio Cnae93": 2.0,
+     "Empresas Directorio Cnae09": 2.0
+    },
+    {
+     "t": "2009",
+     "Empresas Directorio Cnae93": 1.0,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2010",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2011",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2014",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2015",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2016",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2017",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2018",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    },
+    {
+     "t": "2019",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    }
+   ],
+   "250 o más empleados": [
+    {
+     "t": "2012",
+     "Empresas Directorio Cnae93": null,
+     "Empresas Directorio Cnae09": 1.0
+    }
+   ]
+  }
+ },
+ "vehiculos": {
+  "consulta": "1231",
+  "titulo": "Parque de vehículos por tipo",
+  "medidas": [
+   "Número de vehículos"
+  ],
+  "categorias": [
+   "Camiones",
+   "Camiones Hasta 3.500 Kg",
+   "Camiones más de 3.500 Kg",
+   "Camiones y furgonetas",
+   "Ciclomotores",
+   "Furgonetas",
+   "Motocicletas",
+   "Otros vehículos",
+   "Remolques y semirremolques",
+   "Total",
+   "Tractores industriales",
+   "Turismos"
+  ],
+  "anyos": [
+   "2000",
+   "2001",
+   "2002",
+   "2003",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serie": {
+   "Turismos": [
+    {
+     "t": "2000",
+     "Número de vehículos": 1166.0
+    },
+    {
+     "t": "2001",
+     "Número de vehículos": 1286.0
+    },
+    {
+     "t": "2002",
+     "Número de vehículos": 1427.0
+    },
+    {
+     "t": "2003",
+     "Número de vehículos": 1566.0
+    },
+    {
+     "t": "2005",
+     "Número de vehículos": 1853.0
+    },
+    {
+     "t": "2006",
+     "Número de vehículos": 1998.0
+    },
+    {
+     "t": "2007",
+     "Número de vehículos": 2156.0
+    },
+    {
+     "t": "2008",
+     "Número de vehículos": 2255.0
+    },
+    {
+     "t": "2009",
+     "Número de vehículos": 2317.0
+    },
+    {
+     "t": "2010",
+     "Número de vehículos": 2488.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 2687.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 2956.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 3188.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 3471.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 3712.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 4015.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 4324.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 4615.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 4839.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 5030.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 5338.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 5763.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 6040.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 6369.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 6675.0
+    }
+   ],
+   "Motocicletas": [
+    {
+     "t": "2000",
+     "Número de vehículos": 91.0
+    },
+    {
+     "t": "2001",
+     "Número de vehículos": 107.0
+    },
+    {
+     "t": "2002",
+     "Número de vehículos": 111.0
+    },
+    {
+     "t": "2003",
+     "Número de vehículos": 116.0
+    },
+    {
+     "t": "2005",
+     "Número de vehículos": 136.0
+    },
+    {
+     "t": "2006",
+     "Número de vehículos": 148.0
+    },
+    {
+     "t": "2007",
+     "Número de vehículos": 176.0
+    },
+    {
+     "t": "2008",
+     "Número de vehículos": 200.0
+    },
+    {
+     "t": "2009",
+     "Número de vehículos": 216.0
+    },
+    {
+     "t": "2010",
+     "Número de vehículos": 266.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 298.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 329.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 370.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 408.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 461.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 503.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 531.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 592.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 652.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 688.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 763.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 835.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 899.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 955.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 1034.0
+    }
+   ],
+   "Furgonetas": [
+    {
+     "t": "2000",
+     "Número de vehículos": 245.0
+    },
+    {
+     "t": "2001",
+     "Número de vehículos": 267.0
+    },
+    {
+     "t": "2002",
+     "Número de vehículos": 297.0
+    },
+    {
+     "t": "2003",
+     "Número de vehículos": 325.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 638.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 670.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 757.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 789.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 860.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 906.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 978.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 1043.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 1133.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 1243.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 1323.0
+    }
+   ],
+   "Camiones Hasta 3.500 Kg": [
+    {
+     "t": "2019",
+     "Número de vehículos": 230.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 231.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 229.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 245.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 257.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 261.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 264.0
+    }
+   ],
+   "Camiones más de 3.500 Kg": [
+    {
+     "t": "2019",
+     "Número de vehículos": 35.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 35.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 38.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 38.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 38.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 40.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 44.0
+    }
+   ],
+   "Tractores industriales": [
+    {
+     "t": "2010",
+     "Número de vehículos": 4.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 4.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 5.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 4.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 5.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 4.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 4.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 6.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 5.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 5.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 5.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 4.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 6.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 7.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 7.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 12.0
+    }
+   ],
+   "Ciclomotores": [
+    {
+     "t": "2000",
+     "Número de vehículos": 75.0
+    },
+    {
+     "t": "2001",
+     "Número de vehículos": 99.0
+    },
+    {
+     "t": "2002",
+     "Número de vehículos": 119.0
+    },
+    {
+     "t": "2003",
+     "Número de vehículos": 139.0
+    },
+    {
+     "t": "2007",
+     "Número de vehículos": 192.0
+    },
+    {
+     "t": "2008",
+     "Número de vehículos": 189.0
+    },
+    {
+     "t": "2009",
+     "Número de vehículos": 179.0
+    },
+    {
+     "t": "2010",
+     "Número de vehículos": 179.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 176.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 170.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 166.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 174.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 173.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 175.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 179.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 177.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 183.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 190.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 192.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 197.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 203.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 177.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 143.0
+    }
+   ],
+   "Remolques y semirremolques": [
+    {
+     "t": "2005",
+     "Número de vehículos": 5.0
+    },
+    {
+     "t": "2006",
+     "Número de vehículos": 8.0
+    },
+    {
+     "t": "2007",
+     "Número de vehículos": 9.0
+    },
+    {
+     "t": "2009",
+     "Número de vehículos": 10.0
+    },
+    {
+     "t": "2010",
+     "Número de vehículos": 14.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 16.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 14.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 14.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 15.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 16.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 16.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 19.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 20.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 20.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 24.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 23.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 24.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 22.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 29.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 32.0
+    }
+   ],
+   "Otros vehículos": [
+    {
+     "t": "2000",
+     "Número de vehículos": 19.0
+    },
+    {
+     "t": "2001",
+     "Número de vehículos": 29.0
+    },
+    {
+     "t": "2002",
+     "Número de vehículos": 33.0
+    },
+    {
+     "t": "2003",
+     "Número de vehículos": 42.0
+    },
+    {
+     "t": "2005",
+     "Número de vehículos": 49.0
+    },
+    {
+     "t": "2006",
+     "Número de vehículos": 55.0
+    },
+    {
+     "t": "2007",
+     "Número de vehículos": 60.0
+    },
+    {
+     "t": "2008",
+     "Número de vehículos": 61.0
+    },
+    {
+     "t": "2009",
+     "Número de vehículos": 67.0
+    },
+    {
+     "t": "2010",
+     "Número de vehículos": 72.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 79.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 78.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 79.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 78.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 69.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 76.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 84.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 92.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 92.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 99.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 111.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 121.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 118.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 127.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 127.0
+    }
+   ],
+   "Total": [
+    {
+     "t": "2000",
+     "Número de vehículos": 1660.0
+    },
+    {
+     "t": "2001",
+     "Número de vehículos": 1869.0
+    },
+    {
+     "t": "2002",
+     "Número de vehículos": 2079.0
+    },
+    {
+     "t": "2003",
+     "Número de vehículos": 2286.0
+    },
+    {
+     "t": "2005",
+     "Número de vehículos": 2531.0
+    },
+    {
+     "t": "2006",
+     "Número de vehículos": 2734.0
+    },
+    {
+     "t": "2007",
+     "Número de vehículos": 3181.0
+    },
+    {
+     "t": "2008",
+     "Número de vehículos": 3319.0
+    },
+    {
+     "t": "2009",
+     "Número de vehículos": 3415.0
+    },
+    {
+     "t": "2010",
+     "Número de vehículos": 3691.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 3973.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 4321.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 4639.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 5032.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 5356.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 5806.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 6194.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 6594.0
+    },
+    {
+     "t": "2019",
+     "Número de vehículos": 6916.0
+    },
+    {
+     "t": "2020",
+     "Número de vehículos": 7208.0
+    },
+    {
+     "t": "2021",
+     "Número de vehículos": 7676.0
+    },
+    {
+     "t": "2022",
+     "Número de vehículos": 8272.0
+    },
+    {
+     "t": "2023",
+     "Número de vehículos": 8717.0
+    },
+    {
+     "t": "2024",
+     "Número de vehículos": 9208.0
+    },
+    {
+     "t": "2025",
+     "Número de vehículos": 9654.0
+    }
+   ],
+   "Camiones": [
+    {
+     "t": "2000",
+     "Número de vehículos": 64.0
+    },
+    {
+     "t": "2001",
+     "Número de vehículos": 81.0
+    },
+    {
+     "t": "2002",
+     "Número de vehículos": 92.0
+    },
+    {
+     "t": "2003",
+     "Número de vehículos": 98.0
+    },
+    {
+     "t": "2014",
+     "Número de vehículos": 243.0
+    },
+    {
+     "t": "2015",
+     "Número de vehículos": 251.0
+    },
+    {
+     "t": "2016",
+     "Número de vehículos": 260.0
+    },
+    {
+     "t": "2017",
+     "Número de vehículos": 262.0
+    }
+   ],
+   "Camiones y furgonetas": [
+    {
+     "t": "2005",
+     "Número de vehículos": 488.0
+    },
+    {
+     "t": "2006",
+     "Número de vehículos": 525.0
+    },
+    {
+     "t": "2007",
+     "Número de vehículos": 588.0
+    },
+    {
+     "t": "2008",
+     "Número de vehículos": 614.0
+    },
+    {
+     "t": "2009",
+     "Número de vehículos": 626.0
+    },
+    {
+     "t": "2010",
+     "Número de vehículos": 668.0
+    },
+    {
+     "t": "2011",
+     "Número de vehículos": 713.0
+    },
+    {
+     "t": "2012",
+     "Número de vehículos": 769.0
+    },
+    {
+     "t": "2013",
+     "Número de vehículos": 818.0
+    },
+    {
+     "t": "2018",
+     "Número de vehículos": 1093.0
+    }
+   ]
+  }
+ },
+ "ibi": {
+  "consulta": "2517",
+  "titulo": "I.B.I. de naturaleza urbana",
+  "medidas": [
+   "Número de recibos",
+   "Base imponible",
+   "Base liquidable",
+   "Cuota íntegra",
+   "Cuota líquida"
+  ],
+  "categorias": [
+   "Total"
+  ],
+  "anyos": [
+   "2000",
+   "2001",
+   "2002",
+   "2003",
+   "2004",
+   "2005",
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serie": {
+   "Total": [
+    {
+     "t": "2000",
+     "Número de recibos": 2902.0,
+     "Base imponible": 647550191.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 1295103.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2001",
+     "Número de recibos": 3305.0,
+     "Base imponible": 626850340.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 1253700.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2002",
+     "Número de recibos": 4215.0,
+     "Base imponible": 740949000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 2963796.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2003",
+     "Número de recibos": 4856.0,
+     "Base imponible": 877550000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 3510199.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2004",
+     "Número de recibos": 6019.0,
+     "Base imponible": 880100000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 3520400.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2005",
+     "Número de recibos": 6924.0,
+     "Base imponible": 985503000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 3942012.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2006",
+     "Número de recibos": 8180.0,
+     "Base imponible": 1326359000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 5305437.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2007",
+     "Número de recibos": 9233.0,
+     "Base imponible": 1458111000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 5832445.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2008",
+     "Número de recibos": 11160.0,
+     "Base imponible": 1589390000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 6357561.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2009",
+     "Número de recibos": 12727.0,
+     "Base imponible": 1737935000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 6951740.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2010",
+     "Número de recibos": 13267.0,
+     "Base imponible": 1838571000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 7354282.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2011",
+     "Número de recibos": 13301.0,
+     "Base imponible": 1838257000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 7353026.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2012",
+     "Número de recibos": 13541.0,
+     "Base imponible": 2012758000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 10063791.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2013",
+     "Número de recibos": 14522.0,
+     "Base imponible": 1897608000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 11385650.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2014",
+     "Número de recibos": 13954.0,
+     "Base imponible": 1923750000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 11542500.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2015",
+     "Número de recibos": 14155.0,
+     "Base imponible": 1959375000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 11756253.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2016",
+     "Número de recibos": 14222.0,
+     "Base imponible": 2113820802.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 8455283.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2017",
+     "Número de recibos": 14437.0,
+     "Base imponible": 2234402000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 8937606.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2018",
+     "Número de recibos": 14522.0,
+     "Base imponible": 2404091000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 9616365.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2019",
+     "Número de recibos": 14875.0,
+     "Base imponible": 2498704000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 9994817.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2020",
+     "Número de recibos": 15006.0,
+     "Base imponible": 2619800000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 10479201.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2021",
+     "Número de recibos": 15406.0,
+     "Base imponible": 2657326000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 10629304.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2022",
+     "Número de recibos": 15591.0,
+     "Base imponible": 2696744000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 10786976.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2023",
+     "Número de recibos": 15978.0,
+     "Base imponible": 2725826000.0,
+     "Base liquidable": null,
+     "Cuota íntegra": 10903303.0,
+     "Cuota líquida": null
+    },
+    {
+     "t": "2024",
+     "Número de recibos": 16034.0,
+     "Base imponible": 2749868000.0,
+     "Base liquidable": 2749868000.0,
+     "Cuota íntegra": 10999472.0,
+     "Cuota líquida": 10972831.0
+    },
+    {
+     "t": "2025",
+     "Número de recibos": 15854.0,
+     "Base imponible": 2768027000.0,
+     "Base liquidable": 2768027000.0,
+     "Cuota íntegra": 11072108.0,
+     "Cuota líquida": 11068539.0
+    }
+   ]
+  }
+ },
+ "renta_aeat": {
+  "consulta": "105037",
+  "titulo": "Renta bruta y renta disponible (municipios de más de 1.000 hab)",
+  "medidas": [
+   "Posicionamiento en Andalucía",
+   "Renta bruta media",
+   "Renta bruta mediana",
+   "Renta disponible media",
+   "Renta disponible mediana"
+  ],
+  "categorias": [
+   "Total"
+  ],
+  "anyos": [
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023"
+  ],
+  "serie": {
+   "Total": [
+    {
+     "t": "2013",
+     "Posicionamiento en Andalucía": 3.0,
+     "Renta bruta media": 29742.0,
+     "Renta bruta mediana": null,
+     "Renta disponible media": 22743.0,
+     "Renta disponible mediana": null
+    },
+    {
+     "t": "2014",
+     "Posicionamiento en Andalucía": 17.0,
+     "Renta bruta media": 25801.0,
+     "Renta bruta mediana": null,
+     "Renta disponible media": 20810.0,
+     "Renta disponible mediana": null
+    },
+    {
+     "t": "2015",
+     "Posicionamiento en Andalucía": 7.0,
+     "Renta bruta media": 28428.0,
+     "Renta bruta mediana": null,
+     "Renta disponible media": 23311.0,
+     "Renta disponible mediana": null
+    },
+    {
+     "t": "2016",
+     "Posicionamiento en Andalucía": 10.0,
+     "Renta bruta media": 28443.0,
+     "Renta bruta mediana": null,
+     "Renta disponible media": 23127.0,
+     "Renta disponible mediana": null
+    },
+    {
+     "t": "2017",
+     "Posicionamiento en Andalucía": 6.0,
+     "Renta bruta media": 30429.0,
+     "Renta bruta mediana": null,
+     "Renta disponible media": 24362.0,
+     "Renta disponible mediana": null
+    },
+    {
+     "t": "2018",
+     "Posicionamiento en Andalucía": 4.0,
+     "Renta bruta media": 31557.0,
+     "Renta bruta mediana": null,
+     "Renta disponible media": 25222.0,
+     "Renta disponible mediana": null
+    },
+    {
+     "t": "2019",
+     "Posicionamiento en Andalucía": 1.0,
+     "Renta bruta media": 38169.0,
+     "Renta bruta mediana": null,
+     "Renta disponible media": 30418.0,
+     "Renta disponible mediana": null
+    },
+    {
+     "t": "2020",
+     "Posicionamiento en Andalucía": 1.0,
+     "Renta bruta media": 35728.0,
+     "Renta bruta mediana": 19907.0,
+     "Renta disponible media": 28566.0,
+     "Renta disponible mediana": 17421.0
+    },
+    {
+     "t": "2021",
+     "Posicionamiento en Andalucía": 1.0,
+     "Renta bruta media": 41967.0,
+     "Renta bruta mediana": 22147.0,
+     "Renta disponible media": 32720.0,
+     "Renta disponible mediana": 19058.0
+    },
+    {
+     "t": "2022",
+     "Posicionamiento en Andalucía": 1.0,
+     "Renta bruta media": 39787.0,
+     "Renta bruta mediana": 24175.0,
+     "Renta disponible media": 31012.0,
+     "Renta disponible mediana": 20457.0
+    },
+    {
+     "t": "2023",
+     "Posicionamiento en Andalucía": 1.0,
+     "Renta bruta media": 43159.0,
+     "Renta bruta mediana": 25311.0,
+     "Renta disponible media": 33539.0,
+     "Renta disponible mediana": 21367.0
+    }
+   ]
+  }
+ },
+ "plazas_turismo": {
+  "consulta": "117646",
+  "titulo": "Total de plazas en alojamientos turísticos por tipo de alojamiento*",
+  "medidas": [
+   "Plazas"
+  ],
+  "categorias": [
+   "Casas Rurales",
+   "Total",
+   "Viviendas Turísticas de Alojamiento Rural",
+   "Viviendas con fines turísticos"
+  ],
+  "anyos": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serie": {
+   "Total": [
+    {
+     "t": "2015",
+     "Plazas": 1136.0
+    },
+    {
+     "t": "2016",
+     "Plazas": 2593.0
+    },
+    {
+     "t": "2017",
+     "Plazas": 3476.0
+    },
+    {
+     "t": "2018",
+     "Plazas": 4830.0
+    },
+    {
+     "t": "2019",
+     "Plazas": 6086.0
+    },
+    {
+     "t": "2020",
+     "Plazas": 6155.0
+    },
+    {
+     "t": "2021",
+     "Plazas": 7753.0
+    },
+    {
+     "t": "2022",
+     "Plazas": 9785.0
+    },
+    {
+     "t": "2023",
+     "Plazas": 12105.0
+    },
+    {
+     "t": "2024",
+     "Plazas": 13978.0
+    },
+    {
+     "t": "2025",
+     "Plazas": 15473.0
+    }
+   ],
+   "Viviendas con fines turísticos": [
+    {
+     "t": "2016",
+     "Plazas": 1152.0
+    },
+    {
+     "t": "2017",
+     "Plazas": 1935.0
+    },
+    {
+     "t": "2018",
+     "Plazas": 3273.0
+    },
+    {
+     "t": "2019",
+     "Plazas": 4523.0
+    },
+    {
+     "t": "2020",
+     "Plazas": 5300.0
+    },
+    {
+     "t": "2021",
+     "Plazas": 6120.0
+    },
+    {
+     "t": "2022",
+     "Plazas": 7721.0
+    },
+    {
+     "t": "2023",
+     "Plazas": 10021.0
+    },
+    {
+     "t": "2024",
+     "Plazas": 11914.0
+    },
+    {
+     "t": "2025",
+     "Plazas": 13617.0
+    }
+   ],
+   "Viviendas Turísticas de Alojamiento Rural": [
+    {
+     "t": "2019",
+     "Plazas": 40.0
+    },
+    {
+     "t": "2020",
+     "Plazas": 50.0
+    },
+    {
+     "t": "2021",
+     "Plazas": 50.0
+    },
+    {
+     "t": "2022",
+     "Plazas": 50.0
+    },
+    {
+     "t": "2023",
+     "Plazas": 50.0
+    },
+    {
+     "t": "2024",
+     "Plazas": 50.0
+    },
+    {
+     "t": "2025",
+     "Plazas": 56.0
+    }
+   ],
+   "Casas Rurales": [
+    {
+     "t": "2023",
+     "Plazas": 75.0
+    }
+   ]
+  }
+ },
+ "alojamientos": {
+  "consulta": "117503",
+  "titulo": "Total de establecimientos de alojamientos turísticos por tipo de alojamiento*",
+  "medidas": [
+   "Establecimientos"
+  ],
+  "categorias": [
+   "Casas Rurales",
+   "Total",
+   "Viviendas Turísticas de Alojamiento Rural",
+   "Viviendas con fines turísticos"
+  ],
+  "anyos": [
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024",
+   "2025"
+  ],
+  "serie": {
+   "Total": [
+    {
+     "t": "2015",
+     "Establecimientos": 5.0
+    },
+    {
+     "t": "2016",
+     "Establecimientos": 198.0
+    },
+    {
+     "t": "2017",
+     "Establecimientos": 337.0
+    },
+    {
+     "t": "2018",
+     "Establecimientos": 547.0
+    },
+    {
+     "t": "2019",
+     "Establecimientos": 752.0
+    },
+    {
+     "t": "2020",
+     "Establecimientos": 862.0
+    },
+    {
+     "t": "2021",
+     "Establecimientos": 988.0
+    },
+    {
+     "t": "2022",
+     "Establecimientos": 1259.0
+    },
+    {
+     "t": "2023",
+     "Establecimientos": 1615.0
+    },
+    {
+     "t": "2024",
+     "Establecimientos": 1919.0
+    },
+    {
+     "t": "2025",
+     "Establecimientos": 2176.0
+    }
+   ],
+   "Viviendas con fines turísticos": [
+    {
+     "t": "2016",
+     "Establecimientos": 188.0
+    },
+    {
+     "t": "2017",
+     "Establecimientos": 324.0
+    },
+    {
+     "t": "2018",
+     "Establecimientos": 534.0
+    },
+    {
+     "t": "2019",
+     "Establecimientos": 738.0
+    },
+    {
+     "t": "2020",
+     "Establecimientos": 848.0
+    },
+    {
+     "t": "2021",
+     "Establecimientos": 972.0
+    },
+    {
+     "t": "2022",
+     "Establecimientos": 1241.0
+    },
+    {
+     "t": "2023",
+     "Establecimientos": 1596.0
+    },
+    {
+     "t": "2024",
+     "Establecimientos": 1901.0
+    },
+    {
+     "t": "2025",
+     "Establecimientos": 2160.0
+    }
+   ],
+   "Viviendas Turísticas de Alojamiento Rural": [
+    {
+     "t": "2019",
+     "Establecimientos": 5.0
+    },
+    {
+     "t": "2020",
+     "Establecimientos": 6.0
+    },
+    {
+     "t": "2021",
+     "Establecimientos": 6.0
+    },
+    {
+     "t": "2022",
+     "Establecimientos": 6.0
+    },
+    {
+     "t": "2023",
+     "Establecimientos": 6.0
+    },
+    {
+     "t": "2024",
+     "Establecimientos": 6.0
+    },
+    {
+     "t": "2025",
+     "Establecimientos": 6.0
+    }
+   ],
+   "Casas Rurales": [
+    {
+     "t": "2023",
+     "Establecimientos": 5.0
+    }
+   ]
+  }
+ },
+ "nota": "Mismas variables que la ficha municipal del IECA, pero con su serie. La ficha (smex99.xls) solo publica el último valor de cada una; el histórico está en BADEA, el banco de datos del propio IECA, que obliga a pedir año por año.",
+ "fuente": "IECA · BADEA, consultas del Sistema de Información Multiterritorial de Andalucía (SIMA)",
+ "ambito": "municipal",
+ "actualizado": "2026-09-01T11:59:04Z"
+}

@@ -81,6 +81,19 @@ viajeros, empleo y empresas, precios, y clima—; la pestaña activa va en el
 fragmento de la URL, de modo que cualquiera de ellas se puede enlazar y compartir. Una temática
 que no logre publicar ningún dato se oculta entera en lugar de quedarse anunciando el hueco.
 
+**La ficha del IECA, con histórico.** El fichero de la ficha municipal (`smex99.xls`) publica un
+solo valor por variable —el último—, así que la primera versión de esa tarjeta era una tabla de
+fotos fijas. Las mismas variables tienen serie en **BADEA**, el banco de datos del propio IECA, y
+ahora se publican como gráficas repartidas por las pestañas que les corresponden: consumo
+eléctrico por sector, compraventa de vivienda, movimiento natural, migraciones, parque de
+vehículos, IBI urbano, empresas por tamaño, presupuesto por habitante, renta declarada a la AEAT
+y plazas de alojamiento turístico. En la tabla se queda solo lo que **no tiene serie**: la
+superficie del término, los cortes censales y lo que la fuente censura.
+
+BADEA **devuelve un solo periodo por petición** y no admite descarga masiva, de modo que cada
+serie cuesta una llamada por año. El bloque va contra la ejecución anterior: en régimen solo baja
+el año nuevo y el último publicado, que puede haberse revisado.
+
 **Selector de año.** Las tarjetas que enseñan un corte —un ranking, un reparto, un ciclo anual—
 llevan un desplegable en la cabecera para elegir el periodo, en lugar de quedarse fijas en el
 último. Lo llevan los mercados emisores, el turismo nacional por municipio de origen, las

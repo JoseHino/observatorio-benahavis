@@ -294,14 +294,32 @@
     }
     if (!series.length) return null;
 
+    /* El eje se recorta a los años en los que alguna serie tiene dato. Hace
+       falta cuando se pinta una sola de las medidas de una consulta: la de
+       empresas, por ejemplo, arrastra el recuento en CNAE-93 hasta 2007 y en
+       CNAE-09 desde 2008, así que enseñar la vigente sobre el eje completo deja
+       diez años en blanco que parecen un municipio sin empresas. */
+    var eje = b.anyos, datos = series;
+    var tiene = b.anyos.map(function (_, i) {
+      return series.some(function (s) { return s.data[i] != null; });
+    });
+    var ini = tiene.indexOf(true), fin = tiene.lastIndexOf(true);
+    if (ini > 0 || fin < b.anyos.length - 1) {
+      if (ini < 0) return null;
+      eje = b.anyos.slice(ini, fin + 1);
+      datos = series.map(function (s) {
+        return { name: s.name, color: s.color, data: s.data.slice(ini, fin + 1) };
+      });
+    }
+
     return {
       titulo: o.titulo, sub: o.sub,
       chips: [ANUAL], fuente: FTE.badea_sima, ancho: o.ancho,
       nota: o.nota,
       spec: {
         type: o.tipo || 'line', xType: 'anual', xLabel: 'Año',
-        x: b.anyos, yFormat: o.yFormat || 'num',
-        yMax: o.yMax, series: series
+        x: eje, yFormat: o.yFormat || 'num',
+        yMax: o.yMax, series: datos
       }
     };
   }
@@ -345,7 +363,7 @@
   /* Dónde ha ido a parar cada indicador de la ficha que sí tiene serie. */
   var FICHA_EN_GRAFICAS = [
     ['Nacimientos, defunciones y crecimiento vegetativo', 'poblacion'],
-    ['Inmigraciones y emigraciones', 'poblacion'],
+    ['Inmigraciones, emigraciones y saldo', 'poblacion'],
     ['Consumo de energía eléctrica por sector', 'poblacion'],
     ['Parque de vehículos', 'poblacion'],
     ['Compraventa de vivienda', 'vut'],
@@ -984,40 +1002,17 @@
                     'de su población en diez años, los nacimientos no explican casi nada. La comparación con las ' +
                     'migraciones está en la tarjeta siguiente.'
             }),
-            (hayFicha('inmigraciones') && hayFicha('emigraciones') ? (function () {
-              /* Dos consultas distintas de BADEA, cada una con su eje. Se cruzan
-                 sobre los años que tienen las dos, que es lo único comparable. */
-              var inm = FICHA_SERIES().inmigraciones, emi = FICHA_SERIES().emigraciones;
-              var eje = inm.anyos.filter(function (a) { return emi.anyos.indexOf(a) >= 0; });
-              var alinea = function (b, cat) {
-                var m = {};
-                ((b.serie || {})[cat] || []).forEach(function (f) { m[f.t] = f[(b.medidas || [])[0]]; });
-                return eje.map(function (a) { return m[a] == null ? null : m[a]; });
-              };
-              var catI = inm.categorias.indexOf('Ambos sexos') >= 0 ? 'Ambos sexos' : inm.categorias[0];
-              var catE = emi.categorias.indexOf('Ambos sexos') >= 0 ? 'Ambos sexos' : emi.categorias[0];
-              var llegan = alinea(inm, catI), se_van = alinea(emi, catE);
-              return {
-                titulo: 'De dónde sale el crecimiento', sub: 'Personas que llegan y que se van cada año',
-                chips: [ANUAL], fuente: FTE.badea_sima, ancho: 'full',
-                nota: 'Aquí se ve el motor del municipio: Benahavís no crece por nacimientos sino porque llegan ' +
-                      'muchas más personas de las que se van. Las dos series salen de consultas distintas de ' +
-                      'BADEA y se cruzan solo sobre los años que tienen ambas. El saldo que resulta coincide con ' +
-                      'el que publica el INE en la tarjeta del saldo migratorio, que es la comprobación de que ' +
-                      'las dos fuentes cuentan lo mismo.',
-                spec: {
-                  type: 'line', xType: 'anual', xLabel: 'Año', x: eje, yFormat: 'num',
-                  series: [
-                    { name: 'Inmigraciones', data: llegan },
-                    { name: 'Emigraciones', data: se_van },
-                    { name: 'Saldo', color: '#1c7f6b',
-                      data: eje.map(function (_, i) {
-                        return (llegan[i] == null || se_van[i] == null) ? null : llegan[i] - se_van[i];
-                      }) }
-                  ]
-                }
-              };
-            })() : null),
+            tarjetaFicha('migraciones', {
+              titulo: 'De dónde sale el crecimiento', sub: 'Personas que llegan, que se van y saldo',
+              categoria: 'Ambos sexos', ancho: 'full',
+              medidas: [['Inmigraciones', 'Llegan'], ['Emigraciones', 'Se van'],
+                        ['Saldo migratorio', 'Saldo', '#1c7f6b']],
+              nota: 'Aquí se ve el motor del municipio: Benahavís no crece por nacimientos sino porque llegan ' +
+                    'muchas más personas de las que se van. Estas cifras cuadran al entero con las otras dos ' +
+                    'fuentes que publican lo mismo —la ficha del IECA y la tabla 69767 del INE—, que es la ' +
+                    'comprobación de que las tres cuentan lo mismo: 2024, 1.893 llegadas y 1.408 salidas, saldo ' +
+                    'de +485; 2023, el único año negativo de la serie.'
+            }),
             tarjetaFicha('energia', {
               titulo: 'Consumo de energía eléctrica', sub: 'MWh distribuidos por Endesa, por sector',
               ancho: 'full', tipo: 'stack', fuera: ['TOTAL', 'Total'],
@@ -1453,11 +1448,18 @@
             tarjetaFicha('empresas_tramo', {
               titulo: 'Empresas por tamaño', sub: 'Empresas según su número de personas asalariadas',
               tipo: 'stack', ancho: 'full',
-              medida: 'Empresas Directorio Cnae09', fuera: ['Total', 'TOTAL'],
+              medida: 'Empresas Directorio Cnae09',
+              /* Los tramos se enumeran para que salgan de menor a mayor: por
+                 orden alfabético «250 o más» iría delante de «De 0 a 2». */
+              cat: [['De 0 a 2 empleados', 'De 0 a 2'], ['De 3 a 5 empleados', 'De 3 a 5'],
+                    ['De 6 a 19 empleados', 'De 6 a 19'], ['De 20 a 49 empleados', 'De 20 a 49'],
+                    ['De 50 a 99 empleados', 'De 50 a 99'], ['De 100 a 249 empleados', 'De 100 a 249'],
+                    ['250 o más empleados', '250 o más'], ['Sin empleo conocido', 'Sin empleo conocido']],
               nota: 'El tejido empresarial de Benahavís es casi todo micro: la inmensa mayoría de las empresas ' +
                     'no tiene ni un asalariado. Complementa al DIRCE de la tarjeta anterior, que las clasifica ' +
-                    'por rama pero no por tamaño. La fuente arrastra dos medidas —CNAE-93 y CNAE-09— porque la ' +
-                    'serie cruza el cambio de clasificación; aquí se pinta la vigente.'
+                    'por rama pero no por tamaño. La serie arranca en 2007 y no en 1998 porque la fuente cambia ' +
+                    'de clasificación —CNAE-93 hasta 2007, CNAE-09 desde 2008— y aquí se publica solo la vigente: ' +
+                    'encadenar las dos daría una serie continua que en realidad no lo es.'
             }),
             tarjetaFicha('presupuesto', {
               titulo: 'Presupuesto municipal por habitante', sub: 'Ingresos y gastos liquidados, euros por habitante',
