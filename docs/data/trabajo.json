@@ -1560,14 +1560,6 @@
  "afiliacion": {
   "serie_total": [
    {
-    "t": "2024-08",
-    "min": 2722,
-    "max": 3014,
-    "exacto": false,
-    "celdas_censuradas": 73,
-    "celdas_vacias": 0
-   },
-   {
     "t": "2024-09",
     "min": 2681,
     "max": 2981,
@@ -1745,14 +1737,6 @@
    }
   ],
   "serie_turistico": [
-   {
-    "t": "2024-08",
-    "min": 602,
-    "max": 618,
-    "exacto": false,
-    "celdas_censuradas": 4,
-    "celdas_vacias": 0
-   },
    {
     "t": "2024-09",
     "min": 577,
@@ -2535,7 +2519,7 @@
   "ultimo_mes": "2026-07",
   "ruptura_cnae": "2026-01",
   "nota_censura": "Los valores entre 1 y 4 se publican como «<5». Los totales se expresan como intervalo [mínimo observado, mínimo + 4 × número de celdas censuradas].",
-  "celdas_censuradas_acumuladas": 1750
+  "celdas_censuradas_acumuladas": 1677
  },
  "paro_anual_ieca": {
   "por_edad": {
@@ -2553,5 +2537,5 @@
  },
  "fuente": "SEPE · datos abiertos de paro y contratos por municipios · Seguridad Social · Afiliados por municipios CNAE 2D · IECA/BADEA",
  "ambito": "municipal",
- "actualizado": "2026-08-26T17:29:07Z"
+ "actualizado": "2026-09-05T09:14:42Z"
 }

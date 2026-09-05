@@ -1,13 +1,13 @@
 {
  "rta": {
-  "total_inscripciones": 2254,
-  "plazas_totales": 15099,
-  "plazas_alojamiento": 15099,
+  "total_inscripciones": 2257,
+  "plazas_totales": 15123,
+  "plazas_alojamiento": 15123,
   "por_tipo": {
    "Vivienda de uso turístico": {
-    "establecimientos": 2244,
-    "plazas": 14216,
-    "unidades": 6561
+    "establecimientos": 2247,
+    "plazas": 14240,
+    "unidades": 6573
    },
    "Vivienda turística de alojamiento rural": {
     "establecimientos": 6,
@@ -89,7 +89,7 @@
    },
    {
     "t": "2022",
-    "v": 285
+    "v": 284
    },
    {
     "t": "2023",
@@ -105,7 +105,7 @@
    },
    {
     "t": "2026",
-    "v": 74
+    "v": 78
    }
   ],
   "acumulado_altas": [
@@ -159,23 +159,23 @@
    },
    {
     "t": "2022",
-    "v": 1217
+    "v": 1216
    },
    {
     "t": "2023",
-    "v": 1577
+    "v": 1576
    },
    {
     "t": "2024",
-    "v": 1897
+    "v": 1896
    },
    {
     "t": "2025",
-    "v": 2180
+    "v": 2179
    },
    {
     "t": "2026",
-    "v": 2254
+    "v": 2257
    }
   ],
   "puntos": [
@@ -8210,14 +8210,6 @@
     "plazas": 6,
     "lat": 36.518968,
     "lon": -5.013988
-   },
-   {
-    "nombre": "Marc Faucon",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 4,
-    "lat": 36.477555,
-    "lon": -5.051452
    },
    {
     "nombre": "CASCADA DE LOS ALMENDROS 2ºC",
@@ -17850,9 +17842,25 @@
     "plazas": 8,
     "lat": 36.485092,
     "lon": -5.072551
+   },
+   {
+    "nombre": "UR ALQUERIA 69 Es:1 Pl:00 Pt:01 BENAHAVIS (MÁLAGA)",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 4,
+    "lat": 36.500006,
+    "lon": -5.032676
+   },
+   {
+    "nombre": "UR ALQUERIA 88 BENAHAVIS(MALAGA)",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.49863,
+    "lon": -5.033803
    }
   ],
-  "alojamientos_sin_coordenadas": 42,
+  "alojamientos_sin_coordenadas": 44,
   "alojamientos_coordenada_erronea": 3,
   "crs_origen": "EPSG:25830",
   "crs_puntos": "EPSG:4326"
@@ -18078,5 +18086,5 @@
  "advertencia": "El Registro de Turismo de Andalucía mide oferta inscrita administrativamente; la estadística experimental del INE mide oferta anunciada en plataformas de intermediación. Miden universos distintos y no deben compararse ni sumarse.",
  "fuente": "Junta de Andalucía · OpenRTA · e INE · Viviendas turísticas (tablas 39363 y 39366)",
  "ambito": "municipal",
- "actualizado": "2026-08-26T17:29:07Z"
+ "actualizado": "2026-09-05T09:14:42Z"
 }

@@ -1,18 +1,9 @@
 {
- "generado": "2026-09-01T18:22:29Z",
- "series_revisadas": 27,
+ "generado": "2026-09-05T09:14:42Z",
+ "series_revisadas": 18,
  "series": [
   "atlas.edad_media",
   "badea.autonomos",
-  "cds.establecimientos_inscritos",
-  "cds.ocupacion_vut",
-  "cds.plazas_inscritas",
-  "cds.trabajadores_turismo",
-  "cds.viviendas_anunciadas",
-  "clima.precipitacion_anual",
-  "clima.temperatura_anual",
-  "clima.temperatura_anual_era5",
-  "clima.temperatura_mensual",
   "demanda.turistas_extranjeros",
   "demanda.turistas_nacionales",
   "dirce.empresas",
@@ -44,27 +35,9 @@
    "gravedad": "aviso"
   },
   {
-   "serie": "cds.plazas_inscritas",
+   "serie": "rta.acumulado_altas",
    "tipo": "salto_anomalo",
-   "detalle": "2022-01 = 8670.0 → 2022-02 = 15258.0 (×1.8)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "cds.plazas_inscritas",
-   "tipo": "salto_anomalo",
-   "detalle": "2022-02 = 15258.0 → 2022-03 = 8878.0 (×0.6)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "cds.establecimientos_inscritos",
-   "tipo": "salto_anomalo",
-   "detalle": "2022-01 = 1010.0 → 2022-02 = 2057.0 (×2.0)",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "cds.establecimientos_inscritos",
-   "tipo": "salto_anomalo",
-   "detalle": "2022-02 = 2057.0 → 2022-03 = 1050.0 (×0.5)",
+   "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
    "gravedad": "aviso"
   },
   {
@@ -102,20 +75,8 @@
    "tipo": "meses_ausentes",
    "detalle": "2 meses sin dato: 2020-05, 2020-06",
    "gravedad": "aviso"
-  },
-  {
-   "serie": "clima.temperatura_mensual",
-   "tipo": "meses_ausentes",
-   "detalle": "17 meses sin dato: 2005-08, 2007-06, 2008-07, 2009-06, 2009-07, 2009-08…",
-   "gravedad": "aviso"
-  },
-  {
-   "serie": "rta.acumulado_altas",
-   "tipo": "salto_anomalo",
-   "detalle": "2011 = 6 → 2016 = 117 (×19.5)",
-   "gravedad": "aviso"
   }
  ],
  "errores": 0,
- "avisos": 14
+ "avisos": 9
 }
