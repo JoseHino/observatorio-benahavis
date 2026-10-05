@@ -790,7 +790,7 @@
     "lon_h": -5.022068,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/01878",
@@ -1308,7 +1308,7 @@
     "lon_h": -5.022068,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/04915",
@@ -1332,7 +1332,7 @@
     "lon_h": -5.021864,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/04823",
@@ -1980,7 +1980,7 @@
     "lon_h": -5.021536,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/06171",
@@ -2237,7 +2237,7 @@
     "lon": -5.001868,
     "lat_h": 36.536826,
     "lon_h": -5.001807,
-    "parcela_m2": 8413.0,
+    "parcela_m2": 7812.0,
     "parcela_viviendas": 1,
     "parcela_vut": 1
    },
@@ -2335,7 +2335,7 @@
     "lon_h": -5.021633,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/05914",
@@ -2359,7 +2359,7 @@
     "lon_h": -5.021729,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/05886",
@@ -2827,7 +2827,7 @@
     "lon": -5.053015,
     "lat_h": 36.519864,
     "lon_h": -5.055985,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -3357,7 +3357,7 @@
     "lon_h": -5.021729,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/07596",
@@ -4720,11 +4720,11 @@
     "uso_privado": "N",
     "lat": 36.49329,
     "lon": -5.021029,
-    "lat_h": 36.492948,
-    "lon_h": -5.021438,
+    "lat_h": 36.492996,
+    "lon_h": -5.021492,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/12392",
@@ -5730,7 +5730,7 @@
     "lon": -5.05471,
     "lat_h": 36.519172,
     "lon_h": -5.054266,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -6169,11 +6169,11 @@
     "uso_privado": "N",
     "lat": 36.49329,
     "lon": -5.021029,
-    "lat_h": 36.493043,
-    "lon_h": -5.021545,
+    "lat_h": 36.492996,
+    "lon_h": -5.021277,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/17015",
@@ -6313,11 +6313,11 @@
     "uso_privado": "N",
     "lat": 36.49329,
     "lon": -5.021029,
-    "lat_h": 36.493043,
-    "lon_h": -5.021224,
+    "lat_h": 36.493184,
+    "lon_h": -5.021492,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/16980",
@@ -6337,11 +6337,11 @@
     "uso_privado": "N",
     "lat": 36.49329,
     "lon": -5.021029,
-    "lat_h": 36.493137,
-    "lon_h": -5.021331,
+    "lat_h": 36.493538,
+    "lon_h": -5.021361,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/17021",
@@ -6435,7 +6435,7 @@
     "lon": -5.01405,
     "lat_h": 36.507614,
     "lon_h": -5.013979,
-    "parcela_m2": 11505.0,
+    "parcela_m2": 9115.0,
     "parcela_viviendas": 1,
     "parcela_vut": 1
    },
@@ -6740,11 +6740,11 @@
     "uso_privado": "N",
     "lat": 36.49329,
     "lon": -5.021029,
-    "lat_h": 36.493538,
-    "lon_h": -5.021361,
+    "lat_h": 36.493621,
+    "lon_h": -5.021216,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/18153",
@@ -7521,7 +7521,7 @@
     "lon_h": -5.00566,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/21232",
@@ -10100,30 +10100,6 @@
     "parcela_vut": 1
    },
    {
-    "ref": "VUT/MA/27028",
-    "nombre": "LAS LOMAS DE BENAHAVÍS",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 8,
-    "unidades": 2,
-    "alta": "2018-11-19",
-    "inicio_actividad": "2018-10-11",
-    "direccion": "CONJUNTO LAS LOMAS DE BENAHAVÍS Nº 5 Blq. 8",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "6841901UF1464S0084AR",
-    "uso_privado": "N",
-    "lat": 36.523126,
-    "lon": -5.046352,
-    "lat_h": 36.523453,
-    "lon_h": -5.047106,
-    "parcela_m2": 4775.0,
-    "parcela_viviendas": 63,
-    "parcela_vut": 7
-   },
-   {
     "ref": "VUT/MA/27074",
     "nombre": "PROPIETARIO",
     "tipo": "Vivienda de uso turístico",
@@ -10635,11 +10611,11 @@
     "uso_privado": null,
     "lat": 36.49329,
     "lon": -5.021029,
-    "lat_h": 36.493621,
-    "lon_h": -5.021361,
+    "lat_h": 36.493704,
+    "lon_h": -5.021216,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/27761",
@@ -11760,7 +11736,7 @@
     "lon": -5.05471,
     "lat_h": 36.51997,
     "lon_h": -5.05418,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -11784,7 +11760,7 @@
     "lon": -5.05471,
     "lat_h": 36.519451,
     "lon_h": -5.054128,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -12022,30 +11998,6 @@
     "parcela_m2": 36777.0,
     "parcela_viviendas": 225,
     "parcela_vut": 74
-   },
-   {
-    "ref": "VUT/MA/30567",
-    "nombre": "LOMAS DEL MARQUES",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2019-03-26",
-    "inicio_actividad": "2019-03-14",
-    "direccion": "URBANIZACION LOMAS DEL MARQUES Blq. 7 Esc. 14 Plta/Piso 1 Pta/Letra 2",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "9107103UF1490N0083RI",
-    "uso_privado": "N",
-    "lat": 36.49329,
-    "lon": -5.021029,
-    "lat_h": 36.493621,
-    "lon_h": -5.021071,
-    "parcela_m2": 40807.0,
-    "parcela_viviendas": 107,
-    "parcela_vut": 31
    },
    {
     "ref": "VUT/MA/30587",
@@ -12306,10 +12258,10 @@
     "lat": 36.523126,
     "lon": -5.046352,
     "lat_h": 36.523453,
-    "lon_h": -5.046923,
+    "lon_h": -5.047106,
     "parcela_m2": 4775.0,
     "parcela_viviendas": 63,
-    "parcela_vut": 7
+    "parcela_vut": 6
    },
    {
     "ref": "VUT/MA/30765",
@@ -12357,7 +12309,7 @@
     "lon_h": -5.00566,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/33649",
@@ -12780,11 +12732,11 @@
     "uso_privado": null,
     "lat": 36.523126,
     "lon": -5.046352,
-    "lat_h": 36.52376,
-    "lon_h": -5.047106,
+    "lat_h": 36.523453,
+    "lon_h": -5.046923,
     "parcela_m2": 4775.0,
     "parcela_viviendas": 63,
-    "parcela_vut": 7
+    "parcela_vut": 6
    },
    {
     "ref": "VUT/MA/31706",
@@ -13067,7 +13019,7 @@
     "lon_h": -5.005803,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/32336",
@@ -13300,7 +13252,7 @@
     "lon": -5.034065,
     "lat_h": 36.491052,
     "lon_h": -5.034542,
-    "parcela_m2": 23642.0,
+    "parcela_m2": 23634.0,
     "parcela_viviendas": 34,
     "parcela_vut": 4
    },
@@ -14914,7 +14866,7 @@
     "lon_h": -5.005945,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/37189",
@@ -16269,10 +16221,10 @@
     "lat": 36.49329,
     "lon": -5.021029,
     "lat_h": 36.493786,
-    "lon_h": -5.020926,
+    "lon_h": -5.020781,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/39317",
@@ -16316,11 +16268,11 @@
     "uso_privado": null,
     "lat": 36.49329,
     "lon": -5.021029,
-    "lat_h": 36.493704,
-    "lon_h": -5.021071,
+    "lat_h": 36.493786,
+    "lon_h": -5.021216,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/40178",
@@ -16831,7 +16783,7 @@
     "lon": -5.034065,
     "lat_h": 36.490401,
     "lon_h": -5.034481,
-    "parcela_m2": 23642.0,
+    "parcela_m2": 23634.0,
     "parcela_viviendas": 34,
     "parcela_vut": 4
    },
@@ -16855,7 +16807,7 @@
     "lon": -5.034065,
     "lat_h": 36.489519,
     "lon_h": -5.03418,
-    "parcela_m2": 23642.0,
+    "parcela_m2": 23634.0,
     "parcela_viviendas": 34,
     "parcela_vut": 4
    },
@@ -17167,7 +17119,7 @@
     "lon": -5.05471,
     "lat_h": 36.519716,
     "lon_h": -5.054073,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -17695,7 +17647,7 @@
     "lon": -5.000156,
     "lat_h": 36.529942,
     "lon_h": -5.00014,
-    "parcela_m2": 4276.0,
+    "parcela_m2": 4130.0,
     "parcela_viviendas": 1,
     "parcela_vut": 1
    },
@@ -18216,11 +18168,11 @@
     "uso_privado": null,
     "lat": 36.530575,
     "lon": -4.990135,
-    "lat_h": 36.528562,
-    "lon_h": -4.990964,
+    "lat_h": 36.52827,
+    "lon_h": -4.990865,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/42130",
@@ -18457,10 +18409,10 @@
     "lat": 36.49329,
     "lon": -5.021029,
     "lat_h": 36.493869,
-    "lon_h": -5.021071,
+    "lon_h": -5.020781,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/42528",
@@ -18619,11 +18571,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.52827,
-    "lon_h": -4.990865,
+    "lat_h": 36.528361,
+    "lon_h": -4.990641,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/42732",
@@ -18837,7 +18789,7 @@
     "lon": -5.05471,
     "lat_h": 36.519853,
     "lon_h": -5.053821,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -18981,7 +18933,7 @@
     "lon": -5.05471,
     "lat_h": 36.519336,
     "lon_h": -5.053716,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -19497,11 +19449,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.528361,
+    "lat_h": 36.528453,
     "lon_h": -4.990641,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/44023",
@@ -19522,10 +19474,10 @@
     "lat": 36.529801,
     "lon": -4.990022,
     "lat_h": 36.528453,
-    "lon_h": -4.990641,
+    "lon_h": -4.990194,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/44024",
@@ -19545,11 +19497,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.528453,
-    "lon_h": -4.990194,
+    "lat_h": 36.528933,
+    "lon_h": -4.990592,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/44113",
@@ -19710,7 +19662,7 @@
     "lon": -5.05471,
     "lat_h": 36.519632,
     "lon_h": -5.053673,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -19924,11 +19876,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.528933,
-    "lon_h": -4.990592,
+    "lat_h": 36.532072,
+    "lon_h": -4.989801,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/44836",
@@ -19948,11 +19900,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.532072,
-    "lon_h": -4.989801,
+    "lat_h": 36.528181,
+    "lon_h": -4.989519,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/44860",
@@ -20212,11 +20164,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.528181,
-    "lon_h": -4.989519,
+    "lat_h": 36.528362,
+    "lon_h": -4.989746,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/45508",
@@ -20764,11 +20716,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.528362,
-    "lon_h": -4.989746,
+    "lat_h": 36.531575,
+    "lon_h": -4.989582,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/46805",
@@ -20817,30 +20769,6 @@
     "parcela_m2": 1182.0,
     "parcela_viviendas": 1,
     "parcela_vut": 1
-   },
-   {
-    "ref": "VUT/MA/46932",
-    "nombre": "LOMAS DEL MARQUES",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2021-09-12",
-    "inicio_actividad": "2021-09-12",
-    "direccion": "URBANIZACION LOMAS DEL MARQUES Blq. 1 Esc. 2 Plta/Piso 2 Pta/Letra 11 Compl.Dom. DUPLEX ATICO",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "9107103UF1490N0012MR",
-    "uso_privado": null,
-    "lat": 36.49329,
-    "lon": -5.021029,
-    "lat_h": 36.493869,
-    "lon_h": -5.020636,
-    "parcela_m2": 40807.0,
-    "parcela_viviendas": 107,
-    "parcela_vut": 31
    },
    {
     "ref": "VUT/MA/47057",
@@ -21008,7 +20936,7 @@
     "lon_h": -5.005803,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/47354",
@@ -21292,11 +21220,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.531575,
-    "lon_h": -4.989582,
+    "lat_h": 36.527893,
+    "lon_h": -4.989267,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/47835",
@@ -21462,7 +21390,7 @@
     "lon": -5.006075,
     "lat_h": 36.539036,
     "lon_h": -5.00592,
-    "parcela_m2": 8914.0,
+    "parcela_m2": 4035.0,
     "parcela_viviendas": 1,
     "parcela_vut": 1
    },
@@ -22326,7 +22254,7 @@
     "lon": -5.05471,
     "lat_h": 36.519391,
     "lon_h": -5.05346,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -22832,7 +22760,7 @@
     "lon_h": -5.006088,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/50688",
@@ -23144,7 +23072,7 @@
     "lon_h": -5.006373,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/51357",
@@ -23667,7 +23595,7 @@
     "lon_h": -5.005179,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/52428",
@@ -24519,7 +24447,7 @@
     "lon": -5.034065,
     "lat_h": 36.491956,
     "lon_h": -5.034104,
-    "parcela_m2": 23642.0,
+    "parcela_m2": 23634.0,
     "parcela_viviendas": 34,
     "parcela_vut": 4
    },
@@ -25088,11 +25016,11 @@
     "uso_privado": null,
     "lat": 36.529801,
     "lon": -4.990022,
-    "lat_h": 36.527976,
-    "lon_h": -4.989411,
+    "lat_h": 36.52806,
+    "lon_h": -4.989474,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/54466",
@@ -25236,7 +25164,7 @@
     "lon_h": -5.005371,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/54807",
@@ -27117,7 +27045,7 @@
     "lon_h": -5.021023,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/57438",
@@ -28149,7 +28077,7 @@
     "lon_h": -4.98938,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/59468",
@@ -28888,7 +28816,7 @@
     "lon_h": -5.021023,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/60463",
@@ -29761,7 +29689,7 @@
     "lon_h": -4.989369,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/62155",
@@ -30020,7 +29948,7 @@
     "lon_h": -4.988882,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/62669",
@@ -30592,11 +30520,11 @@
     "uso_privado": null,
     "lat": 36.520165,
     "lon": -5.005049,
-    "lat_h": 36.520154,
-    "lon_h": -5.004856,
+    "lat_h": 36.520304,
+    "lon_h": -5.005048,
     "parcela_m2": 3099.0,
     "parcela_viviendas": 14,
-    "parcela_vut": 2
+    "parcela_vut": 1
    },
    {
     "ref": "VUT/MA/63451",
@@ -31440,7 +31368,7 @@
     "lon_h": -5.046739,
     "parcela_m2": 4775.0,
     "parcela_viviendas": 63,
-    "parcela_vut": 7
+    "parcela_vut": 6
    },
    {
     "ref": "VUT/MA/64509",
@@ -31918,7 +31846,7 @@
     "lon": -5.05471,
     "lat_h": 36.519237,
     "lon_h": -5.053112,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -32251,7 +32179,7 @@
     "lon_h": -5.046551,
     "parcela_m2": 4775.0,
     "parcela_viviendas": 63,
-    "parcela_vut": 7
+    "parcela_vut": 6
    },
    {
     "ref": "VUT/MA/66322",
@@ -32419,7 +32347,7 @@
     "lon_h": -4.988644,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/66673",
@@ -33463,7 +33391,7 @@
     "lon": -5.05471,
     "lat_h": 36.519008,
     "lon_h": -5.052487,
-    "parcela_m2": 135261.0,
+    "parcela_m2": 27185.0,
     "parcela_viviendas": 40,
     "parcela_vut": 11
    },
@@ -34377,7 +34305,7 @@
     "lon_h": -5.021108,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/70201",
@@ -35049,7 +34977,7 @@
     "lon_h": -4.988448,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/70923",
@@ -35385,7 +35313,7 @@
     "lon_h": -5.021192,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/71429",
@@ -35577,7 +35505,7 @@
     "lon_h": -5.005179,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/71686",
@@ -36153,7 +36081,7 @@
     "lon_h": -4.988209,
     "parcela_m2": 71634.0,
     "parcela_viviendas": 87,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/72677",
@@ -37645,7 +37573,7 @@
     "lon_h": -5.021192,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/75343",
@@ -38144,7 +38072,7 @@
     "lon_h": -5.021277,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/76476",
@@ -38459,30 +38387,6 @@
     "parcela_vut": 5
    },
    {
-    "ref": "VUT/MA/77043",
-    "nombre": "LA HEREDIA Nº 10",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 2,
-    "unidades": 3,
-    "alta": "2024-03-12",
-    "inicio_actividad": "2024-03-12",
-    "direccion": "URBANIZACION LA HEREDIA Nº 10 Esc. 1 Plta/Piso 0 Pta/Letra 14 Compl.Dom. E24",
-    "cp": "29678",
-    "titular": "-",
-    "catastro": "0540714UF2403N0014IP",
-    "uso_privado": null,
-    "lat": 36.520165,
-    "lon": -5.005049,
-    "lat_h": 36.520488,
-    "lon_h": -5.005113,
-    "parcela_m2": 3099.0,
-    "parcela_viviendas": 14,
-    "parcela_vut": 2
-   },
-   {
     "ref": "VUT/MA/77080",
     "nombre": "LOMAS DEL MARQUES",
     "tipo": "Vivienda de uso turístico",
@@ -38504,7 +38408,7 @@
     "lon_h": -5.020756,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/77504",
@@ -39387,7 +39291,7 @@
     "lon_h": -5.020573,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/79156",
@@ -41300,6 +41204,30 @@
     "parcela_vut": 74
    },
    {
+    "ref": "VUT/MA/83228",
+    "nombre": "",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 12,
+    "unidades": 2,
+    "alta": "2024-07-15",
+    "inicio_actividad": "2024-07-15",
+    "direccion": "URBANIZACION LOS ARQUEROS, CONJUNTO LAS JACARANDAS III FASE Portal 3 Pta/Letra 5",
+    "cp": "29678",
+    "titular": "INTELLIFACTORY PROPERTIES SPAIN SL",
+    "catastro": "0135909UF2403S0061YR",
+    "uso_privado": "N",
+    "lat": 36.517733,
+    "lon": -5.005762,
+    "lat_h": 36.517836,
+    "lon_h": -5.005563,
+    "parcela_m2": 9013.0,
+    "parcela_viviendas": 54,
+    "parcela_vut": 16
+   },
+   {
     "ref": "VUT/MA/83241",
     "nombre": "RESIDENCIAL QUERCUS, FASE 2B Nº 1421",
     "tipo": "Vivienda de uso turístico",
@@ -41369,7 +41297,7 @@
     "lon_h": -5.005371,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/83291",
@@ -41393,7 +41321,7 @@
     "lon_h": -5.020756,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/83406",
@@ -43486,11 +43414,11 @@
     "uso_privado": null,
     "lat": 36.517733,
     "lon": -5.005762,
-    "lat_h": 36.517836,
-    "lon_h": -5.005179,
+    "lat_h": 36.517905,
+    "lon_h": -5.005755,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/86820",
@@ -43583,10 +43511,10 @@
     "lat": 36.517733,
     "lon": -5.005762,
     "lat_h": 36.517905,
-    "lon_h": -5.005755,
+    "lon_h": -5.005563,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/86874",
@@ -44330,7 +44258,7 @@
     "lon_h": -5.020541,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/88629",
@@ -44354,7 +44282,7 @@
     "lon_h": -5.020653,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/88693",
@@ -46970,7 +46898,7 @@
     "lon_h": -5.020429,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/92553",
@@ -47162,7 +47090,7 @@
     "lon_h": -5.046362,
     "parcela_m2": 4775.0,
     "parcela_viviendas": 63,
-    "parcela_vut": 7
+    "parcela_vut": 6
    },
    {
     "ref": "VUT/MA/92643",
@@ -47450,7 +47378,7 @@
     "lon_h": -5.046928,
     "parcela_m2": 4775.0,
     "parcela_viviendas": 63,
-    "parcela_vut": 7
+    "parcela_vut": 6
    },
    {
     "ref": "VUT/MA/92948",
@@ -47498,7 +47426,7 @@
     "lon_h": -5.020429,
     "parcela_m2": 40807.0,
     "parcela_viviendas": 107,
-    "parcela_vut": 31
+    "parcela_vut": 29
    },
    {
     "ref": "VUT/MA/92986",
@@ -48049,7 +47977,7 @@
     "lat_h": 36.517927,
     "lon_h": -5.011162,
     "parcela_m2": 8709.0,
-    "parcela_viviendas": 0,
+    "parcela_viviendas": 13,
     "parcela_vut": 1
    },
    {
@@ -50411,7 +50339,7 @@
     "lon_h": -5.005371,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/97242",
@@ -51198,7 +51126,7 @@
     "lon_h": -5.006139,
     "parcela_m2": 9013.0,
     "parcela_viviendas": 54,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/98512",
@@ -52201,7 +52129,12 @@
     "catastro": "7912309UF1471S0001BD",
     "uso_privado": null,
     "lat": 36.499865,
-    "lon": -5.032913
+    "lon": -5.032913,
+    "lat_h": 36.499935,
+    "lon_h": -5.032996,
+    "parcela_m2": 922.0,
+    "parcela_viviendas": 1,
+    "parcela_vut": 1
    },
    {
     "ref": "VUT/MA/101445",
@@ -52580,7 +52513,12 @@
     "catastro": "7912310UF1471S0001WD",
     "uso_privado": null,
     "lat": 36.500006,
-    "lon": -5.032676
+    "lon": -5.032676,
+    "lat_h": 36.500065,
+    "lon_h": -5.032765,
+    "parcela_m2": 949.0,
+    "parcela_viviendas": 1,
+    "parcela_vut": 1
    },
    {
     "ref": "VUT/MA/102510",
@@ -52599,7 +52537,84 @@
     "catastro": "7912301UF1471S0001JD",
     "uso_privado": null,
     "lat": 36.49863,
-    "lon": -5.033803
+    "lon": -5.033803,
+    "lat_h": 36.498663,
+    "lon_h": -5.033787,
+    "parcela_m2": 898.0,
+    "parcela_viviendas": 1,
+    "parcela_vut": 1
+   },
+   {
+    "ref": "VUT/MA/102668",
+    "nombre": "ALEGRIA",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 8,
+    "unidades": 3,
+    "alta": "2026-09-20",
+    "inicio_actividad": "2026-09-20",
+    "direccion": "CALLE Lago de Como Nº 8 Blq. 5 Plta/Piso Baja Pta/Letra 502",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "2754116UF2424N0024TL",
+    "uso_privado": null,
+    "lat": 36.529801,
+    "lon": -4.990022,
+    "lat_h": 36.528562,
+    "lon_h": -4.990964,
+    "parcela_m2": 71634.0,
+    "parcela_viviendas": 87,
+    "parcela_vut": 18
+   },
+   {
+    "ref": "VUT/MA/102691",
+    "nombre": "Ocean 360",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 6,
+    "unidades": 3,
+    "alta": "2026-09-22",
+    "inicio_actividad": "2026-09-22",
+    "direccion": "URBANIZACION ALBORADA Nº 9 Compl.Dom. VILLA 4",
+    "cp": "29678",
+    "titular": "HI HOMES RENTALS AND PROPERTY MANAGEMENT SL",
+    "catastro": "0737101UF2403N0004OE",
+    "uso_privado": null,
+    "lat": 36.519809,
+    "lon": -5.00365,
+    "lat_h": 36.519771,
+    "lon_h": -5.00376,
+    "parcela_m2": 2315.0,
+    "parcela_viviendas": 6,
+    "parcela_vut": 1
+   },
+   {
+    "ref": "VUT/MA/102830",
+    "nombre": "Jasmine detached house",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 7,
+    "unidades": 3,
+    "alta": "2026-10-04",
+    "inicio_actividad": "2026-10-04",
+    "direccion": "FINCA JASMINE, PARCELA 76 Nº 76 Compl.Dom. LA ALQUERÍA II",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "7815802UF1471N0000XR",
+    "uso_privado": null,
+    "lat": 36.499273,
+    "lon": -5.034298,
+    "lat_h": 36.499301,
+    "lon_h": -5.034332,
+    "parcela_m2": 805.0,
+    "parcela_viviendas": 1,
+    "parcela_vut": 1
    }
   ],
   "sin_ubicar": [
@@ -53454,9 +53469,81 @@
     "catastro": "0032926UF2403S0036DA",
     "uso_privado": null,
     "motivo": "sin coordenadas en el registro"
+   },
+   {
+    "ref": "VUT/MA/102622",
+    "nombre": "Real de La Quinta ¿ Olivos Fase 2",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 8,
+    "unidades": 3,
+    "alta": "2026-09-15",
+    "inicio_actividad": "2026-09-15",
+    "direccion": "CALLE Lago de Como Nº 8 Blq. 5 Plta/Piso Baja Pta/Letra 502",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "2754116UF2424N0024TL",
+    "uso_privado": null,
+    "motivo": "sin coordenadas en el registro"
+   },
+   {
+    "ref": "VUT/MA/102689",
+    "nombre": "Ocean 360",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 2,
+    "unidades": 3,
+    "alta": "2026-09-22",
+    "inicio_actividad": "2026-09-22",
+    "direccion": "URBANIZACION ALBORADA Nº 9 Compl.Dom. VILLA 4",
+    "cp": "29678",
+    "titular": "HI HOMES RENTALS AND PROPERTY MNAGEMENT SL",
+    "catastro": "0737101UF2403N0004OE",
+    "uso_privado": null,
+    "motivo": "sin coordenadas en el registro"
+   },
+   {
+    "ref": "VUT/MA/102711",
+    "nombre": "LOS ARQUEROS",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 10,
+    "unidades": 4,
+    "alta": "2026-09-23",
+    "inicio_actividad": "2026-09-23",
+    "direccion": "URBANIZACION TORRE ESTERIL Nº 91 Compl.Dom. VILLA 91",
+    "cp": "29678",
+    "titular": "SCANDIUM INVESTMENTS AS",
+    "catastro": "9332703UF1493S0001AO",
+    "uso_privado": null,
+    "motivo": "sin coordenadas en el registro"
+   },
+   {
+    "ref": "VUT/MA/102822",
+    "nombre": "Urb. Los Arqueros, La Torre",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 4,
+    "unidades": 2,
+    "alta": "2026-10-02",
+    "inicio_actividad": "2026-10-02",
+    "direccion": "URBANIZACION Los Arqueros. Residencial La Torre Blq. 2 Plta/Piso 3 Pta/Letra 5",
+    "cp": "29678",
+    "titular": "-",
+    "catastro": "0032926UF2403S0011JG",
+    "uso_privado": null,
+    "motivo": "sin coordenadas en el registro"
    }
   ],
-  "total": 2257,
+  "total": 2261,
   "ubicadas": 2210,
   "viviendas_ubicadas": 2206,
   "anyos_alta": [
@@ -53488,12 +53575,12 @@
   "nota": "El cruce se hace por número de inscripción normalizado. Una vivienda anunciada sin inscripción localizada puede estar inscrita con el número mal transcrito en el portal, inscrita en otro municipio, o no estar inscrita."
  },
  "reparto": {
-  "con_huella": 2122,
-  "sin_huella": 85,
-  "parcelas": 547,
+  "con_huella": 2125,
+  "sin_huella": 82,
+  "parcelas": 552,
   "nota": "El RTA publica una coordenada por parcela catastral, no por vivienda: el 81 % de las viviendas de Benahavís comparte punto con otra y una sola parcela llega a acumular 131. Para el mapa de densidad, las viviendas de cada parcela se reparten sobre las huellas de edificación que el Catastro dibuja en ella, en proporción a la superficie de cada cuerpo. No se sabe en qué portal está cada vivienda: lo que se afirma es que está en alguno de los edificios de su parcela. La coordenada oficial del registro se conserva y es la que usa la ficha de cada vivienda."
  },
- "generado": "2026-09-05T09:25:34Z",
+ "generado": "2026-10-05T12:40:15Z",
  "fuentes": [
   "Junta de Andalucía · Registro de Turismo de Andalucía (OpenRTA)",
   "Turismo Costa del Sol · Big Data, informe de viviendas turísticas",

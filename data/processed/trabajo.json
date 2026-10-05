@@ -774,6 +774,24 @@
      "servicios": 131,
      "sin_empleo_anterior": 8
     }
+   },
+   {
+    "t": "2026-08",
+    "total": 154,
+    "hombres": 50,
+    "mujeres": 102,
+    "edad": {
+     "menor25": 0,
+     "de25a44": 60,
+     "mayor45": 92
+    },
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 13,
+     "servicios": 130,
+     "sin_empleo_anterior": 6
+    }
    }
   ],
   "comparativa": [
@@ -1034,6 +1052,12 @@
     "espana": 2307681,
     "andalucia": 526852,
     "malaga": 97504
+   },
+   {
+    "t": "2026-08",
+    "espana": 2352221,
+    "andalucia": 530249,
+    "malaga": 97095
    }
   ]
  },
@@ -1554,19 +1578,23 @@
      "construccion": 44,
      "servicios": 158
     }
+   },
+   {
+    "t": "2026-08",
+    "total": 116,
+    "indefinidos": 83,
+    "temporales": 31,
+    "sectores": {
+     "agricultura": 0,
+     "industria": 0,
+     "construccion": 34,
+     "servicios": 80
+    }
    }
   ]
  },
  "afiliacion": {
   "serie_total": [
-   {
-    "t": "2024-09",
-    "min": 2681,
-    "max": 2981,
-    "exacto": false,
-    "celdas_censuradas": 75,
-    "celdas_vacias": 0
-   },
    {
     "t": "2024-10",
     "min": 2674,
@@ -1734,17 +1762,17 @@
     "exacto": false,
     "celdas_censuradas": 75,
     "celdas_vacias": 0
+   },
+   {
+    "t": "2026-08",
+    "min": 3199,
+    "max": 3491,
+    "exacto": false,
+    "celdas_censuradas": 73,
+    "celdas_vacias": 0
    }
   ],
   "serie_turistico": [
-   {
-    "t": "2024-09",
-    "min": 577,
-    "max": 597,
-    "exacto": false,
-    "celdas_censuradas": 5,
-    "celdas_vacias": 0
-   },
    {
     "t": "2024-10",
     "min": 546,
@@ -1912,10 +1940,18 @@
     "exacto": false,
     "celdas_censuradas": 2,
     "celdas_vacias": 0
+   },
+   {
+    "t": "2026-08",
+    "min": 699,
+    "max": 707,
+    "exacto": false,
+    "celdas_censuradas": 2,
+    "celdas_vacias": 0
    }
   ],
   "ultimo": {
-   "mes": "2026-07",
+   "mes": "2026-08",
    "clasificacion": "CNAE-2025",
    "ramas": [
     {
@@ -1930,8 +1966,8 @@
     {
      "cnae": "41",
      "descripcion": "Construcción de edificios",
-     "min": 372,
-     "max": 372,
+     "min": 376,
+     "max": 376,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -1939,8 +1975,8 @@
     {
      "cnae": "81",
      "descripcion": "Servicios a edificios y actividades de j",
-     "min": 339,
-     "max": 339,
+     "min": 336,
+     "max": 336,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -1948,8 +1984,8 @@
     {
      "cnae": "56",
      "descripcion": "Servicios de comidas y bebidas",
-     "min": 287,
-     "max": 287,
+     "min": 281,
+     "max": 281,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -1957,8 +1993,8 @@
     {
      "cnae": "93",
      "descripcion": "Actividades deportivas, recreativas y de",
-     "min": 240,
-     "max": 240,
+     "min": 244,
+     "max": 244,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -1966,8 +2002,8 @@
     {
      "cnae": "43",
      "descripcion": "Actividades de construcción especializad",
-     "min": 187,
-     "max": 187,
+     "min": 195,
+     "max": 195,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -1975,8 +2011,8 @@
     {
      "cnae": "97",
      "descripcion": "Actividades de los hogares como empleado",
-     "min": 182,
-     "max": 186,
+     "min": 187,
+     "max": 191,
      "exacto": false,
      "celdas_censuradas": 1,
      "celdas_vacias": 0
@@ -1984,8 +2020,8 @@
     {
      "cnae": "55",
      "descripcion": "Servicios de alojamiento",
-     "min": 170,
-     "max": 170,
+     "min": 174,
+     "max": 174,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -2000,21 +2036,21 @@
      "celdas_vacias": 0
     },
     {
+     "cnae": "47",
+     "descripcion": "Comercio al por menor",
+     "min": 119,
+     "max": 119,
+     "exacto": true,
+     "celdas_censuradas": 0,
+     "celdas_vacias": 0
+    },
+    {
      "cnae": "84",
      "descripcion": "Administración pública y defensa; seguri",
      "min": 118,
      "max": 126,
      "exacto": false,
      "celdas_censuradas": 2,
-     "celdas_vacias": 0
-    },
-    {
-     "cnae": "47",
-     "descripcion": "Comercio al por menor",
-     "min": 117,
-     "max": 117,
-     "exacto": true,
-     "celdas_censuradas": 0,
      "celdas_vacias": 0
     },
     {
@@ -2038,8 +2074,8 @@
     {
      "cnae": "85",
      "descripcion": "Educación",
-     "min": 58,
-     "max": 62,
+     "min": 57,
+     "max": 61,
      "exacto": false,
      "celdas_censuradas": 1,
      "celdas_vacias": 0
@@ -2047,17 +2083,17 @@
     {
      "cnae": "62",
      "descripcion": "Programación, consultoría y otras activi",
-     "min": 52,
+     "min": 56,
      "max": 60,
      "exacto": false,
-     "celdas_censuradas": 2,
+     "celdas_censuradas": 1,
      "celdas_vacias": 0
     },
     {
      "cnae": "70",
      "descripcion": "Actividades de las sedes centrales y con",
-     "min": 49,
-     "max": 49,
+     "min": 51,
+     "max": 51,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -2066,16 +2102,16 @@
      "cnae": "74",
      "descripcion": "Otras actividades profesionales, científ",
      "min": 41,
-     "max": 41,
-     "exacto": true,
-     "celdas_censuradas": 0,
+     "max": 45,
+     "exacto": false,
+     "celdas_censuradas": 1,
      "celdas_vacias": 0
     },
     {
      "cnae": "49",
      "descripcion": "Transporte terrestre y por tubería",
-     "min": 38,
-     "max": 42,
+     "min": 39,
+     "max": 43,
      "exacto": false,
      "celdas_censuradas": 1,
      "celdas_vacias": 0
@@ -2092,8 +2128,17 @@
     {
      "cnae": "77",
      "descripcion": "Actividades de alquiler",
-     "min": 31,
-     "max": 35,
+     "min": 32,
+     "max": 36,
+     "exacto": false,
+     "celdas_censuradas": 1,
+     "celdas_vacias": 0
+    },
+    {
+     "cnae": "69",
+     "descripcion": "Actividades jurídicas y de contabilidad",
+     "min": 30,
+     "max": 34,
      "exacto": false,
      "celdas_censuradas": 1,
      "celdas_vacias": 0
@@ -2108,19 +2153,10 @@
      "celdas_vacias": 0
     },
     {
-     "cnae": "69",
-     "descripcion": "Actividades jurídicas y de contabilidad",
-     "min": 27,
-     "max": 31,
-     "exacto": false,
-     "celdas_censuradas": 1,
-     "celdas_vacias": 0
-    },
-    {
      "cnae": "36",
      "descripcion": "Captación, depuración y distribución de",
-     "min": 25,
-     "max": 25,
+     "min": 26,
+     "max": 26,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -2128,8 +2164,8 @@
     {
      "cnae": "71",
      "descripcion": "Servicios técnicos de arquitectura e ing",
-     "min": 21,
-     "max": 29,
+     "min": 22,
+     "max": 30,
      "exacto": false,
      "celdas_censuradas": 2,
      "celdas_vacias": 0
@@ -2138,9 +2174,9 @@
      "cnae": "1",
      "descripcion": "Agricultura, ganadería, caza y servicios",
      "min": 18,
-     "max": 30,
+     "max": 26,
      "exacto": false,
-     "celdas_censuradas": 3,
+     "celdas_censuradas": 2,
      "celdas_vacias": 0
     },
     {
@@ -2466,23 +2502,14 @@
      "exacto": false,
      "celdas_censuradas": 1,
      "celdas_vacias": 0
-    },
-    {
-     "cnae": "2",
-     "descripcion": "Silvicultura y explotación forestal",
-     "min": 0,
-     "max": 4,
-     "exacto": false,
-     "celdas_censuradas": 1,
-     "celdas_vacias": 0
     }
    ],
    "turisticas": [
     {
      "cnae": "55",
      "descripcion": "Servicios de alojamiento",
-     "min": 170,
-     "max": 170,
+     "min": 174,
+     "max": 174,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -2490,8 +2517,8 @@
     {
      "cnae": "56",
      "descripcion": "Servicios de comidas y bebidas",
-     "min": 287,
-     "max": 287,
+     "min": 281,
+     "max": 281,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
@@ -2508,18 +2535,18 @@
     {
      "cnae": "93",
      "descripcion": "Actividades deportivas, recreativas y de entretenimiento",
-     "min": 240,
-     "max": 240,
+     "min": 244,
+     "max": 244,
      "exacto": true,
      "celdas_censuradas": 0,
      "celdas_vacias": 0
     }
    ]
   },
-  "ultimo_mes": "2026-07",
+  "ultimo_mes": "2026-08",
   "ruptura_cnae": "2026-01",
   "nota_censura": "Los valores entre 1 y 4 se publican como «<5». Los totales se expresan como intervalo [mínimo observado, mínimo + 4 × número de celdas censuradas].",
-  "celdas_censuradas_acumuladas": 1677
+  "celdas_censuradas_acumuladas": 1675
  },
  "paro_anual_ieca": {
   "por_edad": {
@@ -2537,5 +2564,5 @@
  },
  "fuente": "SEPE · datos abiertos de paro y contratos por municipios · Seguridad Social · Afiliados por municipios CNAE 2D · IECA/BADEA",
  "ambito": "municipal",
- "actualizado": "2026-09-05T09:14:42Z"
+ "actualizado": "2026-10-05T12:31:16Z"
 }

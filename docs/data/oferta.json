@@ -1,13 +1,13 @@
 {
  "rta": {
-  "total_inscripciones": 2257,
-  "plazas_totales": 15123,
-  "plazas_alojamiento": 15123,
+  "total_inscripciones": 2261,
+  "plazas_totales": 15158,
+  "plazas_alojamiento": 15158,
   "por_tipo": {
    "Vivienda de uso turístico": {
-    "establecimientos": 2247,
-    "plazas": 14240,
-    "unidades": 6573
+    "establecimientos": 2251,
+    "plazas": 14275,
+    "unidades": 6585
    },
    "Vivienda turística de alojamiento rural": {
     "establecimientos": 6,
@@ -73,11 +73,11 @@
    },
    {
     "t": "2018",
-    "v": 195
+    "v": 194
    },
    {
     "t": "2019",
-    "v": 215
+    "v": 214
    },
    {
     "t": "2020",
@@ -85,7 +85,7 @@
    },
    {
     "t": "2021",
-    "v": 127
+    "v": 126
    },
    {
     "t": "2022",
@@ -105,7 +105,7 @@
    },
    {
     "t": "2026",
-    "v": 78
+    "v": 85
    }
   ],
   "acumulado_altas": [
@@ -143,39 +143,39 @@
    },
    {
     "t": "2018",
-    "v": 471
+    "v": 470
    },
    {
     "t": "2019",
-    "v": 686
+    "v": 684
    },
    {
     "t": "2020",
-    "v": 805
+    "v": 803
    },
    {
     "t": "2021",
-    "v": 932
+    "v": 929
    },
    {
     "t": "2022",
-    "v": 1216
+    "v": 1213
    },
    {
     "t": "2023",
-    "v": 1576
+    "v": 1573
    },
    {
     "t": "2024",
-    "v": 1896
+    "v": 1893
    },
    {
     "t": "2025",
-    "v": 2179
+    "v": 2176
    },
    {
     "t": "2026",
-    "v": 2257
+    "v": 2261
    }
   ],
   "puntos": [
@@ -3596,14 +3596,6 @@
     "lon": -5.03489
    },
    {
-    "nombre": "LAS LOMAS DE BENAHAVÍS",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 8,
-    "lat": 36.523126,
-    "lon": -5.046352
-   },
-   {
     "nombre": "PROPIETARIO",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -4242,14 +4234,6 @@
     "plazas": 4,
     "lat": 36.485092,
     "lon": -5.072551
-   },
-   {
-    "nombre": "LOMAS DEL MARQUES",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 6,
-    "lat": 36.49329,
-    "lon": -5.021029
    },
    {
     "nombre": "Toscana Hills",
@@ -7202,14 +7186,6 @@
     "plazas": 6,
     "lat": 36.474737,
     "lon": -5.049045
-   },
-   {
-    "nombre": "LOMAS DEL MARQUES",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 6,
-    "lat": 36.49329,
-    "lon": -5.021029
    },
    {
     "nombre": "LA HACIENDA DEL SEÑORIO DE CIFUENTES",
@@ -13124,14 +13100,6 @@
     "lon": -5.003515
    },
    {
-    "nombre": "LA HEREDIA Nº 10",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 2,
-    "lat": 36.520165,
-    "lon": -5.005049
-   },
-   {
     "nombre": "LOMAS DEL MARQUES",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -14074,6 +14042,14 @@
     "plazas": 4,
     "lat": 36.485092,
     "lon": -5.072551
+   },
+   {
+    "nombre": "",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 12,
+    "lat": 36.517733,
+    "lon": -5.005762
    },
    {
     "nombre": "RESIDENCIAL QUERCUS, FASE 2B Nº 1421",
@@ -17858,9 +17834,33 @@
     "plazas": 6,
     "lat": 36.49863,
     "lon": -5.033803
+   },
+   {
+    "nombre": "ALEGRIA",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 8,
+    "lat": 36.529801,
+    "lon": -4.990022
+   },
+   {
+    "nombre": "Ocean 360",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.519809,
+    "lon": -5.00365
+   },
+   {
+    "nombre": "Jasmine detached house",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 7,
+    "lat": 36.499273,
+    "lon": -5.034298
    }
   ],
-  "alojamientos_sin_coordenadas": 44,
+  "alojamientos_sin_coordenadas": 48,
   "alojamientos_coordenada_erronea": 3,
   "crs_origen": "EPSG:25830",
   "crs_puntos": "EPSG:4326"
@@ -18086,5 +18086,5 @@
  "advertencia": "El Registro de Turismo de Andalucía mide oferta inscrita administrativamente; la estadística experimental del INE mide oferta anunciada en plataformas de intermediación. Miden universos distintos y no deben compararse ni sumarse.",
  "fuente": "Junta de Andalucía · OpenRTA · e INE · Viviendas turísticas (tablas 39363 y 39366)",
  "ambito": "municipal",
- "actualizado": "2026-09-05T09:14:42Z"
+ "actualizado": "2026-10-05T12:31:16Z"
 }

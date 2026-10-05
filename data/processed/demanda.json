@@ -8073,21 +8073,25 @@
    {
     "t": "2026-06",
     "v": 2000
+   },
+   {
+    "t": "2026-07",
+    "v": 1854
    }
   ],
   "origen_serie": "fila de total del fichero de origen",
   "top_origenes": [
    {
     "municipio": "Madrid",
-    "v": 18919
+    "v": 19135
    },
    {
     "municipio": "Sevilla",
-    "v": 5543
+    "v": 5621
    },
    {
     "municipio": "Algeciras",
-    "v": 5342
+    "v": 5387
    },
    {
     "municipio": "Línea de la Concepción, La",
@@ -8099,19 +8103,19 @@
    },
    {
     "municipio": "Ceuta",
-    "v": 3412
+    "v": 3499
    },
    {
     "municipio": "Jerez de la Frontera",
-    "v": 3012
+    "v": 3052
    },
    {
     "municipio": "Córdoba",
-    "v": 2905
+    "v": 3002
    },
    {
     "municipio": "Granada",
-    "v": 2615
+    "v": 2676
    },
    {
     "municipio": "Barcelona",
@@ -8122,16 +8126,16 @@
     "v": 712
    },
    {
+    "municipio": "Pozuelo de Alarcón",
+    "v": 672
+   },
+   {
     "municipio": "Alcalá del Valle",
     "v": 647
    },
    {
     "municipio": "Olvera",
     "v": 637
-   },
-   {
-    "municipio": "Pozuelo de Alarcón",
-    "v": 634
    },
    {
     "municipio": "Villamartín",
@@ -8576,35 +8580,51 @@
    "2026": [
     {
      "municipio": "Madrid",
-     "v": 952
+     "v": 1168
     },
     {
      "municipio": "Sevilla",
-     "v": 354
-    },
-    {
-     "municipio": "Granada",
-     "v": 320
+     "v": 432
     },
     {
      "municipio": "Córdoba",
-     "v": 292
+     "v": 389
+    },
+    {
+     "municipio": "Granada",
+     "v": 381
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 194
+    },
+    {
+     "municipio": "Ceuta",
+     "v": 187
     },
     {
      "municipio": "Línea de la Concepción, La",
      "v": 165
     },
     {
-     "municipio": "Jerez de la Frontera",
-     "v": 154
+     "municipio": "Algeciras",
+     "v": 114
     },
     {
-     "municipio": "Ceuta",
-     "v": 100
+     "municipio": "Pozuelo de Alarcón",
+     "v": 103
+    },
+    {
+     "municipio": "Rozas de Madrid, Las",
+     "v": 98
     },
     {
      "municipio": "Arcos de la Frontera",
      "v": 92
+    },
+    {
+     "municipio": "Puerto de Santa María, El",
+     "v": 81
     },
     {
      "municipio": "Aguilar de la Frontera",
@@ -8615,35 +8635,19 @@
      "v": 80
     },
     {
-     "municipio": "Algeciras",
-     "v": 69
-    },
-    {
-     "municipio": "Rozas de Madrid, Las",
-     "v": 66
-    },
-    {
-     "municipio": "Pozuelo de Alarcón",
+     "municipio": "San Fernando",
      "v": 65
-    },
-    {
-     "municipio": "Gandia",
-     "v": 41
-    },
-    {
-     "municipio": "Torrejón de Ardoz",
-     "v": 40
     }
    ]
   },
   "top_destinos_emisor": [
    {
     "municipio": "Madrid",
-    "v": 12648
+    "v": 12746
    },
    {
     "municipio": "Tarifa",
-    "v": 5069
+    "v": 5144
    },
    {
     "municipio": "Sevilla",
@@ -8679,7 +8683,7 @@
    },
    {
     "municipio": "Barbate",
-    "v": 1887
+    "v": 1944
    },
    {
     "municipio": "Conil de la Frontera",
@@ -12217,5 +12221,5 @@
  "fuente": "INE · Medición del turismo a partir de la posición de los teléfonos móviles y Encuesta de Ocupación Hotelera por zonas turísticas (ambas vía Dataestur, SEGITTUR)",
  "ambito": "municipal",
  "es_proxy": false,
- "actualizado": "2026-09-05T09:14:42Z"
+ "actualizado": "2026-10-05T12:31:16Z"
 }
