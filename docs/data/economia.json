@@ -1489,6 +1489,33 @@
     "mar": null,
     "hogar": 84,
     "total": 3328
+   },
+   {
+    "t": "2026-07",
+    "general": 1843,
+    "agrario": 9,
+    "autonomos": 1516,
+    "mar": null,
+    "hogar": 85,
+    "total": 3455
+   },
+   {
+    "t": "2026-08",
+    "general": 1818,
+    "agrario": 10,
+    "autonomos": 1523,
+    "mar": null,
+    "hogar": 85,
+    "total": 3438
+   },
+   {
+    "t": "2026-09",
+    "general": 1764,
+    "agrario": 7,
+    "autonomos": 1530,
+    "mar": null,
+    "hogar": 85,
+    "total": 3388
    }
   ],
   "consulta": "876",
@@ -1535,5 +1562,5 @@
  ],
  "fuente": "INE · DIRCE, empresas por municipio (tabla 4721) · IECA/BADEA, afiliaciones por régimen (consulta 876) · Ministerio de Hacienda, deuda viva de las entidades locales",
  "ambito": "municipal",
- "actualizado": "2026-10-05T12:31:16Z"
+ "actualizado": "2026-11-05T13:25:54Z"
 }

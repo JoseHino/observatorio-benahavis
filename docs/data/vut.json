@@ -83,6 +83,25 @@
     "lon": -4.994713
    },
    {
+    "ref": "VTAR/MA/00896",
+    "nombre": "CASA LOS NARANJOS",
+    "tipo": "Vivienda turística de alojamiento rural",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": null,
+    "plazas": 4,
+    "unidades": 2,
+    "alta": "2011-06-23",
+    "inicio_actividad": "2011-06-23",
+    "direccion": "URB. LA PACHECA,2",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": null,
+    "uso_privado": null,
+    "lat": 36.518969,
+    "lon": -5.044561
+   },
+   {
     "ref": "VUT/MA/02474",
     "nombre": "LA QUINTA GOLF, EL HERROJO Nº 156",
     "tipo": "Vivienda de uso turístico",
@@ -1548,7 +1567,31 @@
     "lon_h": -5.051556,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
+   },
+   {
+    "ref": "VUT/MA/05881",
+    "nombre": "HACIENDA DEL SEÑORIO CIFUENTES Nº 22",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 4,
+    "unidades": 2,
+    "alta": "2016-11-29",
+    "inicio_actividad": "2016-06-21",
+    "direccion": "URBANIZACION HACIENDA DEL SEÑORIO CIFUENTES Nº 22 Pta/Letra A",
+    "cp": "29601",
+    "titular": "-",
+    "catastro": "7441111UF1470S0225YB",
+    "uso_privado": "N",
+    "lat": 36.491979,
+    "lon": -5.035817,
+    "lat_h": 36.488607,
+    "lon_h": -5.037822,
+    "parcela_m2": 86195.0,
+    "parcela_viviendas": 262,
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/03229",
@@ -1719,6 +1762,30 @@
     "parcela_vut": 54
    },
    {
+    "ref": "VUT/MA/01820",
+    "nombre": "LA TORRE",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 6,
+    "unidades": 3,
+    "alta": "2016-07-05",
+    "inicio_actividad": "2016-07-05",
+    "direccion": "URBANIZACION LA TORRE Blq. 4 Pta/Letra 01 Compl.Dom. URB LOS ARQUEROS",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "0032925UF2403S0019HM",
+    "uso_privado": "N",
+    "lat": 36.516417,
+    "lon": -5.009841,
+    "lat_h": 36.515879,
+    "lon_h": -5.009716,
+    "parcela_m2": 6772.0,
+    "parcela_viviendas": 36,
+    "parcela_vut": 18
+   },
+   {
     "ref": "VUT/MA/01848",
     "nombre": "RIBERA DE GUADALMINA",
     "tipo": "Vivienda de uso turístico",
@@ -1741,6 +1808,25 @@
     "parcela_m2": 2507.0,
     "parcela_viviendas": 22,
     "parcela_vut": 2
+   },
+   {
+    "ref": "VUT/MA/09716",
+    "nombre": "LOS FAMINGOS 2, CONJ.  ALANDA FLAMINGOS Nº 2",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 4,
+    "unidades": 2,
+    "alta": "2017-03-17",
+    "inicio_actividad": "2016-07-11",
+    "direccion": "URBANIZACION LOS FAMINGOS 2, CONJ.  ALANDA FLAMINGOS Nº 2 Blq. 5 Plta/Piso 2 Pta/Letra 28",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "578810UF1359S0110UU",
+    "uso_privado": "N",
+    "lat": 36.47246,
+    "lon": -5.049542
    },
    {
     "ref": "VUT/MA/09712",
@@ -1936,7 +2022,7 @@
    },
    {
     "ref": "VUT/MA/04800",
-    "nombre": "Apto. Royal Flamingo bl. 3 portal 2 bajo A Benahavis",
+    "nombre": "APTO. ROYAL FLAMINGO",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -2124,7 +2210,7 @@
     "lon_h": -5.002705,
     "parcela_m2": 3234.0,
     "parcela_viviendas": 10,
-    "parcela_vut": 3
+    "parcela_vut": 4
    },
    {
     "ref": "VUT/MA/02657",
@@ -2287,7 +2373,7 @@
     "lon_h": -5.019132,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/05856",
@@ -2544,6 +2630,30 @@
     "parcela_vut": 51
    },
    {
+    "ref": "VUT/MA/06611",
+    "nombre": "FELISA DE CORTES",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 6,
+    "unidades": 3,
+    "alta": "2016-12-19",
+    "inicio_actividad": "2016-09-05",
+    "direccion": "URBANIZACION FELISA DE CORTES Esc. 7 Pta/Letra 34 Compl.Dom. RESIDENCIAL EL PARAISO",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "8296301UF1389N0042QI",
+    "uso_privado": "N",
+    "lat": 36.483784,
+    "lon": -5.030501,
+    "lat_h": 36.483592,
+    "lon_h": -5.030894,
+    "parcela_m2": 24126.0,
+    "parcela_viviendas": 36,
+    "parcela_vut": 10
+   },
+   {
     "ref": "VUT/MA/06602",
     "nombre": "FELISA DE CORTES",
     "tipo": "Vivienda de uso turístico",
@@ -2565,7 +2675,26 @@
     "lon_h": -5.03105,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
+   },
+   {
+    "ref": "VUT/MA/14917",
+    "nombre": "LOS OLIVOS Nº 3",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 4,
+    "unidades": 2,
+    "alta": "2017-08-28",
+    "inicio_actividad": "2016-08-31",
+    "direccion": "CALLE LOS OLIVOS Nº 3 Blq. 3 Plta/Piso B",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "6941507UF146480011SZ",
+    "uso_privado": "N",
+    "lat": 36.523429,
+    "lon": -5.045351
    },
    {
     "ref": "VUT/MA/06187",
@@ -2681,11 +2810,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.488607,
-    "lon_h": -5.037822,
+    "lat_h": 36.488686,
+    "lon_h": -5.037899,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/06472",
@@ -2898,10 +3027,10 @@
     "lat": 36.516417,
     "lon": -5.009841,
     "lat_h": 36.515879,
-    "lon_h": -5.009716,
+    "lon_h": -5.009605,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/07104",
@@ -2921,11 +3050,11 @@
     "uso_privado": "N",
     "lat": 36.516417,
     "lon": -5.009841,
-    "lat_h": 36.515879,
-    "lon_h": -5.009605,
+    "lat_h": 36.515958,
+    "lon_h": -5.009661,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/07103",
@@ -2997,7 +3126,7 @@
     "lon_h": -5.019481,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/06975",
@@ -3036,7 +3165,7 @@
     "inicio_actividad": "2016-10-07",
     "direccion": "CONJUNTO RESIDENCIAL CAPANES DEL GOLF Plta/Piso BAJA Pta/Letra A Compl.Dom. BLOQUE SANLUCAR",
     "cp": "29679",
-    "titular": "J.BLINDER HOLDINGS LTD",
+    "titular": "-",
     "catastro": "9119104UF1481N0107OK",
     "uso_privado": "N",
     "lat": 36.501976,
@@ -3588,11 +3717,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.488686,
+    "lat_h": 36.488765,
     "lon_h": -5.037899,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/08399",
@@ -3707,7 +3836,7 @@
     "lon_h": -5.003869,
     "parcela_m2": 9862.0,
     "parcela_viviendas": 18,
-    "parcela_vut": 6
+    "parcela_vut": 5
    },
    {
     "ref": "VUT/MA/08640",
@@ -3755,7 +3884,7 @@
     "lon_h": -5.019656,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/09266",
@@ -3779,7 +3908,7 @@
     "lon_h": -5.015196,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/09684",
@@ -4155,10 +4284,10 @@
     "lat": 36.488878,
     "lon": -5.036309,
     "lat_h": 36.488765,
-    "lon_h": -5.037899,
+    "lon_h": -5.037746,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/10428",
@@ -4348,6 +4477,30 @@
     "parcela_vut": 31
    },
    {
+    "ref": "VUT/MA/11248",
+    "nombre": "CASA DECRAENE",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 4,
+    "unidades": 2,
+    "alta": "2017-05-08",
+    "inicio_actividad": "2017-04-18",
+    "direccion": "URBANIZACION LOS ARQUEROS - LAS TERRAZAS Blq. B-3 Plta/Piso 1 Pta/Letra A",
+    "cp": "29670",
+    "titular": "-",
+    "catastro": "9635521UF2403S0013LJ",
+    "uso_privado": "N",
+    "lat": 36.517748,
+    "lon": -5.015017,
+    "lat_h": 36.51747,
+    "lon_h": -5.015196,
+    "parcela_m2": 7614.0,
+    "parcela_viviendas": 41,
+    "parcela_vut": 16
+   },
+   {
     "ref": "VUT/MA/11604",
     "nombre": "La Torre, Los Arqueros",
     "tipo": "Vivienda de uso turístico",
@@ -4365,11 +4518,11 @@
     "uso_privado": "N",
     "lat": 36.516417,
     "lon": -5.009841,
-    "lat_h": 36.516117,
-    "lon_h": -5.009605,
+    "lat_h": 36.516197,
+    "lon_h": -5.009828,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/11602",
@@ -4580,7 +4733,7 @@
     "lon_h": -5.00234,
     "parcela_m2": 3234.0,
     "parcela_viviendas": 10,
-    "parcela_vut": 3
+    "parcela_vut": 4
    },
    {
     "ref": "VUT/MA/12119",
@@ -4892,7 +5045,7 @@
     "lon_h": -5.019488,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/12612",
@@ -4940,7 +5093,7 @@
     "lon_h": -5.051786,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/12796",
@@ -5080,11 +5233,11 @@
     "uso_privado": "N",
     "lat": 36.516957,
     "lon": -5.015206,
-    "lat_h": 36.51747,
+    "lat_h": 36.517542,
     "lon_h": -5.015196,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/12735",
@@ -5104,11 +5257,11 @@
     "uso_privado": "N",
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.483592,
-    "lon_h": -5.030894,
+    "lat_h": 36.482996,
+    "lon_h": -5.03042,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/12736",
@@ -5128,11 +5281,11 @@
     "uso_privado": "N",
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.482996,
-    "lon_h": -5.03042,
+    "lat_h": 36.483148,
+    "lon_h": -5.030769,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/12709",
@@ -5368,11 +5521,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.488765,
-    "lon_h": -5.037746,
+    "lat_h": 36.48905,
+    "lon_h": -5.037764,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/13920",
@@ -5687,6 +5840,25 @@
     "parcela_vut": 54
    },
    {
+    "ref": "VUT/MA/15337",
+    "nombre": "MONTE MAYOR ALTO, PARCELA D 10",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 10,
+    "unidades": 5,
+    "alta": "2017-09-26",
+    "inicio_actividad": "2017-07-27",
+    "direccion": "URBANIZACION MONTE MAYOR ALTO, PARCELA D 10 Pta/Letra PARCEL D10 Compl.Dom. LA ROMERA",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "4425602UF1442S0001BK",
+    "uso_privado": "N",
+    "lat": 36.508688,
+    "lon": -5.074539
+   },
+   {
     "ref": "VUT/MA/14643",
     "nombre": "EL PARAISO. CJTO RES. PARAISO PARK, FASE III Nº 25",
     "tipo": "Vivienda de uso turístico",
@@ -5704,11 +5876,11 @@
     "uso_privado": "N",
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.483148,
-    "lon_h": -5.030769,
+    "lat_h": 36.483893,
+    "lon_h": -5.030719,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/14673",
@@ -5986,7 +6158,7 @@
     "lon_h": -5.019138,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/15518",
@@ -6200,6 +6372,30 @@
     "parcela_vut": 1
    },
    {
+    "ref": "VUT/MA/16605",
+    "nombre": "ONE FORTY SIX LEISURE SL",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 6,
+    "unidades": 3,
+    "alta": "2017-11-23",
+    "inicio_actividad": "2017-11-23",
+    "direccion": "URBANIZACION ALBORADA Nº 6 Blq. 4 Plta/Piso 1 Pta/Letra 6",
+    "cp": "29678",
+    "titular": "ONE FORTY SIX LEISURE S.L.",
+    "catastro": "0736808UF2403N0030BB",
+    "uso_privado": "N",
+    "lat": 36.519745,
+    "lon": -5.002424,
+    "lat_h": 36.519646,
+    "lon_h": -5.002583,
+    "parcela_m2": 3234.0,
+    "parcela_viviendas": 10,
+    "parcela_vut": 4
+   },
+   {
     "ref": "VUT/MA/16631",
     "nombre": "Urb. Las Jacarandas, B25-3, 29679 Benahavis (Málaga)",
     "tipo": "Vivienda de uso turístico",
@@ -6245,7 +6441,7 @@
     "lon_h": -5.009716,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/16809",
@@ -6505,11 +6701,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.48905,
+    "lat_h": 36.489129,
     "lon_h": -5.037764,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/17623",
@@ -6577,11 +6773,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.489129,
-    "lon_h": -5.037764,
+    "lat_h": 36.489208,
+    "lon_h": -5.037921,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/17670",
@@ -6650,10 +6846,10 @@
     "lat": 36.488878,
     "lon": -5.036309,
     "lat_h": 36.489208,
-    "lon_h": -5.037921,
+    "lon_h": -5.037764,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/19736",
@@ -6673,11 +6869,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.489208,
-    "lon_h": -5.037764,
+    "lat_h": 36.48825,
+    "lon_h": -5.037752,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/17799",
@@ -6835,7 +7031,7 @@
     "lon_h": -5.019138,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/19084",
@@ -7137,7 +7333,7 @@
     "lon_h": -5.019162,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/18787",
@@ -7589,11 +7785,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.48825,
+    "lat_h": 36.488326,
     "lon_h": -5.037752,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/20646",
@@ -8175,10 +8371,10 @@
     "lat": 36.516957,
     "lon": -5.015206,
     "lat_h": 36.517542,
-    "lon_h": -5.015196,
+    "lon_h": -5.014889,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/21461",
@@ -8365,7 +8561,7 @@
     "lon_h": -5.01836,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/22219",
@@ -8716,6 +8912,25 @@
     "parcela_m2": 212.0,
     "parcela_viviendas": 1,
     "parcela_vut": 1
+   },
+   {
+    "ref": "VUT/MA/22509",
+    "nombre": "LOS FLAMINGOS Nº 128",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 15,
+    "unidades": 7,
+    "alta": "2018-07-03",
+    "inicio_actividad": "2018-07-03",
+    "direccion": "URBANIZACION LOS FLAMINGOS Nº 128 Compl.Dom. VILLA EL CANO",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "5788435UF1358N0001TL",
+    "uso_privado": "N",
+    "lat": 36.47246,
+    "lon": -5.049542
    },
    {
     "ref": "VUT/MA/23320",
@@ -9295,7 +9510,7 @@
    },
    {
     "ref": "VUT/MA/23813",
-    "nombre": "EL HERROJO Nº 3-45",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -9306,7 +9521,7 @@
     "inicio_actividad": "2018-08-06",
     "direccion": "URBANIZACION EL HERROJO Nº 3-45",
     "cp": "29678",
-    "titular": "BEARTRIX ISLAND SLU",
+    "titular": "OASIS EUROPE BV",
     "catastro": "1028154UF2412N0001LP",
     "uso_privado": "N",
     "lat": 36.511079,
@@ -9407,6 +9622,25 @@
     "uso_privado": "N",
     "lat": 36.49329,
     "lon": -5.021029
+   },
+   {
+    "ref": "VUT/MA/25074",
+    "nombre": "ATALAYA HILLS",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 4,
+    "unidades": 2,
+    "alta": "2018-09-24",
+    "inicio_actividad": "2018-08-10",
+    "direccion": "URBANIZACION ATALAYA HILLS Blq. 4 Plta/Piso 1 Pta/Letra 2 Compl.Dom. Sector Suc ¿CAPANES SUR II¿ del P.G.O.U.",
+    "cp": "29630",
+    "titular": "-",
+    "catastro": "8804102UF1480S0001FM",
+    "uso_privado": "N",
+    "lat": 36.490534,
+    "lon": -5.024318
    },
    {
     "ref": "VUT/MA/25152",
@@ -9810,11 +10044,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.488326,
-    "lon_h": -5.037752,
+    "lat_h": 36.488403,
+    "lon_h": -5.03784,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/25472",
@@ -10002,11 +10236,11 @@
     "uso_privado": "N",
     "lat": 36.516957,
     "lon": -5.015206,
-    "lat_h": 36.516877,
+    "lat_h": 36.516953,
     "lon_h": -5.014957,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/26881",
@@ -10208,11 +10442,11 @@
     "uso_privado": null,
     "lat": 36.516957,
     "lon": -5.015206,
-    "lat_h": 36.517542,
-    "lon_h": -5.014889,
+    "lat_h": 36.516877,
+    "lon_h": -5.014957,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/27383",
@@ -10618,30 +10852,6 @@
     "parcela_vut": 29
    },
    {
-    "ref": "VUT/MA/27761",
-    "nombre": "LOS FLAMINGOS , TEE5",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 8,
-    "unidades": 3,
-    "alta": "2018-12-11",
-    "inicio_actividad": "2018-12-11",
-    "direccion": "URBANIZACION LOS FALMINGOS, TEE5 Blq. 4 Plta/Piso 2 Pta/Letra 36D",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "5788460UF1358N0100DZ",
-    "uso_privado": null,
-    "lat": 36.477555,
-    "lon": -5.051452,
-    "lat_h": 36.478274,
-    "lon_h": -5.051543,
-    "parcela_m2": 16530.0,
-    "parcela_viviendas": 55,
-    "parcela_vut": 11
-   },
-   {
     "ref": "VUT/MA/28203",
     "nombre": "Capanes del Golf",
     "tipo": "Vivienda de uso turístico",
@@ -10708,10 +10918,10 @@
     "lat": 36.488878,
     "lon": -5.036309,
     "lat_h": 36.488403,
-    "lon_h": -5.03784,
+    "lon_h": -5.037665,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/27801",
@@ -10923,11 +11133,11 @@
     "uso_privado": null,
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.483893,
-    "lon_h": -5.030719,
+    "lat_h": 36.48394,
+    "lon_h": -5.030045,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/28558",
@@ -11092,10 +11302,10 @@
     "lat": 36.516957,
     "lon": -5.015206,
     "lat_h": 36.516953,
-    "lon_h": -5.014957,
+    "lon_h": -5.0148,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/29562",
@@ -11307,11 +11517,11 @@
     "uso_privado": null,
     "lat": 36.477555,
     "lon": -5.051452,
-    "lat_h": 36.478459,
-    "lon_h": -5.05177,
+    "lat_h": 36.478274,
+    "lon_h": -5.051543,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/29259",
@@ -11686,11 +11896,11 @@
     "uso_privado": "N",
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.488403,
-    "lon_h": -5.037665,
+    "lat_h": 36.487922,
+    "lon_h": -5.037377,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/30135",
@@ -12113,11 +12323,11 @@
     "uso_privado": null,
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.48394,
-    "lon_h": -5.030045,
+    "lat_h": 36.484086,
+    "lon_h": -5.030445,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/30656",
@@ -12141,7 +12351,7 @@
     "lon_h": -5.009772,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/30633",
@@ -12313,7 +12523,7 @@
    },
    {
     "ref": "VUT/MA/33649",
-    "nombre": "Botanic",
+    "nombre": "URB BOTANIC RESERVA DE ALCUZCUZ BQ5, PLANTA 01, PUERTA 07 , BENAHAVIS",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -13111,11 +13321,11 @@
     "uso_privado": null,
     "lat": 36.477555,
     "lon": -5.051452,
-    "lat_h": 36.477322,
-    "lon_h": -5.051315,
+    "lat_h": 36.478459,
+    "lon_h": -5.05177,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/32529",
@@ -13182,7 +13392,7 @@
     "lon_h": -5.018709,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/32913",
@@ -13443,10 +13653,10 @@
     "lat": 36.492882,
     "lon": -5.018793,
     "lat_h": 36.493658,
-    "lon_h": -5.018831,
+    "lon_h": -5.01859,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/33055",
@@ -13581,11 +13791,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.493067,
-    "lon_h": -5.01836,
+    "lat_h": 36.49313,
+    "lon_h": -5.018883,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/33582",
@@ -13917,11 +14127,11 @@
     "uso_privado": null,
     "lat": 36.477555,
     "lon": -5.051452,
-    "lat_h": 36.4775,
-    "lon_h": -5.051548,
+    "lat_h": 36.477397,
+    "lon_h": -5.051423,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/34372",
@@ -14080,11 +14290,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.487922,
+    "lat_h": 36.488,
     "lon_h": -5.037377,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/34651",
@@ -14147,11 +14357,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.49313,
-    "lon_h": -5.01836,
+    "lat_h": 36.493658,
+    "lon_h": -5.018831,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/34659",
@@ -14291,6 +14501,25 @@
     "parcela_m2": 1263.0,
     "parcela_viviendas": 23,
     "parcela_vut": 4
+   },
+   {
+    "ref": "VUT/MA/36280",
+    "nombre": "de Praga Nº 4",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 6,
+    "unidades": 3,
+    "alta": "2019-08-27",
+    "inicio_actividad": "2019-07-04",
+    "direccion": "CALLE de Praga Nº 4 Blq. 5 Plta/Piso bj Pta/Letra 48 Compl.Dom. CJT ATALAYA HILLS - Capanes Sur II",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "8804102UF1480S0001FM",
+    "uso_privado": null,
+    "lat": 36.490534,
+    "lon": -5.024318
    },
    {
     "ref": "VUT/MA/35122",
@@ -15744,7 +15973,7 @@
     "lon_h": -5.009534,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/38489",
@@ -15788,11 +16017,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.493658,
-    "lon_h": -5.01859,
+    "lat_h": 36.493508,
+    "lon_h": -5.018246,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/38485",
@@ -16714,11 +16943,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.488,
-    "lon_h": -5.037377,
+    "lat_h": 36.488077,
+    "lon_h": -5.037543,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/40473",
@@ -17094,10 +17323,10 @@
     "lat": 36.492882,
     "lon": -5.018793,
     "lat_h": 36.493508,
-    "lon_h": -5.018246,
+    "lon_h": -5.018092,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/40493",
@@ -17190,10 +17419,10 @@
     "lat": 36.516957,
     "lon": -5.015206,
     "lat_h": 36.517028,
-    "lon_h": -5.015114,
+    "lon_h": -5.014957,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/40353",
@@ -17501,11 +17730,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.493508,
+    "lat_h": 36.493867,
     "lon_h": -5.018092,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/41029",
@@ -18388,7 +18617,7 @@
     "lon_h": -5.009423,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/42483",
@@ -18476,10 +18705,10 @@
     "lat": 36.488878,
     "lon": -5.036309,
     "lat_h": 36.488077,
-    "lon_h": -5.037543,
+    "lon_h": -5.037377,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/42653",
@@ -19286,11 +19515,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.493867,
-    "lon_h": -5.018092,
+    "lat_h": 36.494047,
+    "lon_h": -5.018169,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/43906",
@@ -19377,11 +19606,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.488077,
-    "lon_h": -5.037377,
+    "lat_h": 36.489065,
+    "lon_h": -5.037382,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/43974",
@@ -19708,11 +19937,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.494047,
-    "lon_h": -5.018169,
+    "lat_h": 36.492595,
+    "lon_h": -5.018154,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/44473",
@@ -19788,7 +20017,7 @@
    },
    {
     "ref": "VUT/MA/44653",
-    "nombre": "URB. NUEVA ATALAYA",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -19799,7 +20028,7 @@
     "inicio_actividad": "2021-05-26",
     "direccion": "URBANIZACION NUEVA ATALAYA Nº 9A",
     "cp": "29679",
-    "titular": "RABELLA GMBH",
+    "titular": "RABELLA NUEVA ATALAYA",
     "catastro": "8407180UF1480N0001KG",
     "uso_privado": null,
     "lat": 36.495075,
@@ -20264,7 +20493,7 @@
     "lon_h": -5.009479,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/45737",
@@ -20380,11 +20609,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.489065,
-    "lon_h": -5.037382,
+    "lat_h": 36.48912,
+    "lon_h": -5.037478,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/46184",
@@ -20408,7 +20637,7 @@
     "lon_h": -5.051348,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/46319",
@@ -20432,7 +20661,7 @@
     "lon_h": -5.003869,
     "parcela_m2": 9862.0,
     "parcela_viviendas": 18,
-    "parcela_vut": 6
+    "parcela_vut": 5
    },
    {
     "ref": "VUT/MA/46379",
@@ -20789,10 +21018,10 @@
     "lat": 36.488878,
     "lon": -5.036309,
     "lat_h": 36.48912,
-    "lon_h": -5.037478,
+    "lon_h": -5.03719,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/47078",
@@ -21149,10 +21378,10 @@
     "lat": 36.519662,
     "lon": -5.002872,
     "lat_h": 36.519646,
-    "lon_h": -5.002462,
+    "lon_h": -5.00234,
     "parcela_m2": 3234.0,
     "parcela_viviendas": 10,
-    "parcela_vut": 3
+    "parcela_vut": 4
    },
    {
     "ref": "VUT/MA/47727",
@@ -21292,11 +21521,11 @@
     "uso_privado": null,
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.484086,
-    "lon_h": -5.030445,
+    "lat_h": 36.483235,
+    "lon_h": -5.030025,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/48045",
@@ -21340,11 +21569,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.48912,
-    "lon_h": -5.03719,
+    "lat_h": 36.489174,
+    "lon_h": -5.037286,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/48090",
@@ -21508,11 +21737,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.492595,
-    "lon_h": -5.018154,
+    "lat_h": 36.492742,
+    "lon_h": -5.018003,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/48309",
@@ -22040,7 +22269,7 @@
     "lon_h": -5.051551,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/49148",
@@ -22476,7 +22705,7 @@
    },
    {
     "ref": "VUT/MA/49919",
-    "nombre": "UR PARAISO EL 371 (B) Nº 371",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -22487,7 +22716,7 @@
     "inicio_actividad": "2022-03-01",
     "direccion": "URBANIZACION UR PARAISO EL 371 (B) Nº 371",
     "cp": "29679",
-    "titular": "-",
+    "titular": "3SA JB RENTALS MARBELLA, S.L",
     "catastro": "7796115UF1379N0001PZ",
     "uso_privado": "N",
     "lat": 36.481764,
@@ -22544,7 +22773,7 @@
     "lon_h": -5.051219,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/50127",
@@ -22679,7 +22908,7 @@
     "inicio_actividad": "2022-03-17",
     "direccion": "CONJUNTO LA ALBORADA, \"GREEN VALLEY\" Blq. A Portal 2 Plta/Piso 2 Pta/Letra B",
     "cp": "29678",
-    "titular": "ANIFIN INVEST OY",
+    "titular": "PEDWIN OY",
     "catastro": "1036101UF2413N0013PD",
     "uso_privado": null,
     "lat": 36.520208,
@@ -22708,11 +22937,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.489174,
-    "lon_h": -5.037286,
+    "lat_h": 36.487555,
+    "lon_h": -5.037187,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/50543",
@@ -22828,11 +23057,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.487542,
-    "lon_h": -5.037145,
+    "lat_h": 36.487555,
+    "lon_h": -5.037076,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/50881",
@@ -22876,11 +23105,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.492742,
-    "lon_h": -5.018003,
+    "lat_h": 36.493035,
+    "lon_h": -5.018078,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/50967",
@@ -23886,6 +24115,30 @@
     "parcela_vut": 12
    },
    {
+    "ref": "CR/MA/02421",
+    "nombre": "Casa Las Dos aguas",
+    "tipo": "Casa rural",
+    "modalidad": "Rural",
+    "categoria": "Básica",
+    "grupo": null,
+    "plazas": 12,
+    "unidades": 6,
+    "alta": "2022-06-14",
+    "inicio_actividad": "2022-05-05",
+    "direccion": "POLIGONO Parcela 94 El pantano Roto Nº 4",
+    "cp": "29679",
+    "titular": "SHORE INVESTMENTS SL",
+    "catastro": "29023A004000940000HL",
+    "uso_privado": null,
+    "lat": 36.470139,
+    "lon": -5.055941,
+    "lat_h": 36.47019,
+    "lon_h": -5.055903,
+    "parcela_m2": 9824.0,
+    "parcela_viviendas": 1,
+    "parcela_vut": 1
+   },
+   {
     "ref": "VUT/MA/52859",
     "nombre": "LAS JACARANDAS Nº 6",
     "tipo": "Vivienda de uso turístico",
@@ -23922,7 +24175,7 @@
     "inicio_actividad": "2022-05-23",
     "direccion": "CALLE PILATOS Nº 8",
     "cp": "29679",
-    "titular": "JOYRNEY S.L.",
+    "titular": "-",
     "catastro": "0438401UF2403N0007UY",
     "uso_privado": null,
     "lat": 36.52142,
@@ -23999,11 +24252,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.48762,
-    "lon_h": -5.037145,
+    "lat_h": 36.487658,
+    "lon_h": -5.037298,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/53076",
@@ -24047,11 +24300,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.487697,
-    "lon_h": -5.037312,
+    "lat_h": 36.487658,
+    "lon_h": -5.037076,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/53185",
@@ -24186,11 +24439,11 @@
     "uso_privado": null,
     "lat": 36.488878,
     "lon": -5.036309,
-    "lat_h": 36.487697,
-    "lon_h": -5.037145,
+    "lat_h": 36.487762,
+    "lon_h": -5.037298,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/53354",
@@ -24214,7 +24467,7 @@
     "lon_h": -5.0371,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/53372",
@@ -24281,7 +24534,7 @@
     "lon_h": -5.036973,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/53518",
@@ -24302,10 +24555,10 @@
     "lat": 36.516258,
     "lon": -5.004099,
     "lat_h": 36.51618,
-    "lon_h": -5.003869,
+    "lon_h": -5.003776,
     "parcela_m2": 9862.0,
     "parcela_viviendas": 18,
-    "parcela_vut": 6
+    "parcela_vut": 5
    },
    {
     "ref": "VUT/MA/53536",
@@ -25083,7 +25336,7 @@
     "inicio_actividad": "2022-06-28",
     "direccion": "URBANIZACION EL HERROJO Nº 7 Blq. 10 Esc. 25 Plta/Piso BJ Pta/Letra 2",
     "cp": "29678",
-    "titular": "PROP INT CONSULTING BIEL SL",
+    "titular": "-",
     "catastro": "1437101UF2413N0146PJ",
     "uso_privado": "N",
     "lat": 36.520582,
@@ -25428,7 +25681,7 @@
     "lon_h": -5.0371,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/55289",
@@ -25496,11 +25749,11 @@
     "uso_privado": null,
     "lat": 36.516957,
     "lon": -5.015206,
-    "lat_h": 36.517028,
-    "lon_h": -5.014879,
+    "lat_h": 36.517104,
+    "lon_h": -5.015114,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/55343",
@@ -25832,6 +26085,25 @@
     "parcela_m2": 4538.0,
     "parcela_viviendas": 14,
     "parcela_vut": 4
+   },
+   {
+    "ref": "VUT/MA/56114",
+    "nombre": "REAL DE LA QUINTA CONJUNTO RESIDENCIAL QUERCUS FASE 1",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 6,
+    "unidades": 3,
+    "alta": "2022-08-03",
+    "inicio_actividad": "2022-08-03",
+    "direccion": "URBANIZACION REAL DE LA QUINTA CONJUNTO RESIDENCIAL QUERCUS FASE 1 Blq. 1 Plta/Piso 0 Pta/Letra 101",
+    "cp": "29678",
+    "titular": "ANNA LENA RENTALS S.L.",
+    "catastro": "2754117UF2424N0001BW",
+    "uso_privado": null,
+    "lat": 36.532703,
+    "lon": -4.983
    },
    {
     "ref": "VUT/MA/56121",
@@ -26359,7 +26631,7 @@
     "lon_h": -5.036846,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/56610",
@@ -26633,11 +26905,11 @@
     "uso_privado": null,
     "lat": 36.516957,
     "lon": -5.015206,
-    "lat_h": 36.517104,
-    "lon_h": -5.014957,
+    "lat_h": 36.517179,
+    "lon_h": -5.015193,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/56867",
@@ -26681,11 +26953,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.493035,
-    "lon_h": -5.018078,
+    "lat_h": 36.493261,
+    "lon_h": -5.017847,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/56943",
@@ -26925,7 +27197,7 @@
     "lon_h": -5.036973,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/57313",
@@ -27093,7 +27365,7 @@
     "lon_h": -5.036768,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/57524",
@@ -27381,7 +27653,7 @@
     "lon_h": -5.036768,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/58240",
@@ -27693,7 +27965,7 @@
     "lon_h": -5.036887,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/58792",
@@ -27762,10 +28034,10 @@
     "lat": 36.492882,
     "lon": -5.018793,
     "lat_h": 36.493261,
-    "lon_h": -5.017847,
+    "lon_h": -5.017707,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/58976",
@@ -28029,7 +28301,7 @@
     "lon_h": -5.036828,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/59419",
@@ -28197,7 +28469,7 @@
     "lon_h": -5.015036,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/59534",
@@ -28389,7 +28661,7 @@
     "lon_h": -5.036947,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/59902",
@@ -28648,7 +28920,7 @@
     "lon_h": -5.036862,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/60203",
@@ -29665,7 +29937,7 @@
     "lon_h": -5.036959,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/62146",
@@ -29737,7 +30009,7 @@
     "lon_h": -5.036959,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/62184",
@@ -29761,7 +30033,7 @@
     "lon_h": -5.036668,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/62201",
@@ -29996,7 +30268,7 @@
     "lon_h": -5.036822,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/62694",
@@ -30236,7 +30508,7 @@
     "lon_h": -5.036691,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/63082",
@@ -30260,7 +30532,7 @@
     "lon_h": -5.051458,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/63089",
@@ -30356,7 +30628,7 @@
     "lon_h": -5.036822,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/63269",
@@ -30476,7 +30748,7 @@
     "lon_h": -5.036691,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/63441",
@@ -30500,7 +30772,7 @@
     "lon_h": -5.036829,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/63447",
@@ -30687,7 +30959,7 @@
     "lon_h": -5.036686,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/63798",
@@ -30965,7 +31237,7 @@
     "lon_h": -5.009367,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/64250",
@@ -31205,7 +31477,7 @@
     "lon_h": -5.036829,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/64328",
@@ -31468,7 +31740,7 @@
    },
    {
     "ref": "VUT/MA/64668",
-    "nombre": "EL SOTO DE LA QUINTA",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -31479,7 +31751,7 @@
     "inicio_actividad": "2023-05-02",
     "direccion": "CONJUNTO EL SOTO DE LA QUINTA Blq. 8 Plta/Piso ATICO Pta/Letra IZQUIERDA Compl.Dom. URB. EL HERROJO 1",
     "cp": "29679",
-    "titular": "AD INVENT DEVELOPMENT COMPANY SL",
+    "titular": "MAVENTY INVEST SL",
     "catastro": "1226101UF2412N0031JI",
     "uso_privado": null,
     "lat": 36.509415,
@@ -31508,11 +31780,11 @@
     "uso_privado": null,
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.483235,
-    "lon_h": -5.030025,
+    "lat_h": 36.483548,
+    "lon_h": -5.029803,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/64690",
@@ -31752,7 +32024,7 @@
     "lon_h": -5.036686,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/65141",
@@ -31776,7 +32048,7 @@
     "lon_h": -5.03681,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/65219",
@@ -32323,7 +32595,7 @@
     "lon_h": -5.009479,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/66586",
@@ -32438,7 +32710,7 @@
     "lon_h": -5.036719,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/66885",
@@ -32510,7 +32782,7 @@
     "lon_h": -5.03681,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/66905",
@@ -32798,7 +33070,7 @@
     "lon_h": -5.036627,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/67472",
@@ -32818,11 +33090,11 @@
     "uso_privado": null,
     "lat": 36.483784,
     "lon": -5.030501,
-    "lat_h": 36.483659,
-    "lon_h": -5.029874,
+    "lat_h": 36.483764,
+    "lon_h": -5.029944,
     "parcela_m2": 24126.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 9
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/67527",
@@ -32898,7 +33170,7 @@
    },
    {
     "ref": "VUT/MA/67597",
-    "nombre": "APARTAMENTO EN LA QUINTA HILLS",
+    "nombre": "UR HERROJO EL 4(A) Es:1 Pl:00 Pt:01 29678 BENAHAVIS (MÁLAGA)",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -32909,7 +33181,7 @@
     "inicio_actividad": "2023-06-20",
     "direccion": "URBANIZACION LA QUINTA HILLS Nº 1 Pta/Letra 3",
     "cp": "29660",
-    "titular": "CM RENTAL AND SOLUTIONS SL",
+    "titular": "MABU INVEST, S.L.",
     "catastro": "1334401UF2413S0027XO",
     "uso_privado": null,
     "lat": 36.517985,
@@ -32957,7 +33229,7 @@
     "inicio_actividad": "2023-06-21",
     "direccion": "CALLE ALGARROBO Nº S/N Blq. 38 Plta/Piso 4 Compl.Dom. URBANIZACION PARAISO PUEBLO",
     "cp": "29679",
-    "titular": "BEST PROPERTY SOLUTIONS, S.L.",
+    "titular": "-",
     "catastro": "7396110UF1379N0124JK",
     "uso_privado": null,
     "lat": 36.482479,
@@ -33038,7 +33310,7 @@
     "lon_h": -5.036719,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/67928",
@@ -33230,7 +33502,7 @@
     "lon_h": -5.036595,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/68284",
@@ -33278,7 +33550,7 @@
     "lon_h": -5.036595,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/68321",
@@ -33326,7 +33598,7 @@
     "lon_h": -5.036595,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/68362",
@@ -33441,7 +33713,7 @@
     "lon_h": -5.036656,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/68716",
@@ -33921,7 +34193,7 @@
     "lon_h": -5.036656,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/69661",
@@ -34257,7 +34529,7 @@
     "lon_h": -5.014948,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/70183",
@@ -35365,7 +35637,7 @@
    },
    {
     "ref": "VUT/MA/71478",
-    "nombre": "APT EL MIRADOR I",
+    "nombre": "CALLE HERNAN CORTES / URBANIZACION EL MIRADOR II",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -35376,7 +35648,7 @@
     "inicio_actividad": "2023-09-29",
     "direccion": "CALLE HERNAN CORTES Portal 7 Plta/Piso 6 Compl.Dom. URBANIZACION EL MIRADOR II",
     "cp": "29678",
-    "titular": "-",
+    "titular": "ELCLA",
     "catastro": "1632301UF2413S0042HK",
     "uso_privado": null,
     "lat": 36.516669,
@@ -35721,7 +35993,7 @@
     "lon_h": -5.036525,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/72045",
@@ -36105,7 +36377,7 @@
     "lon_h": -5.036525,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/72741",
@@ -36393,7 +36665,7 @@
     "lon_h": -5.036525,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/72970",
@@ -36417,7 +36689,7 @@
     "lon_h": -5.014801,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/73034",
@@ -36536,7 +36808,7 @@
    },
    {
     "ref": "VUT/MA/73326",
-    "nombre": "RESIDENCIAL LA TORRE, PRIMERA FASE",
+    "nombre": "RESIDENCIAL LA TORRE 1C",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -36547,7 +36819,7 @@
     "inicio_actividad": "2023-11-29",
     "direccion": "CONJUNTO RESIDENCIAL LA TORRE, PRIMERA FASE Blq. 1 Plta/Piso 1 Pta/Letra B Compl.Dom. LOS ARQUEROS",
     "cp": "29678",
-    "titular": "RISINGSUN INVEST S.L",
+    "titular": "-",
     "catastro": "0032926UF2403S0001PI",
     "uso_privado": null,
     "lat": 36.51515,
@@ -36571,7 +36843,7 @@
     "inicio_actividad": "2023-11-29",
     "direccion": "CALLE ALGARROBO Nº S/N Blq. 40 Pta/Letra 1 Compl.Dom. URBANIZACION PARAISO PUEBLO",
     "cp": "29679",
-    "titular": "BEST PROPERTY SOLUTIONS, S.L.",
+    "titular": "NUVELLO, SOCIEDAD LIMITADA",
     "catastro": "7396110UF1379N0130BZ",
     "uso_privado": null,
     "lat": 36.482479,
@@ -36748,7 +37020,7 @@
     "lon_h": -5.009479,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/73863",
@@ -36772,7 +37044,7 @@
     "lon_h": -5.036585,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/73918",
@@ -36941,30 +37213,6 @@
     "parcela_m2": 45025.0,
     "parcela_viviendas": 207,
     "parcela_vut": 131
-   },
-   {
-    "ref": "VUT/MA/74347",
-    "nombre": "BUENAVISTA DE LA QUINTA",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 4,
-    "unidades": 2,
-    "alta": "2024-01-08",
-    "inicio_actividad": "2024-01-08",
-    "direccion": "CONJUNTO BUENAVISTA DE LA QUINTA Esc. 1 Plta/Piso 01 Pta/Letra 122 Compl.Dom. AGRUPACION I",
-    "cp": "29678",
-    "titular": "-",
-    "catastro": "0633802UF2403S0004AA",
-    "uso_privado": null,
-    "lat": 36.51626,
-    "lon": -5.004094,
-    "lat_h": 36.516256,
-    "lon_h": -5.003776,
-    "parcela_m2": 9862.0,
-    "parcela_viviendas": 18,
-    "parcela_vut": 6
    },
    {
     "ref": "VUT/MA/74365",
@@ -37228,7 +37476,7 @@
     "lon_h": -5.036585,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/74818",
@@ -37267,7 +37515,7 @@
     "inicio_actividad": "2024-01-23",
     "direccion": "CALLE ALGARROBO Nº S/N Blq. 29 Pta/Letra 2 Compl.Dom. URBANIZACION PARAÍSO PUEBLO",
     "cp": "29679",
-    "titular": "BEST PROPERTY SOLUTIONS, S.L.",
+    "titular": "SUNSTARS RENTAL AND PROPERTY MANAGEMENT, SOCIEDAD LIMITADA",
     "catastro": "7396110UF1379N0098ZX",
     "uso_privado": null,
     "lat": 36.482479,
@@ -37458,7 +37706,7 @@
     "lon_h": -5.036555,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/75220",
@@ -38172,7 +38420,7 @@
    },
    {
     "ref": "VUT/MA/76536",
-    "nombre": "JARALILLOS Nº 1",
+    "nombre": "BE LAGOM, Nº 11",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -38183,7 +38431,7 @@
     "inicio_actividad": "2024-02-28",
     "direccion": "URBANIZACION JARALILLOS Nº 1 Esc. 1 Plta/Piso 00 Pta/Letra 11 Compl.Dom. BE LAGOM",
     "cp": "29679",
-    "titular": "-",
+    "titular": "MAX REALTY BENAHAVÍS, S.L.",
     "catastro": "7441117UF1470S0011BE",
     "uso_privado": null,
     "lat": 36.493346,
@@ -38288,7 +38536,7 @@
     "lon_h": -5.036487,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/76732",
@@ -38360,7 +38608,7 @@
     "lon_h": -5.036555,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/77000",
@@ -38597,10 +38845,10 @@
     "lat": 36.51626,
     "lon": -5.004094,
     "lat_h": 36.516256,
-    "lon_h": -5.00359,
+    "lon_h": -5.003683,
     "parcela_m2": 9862.0,
     "parcela_viviendas": 18,
-    "parcela_vut": 6
+    "parcela_vut": 5
    },
    {
     "ref": "VUT/MA/77884",
@@ -38744,7 +38992,7 @@
     "lon_h": -5.036351,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/78428",
@@ -38912,7 +39160,7 @@
     "lon_h": -5.036464,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/78545",
@@ -39051,7 +39299,7 @@
     "lon_h": -5.036372,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/78797",
@@ -39075,7 +39323,7 @@
     "lon_h": -5.036372,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/78847",
@@ -39415,7 +39663,7 @@
    },
    {
     "ref": "VUT/MA/79402",
-    "nombre": "ADOSADA EN URB. EL CASTILLO DE LA HEREDIA",
+    "nombre": "URB EL CASTILLO DE LA HEREDIA",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -39426,7 +39674,7 @@
     "inicio_actividad": "2024-05-07",
     "direccion": "CONJUNTO EL MADROÑAL Nº S/N Pta/Letra EC01",
     "cp": "29679",
-    "titular": "-",
+    "titular": "LA HEREDIA REAL ESTATE SOLUTIONS SL",
     "catastro": "0537402UF2403N0020PD",
     "uso_privado": null,
     "lat": 36.519371,
@@ -39436,6 +39684,25 @@
     "parcela_m2": 6121.0,
     "parcela_viviendas": 28,
     "parcela_vut": 18
+   },
+   {
+    "ref": "VUT/MA/79410",
+    "nombre": "ATALAYA HILLS",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 6,
+    "unidades": 3,
+    "alta": "2024-05-07",
+    "inicio_actividad": "2024-05-07",
+    "direccion": "URBANIZACION ATALAYA HILL Blq. 3 Pta/Letra 23 Compl.Dom. Calle Praga s/n, Capanes II",
+    "cp": "29679",
+    "titular": "SALT AND PEPPER PROPERTY MANAGEMENT SL",
+    "catastro": "8804102UF1480S0001FM",
+    "uso_privado": null,
+    "lat": 36.490534,
+    "lon": -5.024318
    },
    {
     "ref": "VUT/MA/79412",
@@ -39747,7 +40014,7 @@
     "lon_h": -5.014948,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/79818",
@@ -39906,7 +40173,7 @@
     "inicio_actividad": "2024-05-22",
     "direccion": "CALLE ALGARROBO Nº S/N Blq. 53 Pta/Letra 1 Compl.Dom. PARAISO PUEBLO",
     "cp": "29679",
-    "titular": "BEST PROPERTY SOLUTIONS, S.L.",
+    "titular": "-",
     "catastro": "7396110UF1379N0171ER",
     "uso_privado": null,
     "lat": 36.482479,
@@ -40059,7 +40326,7 @@
     "lon_h": -5.009646,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/80703",
@@ -40275,7 +40542,7 @@
     "lon_h": -5.03628,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/81215",
@@ -40508,6 +40775,25 @@
     "parcela_vut": 31
    },
    {
+    "ref": "VUT/MA/81817",
+    "nombre": "QUERCUS",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 10,
+    "unidades": 5,
+    "alta": "2024-06-19",
+    "inicio_actividad": "2024-06-19",
+    "direccion": "URBANIZACION REAL DE LA QUINTA Nº 4 Blq. 15 Pta/Letra 1521 Compl.Dom. RESIDENCIAL QUERCUS",
+    "cp": "29679",
+    "titular": "ESCAFIS & TAX, S.L.",
+    "catastro": "2754117UF2424N0001BW",
+    "uso_privado": "N",
+    "lat": 36.530921,
+    "lon": -4.981459
+   },
+   {
     "ref": "VUT/MA/81818",
     "nombre": "QUERCUS FASE 2B",
     "tipo": "Vivienda de uso turístico",
@@ -40577,7 +40863,7 @@
     "lon_h": -5.036372,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/81875",
@@ -40677,7 +40963,7 @@
    },
    {
     "ref": "VUT/MA/82312",
-    "nombre": "",
+    "nombre": "PEDRO XIMENEZ, URB. LA HEREDIA Nº 14",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -40688,7 +40974,7 @@
     "inicio_actividad": "2024-06-27",
     "direccion": "CALLE PEDRO XIMENEZ, URB. LA HEREDIA Nº 14 Compl.Dom. CONJUNTO RESIDENCIAL LA PERLA DE LA HEREDIA",
     "cp": "29678",
-    "titular": "LA HEREDIA REAL ESTATE SOLUTIONS SL",
+    "titular": "-",
     "catastro": "0537401UF2403N0002SQ",
     "uso_privado": null,
     "lat": 36.520502,
@@ -40817,7 +41103,7 @@
     "lon_h": -5.036276,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/82530",
@@ -40933,11 +41219,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.493261,
+    "lat_h": 36.493535,
     "lon_h": -5.017707,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/82740",
@@ -41057,7 +41343,7 @@
     "lon_h": -5.036276,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/82979",
@@ -41360,7 +41646,7 @@
     "inicio_actividad": "2024-07-22",
     "direccion": "CALLE ALGARROBO Nº S/N Blq. 26 Pta/Letra 3",
     "cp": "29679",
-    "titular": "ZAPINVESTS HOLIDAYS SEAVIEWS, S.L.",
+    "titular": "TAKE CARE PROPERTY MALAGA SL",
     "catastro": "7396110UF1379N0087DF",
     "uso_privado": null,
     "lat": 36.482479,
@@ -41652,7 +41938,7 @@
     "lon_h": -5.036276,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/83862",
@@ -41724,7 +42010,7 @@
     "lon_h": -5.036094,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/83955",
@@ -41744,11 +42030,11 @@
     "uso_privado": null,
     "lat": 36.492882,
     "lon": -5.018793,
-    "lat_h": 36.493535,
-    "lon_h": -5.017707,
+    "lat_h": 36.492773,
+    "lon_h": -5.017581,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/83975",
@@ -41772,7 +42058,7 @@
     "lon_h": -5.036285,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/83993",
@@ -42199,7 +42485,7 @@
     "lon_h": -5.036195,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/85119",
@@ -42343,7 +42629,7 @@
     "lon_h": -5.036285,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/85262",
@@ -42842,7 +43128,7 @@
     "lon_h": -5.009534,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/86174",
@@ -42914,7 +43200,7 @@
     "lon_h": -5.036104,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/86289",
@@ -42962,7 +43248,7 @@
     "lon_h": -5.00359,
     "parcela_m2": 9862.0,
     "parcela_viviendas": 18,
-    "parcela_vut": 6
+    "parcela_vut": 5
    },
    {
     "ref": "VUT/MA/86329",
@@ -43082,7 +43368,7 @@
     "lon_h": -5.036195,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/86392",
@@ -43154,7 +43440,7 @@
     "lon_h": -5.036273,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/86481",
@@ -43346,7 +43632,7 @@
     "lon_h": -5.036147,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/86687",
@@ -43538,7 +43824,7 @@
     "lon_h": -5.036147,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/87041",
@@ -43706,7 +43992,7 @@
     "lon_h": -5.051284,
     "parcela_m2": 16530.0,
     "parcela_viviendas": 55,
-    "parcela_vut": 11
+    "parcela_vut": 10
    },
    {
     "ref": "VUT/MA/87603",
@@ -43734,7 +44020,7 @@
    },
    {
     "ref": "VUT/MA/87639",
-    "nombre": "Flamingos II - 4.13",
+    "nombre": "Apartamento Premium en Alanda Flamingos",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -43745,7 +44031,7 @@
     "inicio_actividad": "2024-11-12",
     "direccion": "CALLE Marques de Padierna Nº 5 Blq. 4 Plta/Piso 1 Pta/Letra 13 Compl.Dom. Urbanizacion Alanda Flamingos II",
     "cp": "29679",
-    "titular": "-",
+    "titular": "SALT AND PEPPER PROPERTY MANAGEMENT SL",
     "catastro": "5788114UF1358N0101XX",
     "uso_privado": null,
     "lat": 36.476039,
@@ -43898,7 +44184,7 @@
     "lon_h": -5.036021,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/87909",
@@ -44622,7 +44908,7 @@
    },
    {
     "ref": "VUT/MA/89204",
-    "nombre": "EL PARAISO BENAHAVIS 53/2",
+    "nombre": "EL PARAISO BENAHAVIS",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -44633,7 +44919,7 @@
     "inicio_actividad": "2025-01-13",
     "direccion": "URBANIZACION EL PARAISO Nº 1 Esc. 53 Plta/Piso 1 Pta/Letra 2",
     "cp": "29679",
-    "titular": "-",
+    "titular": "VIGOR BLANCO Y VERDE SL",
     "catastro": "7396110UF1379N0172RT",
     "uso_privado": null,
     "lat": 36.482479,
@@ -44786,7 +45072,7 @@
     "lon_h": -5.036147,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/89499",
@@ -45071,10 +45357,10 @@
     "lat": 36.492882,
     "lon": -5.018793,
     "lat_h": 36.492773,
-    "lon_h": -5.017581,
+    "lon_h": -5.017435,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/89832",
@@ -45122,7 +45408,7 @@
     "lon_h": -5.036146,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/89891",
@@ -45362,7 +45648,7 @@
     "lon_h": -5.036025,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/90618",
@@ -45482,7 +45768,7 @@
     "lon_h": -5.036146,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/90702",
@@ -45722,7 +46008,7 @@
     "lon_h": -5.036025,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/91097",
@@ -45842,7 +46128,7 @@
     "lon_h": -5.035904,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/91172",
@@ -45986,11 +46272,11 @@
     "lon_h": -5.035896,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/91389",
-    "nombre": "VILLA MANZANO",
+    "nombre": "Villa Karma -Elegant Villa with Pool, Garden & Mul",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -46001,7 +46287,7 @@
     "inicio_actividad": "2025-03-10",
     "direccion": "CALLE MANZANO Nº 364 Compl.Dom. URB PARAISO ALTO",
     "cp": "29679",
-    "titular": "-",
+    "titular": "Mojo Rentals SL",
     "catastro": "7796118UF1379N0001FZ",
     "uso_privado": null,
     "lat": 36.481677,
@@ -46034,7 +46320,7 @@
     "lon_h": -5.035701,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/91405",
@@ -46610,7 +46896,7 @@
     "lon_h": -5.035701,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/92225",
@@ -46901,30 +47187,6 @@
     "parcela_vut": 29
    },
    {
-    "ref": "VUT/MA/92553",
-    "nombre": "ATICO EN BENAHAVIS - MALAGA",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2025-03-25",
-    "inicio_actividad": "2025-03-25",
-    "direccion": "AVENIDA DE LA ALQUERIA Nº 4 Blq. 5 Portal 2 Plta/Piso 2 Pta/Letra A Compl.Dom. URBANIZACION LOS GAZULES DEL SOL",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "9107101UF1490N0106TR",
-    "uso_privado": null,
-    "lat": 36.492882,
-    "lon": -5.018793,
-    "lat_h": 36.492773,
-    "lon_h": -5.017435,
-    "parcela_m2": 44450.0,
-    "parcela_viviendas": 170,
-    "parcela_vut": 26
-   },
-   {
     "ref": "VUT/MA/92573",
     "nombre": "CONJUNTO RESIDENCIAL PUEBLO CORTÉS DEL GOLF",
     "tipo": "Vivienda de uso turístico",
@@ -46994,7 +47256,7 @@
     "lon_h": -5.035701,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/92613",
@@ -47138,7 +47400,7 @@
     "lon_h": -5.035407,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/92659",
@@ -47306,7 +47568,7 @@
     "lon_h": -5.035272,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/92875",
@@ -47498,7 +47760,7 @@
     "lon_h": -5.035542,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/93024",
@@ -47574,7 +47836,7 @@
    },
    {
     "ref": "VUT/MA/93173",
-    "nombre": "LOS TRES MILAGROS AL5",
+    "nombre": "LOS TRES MILAGROS",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -47585,7 +47847,7 @@
     "inicio_actividad": "2025-03-28",
     "direccion": "CALLE ALCUZCUZ Nº 5 Compl.Dom. URB. EL MADROÑAL",
     "cp": "29678",
-    "titular": "-",
+    "titular": "LA HEREDIA REAL ESTATE SOLUTIONS",
     "catastro": "0439904UF2403N0001UM",
     "uso_privado": null,
     "lat": 36.522266,
@@ -47810,7 +48072,7 @@
     "lon_h": -5.014801,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/93384",
@@ -47969,7 +48231,7 @@
     "inicio_actividad": "2025-03-31",
     "direccion": "CONJUNTO RESIDENCIAL LOS ALMENDROS Nº 13 Compl.Dom. URBANIZACION LOS ARQUEROS",
     "cp": "29679",
-    "titular": "MARBS VACATION AGENCY,S.L.",
+    "titular": "-",
     "catastro": "0034422UF2403S0013LJ",
     "uso_privado": null,
     "lat": 36.517987,
@@ -48050,7 +48312,7 @@
     "lon_h": -5.035407,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/93561",
@@ -48189,7 +48451,7 @@
     "lon_h": -5.035272,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/93944",
@@ -48237,7 +48499,7 @@
     "lon_h": -5.035159,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/93968",
@@ -48372,7 +48634,7 @@
     "inicio_actividad": "2025-04-02",
     "direccion": "URBANIZACION LA ZAGALETA, PARCELA Nº F1-4",
     "cp": "29679",
-    "titular": "SWISH PROPERTIES SL",
+    "titular": "BLUE MARLIN ESTATES SL",
     "catastro": "7854104UF1475N0001PR",
     "uso_privado": null,
     "lat": 36.532105,
@@ -48477,7 +48739,7 @@
     "lon_h": -5.017435,
     "parcela_m2": 44450.0,
     "parcela_viviendas": 170,
-    "parcela_vut": 26
+    "parcela_vut": 25
    },
    {
     "ref": "VUT/MA/94263",
@@ -48588,7 +48850,7 @@
     "inicio_actividad": "2025-04-02",
     "direccion": "CONJUNTO RESIDENCIAL LOS NARANJOS Esc. 1 Plta/Piso 01 Pta/Letra B2 Compl.Dom. URBANIZACIÓN TORRE ESTERIL",
     "cp": "29678",
-    "titular": "NAGUERU SCI",
+    "titular": "GARU VENTAS Y ALQUILERES SLU",
     "catastro": "0135907UF2403N0002HQ",
     "uso_privado": null,
     "lat": 36.518365,
@@ -49240,7 +49502,7 @@
     "lon_h": -5.035023,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/95407",
@@ -50402,7 +50664,7 @@
     "inicio_actividad": "2025-07-31",
     "direccion": "URBANIZACION HORNO DE LA MIERA Nº 19 Pta/Letra A",
     "cp": "29678",
-    "titular": "-",
+    "titular": "ARMANT GLOBAL SL",
     "catastro": "0921508UF2402S0001RF",
     "uso_privado": null,
     "lat": 36.506291,
@@ -50483,7 +50745,7 @@
     "lon_h": -5.035159,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/97564",
@@ -50507,7 +50769,7 @@
     "lon_h": -5.034886,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/97618",
@@ -50627,7 +50889,7 @@
     "lon_h": -5.035023,
     "parcela_m2": 86195.0,
     "parcela_viviendas": 262,
-    "parcela_vut": 103
+    "parcela_vut": 104
    },
    {
     "ref": "VUT/MA/97825",
@@ -50891,7 +51153,7 @@
     "lon_h": -5.00959,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/98122",
@@ -50919,7 +51181,7 @@
    },
    {
     "ref": "VUT/MA/98185",
-    "nombre": "FLORES DEL PARAISO 3",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "modalidad": null,
     "categoria": null,
@@ -50930,7 +51192,7 @@
     "inicio_actividad": "2025-10-22",
     "direccion": "URBANIZACION FLORES DEL PARAISO Nº 3",
     "cp": "29679",
-    "titular": "-",
+    "titular": "M&M  PROPERTY VISION, S.L.",
     "catastro": "8200116UF1480S0001EM",
     "uso_privado": null,
     "lat": 36.486887,
@@ -51582,7 +51844,7 @@
     "lon_h": -5.014655,
     "parcela_m2": 7614.0,
     "parcela_viviendas": 41,
-    "parcela_vut": 15
+    "parcela_vut": 16
    },
    {
     "ref": "VUT/MA/99682",
@@ -52059,10 +52321,10 @@
     "lat": 36.516417,
     "lon": -5.009841,
     "lat_h": 36.515958,
-    "lon_h": -5.009605,
+    "lon_h": -5.009549,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/101312",
@@ -52371,10 +52633,10 @@
     "lat": 36.516417,
     "lon": -5.009841,
     "lat_h": 36.516038,
-    "lon_h": -5.009716,
+    "lon_h": -5.009661,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/102013",
@@ -52443,10 +52705,10 @@
     "lat": 36.516417,
     "lon": -5.009841,
     "lat_h": 36.516117,
-    "lon_h": -5.009716,
+    "lon_h": -5.009661,
     "parcela_m2": 6772.0,
     "parcela_viviendas": 36,
-    "parcela_vut": 17
+    "parcela_vut": 18
    },
    {
     "ref": "VUT/MA/102300",
@@ -52615,6 +52877,30 @@
     "parcela_m2": 805.0,
     "parcela_viviendas": 1,
     "parcela_vut": 1
+   },
+   {
+    "ref": "VUT/MA/103043",
+    "nombre": "LOS FLAMINGOS",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 8,
+    "unidades": 4,
+    "alta": "2026-10-27",
+    "inicio_actividad": "2026-10-27",
+    "direccion": "FINCA LOS FLAMINGOS II Nº 21 Compl.Dom. PARCELA 21",
+    "cp": "29679",
+    "titular": "DALL DEVELOPMENTS S.L.",
+    "catastro": "5788179UF1358N0001TL",
+    "uso_privado": null,
+    "lat": 36.474071,
+    "lon": -5.061098,
+    "lat_h": 36.474162,
+    "lon_h": -5.061077,
+    "parcela_m2": 1216.0,
+    "parcela_viviendas": 1,
+    "parcela_vut": 1
    }
   ],
   "sin_ubicar": [
@@ -52637,186 +52923,6 @@
     "motivo": "sin coordenadas en el registro"
    },
    {
-    "ref": "VTAR/MA/00896",
-    "nombre": "CASA LOS NARANJOS",
-    "tipo": "Vivienda turística de alojamiento rural",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": null,
-    "plazas": 4,
-    "unidades": 2,
-    "alta": "2011-06-23",
-    "inicio_actividad": "2011-06-23",
-    "direccion": "URB. LA PACHECA,2",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": null,
-    "uso_privado": null,
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/05881",
-    "nombre": "HACIENDA DEL SEÑORIO CIFUENTES Nº 22",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 4,
-    "unidades": 2,
-    "alta": "2016-11-29",
-    "inicio_actividad": "2016-06-21",
-    "direccion": "URBANIZACION HACIENDA DEL SEÑORIO CIFUENTES Nº 22 Pta/Letra A",
-    "cp": "29601",
-    "titular": "-",
-    "catastro": "7441111UF1470S0225YB",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/01820",
-    "nombre": "LA TORRE",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2016-07-05",
-    "inicio_actividad": "2016-07-05",
-    "direccion": "URBANIZACION LA TORRE Blq. 4 Pta/Letra 01 Compl.Dom. URB LOS ARQUEROS",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "0032925UF2403S0019HM",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/09716",
-    "nombre": "LOS FAMINGOS 2, CONJ.  ALANDA FLAMINGOS Nº 2",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 4,
-    "unidades": 2,
-    "alta": "2017-03-17",
-    "inicio_actividad": "2016-07-11",
-    "direccion": "URBANIZACION LOS FAMINGOS 2, CONJ.  ALANDA FLAMINGOS Nº 2 Blq. 5 Plta/Piso 2 Pta/Letra 28",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "578810UF1359S0110UU",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/06611",
-    "nombre": "FELISA DE CORTES",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2016-12-19",
-    "inicio_actividad": "2016-09-05",
-    "direccion": "URBANIZACION FELISA DE CORTES Esc. 7 Pta/Letra 34 Compl.Dom. RESIDENCIAL EL PARAISO",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "8296301UF1389N0042QI",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/14917",
-    "nombre": "LOS OLIVOS Nº 3",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 4,
-    "unidades": 2,
-    "alta": "2017-08-28",
-    "inicio_actividad": "2016-08-31",
-    "direccion": "CALLE LOS OLIVOS Nº 3 Blq. 3 Plta/Piso B",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "6941507UF146480011SZ",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/11248",
-    "nombre": "CASA DECRAENE",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 4,
-    "unidades": 2,
-    "alta": "2017-05-08",
-    "inicio_actividad": "2017-04-18",
-    "direccion": "URBANIZACION LOS ARQUEROS - LAS TERRAZAS Blq. B-3 Plta/Piso 1 Pta/Letra A",
-    "cp": "29670",
-    "titular": "-",
-    "catastro": "9635521UF2403S0013LJ",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/15337",
-    "nombre": "MONTE MAYOR ALTO, PARCELA D 10",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 10,
-    "unidades": 5,
-    "alta": "2017-09-26",
-    "inicio_actividad": "2017-07-27",
-    "direccion": "URBANIZACION MONTE MAYOR ALTO, PARCELA D 10 Pta/Letra PARCEL D10 Compl.Dom. LA ROMERA",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "4425602UF1442S0001BK",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/16605",
-    "nombre": "ONE FORTY SIX LEISURE SL",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2017-11-23",
-    "inicio_actividad": "2017-11-23",
-    "direccion": "URBANIZACION ALBORADA Nº 6 Blq. 4 Plta/Piso 1 Pta/Letra 6",
-    "cp": "29678",
-    "titular": "ONE FORTY SIX LEISURE S.L.",
-    "catastro": "0736808UF2403N0030BB",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/22509",
-    "nombre": "LOS FLAMINGOS Nº 128",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 15,
-    "unidades": 7,
-    "alta": "2018-07-03",
-    "inicio_actividad": "2018-07-03",
-    "direccion": "URBANIZACION LOS FLAMINGOS Nº 128 Compl.Dom. VILLA EL CANO",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "5788435UF1358N0001TL",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
     "ref": "VUT/MA/23299",
     "nombre": "RESIDENCIAL CAPANES SUR II Nº 34",
     "tipo": "Vivienda de uso turístico",
@@ -52829,24 +52935,6 @@
     "inicio_actividad": "2018-06-25",
     "direccion": "CONJUNTO RESIDENCIAL CAPANES SUR II Nº 34 Blq. 3 Plta/Piso 2 Pta/Letra 4 Compl.Dom. ATALAYA HILLS",
     "cp": "29679",
-    "titular": "-",
-    "catastro": "8804102UF1480S0001FM",
-    "uso_privado": "N",
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/25074",
-    "nombre": "ATALAYA HILLS",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 4,
-    "unidades": 2,
-    "alta": "2018-09-24",
-    "inicio_actividad": "2018-08-10",
-    "direccion": "URBANIZACION ATALAYA HILLS Blq. 4 Plta/Piso 1 Pta/Letra 2 Compl.Dom. Sector Suc ¿CAPANES SUR II¿ del P.G.O.U.",
-    "cp": "29630",
     "titular": "-",
     "catastro": "8804102UF1480S0001FM",
     "uso_privado": "N",
@@ -52867,24 +52955,6 @@
     "cp": "29679",
     "titular": "-",
     "catastro": "0439601UF2403N0001FM",
-    "uso_privado": null,
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/36280",
-    "nombre": "de Praga Nº 4",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2019-08-27",
-    "inicio_actividad": "2019-07-04",
-    "direccion": "CALLE de Praga Nº 4 Blq. 5 Plta/Piso bj Pta/Letra 48 Compl.Dom. CJT ATALAYA HILLS - Capanes Sur II",
-    "cp": "29679",
-    "titular": "-",
-    "catastro": "8804102UF1480S0001FM",
     "uso_privado": null,
     "motivo": "sin coordenadas en el registro"
    },
@@ -52927,24 +52997,6 @@
     "lon_erronea": -7.48874
    },
    {
-    "ref": "VUT/MA/56114",
-    "nombre": "REAL DE LA QUINTA CONJUNTO RESIDENCIAL QUERCUS FASE 1",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2022-08-03",
-    "inicio_actividad": "2022-08-03",
-    "direccion": "URBANIZACION REAL DE LA QUINTA CONJUNTO RESIDENCIAL QUERCUS FASE 1 Blq. 1 Plta/Piso 0 Pta/Letra 101",
-    "cp": "29678",
-    "titular": "ANNA LENA RENTALS S.L.",
-    "catastro": "2754117UF2424N0001BW",
-    "uso_privado": null,
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
     "ref": "VUT/MA/66433",
     "nombre": "HERNAN CORTES Nº 4",
     "tipo": "Vivienda de uso turístico",
@@ -52980,42 +53032,6 @@
     "titular": "-",
     "catastro": "001600200UF13B0001GM",
     "uso_privado": null,
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/79410",
-    "nombre": "ATALAYA HILLS",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 6,
-    "unidades": 3,
-    "alta": "2024-05-07",
-    "inicio_actividad": "2024-05-07",
-    "direccion": "URBANIZACION ATALAYA HILL Blq. 3 Pta/Letra 23 Compl.Dom. Calle Praga s/n, Capanes II",
-    "cp": "29679",
-    "titular": "SALT AND PEPPER PROPERTY MANAGEMENT SL",
-    "catastro": "8804102UF1480S0001FM",
-    "uso_privado": null,
-    "motivo": "sin coordenadas en el registro"
-   },
-   {
-    "ref": "VUT/MA/81817",
-    "nombre": "QUERCUS",
-    "tipo": "Vivienda de uso turístico",
-    "modalidad": null,
-    "categoria": null,
-    "grupo": "Completa",
-    "plazas": 10,
-    "unidades": 5,
-    "alta": "2024-06-19",
-    "inicio_actividad": "2024-06-19",
-    "direccion": "URBANIZACION REAL DE LA QUINTA Nº 4 Blq. 15 Pta/Letra 1521 Compl.Dom. RESIDENCIAL QUERCUS",
-    "cp": "29679",
-    "titular": "ESCAFIS & TAX, S.L.",
-    "catastro": "2754117UF2424N0001BW",
-    "uso_privado": "N",
     "motivo": "sin coordenadas en el registro"
    },
    {
@@ -53541,11 +53557,65 @@
     "catastro": "0032926UF2403S0011JG",
     "uso_privado": null,
     "motivo": "sin coordenadas en el registro"
+   },
+   {
+    "ref": "VUT/MA/102907",
+    "nombre": "UR MONTEMAYOR ALTO 14(C) B-14",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 9,
+    "unidades": 4,
+    "alta": "2026-10-13",
+    "inicio_actividad": "2026-10-13",
+    "direccion": "URBANIZACION MONTEMAYOR ALTO 14(C) Nº B14 Compl.Dom. UR MONTEMAYOR ALTO 14(C) B-14",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "4425280UF1442S0001UK",
+    "uso_privado": null,
+    "motivo": "sin coordenadas en el registro"
+   },
+   {
+    "ref": "VUT/MA/103065",
+    "nombre": "CASA LOS JARALILLOS",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 10,
+    "unidades": 3,
+    "alta": "2026-10-29",
+    "inicio_actividad": "2026-10-29",
+    "direccion": "URBANIZACION JARALILLOS Nº 1 Pta/Letra 7",
+    "cp": "29679",
+    "titular": "-",
+    "catastro": "7441117UF1470S0007LW",
+    "uso_privado": null,
+    "motivo": "sin coordenadas en el registro"
+   },
+   {
+    "ref": "VUT/MA/103116",
+    "nombre": "Villa The Privilege",
+    "tipo": "Vivienda de uso turístico",
+    "modalidad": null,
+    "categoria": null,
+    "grupo": "Completa",
+    "plazas": 12,
+    "unidades": 5,
+    "alta": "2026-11-04",
+    "inicio_actividad": "2026-11-04",
+    "direccion": "URBANIZACION Montemayor Alto Nº A4",
+    "cp": "29679",
+    "titular": "Ipetel Adquisiciones S.L.",
+    "catastro": "4425258UF1442S0001TK",
+    "uso_privado": null,
+    "motivo": "sin coordenadas en el registro"
    }
   ],
-  "total": 2261,
-  "ubicadas": 2210,
-  "viviendas_ubicadas": 2206,
+  "total": 2263,
+  "ubicadas": 2224,
+  "viviendas_ubicadas": 2220,
   "anyos_alta": [
    "2000",
    "2003",
@@ -53575,12 +53645,12 @@
   "nota": "El cruce se hace por número de inscripción normalizado. Una vivienda anunciada sin inscripción localizada puede estar inscrita con el número mal transcrito en el portal, inscrita en otro municipio, o no estar inscrita."
  },
  "reparto": {
-  "con_huella": 2125,
-  "sin_huella": 82,
-  "parcelas": 552,
+  "con_huella": 2129,
+  "sin_huella": 91,
+  "parcelas": 554,
   "nota": "El RTA publica una coordenada por parcela catastral, no por vivienda: el 81 % de las viviendas de Benahavís comparte punto con otra y una sola parcela llega a acumular 131. Para el mapa de densidad, las viviendas de cada parcela se reparten sobre las huellas de edificación que el Catastro dibuja en ella, en proporción a la superficie de cada cuerpo. No se sabe en qué portal está cada vivienda: lo que se afirma es que está en alguno de los edificios de su parcela. La coordenada oficial del registro se conserva y es la que usa la ficha de cada vivienda."
  },
- "generado": "2026-10-05T12:40:15Z",
+ "generado": "2026-11-05T13:34:24Z",
  "fuentes": [
   "Junta de Andalucía · Registro de Turismo de Andalucía (OpenRTA)",
   "Turismo Costa del Sol · Big Data, informe de viviendas turísticas",

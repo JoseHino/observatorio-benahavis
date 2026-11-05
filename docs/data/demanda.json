@@ -8077,17 +8077,21 @@
    {
     "t": "2026-07",
     "v": 1854
+   },
+   {
+    "t": "2026-08",
+    "v": 2805
    }
   ],
   "origen_serie": "fila de total del fichero de origen",
   "top_origenes": [
    {
     "municipio": "Madrid",
-    "v": 19135
+    "v": 19535
    },
    {
     "municipio": "Sevilla",
-    "v": 5621
+    "v": 5736
    },
    {
     "municipio": "Algeciras",
@@ -8095,7 +8099,7 @@
    },
    {
     "municipio": "Línea de la Concepción, La",
-    "v": 4614
+    "v": 4672
    },
    {
     "municipio": "San Roque",
@@ -8103,19 +8107,19 @@
    },
    {
     "municipio": "Ceuta",
-    "v": 3499
+    "v": 3543
    },
    {
     "municipio": "Jerez de la Frontera",
-    "v": 3052
+    "v": 3084
    },
    {
     "municipio": "Córdoba",
-    "v": 3002
+    "v": 3067
    },
    {
     "municipio": "Granada",
-    "v": 2676
+    "v": 2707
    },
    {
     "municipio": "Barcelona",
@@ -8123,7 +8127,7 @@
    },
    {
     "municipio": "Almería",
-    "v": 712
+    "v": 756
    },
    {
     "municipio": "Pozuelo de Alarcón",
@@ -8138,8 +8142,8 @@
     "v": 637
    },
    {
-    "municipio": "Villamartín",
-    "v": 452
+    "municipio": "Alcobendas",
+    "v": 525
    }
   ],
   "top_origenes_por_anyo": {
@@ -8580,35 +8584,39 @@
    "2026": [
     {
      "municipio": "Madrid",
-     "v": 1168
+     "v": 1568
     },
     {
      "municipio": "Sevilla",
-     "v": 432
+     "v": 547
     },
     {
      "municipio": "Córdoba",
-     "v": 389
+     "v": 454
     },
     {
      "municipio": "Granada",
-     "v": 381
-    },
-    {
-     "municipio": "Jerez de la Frontera",
-     "v": 194
+     "v": 412
     },
     {
      "municipio": "Ceuta",
-     "v": 187
+     "v": 231
+    },
+    {
+     "municipio": "Jerez de la Frontera",
+     "v": 226
     },
     {
      "municipio": "Línea de la Concepción, La",
-     "v": 165
+     "v": 223
     },
     {
      "municipio": "Algeciras",
      "v": 114
+    },
+    {
+     "municipio": "Alcobendas",
+     "v": 112
     },
     {
      "municipio": "Pozuelo de Alarcón",
@@ -8633,25 +8641,21 @@
     {
      "municipio": "Guadalajara",
      "v": 80
-    },
-    {
-     "municipio": "San Fernando",
-     "v": 65
     }
    ]
   },
   "top_destinos_emisor": [
    {
     "municipio": "Madrid",
-    "v": 12746
+    "v": 12820
    },
    {
     "municipio": "Tarifa",
-    "v": 5144
+    "v": 5234
    },
    {
     "municipio": "Sevilla",
-    "v": 4997
+    "v": 5028
    },
    {
     "municipio": "Granada",
@@ -8659,7 +8663,7 @@
    },
    {
     "municipio": "San Roque",
-    "v": 3827
+    "v": 3860
    },
    {
     "municipio": "Barcelona",
@@ -8670,12 +8674,12 @@
     "v": 2799
    },
    {
-    "municipio": "Chiclana de la Frontera",
-    "v": 2395
+    "municipio": "Jerez de la Frontera",
+    "v": 2400
    },
    {
-    "municipio": "Jerez de la Frontera",
-    "v": 2365
+    "municipio": "Chiclana de la Frontera",
+    "v": 2395
    },
    {
     "municipio": "Monachil",
@@ -8683,7 +8687,7 @@
    },
    {
     "municipio": "Barbate",
-    "v": 1944
+    "v": 2007
    },
    {
     "municipio": "Conil de la Frontera",
@@ -12221,5 +12225,5 @@
  "fuente": "INE · Medición del turismo a partir de la posición de los teléfonos móviles y Encuesta de Ocupación Hotelera por zonas turísticas (ambas vía Dataestur, SEGITTUR)",
  "ambito": "municipal",
  "es_proxy": false,
- "actualizado": "2026-10-05T12:31:16Z"
+ "actualizado": "2026-11-05T13:25:54Z"
 }

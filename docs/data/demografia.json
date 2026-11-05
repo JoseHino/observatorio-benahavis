@@ -3659,19 +3659,19 @@
    "v": 2207.0
   },
   "declaraciones_irpf": {
-   "anyo": "2023",
+   "anyo": "2024",
    "etiqueta": "Número de declaraciones",
-   "v": 2711.0
+   "v": 3038.0
   },
   "renta_bruta_aeat": {
-   "anyo": "2023",
+   "anyo": "2024",
    "etiqueta": "Renta bruta media",
-   "v": 43159.0
+   "v": 79041.0
   },
   "renta_disponible_aeat": {
-   "anyo": "2023",
+   "anyo": "2024",
    "etiqueta": "Renta disponible media",
-   "v": 33539.0
+   "v": 59730.0
   },
   "tasa_paro": {
    "anyo": "2025",
@@ -4655,6 +4655,10 @@
    {
     "t": "2023",
     "v": 43.6
+   },
+   {
+    "t": "2024",
+    "v": 44.8
    }
   ],
   "p80_p20": [
@@ -4689,6 +4693,10 @@
    {
     "t": "2023",
     "v": 4.0
+   },
+   {
+    "t": "2024",
+    "v": 4.2
    }
   ]
  },
@@ -4733,6 +4741,10 @@
    {
     "t": "2023",
     "v": 39.8
+   },
+   {
+    "t": "2024",
+    "v": 39.4
    }
   ],
   "pct_menores_18": [
@@ -4771,6 +4783,10 @@
    {
     "t": "2023",
     "v": 21.7
+   },
+   {
+    "t": "2024",
+    "v": 22.2
    }
   ],
   "pct_65_y_mas": [
@@ -4809,6 +4825,10 @@
    {
     "t": "2023",
     "v": 13.6
+   },
+   {
+    "t": "2024",
+    "v": 13.4
    }
   ],
   "tamanyo_hogar": [
@@ -4847,6 +4867,10 @@
    {
     "t": "2023",
     "v": 2.4
+   },
+   {
+    "t": "2024",
+    "v": 2.5
    }
   ],
   "pct_hogares_unipersonales": [
@@ -4885,6 +4909,10 @@
    {
     "t": "2023",
     "v": 33.4
+   },
+   {
+    "t": "2024",
+    "v": 32.2
    }
   ],
   "pct_espanola": [
@@ -4923,6 +4951,10 @@
    {
     "t": "2023",
     "v": 38.3
+   },
+   {
+    "t": "2024",
+    "v": 38.1
    }
   ]
  },
@@ -4963,6 +4995,10 @@
    {
     "t": "2023",
     "v": 49.4
+   },
+   {
+    "t": "2024",
+    "v": 49.6
    }
   ],
   "pensiones": [
@@ -5000,6 +5036,10 @@
    },
    {
     "t": "2023",
+    "v": 10.9
+   },
+   {
+    "t": "2024",
     "v": 10.9
    }
   ],
@@ -5039,6 +5079,10 @@
    {
     "t": "2023",
     "v": 1.1
+   },
+   {
+    "t": "2024",
+    "v": 1.1
    }
   ],
   "otras_prestaciones": [
@@ -5077,6 +5121,10 @@
    {
     "t": "2023",
     "v": 1.8
+   },
+   {
+    "t": "2024",
+    "v": 1.6
    }
   ],
   "otros_ingresos": [
@@ -5115,6 +5163,10 @@
    {
     "t": "2023",
     "v": 36.9
+   },
+   {
+    "t": "2024",
+    "v": 36.8
    }
   ]
  },
@@ -5155,6 +5207,10 @@
    {
     "t": "2023",
     "v": 13.7
+   },
+   {
+    "t": "2024",
+    "v": 15.4
    }
   ],
   "bajo_7500": [
@@ -5193,6 +5249,10 @@
    {
     "t": "2023",
     "v": 19.5
+   },
+   {
+    "t": "2024",
+    "v": 22.2
    }
   ],
   "bajo_10000": [
@@ -5231,6 +5291,10 @@
    {
     "t": "2023",
     "v": 27.0
+   },
+   {
+    "t": "2024",
+    "v": 29.0
    }
   ]
  },
@@ -7975,5 +8039,5 @@
  },
  "fuente": "INE · Cifras oficiales de población (tabla 2882), Padrón por nacionalidad (tablas 33571 y 33572), por edad (33570) y por lugar de nacimiento (33574), Atlas de Distribución de Renta de los Hogares (tablas 30825, 30826 y 30832) e índice de Gini y P80/P20 (tabla 37677), Estadística de Migraciones y Cambios de Residencia (tabla 69767) · IECA/SIMA, ficha municipal completa (población extranjera posterior a 2022, movimiento natural, vivienda, consumo eléctrico y presupuesto) · Datosmacro (Expansión), renta declarada por municipios, que republica la estadística de declarantes del IRPF de la AEAT",
  "ambito": "municipal",
- "actualizado": "2026-10-05T12:31:16Z"
+ "actualizado": "2026-11-05T13:25:54Z"
 }

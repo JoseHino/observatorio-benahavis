@@ -4025,7 +4025,8 @@
    "2020",
    "2021",
    "2022",
-   "2023"
+   "2023",
+   "2024"
   ],
   "serie": {
    "Total": [
@@ -4116,6 +4117,14 @@
      "Renta bruta mediana": 25311.0,
      "Renta disponible media": 33539.0,
      "Renta disponible mediana": 21367.0
+    },
+    {
+     "t": "2024",
+     "Posicionamiento en Andalucía": 1.0,
+     "Renta bruta media": 79041.0,
+     "Renta bruta mediana": 26657.0,
+     "Renta disponible media": 59730.0,
+     "Renta disponible mediana": 22101.0
     }
    ]
   }
@@ -4427,5 +4436,5 @@
  "nota": "Mismas variables que la ficha municipal del IECA, pero con su serie. La ficha (smex99.xls) solo publica el último valor de cada una; el histórico está en BADEA, el banco de datos del propio IECA, que obliga a pedir año por año.",
  "fuente": "IECA · BADEA, consultas del Sistema de Información Multiterritorial de Andalucía (SIMA)",
  "ambito": "municipal",
- "actualizado": "2026-10-05T12:31:16Z"
+ "actualizado": "2026-11-05T13:25:54Z"
 }

@@ -1,13 +1,13 @@
 {
  "rta": {
-  "total_inscripciones": 2261,
-  "plazas_totales": 15158,
-  "plazas_alojamiento": 15158,
+  "total_inscripciones": 2263,
+  "plazas_totales": 15191,
+  "plazas_alojamiento": 15191,
   "por_tipo": {
    "Vivienda de uso turístico": {
-    "establecimientos": 2251,
-    "plazas": 14275,
-    "unidades": 6585
+    "establecimientos": 2252,
+    "plazas": 14296,
+    "unidades": 6593
    },
    "Vivienda turística de alojamiento rural": {
     "establecimientos": 6,
@@ -18,6 +18,11 @@
     "establecimientos": 4,
     "plazas": 827,
     "unidades": 402
+   },
+   "Casa rural": {
+    "establecimientos": 1,
+    "plazas": 12,
+    "unidades": 6
    }
   },
   "categorias_hotel": {
@@ -73,7 +78,7 @@
    },
    {
     "t": "2018",
-    "v": 194
+    "v": 193
    },
    {
     "t": "2019",
@@ -89,7 +94,7 @@
    },
    {
     "t": "2022",
-    "v": 284
+    "v": 285
    },
    {
     "t": "2023",
@@ -97,15 +102,15 @@
    },
    {
     "t": "2024",
-    "v": 320
+    "v": 319
    },
    {
     "t": "2025",
-    "v": 283
+    "v": 282
    },
    {
     "t": "2026",
-    "v": 85
+    "v": 89
    }
   ],
   "acumulado_altas": [
@@ -143,19 +148,19 @@
    },
    {
     "t": "2018",
-    "v": 470
+    "v": 469
    },
    {
     "t": "2019",
-    "v": 684
+    "v": 683
    },
    {
     "t": "2020",
-    "v": 803
+    "v": 802
    },
    {
     "t": "2021",
-    "v": 929
+    "v": 928
    },
    {
     "t": "2022",
@@ -167,15 +172,15 @@
    },
    {
     "t": "2024",
-    "v": 1893
+    "v": 1892
    },
    {
     "t": "2025",
-    "v": 2176
+    "v": 2174
    },
    {
     "t": "2026",
-    "v": 2261
+    "v": 2263
    }
   ],
   "puntos": [
@@ -210,6 +215,14 @@
     "plazas": 342,
     "lat": 36.51309,
     "lon": -4.994713
+   },
+   {
+    "nombre": "CASA LOS NARANJOS",
+    "tipo": "Vivienda turística de alojamiento rural",
+    "categoria": "",
+    "plazas": 4,
+    "lat": 36.518969,
+    "lon": -5.044561
    },
    {
     "nombre": "LA QUINTA GOLF, EL HERROJO Nº 156",
@@ -708,6 +721,14 @@
     "lon": -5.051452
    },
    {
+    "nombre": "HACIENDA DEL SEÑORIO CIFUENTES Nº 22",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 4,
+    "lat": 36.491979,
+    "lon": -5.035817
+   },
+   {
     "nombre": "EL MARISCAL Nº 1",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -764,12 +785,28 @@
     "lon": -4.995619
    },
    {
+    "nombre": "LA TORRE",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.516417,
+    "lon": -5.009841
+   },
+   {
     "nombre": "RIBERA DE GUADALMINA",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 5,
     "lat": 36.522457,
     "lon": -5.042927
+   },
+   {
+    "nombre": "LOS FAMINGOS 2, CONJ.  ALANDA FLAMINGOS Nº 2",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 4,
+    "lat": 36.47246,
+    "lon": -5.049542
    },
    {
     "nombre": "Bel Air Nº 13",
@@ -836,7 +873,7 @@
     "lon": -5.011875
    },
    {
-    "nombre": "Apto. Royal Flamingo bl. 3 portal 2 bajo A Benahavis",
+    "nombre": "APTO. ROYAL FLAMINGO",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 4,
@@ -1050,6 +1087,22 @@
     "plazas": 6,
     "lat": 36.483784,
     "lon": -5.030501
+   },
+   {
+    "nombre": "FELISA DE CORTES",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.483784,
+    "lon": -5.030501
+   },
+   {
+    "nombre": "LOS OLIVOS Nº 3",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 4,
+    "lat": 36.523429,
+    "lon": -5.045351
    },
    {
     "nombre": "NISPERO Nº 14",
@@ -1652,6 +1705,14 @@
     "lon": -4.997385
    },
    {
+    "nombre": "CASA DECRAENE",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 4,
+    "lat": 36.517748,
+    "lon": -5.015017
+   },
+   {
     "nombre": "La Torre, Los Arqueros",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -2100,6 +2161,14 @@
     "lon": -4.995619
    },
    {
+    "nombre": "MONTE MAYOR ALTO, PARCELA D 10",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 10,
+    "lat": 36.508688,
+    "lon": -5.074539
+   },
+   {
     "nombre": "EL PARAISO. CJTO RES. PARAISO PARK, FASE III Nº 25",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -2274,6 +2343,14 @@
     "plazas": 8,
     "lat": 36.472021,
     "lon": -5.051274
+   },
+   {
+    "nombre": "ONE FORTY SIX LEISURE SL",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.519745,
+    "lon": -5.002424
    },
    {
     "nombre": "Urb. Las Jacarandas, B25-3, 29679 Benahavis (Málaga)",
@@ -3132,6 +3209,14 @@
     "lon": -5.046475
    },
    {
+    "nombre": "LOS FLAMINGOS Nº 128",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 15,
+    "lat": 36.47246,
+    "lon": -5.049542
+   },
+   {
     "nombre": "LOS FLAMINGOS Nº 92",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -3324,7 +3409,7 @@
     "lon": -5.060847
    },
    {
-    "nombre": "EL HERROJO Nº 3-45",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 15,
@@ -3362,6 +3447,14 @@
     "plazas": 4,
     "lat": 36.49329,
     "lon": -5.021029
+   },
+   {
+    "nombre": "ATALAYA HILLS",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 4,
+    "lat": 36.490534,
+    "lon": -5.024318
    },
    {
     "nombre": "EL MIRADOR, URBANIZACIÓN LA QUINTA Nº 22",
@@ -3770,14 +3863,6 @@
     "plazas": 4,
     "lat": 36.49329,
     "lon": -5.021029
-   },
-   {
-    "nombre": "LOS FLAMINGOS , TEE5",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 8,
-    "lat": 36.477555,
-    "lon": -5.051452
    },
    {
     "nombre": "Capanes del Golf",
@@ -4340,7 +4425,7 @@
     "lon": -5.005762
    },
    {
-    "nombre": "Botanic",
+    "nombre": "URB BOTANIC RESERVA DE ALCUZCUZ BQ5, PLANTA 01, PUERTA 07 , BENAHAVIS",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 6,
@@ -5010,6 +5095,14 @@
     "plazas": 4,
     "lat": 36.521583,
     "lon": -5.045052
+   },
+   {
+    "nombre": "de Praga Nº 4",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.490534,
+    "lon": -5.024318
    },
    {
     "nombre": "EL HERROJO Nº 4",
@@ -6860,7 +6953,7 @@
     "lon": -4.997472
    },
    {
-    "nombre": "URB. NUEVA ATALAYA",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 10,
@@ -7756,7 +7849,7 @@
     "lon": -5.072551
    },
    {
-    "nombre": "UR PARAISO EL 371 (B) Nº 371",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 6,
@@ -8226,6 +8319,14 @@
     "plazas": 5,
     "lat": 36.476039,
     "lon": -5.061424
+   },
+   {
+    "nombre": "Casa Las Dos aguas",
+    "tipo": "Casa rural",
+    "categoria": "Básica",
+    "plazas": 12,
+    "lat": 36.470139,
+    "lon": -5.055941
    },
    {
     "nombre": "LAS JACARANDAS Nº 6",
@@ -8882,6 +8983,14 @@
     "plazas": 8,
     "lat": 36.511491,
     "lon": -4.995277
+   },
+   {
+    "nombre": "REAL DE LA QUINTA CONJUNTO RESIDENCIAL QUERCUS FASE 1",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.532703,
+    "lon": -4.983
    },
    {
     "nombre": "PISO",
@@ -10780,7 +10889,7 @@
     "lon": -5.002231
    },
    {
-    "nombre": "EL SOTO DE LA QUINTA",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 6,
@@ -11260,7 +11369,7 @@
     "lon": -4.9966
    },
    {
-    "nombre": "APARTAMENTO EN LA QUINTA HILLS",
+    "nombre": "UR HERROJO EL 4(A) Es:1 Pl:00 Pt:01 29678 BENAHAVIS (MÁLAGA)",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 6,
@@ -12084,7 +12193,7 @@
     "lon": -5.014814
    },
    {
-    "nombre": "APT EL MIRADOR I",
+    "nombre": "CALLE HERNAN CORTES / URBANIZACION EL MIRADOR II",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 5,
@@ -12476,7 +12585,7 @@
     "lon": -4.988621
    },
    {
-    "nombre": "RESIDENCIAL LA TORRE, PRIMERA FASE",
+    "nombre": "RESIDENCIAL LA TORRE 1C",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 6,
@@ -12610,14 +12719,6 @@
     "plazas": 4,
     "lat": 36.482479,
     "lon": -5.04031
-   },
-   {
-    "nombre": "BUENAVISTA DE LA QUINTA",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 4,
-    "lat": 36.51626,
-    "lon": -5.004094
    },
    {
     "nombre": "Daryoush R. S",
@@ -13028,7 +13129,7 @@
     "lon": -4.996663
    },
    {
-    "nombre": "JARALILLOS Nº 1",
+    "nombre": "BE LAGOM, Nº 11",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 12,
@@ -13444,12 +13545,20 @@
     "lon": -5.045581
    },
    {
-    "nombre": "ADOSADA EN URB. EL CASTILLO DE LA HEREDIA",
+    "nombre": "URB EL CASTILLO DE LA HEREDIA",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 8,
     "lat": 36.519371,
     "lon": -5.005082
+   },
+   {
+    "nombre": "ATALAYA HILLS",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 6,
+    "lat": 36.490534,
+    "lon": -5.024318
    },
    {
     "nombre": "DIEGO DE ALMAGRO Nº S/N",
@@ -13812,6 +13921,14 @@
     "lon": -4.997385
    },
    {
+    "nombre": "QUERCUS",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 10,
+    "lat": 36.530921,
+    "lon": -4.981459
+   },
+   {
     "nombre": "QUERCUS FASE 2B",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -13868,7 +13985,7 @@
     "lon": -4.997013
    },
    {
-    "nombre": "",
+    "nombre": "PEDRO XIMENEZ, URB. LA HEREDIA Nº 14",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 10,
@@ -14892,7 +15009,7 @@
     "lon": -5.04031
    },
    {
-    "nombre": "Flamingos II - 4.13",
+    "nombre": "Apartamento Premium en Alanda Flamingos",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 6,
@@ -15188,7 +15305,7 @@
     "lon": -4.995617
    },
    {
-    "nombre": "EL PARAISO BENAHAVIS 53/2",
+    "nombre": "EL PARAISO BENAHAVIS",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 4,
@@ -15644,7 +15761,7 @@
     "lon": -5.036309
    },
    {
-    "nombre": "VILLA MANZANO",
+    "nombre": "Villa Karma -Elegant Villa with Pool, Garden & Mul",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 13,
@@ -15948,14 +16065,6 @@
     "lon": -5.021029
    },
    {
-    "nombre": "ATICO EN BENAHAVIS - MALAGA",
-    "tipo": "Vivienda de uso turístico",
-    "categoria": "",
-    "plazas": 6,
-    "lat": 36.492882,
-    "lon": -5.018793
-   },
-   {
     "nombre": "CONJUNTO RESIDENCIAL PUEBLO CORTÉS DEL GOLF",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
@@ -16172,7 +16281,7 @@
     "lon": -5.043367
    },
    {
-    "nombre": "LOS TRES MILAGROS AL5",
+    "nombre": "LOS TRES MILAGROS",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 8,
@@ -17292,7 +17401,7 @@
     "lon": -5.04031
    },
    {
-    "nombre": "FLORES DEL PARAISO 3",
+    "nombre": "",
     "tipo": "Vivienda de uso turístico",
     "categoria": "",
     "plazas": 8,
@@ -17858,9 +17967,17 @@
     "plazas": 7,
     "lat": 36.499273,
     "lon": -5.034298
+   },
+   {
+    "nombre": "LOS FLAMINGOS",
+    "tipo": "Vivienda de uso turístico",
+    "categoria": "",
+    "plazas": 8,
+    "lat": 36.474071,
+    "lon": -5.061098
    }
   ],
-  "alojamientos_sin_coordenadas": 48,
+  "alojamientos_sin_coordenadas": 36,
   "alojamientos_coordenada_erronea": 3,
   "crs_origen": "EPSG:25830",
   "crs_puntos": "EPSG:4326"
@@ -18086,5 +18203,5 @@
  "advertencia": "El Registro de Turismo de Andalucía mide oferta inscrita administrativamente; la estadística experimental del INE mide oferta anunciada en plataformas de intermediación. Miden universos distintos y no deben compararse ni sumarse.",
  "fuente": "Junta de Andalucía · OpenRTA · e INE · Viviendas turísticas (tablas 39363 y 39366)",
  "ambito": "municipal",
- "actualizado": "2026-10-05T12:31:16Z"
+ "actualizado": "2026-11-05T13:25:54Z"
 }
